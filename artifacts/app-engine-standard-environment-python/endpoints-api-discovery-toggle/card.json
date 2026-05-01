@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.111Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Endpoints API discovery toggle",
+  "feature_slug": "endpoints-api-discovery-toggle",
+  "summary": "The Endpoints API adds a discoverable parameter on the @Api annotation to disable API discovery.",
+  "extended_definition": "The Endpoints API adds a discoverable parameter on the @Api annotation to disable API discovery.",
+  "lifecycle": {
+    "latest_feature_date": "2015-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/managing-costs",
+      "https://docs.cloud.google.com/appengine/docs/standard/managing-costs",
+      "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Faceted search \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+        "source_id": "site-docs-reference-required-11",
+        "final_score": 59,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use this parameter to override the default behavior of faceted search. options = FacetOptions(discover facet limit=5, discover facet value limit=10, depth=6000); Parameter Description Default discover facet limit Number of facets to discover if facet discovery is turned on.",
+          "You can increase this limit up to 20 using the FacetOptions discovery value limit parameter.",
+          "You can increase this limit up to 100 using the FacetOptions discovery limit parameter."
+        ]
+      },
+      {
+        "title": "\"Manage App Engine costs \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/managing-costs",
+        "source_id": "site-docs-reference-4",
+        "final_score": 44,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the function and the app are in separate projects , change the source code so APP NAME identifies the project that contains the app you want to disable . import base64 import json import os from googleapiclient import discovery APP NAME = os . getenv ( \"GCP PROJECT\" ) def limit use appengine ( data , context ): pubsub data = base64 . b64decode ( data [ \"data\" ]) . decode ( \"utf-8\" ) pubsub json = json . loads ( pubsub data ) cost amount = pubsub json [ \"costAmount\" ] budget amount = pubsub json [ \"budgetAmount\" ] if cost amount < = budget amount : print ( f \"No action necessary. (Current cost: { cost amount } )\" ) return appengine = discovery . build ( \"appengine\" , \"v1\" , cache discovery = False ) apps = appengine . apps () Get the target app's serving status target app = apps . get ( appsId = APP NAME ) . execute () current status = target app [ \"servingStatus\" ] Disable target app, if necessary if current status == \"SERVING\" : print ( f \"Attempting to disable app { APP NAME } ...\" ) body = { \"servingStatus\" : \"USER DISABLED\" } apps . patch ( appsId = APP NAME , updateMask = \"serving status\" , body = body ) . execute () Add the following dependencies to your function's requirements.txt file: google-api-python-client==2.131.0 Under Function to execute enter limit use appengine .",
+          "To limit the costs of your App Engine app, you can use any of the following mechanisms: Specify the maximum number of instances Create budget alerts Disable your app manually Disable your app programmatically Specify the maximum number of instances Since App Engine costs usually scale based on the amount of traffic your app receives, you can limit your costs by limiting the number of instances App Engine can create.",
+          "When creating the function: Use the following source code: Note: The source code assumes that the function you are creating and the app you want to disable are in the same Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Manage App Engine costs \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/managing-costs",
+        "source_id": "site-docs-reference-4",
+        "final_score": 44,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the function and the app are in separate projects , change the source code so APP NAME identifies the project that contains the app you want to disable . import base64 import json import os from googleapiclient import discovery APP NAME = os . getenv ( \"GCP PROJECT\" ) def limit use appengine ( data , context ): pubsub data = base64 . b64decode ( data [ \"data\" ]) . decode ( \"utf-8\" ) pubsub json = json . loads ( pubsub data ) cost amount = pubsub json [ \"costAmount\" ] budget amount = pubsub json [ \"budgetAmount\" ] if cost amount < = budget amount : print ( f \"No action necessary. (Current cost: { cost amount } )\" ) return appengine = discovery . build ( \"appengine\" , \"v1\" , cache discovery = False ) apps = appengine . apps () Get the target app's serving status target app = apps . get ( appsId = APP NAME ) . execute () current status = target app [ \"servingStatus\" ] Disable target app, if necessary if current status == \"SERVING\" : print ( f \"Attempting to disable app { APP NAME } ...\" ) body = { \"servingStatus\" : \"USER DISABLED\" } apps . patch ( appsId = APP NAME , updateMask = \"serving status\" , body = body ) . execute () Add the following dependencies to your function's requirements.txt file: google-api-python-client==2.131.0 Under Function to execute enter limit use appengine .",
+          "To limit the costs of your App Engine app, you can use any of the following mechanisms: Specify the maximum number of instances Create budget alerts Disable your app manually Disable your app programmatically Specify the maximum number of instances Since App Engine costs usually scale based on the amount of traffic your app receives, you can limit your costs by limiting the number of instances App Engine can create.",
+          "When creating the function: Use the following source code: Note: The source code assumes that the function you are creating and the app you want to disable are in the same Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cron.yaml",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

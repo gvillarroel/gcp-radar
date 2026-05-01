@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.112Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Customer-managed encryption keys for High Scale SSD tier",
+  "feature_slug": "customer-managed-encryption-keys-for-high-scale-ssd-tier",
+  "summary": "Filestore supports customer-managed encryption keys for High Scale SSD tier instances in preview.",
+  "extended_definition": "Filestore supports customer-managed encryption keys for High Scale SSD tier instances in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/cmek",
+      "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Encrypt data with customer-managed encryption keys (CMEK) \\_|\\_ Filestore\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about your encryption options, see Customer-managed encryption keys (CMEK) .",
+          "Home Documentation Storage Filestore Guides Send feedback Encrypt data with customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Filestore."
+        ]
+      },
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you need more control over the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Filestore.",
+          "For details, see Encrypt data with customer-managed encryption keys .",
+          "Use a customer-managed encryption key By default, Google Cloud automatically encrypts data when it is at rest using encryption keys managed by Google."
+        ]
+      },
+      {
+        "title": "Filestore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you need more control over the keys that protect your data, you can also use customer-managed encryption keys (CMEK) with Filestore.",
+          "Filestore instances are fully managed file servers on Google Cloud that can be connected to a number of client types: Compute Engine VMs Google Kubernetes Engine (GKE) clusters External datastores such as Google Cloud VMware Engine On-premises machines Cloud Run services Once provisioned, you can scale the capacity of your instances according to need without any downtime.",
+          "For details, see the following resources: Benefits of NFSv4.1 Encryption in Transit in Google Cloud Access control You can control the level of access that a client has on Filestore instance data based on the client's IP address."
+        ]
+      },
+      {
+        "title": "About NFSv4.1 protocol \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "source_id": "site-docs-root-2",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Filestore NFSv4.1 protocol, several network ACL security flavors or settings are available: krb5 Authenticates the client using a Kerberos ticket, which is validated against the Managed Microsoft AD Kerberos server. krb5i Includes the authentication provided by krb5 and also uses Kerberos to run message integrity checks on all network traffic to and from the instance. krb5p Includes the authentication provided by krb5 and message integrity checks of krb5i and also uses Kerberos for in-transit data encryption.",
+          "Join the Managed Microsoft AD domain: sudo yum update \\ sudo yum install -y adcli realmd sssd samba-common-tools krb5-workstation nfs-utils \\ bind-utils openldap-clients Complete either of the following steps: For VMs with a hostname length less than or equal to 15 characters, run the following command: sudo realm join -vU JOIN DOMAIN USER --automatic-id-mapping=no MANAGED AD DOMAIN NAME Replace the following: JOIN DOMAIN USER is the name of the user account used to join the domain.",
+          "Filestore offers NFSv4.1 protocol support for instances created in the following service tiers : Zonal Regional Enterprise This capability can be integrated with Managed Service for Microsoft Active Directory (Managed Microsoft AD) to support workloads that require client and server authentication, message data integrity checks, and in-transit data encryption, capabilities previously unavailable in Filestore."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/cmek",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/cmek",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/cmek",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/cmek",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/cmek",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/cmek",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4"
+      ]
+    }
+  ]
+}

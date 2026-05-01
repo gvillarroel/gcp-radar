@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.664Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "ui.Panel.Layout.Flow wrap parameter",
+  "feature_slug": "ui-panel-layout-flow-wrap-parameter",
+  "summary": "The Flow layout can wrap widgets onto new lines when they overflow the available space.",
+  "extended_definition": "The Flow layout can wrap widgets onto new lines when they overflow the available space.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/auth",
+      "https://developers.google.com/earth-engine/guides/charts_overview",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chart Overview \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 55,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A variety of chart types available in Google Charts corechart, such as scatter, line, bar, pie, and histogram, can be set using the ui.Chart.setChartType() method. ui.Chart widgets can be displayed in the Code Editor console, within a ui.Panel , or in a separate browser tab where they can also be downloaded as graphics or CSV data.",
+          "Charts can be displayed interactively in the Code Editor console, ui.Panel widgets, and in stand-alone browser tabs.",
+          "Chart . array . values ( data , 0 , data ) . setChartType ( 'ColumnChart' ); print ( chart ); Display and download ui.Chart widgets can be displayed three ways: In the Code Editor console var data = ee ."
+        ]
+      },
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-08-05 UTC.\"],[],[\"The Earth Engine Code Editor, a web-based IDE, allows geospatial workflow development.",
+          "Click the Palette radio button and specify a custom palette by adding colors ( add ), removing colors ( remove ) or manually entering a comma separated list of hex strings ( edit ) Click Apply to apply the visualization parameters to the current display.",
+          "If the task is fully specified at creation time (that is, the call to Export has all necessary parameters), hold ctrl or ⌘ while clicking Run to submit the task without showing the dialog."
+        ]
+      },
+      {
+        "title": "\"Authentication and Initialization \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/auth",
+        "source_id": "site-docs-root-2",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authentication details The aim of the Earth Engine authentication flows is to get a security \"token\" from your signed-in account which can be stored to give your scripts permission to access your data.",
+          "The auth client you'll see is the \"Earth Engine Authenticator\". gcloud : This uses the --launch-browser flow described in the gcloud reference , and --no-launch-browser if on a remote machine.",
+          "Most options are controlled by the auth mode parameter: either as ee.Authenticate(auth mode=...) , or earthengine authenticate --auth mode=... on the command line."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "code.earthengine.google.com",
+      "developers.google.com",
+      "e.g",
+      "ee.Authenticate",
+      "ui.Chart",
+      "ui.Chart.setChartType",
+      "ui.Panel",
+      "ui.Panel.Layout.Flow"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_overview",
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_overview",
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_overview",
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_overview",
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_overview",
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_overview",
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    }
+  ]
+}

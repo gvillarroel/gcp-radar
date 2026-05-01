@@ -1,0 +1,85 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Negative Examples",
+  "feature_slug": "negative-examples",
+  "summary": "Negative Examples let you add mismatched phrases to the Default Fallback Intent to improve intent matching.",
+  "extended_definition": "Negative Examples let you add mismatched phrases to the Default Fallback Intent to improve intent matching.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can fix this by adding commonly mismatched phrases to negative examples .",
+          "You can fix this by adding commonly mismatched phrases to negative examples .",
+          "Playbook few-shot examples: Are added either in order (by default) or by an algorithm that you choose (such as regular expression best match ordering)."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+        "source_id": "site-iam-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Negative examples prevent user queries that are slightly similar to training phrases from unintentionally matching intents.",
+          "Your training phrases should have a variety of time examples like: \"7 a.m.\", \"8 p.m.\", \"9 o'clock\".",
+          "Agents should provide negative examples ."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can fix this by adding commonly mismatched phrases to negative examples.",
+          "Note: Before adjusting this value, you should try adding negative examples .",
+          "By default, Dialogflow updates your agent's machine learning model every time you make changes to intents and entities, import or restore an agent, or train your agent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.m",
+      "com.google.cloud.dialogflow.v2",
+      "p.m"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

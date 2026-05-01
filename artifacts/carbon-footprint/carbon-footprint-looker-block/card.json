@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.186Z",
+  "source_step08_card": "data/step-08/current/products/carbon-footprint/card.json",
+  "product_name": "Carbon Footprint",
+  "product_slug": "carbon-footprint",
+  "feature_name": "Carbon Footprint Looker block",
+  "feature_slug": "carbon-footprint-looker-block",
+  "summary": "A Looker block is available for building custom dashboards with Carbon Footprint data.",
+  "extended_definition": "A Looker block is available for building custom dashboards with Carbon Footprint data.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/carbon-footprint/docs/custom-dashboard",
+      "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+      "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a custom dashboard or analysis for your Carbon Footprint data \\_\\",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/custom-dashboard",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a custom dashboard or analysis for your Carbon Footprint data Beyond Carbon Footprint's default view and data export, you can create custom dashboards and analyses using the exported data.",
+          "Use Looker Studio Follow these steps to create a custom Looker Studio report for your Carbon Footprint data.",
+          "Use Looker Follow these steps to create a custom Looker dashboard for your Carbon Footprint data."
+        ]
+      },
+      {
+        "title": "Carbon Footprint reporting methodology \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To allocate company-wide emissions from non-electricity sources to the customer-specific breakdowns in Carbon Footprint reports, we establish an allocation factor – a ratio of the customer's Google Cloud electricity use to the total Google Cloud electricity use – and multiply that factor by the worldwide Google Cloud emissions from each source, determined as described here.",
+          "Allocation to SKUs and customers Each internal service's location-based emissions are allocated to Google Cloud product units available for customer purchase (SKUs), and then the SKU location-based footprints are aggregated to Google Cloud product for the purpose of customer reports.",
+          "Any updates to our methodology or the data sources might result in material changes to our calculations and might result in the current and previous Google Cloud customer-specific greenhouse gas emissions data provided by the Carbon Footprint report to be adjusted."
+        ]
+      },
+      {
+        "title": "View Carbon Footprint data \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export your carbon footprint Create custom dashboards with the exported data .",
+          "Charts To dig deeper into the specifics of your carbon emissions, the dashboard includes four charts: Monthly carbon emissions (in both market-based emissions tab and location-based emissions tab) : Displays the total estimated greenhouse gas emissions associated with the usage of covered Google Cloud services for the selected billing account over all available months, broken down by month.",
+          "Recommendations Carbon Footprint has integrated with Google Cloud Active Assist Unattended Project Recommender, which analyzes usage activity across all projects, provides you with the recommendations to reclaim or shut down unattended projects, and helps you reduce both cost and carbon emissions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "billing.accounts.getCarbonInformation",
+      "billing.accounts.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/custom-dashboard",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/custom-dashboard",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/custom-dashboard",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+      ]
+    }
+  ]
+}

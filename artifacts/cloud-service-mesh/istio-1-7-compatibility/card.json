@@ -1,0 +1,433 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.897Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Istio 1.7 compatibility",
+  "feature_slug": "istio-1-7-compatibility",
+  "summary": "Anthos Service Mesh 1.7 is compatible with and includes the feature set of Istio 1.7, subject to supported-feature limitations; Anthos Service Mesh 1.7 is compatible with and includes the feature set of Istio 1.7, subject to supported-feature limitations.",
+  "extended_definition": "Anthos Service Mesh 1.7 is compatible with and includes the feature set of Istio 1.7, subject to supported-feature limitations; Anthos Service Mesh 1.7 is compatible with and includes the feature set of Istio 1.7, subject to supported-feature limitations.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+      "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate from Istio 1.11 or later to Cloud Service Mesh \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace onlineboutique Use the istio.io/rev=asm-managed label to add the onlineboutique namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace onlineboutique 'istio.io/rev=asm-managed' Deploy Online Boutique's 12 services, including the load generator that imitates user traffic: kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/kubernetes-manifests.yaml kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/virtual-service.yaml Get the external IP address of the Cloud Service Mesh ingress gateway: kubectl \\ --context cluster-with-csm \\ --namespace asm-ingress \\ get service --output jsonpath = '{.items[0].status.loadBalancer.ingress[0].ip}' Copy the external IP address of the asm-ingressgateway Service, and access it through your web browser.",
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace asm-ingress Use the istio.io/rev=asm-managed label to add the asm-ingress namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace asm-ingress 'istio.io/rev=asm-managed' Deploy the Cloud Service Mesh ingress gateway : kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/asm-gateway-deployment-svc.yaml kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/gateway.yaml The output is similar to: namespace/asm-ingress configured serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Note: You can browse the resources in the official Cloud Service Mesh samples GitHub repository .",
+          "Set the IP address of the managed Cloud Service Mesh cluster's ingress gateway inside the ServiceEntry resource: sed -i \"s/1.2.3.4/ ${ INGRESS IP OF CLUSTER WITH MANAGED ASM } /\" anthos-service-mesh-samples/docs/migrate-to-managed-asm/service-entry.yaml Deploy the ServiceEntry to the cluster with Istio: kubectl \\ --context cluster-with-istio \\ --namespace onlineboutique \\ apply -f anthos-service-mesh-samples/docs/migrate-to-managed-asm/service-entry.yaml Deploy the VirtualService to the cluster with Istio: kubectl \\ --context cluster-with-istio \\ --namespace onlineboutique \\ apply -f anthos-service-mesh-samples/docs/migrate-to-managed-asm/virtual-service.yaml Visit the IP address of the ingress gateway of the cluster with Istio, in your web browser: kubectl \\ --context cluster-with-istio \\ --namespace istio-system \\ get service Refresh the Online Boutique homepage multiple times, and check the footer of the page each time."
+        ]
+      },
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service entry Feature Managed (TD) Managed (istiod) ServiceEntry v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields and values in fields: workloadSelector field endpoints[].network field endpoints[].locality field endpoints[].weight field endpoints[].serviceAccount field DNS ROUND ROBIN value in resolution field MESH INTERNAL value in location field Unix domain socket address in endpoints[].address field subjectAltNames field Two or more endpoints[] entries if resolution field has DNS value Destination rule Feature Managed (TD) Managed (istiod) DestinationRule v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields. trafficPolicy.loadBalancer.localityLbSetting field trafficPolicy.tunnel field trafficPolicy.tls.credentialName field trafficPolicy.portLevelSettings[].tls.credentialName field Additionally, the TRAFFIC DIRECTOR control plane implementation requires that the destination rule defining subsets is in the same namespace and cluster with the Kubernetes service or ServiceEntry.",
+          "Managed control plane supported features Install, upgrade, and rollback Feature Managed (TD) Managed (istiod) Installation on GKE clusters using fleet feature API Upgrades from ASM 1.9 versions that use Mesh CA Direct (skip-level) upgrades from Cloud Service Mesh versions prior to 1.9 (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio OSS (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio-on-GKE add-on (see notes for indirect upgrades) Enabling optional features Note: Indirect migrations and upgrades are supported, meaning that you can follow the standard Cloud Service Mesh upgrade paths through each version until you reach Cloud Service Mesh 1.28 with an in-cluster control plane, then you can migrate to the managed control plane.",
+          "Proxy request logging Feature Managed (TD) Managed (istiod) Traffic logs Access logs Tracing Feature Managed (TD) Managed (istiod) Cloud Trace Jaeger tracing (allows use of customer-managed Jaeger) Compatible Zipkin tracing (allows use of customer-managed Zipkin) Compatible Note: You can configure third-party telemetry products (such as Jaeger, Zipkin, and Grafana), but we cannot guarantee future compatibility and Cloud Support cannot provide help managing them."
+        ]
+      },
+      {
+        "title": "\"Cloud Service Mesh roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "source_id": "site-iam-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Warning: Do not grant service agent roles to any principals except service agents . compute.backendServices.create compute.backendServices.delete compute.backendServices.get compute.backendServices.list compute.backendServices.update compute.backendServices.use compute.firewalls.create compute.firewalls.delete compute.firewalls.get compute.firewalls.update compute. globalNetworkEndpointGroups. attachNetworkEndpoints compute. globalNetworkEndpointGroups. create compute. globalNetworkEndpointGroups. delete compute. globalNetworkEndpointGroups. detachNetworkEndpoints compute. globalNetworkEndpointGroups. get compute. globalNetworkEndpointGroups. list compute. globalNetworkEndpointGroups. use compute.globalOperations.get compute.healthChecks.create compute.healthChecks.delete compute.healthChecks.get compute.healthChecks.list compute.healthChecks.update compute.healthChecks.use compute. healthChecks. useReadOnly compute.instances.use compute. networkEndpointGroups. attachNetworkEndpoints compute. networkEndpointGroups. create compute. networkEndpointGroups. delete compute. networkEndpointGroups. detachNetworkEndpoints compute. networkEndpointGroups. get compute. networkEndpointGroups. list compute. networkEndpointGroups. use compute.networks.updatePolicy compute. regionNetworkEndpointGroups. attachNetworkEndpoints compute. regionNetworkEndpointGroups. create compute. regionNetworkEndpointGroups. delete compute. regionNetworkEndpointGroups. detachNetworkEndpoints compute. regionNetworkEndpointGroups. get compute. regionNetworkEndpointGroups. list compute. regionNetworkEndpointGroups. use compute.regions.list compute.zones.list container.backendConfigs. container. backendConfigs. create container. backendConfigs. delete container.backendConfigs.get container.backendConfigs.list container. backendConfigs. update container. clusterRoleBindings. container. clusterRoleBindings. create container. clusterRoleBindings. delete container. clusterRoleBindings. get container. clusterRoleBindings. list container. clusterRoleBindings. update container.clusterRoles. container.clusterRoles.bind container.clusterRoles.create container.clusterRoles.delete container. clusterRoles. escalate container.clusterRoles.get container.clusterRoles.list container.clusterRoles.update container.clusters.connect container.clusters.get container.clusters.update container.configMaps. container.configMaps.create container.configMaps.delete container.configMaps.get container.configMaps.list container.configMaps.update container. customResourceDefinitions. create container. customResourceDefinitions. get container. customResourceDefinitions. list container. customResourceDefinitions. update container.daemonSets.create container.daemonSets.delete container.daemonSets.get container.daemonSets.getStatus container.daemonSets.list container.daemonSets.update container.deployments.get container.deployments.list container.events.get container.events.list container.jobs.create container.jobs.delete container.jobs.get container.jobs.list container.jobs.update container. mutatingWebhookConfigurations. create container. mutatingWebhookConfigurations. get container. mutatingWebhookConfigurations. list container. mutatingWebhookConfigurations. update container.namespaces.create container.namespaces.get container.namespaces.list container.operations.get container.pods.get container.pods.list container.secrets. container.secrets.create container.secrets.delete container.secrets.get container.secrets.list container.secrets.update container. serviceAccounts. create container. serviceAccounts. delete container.serviceAccounts.get container.serviceAccounts.list container. serviceAccounts. update container.services.get container.services.list container. thirdPartyObjects. create container. thirdPartyObjects. get container. thirdPartyObjects. list container. thirdPartyObjects. update container. validatingWebhookConfigurations. container. validatingWebhookConfigurations. create container. validatingWebhookConfigurations. delete container. validatingWebhookConfigurations. get container. validatingWebhookConfigurations. list container. validatingWebhookConfigurations. update gkehub.features.get gkehub.gateway.delete gkehub. gateway. generateCredentials gkehub.gateway.get gkehub.gateway.patch gkehub.gateway.post gkehub.gateway.put gkehub.locations. gkehub.locations.get gkehub.locations.list gkehub.memberships.get gkehub.memberships.list logging.logEntries.create meshconfig.projects.init monitoring. metricDescriptors. create monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring. monitoredResourceDescriptors. monitoring. monitoredResourceDescriptors. get monitoring. monitoredResourceDescriptors. list monitoring.timeSeries.create networksecurity. authorizationPolicies. create networksecurity. authorizationPolicies. delete networksecurity. authorizationPolicies. get networksecurity. authorizationPolicies. list networksecurity. authorizationPolicies. update networksecurity. authorizationPolicies. use networksecurity. clientTlsPolicies. create networksecurity. clientTlsPolicies. delete networksecurity. clientTlsPolicies. get networksecurity. clientTlsPolicies. list networksecurity. clientTlsPolicies. update networksecurity. clientTlsPolicies. use networksecurity.operations. networksecurity. operations. cancel networksecurity. operations. delete networksecurity.operations.get networksecurity. operations. list networksecurity. serverTlsPolicies. create networksecurity. serverTlsPolicies. delete networksecurity. serverTlsPolicies. get networksecurity. serverTlsPolicies. list networksecurity. serverTlsPolicies. update networksecurity. serverTlsPolicies. use networkservices. endpointPolicies. networkservices. endpointPolicies. create networkservices. endpointPolicies. delete networkservices. endpointPolicies. get networkservices. endpointPolicies. list networkservices. endpointPolicies. update networkservices.gateways. networkservices. gateways. create networkservices. gateways. delete networkservices.gateways.get networkservices.gateways.list networkservices. gateways. update networkservices.gateways.use networkservices.grpcRoutes. networkservices. grpcRoutes. create networkservices. grpcRoutes. delete networkservices.grpcRoutes.get networkservices. grpcRoutes. list networkservices. grpcRoutes. update networkservices.httpFilters. networkservices. httpFilters. create networkservices. httpFilters. delete networkservices. httpFilters. get networkservices. httpFilters. list networkservices. httpFilters. update networkservices.httpRoutes. networkservices. httpRoutes. create networkservices. httpRoutes. delete networkservices.httpRoutes.get networkservices. httpRoutes. list networkservices. httpRoutes. update networkservices.meshes. networkservices.meshes.create networkservices.meshes.delete networkservices.meshes.get networkservices.meshes.list networkservices.meshes.update networkservices.meshes.use networkservices.operations. networkservices. operations. cancel networkservices. operations. delete networkservices.operations.get networkservices. operations. list networkservices. serviceLbPolicies. networkservices. serviceLbPolicies. create networkservices. serviceLbPolicies. delete networkservices. serviceLbPolicies. get networkservices. serviceLbPolicies. list networkservices. serviceLbPolicies. update networkservices.tcpRoutes. networkservices. tcpRoutes. create networkservices. tcpRoutes. delete networkservices.tcpRoutes.get networkservices.tcpRoutes.list networkservices. tcpRoutes. update networkservices.tlsRoutes. networkservices. tlsRoutes. create networkservices. tlsRoutes. delete networkservices.tlsRoutes.get networkservices.tlsRoutes.list networkservices. tlsRoutes. update orgpolicy.policy.get resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.services.get serviceusage.services.use serviceusage.values.test trafficdirector. trafficdirector. networks. getConfigs trafficdirector. networks. reportMetrics workloadcertificate. locations. workloadcertificate. locations. get workloadcertificate. locations. list workloadcertificate. operations. get workloadcertificate. workloadCertificateFeature. get workloadcertificate. workloadRegistrations. create workloadcertificate. workloadRegistrations. get workloadcertificate. workloadRegistrations. list Mesh Config Service Agent ( roles/ meshconfig.serviceAgent ) Apply mesh configuration Warning: Do not grant service agent roles to any principals except service agents . compute.backendServices.create compute.backendServices.delete compute.backendServices.get compute.backendServices.list compute. backendServices. setSecurityPolicy compute.backendServices.update compute.backendServices.use compute.firewalls.create compute.firewalls.delete compute.firewalls.get compute.firewalls.list compute.firewalls.update compute. globalForwardingRules. create compute. globalForwardingRules. delete compute. globalForwardingRules. get compute. globalForwardingRules. list compute. globalForwardingRules. setLabels compute. globalForwardingRules. setTarget compute.globalOperations.get compute.globalOperations.list compute.healthChecks.create compute.healthChecks.delete compute.healthChecks.get compute.healthChecks.list compute.healthChecks.update compute.healthChecks.use compute. healthChecks. useReadOnly compute. networkEndpointGroups. get compute. networkEndpointGroups. list compute. networkEndpointGroups. use compute.networks.get compute.networks.updatePolicy compute.networks.use compute. regionTargetTcpProxies. create compute. regionTargetTcpProxies. delete compute. regionTargetTcpProxies. get compute. regionTargetTcpProxies. list compute. regionTargetTcpProxies. use compute.subnetworks.use compute. targetHttpProxies. create compute. targetHttpProxies. delete compute.targetHttpProxies.get compute.targetHttpProxies.list compute. targetHttpProxies. setUrlMap compute.targetHttpProxies.use compute. targetHttpsProxies. create compute. targetHttpsProxies. delete compute.targetHttpsProxies.get compute. targetHttpsProxies. list compute. targetHttpsProxies. setSslCertificates compute. targetHttpsProxies. setSslPolicy compute. targetHttpsProxies. setUrlMap compute.targetHttpsProxies.use compute. targetSslProxies. create compute. targetSslProxies. delete compute.targetSslProxies.get compute.targetSslProxies.list compute. targetSslProxies. setBackendService compute. targetSslProxies. setProxyHeader compute. targetSslProxies. setSslCertificates compute.targetSslProxies.use compute. targetTcpProxies. create compute. targetTcpProxies. delete compute.targetTcpProxies.get compute.targetTcpProxies.list compute. targetTcpProxies. update compute.targetTcpProxies.use compute.urlMaps.create compute.urlMaps.delete compute.urlMaps.get compute. urlMaps. invalidateCache compute.urlMaps.list compute.urlMaps.update compute.urlMaps.use compute.urlMaps.validate networksecurity. clientTlsPolicies. create networksecurity. clientTlsPolicies. delete networksecurity. clientTlsPolicies. get networksecurity. clientTlsPolicies. list networksecurity. clientTlsPolicies. update networksecurity. serverTlsPolicies. create networksecurity. serverTlsPolicies. delete networksecurity. serverTlsPolicies. get networksecurity. serverTlsPolicies. list networksecurity. serverTlsPolicies. update networkservices.httpFilters. networkservices. httpFilters. create networkservices. httpFilters. delete networkservices. httpFilters. get networkservices. httpFilters. list networkservices. httpFilters. update networkservices. httpfilters. create networkservices. httpfilters. delete networkservices. httpfilters. get networkservices. httpfilters. list networkservices. httpfilters. update Mesh Data Plane Service Agent ( roles/ meshdataplane.serviceAgent ) Run user-space Istio components Warning: Do not grant service agent roles to any principals except service agents . cloudtrace.traces.patch compute.forwardingRules.get compute. globalForwardingRules. get logging.logEntries.create logging.logEntries.route monitoring. metricDescriptors. create monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring. monitoredResourceDescriptors. monitoring. monitoredResourceDescriptors. get monitoring. monitoredResourceDescriptors. list monitoring.timeSeries.create serviceusage.services.use telemetry.metrics.write telemetry.traces.write Cloud Service Mesh permissions Permission Included in roles meshconfig.projects.init Owner ( roles/ owner ) Editor ( roles/ editor ) Mesh Config Admin ( roles/ meshconfig.admin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Anthos Service Mesh Service Agent ( roles/ anthosservicemesh.serviceAgent ) Cloud TPU V2 API Service Agent ( roles/ cloudtpu.serviceAgent ) Cloud Composer API Service Agent ( roles/ composer.serviceAgent ) Kubernetes Engine Default Node Service Agent ( roles/ container.defaultNodeServiceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Mesh Managed Control Plane Service Agent ( roles/ meshcontrolplane.serviceAgent ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Security IAM Reference Send feedback Cloud Service Mesh roles and permissions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant service accounts in the fleet project permission to access the network project: gcloud projects add-iam-policy-binding \" NETWORK PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent Cluster-level settings When you're ready to create clusters to use with Cloud Service Mesh, create and register them in a single step with Google Cloud CLI to use the default configuration.",
+          "Note: You can still enable optional features without using the IstioOperator API, see Enabling optional features on managed Cloud Service Mesh . - Using Certificate Authority Service (CA Service) requires configuring Cloud Service Mesh per cluster , and is not supported when using the fleet-default configuration in GKE Enterprise.",
+          "Cloud Service Mesh automatically updates the in-cluster components (CNI, MDPC, default injected proxy version and Istio CRDs) to align with the current GKE release channel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "cloudtpu.serviceAgent",
+      "cloudtrace.traces.patch",
+      "composer.serviceAgent",
+      "compute.backendServices.create",
+      "compute.backendServices.delete",
+      "compute.backendServices.get",
+      "compute.backendServices.list",
+      "compute.backendServices.update",
+      "compute.backendServices.use",
+      "compute.firewalls.create",
+      "compute.firewalls.delete",
+      "compute.firewalls.get",
+      "compute.firewalls.list",
+      "compute.firewalls.update",
+      "compute.forwardingRules.get",
+      "compute.globalOperations.get",
+      "compute.globalOperations.list",
+      "compute.healthChecks.create",
+      "compute.healthChecks.delete",
+      "compute.healthChecks.get",
+      "compute.healthChecks.list",
+      "compute.healthChecks.update",
+      "compute.healthChecks.use",
+      "compute.instances.use",
+      "compute.networkAdmin",
+      "compute.networks.get",
+      "compute.networks.updatePolicy",
+      "compute.networks.use",
+      "compute.networkViewer",
+      "compute.regions.list",
+      "compute.subnetworks.use",
+      "compute.targetHttpProxies.get",
+      "compute.targetHttpProxies.list",
+      "compute.targetHttpProxies.use",
+      "compute.targetHttpsProxies.get",
+      "compute.targetHttpsProxies.use",
+      "compute.targetSslProxies.get",
+      "compute.targetSslProxies.list",
+      "compute.targetSslProxies.use",
+      "compute.targetTcpProxies.get",
+      "compute.targetTcpProxies.list",
+      "compute.targetTcpProxies.use",
+      "compute.urlMaps.create",
+      "compute.urlMaps.delete",
+      "compute.urlMaps.get",
+      "compute.urlMaps.list",
+      "compute.urlMaps.update",
+      "compute.urlMaps.use",
+      "compute.urlMaps.validate",
+      "compute.zones.list",
+      "container.backendConfigs",
+      "container.backendConfigs.get",
+      "container.backendConfigs.list",
+      "container.clusterRoles",
+      "container.clusterRoles.bind",
+      "container.clusterRoles.create",
+      "container.clusterRoles.delete",
+      "container.clusterRoles.get",
+      "container.clusterRoles.list",
+      "container.clusterRoles.update",
+      "container.clusters.connect",
+      "container.clusters.get",
+      "container.clusters.update",
+      "container.configMaps",
+      "container.configMaps.create",
+      "container.configMaps.delete",
+      "container.configMaps.get",
+      "container.configMaps.list",
+      "container.configMaps.update",
+      "container.daemonSets.create",
+      "container.daemonSets.delete",
+      "container.daemonSets.get",
+      "container.daemonSets.getStatus",
+      "container.daemonSets.list",
+      "container.daemonSets.update",
+      "container.defaultNodeServiceAgent",
+      "container.deployments.get",
+      "container.deployments.list",
+      "container.events.get",
+      "container.events.list",
+      "container.jobs.create",
+      "container.jobs.delete",
+      "container.jobs.get",
+      "container.jobs.list",
+      "container.jobs.update",
+      "container.namespaces.create",
+      "container.namespaces.get",
+      "container.namespaces.list",
+      "container.operations.get",
+      "container.pods.get",
+      "container.pods.list",
+      "container.secrets",
+      "container.secrets.create",
+      "container.secrets.delete",
+      "container.secrets.get",
+      "container.secrets.list",
+      "container.secrets.update",
+      "container.serviceAccounts.get",
+      "container.serviceAccounts.list",
+      "container.serviceAgent",
+      "container.services.get",
+      "container.services.list",
+      "dataflow.serviceAgent",
+      "datafusion.serviceAgent",
+      "demo.git",
+      "deployment.apps",
+      "entry.yaml",
+      "gateway.networking.istio.io",
+      "gateway.yaml",
+      "github.com",
+      "gkehub.features.get",
+      "gkehub.gateway.delete",
+      "gkehub.gateway.get",
+      "gkehub.gateway.patch",
+      "gkehub.gateway.post",
+      "gkehub.gateway.put",
+      "gkehub.locations",
+      "gkehub.locations.get",
+      "gkehub.locations.list",
+      "gkehub.memberships.get",
+      "gkehub.memberships.list",
+      "iam.infrastructureAdmin",
+      "iam.networkAdmin",
+      "iam.securityAuditor",
+      "istio.io",
+      "logging.logEntries.create",
+      "logging.logEntries.route",
+      "manifests.yaml",
+      "meshconfig.admin",
+      "meshconfig.projects.init",
+      "meshconfig.serviceAgent",
+      "meshcontrolplane.serviceAgent",
+      "meshdataplane.serviceAgent",
+      "monitoring.timeSeries.create",
+      "networksecurity.operations",
+      "networksecurity.operations.get",
+      "networkservices.gateways",
+      "networkservices.gateways.get",
+      "networkservices.gateways.list",
+      "networkservices.gateways.use",
+      "networkservices.grpcRoutes",
+      "networkservices.grpcRoutes.get",
+      "networkservices.httpFilters",
+      "networkservices.httpRoutes",
+      "networkservices.httpRoutes.get",
+      "networkservices.meshes",
+      "networkservices.meshes.create",
+      "networkservices.meshes.delete",
+      "networkservices.meshes.get",
+      "networkservices.meshes.list",
+      "networkservices.meshes.update",
+      "networkservices.meshes.use",
+      "networkservices.operations",
+      "networkservices.operations.get",
+      "networkservices.tcpRoutes",
+      "networkservices.tcpRoutes.get",
+      "networkservices.tcpRoutes.list",
+      "networkservices.tlsRoutes",
+      "networkservices.tlsRoutes.get",
+      "networkservices.tlsRoutes.list",
+      "orgpolicy.policy.get",
+      "samples.git",
+      "service.yaml",
+      "servicemesh.iam.gserviceaccount.com",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.services.get",
+      "serviceusage.services.use",
+      "serviceusage.values.test",
+      "status.loadBalancer.ingress",
+      "svc.yaml",
+      "telemetry.metrics.write",
+      "telemetry.traces.write",
+      "tls.credentialName",
+      "trafficdirector.admin",
+      "trafficdirector.client"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosservicemesh",
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.555Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Canary pod overprovisioning control",
+  "feature_slug": "canary-pod-overprovisioning-control",
+  "summary": "Canary pod overprovisioning control prevents extra GKE and Anthos pods from being created during canary deployments.",
+  "extended_definition": "Canary pod overprovisioning control prevents extra GKE and Anthos pods from being created during canary deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+      "https://docs.cloud.google.com/deploy/docs/config-files",
+      "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use a canary deployment strategy \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What to do if a parallel rollout fails in canary When a child rollout fails, the controller rollout can transition to different states, depending on what happens with the child rollouts: If one or more child rollouts fail, but at least one child rollout is still IN PROGRESS , the controller rollout remains IN PROGRESS .",
+          "Both types of rollout—controller and child—have separate phases for all of the configured canary percentages, and a stable phase for the canary 100%.",
+          "Custom-automated For a custom-automated canary (for service networking , gateway api or Cloud Run ), you can provide the following: The phase name The percentage goal The Skaffold profile to use for the phase Whether or not to include a verify job Whether or not to include a predeploy or postdeploy job, or both But you don't need to provide traffic-balancing information; Cloud Deploy creates the necessary resources (for service networking , gateway api or Cloud Run )."
+        ]
+      },
+      {
+        "title": "Configuration schema reference \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/config-files",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "For GKE and GKE attached clusters targets The following YAML shows how to configure a deployment strategy for a target that deploys to GKE or GKE attached clusters, using service-based networking : canary : runtimeConfig : kubernetes : serviceNetworking : service : \" SERVICE NAME \" deployment : \" DEPLOYMENT NAME \" disablePodOverprovisioning : true false canaryDeployment : percentages : [ PERCENTAGES ] verify : tasks : [] The following YAML shows how to configure a deployment strategy for a target that deploys to GKE or GKE attached clusters, using Gateway API : canary : runtimeConfig : kubernetes : gatewayServiceMesh : httpRoute : \" HTTP ROUTE NAME \" service : \" SERVICE NAME \" deployment : \" DEPLOYMENT NAME \" routeUpdateWaitTime : \" WAIT TIME \" routeDestinations : destinationIds : [ \"KEY\" ] propagateService : [ true false ] canaryDeployment : percentages : [ \" PERCENTAGES \" ] verify : tasks : [] Notice in this example routeUpdateWaitTime .",
+          "Delivery pipeline config apiVersion : deploy.cloud.google.com/v1 kind : DeliveryPipeline metadata : name : annotations : labels : description : suspended : serialPipeline : stages : - targetId : profiles : [] Deployment strategies One of: standard: canary: See the strategy section in this document for details. strategy : standard : predeploy : tasks : [] verify : tasks : [] analysis : postdeploy : tasks : [] deployParameters : - values : matchTargetLabels : - targetId : profiles : [] strategy : deployParameters : --- Target config apiVersion : deploy.cloud.google.com/v1 kind : Target metadata : name : annotations : labels : description : multiTarget : targetIds : [] deployParameters : requireApproval : Runtimes one of the following runtimes: gke : cluster : dnsEndpoint : internalIp : proxyUrl : or: anthosCluster : membership : or: run : location : or: customTarget : customTargetType : (End runtimes.",
+          "For Cloud Run targets strategy : canary : runtimeConfig : cloudRun : automaticTrafficControl : true false canaryDeployment : percentages : [ PERCENTAGES ] verify : tasks : [] analysis : For Cloud Run targets, AutomaticTrafficControl must be true unless you're configuring a custom canary ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.deliveryPipelines \\_|\\_ Cloud Deploy \\_\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"automaticTrafficControl\" : boolean , \"canaryRevisionTags\" : [ string ] , \"priorRevisionTags\" : [ string ] , \"stableRevisionTags\" : [ string ] } Fields automaticTrafficControl boolean Optional.",
+          "Resource: DeliveryPipeline JSON representation SerialPipeline JSON representation Stage JSON representation Strategy JSON representation Standard JSON representation Predeploy JSON representation Postdeploy JSON representation Canary JSON representation RuntimeConfig JSON representation KubernetesConfig JSON representation GatewayServiceMesh JSON representation RouteDestinations JSON representation ServiceNetworking JSON representation CloudRunConfig JSON representation CanaryDeployment JSON representation CustomCanaryDeployment JSON representation PhaseConfig JSON representation DeployParameters JSON representation PipelineCondition JSON representation PipelineReadyCondition JSON representation TargetsTypeCondition JSON representation Methods Resource: DeliveryPipeline A DeliveryPipeline resource in the Cloud Deploy API.",
+          "Methods create Creates a new DeliveryPipeline in a given project and location. delete Deletes a single DeliveryPipeline. get Gets details of a single DeliveryPipeline. getIamPolicy Gets the access control policy for a resource. list Lists DeliveryPipelines in a given project and location. patch Updates the parameters of a single DeliveryPipeline. rollbackTarget Creates a Rollout to roll back the specified target. setIamPolicy Sets the access control policy on the specified resource. testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deploy.cloud.google.com",
+      "gke.cluster",
+      "projects.locations.deliveryPipelines"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines"
+      ]
+    }
+  ]
+}

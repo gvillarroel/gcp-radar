@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Prediction service",
+  "feature_slug": "prediction-service",
+  "summary": "Apps Script includes a prediction service for accessing hosted machine learning capabilities.",
+  "extended_definition": "Apps Script includes a prediction service for accessing hosted machine learning capabilities.",
+  "lifecycle": {
+    "latest_feature_date": "2011-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/client-verification",
+      "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the Prediction Services , which allow users to access a cloud hosted machine learning service that makes it easy to build smart apps.",
+          "This API includes and extends the original Apps Script API.",
+          "This change includes published Apps Script web apps."
+        ]
+      },
+      {
+        "title": "Class CellImage \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IMAGE ) { const newImage = value . toBuilder () . setSourceUrl ( 'https://www.gstatic.com/images/branding/productlogos/apps script/v10/web-64dp/logo apps script color 1x web 64dp.png' , ) . build (); const newRange = ss . getRange ( \"Sheet1!A2\" ); newRange . setValue ( newImage ); } Return CellImageBuilder — A builder that creates an image value type based on the given image properties.",
+          "Methods Method Return type Brief description get Alt Text Description() String Returns the alt text description for this image. get Alt Text Title() String Returns the alt text title for this image. get Content Url() String Returns a Google-hosted URL to the image. to Builder() Cell Image Builder Creates a cell image builder based on the current image properties.",
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getContentUrl() Returns a Google-hosted URL to the image."
+        ]
+      },
+      {
+        "title": "OAuth Client Verification \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/client-verification",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the following articles: Unverified Apps OAuth Application Verification FAQ Google API Services: User Data Policy Figure 1 : Unverified app screen Figure 2 : Unverified app authorization flow This change applies to Google OAuth web clients, including those used by all Apps Script projects.",
+          "Unverified apps Google Workspace add-ons, web apps, and other deployments (such as apps that use the Apps Script API ) may need verification. add-ons are no longer verified as part of the Google Workspace add-on review process , and must be verified prior to publishing an add-on.",
+          "Page Summary outlined flag Google requires verification for Google OAuth clients requesting certain sensitive OAuth scopes, though Apps Script projects within the same Google Workspace domain or customer are exempt."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "spreadsheets.currentonly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/cell-image",
+        "https://developers.google.com/apps-script/guides/client-verification"
+      ]
+    }
+  ]
+}

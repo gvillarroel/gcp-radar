@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Bulk Agent Installation from VM Instances Inventory",
+  "feature_slug": "bulk-agent-installation-from-vm-instances-inventory",
+  "summary": "The Cloud Monitoring VM Instances Inventory tab can generate installation commands to install Logging and Monitoring agents on multiple VMs.",
+  "extended_definition": "The Cloud Monitoring VM Instances Inventory tab can generate installation commands to install Logging and Monitoring agents on multiple VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Installing the Ops Agent on individual VMs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "source_id": "site-docs-root-2",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This sets the HTTP PROXY and HTTPS PROXY environment variables so that the agent can send data using outbound HTTPS: setx HTTP PROXY http:// proxy-ip : proxy-port /m setx HTTPS PROXY http:// proxy-ip : proxy-port /m setx no proxy \"metadata.google.internal,169.254.169.254\" /m Determine the agent version To determine the version of the Ops Agent on your system, run the following commands on your VM instance: Google Cloud console To see the version of your Ops Agent on a VM: Locate the entry for the VM in the Instances table in the Monitoring VM Instances page.",
+          "However, the status might be inaccurate if the VM lacks necessary access scopes or if the associated service account has insufficient IAM roles. gcpdiag : gcpdiag provides more reliable and robust information about agent status than the VM Instances dashboard, verifying both agent installation and transmission of telemetry from the VM.",
+          "Verify that the Ops Agent is running To verify that the Ops Agent is running, you can use either of the following: VM Instances dashboard : This dashboard lets you view the agent installation status across your VM fleet."
+        ]
+      },
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The prepare-for-ops-agents-policies.sh script The diagnose policies.sh script The prepare-for-ops-agents-policies.sh script After you download the prepare-for-ops-agents-policies.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project.",
+          "To find values for the osShortName and osVersion fields for a VM, use the following commands: gcloud compute instances os-inventory describe INSTANCE NAME \\ --zone ZONE grep \"^ShortName: \" gcloud compute instances os-inventory describe INSTANCE NAME \\ --zone ZONE grep \"^Version: \" These commands require the OS Config agent to be installed on the VM.",
+          "Cloud Monitoring VM Instances page The VM Instances page in Cloud Monitoring includes an Agent column that lists the agent installed on each VM, and for the Ops Agent, includes an indicator for installed agents that are older than the latest version."
+        ]
+      },
+      {
+        "title": "\"Installing the Cloud Logging agent on individual VMs \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Viewing agent information by using the Google Cloud console You can find status information about the agent on the pre-configured Monitoring VM Instances dashboard.",
+          "Download the agent installation script: curl -sSO https://dl.google.com/cloudagents/add-logging-agent-repo.sh When running the add-logging-agent-repo.sh script, you can also set the following flags: --verbose : Turns on verbose logging during the script execution. --also-install : Installs the agent after adding the agent package repository. --version : Sets the agent version for the script to install.",
+          "To install a specific version of the agent, run: sudo bash add-logging-agent-repo.sh --also-install \\ --version= MAJOR VERSION.MINOR VERSION.PATCH VERSION Restart the agent service A restart is required for the configurations that are installed by the catch-all packages above to take effect. sudo service google-fluentd restart You can delete the installation script after it runs successfully."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dl.google.com",
+      "metadata.google.internal",
+      "policies.sh",
+      "repo.sh"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "legacySearchRawLogsV2 API",
+  "feature_slug": "legacysearchrawlogsv2-api",
+  "summary": "The legacySearchRawLogsV2 API can search raw logs within a specified Google SecOps instance.",
+  "extended_definition": "The legacySearchRawLogsV2 API can search raw logs within a specified Google SecOps instance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+      "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "These alerts don't surface within search unless they are processed by the Google SecOps Detection Engine as a YARA-L rule.",
+          "For example: additional.fields[\"key\"]=\"value\" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields[\"pod name\"] = \"kube-scheduler\" metadata.ingestion labels[\"MetadataKeyDeletion\"] = \"startup-script\" Use the AND operator with key-value pair searches: additional.fields[\"pod name\"] = \"kube-scheduler\" AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Search for all events that contain the specified key, regardless of the value: additional.fields[\"pod name\"] != \"\" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = \"mystring\" Note: You can also use value.bool value or value.number value for boolean and numeric matches.",
+          "Search for events and alerts Supported in: Google secops SIEM The search function lets you find Unified Data Model (UDM) events and alerts in your Google Security Operations instance using YARA-L 2.0 syntax ."
+        ]
+      },
+      {
+        "title": "Search \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you receive the maximum number of events you specified using the page size parameter (or 10,000, the default), there might still be more events within your Google SecOps account.",
+          "Note: IoCs returned by this method are the IoCs that were discovered by Google SecOps within the specified time range in your enterprise environment.",
+          "Sample Response { \"udm\": { \"metadata\": { \"productLogId\": \"12abc345-abcd-678e-9012-fg3456789hij\", \"eventTimestamp\": \"2023-01-24T21:40:00Z\", \"eventType\": \"NETWORK CONNECTION\", \"vendorName\": \"Palo Alto Networks\", \"productName\": \"ABCD\", \"productEventType\": \"TRAFFIC - start\", \"ingestedTimestamp\": \"2023-01-24T21:40:05.710838Z\", \"id\": \"ABCDEF1ghiJKlmnOpqrs2tuv3wXYYYYYZZABCD4ABCD=\" }, \"principal\": { \"hostname\": \"abc\", \"ip\": [ \"192.0.2.1\" ], \"port\": 50000, \"mac\": [ \"12:34:56:7a:b8:c9\" ], \"asset\": { \"productObjectId\": \"1859c98c-923d-4db0-a549-aee312a35dd9\", \"hostname\": \"abc\", \"ip\": [ \"192.0.2.1\" ], \"mac\": [ \"12:34:56:7a:b8:c9\" ], \"hardware\": [ { \"manufacturer\": \"Apple\", \"model\": \"MacBook Pro (14-inch, 2021)\" } ], \"platformSoftware\": { \"platform\": \"MAC\", \"platformVersion\": \"macOS Monterey 12.2\" }, \"type\": \"LAPTOP\" } }, \"target\": { \"hostname\": \"github.com\", \"port\": 60000 }, \"securityResult\": [ { \"action\": [ \"ALLOW\" ] } ], \"network\": { \"sentBytes\": \"54321\", \"receivedBytes\": \"54123\", \"ipProtocol\": \"TCP\", \"sessionId\": \"123456\" } } } ListAssets Lists all the assets that accessed the specified artifact in your enterprise within the specified time period."
+        ]
+      },
+      {
+        "title": "\"Google SecOps overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "source_id": "site-api-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Search UDM Search : Lets you find Unified Data Model (UDM) events and alerts within your Google SecOps instance.",
+          "Use Google SecOps to search across all of the domains accessed within your enterprise.",
+          "Google SecOps overview Supported in: Google secops Google Security Operations is a cloud service, built as a specialized layer on top of Google infrastructure, designed for enterprises to privately retain, analyze, and search the large amounts of security and network telemetry they generate."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "additional.fields",
+      "additional.fields.value.string",
+      "asset.hostname",
+      "auth.authorized",
+      "backstory.googleapis.com",
+      "client.request",
+      "credentials.json",
+      "enterprise.service.altostrat.com",
+      "github.com",
+      "metadata.event",
+      "metadata.ingestion",
+      "os.environ",
+      "os.path.join",
+      "value.bool",
+      "value.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+      ]
+    }
+  ]
+}

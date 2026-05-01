@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.035Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "Error group resolution status",
+  "feature_slug": "error-group-resolution-status",
+  "summary": "Users can assign a resolution status to error groups to help triage errors.",
+  "extended_definition": "Users can assign a resolution status to error groups to help triage errors.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/managing-errors",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage error groups \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/managing-errors",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Change resolution status To record the status of your investigation into an error group, do the following: In the Google Cloud console, go to the Error Reporting page: Go to Error Reporting You can also find this page by using the search bar.",
+          "If you subscribe to notifications for the Google Cloud project and delete error events for an error group that has a status of Resolved , then the error group resolution status changes back to Open .",
+          "Add links to error groups You can link error groups to pages such as issue trackers or documentation with resolution steps."
+        ]
+      },
+      {
+        "title": "\"Class ErrorGroup.Builder (0.209.0-beta) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An unspecified resolution status will be interpreted as OPEN .google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution status = 5; Returns Type Description ResolutionStatus The resolutionStatus. getResolutionStatusValue() public int getResolutionStatusValue () Error group's resolution status.",
+          "For a list of supported locations, see Supported Regions . global is the default when unspecified. string name = 1; Returns Type Description ByteString The bytes for name. getResolutionStatus() public ResolutionStatus getResolutionStatus () Error group's resolution status.",
+          "An unspecified resolution status will be interpreted as OPEN .google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution status = 5; Returns Type Description ErrorGroup.Builder This builder for chaining. clearTrackingIssues() public ErrorGroup ."
+        ]
+      },
+      {
+        "title": "\"Class ErrorGroup (0.209.0-beta) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup",
+        "source_id": "site-java-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Protobuf type google.devtools.clouderrorreporting.v1beta1.ErrorGroup Inheritance Object > AbstractMessageLite<MessageType,BuilderType> > AbstractMessage > GeneratedMessage > ErrorGroup Implements ErrorGroupOrBuilder Inherited Members AbstractMessage.equals(Object) AbstractMessage.findInitializationErrors() AbstractMessage.getInitializationErrorString() AbstractMessage.hashCode() AbstractMessage.hashFields(int,Map<Descriptors.FieldDescriptor,Object>) AbstractMessage.newBuilderForType(AbstractMessage.BuilderParent) AbstractMessage.toString() AbstractMessageLite.<T>addAll(Iterable<T>,List<? super T>) AbstractMessageLite.checkByteStringIsUtf8(ByteString) AbstractMessageLite.toByteArray() AbstractMessageLite.toByteString() AbstractMessageLite.writeDelimitedTo(OutputStream) AbstractMessageLite.writeTo(OutputStream) com.google.protobuf.GeneratedMessage.<ContainingT,T>newFileScopedGeneratedExtension(java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ContainingT,T>newMessageScopedGeneratedExtension(com.google.protobuf.Message,int,java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT,int) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.<T>emptyList(java.lang.Class<T>) com.google.protobuf.GeneratedMessage.<V>serializeBooleanMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Boolean,V>,com.google.protobuf.MapEntry<java.lang.Boolean,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeIntegerMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Integer,V>,com.google.protobuf.MapEntry<java.lang.Integer,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeLongMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Long,V>,com.google.protobuf.MapEntry<java.lang.Long,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeStringMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.String,V>,com.google.protobuf.MapEntry<java.lang.String,V>,int) com.google.protobuf.GeneratedMessage.canUseUnsafe() GeneratedMessage.computeStringSize(int,Object) GeneratedMessage.computeStringSizeNoTag(Object) com.google.protobuf.GeneratedMessage.emptyBooleanList() com.google.protobuf.GeneratedMessage.emptyDoubleList() com.google.protobuf.GeneratedMessage.emptyFloatList() com.google.protobuf.GeneratedMessage.emptyIntList() com.google.protobuf.GeneratedMessage.emptyLongList() GeneratedMessage.getAllFields() GeneratedMessage.getDescriptorForType() GeneratedMessage.getField(Descriptors.FieldDescriptor) GeneratedMessage.getOneofFieldDescriptor(Descriptors.OneofDescriptor) GeneratedMessage.getParserForType() GeneratedMessage.getRepeatedField(Descriptors.FieldDescriptor,int) GeneratedMessage.getRepeatedFieldCount(Descriptors.FieldDescriptor) GeneratedMessage.getSerializedSize() GeneratedMessage.getUnknownFields() GeneratedMessage.hasField(Descriptors.FieldDescriptor) GeneratedMessage.hasOneof(Descriptors.OneofDescriptor) GeneratedMessage.internalGetFieldAccessorTable() GeneratedMessage.internalGetMapField(int) com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection(int) GeneratedMessage.isInitialized() com.google.protobuf.GeneratedMessage.isStringEmpty(java.lang.Object) GeneratedMessage.makeExtensionsImmutable() com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.newInstance(com.google.protobuf.GeneratedMessage.UnusedPrivateParameter) GeneratedMessage.parseUnknownField(CodedInputStream,UnknownFieldSet.Builder,ExtensionRegistryLite,int) com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3(com.google.protobuf.CodedInputStream,com.google.protobuf.UnknownFieldSet.Builder,com.google.protobuf.ExtensionRegistryLite,int) GeneratedMessage.writeReplace() GeneratedMessage.writeString(CodedOutputStream,int,Object) GeneratedMessage.writeStringNoTag(CodedOutputStream,Object) GeneratedMessage.writeTo(CodedOutputStream) Object.clone() Object.finalize() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields GROUP ID FIELD NUMBER public static final int GROUP ID FIELD NUMBER Field Value Type Description int NAME FIELD NUMBER public static final int NAME FIELD NUMBER Field Value Type Description int RESOLUTION STATUS FIELD NUMBER public static final int RESOLUTION STATUS FIELD NUMBER Field Value Type Description int TRACKING ISSUES FIELD NUMBER public static final int TRACKING ISSUES FIELD NUMBER Field Value Type Description int Static Methods getDefaultInstance() public static ErrorGroup getDefaultInstance () Returns Type Description ErrorGroup getDescriptor() public static final Descriptors .",
+          "For a list of supported locations, see Supported Regions . global is the default when unspecified. string name = 1; Returns Type Description ByteString The bytes for name. getParserForType() public Parser<ErrorGroup> getParserForType () Returns Type Description Parser < ErrorGroup > Overrides GeneratedMessage.getParserForType() getResolutionStatus() public ResolutionStatus getResolutionStatus () Error group's resolution status.",
+          "An unspecified resolution status will be interpreted as OPEN .google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution status = 5; Returns Type Description ResolutionStatus The resolutionStatus. getResolutionStatusValue() public int getResolutionStatusValue () Error group's resolution status."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup",
+      "com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder",
+      "com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder",
+      "com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder",
+      "com.google.protobuf.CodedInputStream",
+      "com.google.protobuf.CodedOutputStream",
+      "com.google.protobuf.ExtensionRegistryLite",
+      "com.google.protobuf.GeneratedMessage",
+      "com.google.protobuf.GeneratedMessage.canUseUnsafe",
+      "com.google.protobuf.GeneratedMessage.emptyBooleanList",
+      "com.google.protobuf.GeneratedMessage.emptyDoubleList",
+      "com.google.protobuf.GeneratedMessage.emptyFloatList",
+      "com.google.protobuf.GeneratedMessage.emptyIntList",
+      "com.google.protobuf.GeneratedMessage.emptyLongList",
+      "com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection",
+      "com.google.protobuf.GeneratedMessage.isStringEmpty",
+      "com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal",
+      "com.google.protobuf.GeneratedMessage.newInstance",
+      "com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3",
+      "com.google.protobuf.GeneratedMessage.UnusedPrivateParameter",
+      "com.google.protobuf.MapEntry",
+      "com.google.protobuf.MapField",
+      "com.google.protobuf.Message",
+      "com.google.protobuf.UnknownFieldSet.Builder",
+      "java.lang.Boolean",
+      "java.lang.Class",
+      "java.lang.Integer",
+      "java.lang.Long",
+      "java.lang.Object",
+      "java.lang.String"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/managing-errors",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/managing-errors",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-errorreporting/latest/com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.587Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_name": "Workload Identity for user clusters",
+  "feature_slug": "workload-identity-for-user-clusters",
+  "summary": "Workload Identity authentication to Google Cloud services is available for Anthos user clusters running Kubernetes 1.20 and above; Workload Identity in Anthos clusters on AWS user clusters is generally available.",
+  "extended_definition": "Workload Identity authentication to Google Cloud services is available for Anthos user clusters running Kubernetes 1.20 and above; Workload Identity in Anthos clusters on AWS user clusters is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters \\_|\\_ GKE Multi-Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "source_id": "site-api-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"description\" : string , \"networking\" : { object ( AwsClusterNetworking ) } , \"awsRegion\" : string , \"controlPlane\" : { object ( AwsControlPlane ) } , \"authorization\" : { object ( AwsAuthorization ) } , \"state\" : enum ( State ) , \"endpoint\" : string , \"uid\" : string , \"reconciling\" : boolean , \"createTime\" : string , \"updateTime\" : string , \"etag\" : string , \"annotations\" : { string : string , ... } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"clusterCaCertificate\" : string , \"fleet\" : { object ( Fleet ) } , \"loggingConfig\" : { object ( LoggingConfig ) } , \"errors\" : [ { object ( AwsClusterError ) } ] , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } } Fields name string The name of this resource.",
+          "Resource: AwsCluster JSON representation AwsClusterNetworking JSON representation AwsControlPlane JSON representation AwsDatabaseEncryption JSON representation AwsServicesAuthentication JSON representation AwsAuthorization JSON representation AwsClusterUser JSON representation AwsClusterGroup JSON representation State AwsClusterError JSON representation Methods Resource: AwsCluster GKE-on-AWS is deprecated.",
+          "Example: { \"name\": \"wrench\", \"mass\": \"1.3kg\", \"count\": \"3\" } . workloadIdentityConfig object ( WorkloadIdentityConfig ) Output only."
+        ]
+      },
+      {
+        "title": "Authentication overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the configuration of your cluster's access, run the following command: kubectl describe clusterrolebinding gke-multicloud-cluster-admin In addition to the RBAC policies to access the Kubernetes API server, if an admin user isn't a project owner, you need to grant specific IAM roles that let the admin users authenticate using their Google identity.",
+          "Kubernetes API authentication You can use the kubectl command-line tool to perform cluster operations such as deploying a workload and configuring a load balancer.",
+          "To get credentials, you can use one of the following methods: Google Identity , which lets users log in using their Google Cloud identity."
+        ]
+      },
+      {
+        "title": "Workload identity overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "source_id": "site-iam-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workload identity is the recommended way for applications running within GKE on AWS to access AWS and Google Cloud services.",
+          "What's next Using workload identity with Google Cloud services Using workload identity with AWS Learn more about Workload identity federation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE on AWS Guides Send feedback Workload identity overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.attachedClusters",
+      "projects.locations.awsClusters",
+      "v1.21",
+      "v1.22"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.686Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "System namespace management",
+  "feature_slug": "system-namespace-management",
+  "summary": "System namespace management allows Anthos Config Management to manage the default namespace and namespaces whose names begin with kube-.",
+  "extended_definition": "System namespace management allows Anthos Config Management to manage the default namespace and namespaces whose names begin with kube-.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage existing cluster objects \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To enable deletion propagation, you add the configsync.gke.io/deletion-propagation-policy: Foreground annotation to your RootSync or RepoSync object, such as in the following example: example-rootsync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : example-rootsync namespace : config-management-system annotations : configsync.gke.io/deletion-propagation-policy : Foreground spec : sourceType : git sourceFormat : unstructured git : repo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples branch : main dir : config-sync-quickstart/multirepo/root auth : none period : 30s Alternatively, you can update an existing RootSync or RepoSync to use deletion propagation by running the following command: RootSync kubectl patch RootSync ROOTSYNC NAME \\ --namespace config-management-system \\ --type merge \\ --patch '{\"metadata\":{\"annotations\":{\"configsync.gke.io/deletion-propagation-policy\":\"Foreground\"}}}' Replace ROOTSYNC NAME with the name of the RootSync that you want to update.",
+          "List all managed objects To list all objects managed by Config Sync on a given cluster or namespace, use a label selector like the following: kubectl get object-type -n namespace -l \"app.kubernetes.io/managed-by=configmanagement.gke.io\" To list all objects not managed by Config Sync, use a label selector like this: kubectl get object-type -n namespace -l \"app.kubernetes.io/managed-by!=configmanagement.gke.io\" For example, this command lists RoleBindings in the gamestore namespace that are managed by Config Sync: kubectl get rolebindings -n gamestore \\ -l \"app.kubernetes.io/managed-by=configmanagement.gke.io\" The output is similar to the following: NAME ROLE AGE configsync.gke.io:ns-reconciler ClusterRole/configsync.gke.io:ns-reconciler 34h gamestore-admin ClusterRole/admin 34h gamestore-webstore-admin ClusterRole/webstore-admin 34h This command lists RoleBindings in the kube-system namespace that are not managed by Config Sync: kubectl get rolebindings -n kube-system \\ -l \"app.kubernetes.io/managed-by!=configmanagement.gke.io\" The output is similar to the following: NAME AGE fluentd-gcp-scaler-binding 2d21h gce:cloud-provider 2d21h heapster-binding 2d21h metrics-server-auth-reader 2d21h system::leader-locking-kube-controller-manager 2d21h system::leader-locking-kube-scheduler 2d21h system:controller:bootstrap-signer 2d21h system:controller:cloud-provider 2d21h system:controller:token-cleaner 2d21h Start managing an existing object You can create a config for an existing Kubernetes object, such as a namespace that already exists in your cluster before you install Config Sync.",
+          "Name: myrole Labels: app.kubernetes.io/managed-by=configmanagement.gke.io configsync.gke.io/declared-version=v1 Annotations: config.k8s.io/owning-inventory: config-management-system root-sync configmanagement.gke.io/cluster-name: my-cluster configmanagement.gke.io/managed: enabled configmanagement.gke.io/source-path: config-sync-quickstart/multirepo/root/gamestore-myrole.yaml configmanagement.gke.io/token: 747b843a7ddbd945c0616034a935cf648b58e7b5 configsync.gke.io/declared-fields: {\"f:rules\":{}} configsync.gke.io/git-context: {\"repo\":\"https://github.com/GoogleCloudPlatform/anthos-config-management-samples\",\"branch\":\"main\",\"rev\":\"HEAD\"} configsync.gke.io/manager: :root configsync.gke.io/resource-id: rbac.authorization.k8s.io role gamestore myrole PolicyRule: Resources Non-Resource URLs Resource Names Verbs --------- ----------------- -------------- ----- pods [] [] [get list ] Stop managing a managed object This example shows how to stop managing an object that Config Sync is currently managing, such as the myrole Role in Start managing an existing object ."
+        ]
+      },
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default ClusterRoles Save the RoleBinding manifest that references a default ClusterRole , for example admin or edit , as FILENAME : kind : RoleBinding apiVersion : rbac.authorization.k8s.io/v1 metadata : name : syncs-repo namespace : NAMESPACE subjects : - kind : ServiceAccount name : SERVICE ACCOUNT NAME namespace : config-management-system roleRef : kind : ClusterRole name : CLUSTERROLE NAME apiGroup : rbac.authorization.k8s.io Replace the following: FILENAME : the name for the RoleBinding manifest.",
+          "If no value is specified, the default namespace config-management-system is used.",
+          "If no value is specified, the default namespace config-management-system is used."
+        ]
+      },
+      {
+        "title": "\"Sync objects to multiple namespaces \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This example disables inheritance for role bindings: system/hierarchy-config.yaml kind : HierarchyConfig apiVersion : configmanagement.gke.io/v1 metadata : name : rbac spec : resources : Configure role to only be allowed in leaf namespaces. - group : rbac.authorization.k8s.io kinds : [ \"RoleBinding\" ] hierarchyMode : none Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create a namespace selector called exclude-exempt-namespaces : kind : NamespaceSelector apiVersion : configmanagement.gke.io/v1 metadata : name : excludes-exempt-namespaces spec : selector : matchExpressions : - key : quota-exempt operator : NotIn values : - exempt If another object's configuration references this namespace selector, that configuration is applied to all namespaces except those with the quota-exempt: exempt key-value pair.",
+          "Create an example object quota that references the namespace selector: kind : ResourceQuota apiVersion : v1 metadata : name : quota annotations : configmanagement.gke.io/namespace-selector : exclude-exempt-namespaces spec : hard : pods : \"1\" cpu : \"200m\" memory : \"200Mi\" The resource quota is created in all namespaces except those that have the quota-exempt: exempt key-value pair."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "config.k8s.io",
+      "config.yaml",
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "github.com",
+      "myrole.yaml",
+      "rbac.authorization.k8s.io",
+      "rootsync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects"
+      ]
+    }
+  ]
+}

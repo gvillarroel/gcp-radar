@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.158Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore OR queries",
+  "feature_slug": "firestore-or-queries",
+  "summary": "Firestore supports OR queries.",
+  "extended_definition": "Firestore supports OR queries.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/pitr",
+      "https://docs.cloud.google.com/firestore/docs/query-data/aggregation-queries",
+      "https://docs.cloud.google.com/firestore/native/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Summarize data with aggregation queries \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/query-data/aggregation-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Firestore supports the following aggregation queries: count() sum() average() Firestore calculates the aggregation and transmits only the result back to your application.",
+          "SERVER ). addOnCompleteListener { task - > if ( task . isSuccessful ) { // Count fetched successfully val snapshot = task . result Log . d ( TAG , \"Count: ${ snapshot . count } \" ) } else { Log . d ( TAG , \"Count failed: \" , task . getException ()) } } DocSnippets . kt Dart // This also works with collection queries. db . collection ( \"cities\" ). where ( \"capital\" , isEqualTo: 10 ). count (). get (). then ( ( res ) = > print ( res . count ), onError: ( e ) = > print ( \"Error completing: $ e \" ), ); firestore . dart Go package firestore import ( \"context\" \"errors\" \"fmt\" \"io\" \"cloud.google.com/go/firestore\" firestorepb \"cloud.google.com/go/firestore/apiv1/firestorepb\" ) func createCountQuery ( w io .",
+          "Security rules for aggregation queries Firestore Security Rules work the same on aggregation queries as on queries that return documents."
+        ]
+      },
+      {
+        "title": "\"Point-in-time recovery (PITR) overview \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/pitr",
+        "source_id": "site-docs-reference",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute billing: Any queries that you make during the PITR window of 7 days, either through stale reads or exports, incur read operation costs based on the number of documents read.",
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Pricing Consider the following pricing information before you enable PITR for your database: Storage: Firestore measures the database size daily."
+        ]
+      },
+      {
+        "title": "Firestore overview \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Expressive querying In Firestore in Native Mode, you can use queries to retrieve individual, specific documents or to retrieve all the documents in a collection that match your query parameters.",
+          "Designed to scale Firestore in Native Mode brings you automatic multi-region data replication, strongly-consistent queries, atomic batch operations, and transaction support.",
+          "Key capabilities Flexibility The Firestore in Native Mode data model supports flexible, hierarchical data structures."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/aggregation-queries",
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/native/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/query-data/aggregation-queries",
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/native/docs/overview"
+      ]
+    }
+  ]
+}

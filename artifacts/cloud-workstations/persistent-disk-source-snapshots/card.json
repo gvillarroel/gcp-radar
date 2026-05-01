@@ -1,0 +1,219 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.130Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "Persistent disk source snapshots",
+  "feature_slug": "persistent-disk-source-snapshots",
+  "summary": "Cloud Workstations supports using a pre-customized snapshot as the source of a persistent disk.",
+  "extended_definition": "Cloud Workstations supports using a pre-customized snapshot as the source of a persistent disk.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+      "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Encrypt workstation resources using CMEK \\_|\\_ Cloud Workstations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Encrypt workstation resources using CMEK Stay organized with collections Save and categorize content based on your preferences.",
+          "By default, Cloud Workstations uses a Google-owned and Google-managed encryption key to encrypt workstation resources such as VMs and persistent disks when data is at rest .",
+          "Rotate customer-managed encryption keys When you granted the Cloud Workstations Service Agent Cloud KMS Viewer role ( roles/cloudkms.viewer ) on the CMEK key, the workstation service is able to detect key rotation and re-encrypt your home disk using the new primary key version."
+        ]
+      },
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: projects.locations.workstationClusters.workstationConfigs Resource: WorkstationConfig JSON representation Host JSON representation GceInstance JSON representation GceShieldedInstanceConfig JSON representation GceConfidentialInstanceConfig JSON representation Accelerator JSON representation BoostConfig JSON representation PersistentDirectory JSON representation GceRegionalPersistentDisk JSON representation ReclaimPolicy GceHyperdiskBalancedHighAvailability JSON representation ReclaimPolicy EphemeralDirectory JSON representation GcePersistentDisk JSON representation Container JSON representation CustomerEncryptionKey JSON representation ReadinessCheck JSON representation PortRange JSON representation Methods Resource: WorkstationConfig A workstation configuration resource in the Cloud Workstations API.",
+          "JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"reconciling\" : boolean , \"annotations\" : { string : string , ... } , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"etag\" : string , \"idleTimeout\" : string , \"runningTimeout\" : string , \"maxUsableWorkstations\" : integer , \"host\" : { object ( Host ) } , \"persistentDirectories\" : [ { object ( PersistentDirectory ) } ] , \"ephemeralDirectories\" : [ { object ( EphemeralDirectory ) } ] , \"container\" : { object ( Container ) } , \"encryptionKey\" : { object ( CustomerEncryptionKey ) } , \"readinessChecks\" : [ { object ( ReadinessCheck ) } ] , \"replicaZones\" : [ string ] , \"degraded\" : boolean , \"conditions\" : [ { object ( Status ) } ] , \"enableAuditAgent\" : boolean , \"disableTcpConnections\" : boolean , \"allowedPorts\" : [ { object ( PortRange ) } ] , \"grantWorkstationAdminRoleOnCreate\" : boolean } Fields name string Identifier.",
+          "JSON representation { \"mountPath\" : string , // Union field directory type can be only one of the following: \"gcePd\" : { object ( GceRegionalPersistentDisk ) } , \"gceHd\" : { object ( GceHyperdiskBalancedHighAvailability ) } // End of list of possible types for union field directory type . } Fields mountPath string Optional."
+        ]
+      },
+      {
+        "title": "\"Class WorkstationsAsyncClient (0.8.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get mtls endpoint and cert source get mtls endpoint and cert source ( client options : typing .",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . start workstation start workstation ( request : typing .",
+          "Returns Type Description WorkstationsAsyncClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file."
+        ]
+      },
+      {
+        "title": "\"Class WorkstationsClient (0.8.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient",
+        "source_id": "site-python-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get mtls endpoint and cert source get mtls endpoint and cert source ( client options : typing .",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . start workstation start workstation ( request : typing .",
+          "Returns Type Description WorkstationsClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "cloudkms.viewer",
+      "example.com",
+      "projects.locations.workstationClusters.workstationConfigs",
+      "request.time",
+      "resourcemanager.organizationadmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationviewer",
+      "resourcemanager.organizationViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.viewer",
+      "roles/resourcemanager.organizationadmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationviewer",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsClient"
+      ]
+    }
+  ]
+}

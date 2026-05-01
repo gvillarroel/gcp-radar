@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Network peering",
+  "feature_slug": "network-peering",
+  "summary": "Network peering can be managed with Terraform resources; Network peering is available through Cloud Asset Inventory and Cloud Asset APIs.",
+  "extended_definition": "Network peering can be managed with Terraform resources; Network peering is available through Cloud Asset Inventory and Cloud Asset APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsPager",
+      "https://docs.cloud.google.com/vmware-engine/docs/quickstart-networking-requirements"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ListNetworkPeeringsAsyncPager (1.11.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "If there are more pages, the aiter method will make additional ListNetworkPeerings requests and continue to iterate through the network peerings field on the corresponding responses.",
+          "This class thinly wraps an initial ListNetworkPeeringsResponse object, and provides an aiter method to iterate through its network peerings field.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through list network peerings requests."
+        ]
+      },
+      {
+        "title": "\"Class ListNetworkPeeringsPager (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsPager",
+        "source_id": "site-python-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "If there are more pages, the iter method will make additional ListNetworkPeerings requests and continue to iterate through the network peerings field on the corresponding responses.",
+          "This class thinly wraps an initial ListNetworkPeeringsResponse object, and provides an iter method to iterate through its network peerings field.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through list network peerings requests."
+        ]
+      },
+      {
+        "title": "\"Networking requirements \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/quickstart-networking-requirements",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Networking requirements Google Cloud VMware Engine offers a private cloud environment that's accessible to users and applications from on-premises environments, enterprise-managed devices, and Google Cloud services like Virtual Private Cloud (VPC) .",
+          "The connection from your VPC network to a Standard VMware Engine network uses VPC Network Peering .",
+          "Function Subnet mask/prefix vSphere/vSAN subnets CIDR range 10.0.0.0/20 10.0.0.0/21 10.0.0.0/22 10.0.0.0/23 10.0.0.0/24 System management 10.0.0.0/22 10.0.0.0/23 10.0.0.0/24 10.0.0.0/25 10.0.0.0/26 vMotion 10.0.4.0/24 10.0.2.0/25 10.0.1.0/26 10.0.0.128/27 10.0.0.64/28 vSAN 10.0.5.0/24 10.0.2.128/25 10.0.1.64/26 10.0.0.160/27 10.0.0.80/28 NSX transport 10.0.6.0/23 10.0.3.0/24 10.0.1.128/25 10.0.0.192/26 10.0.0.128/27 HCX uplink 10.0.11.128/25 10.0.6.0/26 10.0.3.32/27 10.0.1.144/28 10.0.0.216/29 NSX edge uplink1 10.0.8.0/28 10.0.4.0/28 10.0.2.0/28 10.0.1.0/28 10.0.0.160/29 NSX edge uplink2 10.0.8.16/28 10.0.4.16/28 10.0.2.16/28 10.0.1.16/28 10.0.0.168/29 NSX edge uplink3 10.0.8.32/28 10.0.4.32/28 10.0.2.32/28 10.0.1.32/28 10.0.0.176/29 NSX edge uplink4 10.0.8.48/28 10.0.4.48/28 10.0.2.48/28 10.0.1.48/28 10.0.0.184/29 HCX and NSX Edge Scaling Specified vSphere/vSAN subnets CIDR prefix Maximum remote HCX sites Maximum HCX Network Extension appliances Maximum NSX Edge VMs /24 2 1 2 /23 4 2 4 /22 14 8 8 /21 25 32 8 /20 25 64 8 Note: CIDR range prefixes /23 and larger support more than the maximum number of NSX Edge VMs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsPager",
+        "https://docs.cloud.google.com/vmware-engine/docs/quickstart-networking-requirements"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListNetworkPeeringsPager",
+        "https://docs.cloud.google.com/vmware-engine/docs/quickstart-networking-requirements"
+      ]
+    }
+  ]
+}

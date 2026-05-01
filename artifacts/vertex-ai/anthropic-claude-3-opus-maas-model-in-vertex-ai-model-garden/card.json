@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Anthropic Claude 3 Opus MaaS model in Vertex AI Model Garden",
+  "feature_slug": "anthropic-claude-3-opus-maas-model-in-vertex-ai-model-garden",
+  "summary": "Anthropic's Claude 3 Opus is offered as a Model as a Service (MaaS) model in Vertex AI Model Garden; deprecated on 2025-06-30.",
+  "extended_definition": "Anthropic's Claude 3 Opus is offered as a Model as a Service (MaaS) model in Vertex AI Model Garden; deprecated on 2025-06-30.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-30",
+    "deprecation_date": "2025-06-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/start/quickstarts/quickstart",
+      "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Models : Vertex AI Model Garden is a centralized hub containing over 200 enterprise-ready models from Google, leading third-party partners (such as Anthropic's Claude), and popular open-source options (such as Llama).",
+          "Partner and open source models : Access a curated selection of leading models such as Anthropic's Claude, Mistral AI models, and Llama with superior price-performance.",
+          "Generative AI capabilities Vertex AI brings together a comprehensive toolset with Google's advanced foundation models tools that you can use to build production-ready generative AI agents and applications, as follows: Prompting : Start with prompt design in Vertex AI Studio ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Send text prompts to Gemini using Vertex AI Studio \\_|\\_ Generative\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/start/quickstarts/quickstart",
+        "source_id": "site-docs-reference-3",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vertex AI Studio supports certain third-party models that are offered on Vertex AI as models as a service (MaaS) , such as Anthropic Claude models and Meta's Llama models.",
+          "Enable the API Sample prompts in Vertex AI Studio A prompt is a natural language request submitted to a language model that generates a response.",
+          "You can use Vertex AI Studio to design, test, and manage prompts for Google's Gemini large language models (LLMs) and third-party models."
+        ]
+      },
+      {
+        "title": "Train and deploy your model \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "source_id": "site-docs-reference-2",
+        "final_score": 69,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CustomTrainingJob ( display name = JOB NAME , script path = \"task.py\" , container uri = \"us-docker.pkg.dev/vertex-ai/training/tf-cpu.2-8:latest\" , requirements =[ \"google-cloud-bigquery>=2.20.0\" , \"db-dtypes\" , \"protobuf<3.20.0\" ], model serving container image uri = \"us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-8:latest\" , ) Create and train your model In the previous step you created a CustomTrainingJob named job .",
+          "Home Documentation AI and ML Vertex AI Send feedback Train and deploy your model Stay organized with collections Save and categorize content based on your preferences.",
+          "In previous steps in this tutorial, you prepared your data for training and created a script that Vertex AI uses to train your model."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cpu.2",
+      "docker.pkg.dev",
+      "task.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+        "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/start/quickstarts/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model"
+      ]
+    }
+  ]
+}

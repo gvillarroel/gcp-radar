@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.063Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine",
+  "feature_name": "Full and archive node types",
+  "feature_slug": "full-and-archive-node-types",
+  "summary": "Blockchain Node Engine supports both full and archive Ethereum node types.",
+  "extended_definition": "Blockchain Node Engine supports both full and archive Ethereum node types.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.cloud.blockchainnodeengine.v1 \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "ARCHIVE Holds the same data as full node as well as all of the blockchain's history state data dating back to the Genesis Block.",
+          "This value can also be chosen when creating a full node in order to create a partial/recent archive node.",
+          "Only applicable when NodeType is FULL or ARCHIVE ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "ARCHIVE Holds the same data as full node as well as all of the blockchain's history state data dating back to the Genesis Block.",
+          "This value can also be chosen when creating a full node in order to create a partial/recent archive node.",
+          "Only applicable when NodeType is FULL or ARCHIVE ."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Blockchain Node Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Allocation quotas The following quotas don't reset over time and instead are released when you release the resource: Quotas Value Blockchain nodes per project per location 24 Ethereum archive nodes per project per location 12 Ethereum full nodes per project per location 16 Polygon sentry archive nodes per project per location 12 Polygon sentry full nodes per project per location 16 Rate quotas The following quotas apply to Blockchain Node Engine requests: Quota Value Blockchain node API per minute per project 38,400 Control plane API per minute per project 240 Request a quota increase To adjust most quotas, use the Google Cloud console.",
+          "Quotas apply to a range of resource types, including hardware, software, and network components."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.blockchainNodes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    }
+  ]
+}

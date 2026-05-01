@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.970Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "TPU7x",
+  "feature_slug": "tpu7x",
+  "summary": "TPU7x is a seventh-generation Cloud TPU in the Ironwood family for large-scale AI training and inference workloads; TPU7x is a seventh-generation Cloud TPU in the Ironwood family for large-scale AI training and inference workloads.",
+  "extended_definition": "TPU7x is a seventh-generation Cloud TPU in the Ironwood family for large-scale AI training and inference workloads; TPU7x is a seventh-generation Cloud TPU in the Ironwood family for large-scale AI training and inference workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+      "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions",
+      "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Get started with Ironwood (TPU7x) Ironwood (TPU7x) is Google's seventh-generation TPU, designed for large-scale AI workloads.",
+          "You can configure collection scheduling in the following scenarios: When creating a TPU slice node pool in GKE Standard When deploying workloads on GKE Autopilot When creating a cluster that enables node auto-provisioning What's next To learn how to set up Cloud TPU in GKE, see the following pages: Plan TPUs in GKE to start your TPU setup Deploy TPU workloads in GKE Autopilot Deploy TPU workloads in GKE Standard Learn about best practices for using Cloud TPU for your ML tasks Video: Build large-scale machine learning on Cloud TPU with GKE Serve Large Language Models with KubeRay on TPUs Learn about Sandboxing GPU workloads with GKE Sandbox Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You specify a topology as the number of TPU chips in each dimension as follows: For TPU v4, v5p, and Ironwood (TPU7x) scheduled in multi-host TPU slice node pools, you define the topology in 3-tuples ( {A}x{B}x{C} ), for example 4x4x4 ."
+        ]
+      },
+      {
+        "title": "TPU architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the system architecture and supported configurations, see the following pages: TPU7x (Ironwood) TPU v6e TPU v5p TPU v5e TPU v4 TPU v3 TPU v2 Note: You can run the same code on different versions of TPUs as long as the TPUs have the same number of TensorCores or chips (for example, v3-128 and v4-128 ).",
+          "For Cloud TPU v4, v5p, and TPU7x, ICI resiliency is enabled by default for slices that are one cube or larger, for example: v5p-128 when specifying accelerator type 4x4x4 when specifying accelerator config TPU versions The exact architecture of a TPU chip depends on the TPU version that you use.",
+          "A primary use case is accelerating recommendation models, which rely heavily on embeddings. v5p and TPU7x have four SparseCores per chip, and v6e has two SparseCores per chip."
+        ]
+      },
+      {
+        "title": "TPU software versions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For Ironwood (TPU7x), you must use Google Kubernetes Engine (GKE).",
+          "TensorFlow Note: TensorFlow is not supported on Ironwood (TPU7x).",
+          "Important: TPU v5e and future TPU generations only support PJRT."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    }
+  ]
+}

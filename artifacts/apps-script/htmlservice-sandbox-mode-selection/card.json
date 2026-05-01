@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "HtmlService sandbox mode selection",
+  "feature_slug": "htmlservice-sandbox-mode-selection",
+  "summary": "HtmlService can now use setSandboxMode to enable a faster sandbox implementation.",
+  "extended_definition": "HtmlService can now use setSandboxMode to enable a faster sandbox implementation.",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/html/best-practices",
+      "https://developers.google.com/apps-script/guides/html/restrictions",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "In a few edge cases, this may affect how existing web apps operate; if so, append .setSandboxMode(HtmlService.SandboxMode.EMULATED) to your HtmlOutput object to restore the old behavior.",
+          "Added a setSandboxMode method to enable a faster version of the HtmlService sandbox.",
+          "Feature Added the following class, enum, and methods to the Spreadsheet service, to give precise control over protected sheets and ranges: Protection ProtectionType Range.canEdit() Range.isEndColumnBounded() Range.isEndRowBounded() Range.isStartColumnBounded() Range.isStartRowBounded() Range.protect() Sheet.getProtections(type) Sheet.protect() Spreadsheet.getProtections(type) Fixed Issue 4617 : HTML service pages that use the new IFRAME sandbox mode now render correctly in Firefox."
+        ]
+      },
+      {
+        "title": "HTML Service: Restrictions \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html/restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the link target attribute In the IFRAME mode you need to set the link target attribute to either top or blank : Code.js function doGet () { var template = HtmlService . createTemplateFromFile ( 'top' ); return template . evaluate (). setSandboxMode ( HtmlService .",
+          "The setSandboxMode method now has no effect when called.",
+          "Restrictions in IFRAME mode The IFRAME sandbox mode is based on the iframe sandboxing feature in HTML5, using the following keywords: allow-same-origin allow-forms allow-scripts allow-popups allow-downloads allow-modals allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation - This attribute is only set for stand-alone script projects ."
+        ]
+      },
+      {
+        "title": "HTML Service: Best Practices \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Don't — load in templates <p>List of things:</p> <? var things = getLotsOfThings(); ?> <ul> <? for (var i = 0; i < things.length; i++) { ?> <li><?= things[i] ?></li> <? } ?> </ul> Do — load asynchronously <p>List of things:</p> <ul id=\"things\"> <li>Loading...</li> </ul> <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\"> </script> <script> // The code in this function runs when the page is loaded. $(function() { google.script.run.withSuccessHandler(showThings) .getLotsOfThings(); }); function showThings(things) { var list = $('#things'); list.empty(); for (var i = 0; i < things.length; i++) { list.append('<li>' + things[i] + '</li>'); } } </script> Load resources using HTTPS In IFRAME sandbox mode , all JavaScript and CSS files must be served over HTTPS.",
+          "Use the HTML5 document type declaration If your page is served using the newer IFRAME sandbox mode , make sure to include the following snippet of code at the top of your HTML file. <!DOCTYPE html> This document type declaration tells the browser that you designed the page for modern browsers, and that it shouldn't render your page using quirks mode .",
+          "Ensure external resources like JavaScript and CSS files are loaded using HTTPS to avoid mixed content errors in the IFRAME sandbox mode."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ajax.googleapis.com",
+      "console.log",
+      "developers.google.com",
+      "jquery.min.js",
+      "list.append",
+      "list.empty",
+      "things.length",
+      "window.addEventListener"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html/restrictions",
+        "https://developers.google.com/apps-script/guides/html/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html/restrictions",
+        "https://developers.google.com/apps-script/guides/html/best-practices"
+      ]
+    }
+  ]
+}

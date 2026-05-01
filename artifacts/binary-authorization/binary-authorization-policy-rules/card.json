@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.051Z",
+  "source_step08_card": "data/step-08/current/products/binary-authorization/card.json",
+  "product_name": "Binary Authorization",
+  "product_slug": "binary-authorization",
+  "feature_name": "Binary Authorization policy rules",
+  "feature_slug": "binary-authorization-policy-rules",
+  "summary": "Binary Authorization now supports setting specific policy rules, which became generally available on September 28, 2023.",
+  "extended_definition": "Binary Authorization now supports setting specific policy rules, which became generally available on September 28, 2023.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+      "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+      "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure a policy using the gcloud CLI \\_|\\_ Binary Authorization \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "source_id": "site-iam-reference",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To add a cluster-specific rule: In the policy.yaml file, add a clusterAdmissionRules node: clusterAdmissionRules: CLUSTER SPECIFIER : evaluationMode: EVALUATION MODE enforcementMode: ENFORCEMENT MODE requireAttestationsBy: - ATTESTOR - ...",
+          "Cluster-specific rules are defined in clusterAdmissionRules nodes in the policy YAML file.",
+          "Cluster-specific rules are an optional part of a policy."
+        ]
+      },
+      {
+        "title": "\"Configure a policy using the Google Cloud console \\_|\\_ Binary Authorization\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A policy can also have one or more cluster-specific rules .",
+          "Cluster-specific rules are an optional part of a policy.",
+          "Add specific rules Note : This feature can only be enabled on clusters running on the following GKE releases: 1.18.12-gke.700+ 1.19.4-gke.700+ 1.20.0-gke.600+ 1.21+ You can create rules that are scoped to either a mesh service identity, a Kubernetes service account, or a Kubernetes namespace."
+        ]
+      },
+      {
+        "title": "\"Configure a policy using the REST API \\_|\\_ Binary Authorization \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To add a cluster-specific rule: In the policy JSON file, add a clusterAdmissionRules node: \"clusterAdmissionRules\": { \"us-central1-a.test-cluster\": { \"evaluationMode\": \"REQUIRE ATTESTATION\", \"requireAttestationsBy\": [ \" ATTESTOR \", ... ], \"enforcementMode\": \"ENFORCED BLOCK AND AUDIT LOG\" } }, where CLUSTER SPECIFIER is the resource ID of the cluster to which the rule applies.",
+          "Configuring a policy requires you to: Export a policy JSON file Add any additional exempt images (optional) Set the default rule Add any cluster-specific rules (optional) Import the policy JSON file Most real-world policies check to see whether all required attestors have verified that a container image is ready to be deployed.",
+          "Cluster-specific rules are defined in clusterAdmissionRules nodes in the policy JSON file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.test",
+      "gke.600",
+      "gke.700",
+      "policy.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-rest",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-cli",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console"
+      ]
+    }
+  ]
+}

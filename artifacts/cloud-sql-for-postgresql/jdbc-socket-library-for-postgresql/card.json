@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "JDBC Socket Library for PostgreSQL",
+  "feature_slug": "jdbc-socket-library-for-postgresql",
+  "summary": "Cloud SQL for PostgreSQL added support for the JDBC Socket Library for PostgreSQL.",
+  "extended_definition": "Cloud SQL for PostgreSQL added support for the JDBC Socket Library for PostgreSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+      "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About client-side encryption \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "source_id": "site-iam-reference",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a connection pool and create a new table in the database Java import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import java.security.GeneralSecurityException ; import java.sql.Connection ; import java.sql.PreparedStatement ; import java.sql.SQLException ; import javax.sql.DataSource ; public class CloudSqlConnectionPool { public static DataSource createConnectionPool ( String dbUser , String dbPass , String dbName , String instanceConnectionName ) throws GeneralSecurityException { HikariConfig config = new HikariConfig (); config . setJdbcUrl ( String . format ( \"jdbc:postgresql:///%s\" , dbName )); config . setUsername ( dbUser ); // e.g. \"root\", \"postgres\" config . setPassword ( dbPass ); // e.g. \"my-password\" config . addDataSourceProperty ( \"socketFactory\" , \"com.google.cloud.sql.postgres.SocketFactory\" ); config . addDataSourceProperty ( \"cloudSqlInstance\" , instanceConnectionName ); DataSource pool = new HikariDataSource ( config ); return pool ; } public static void createTable ( DataSource pool , String tableName ) throws SQLException { // Safely attempt to create the table schema. try ( Connection conn = pool . getConnection ()) { String stmt = String . format ( \"CREATE TABLE IF NOT EXISTS %s ( \" + \"vote id SERIAL NOT NULL, time cast timestamp NOT NULL, team CHAR(6) NOT NULL,\" + \"voter email BYTEA, PRIMARY KEY (vote id) );\" , tableName ); try ( PreparedStatement createTableStatement = conn . prepareStatement ( stmt );) { createTableStatement . execute (); } } } } Python import sqlalchemy def init tcp connection engine ( db user : str , db pass : str , db name : str , db host : str ) - > sqlalchemy . engine . base .",
+          "Engine : \"\"\"Starts a connection to the database and creates voting table if it doesn't exist.\"\"\" if db host : db = init tcp connection engine ( db user , db pass , db name , db host ) else : db = init unix connection engine ( db user , db pass , db name , instance connection name , db socket dir ) Create tables (if they don't already exist) with db . connect () as conn : conn . execute ( f \"CREATE TABLE IF NOT EXISTS { table name } \" \"( vote id SERIAL NOT NULL, time cast timestamp NOT NULL, \" \"team VARCHAR(6) NOT NULL, voter email BYTEA, \" \"PRIMARY KEY (vote id) );\" ) print ( f \"Created table { table name } in db { db name } \" ) return db Initialize an envelope AEAD primitive with Tink Java import com.google.crypto.tink.Aead ; import com.google.crypto.tink.KmsClient ; import com.google.crypto.tink.aead.AeadConfig ; import com.google.crypto.tink.aead.AeadKeyTemplates ; import com.google.crypto.tink.aead.KmsEnvelopeAead ; import com.google.crypto.tink.integration.gcpkms.GcpKmsClient ; import java.security.GeneralSecurityException ; public class CloudKmsEnvelopeAead { public static Aead get ( String kmsUri ) throws GeneralSecurityException { AeadConfig . register (); // Create a new KMS Client KmsClient client = new GcpKmsClient (). withDefaultCredentials (); // Create an AEAD primitive using the Cloud KMS key Aead gcpAead = client . getAead ( kmsUri ); // Create an envelope AEAD primitive. // This key should only be used for client-side encryption to ensure authenticity and integrity // of data. return new KmsEnvelopeAead ( AeadKeyTemplates .",
+          "String email = new String ( envAead . decrypt ( voteResults . getBytes ( 3 ), aad . getBytes ())); System . out . println ( String . format ( \"%s\\t%s\\t%s\" , team , timeCast , email )); } } } } } Python import os import sqlalchemy import tink from .cloud kms env aead import init tink env aead from .cloud sql connection pool import init db from .encrypt and insert data import encrypt and insert data def main () - > None : \"\"\" Connects to the database, inserts encrypted data and retrieves encrypted data. \"\"\" db user = os . environ [ \"DB USER\" ] # e.g. \"root\", \"postgres\" db pass = os . environ [ \"DB PASS\" ] # e.g. \"mysupersecretpassword\" db name = os . environ [ \"DB NAME\" ] # e.g. \"votes db\" Set if connecting using TCP: db host = os . environ [ \"DB HOST\" ] # e.g. \"127.0.0.1\" Set if connecting using Unix sockets: db socket dir = os . environ . get ( \"DB SOCKET DIR\" , \"/cloudsql\" ) instance connection name = os . environ [ \"INSTANCE CONNECTION NAME\" ] e.g. \"project-name:region:instance-name\" credentials = os . environ . get ( \"GOOGLE APPLICATION CREDENTIALS\" , \"\" ) key uri = \"gcp-kms://\" + os . environ [ \"GCP KMS URI\" ] e.g. \"gcp-kms://projects/...path/to/key Tink uses the \"gcp-kms://\" prefix for paths to keys stored in Google Cloud KMS."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: INSTANCE CONNECTION NAME should be represented as <MY-PROJECT>:<INSTANCE-REGION>:<INSTANCE-NAME> Using the argument ipTypes=PRIVATE will force the SocketFactory to connect with an instance's associated private IP See the JDBC socket factory version requirements for the pom.xml file . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class TcpConnectionPoolFactory extends ConnectionPoolFactory { // Saving credentials in environment variables is convenient, but not secure - consider a more // secure solution such as https://cloud.google.com/secret-manager/ to help keep secrets safe. private static final String DB USER = System . getenv ( \"DB USER\" ); private static final String DB PASS = System . getenv ( \"DB PASS\" ); private static final String DB NAME = System . getenv ( \"DB NAME\" ); private static final String INSTANCE HOST = System . getenv ( \"INSTANCE HOST\" ); private static final String DB PORT = System . getenv ( \"DB PORT\" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool.",
+          "HikariConfig config = new HikariConfig (); // The following URL is equivalent to setting the config options below: // jdbc:mysql:///<DB NAME>?cloudSqlInstance=<INSTANCE CONNECTION NAME> & // socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=<DB USER>&password=<DB PASS> // See the link below for more info on building a JDBC URL for the Cloud SQL JDBC Socket Factory // https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory#creating-the-jdbc-url // Configure which instance and what database user to connect with. config . setJdbcUrl ( String . format ( \"jdbc:mysql:///%s\" , DB NAME )); config . setUsername ( DB USER ); // e.g. \"root\", \"mysql\" config . setPassword ( DB PASS ); // e.g. \"my-password\" config . addDataSourceProperty ( \"socketFactory\" , \"com.google.cloud.sql.mysql.SocketFactory\" ); config . addDataSourceProperty ( \"cloudSqlInstance\" , INSTANCE CONNECTION NAME ); // Unix sockets are not natively supported in Java, so it is necessary to use the Cloud SQL // Java Connector to connect.",
+          "When setting INSTANCE UNIX SOCKET, the connector will // call an external package that will enable Unix socket connections. // Note: For Java users, the Cloud SQL Java Connector can provide authenticated connections // which is usually preferable to using the Cloud SQL Proxy with Unix sockets. // See https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory for details. if ( INSTANCE UNIX SOCKET != null ) { config . addDataSourceProperty ( \"unixSocketPath\" , INSTANCE UNIX SOCKET ); } // cloudSqlRefreshStrategy set to \"lazy\" is used to perform a // refresh when needed, rather than on a scheduled interval. // This is recommended for serverless environments to // avoid background refreshes from throttling CPU. config . addDataSourceProperty ( \"cloudSqlRefreshStrategy\" , \"lazy\" ); // ..."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: CLOUD SQL CONNECTION NAME should be represented as <MY-PROJECT>:<INSTANCE-REGION>:<INSTANCE-NAME> Using the argument ipTypes=PRIVATE will force the SocketFactory to connect with an instance's associated private IP See the JDBC socket factory version requirements for the pom.xml file . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class TcpConnectionPoolFactory extends ConnectionPoolFactory { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. private static final String DB USER = System . getenv ( \"DB USER\" ); private static final String DB PASS = System . getenv ( \"DB PASS\" ); private static final String DB NAME = System . getenv ( \"DB NAME\" ); private static final String INSTANCE HOST = System . getenv ( \"INSTANCE HOST\" ); private static final String DB PORT = System . getenv ( \"DB PORT\" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool.",
+          "HikariConfig config = new HikariConfig (); // The following URL is equivalent to setting the config options below: // jdbc:postgresql:///<DB NAME>?cloudSqlInstance=<INSTANCE CONNECTION NAME> & // socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=<DB USER>&password=<DB PASS> // See the link below for more info on building a JDBC URL for the Cloud SQL JDBC Socket Factory // https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory#creating-the-jdbc-url // Configure which instance and what database user to connect with. config . setJdbcUrl ( String . format ( \"jdbc:postgresql:///%s\" , DB NAME )); config . setUsername ( DB USER ); // e.g. \"root\", postgres\" config . setPassword ( DB PASS ); // e.g. \"my-password\" config . addDataSourceProperty ( \"socketFactory\" , \"com.google.cloud.sql.postgres.SocketFactory\" ); config . addDataSourceProperty ( \"cloudSqlInstance\" , INSTANCE CONNECTION NAME ); // Unix sockets are not natively supported in Java, so it is necessary to use the Cloud SQL // Java Connector to connect.",
+          "When setting INSTANCE UNIX SOCKET, the connector will // call an external package that will enable Unix socket connections. // Note: For Java users, the Cloud SQL Java Connector can provide authenticated connections // which is usually preferable to using the Cloud SQL Proxy with Unix sockets. // See https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory for details. if ( INSTANCE UNIX SOCKET != null ) { config . addDataSourceProperty ( \"unixSocketPath\" , INSTANCE UNIX SOCKET ); } // cloudSqlRefreshStrategy set to \"lazy\" is used to perform a // refresh when needed, rather than on a scheduled interval. // This is recommended for serverless environments to // avoid background refreshes from throttling CPU. config . addDataSourceProperty ( \"cloudSqlRefreshStrategy\" , \"lazy\" ); // ..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.sql.mysql.SocketFactory",
+      "com.google.cloud.sql.postgres.SocketFactory",
+      "com.google.crypto.tink.Aead",
+      "com.google.crypto.tink.aead.AeadConfig",
+      "com.google.crypto.tink.aead.AeadKeyTemplates",
+      "com.google.crypto.tink.aead.KmsEnvelopeAead",
+      "com.google.crypto.tink.integration.gcpkms.GcpKmsClient",
+      "com.google.crypto.tink.KmsClient",
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "e.g",
+      "github.com",
+      "java.security.GeneralSecurityException",
+      "java.sql.Connection",
+      "java.sql.PreparedStatement",
+      "java.sql.SQLException",
+      "javax.sql.DataSource",
+      "pom.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    }
+  ]
+}

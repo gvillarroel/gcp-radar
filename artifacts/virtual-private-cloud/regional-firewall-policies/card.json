@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Regional firewall policies",
+  "feature_slug": "regional-firewall-policies",
+  "summary": "Regional firewall policies allow firewall rule enforcement scoped to a single VPC region.",
+  "extended_definition": "Regional firewall policies allow firewall rule enforcement scoped to a single VPC region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Firewall Insights overview \\_|\\_ Network Intelligence Center - Firewall\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "For firewall policies , you can get insights into firewall rules that are associated with a firewall policy.",
+          "Note: For firewall rules in hierarchical firewall policies and global network firewall policies, insights are generated based on firewall logging data gathered only after February 27, 2023.",
+          "Optimize firewall rules and tighten security boundaries by identifying overly permissive allow rules and reviewing predictions about their future usage."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Rules in network firewall policies can use secure Tags , which are different from network tags, to identify targets and sources: When used to specify a target for an ingress or egress rule in a network firewall policy, a Tag can only identify targets in the VPC network to which the Tag is scoped.",
+          "Because of the implied allow egress firewall rules , you don't need to create egress allow firewall rules or rules in firewall policies to permit packets to destinations in the peered VPC network unless your networks include egress deny rules.",
+          "Because of the implied deny ingress firewall rules , security administrators for each VPC network must create ingress allow firewall rules or rules in firewall policies."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Protocol forwarding: the AH, ESP, GRE, ICMP, ICMPv6, SCTP, TCP, and UDP protocols To allow data packets of the supported protocols, you need to configure firewall rules or protocol forwarding rules based on your requirements.",
+          "Firewall rules Both hierarchical firewall policies and VPC firewall rules apply to packets sent to and from VM instances (and resources that depend on VMs, such as Google Kubernetes Engine nodes).",
+          "The default network includes several firewall rules in addition to the implied ones, including the default-allow-internal rule, which permits instance-to-instance communication within the network."
+        ]
+      },
+      {
+        "title": "\"Identify and fix ICMP issues \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "source_id": "site-iam-reference",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Console UI snapshot of the trace containing the denied outgoing ping Run a second trace after disabling firewall rule default-deny-outgoing-ping To allow the ping test to vm2 , temporarily disable the VPC firewall rule default-deny-outgoing-ping .",
+          "Console UI snapshot of the trace failing to reach vm2 Create the firewall rule allow-ping-from-known-ranges To allow ingress to the external IP address of vm2 , configure a new VPC firewall rule called allow-ping-from-known-ranges .",
+          "This time, Connectivity Tests tells you that the packet has been delivered to vm2 and that the matched firewall rule, allow-ping-from-known-ranges , allows an inbound ICMP packet to the external IP address of vm2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    }
+  ]
+}

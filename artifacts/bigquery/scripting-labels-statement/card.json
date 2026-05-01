@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Scripting LABELS statement",
+  "feature_slug": "scripting-labels-statement",
+  "summary": "The scripting LABELS statement provides an unconditional jump to the end of the labeled block or loop.",
+  "extended_definition": "The scripting LABELS statement provides an unconditional jump to the end of the labeled block or loop.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Creating a new materialized view The following example creates a materialized view named new mv in mydataset : CREATE MATERIALIZED VIEW myproject . mydataset . new mv OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = \"new mv\" , description = \"a materialized view that expires in 2 days\" , labels =[ ( \"org unit\" , \"development\" ) ] , enable refresh = true , refresh interval minutes = 20 ) AS SELECT column 1 , SUM ( column 2 ) AS sum 2 , AVG ( column 3 ) AS avg 3 FROM myproject.mydataset.mytable GROUP BY column 1 If the materialized view name exists in the dataset, the following error is returned: Already Exists: project id:dataset.materialized view When you use a DDL statement to create a materialized view, you must specify the project, dataset, and materialized view in the following format: project id.dataset.materialized view (including the backticks if project id contains special characters); for example, myproject.mydataset.new mv .",
+          "CREATE MATERIALIZED VIEW IF NOT EXISTS myproject . mydataset . new mv OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = \"new mv\" , description = \"a view that expires in 2 days\" , labels =[ ( \"org unit\" , \"development\" ) ] , enable refresh = false ) AS SELECT column 1 , column 2 , column 3 FROM myproject.mydataset.mytable The materialized view is defined using the following GoogleSQL query: SELECT column 1, column 2, column 3 FROM myproject.mydataset.mytable The materialized view option list specifies the: Expiration time: 48 hours from the time the view is created Friendly name: new mv Description: A view that expires in 2 days Label: org unit = development Refresh enabled: false Creating a materialized view with partitioning and clustering The following example creates a materialized view named new mv in mydataset , partitioned by the col datetime column and clustered by the col int column: CREATE MATERIALIZED VIEW myproject . mydataset . new mv PARTITION BY DATE ( col datetime ) CLUSTER BY col int AS SELECT col int , col datetime , COUNT ( 1 ) as cnt FROM myproject . mydataset . mv base table GROUP BY col int , col datetime The base table, mv base table , must also be partitioned by the col datetime column.",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function ddlCreateView () { // Creates a view via a DDL query / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = \"my project\" // const datasetId = \"my dataset\" // const tableId = \"my new view\" const query = CREATE VIEW \\ ${ projectId } . ${ datasetId } . ${ tableId } \\ OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM \\bigquery-public-data.usa names.usa 1910 current\\ WHERE state LIKE 'W%' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); job . on ( 'complete' , metadata = > { console . log ( Created new view ${ tableId } via job ${ metadata . id } ); }); } Python Call the Client.query() method to start a query job."
+        ]
+      },
+      {
+        "title": "Procedural language \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DECLARE target product id INT64 DEFAULT 103 ; IF EXISTS ( SELECT 1 FROM schema . products WHERE product id = target product id ) THEN SELECT CONCAT ( 'found product ' , CAST ( target product id AS STRING )); ELSEIF EXISTS ( SELECT 1 FROM schema . more products WHERE product id = target product id ) THEN SELECT CONCAT ( 'found product from more products table' , CAST ( target product id AS STRING )); ELSE SELECT CONCAT ( 'did not find product ' , CAST ( target product id AS STRING )); END IF ; Labels Syntax label name : BEGIN block statement list END [ label name ]; label name : LOOP loop statement list END LOOP [ label name ]; label name : WHILE condition DO loop statement list END WHILE [ label name ]; label name : FOR variable IN query DO loop statement list END FOR [ label name ]; label name : REPEAT loop statement list UNTIL boolean condition END REPEAT [ label name ]; block statement list : { statement break statement with label } [, ...] loop statement list : { statement break continue statement with label } [, ...] break statement with label : { BREAK LEAVE } label name ; break continue statement with label : { BREAK LEAVE CONTINUE ITERATE } label name ; Description A BREAK or CONTINUE statement with a label provides an unconditional jump to the end of the block or loop associated with that label.",
+          "DECLARE target word STRING DEFAULT 'methinks' ; DECLARE corpus count , word count INT64 ; SET ( corpus count , word count ) = ( SELECT AS STRUCT COUNT ( DISTINCT corpus ), SUM ( word count ) FROM bigquery - public - data . samples . shakespeare WHERE LOWER ( word ) = target word ); SELECT FORMAT ( 'Found %d occurrences of \"%s\" across %d Shakespeare works' , word count , target word , corpus count ) AS result ; This statement list outputs the following string: Found 151 occurrences of \"methinks\" across 38 Shakespeare works EXECUTE IMMEDIATE Syntax EXECUTE IMMEDIATE sql expression [ INTO variable [ , ... ] ] [ USING identifier [ , ... ] ] ; sql expression : { \"query statement\" expression ( \"query statement\" ) } identifier : { variable value } [ AS alias ] Description Executes a dynamic SQL statement on the fly. sql expression : An expression that can represent one of the following: A query statement An expression that you can use on a query statement A single DDL statement A single DML statement A single DCL statement This expression can't be a control statement like IF . expression : Can be a function , conditional expression , or expression subquery . query statement : Represents a valid standalone SQL statement to execute.",
+          "CREATE OR REPLACE PROCEDURE schema1 . proc1 () BEGIN SELECT 1 / 0 ; END ; CREATE OR REPLACE PROCEDURE schema1 . proc2 () BEGIN CALL schema1 . proc1 (); END ; BEGIN CALL schema1 . proc2 (); EXCEPTION WHEN ERROR THEN SELECT @@ error . message , @@ error . stack trace , @@ error . statement text , @@ error . formatted stack trace ; END ; When the exception handler runs, the variables will have the following values: Variable Value @@error.message \"Query error: division by zero: 1 / 0 at <project>.schema1.proc1:2:3]\" @@error.stack trace [ STRUCT(2 AS line, 3 AS column, NULL AS filename, \"<project>.schema1.proc1:2:3\" AS location), STRUCT(2 AS line, 3 AS column, NULL AS filename, \"<project>.schema1.proc2:2:3\" AS location), STRUCT(10 AS line, 3 AS column, NULL AS filename, NULL AS location), ] @@error.statement text \"SELECT 1/0\" @@error.formatted stack trace \"At <project>.schema1.proc1[2:3]\\nAt <project>.schema1.proc2[2:3]\\nAt [10:3]\" CASE Syntax CASE WHEN boolean expression THEN sql statement list [...] [ ELSE sql statement list ] END CASE ; Description Executes the THEN sql statement list where the boolean expression is true, or the optional ELSE sql statement list if no conditions match."
+        ]
+      },
+      {
+        "title": "Add labels to resources \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+        "source_id": "site-docs-reference-2",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "QueryJobConfig () config . labels = labels location = \"us\" job = client . query ( sql , location = location , job config = config ) job id = job . job id print ( f \"Added { job . labels } to { job id } .\" ) Associate jobs in a session with a label If you run queries in a session , you can assign a label to all future query jobs in that session using BigQuery multi-statement queries.",
+          "Go to BigQuery In the query editor, enter the following statement: ALTER TABLE mydataset . mytable SET OPTIONS ( labels = [ ( 'department' , 'shipping' ), ( 'cost center' , 'logistics' ) ] ); Click play circle Run .",
+          "Go to BigQuery In the query editor, enter the following statement: ALTER TABLE mydataset . mytable SET OPTIONS ( labels =[ ( \"key1\" , \"\" ), ( \"key2\" , \"\" ) ] ); Click play circle Run ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.usa",
+      "dataset.materialized",
+      "error.formatted",
+      "error.message",
+      "error.stack",
+      "error.statement",
+      "id.dataset.materialized",
+      "myproject.mydataset.mytable",
+      "myproject.mydataset.new",
+      "names.usa",
+      "schema1.proc1",
+      "schema1.proc2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    }
+  ]
+}

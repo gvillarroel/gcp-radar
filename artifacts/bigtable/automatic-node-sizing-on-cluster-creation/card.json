@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Automatic node sizing on cluster creation",
+  "feature_slug": "automatic-node-sizing-on-cluster-creation",
+  "summary": "Creating a Cloud Bigtable cluster with gcloud now supports omitting node count so Bigtable automatically determines nodes based on storage utilization.",
+  "extended_definition": "Creating a Cloud Bigtable cluster with gcloud now supports omitting node count so Bigtable automatically determines nodes based on storage utilization.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+      "https://docs.cloud.google.com/bigtable/docs/creating-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an instance \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You might need to update the default app profile or create custom app profiles . gcloud Use the bigtable instances create command to create an instance: gcloud bigtable instances create INSTANCE ID \\ -- display - name = DISPLAY NAME \\ [ -- cluster - storage - type = CLUSTER STORAGE TYPE ] \\ [ -- cluster - config = id = CLUSTER ID , zone = CLUSTER ZONE , \\ nodes = NODES ] \\ [ -- cluster - config = id = CLUSTER ID , zone = CLUSTER ZONE , \\ autoscaling - min - nodes = AUTOSCALING MIN NODES , \\ autoscaling - max - nodes = AUTOSCALING MAX NODES , \\ autoscaling - cpu - target = AUTOSCALING CPU TARGET , \\ autoscaling - storage - target = AUTOSCALING STORAGE TARGET , \\ kms - key = KMS KEY ], \\ [ node - scaling - factor = NODE SCALING FACTOR ] Replace the following: INSTANCE ID : The permanent identifier for the instance.",
+          "For more information, see Set up authentication for a local development environment . instance id = \"my-instance\" cluster id = \"my-cluster\" cluster location = \"us-east1-b\" puts \"Creating a PRODUCTION Instance\" job = bigtable . create instance ( instance id , display name : \"Sample production instance\" , labels : { \"env\" : \"production\" }, type : :PRODUCTION # Optional as default type is :PRODUCTION ) do clusters clusters . add cluster id , cluster location , nodes : 3 , storage type : :SSD end job . wait until done! instance = job . instance puts \"Created Instance: #{ instance . instance id } \" What's next Find out how Bigtable uses instances, clusters, and nodes .",
+          "For more information, see Set up authentication for a local development environment . cluster = instance . cluster ( cluster id , location id = location id , serve nodes = serve nodes , default storage type = storage type , ) if not instance . exists (): print ( \" \\n Creating an instance\" ) Create instance with given options operation = instance . create ( clusters = [ cluster ]) Ensure the operation completes. operation . result ( timeout = 480 ) print ( \" \\n Created instance: {} \" . format ( instance id )) Ruby To learn how to install and use the client library for Bigtable, see Bigtable client libraries ."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram shows, in simplified terms, a key range rebalancing and a cluster resizing: Figure 2 : Rebalancing spreads processing over multiple nodes while resizing adds processing nodes.",
+          "If the node that's responsible for the requested key range is overloaded or temporarily unavailable in a cluster, this profile type provides automatic failover.",
+          "The Resizing image shows the state of the Bigtable cluster after you add a node."
+        ]
+      },
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For large tables, you can temporarily add more nodes to your cluster to accelerate view creation.",
+          "Use counters instead of continuous materialized views for the following: Aggregations that don't require filters and don't need to be across rows If you need to immediately read your writes from the cluster they are written to Use continuous materialized views when you want to do the following: Generate a different key for queries against your aggregations See changes to the base table reflected in your aggregations Automatically combine data across multiple rows Use a combination of counters and continuous materialized views for use cases like when you want to do the following: Capture fresh metrics in an aggregate cell but keep historical rollups of those metrics Combine metrics in a continuous materialized view Resource provisioning and performance Ongoing processing for continuous materialized views occurs as a low-priority background job.",
+          "For example, assume that your source table contains rows with keys that follow the pattern advertiser id#region#ad id and one column family, data , that includes a spend usd column qualifier with numeric data representing ad spend: Row key data:spend usd adv1#us-east#ad1 100 adv1#us-west#ad2 150 adv2#us-east#ad3 200 If you use the following query to define a continuous materialized view of this table, the initial population of 1 TB of data completes in approximately three hours on a 175-node cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    }
+  ]
+}

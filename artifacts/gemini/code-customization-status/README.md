@@ -1,0 +1,39 @@
+# Code customization status
+
+Product: Gemini
+Feature slug: `code-customization-status`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Gemini IDE users can view code customization status from the Gemini icon and get a one-time enablement notification; Gemini IDE users can view code customization status from the Gemini icon and get a one-time enablement notification.
+
+## Lifecycle
+
+- Latest feature date: 2025-09-18
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- firewall
+- iam
+- policy
+- private
+- role
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/gemini/docs/codeassist/code-customization](https://docs.cloud.google.com/gemini/docs/codeassist/code-customization)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview](https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini)

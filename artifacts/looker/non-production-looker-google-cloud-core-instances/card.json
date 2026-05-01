@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.212Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Non-production Looker (Google Cloud core) instances",
+  "feature_slug": "non-production-looker-google-cloud-core-instances",
+  "summary": "Lets you provision, configure, and manage non-production Standard, Enterprise, and Embed Looker (Google Cloud core) instances.",
+  "extended_definition": "Lets you provision, configure, and manage non-production Standard, Enterprise, and Embed Looker (Google Cloud core) instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+      "https://docs.cloud.google.com/looker/docs/looker-core-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Looker (Google Cloud core) overview | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "source_id": "feature-recovery-http",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you need to spread instance load and offer specific geographical distribution across multiple Looker (Google Cloud core) instances for your production use case, you will need to purchase additional instances of the existing production Looker (Google Cloud core) edition.",
+          "Non-production instances If you want to use a staging or testing instance, you can create a non-production instance by using the standard process for creating a Looker (Google Cloud core) instance, and selecting the appropriate non-production edition.",
+          "Trial Instances If you want to try out Looker (Google Cloud core), you can create a trial Standard, Enterprise, or Embed edition instance that will have the same feature support as the corresponding production edition ."
+        ]
+      },
+      {
+        "title": "Looker (Google Cloud core) access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the looker.instances.login permission lets a principal log in to Looker (Google Cloud core) instances.",
+          "Role Name Permissions Looker Viewer (roles/looker.viewer) Read-only access to all Looker (Google Cloud core) resources in the Google Cloud console. looker.backups.get looker.backups.list looker.instances.get looker.instances.list looker.instances.login looker.locations.get looker.locations.list looker.operations.get looker.operations.list resourcemanager.projects.get resourcemanager.projects.list Looker Instance User roles/looker.instanceUser Access to sign in to a Looker (Google Cloud core) instance. looker.instances.get looker.instances.login resourcemanager.projects.get resourcemanager.projects.list Looker Schema Viewer roles/looker.schemaViewer Access to Looker (Google Cloud core) schema data in Knowledge Catalog. looker.schemas.view Looker Admin roles/looker.admin Full access to all Looker (Google Cloud core) resources. looker.backups.create looker.backups.delete looker.backups.get looker.backups.list looker.instances.create looker.instances.delete looker.instances.export looker.instances.get looker.instances.import looker.instances.list looker.instances.login looker.instances.update looker.locations.get looker.locations.list looker.operations.cancel looker.operations.delete looker.operations.get looker.operations.list looker.schemas.view resourcemanager.projects.get resourcemanager.projects.list At least one principal must have the Looker Admin ( roles/looker.admin ) IAM role.",
+          "These roles are granted at the Google Cloud project level and will control access uniformly for all Looker (Google Cloud core) instances within a Google Cloud project."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Email Domain Allowlist for Scheduled Content Note: In Looker (Google Cloud core) instances, you set the email domain allowlist for an instance within the Google Cloud console .",
+          "Automated Gemini in Looker enablement and user management Note: This setting is not available for Looker (Google Cloud core) instances.",
+          "Some settings are available only for Looker (original) instances or only for Looker (Google Cloud core) instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "looker.admin",
+      "looker.backups.create",
+      "looker.backups.delete",
+      "looker.backups.get",
+      "looker.backups.list",
+      "looker.instances.create",
+      "looker.instances.delete",
+      "looker.instances.export",
+      "looker.instances.get",
+      "looker.instances.import",
+      "looker.instances.list",
+      "looker.instances.login",
+      "looker.instances.update",
+      "looker.instanceUser",
+      "looker.locations.get",
+      "looker.locations.list",
+      "looker.operations.cancel",
+      "looker.operations.delete",
+      "looker.operations.get",
+      "looker.operations.list",
+      "looker.schemas.view",
+      "looker.schemaViewer",
+      "looker.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/looker.admin",
+      "roles/looker.instanceUser",
+      "roles/looker.schemaViewer",
+      "roles/looker.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/looker-core-overview",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    }
+  ]
+}

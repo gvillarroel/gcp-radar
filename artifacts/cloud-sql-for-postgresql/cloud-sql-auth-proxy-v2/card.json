@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Cloud SQL Auth proxy v2",
+  "feature_slug": "cloud-sql-auth-proxy-v2",
+  "summary": "Cloud SQL Auth proxy v2 improves performance, stability, telemetry, and configuration options for secure Cloud SQL connections.",
+  "extended_definition": "Cloud SQL Auth proxy v2 improves performance, stability, telemetry, and configuration options for secure Cloud SQL connections.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+      "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "When setting INSTANCE UNIX SOCKET, the connector will // call an external package that will enable Unix socket connections. // Note: For Java users, the Cloud SQL Java Connector can provide authenticated connections // which is usually preferable to using the Cloud SQL Proxy with Unix sockets. // See https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory for details. if ( INSTANCE UNIX SOCKET != null ) { config . addDataSourceProperty ( \"unixSocketPath\" , INSTANCE UNIX SOCKET ); } // cloudSqlRefreshStrategy set to \"lazy\" is used to perform a // refresh when needed, rather than on a scheduled interval. // This is recommended for serverless environments to // avoid background refreshes from throttling CPU. config . addDataSourceProperty ( \"cloudSqlRefreshStrategy\" , \"lazy\" ); // ...",
+          "Make the Cloud SQL Auth Proxy executable: chmod +x cloud-sql-proxy macOS 64-bit Download the Cloud SQL Auth Proxy: curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.21.1/cloud-sql-proxy.darwin.amd64 Make the Cloud SQL Auth Proxy executable: chmod +x cloud-sql-proxy Mac M1 Download the Cloud SQL Auth Proxy: curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.21.1/cloud-sql-proxy.darwin.arm64 Make the Cloud SQL Auth Proxy executable: chmod +x cloud-sql-proxy Windows 64-bit Right-click https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.21.1/cloud-sql-proxy.x64.exe and select Save Link As to download the Cloud SQL Auth Proxy.",
+          "Linux On Linux or macOS, use a trailing & on the command line to launch the Cloud SQL Auth Proxy in a separate process: . / cloud - sql - proxy INSTANCE CONNECTION NAME --credentials-file PATH TO KEY FILE & Windows In Windows PowerShell, use the Start-Process command to launch the Cloud SQL Auth Proxy in a separate process: Start - Process --filepath \"cloud-sql-proxy.exe\" --ArgumentList \" --credentials-file PATH TO KEY FILE INSTANCE CONNECTION NAME \" Run the Cloud SQL Auth Proxy in a Docker container To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry ."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "When setting INSTANCE UNIX SOCKET, the connector will // call an external package that will enable Unix socket connections. // Note: For Java users, the Cloud SQL Java Connector can provide authenticated connections // which is usually preferable to using the Cloud SQL Proxy with Unix sockets. // See https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory for details. if ( INSTANCE UNIX SOCKET != null ) { config . addDataSourceProperty ( \"unixSocketPath\" , INSTANCE UNIX SOCKET ); } // cloudSqlRefreshStrategy set to \"lazy\" is used to perform a // refresh when needed, rather than on a scheduled interval. // This is recommended for serverless environments to // avoid background refreshes from throttling CPU. config . addDataSourceProperty ( \"cloudSqlRefreshStrategy\" , \"lazy\" ); // ...",
+          "Make the Cloud SQL Auth Proxy executable: chmod +x cloud-sql-proxy macOS 64-bit Download the Cloud SQL Auth Proxy: curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.21.1/cloud-sql-proxy.darwin.amd64 Make the Cloud SQL Auth Proxy executable: chmod +x cloud-sql-proxy Mac M1 Download the Cloud SQL Auth Proxy: curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.21.1/cloud-sql-proxy.darwin.arm64 Make the Cloud SQL Auth Proxy executable: chmod +x cloud-sql-proxy Windows 64-bit Right-click https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.21.1/cloud-sql-proxy.x64.exe and select Save Link As to download the Cloud SQL Auth Proxy.",
+          "Linux On Linux or macOS, use a trailing & on the command line to launch the Cloud SQL Auth Proxy in a separate process: . / cloud - sql - proxy INSTANCE CONNECTION NAME --credentials-file PATH TO KEY FILE & Windows In Windows PowerShell, use the Start-Process command to launch the Cloud SQL Auth Proxy in a separate process: Start - Process --filepath \"cloud-sql-proxy.exe\" --ArgumentList \" --credentials-file PATH TO KEY FILE INSTANCE CONNECTION NAME \" Run the Cloud SQL Auth Proxy in a Docker container To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry ."
+        ]
+      },
+      {
+        "title": "\"Authorize with SSL/TLS certificates \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "source_id": "site-iam-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For connections that use Cloud SQL Auth Proxy or Cloud SQL Language Connectors, the connections are automatically encrypted with SSL/TLS along with client and server identity verification without requiring you to download a server CA certificate and client certificate.",
+          "Connect using SSL/TLS When connecting to a Cloud SQL instance from clients, you can use SSL/TLS for direct connections as well as for connections that use Cloud SQL Auth Proxy or Cloud SQL Language Connectors .",
+          "Cloud SQL Auth Proxy version support Supports all versions of the Cloud SQL Auth Proxy, v1 and later."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "proxy.darwin.amd64",
+      "proxy.darwin.arm64",
+      "proxy.exe",
+      "proxy.x64.exe",
+      "storage.googleapis.com",
+      "v2.21.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl"
+      ]
+    }
+  ]
+}

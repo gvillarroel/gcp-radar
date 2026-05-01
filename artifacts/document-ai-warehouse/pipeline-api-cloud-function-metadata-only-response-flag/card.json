@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.532Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "Pipeline API Cloud Function metadata-only response flag",
+  "feature_slug": "pipeline-api-cloud-function-metadata-only-response-flag",
+  "summary": "Adds the store_document_metadata_only boolean flag to the Pipeline API Cloud Function response.",
+  "extended_definition": "Adds the store_document_metadata_only boolean flag to the Pipeline API Cloud Function response.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+      "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Known discrepancies between the Vision AI API response and Document AI API response and converter: The Vision AI API response populates only vertices for image requests, and populates only normalized vertices for PDF requests.",
+          "To only process the first three pages: { \"fromStart\" : 3 } To only process the last four pages: { \"fromEnd\" : 4 } In the response, each Document.pages[].pageNumber corresponds the same pages specified in the request.",
+          "VisualElement ], text : str ) - > None : \"\"\" Only supported in version pretrained-ocr-v2.0-2023-06-02 \"\"\" checkboxes = [ x for x in visual elements if \"checkbox\" in x . type ] math symbols = [ x for x in visual elements if x . type == \"math formula\" ] if checkboxes : print ( f \" { len ( checkboxes ) } checkboxes detected:\" ) print ( f \" First checkbox: { repr ( checkboxes [ 0 ] . type ) } \" ) print ( f \" Last checkbox: { repr ( checkboxes [ - 1 ] . type ) } \" ) if math symbols : print ( f \" { len ( math symbols ) } math symbols detected:\" ) first math symbol text = layout to text ( math symbols [ 0 ] . layout , text ) print ( f \" First math symbol: { repr ( first math symbol text ) } \" ) def process document ( project id : str , location : str , processor id : str , processor version : str , file path : str , mime type : str , process options : Optional [ documentai ."
+        ]
+      },
+      {
+        "title": "Search documents \\_|\\_ Document AI Warehouse \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "source_id": "site-iam-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Please note the offset in this request is to only return the specified number of results to avoid hitting the API quota. / SearchDocumentsRequest searchDocumentsRequest = SearchDocumentsRequest . newBuilder () . setParent ( parent ) . setRequestMetadata ( requestMetadata ) . setOffset ( 5 ) . setDocumentQuery ( query ) . build (); // Make the call to search documents with document service client and store the response SearchDocumentsPagedResponse searchDocumentsPagedResponse = documentServiceClient . searchDocuments ( searchDocumentsRequest ); // Iterate through response and print search results for documents matching the search query for ( MatchingDocument matchingDocument : searchDocumentsPagedResponse . iterateAll ()) { System . out . println ( \"Display Name: \" + matchingDocument . getDocument (). getDisplayName () + \"Document Name: \" + matchingDocument . getDocument (). getName () + \"Document Creation Time: \" + matchingDocument . getDocument (). getCreateTime (). toString () + \"Search Text Snippet: \" + matchingDocument . getSearchTextSnippet ()); } } } private static String getProjectNumber ( String projectId ) throws IOException { / Initialize client that will be used to send requests.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. const projectNumber = 'YOUR PROJECT NUMBER'; const location = 'YOUR PROJECT LOCATION'; // Format is 'us' or 'eu' const userId = 'user:xxx@example.com'; // Format is \"user:xxx@example.com\" const documentQueryText = 'YOUR DOCUMENT QUERY' / // Import from google cloud const { DocumentServiceClient } = require ( ' @google-cloud/contentwarehouse ' ). v1 ; const apiEndpoint = location === 'us' ? 'contentwarehouse.googleapis.com' : ${ location } -contentwarehouse.googleapis.com ; // Create service client const serviceClient = new DocumentServiceClient ({ apiEndpoint : apiEndpoint }); // Get Document Schema async function searchDocuments () { // Initialize request argument(s) const searchRequest = { // The full resource name of the location, e.g.: // projects/{project number}/locations/{location} parent : projects/ ${ projectNumber } /locations/ ${ location } , // Document Text Query documentQuery : { query : documentQueryText , // File Type Filter fileTypeFilter : { fileType : ' DOCUMENT ' , }, }, // Histogram Query histogramQueries : [ { histogramQuery : 'count(\"DocumentSchemaId\")' , }, ], requestMetadata : { userInfo : { id : userId }}, }; // Make Request const response = serviceClient . searchDocuments ( searchRequest ); // Print out response response . then ( result = > console . log ( Document Found: ${ JSON . stringify ( result ) } ), error = > console . log ( ${ error } ) ); } Python For more information, see the Document AI Warehouse Python API reference documentation .",
+          "This client only needs to be created once, and can be reused for multiple requests. / try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ( documentServiceSettings )) { / The full resource name of the location, e.g.: projects/{project number}/locations/{location} / String parent = LocationName . format ( projectNumber , location ); // Define RequestMetadata object for context of the user making the API call RequestMetadata requestMetadata = RequestMetadata . newBuilder () . setUserInfo ( UserInfo . newBuilder () . setId ( userId ) . build ()) . build (); // Set file type for filter to 'DOCUMENT' FileType documentFileType = FileType ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Process documents by using client libraries \\_|\\_ Document AI\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . require \"google/cloud/document ai/v1\" Document AI quickstart @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param location id [String] Your Processor Location (e.g. \"us\") @param processor id [String] Your Processor ID (e.g. \"a14dae8f043b60bd\") @param file path [String] Path to Local File (e.g. \"invoice.pdf\") @param mime type [String] Refer to https://cloud.google.com/document-ai/docs/file-types (e.g. \"application/pdf\") def quickstart project id :, location id :, processor id :, file path :, mime type : Create the Document AI client. client = :: Google :: Cloud :: DocumentAI :: V1 :: DocumentProcessorService :: Client . new do config config . endpoint = \" #{ location id } -documentai.googleapis.com\" end Build the resource name from the project. name = client . processor path ( project : project id , location : location id , processor : processor id ) Read the bytes into memory content = File . binread file path Create request request = Google :: Cloud :: DocumentAI :: V1 :: ProcessRequest . new ( skip human review : true , name : name , raw document : { content : content , mime type : mime type } ) Process document response = client . process document request Handle response puts response . document . text end Congratulations!",
+          "Not to be confused with the Processor Display Name. $processorId = 'YOUR PROCESSOR ID'; Path for the file to read. $documentPath = 'resources/invoice.pdf'; Create Client. $client = new DocumentProcessorServiceClient(); Read in file. $handle = fopen($documentPath, 'rb'); $contents = fread($handle, filesize($documentPath)); fclose($handle); Load file contents into a RawDocument. $rawDocument = (new RawDocument()) ->setContent($contents) ->SetMimeType('application/pdf'); Get the Fully-qualified Processor Name. $fullProcessorName = $client->processorName($projectId, $location, $processorId); Send a ProcessRequest and get a ProcessResponse. $request = (new ProcessRequest()) ->setName($fullProcessorName) ->setRawDocument($rawDocument); $response = $client->processDocument($request); Show the text found in the document. printf('Document Text: %s', $response->getDocument()->getText()); Python For more information, see the Document AI Python API reference documentation .",
+          "For more information, see Set up authentication for a local development environment . #include \"google/cloud/documentai/v1/document processor client.h\" #include \"google/cloud/location.h\" #include <fstream> #include <iostream> #include <string> int main ( int argc , char argv []) try { if ( argc != 5 ) { std :: cerr << \"Usage: \" << argv [ 0 ] << \" project-id location-id processor-id filename (PDF only) \\n \" ; return 1 ; } std :: string const location id = argv [ 2 ]; if ( location id != \"us\" && location id != \"eu\" ) { std :: cerr << \"location-id must be either 'us' or 'eu' \\n \" ; return 1 ; } auto const location = google :: cloud :: Location ( argv [ 1 ], location id ); namespace documentai = :: google :: cloud :: documentai v1 ; auto client = documentai :: DocumentProcessorServiceClient ( documentai :: MakeDocumentProcessorServiceConnection ( location . location id ())); google :: cloud :: documentai :: v1 :: ProcessRequest req ; req . set name ( location ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.h",
+      "contentwarehouse.googleapis.com",
+      "documentai.googleapis.com",
+      "e.g",
+      "example.com",
+      "invoice.pdf",
+      "location.h",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+      ]
+    }
+  ]
+}

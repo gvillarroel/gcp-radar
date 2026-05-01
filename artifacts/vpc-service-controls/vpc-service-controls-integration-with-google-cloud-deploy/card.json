@@ -1,0 +1,503 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.926Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "VPC Service Controls integration with Google Cloud Deploy",
+  "feature_slug": "vpc-service-controls-integration-with-google-cloud-deploy",
+  "summary": "This integration lets VPC Service Controls protect Google Cloud Deploy.",
+  "extended_definition": "This integration lets VPC Service Controls protect Google Cloud Deploy.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 264,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service name migrationcenter.googleapis.com rapidmigrationassessment.googleapis.com Details VPC Service Controls lets you protect the infrastructure data that you collect with Migration Center with a service perimeter.",
+          "Limitations Blockchain Node Engine integrations with VPC Service Controls have the following limitations: VPC Service Controls only protects the Blockchain Node Engine API.",
+          "The integration of this product with VPC Service Controls is in Preview and is ready for broader testing and use, but is not fully supported for production environments."
+        ]
+      },
+      {
+        "title": "Overview of VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 253,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Security benefits of VPC Service Controls VPC Service Controls helps mitigate the following security risks without sacrificing the performance advantages of direct private access to Google Cloud resources: Access from unauthorized networks using stolen credentials : By allowing private access only from authorized VPC networks, VPC Service Controls helps protect against the risk of data exfiltration presented by clients using stolen OAuth or service account credentials.",
+          "Monitoring access to services : Use VPC Service Controls in dry run mode to monitor requests to protected services without preventing access and to understand traffic requests to your projects.",
+          "Glossary In this topic, you have learned about several new concepts introduced by VPC Service Controls: VPC Service Controls Technology that enables you to define a service perimeter around resources of Google-managed services to control communication to and between those services. service perimeter A service perimeter around Google-managed resources."
+        ]
+      },
+      {
+        "title": "\"Protect Compute Engine using a VPC Service Controls perimeter \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "source_id": "site-docs-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Protect Compute Engine using a VPC Service Controls perimeter Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a new perimeter with the following details: Title: MyFirstPerimeter Perimeter type: Regular Enforcement mode: Enforced Resources to protect: My-Project-2 project Restricted services: Compute Engine API Verify the perimeter In this section, you can make access requests to the resources in the projects to confirm whether the perimeter protects the intended resources.",
+          "View audit logs Find the unique ID of the VPC Service Controls violation in the My-Project-2 project's audit logs: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      },
+      {
+        "title": "\"Services supported by the restricted VIP \\_|\\_ VPC Service Controls \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services",
+        "source_id": "site-docs-reference",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "The table includes the following stages of support: GA: This integration is fully supported by the restricted VIP and can be protected by VPC Service Controls perimeters.",
+          "Alpha: This integration receives an alpha-stage level of support for the restricted VIP and can be protected by VPC Service Controls perimeters for testing purposes only.",
+          "Beta: This integration receives a beta-stage level of support for the restricted VIP and can be protected by VPC Service Controls perimeters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accessapproval.googleapis.com",
+      "accesscontextintelligence.googleapis.com",
+      "addressvalidation.googleapis.com",
+      "adsdatahub.googleapis.com",
+      "agentregistry.googleapis.com",
+      "aiplatform.googleapis.com",
+      "alloydb.googleapis.com",
+      "analyticshub.googleapis.com",
+      "apigee.googleapis.com",
+      "apigeeconnect.googleapis.com",
+      "apihub.googleapis.com",
+      "apikeys.googleapis.com",
+      "apphub.googleapis.com",
+      "apptopology.googleapis.com",
+      "artifactregistry.googleapis.com",
+      "assuredoss.googleapis.com",
+      "assuredworkloads.googleapis.com",
+      "auditmanager.googleapis.com",
+      "automl.googleapis.com",
+      "autoscaling.googleapis.com",
+      "backend.googleapis.com",
+      "backupdr.googleapis.com",
+      "baremetalsolution.googleapis.com",
+      "batch.googleapis.com",
+      "beyondcorp.googleapis.com",
+      "biglake.googleapis.com",
+      "bigquery.googleapis.com",
+      "bigquerydatapolicy.googleapis.com",
+      "bigquerydatatransfer.googleapis.com",
+      "bigquerymigration.googleapis.com",
+      "bigtable.googleapis.com",
+      "binaryauthorization.googleapis.com",
+      "blockchainnodeengine.googleapis.com",
+      "businessaicode.googleapis.com",
+      "certificatemanager.googleapis.com",
+      "ces.googleapis.com",
+      "chronicle.googleapis.com",
+      "chronicleservicemanager.googleapis.com",
+      "cloudaicompanion.googleapis.com",
+      "cloudasset.googleapis.com",
+      "cloudbuild.googleapis.com",
+      "cloudcode.googleapis.com",
+      "cloudcontrolspartner.googleapis.com",
+      "clouddeploy.googleapis.com",
+      "clouderrorreporting.googleapis.com",
+      "cloudfunctions.googleapis.com",
+      "cloudkms.googleapis.com",
+      "cloudlocationfinder.googleapis.com",
+      "cloudprofiler.googleapis.com",
+      "cloudquotas.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "cloudscheduler.googleapis.com",
+      "cloudsearch.googleapis.com",
+      "cloudsecuritycompliance.googleapis.com",
+      "cloudsupport.googleapis.com",
+      "cloudtasks.googleapis.com",
+      "cloudtrace.googleapis.com",
+      "commerceorggovernance.googleapis.com",
+      "composer.googleapis.com",
+      "compute.googleapis.com",
+      "confidentialcomputing.googleapis.com",
+      "config.googleapis.com",
+      "configdelivery.googleapis.com",
+      "connectgateway.googleapis.com",
+      "connectors.googleapis.com",
+      "contactcenteraiplatform.googleapis.com",
+      "contactcenterinsights.googleapis.com",
+      "container.googleapis.com",
+      "containeranalysis.googleapis.com",
+      "containerfilesystem.googleapis.com",
+      "containerregistry.googleapis.com",
+      "containersecurity.googleapis.com",
+      "containerthreatdetection.googleapis.com",
+      "contentwarehouse.googleapis.com",
+      "databasecenter.googleapis.com",
+      "databaseinsights.googleapis.com",
+      "datacatalog.googleapis.com",
+      "dataflow.googleapis.com",
+      "dataform.googleapis.com",
+      "datafusion.googleapis.com",
+      "datalineage.googleapis.com",
+      "datamigration.googleapis.com",
+      "datapipelines.googleapis.com",
+      "dataplex.googleapis.com",
+      "dataproc.googleapis.com",
+      "dataprocgdc.googleapis.com",
+      "dataprocrm.googleapis.com",
+      "datastream.googleapis.com",
+      "designcenter.googleapis.com",
+      "developerconnect.googleapis.com",
+      "dialogflow.googleapis.com",
+      "discovery.googleapis.com",
+      "discoveryengine.googleapis.com",
+      "dlp.googleapis.com",
+      "dns.googleapis.com",
+      "documentai.googleapis.com",
+      "domains.googleapis.com",
+      "earthengine.googleapis.com",
+      "edgecontainer.googleapis.com",
+      "edgenetwork.googleapis.com",
+      "essentialcontacts.googleapis.com",
+      "eventarc.googleapis.com",
+      "eventarcpublishing.googleapis.com",
+      "file.googleapis.com",
+      "financialservices.googleapis.com",
+      "firebaseappcheck.googleapis.com",
+      "firebaseapphosting.googleapis.com",
+      "firebasecrashlytics.googleapis.com",
+      "firebasedataconnect.googleapis.com",
+      "firebaserules.googleapis.com",
+      "firebasevertexai.googleapis.com",
+      "firestore.googleapis.com",
+      "fpnv.googleapis.com",
+      "gameservices.googleapis.com",
+      "geminicloudassist.googleapis.com",
+      "geminidataanalytics.googleapis.com",
+      "gkebackup.googleapis.com",
+      "gkeconnect.googleapis.com",
+      "gkehub.googleapis.com",
+      "gkemulticloud.googleapis.com",
+      "gkeonprem.googleapis.com",
+      "healthcare.googleapis.com",
+      "hypercomputecluster.googleapis.com",
+      "iam.googleapis.com",
+      "iamcredentials.googleapis.com",
+      "iap.googleapis.com",
+      "iaptunnel.googleapis.com",
+      "identitytoolkit.googleapis.com",
+      "ids.googleapis.com",
+      "integrations.googleapis.com",
+      "kmsinventory.googleapis.com",
+      "krmapihosting.googleapis.com",
+      "kubernetesmetadata.googleapis.com",
+      "language.googleapis.com",
+      "licensemanager.googleapis.com",
+      "lifesciences.googleapis.com",
+      "livestream.googleapis.com",
+      "logging.googleapis.com",
+      "looker.googleapis.com",
+      "lustre.googleapis.com",
+      "maintenance.googleapis.com",
+      "managedidentities.googleapis.com",
+      "managedkafka.googleapis.com",
+      "memcache.googleapis.com",
+      "memorystore.googleapis.com",
+      "meshca.googleapis.com",
+      "meshconfig.googleapis.com",
+      "metastore.googleapis.com",
+      "microservices.googleapis.com",
+      "migrationcenter.googleapis.com",
+      "ml.googleapis.com",
+      "modelarmor.googleapis.com",
+      "monitoring.googleapis.com",
+      "netapp.googleapis.com",
+      "networkconnectivity.googleapis.com",
+      "networkmanagement.googleapis.com",
+      "networksecurity.googleapis.com",
+      "networkservices.googleapis.com",
+      "notebooks.googleapis.com",
+      "oauth2.googleapis.com",
+      "ondemandscanning.googleapis.com",
+      "openidconnect.googleapis.com",
+      "opsconfigmonitoring.googleapis.com",
+      "oracledatabase.googleapis.com",
+      "orgpolicy.googleapis.com",
+      "osconfig.googleapis.com",
+      "oslogin.googleapis.com",
+      "parallelstore.googleapis.com",
+      "parametermanager.googleapis.com",
+      "places.googleapis.com",
+      "policysimulator.googleapis.com",
+      "policytroubleshooter.googleapis.com",
+      "privateca.googleapis.com",
+      "privilegedaccessmanager.googleapis.com",
+      "publicca.googleapis.com",
+      "pubsub.googleapis.com",
+      "pubsublite.googleapis.com",
+      "rapidmigrationassessment.googleapis.com",
+      "reauth.googleapis.com",
+      "recaptchaenterprise.googleapis.com",
+      "recommender.googleapis.com",
+      "redis.googleapis.com",
+      "retail.googleapis.com",
+      "run.googleapis.com",
+      "saasservicemgmt.googleapis.com",
+      "seclm.googleapis.com",
+      "secretmanager.googleapis.com",
+      "securesourcemanager.googleapis.com",
+      "securetoken.googleapis.com",
+      "securitycenter.googleapis.com",
+      "securitycentermanagement.googleapis.com",
+      "serialport.googleapis.com",
+      "servicecontrol.googleapis.com",
+      "servicedirectory.googleapis.com",
+      "servicehealth.googleapis.com",
+      "servicenetworking.googleapis.com",
+      "serviceusage.googleapis.com",
+      "spanner.googleapis.com",
+      "speakerid.googleapis.com",
+      "speech.googleapis.com",
+      "sqladmin.googleapis.com",
+      "storage.googleapis.com",
+      "storagebatchoperations.googleapis.com",
+      "storageinsights.googleapis.com",
+      "storagetransfer.googleapis.com",
+      "sts.googleapis.com",
+      "telemetry.googleapis.com",
+      "texttospeech.googleapis.com",
+      "timeseriesinsights.googleapis.com",
+      "tpu.googleapis.com",
+      "trafficdirector.googleapis.com",
+      "transcoder.googleapis.com",
+      "translate.googleapis.com",
+      "vectorsearch.googleapis.com",
+      "videointelligence.googleapis.com",
+      "videostitcher.googleapis.com",
+      "vision.googleapis.com",
+      "visionai.googleapis.com",
+      "visualinspection.googleapis.com",
+      "vmmigration.googleapis.com",
+      "vmwareengine.googleapis.com",
+      "vpcaccess.googleapis.com",
+      "webrisk.googleapis.com",
+      "websecurityscanner.googleapis.com",
+      "workflows.googleapis.com",
+      "workloadmanager.googleapis.com",
+      "workstations.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/protect-compute-engine-troubleshoot-denial",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/restricted-vip-services"
+      ]
+    }
+  ]
+}

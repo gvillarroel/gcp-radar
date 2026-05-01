@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "All ports for internal load balancer Services",
+  "feature_slug": "all-ports-for-internal-load-balancer-services",
+  "summary": "All ports lets internal TCP/UDP load balancer Services use more than five ports.",
+  "extended_definition": "All ports lets internal TCP/UDP load balancer Services use more than five ports.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up an external Application Load Balancer with Ingress \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Visiting your application Find out the external IP address of the load balancer serving your application by running: kubectl get ingress basic-ingress Output: NAME HOSTS ADDRESS PORTS AGE basic-ingress 203.0.113.12 80 2m Note: It might take a few minutes for GKE to allocate an external IP address and set up forwarding rules before the load balancer is ready to serve your application.",
+          "Ingress supports more advanced use cases, such as: Name-based virtual hosting: You can use Ingress to reuse the load balancer for multiple domain names, subdomains, and to expose multiple Services on a single IP address and load balancer.",
+          "You can install kubectl using gcloud : gcloud components install kubectl Clone the sample code from GitHub: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples cd kubernetes-engine-samples/networking/load-balancing Set defaults for the gcloud command-line tool To save time typing your project ID and Compute Engine zone options in the gcloud command-line tool, you can set the defaults: gcloud config set project project-id gcloud config set compute/zone compute-zone Create a GKE cluster Create a GKE Autopilot cluster: gcloud container clusters create-auto loadbalancedcluster Deploying a web application The following manifest describes a Deployment that runs the sample web application container image on an HTTP server on port 8080: apiVersion : apps/v1 kind : Deployment metadata : name : web namespace : default spec : selector : matchLabels : run : web template : metadata : labels : run : web spec : containers : - image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 imagePullPolicy : IfNotPresent name : web ports : - containerPort : 8080 protocol : TCP Apply the resource to the cluster: kubectl apply -f web-deployment.yaml Exposing your Deployment inside your cluster The following manifest describes a Service that makes the web deployment accessible within your container cluster: apiVersion : v1 kind : Service metadata : name : web namespace : default spec : ports : - port : 8080 protocol : TCP targetPort : 8080 selector : run : web type : NodePort Apply the resource to the cluster: kubectl apply -f web-service.yaml When you create a Service of type NodePort with this command, GKE makes your Service available on a randomly selected high port number (e.g."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "As mentioned in the Kubernetes announcement , no mitigation is provided for Services of type LoadBalancer because, by default, only highly privileged users and system components are granted the container.services.updateStatus permission which is required to leverage this vulnerability.",
+          "As mentioned in the Kubernetes announcement , no mitigation is provided for Services of type LoadBalancer because, by default, only highly privileged users and system components are granted the container.services.updateStatus permission which is required to leverage this vulnerability.",
+          "As mentioned in the Kubernetes announcement , no mitigation is provided for Services of type LoadBalancer because, by default, only highly privileged users and system components are granted the container.services.updateStatus permission which is required to leverage this vulnerability."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a GKE cluster and deploy a workload using Terraform \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Review the app.tf file: cat app.tf The output is similar to the following: data \"google client config\" \"default\" {} provider \"kubernetes\" { host = \"https://${google container cluster.default.endpoint}\" token = data.google client config.default.access token cluster ca certificate = base64decode ( google container cluster.default.master auth[0].cluster ca certificate ) ignore annotations = [ \"^autopilot\\\\.gke\\\\.io\\\\/. \" , \"^cloud\\\\.google\\\\.com\\\\/. \" ] } resource \"kubernetes deployment v1\" \"default\" { metadata { name = \"example-hello-app-deployment\" } spec { selector { match labels = { app = \"hello-app\" } } template { metadata { labels = { app = \"hello-app\" } } spec { container { image = \"us-docker.pkg.dev/google-samples/containers/gke/hello-app:2.0\" name = \"hello-app-container\" port { container port = 8080 name = \"hello-app-svc\" } security context { allow privilege escalation = false privileged = false read only root filesystem = false capabilities { add = [] drop = [ \"NET RAW\" ] } } liveness probe { http get { path = \"/\" port = \"hello-app-svc\" http header { name = \"X-Custom-Header\" value = \"Awesome\" } } initial delay seconds = 3 period seconds = 3 } } security context { run as non root = true seccomp profile { type = \"RuntimeDefault\" } } Toleration is currently required to prevent perpetual diff: https://github.com/hashicorp/terraform-provider-kubernetes/pull/2380 toleration { effect = \"NoSchedule\" key = \"kubernetes.io/arch\" operator = \"Equal\" value = \"amd64\" } } } } } resource \"kubernetes service v1\" \"default\" { metadata { name = \"example-hello-app-loadbalancer\" annotations = { \"networking.gke.io/load-balancer-type\" = \"Internal\" # Remove to create an external loadbalancer } } spec { selector = { app = kubernetes deployment v1.default.spec[0].selector[0].match labels.app } ip family policy = \"RequireDualStack\" port { port = 80 target port = kubernetes deployment v1.default.spec[0].template[0].spec[0].container[0].port[0].name } type = \"LoadBalancer\" } depends on = [ time sleep.wait service cleanup ] } Provide time for Service cleanup resource \"time sleep\" \"wait service cleanup\" { depends on = [ google container cluster.default ] destroy duration = \"180s\" } This file describes the following resources: A Deployment with a sample container image.",
+          "Review the cluster.tf file: cat cluster.tf The output is similar to the following resource \"google compute network\" \"default\" { name = \"example-network\" auto create subnetworks = false enable ula internal ipv6 = true } resource \"google compute subnetwork\" \"default\" { name = \"example-subnetwork\" ip cidr range = \"10.0.0.0/16\" region = \"us-central1\" stack type = \"IPV4 IPV6\" ipv6 access type = \"INTERNAL\" # Change to \"EXTERNAL\" if creating an external loadbalancer network = google compute network.default.id secondary ip range { range name = \"services-range\" ip cidr range = \"192.168.0.0/24\" } secondary ip range { range name = \"pod-ranges\" ip cidr range = \"192.168.1.0/24\" } } resource \"google container cluster\" \"default\" { name = \"example-autopilot-cluster\" location = \"us-central1\" enable autopilot = true enable l4 ilb subsetting = true network = google compute network.default.id subnetwork = google compute subnetwork.default.id ip allocation policy { stack type = \"IPV4 IPV6\" services secondary range name = google compute subnetwork.default.secondary ip range[0].range name cluster secondary range name = google compute subnetwork.default.secondary ip range[1].range name } Set deletion protection to true will ensure that one cannot accidentally delete this instance by use of Terraform. deletion protection = false } This file describes the following resources: google compute network : a VPC network with internal IPv6 enabled. google compute subnetwork : a dual-stack subnetwork . google container cluster : a dual-stack Autopilot mode cluster located in us-central1 .",
+          "To expose the demo application to the internet: In cluster.tf , change ipv6 access type from INTERNAL to EXTERNAL . ipv6 access type = \"EXTERNAL\" In app.tf , configure an external load balancer by removing the networking.gke.io/load-balancer-type annotation. annotations = { \"networking.gke.io/load-balancer-type\" = \"Internal\" # Remove this line } Create a cluster and deploy an application In Cloud Shell, run this command to verify that Terraform is available: terraform The output should be similar to the following: Usage: terraform [global options] <subcommand> [args] The available commands for execution are listed below."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.tf",
+      "cluster.default",
+      "cluster.default.endpoint",
+      "cluster.default.master",
+      "cluster.tf",
+      "config.default.access",
+      "container.services.updateStatus",
+      "data.google",
+      "deployment.yaml",
+      "docker.pkg.dev",
+      "e.g",
+      "github.com",
+      "ingress.yaml",
+      "kubernetes.io",
+      "labels.app",
+      "network.default.id",
+      "networking.gke.io",
+      "networking.k8s.io",
+      "service.yaml",
+      "sleep.wait",
+      "subnetwork.default.id",
+      "subnetwork.default.secondary",
+      "v1.default.spec",
+      "v2.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform"
+      ]
+    }
+  ]
+}

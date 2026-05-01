@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.686Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Config Sync GitHub App authentication",
+  "feature_slug": "config-sync-github-app-authentication",
+  "summary": "Config Sync supports GitHub App authentication for GitHub repositories.",
+  "extended_definition": "Config Sync supports GitHub App authentication for GitHub repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Config Sync supports Git repositories, Helm charts, and OCI images as the source of truth.",
+          "Verify the sync status of the source of truth You can use the nomos status command to inspect the sync status of the source of truth: nomos status You should see output similar to the following example: my managed cluster-1 -------------------- <root> git@github.com:foo-corp/acme/admin@main SYNCED f52a11e4 -------------------- bookstore git@github.com:foo-corp/acme/bookstore@v1 SYNCED 34d1a8c8 In this example output, the namespace-scoped source, in this case a Git repository, is configured for a namespace named bookstore .",
+          "Control namespace-scoped sources in a namespace-scoped source Config Sync supports syncing from more than one namespace-scoped source of truth per namespace."
+        ]
+      },
+      {
+        "title": "Install Config Sync manually using kubectl \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Config Sync supports the following mechanisms for authentication: SSH key pair ( ssh ) Cookiefile ( cookiefile ) Token ( token ) Google service account ( gcpserviceaccount ) Compute Engine default service account ( gcenode ) GitHub App ( githubapp ) The mechanism that you choose depends on what your repository supports.",
+          "Lower values are not recommended: ssh-keygen -t rsa -b 4096 \\ -C \" GIT REPOSITORY USERNAME \" \\ -N '' \\ -f /path/to/KEYPAIR FILENAME Replace the following: GIT REPOSITORY USERNAME : the username that you want Config Sync to use to authenticate to the repository /path/to/KEYPAIR FILENAME : a path to the key pair If you are using a third-party Git repository host such as GitHub, or you want to use a service account with Cloud Source Repositories, we recommend that you use a separate account.",
+          "Config Sync supports the following mechanisms for authentication: Kubernetes service account ( k8sserviceaccount ) Google service account ( gcpserviceaccount ) Compute Engine default service account ( gcenode ) Kubernetes service account You can use a Kubernetes service account as your authentication type if you store your OCI image in Artifact Registry and your cluster uses GKE Workload Identity Federation for GKE or fleet Workload Identity Federation for GKE ."
+        ]
+      },
+      {
+        "title": "Grant Config Sync access to your Git repository \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Config Sync also supports the following authentication methods; however, these methods are only recommended if you can't use one of the options listed in the preceding table: cookiefile: might not be supported for all Git providers.",
+          "When you install Config Sync, use GitHub app ( githubapp ) as the authentication type.",
+          "Use a GitHub App If your repository is in GitHub, you can use the GitHub App to connect your repository to Config Sync: Follow the instructions on GitHub to provision a GitHub App and give it permission to read from your repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "rolebinding.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git"
+      ]
+    }
+  ]
+}

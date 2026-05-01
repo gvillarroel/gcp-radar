@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub remote MCP server",
+  "feature_slug": "pub-sub-remote-mcp-server",
+  "summary": "The Pub/Sub remote MCP server lets you manage Pub/Sub topics, subscriptions, and snapshots, and publish messages to topics.",
+  "extended_definition": "The Pub/Sub remote MCP server lets you manage Pub/Sub topics, subscriptions, and snapshots, and publish messages to topics.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/publish",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "MCP Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+        "source_id": "site-api-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is an MCP server that provides Cloud Pub/Sub tools Server Endpoints An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection.",
+          "The pubsub.googleapis.com MCP server has the following MCP endpoint: https://pubsub.googleapis.com/mcp MCP Tools An MCP tool is a function or executable capability that an MCP server exposes to a LLM or AI application to perform an action in the real world.",
+          "The pubsub.googleapis.com MCP server has the following tools: MCP Tools create topic Create a new Cloud Pub/Sub topic."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/publish",
+        "source_id": "site-api-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"publish\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the Publish method.",
+          "Home Documentation Data analytics Pub/Sub Reference Send feedback MCP Tools Reference: pubsub.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "If a Subscription has enable message ordering set to true , messages published with the same non-empty ordering key value will be delivered to subscribers in the order in which they are received by the Pub/Sub system."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 268,
+        "relevance": "",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema A subscription resource.",
+          "Home Documentation Data analytics Pub/Sub Reference Send feedback MCP Tools Reference: pubsub.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 268,
+        "relevance": "",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"update subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the UpdateSubscription method.",
+          "Home Documentation Data analytics Pub/Sub Reference Send feedback MCP Tools Reference: pubsub.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/publish",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/publish",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/publish",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

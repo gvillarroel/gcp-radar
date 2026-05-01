@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX parameter redaction",
+  "feature_slug": "dialogflow-cx-parameter-redaction",
+  "summary": "Dialogflow CX can redact end-user parameter data from logs.",
+  "extended_definition": "Dialogflow CX can redact end-user parameter data from logs.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+      "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable consent-based end-user input redaction If this setting is enabled, it lets you use a special session parameter to control whether end-user input and parameters are redacted from conversation history and Cloud logging , by default the session parameter is true .",
+          "Enable consent-based end-user input redaction If this setting is enabled, it lets you use a special session parameter to control whether end-user input and parameters are redacted from conversation history and Cloud logging .",
+          "User consent is collected using a boolean session parameter: $session.params.conversation-redaction ."
+        ]
+      },
+      {
+        "title": "AdvancedSettings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"enableStackdriverLogging\" : boolean , \"enableInteractionLogging\" : boolean , \"enableConsentBasedRedaction\" : boolean } Fields enableStackdriverLogging boolean Enables Google Cloud Logging. enableInteractionLogging boolean Enables DF Interaction logging. enableConsentBasedRedaction boolean Enables consent-based end-user input redaction, if true, a pre-defined session parameter $session.params.conversation-redaction will be used to determine if the utterance should be redacted.",
+          "For example, if the caller presses a button on their telephone keypad and DTMF processing is enabled, Dialogflow will detect the event (e.g. a \"3\" was pressed) in the incoming audio and pass the event to the bot to drive business logic (e.g. when 3 is pressed, return the account balance). maxDigits integer Max length of DTMF digits. finishDigit string The digit that terminates a DTMF digit sequence. interdigitTimeoutDuration string ( Duration format) Interdigit timeout setting for matching dtmf input to regex.",
+          "JSON representation { \"audioExportGcsDestination\" : { object ( GcsDestination ) } , \"speechSettings\" : { object ( SpeechSettings ) } , \"dtmfSettings\" : { object ( DtmfSettings ) } , \"loggingSettings\" : { object ( LoggingSettings ) } } Fields audioExportGcsDestination object ( GcsDestination ) If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination."
+        ]
+      },
+      {
+        "title": "Actions and parameters \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters",
+        "source_id": "site-docs-root-2",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can retrieve the explicit partial match, where Dialogflow substitutes the unknown part with U s using the following format: $parameter-name.partial You can retrieve the nearest date in the past using the following format: $parameter-name.recent For example, if today's date is August 11, 2021, your parameter name is date , and the user says \"August 13\": Parameter reference Resolved value $date 2021-08-13 $date.partial UUUU-08-13 $date.recent 2020-08-13 Parameter reference for a composite entity Composite entities are entities that contain other sub-entities.",
+          "Parameter reference for ambiguous dates When a parameter is associated with the @sys.date system entity, and the end-user supplies a partial date (not specifying month, day, and year), Dialogflow will match to the nearest date in the future.",
+          "User : Medium Agent : Got it, that was three black t-shirts in medium If the end-user supplies data for more than one parameter in a single expression, Dialogflow collects the data provided and continues asking for the missing data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "date.partial",
+      "date.recent",
+      "e.g",
+      "name.partial",
+      "name.recent",
+      "session.params.conversation",
+      "sys.date"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "https://docs.cloud.google.com/dialogflow/docs/intents-actions-parameters"
+      ]
+    }
+  ]
+}

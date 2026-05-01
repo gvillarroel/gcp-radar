@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.104Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Copy processor versions between projects",
+  "feature_slug": "copy-processor-versions-between-projects",
+  "summary": "Processor versions can be copied between projects by using Import a processor version.",
+  "extended_definition": "Processor versions can be copied between projects by using Import a processor version.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+      "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Copy processor versions and datasets across projects \\_|\\_ Document AI \\_\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Document . to json ( res . document ) Uploading JSON data to specified Cloud Storage path store document as json ( json data , exported bucket name , output file name ) print ( f \"Importing dataset to { destination processor id } \" ) gcs path = source exported gcs path . strip ( \"/\" ) + \"/\" project = destination project id location = destination location processor = destination processor id importing samples/docuemnts from Cloud Storage path to destination processor res = import documents ( project , processor , location , gcs path ) print ( f \"Waiting for { len ( document list ) 1.5 } seconds\" ) time . sleep ( len ( document list ) 1.5 ) else : print ( \" \\t Skipping Dataset Migration actions like, exporting source dataset to Cloud Storage and importing dataset to destination processor\" ) Checking for source processor version, if id provided then it will be imported to destination processor if source processor version to import != \"\" : print ( f \"Importing Processor Version { source processor version to import } \" ) source version = f \"projects/ { source project id } /locations/ { source location } /processors/ { source processor id } /processorVersions/ { source processor version to import } \" destination version = f \"projects/ { destination project id } /locations/ { destination location } /processors/ { destination processor id } \" source version = f\"projects/{source project id}/locations/us/processors/a82fc086440d7ea1/processorVersions/f1eeed93aad5e317\" # Data for testing Importing processor version from source processor to destanation processor operation = import processor version ( source version , destination version ) name = operation . metadata . common metadata . resource destination processor version id = name . split ( \"/\" )[ - 1 ] deploying newly imported processor version and set it as default version in desination project deploy and set default processor version ( destination project id , destination location , destination processor id , destination processor version id , ) main ( destination processor id , migrate dataset ) print ( \"Process Completed!!!\" ) Step 6: Check output details Go to the destination project and verify the processor's creation, dataset availability, and new processor version as the default version.",
+          "ImportProcessorVersionRequest ( processor version source = source processor version name , parent = destination processor name , ) ) print ( \"Importing processor from source to destination\" ) print ( f \" \\t Source: { source processor version name } \" ) print ( f \" \\t Destination: { destination processor name } \" ) copying the processor operation = client . import processor version ( request = op import version req ) print ( operation . metadata ) print ( \"Waitin for operation to complete...\" ) operation . result () return operation def deploy and set default processor version ( project id : str , location : str , processor id : str , processor version id : str ) - > None : \"\"\"It helps to deploy to imported processor version and set it as default version Args: project id (str): Project ID location (str): Processor Location processor id (str): Document AI Processor ID processor version id (str): Document AI Processor Version ID \"\"\" Construct the resource name of the processor version processor name = ( f \"projects/ { project id } /locations/ { location } /processors/ { processor id } \" ) default processor version name = f \"projects/ { project id } /locations/ { location } /processors/ { processor id } /processorVersions/ { processor version id } \" Initialize the Document AI client client options = ClientOptions ( api endpoint = f \" { location } -documentai.googleapis.com\" ) client = documentai .",
+          "ImportDocumentsRequest ( dataset = dataset , batch documents import configs = [ { \"dataset split\" : \"DATASET SPLIT TRAIN\" , \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : gcs path + \"train/\" } }, }, { \"dataset split\" : \"DATASET SPLIT TEST\" , \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : gcs path + \"test/\" } }, }, { \"dataset split\" : \"DATASET SPLIT UNASSIGNED\" , \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : gcs path + \"unassigned/\" } }, }, ], ) print ( f \"Importing Documents/samples from { gcs path } to corresponding tran test unassigned sections\" ) response = client . import documents ( request = request ) return response def import processor version ( source processor version name : str , destination processor name : str ) - > Operation : \"\"\"It helps to import processor version from source processor to destanation processor Args: source processor version name (str): source processor name in this format projects/{project}/locations/{location}/processors/{processor} destination processor name (str): destination processor name in this format projects/{project}/locations/{location}/processors/{processor} Returns: Operation: An object representing a long-running operation \"\"\" from google.cloud import documentai v1beta3 provide the source version(to copy) processor details in the following format client = documentai v1beta3 ."
+        ]
+      },
+      {
+        "title": "Managing processor versions \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions\" Select-Object -Expand Content The response contains a list of ProcessorVersions , which contains information about each processor version such as its name , state , and other details. { \"processorVersions\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/pretrained-ocr-v1.1-2022-09-12\", \"displayName\": \"Google Release Candidate\", \"state\": \"DEPLOYED\", \"createTime\": \"2022-09-13T23:39:12.156648Z\", \"googleManaged\": true }, { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/pretrained-ocr-v1.0-2020-09-23\", \"displayName\": \"Google Stable\", \"state\": \"DEPLOYED\", \"createTime\": \"2022-09-12T23:35:09.829557Z\", \"googleManaged\": true, \"deprecationInfo\": { \"deprecationTime\": \"1970-01-01T00:00:00Z\" } } ] } C# For more information, see the Document AI C# API reference documentation .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION \" Select-Object -Expand Content The response is a ProcessorVersion , which contains information about the processor version such as its name , state , and other details. { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/pretrained-ocr-v1.1-2022-09-12\", \"displayName\": \"Google Release Candidate\", \"state\": \"DEPLOYED\", \"createTime\": \"2022-09-13T23:39:12.156648Z\", \"googleManaged\": true } C# For more information, see the Document AI C# API reference documentation .",
+          "Note: This applies if importing processor versions within the same project or between separate projects."
+        ]
+      },
+      {
+        "title": "\"Class DocumentProcessorServiceAsyncClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Format: projects/{project}/locations/{location}/processors/{processor} , or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Format: projects/{project}/locations/{location}/processors/{processor} , or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "The resource name of the Evaluation to get. projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      },
+      {
+        "title": "\"Class DocumentProcessorServiceClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Format: projects/{project}/locations/{location}/processors/{processor} , or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Format: projects/{project}/locations/{location}/processors/{processor} , or projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "The resource name of the Evaluation to get. projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "com.google.cloud.documentai.v1",
+      "core.retry",
+      "core.retry.Retry",
+      "documentai.googleapis.com",
+      "request.json",
+      "v1.0",
+      "v1.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/copy-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+      ]
+    }
+  ]
+}

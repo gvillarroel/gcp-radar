@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.583Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Key:value template property syntax",
+  "feature_slug": "key-value-template-property-syntax",
+  "summary": "The gcloud --properties flag supports key:value pairs for specifying template properties.",
+  "extended_definition": "The gcloud --properties flag supports key:value pairs for specifying template properties.",
+  "lifecycle": {
+    "latest_feature_date": "2017-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/adding-templates",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/define-template-properties"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Defining Template Properties \\_|\\_ Cloud Deployment Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/define-template-properties",
+        "source_id": "site-docs-root-2",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following request passes in the template and specifies the zone property directly on the command-line: gcloud deployment-manager deployments create a-single-vm --template vm template.jinja \\ --properties zone:us-central1-a Keep in mind that: All values are parsed as YAML values.",
+          "Understand how to create a configuration Creating a template property To create a template property: Jinja In Jinja, define a property using the following syntax: {{ properties [ \"PROJECT NAME\" ] }} For example: - name: vm-{{ env[\"deployment\"] }} type: compute.v1.instance properties: zone: us-central1-a machineType: zones/{{ properties[\"zone\"] }}/machineTypes/n1-standard-1 disks: - deviceName: boot type: PERSISTENT boot: true autoDelete: true initializeParams: sourceImage: projects/debian-cloud/global/images/family/debian-11 networkInterfaces: - network: global/networks/default Python In Python, define a property using the following syntax: context . properties [ \"PROPERTY NAME\" ] For example: resources . append ({ 'name' : 'vm-' + context . env [ 'deployment' ], 'type' : 'compute.v1.instance' , 'properties' : { 'zone' : 'us-central1-a' , 'machineType' : '' . join ([ 'zones/' , context . properties [ 'zone' ], '/machineTypes/n1-standard-1' ]), 'disks' : [{ 'deviceName' : 'boot' , 'type' : 'PERSISTENT' , 'boot' : True , 'autoDelete' : True , 'initializeParams' : { 'sourceImage' : 'projects/debian-cloud/global/images/family/debian-11' } }], 'networkInterfaces' : [{ 'network' : 'global/networks/default' }] } }) For the full Python example, see the Deployment Manager GitHub repository .",
+          "For example, assume you have the following template which has a template property called zone : - name : vm - {{ env[\"deployment\"] } } type : compute . v1 . instance properties : zone : us - central1 - a machineType : zones / {{ properties[\"zone\"] } } / machineTypes / n1 - standard - 1 disks : - deviceName : boot type : PERSISTENT boot : true autoDelete : true initializeParams : sourceImage : projects / debian - cloud / global / images / family / debian - 11 networkInterfaces : - network : global / networks / default With the Google Cloud CLI, you can pass in this template file directly and provide the values for your template properties on the command-line."
+        ]
+      },
+      {
+        "title": "\"Creating a Basic Template \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following request deploys a template called vm-template.jinja : gcloud deployment-manager deployments create a-single-vm --template vm-template.jinja If your template has template properties , you can also set these properties on the command-line using the --properties flag: gcloud deployment-manager deployments create my-igm \\ --template vm-template.jinja \\ --properties zone:us-central1-a Keep in mind that: All values are parsed as YAML values.",
+          "For example: gcloud deployment-manager deployments create my-igm --template vm-template.jinja --properties zone:us-central1-a,machineType:n1-standard-1,image:debian-9 After running this command, Deployment Manager creates a deployment using the template you provided.",
+          "If certain properties have default values, you can omit the property from the command-line."
+        ]
+      },
+      {
+        "title": "\"Creating a Basic Template \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/adding-templates",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following request deploys a template called vm-template.jinja : gcloud deployment-manager deployments create a-single-vm --template vm-template.jinja If your template has template properties , you can also set these properties on the command-line using the --properties flag: gcloud deployment-manager deployments create my-igm \\ --template vm-template.jinja \\ --properties zone:us-central1-a Keep in mind that: All values are parsed as YAML values.",
+          "For example: gcloud deployment-manager deployments create my-igm --template vm-template.jinja --properties zone:us-central1-a,machineType:n1-standard-1,image:debian-9 After running this command, Deployment Manager creates a deployment using the template you provided.",
+          "If certain properties have default values, you can omit the property from the command-line."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.v1.instance",
+      "template.jinja",
+      "template.py",
+      "type.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/define-template-properties",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/adding-templates"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/define-template-properties",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/adding-templates"
+      ]
+    }
+  ]
+}

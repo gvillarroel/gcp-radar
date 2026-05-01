@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.188Z",
+  "source_step08_card": "data/step-08/current/products/live-stream-api/card.json",
+  "product_name": "Live Stream API",
+  "product_slug": "live-stream-api",
+  "feature_name": "WebVTT subtitle generation",
+  "feature_slug": "webvtt-subtitle-generation",
+  "summary": "Generates WebVTT subtitles from embedded CEA-608 or CEA-708 captions in the input stream.",
+  "extended_definition": "Generates WebVTT subtitles from embedded CEA-608 or CEA-708 captions in the input stream.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+      "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+      "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+      "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure subtitles \\_|\\_ Live Stream API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note the following in the channel configuration: One ElementaryStream , a TextStream , is used for the subtitles. { \"key\" : \"webvtt-english\" , \"textStream\" : { \"codec\" : \"webvtt\" , \"display name\" : \"English\" , \"language code\" : \"en-US\" , \"mapping\" : [ { \"input cea channel\" : \"CC1\" } ] } } The TextStream codec field is set to webvtt .",
+          "Subtitles are generated from cea608 or cea708 captions in the input stream.",
+          "This page explains how to configure subtitles in Web Video Text Tracks format (WebVTT) for a live stream."
+        ]
+      },
+      {
+        "title": "\"Configure automatic captions and translations \\_|\\_ Live Stream API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the channel configuration, consider the following: One ElementaryStream , a TextStream , is used for the captions, and another ElementaryStream , a TextStream , is used for the translation. { \"key\" : \"embedded english ai\" , \"textStream\" : { \"codec\" : \"cea608\" , \"displayName\" : \"English (AI captioned)\" , \"languageCode\" : \"en-US\" , \"outputCeaChannel\" : \"CC1\" , // closed caption channel that will contain AI-generated English captions \"mapping\" : [ { \"inputTrack\" : 1 // audio track number } ] } } { \"key\" : \"embedded spanish ai\" , \"textStream\" : { \"codec\" : \"cea608\" , \"displayName\" : \"Spanish (AI captioned)\" , \"languageCode\" : \"es-MX\" , \"outputCeaChannel\" : \"CC2\" , // closed caption channel that will contain AI-generated Spanish captions \"mapping\" : [ { \"inputTrack\" : 1 , // audio track number \"fromLanguageCode\" : \"en-US\" // original audio in English } ] } } The TextStream codec field must be set to either cea608 or cea708 .",
+          "Verify the translation in the output manifest Run the following command to see the contents of the generated HLS manifest: gcloud storage cat gs:// BUCKET NAME /main.m3u8 The AI-generated webvtt English and Spanish captions show up in the output manifest similar to the following: #EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID=\"sub\",LANGUAGE=\"en-US\",NAME=\"English (AI captioned)\",AUTOSELECT=YES,DEFAULT=YES,FORCED=NO,URI=\"vtt english ai/index-1.m3u8\" #EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID=\"sub\",LANGUAGE=\"es-MX\",NAME=\"Spanish (AI captioned)\",AUTOSELECT=NO,DEFAULT=NO,FORCED=NO,URI=\"vtt spanish ai/index-1.m3u8\" Configure AI-generated transcripts for distribution Before configuring AI-generated captions and translations for distribution, familiarize yourself with how to distribute live streams to remote endpoints .",
+          "Verify the captions in the output manifest Run the following command to see the contents of the generated HLS manifest: gcloud storage cat gs:// BUCKET NAME /main.m3u8 The AI-generated webvtt English captions show up in the output manifest similar to the following: #EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID=\"sub\",LANGUAGE=\"en-US\",NAME=\"English (AI captioned)\",AUTOSELECT=YES,DEFAULT=YES,FORCED=NO,URI=\"vtt english ai/index-1.m3u8\" Stop the channel You must stop a channel before you update the channel configuration."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.channels \\_|\\_ Live Stream API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Must be one of CC1 , CC2 , CC3 , and CC4 , if the codec of the input closed caption is cea608 ; Must be one between SERVICE1 and SERVICE64 , if the codec of the input closed caption is cea708 . fromLanguageCode string Optional.",
+          "JSON representation { \"inputKey\" : string , \"inputTrack\" : integer , \"inputCeaChannel\" : string , \"fromLanguageCode\" : string } Fields inputKey string Optional.",
+          "Supported text codecs: cea608 cea708 webvtt languageCode string Optional."
+        ]
+      },
+      {
+        "title": "\"Class LivestreamServiceAsyncClient (1.16.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description LivestreamServiceAsyncClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "Returns Type Description LivestreamServiceAsyncClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info.",
+          "Each clip represents a clipping operation that generates a VOD playlist from its channel given a set of timestamp ranges. create dvr session create dvr session ( request : typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "livestream.googleapis.com",
+      "main.m3u8",
+      "main.mpd",
+      "projects.locations.channels",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-subtitles",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient"
+      ]
+    }
+  ]
+}

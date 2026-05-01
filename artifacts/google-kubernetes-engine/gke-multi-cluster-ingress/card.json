@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Multi Cluster Ingress",
+  "feature_slug": "gke-multi-cluster-ingress",
+  "summary": "Provides multi-cluster ingress for GKE clusters.",
+  "extended_definition": "Provides multi-cluster ingress for GKE clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Harden your cluster's security \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "source_id": "site-docs-reference-2",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following methods for admission control in GKE clusters: Policy Controller : control workload admission at scale across multiple GKE clusters.",
+          "Best practices Restrict access to cluster API discovery Place teams and environments in separate namespaces or clusters Use the principle of least privilege in access policies Use Workload Identity Federation for GKE to access Google Cloud APIs Use groups to manage access Restrict anonymous access to cluster endpoints Restrict access to cluster API discovery Recommended : restrict access to your control plane and nodes from the internet to prevent unintended access to cluster API discovery endpoints.",
+          "For cluster that were originally created on an earlier GKE version, enable the admission controller: gcloud container clusters update CLUSTER NAME \\ --location = LOCATION \\ --no-enable-service-externalips To enforce this recommendation in your organization, use the constraints/container.managed.denyServiceExternalIPs managed Organization Policy constraint ."
+        ]
+      },
+      {
+        "title": "\"Migrate x86 application on GKE to multi-arch with Arm \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Push the image to Artifact Registry: docker push us-central1-docker.pkg.dev/ $PROJECT ID /docker-repo/x86-hello:v0.0.1 Deploy the x86 application Check that the cluster is ready by running the following script: echo echo -ne \"Waiting for GKE cluster to finish provisioning\" gke status = \"\" while [ -z $gke status ] ; do sleep 2 echo -ne '.' gke status = $( gcloud container clusters list --format = \"value(STATUS)\" --filter = \"NAME= $CLUSTER NAME AND STATUS=RUNNING\" ) done echo echo \"GKE Cluster ' $CLUSTER NAME ' is $gke status \" echo When the cluster is ready, the output should be similar to the following: GKE Cluster 'my-cluster' is RUNNING Retrieve the cluster credentials so that kubectl can connect to the Kubernetes API for the cluster: gcloud container clusters get-credentials $CLUSTER NAME --location $CONTROL PLANE LOCATION --project $PROJECT ID Update the image using kustomize and deploy the x86 application: $( cd k8s/overlays/x86 && kustomize edit set image hello = us-central1-docker.pkg.dev/ $PROJECT ID /docker-repo/x86-hello:v0.0.1 ) kubectl apply -k k8s/overlays/x86 Deploy a Service to expose the application to the Internet: kubectl apply -f k8s/hello-service.yaml Check that the external IP address for the Service, hello-service , is finished provisioning: echo echo -ne \"Waiting for External IP to be provisioned\" external ip = \"\" while [ -z $external ip ] ; do sleep 2 echo -ne '.' external ip = $( kubectl get svc hello-service --template = \"{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}\" ) done echo echo \"External IP: $external ip \" echo After the external IP address is provisioned, the output should be similar to the following: External IP: 203.0.113.0 Make an HTTP request to test that the deployment works as expected: curl -w '\\n' http:// $external ip The output is similar to the following: Hello from NODE:gke-my-cluster-default-pool-32019863-b41t, POD:x86-hello-deployment-6b7b456dd5-mwfkd, CPU PLATFORM:linux/amd64 The output shows that this x86-compatible deployment is running on a node in the default node pool on the amd64 architecture.",
+          "Delete your cluster by running gcloud container clusters delete : gcloud container clusters delete $CLUSTER NAME --location $CONTROL PLANE LOCATION Delete the repository: gcloud artifacts repositories delete docker-repo —location = us-central1 --async What's next Arm workloads on GKE Create clusters and node pools with Arm nodes Build multi-architecture images for Arm workloads Prepare an Arm workload for deployment Prepare Autopilot workloads on Arm architecture Best practices for running cost-optimized Kubernetes applications on GKE Explore reference architectures, diagrams, and best practices about Google Cloud.",
+          "The gcloud CLI provides the primary command-line interface for Google Cloud, and kubectl provides the primary command-line interface for running commands against Kubernetes clusters."
+        ]
+      },
+      {
+        "title": "\"Orchestrate Multislice workloads using JobSet and Kueue \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a GKE cluster In Cloud Shell, create a GKE cluster: Autopilot gcloud container clusters create-auto multislice-cluster \\ --location = CONTROL PLANE LOCATION \\ --cluster-version 1 .29.2-gke.1521000 \\ --release-channel rapid In this command: The --location flag specifies the Compute Engine region of the control plane of the cluster.",
+          "Delete the individual resource Delete the Kueue resources: kubectl delete -f jobsets-multislice.yaml kubectl delete -f kueue.yaml Delete the cluster: gcloud container clusters delete multislice-cluster --location = CONTROL PLANE LOCATION What's next Learn more about Kueue .",
+          "Standard gcloud container clusters create multislice-cluster \\ --location = CONTROL PLANE LOCATION Replace CONTROL PLANE LOCATION with the location in which you want to create your cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alpha.jobset.sigs.k8s.io",
+      "container.managed.denyServiceExternalIPs",
+      "docker.pkg.dev",
+      "github.com",
+      "gke.1521000",
+      "jax.device",
+      "jobset.x",
+      "k8s.io",
+      "kueue.x",
+      "kueue.yaml",
+      "manifests.yaml",
+      "multislice.yaml",
+      "releases.html",
+      "service.yaml",
+      "status.loadBalancer.ingress",
+      "storage.googleapis.com",
+      "v0.0.1",
+      "v0.8.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    }
+  ]
+}

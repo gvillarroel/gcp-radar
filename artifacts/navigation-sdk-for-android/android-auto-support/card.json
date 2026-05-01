@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.452Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "Android Auto support",
+  "feature_slug": "android-auto-support",
+  "summary": "The SDK supports driver-optimized navigation experiences in Android Auto.",
+  "extended_definition": "The SDK supports driver-optimized navigation experiences in Android Auto.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable navigation for Android Auto \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "source_id": "site-docs-root",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Start with Android Auto Before you begin working with the Navigation SDK features designed to work with Android Auto, you must set up a car service for your app so that Android Auto can discover it.",
+          "Set up The first part of getting your app working with Android Auto involves setting up a car service with Android Auto and then enabling the TurnByTurn library in your Navigation SDK app.",
+          "The TurnByTurn library in Navigation SDK provides this navigation information, which your code uses to populate the Android Auto navigation template."
+        ]
+      },
+      {
+        "title": "\"Custom navigation experience \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Enable Navigation for Android Auto Drivers using your app want an overview map for most of their journey, with only minimal turn-by-turn guidance for city streets.",
+          "See the demo: The download of the Navigation SDK contains a demo you can run to see an example of a navigation experience that switches between turn-by-turn guidance through standard navigation to a navigation experience that shows only the device location moving along a road polyline.",
+          "The primary way to implement the Navigation SDK is to use the Google navigation experience , which lets you embed a turn-by-turn navigation experience that uses Google-provided UI elements and visuals — similar to the navigation experience within the Google Maps apps."
+        ]
+      },
+      {
+        "title": "\"Modify the navigation UI \\_|\\_ Navigation SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When the built-in layout changes, Navigation SDK for Android automatically repositions your custom controls.",
+          "View the code Show/Hide the Java code for the navigation activity. package com . example . navsdkcustomization ; import android.content.pm.PackageManager ; import android.graphics.Bitmap ; import android.graphics.BitmapFactory ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.model.BitmapDescriptorFactory ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.StylingOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a customized navigation UI . / public class NavigationActivityCustomization extends AppCompatActivity { private static final String TAG = NavigationActivityCustomization . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private GoogleMap mMap ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "Home Products Google Maps Platform Documentation Android Navigation SDK for Android Send feedback Modify the navigation UI Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Navigation SDK overview \\_|\\_ Navigation SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/overview",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How to use the Navigation SDK The steps below cover a typical use case scenario for using the Navigation SDK: 1 Get set up Create a Google Cloud project, add the Navigation SDK to your API key, and set up your Android Studio project.",
+          "For information on the maps API and functionality differences between the Maps SDK and the Navigation SDK, see the Overview page in the Reference section Navigation Experience : Add the navigation experience using the, which includes the turn-by-turn navigation overlay, turn cards, and additional UI elements.",
+          "Home Products Google Maps Platform Documentation Android Navigation SDK for Android Send feedback Navigation SDK overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.content.pm.PackageManager",
+      "android.graphics.Bitmap",
+      "android.graphics.BitmapFactory",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.widget.Toast",
+      "androidx.annotation.NonNull",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.core.content.ContextCompat",
+      "com.google.android.gms.maps.GoogleMap",
+      "com.google.android.gms.maps.GoogleMap.CameraPerspective",
+      "com.google.android.gms.maps.model.BitmapDescriptorFactory",
+      "com.google.android.gms.maps.model.LatLng",
+      "com.google.android.gms.maps.model.Marker",
+      "com.google.android.gms.maps.model.MarkerOptions",
+      "com.google.android.gms.maps.OnMapReadyCallback",
+      "com.google.android.libraries.navigation.ListenableResultFuture",
+      "com.google.android.libraries.navigation.NavigationApi",
+      "com.google.android.libraries.navigation.Navigator",
+      "com.google.android.libraries.navigation.SimulationOptions",
+      "com.google.android.libraries.navigation.StylingOptions",
+      "com.google.android.libraries.navigation.SupportNavigationFragment",
+      "com.google.android.libraries.navigation.Waypoint",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/android-auto",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-custom-nav",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/overview"
+      ]
+    }
+  ]
+}

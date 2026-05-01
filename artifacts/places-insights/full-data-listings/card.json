@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.023Z",
+  "source_step08_card": "data/step-08/current/products/places-insights/card.json",
+  "product_name": "Places Insights",
+  "product_slug": "places-insights",
+  "feature_name": "Full data listings",
+  "feature_slug": "full-data-listings",
+  "summary": "Full data listings are available for all supported countries.",
+  "extended_definition": "Full data listings are available for all supported countries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/placesinsights/about-data",
+      "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+      "https://developers.google.com/maps/documentation/placesinsights/migration-guide",
+      "https://developers.google.com/maps/documentation/placesinsights/support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migration guide \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/migration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Non-array fields In this release, the id and name fields are now top-level STRING fields for non-array address fields: administrative area level 1 id STRING administrative area level 1 name STRING This new format applies to all fields in the form administrative area level N , where N is 1 through 7.",
+          "New users: If you are a new user of Places Insights, follow the steps in Set up Places Insights to configure your development environment for access to the listings.",
+          "Note: Not all administrative area level N fields are available in every country."
+        ]
+      },
+      {
+        "title": "About Places Insights data and queries \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/about-data",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The sample listing includes data for a top city for each of the supported countries: Amsterdam (NL) Helsinki (FI) Plovdiv (BG) Ankara (TR) Hong Kong (HK) Riffa (BH) Arequipa (PE) Jakarta (ID) Rome (IT) Athens (GR) Jeddah (SA) Santiago (CL) Bad Gastein (AT) Johannesburg (ZA) Sao Paulo (BR) Berlin (DE) Kuala Lumpur (MY) Sharjah (AE) Brno (CZ) Lisbon (PT) Singapore (SG) Brussels (BE) London (GB) Stockholm (SE) Bucharest (RO) Lusail (QA) Sydney (AU) Buenos Aires (AR) Madrid (ES) Taipei (TW) Busan (KR) Manila (PH) Tel Aviv-Yafo (IL) Cairo (EG) Medellín (CO) Tokyo (JP) Chiang Mai (TH) Mexico City (MX) Toronto (CA) Copenhagen (DK) Mumbai (IN) Warsaw (PL) Cork (IE) New York City (US) Wellington (NZ) Debrecen (HU) Oslo (NO) Zurich (CH) Hanoi (VN) Paris (FR) The full datasets include data for each supported country and must be purchased.",
+          "The sample datasets are intended to allow you to try out Places Insights so that you can assess the usability and value of the product before making a decision to purchase the full dataset.",
+          "Supported attribute filters Places Count function filter parameters support the same as the direct query attribute filters except for: Place id Address components Opening hours EV charge options Brands Full schema supported."
+        ]
+      },
+      {
+        "title": "Support options for Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/support",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Support response times Support response times are indicated in the table below (resolution times may vary): Priority level Example situations Standard Support response time Enhanced Support response time Critical Impact - Service Unusable in Production Applies only to Google Maps Platform services marked as General Availability Your situation matches all the following criteria: Your product or service is unusable in production, or business impact is critical (for example, revenue loss).",
+          "You are automatically assigned the Project Owner role for this project.",
+          "Report an issue or feature request If you think you may have found a bug, or if you have a feature request that you would like to share with the Google Maps Platform team, please file a bug or feature request in our issue tracker ."
+        ]
+      },
+      {
+        "title": "Historical data overview \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+        "source_id": "site-api-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SELECT WITH AGGREGATION THRESHOLD snapshot date , COUNT ( ) AS count FROM PROJECT NAME .places insights historical us.places historical WHERE 'restaurant' IN UNNEST ( types ) AND business status = \"OPERATIONAL\" GROUP BY snapshot date ORDER BY snapshot date ASC ; Available listings The following table lists the supported cities and provides links to subscribe.",
+          "This data is useful for performing trends analysis to understand how the places in an area have changed from month to month.",
+          "Setup Note: Historical data is only available to a select number of testers for experimental testing purposes only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "us.places"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/placesinsights/migration-guide",
+        "https://developers.google.com/maps/documentation/placesinsights/about-data",
+        "https://developers.google.com/maps/documentation/placesinsights/support",
+        "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/placesinsights/migration-guide",
+        "https://developers.google.com/maps/documentation/placesinsights/about-data",
+        "https://developers.google.com/maps/documentation/placesinsights/support",
+        "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/placesinsights/migration-guide",
+        "https://developers.google.com/maps/documentation/placesinsights/about-data",
+        "https://developers.google.com/maps/documentation/placesinsights/support",
+        "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview"
+      ]
+    }
+  ]
+}

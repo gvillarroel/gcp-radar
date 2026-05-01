@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Gauge and scorecard charts for Log Analytics",
+  "feature_slug": "gauge-and-scorecard-charts-for-log-analytics",
+  "summary": "Log Analytics query results can be visualized with gauge and scorecard charts.",
+  "extended_definition": "Log Analytics query results can be visualized with gauge and scorecard charts.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation QueryBuilderConfig JSON representation FilterPredicate JSON representation OperatorType FilterExpression JSON representation FieldSource JSON representation ProjectedField JSON representation FieldOperation FunctionApplication JSON representation Comparator SortOrderParameter JSON representation SortOrder Describes a query that can be run in Log Analytics.",
+          "Home Documentation Observability Cloud Logging Reference Send feedback OpsAnalyticsQuery Stay organized with collections Save and categorize content based on your preferences.",
+          "GROUP BY Group the query results by the distinct values of this field."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about creating charts from your query results and saving charts to a custom dashboard, see Chart query results with Observability Analytics .",
+          "The manage search Analyze results button is visible only when the log bucket that contains the log view you are querying has been upgraded to use Observability Analytics.",
+          "To go to the Observability Analytics page from the Logs Explorer, in the Query results toolbar, click manage search Analyze results ."
+        ]
+      },
+      {
+        "title": "Elasticsearch 8.0+ and 9.0+ \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9",
+        "source_id": "site-docs-root-2",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metric type Kind, Type Monitored resources Labels workload.googleapis.com/elasticsearch.breaker.memory.estimated GAUGE , INT64 gce instance instrumentation source name workload.googleapis.com/elasticsearch.breaker.memory.limit GAUGE , INT64 gce instance instrumentation source name workload.googleapis.com/elasticsearch.breaker.tripped CUMULATIVE , INT64 gce instance instrumentation source name workload.googleapis.com/elasticsearch.cluster.data nodes GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.cluster.health GAUGE , INT64 gce instance instrumentation source status workload.googleapis.com/elasticsearch.cluster.in flight fetch GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.cluster.nodes GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.cluster.pending tasks GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.cluster.published states.differences GAUGE , INT64 gce instance instrumentation source state workload.googleapis.com/elasticsearch.cluster.published states.full GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.cluster.shards GAUGE , INT64 gce instance instrumentation source state workload.googleapis.com/elasticsearch.cluster.state queue GAUGE , INT64 gce instance instrumentation source state workload.googleapis.com/elasticsearch.cluster.state update.count CUMULATIVE , INT64 gce instance instrumentation source state workload.googleapis.com/elasticsearch.cluster.state update.time CUMULATIVE , INT64 gce instance instrumentation source state type workload.googleapis.com/elasticsearch.indexing pressure.memory.limit GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.indexing pressure.memory.total.primary rejections CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.indexing pressure.memory.total.replica rejections CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.memory.indexing pressure GAUGE , INT64 gce instance instrumentation source stage workload.googleapis.com/elasticsearch.node.cache.count GAUGE , INT64 gce instance instrumentation source type workload.googleapis.com/elasticsearch.node.cache.evictions CUMULATIVE , INT64 gce instance cache name instrumentation source workload.googleapis.com/elasticsearch.node.cache.memory.usage GAUGE , INT64 gce instance cache name instrumentation source workload.googleapis.com/elasticsearch.node.cluster.connections GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.cluster.io CUMULATIVE , INT64 gce instance direction instrumentation source workload.googleapis.com/elasticsearch.node.disk.io.read GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.disk.io.write GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.documents GAUGE , INT64 gce instance instrumentation source state workload.googleapis.com/elasticsearch.node.fs.disk.available GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.fs.disk.free GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.fs.disk.total GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.http.connections GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.ingest.documents CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.ingest.documents.current GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.ingest.operations.failed CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.open files GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.operations.completed CUMULATIVE , INT64 gce instance instrumentation source operation workload.googleapis.com/elasticsearch.node.operations.time CUMULATIVE , INT64 gce instance instrumentation source operation workload.googleapis.com/elasticsearch.node.pipeline.ingest.documents.current GAUGE , INT64 gce instance instrumentation source name workload.googleapis.com/elasticsearch.node.pipeline.ingest.documents.preprocessed GAUGE , INT64 gce instance instrumentation source name workload.googleapis.com/elasticsearch.node.pipeline.ingest.operations.failed CUMULATIVE , INT64 gce instance instrumentation source name workload.googleapis.com/elasticsearch.node.script.cache evictions CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.script.compilation limit triggered CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.script.compilations GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.shards.data set.size GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.shards.reserved.size GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.shards.size GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.thread pool.tasks.finished CUMULATIVE , INT64 gce instance instrumentation source state thread pool name workload.googleapis.com/elasticsearch.node.thread pool.tasks.queued GAUGE , INT64 gce instance instrumentation source thread pool name workload.googleapis.com/elasticsearch.node.thread pool.threads GAUGE , INT64 gce instance instrumentation source state thread pool name workload.googleapis.com/elasticsearch.node.translog.operations CUMULATIVE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.translog.size GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.node.translog.uncommitted.size GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.os.cpu.load avg.15m GAUGE , DOUBLE gce instance instrumentation source workload.googleapis.com/elasticsearch.os.cpu.load avg.1m GAUGE , DOUBLE gce instance instrumentation source workload.googleapis.com/elasticsearch.os.cpu.load avg.5m GAUGE , DOUBLE gce instance instrumentation source workload.googleapis.com/elasticsearch.os.cpu.usage GAUGE , INT64 gce instance instrumentation source workload.googleapis.com/elasticsearch.os.memory GAUGE , INT64 gce instance instrumentation source state Verify the configuration This section describes how to verify that you correctly configured the Elasticsearch receiver.",
+          "Enter the following query in the editor, and then click Run query : resource.type=\"gce instance\" (log id(\"elasticsearch json\") OR log id(\"elasticsearch gc\")) To verify that Elasticsearch metrics are being sent to Cloud Monitoring, do the following: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Enter the following query in the editor, and then click Run query : {\"workload.googleapis.com/elasticsearch.node.open files\", monitored resource=\"gce instance\"} View dashboard To view your Elasticsearch metrics, you must have a chart or dashboard configured."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avg.15m",
+      "avg.1m",
+      "avg.5m",
+      "elasticsearch.breaker.memory.estimated",
+      "elasticsearch.breaker.memory.limit",
+      "elasticsearch.breaker.tripped",
+      "elasticsearch.cluster.data",
+      "elasticsearch.cluster.health",
+      "elasticsearch.cluster.in",
+      "elasticsearch.cluster.nodes",
+      "elasticsearch.cluster.pending",
+      "elasticsearch.cluster.published",
+      "elasticsearch.cluster.shards",
+      "elasticsearch.cluster.state",
+      "elasticsearch.indexing",
+      "elasticsearch.memory.indexing",
+      "elasticsearch.node.cache.count",
+      "elasticsearch.node.cache.evictions",
+      "elasticsearch.node.cache.memory.usage",
+      "elasticsearch.node.cluster.connections",
+      "elasticsearch.node.cluster.io",
+      "elasticsearch.node.disk.io.read",
+      "elasticsearch.node.disk.io.write",
+      "elasticsearch.node.documents",
+      "elasticsearch.node.fs.disk.available",
+      "elasticsearch.node.fs.disk.free",
+      "elasticsearch.node.fs.disk.total",
+      "elasticsearch.node.http.connections",
+      "elasticsearch.node.ingest.documents",
+      "elasticsearch.node.ingest.documents.current",
+      "elasticsearch.node.ingest.operations.failed",
+      "elasticsearch.node.open",
+      "elasticsearch.node.operations.completed",
+      "elasticsearch.node.operations.time",
+      "elasticsearch.node.pipeline.ingest.documents.current",
+      "elasticsearch.node.pipeline.ingest.documents.preprocessed",
+      "elasticsearch.node.pipeline.ingest.operations.failed",
+      "elasticsearch.node.script.cache",
+      "elasticsearch.node.script.compilation",
+      "elasticsearch.node.script.compilations",
+      "elasticsearch.node.shards.data",
+      "elasticsearch.node.shards.reserved.size",
+      "elasticsearch.node.shards.size",
+      "elasticsearch.node.thread",
+      "elasticsearch.node.translog.operations",
+      "elasticsearch.node.translog.size",
+      "elasticsearch.node.translog.uncommitted.size",
+      "elasticsearch.os.cpu.load",
+      "elasticsearch.os.cpu.usage",
+      "elasticsearch.os.memory",
+      "pool.tasks.finished",
+      "pool.tasks.queued",
+      "pool.threads",
+      "pressure.memory.limit",
+      "pressure.memory.total.primary",
+      "pressure.memory.total.replica",
+      "resource.type",
+      "set.size",
+      "states.differences",
+      "states.full",
+      "update.count",
+      "update.time",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9"
+      ]
+    }
+  ]
+}

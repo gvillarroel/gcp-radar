@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.584Z",
+  "source_step08_card": "data/step-08/current/products/managed-service-for-microsoft-active-directory/card.json",
+  "product_name": "Managed Service for Microsoft Active Directory",
+  "product_slug": "managed-service-for-microsoft-active-directory",
+  "feature_name": "Domain peering",
+  "feature_slug": "domain-peering",
+  "summary": "Managed Microsoft AD supports multi-project access through domain peering.",
+  "extended_definition": "Managed Microsoft AD supports multi-project access through domain peering.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-peering",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Domain peering overview \\_|\\_ Managed Service for Microsoft Active Directory\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-peering",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How domain peering differs from authorized network Managed Microsoft AD domain supports adding up to 5 authorized networks from the domain resource project.",
+          "This functionality provides the flexibility of sharing a single Managed Microsoft AD domain with multiple projects and networks outside the domain resource project.",
+          "How domain peering works Managed Microsoft AD creates a domain peering resource in both the domain resource project and the VPC resource project."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Configure domain peering \\_|\\_ Managed Service for Microsoft\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-peering",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Console To create a peering from the domain resource project, follow these steps: In the Google Cloud console, go to the Managed Microsoft AD page.",
+          "What's next Manage domain peerings Join a Windows VM to a domain Join a Linux VM to a domain Connect to a Managed Microsoft AD domain Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Configure domain peering This page shows you how to configure domain peering with Managed Service for Microsoft Active Directory (Managed Microsoft AD)."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a domain \\_|\\_ Managed Service for Microsoft Active Directory\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Join a Windows VM to a domain Join a Linux VM to a domain Connect to a Managed Microsoft AD domain Configure domain peering Deploy domain controllers in additional regions Deploy Managed Microsoft AD with cross-project access using domain peering Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The full resource name of the authorized VPC network, which is in the following format: projects/ PROJECT ID /global/networks/ VPC NETWORK NAME Create the domain To create a domain, complete the following steps: Console Go to the Managed Microsoft AD page.",
+          "However, after you create a Managed Microsoft AD domain, you can create a trust relationship between the Managed Microsoft AD domain and any other non-Managed Microsoft AD domain."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.global.domains"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-peering",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-peering",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/domain-peering",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/quickstart-domain-peering",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    }
+  ]
+}

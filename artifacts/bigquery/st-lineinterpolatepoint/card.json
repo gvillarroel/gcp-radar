@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ST_LINEINTERPOLATEPOINT",
+  "feature_slug": "st-lineinterpolatepoint",
+  "summary": "The ST_LINEINTERPOLATEPOINT geography function returns a point at a specified fraction along a linestring.",
+  "extended_definition": "The ST_LINEINTERPOLATEPOINT geography function returns a point at a specified fraction along a linestring.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Geography functions | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "feature-recovery-http",
+        "final_score": 331,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "WITH fractions AS ( SELECT 0 AS fraction UNION ALL SELECT 0.5 UNION ALL SELECT 1 UNION ALL SELECT NULL ) SELECT fraction , ST_LINEINTERPOLATEPOINT ( ST_GEOGFROMTEXT ( 'LINESTRING(1 1, 5 5)' ), fraction ) AS point FROM fractions /*-------------+-------------------------------------------+ | fraction | point | +-------------+-------------------------------------------+ | 0 | POINT(1 1) | | 0.5 | POINT(2.99633827268976 3.00182528336078) | | 1 | POINT(5 5) | | NULL | NULL | +-------------+-------------------------------------------*/ ST_LINELOCATEPOINT ST_LINELOCATEPOINT ( linestring_geography , point_geography ) Description Gets a section of a linestring between the start point and a selected point (a point on the linestring closest to the point_geography argument).",
+          "Return type FLOAT64 ST_LINEINTERPOLATEPOINT ST_LINEINTERPOLATEPOINT ( linestring_geography , fraction ) Description Gets a point at a specific fraction in a linestring GEOGRAPHY value.",
+          "ST_LINEINTERPOLATEPOINT Gets a point at a specific fraction in a linestring GEOGRAPHY value."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Return type INT64 Examples SELECT 'banana' AS value , 'an' AS subvalue , 1 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 1 1 2 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , 1 AS position , 2 AS occurrence , INSTR ( 'banana' , 'an' , 1 , 2 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 1 2 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , 1 AS position , 3 AS occurrence , INSTR ( 'banana' , 'an' , 1 , 3 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 1 3 0 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , 3 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , 3 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 3 1 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , - 1 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , - 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an -1 1 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , - 3 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , - 3 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an -3 1 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'ann' AS subvalue , 1 AS position , 1 AS occurrence , INSTR ( 'banana' , 'ann' , 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana ann 1 1 0 +--------------+--------------+----------+------------+------- / SELECT 'helloooo' AS value , 'oo' AS subvalue , 1 AS position , 1 AS occurrence , INSTR ( 'helloooo' , 'oo' , 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ helloooo oo 1 1 5 +--------------+--------------+----------+------------+------- / SELECT 'helloooo' AS value , 'oo' AS subvalue , 1 AS position , 2 AS occurrence , INSTR ( 'helloooo' , 'oo' , 1 , 2 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ helloooo oo 1 2 6 +--------------+--------------+----------+------------+------- / LEFT LEFT ( value , length ) Description Returns a STRING or BYTES value that consists of the specified number of leftmost characters or bytes from value .",
+          "SELECT CODE POINTS TO BYTES ( ARRAY AGG ( ( SELECT CASE WHEN chr BETWEEN b 'a' and b 'z' THEN TO CODE POINTS ( b 'a' ) [ offset ( 0 ) ] + MOD ( code + 13 - TO CODE POINTS ( b 'a' ) [ offset ( 0 ) ] , 26 ) WHEN chr BETWEEN b 'A' and b 'Z' THEN TO CODE POINTS ( b 'A' ) [ offset ( 0 ) ] + MOD ( code + 13 - TO CODE POINTS ( b 'A' ) [ offset ( 0 ) ] , 26 ) ELSE code END FROM ( SELECT code , CODE POINTS TO BYTES ( [ code ] ) chr ) ) ORDER BY OFFSET )) AS encoded string FROM UNNEST ( TO CODE POINTS ( b 'Test String!' )) code WITH OFFSET ; -- Note that the result of CODE POINTS TO BYTES is of type BYTES, displayed as a base64-encoded string. -- In BYTES format, b'Grfg Fgevat!' is the result. / ------------------+ encoded string +------------------+ R3JmZyBGZ2V2YXQh +------------------ / CODE POINTS TO STRING CODE POINTS TO STRING ( unicode code points ) Description Takes an array of Unicode code points as ARRAY<INT64> and returns a STRING .",
+          "To work with an array of Unicode code points, see CODE POINTS TO STRING Return type STRING Examples SELECT CHR ( 65 ) AS A , CHR ( 255 ) AS B , CHR ( 513 ) AS C , CHR ( 1024 ) AS D ; / -------+-------+-------+-------+ A B C D +-------+-------+-------+-------+ A ÿ ȁ Ѐ +-------+-------+-------+------- / SELECT CHR ( 97 ) AS A , CHR ( 0xF9B5 ) AS B , CHR ( 0 ) AS C , CHR ( NULL ) AS D ; / -------+-------+-------+-------+ A B C D +-------+-------+-------+-------+ a 例 NULL +-------+-------+-------+------- / CODE POINTS TO BYTES CODE POINTS TO BYTES ( ascii code points ) Description Takes an array of extended ASCII code points as ARRAY<INT64> and returns BYTES ."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can view specific CREATE MODEL statements by clicking the MODEL TYPE name in the following list, in the table of contents in the left panel, or in the create model link in the End-to-end user journey for each model . { CREATE MODEL CREATE MODEL IF NOT EXISTS CREATE OR REPLACE MODEL } model name [TRANSFORM ( select list )] [INPUT ( field name field type ) OUTPUT ( field name field type )] [REMOTE WITH CONNECTION { connection name DEFAULT}] [OPTIONS( model option list )] [ AS { query statement ( training data AS ( query statement ), custom holiday AS ( holiday statement ) )}] model option list: MODEL TYPE = { 'LINEAR REG' 'LOGISTIC REG' 'KMEANS' 'MATRIX FACTORIZATION' 'PCA' 'AUTOENCODER' 'AUTOML CLASSIFIER' 'AUTOML REGRESSOR' 'BOOSTED TREE CLASSIFIER' 'BOOSTED TREE REGRESSOR' 'RANDOM FOREST CLASSIFIER' 'RANDOM FOREST REGRESSOR' 'DNN CLASSIFIER' 'DNN REGRESSOR' 'DNN LINEAR COMBINED CLASSIFIER' 'DNN LINEAR COMBINED REGRESSOR' 'ARIMA PLUS' 'ARIMA PLUS XREG' 'TENSORFLOW' 'TENSORFLOW LITE' 'ONNX' 'XGBOOST' 'CONTRIBUTION ANALYSIS' } [, MODEL REGISTRY = { 'VERTEX AI' } ] [, VERTEX AI MODEL ID = string value ] [, VERTEX AI MODEL VERSION ALIASES = string array ] [, INPUT LABEL COLS = string array ] [, MAX ITERATIONS = int64 value ] [, EARLY STOP = { TRUE FALSE } ] [, MIN REL PROGRESS = float64 value ] [, DATA SPLIT METHOD = { 'AUTO SPLIT' 'RANDOM' 'CUSTOM' 'SEQ' 'NO SPLIT' } ] [, DATA SPLIT EVAL FRACTION = float64 value ] [, DATA SPLIT TEST FRACTION = float64 value ] [, DATA SPLIT COL = string value ] [, OPTIMIZE STRATEGY = { 'AUTO STRATEGY' 'BATCH GRADIENT DESCENT' 'NORMAL EQUATION' } ] [, L1 REG = float64 value ] [, L2 REG = float64 value ] [, LEARN RATE STRATEGY = { 'LINE SEARCH' 'CONSTANT' } ] [, LEARN RATE = float64 value ] [, LS INIT LEARN RATE = float64 value ] [, WARM START = { TRUE FALSE } ] [, AUTO CLASS WEIGHTS = { TRUE FALSE } ] [, CLASS WEIGHTS = struct array ] [, INSTANCE WEIGHT COL = string value ] [, NUM CLUSTERS = int64 value ] [, KMEANS INIT METHOD = { 'RANDOM' 'KMEANS++' 'CUSTOM' } ] [, KMEANS INIT COL = string value ] [, DISTANCE TYPE = { 'EUCLIDEAN' 'COSINE' } ] [, STANDARDIZE FEATURES = { TRUE FALSE } ] [, MODEL PATH = string value ] [, BUDGET HOURS = float64 value ] [, OPTIMIZATION OBJECTIVE = { string value struct value } ] [, FEEDBACK TYPE = {'EXPLICIT' 'IMPLICIT'} ] [, NUM FACTORS = int64 value ] [, USER COL = string value ] [, ITEM COL = string value ] [, RATING COL = string value ] [, WALS ALPHA = float64 value ] [, BOOSTER TYPE = { 'gbtree' 'dart'} ] [, NUM PARALLEL TREE = int64 value ] [, DART NORMALIZE TYPE = { 'tree' 'forest'} ] [, TREE METHOD = { 'auto' 'exact' 'approx' 'hist'} ] [, MIN TREE CHILD WEIGHT = float64 value ] [, COLSAMPLE BYTREE = float64 value ] [, COLSAMPLE BYLEVEL = float64 value ] [, COLSAMPLE BYNODE = float64 value ] [, MIN SPLIT LOSS = float64 value ] [, MAX TREE DEPTH = int64 value ] [, SUBSAMPLE = float64 value ] [, ACTIVATION FN = { 'RELU' 'RELU6' 'CRELU' 'ELU' 'SELU' 'SIGMOID' 'TANH' } ] [, BATCH SIZE = int64 value ] [, DROPOUT = float64 value ] [, HIDDEN UNITS = int array ] [, OPTIMIZER = { 'ADAGRAD' 'ADAM' 'FTRL' 'RMSPROP' 'SGD' } ] [, TIME SERIES TIMESTAMP COL = string value ] [, TIME SERIES DATA COL = string value ] [, TIME SERIES ID COL = { string value string array } ] [, HORIZON = int64 value ] [, AUTO ARIMA = { TRUE FALSE } ] [, AUTO ARIMA MAX ORDER = int64 value ] [, AUTO ARIMA MIN ORDER = int64 value ] [, NON SEASONAL ORDER = (int64 value, int64 value, int64 value) ] [, DATA FREQUENCY = { 'AUTO FREQUENCY' 'PER MINUTE' 'HOURLY' 'DAILY' 'WEEKLY' ... } ] [, FORECAST LIMIT LOWER BOUND = float64 value ] [, FORECAST LIMIT UPPER BOUND = float64 value ] [, INCLUDE DRIFT = { TRUE FALSE } ] [, HOLIDAY REGION = { 'GLOBAL' 'NA' 'JAPAC' 'EMEA' 'LAC' 'AE' ... } ] [, CLEAN SPIKES AND DIPS = { TRUE FALSE } ] [, ADJUST STEP CHANGES = { TRUE FALSE } ] [, DECOMPOSE TIME SERIES = { TRUE FALSE } ] [, HIERARCHICAL TIME SERIES COLS = { string array } ] [, ENABLE GLOBAL EXPLAIN = { TRUE FALSE } ] [, APPROX GLOBAL FEATURE CONTRIB = { TRUE FALSE }] [, INTEGRATED GRADIENTS NUM STEPS = int64 value ] [, CALCULATE P VALUES = { TRUE FALSE } ] [, FIT INTERCEPT = { TRUE FALSE } ] [, CATEGORY ENCODING METHOD = { 'ONE HOT ENCODING' 'DUMMY ENCODING' 'LABEL ENCODING' 'TARGET ENCODING' } ] [, { ENDPOINT = string value HUGGING FACE MODEL ID = string value MODEL GARDEN MODEL NAME = string value } ] [, HUGGING FACE TOKEN = string value ] [, MACHINE TYPE = string value ] [, MIN REPLICA COUNT = int64 value ] [, MAX REPLICA COUNT = int64 value ] [, RESERVATION AFFINITY TYPE = { 'NO RESERVATION' 'ANY RESERVATION' 'SPECIFIC RESERVATION' } ] [, RESERVATION AFFINITY KEY = string value ] [, RESERVATION AFFINITY VALUES = string array ] [, ENDPOINT IDLE TTL = interval value ] [, REMOTE SERVICE TYPE = { 'CLOUD AI VISION V1' 'CLOUD AI NATURAL LANGUAGE V1' 'CLOUD AI TRANSLATE V3' } ] [, XGBOOST VERSION = { '0.9' '1.1' } ] [, TF VERSION = { '1.15' '2.8.0' '2.17.0' } ] [, NUM TRIALS = int64 value , ] [, MAX PARALLEL TRIALS = int64 value ] [, HPARAM TUNING ALGORITHM = { 'VIZIER DEFAULT' 'RANDOM SEARCH' 'GRID SEARCH' } ] [, HPARAM TUNING OBJECTIVES = { 'R2 SCORE' 'ROC AUC' ... } ] [, NUM PRINCIPAL COMPONENTS = int64 value ] [, PCA EXPLAINED VARIANCE RATIO = float64 value ] [, SCALE FEATURES = { TRUE FALSE } ] [, PCA SOLVER = { 'FULL' 'RANDOMIZED' 'AUTO' } ] [, TIME SERIES LENGTH FRACTION = float64 value ] [, MIN TIME SERIES LENGTH = int64 value ] [, MAX TIME SERIES LENGTH = int64 value ] [, TREND SMOOTHING WINDOW SIZE = int64 value ] [, SEASONALITIES = string array ] [, PROMPT COL = string value ] [, LEARNING RATE MULTIPLIER = float64 value ] [, ACCELERATOR TYPE = { 'GPU' 'TPU' } ] [, EVALUATION TASK = { 'TEXT GENERATION' 'CLASSIFICATION' 'SUMMARIZATION' 'QUESTION ANSWERING' 'UNSPECIFIED' } ] [, DOCUMENT PROCESSOR = string value ] [, SPEECH RECOGNIZER = string value ] [, KMS KEY NAME = string value ] [, CONTRIBUTION METRIC = string value ] [, DIMENSION ID COLS = string array ] [, IS TEST COL = string value ] [, MIN APRIORI SUPPORT = float64 value ] [, PRUNING METHOD = {'NO PRUNING', 'PRUNE REDUNDANT INSIGHTS'} ] [, TOP K INSIGHTS BY APRIORI SUPPORT = int64 value ] CREATE MODEL Creates and trains a new model in the specified dataset.",
+          "See XGBoost INPUT OUTPUT clause for more details. field type Remote models support the following BigQuery data types for INPUT and OUTPUT clauses: Simple type: BOOL , INT64 , FLOAT64 , NUMERIC , BIGNUMERIC , STRING ARRAY <Simple type> XGBoost models only support numeric types for the INPUT field type and FLOAT64 for the OUTPUT field type. connection name BigQuery uses a CLOUD RESOURCE connection to interact with your Vertex AI endpoint.",
+          "Linear & logistic regression , Boosted trees , DNN , Wide & Deep , Kmeans , Matrix factorization , Autoencoder EARLY STOP Whether training should stop after the first iteration in which the relative loss improvement is less than the value specified for MIN REL PROGRESS."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "organizations.locations.dataExchanges",
+      "projects.dataSources",
+      "projects.locations",
+      "projects.locations.capacityCommitments",
+      "projects.locations.connections",
+      "projects.locations.dataExchanges",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.queryTemplates",
+      "projects.locations.dataPolicies",
+      "projects.locations.dataSources",
+      "projects.locations.reservationGroups",
+      "projects.locations.reservations",
+      "projects.locations.reservations.assignments",
+      "projects.locations.subscriptions",
+      "projects.locations.transferConfigs",
+      "projects.locations.transferConfigs.runs",
+      "projects.locations.transferConfigs.runs.transferLogs",
+      "projects.locations.transferConfigs.transferResources",
+      "projects.locations.workflows",
+      "projects.locations.workflows.subtasks",
+      "projects.transferConfigs",
+      "projects.transferConfigs.runs",
+      "projects.transferConfigs.runs.transferLogs",
+      "projects.transferConfigs.transferResources"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    }
+  ]
+}

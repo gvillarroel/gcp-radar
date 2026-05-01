@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.583Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "IAM policy configuration support",
+  "feature_slug": "iam-policy-configuration-support",
+  "summary": "Deployment Manager configurations can specify IAM policies.",
+  "extended_definition": "Deployment Manager configurations can specify IAM policies.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting access control in a configuration \\_|\\_ Cloud Deployment Manager\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you plan to create Pub/Sub Topics that can be managed by specific users, you can express this to Deployment Manager by specifying an IAM policy in your configuration.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Setting access control in a configuration Stay organized with collections Save and categorize content based on your preferences.",
+          "If you change the account's roles outside Deployment Manager and then update the original deployment, the roles from the deployment configuration are applied to the account."
+        ]
+      },
+      {
+        "title": "\"Deployments: setIamPolicy \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy",
+        "source_id": "site-api-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request HTTP request POST https://www.googleapis.com/deploymentmanager/v2/projects/ project /global/deployments/ resource /setIamPolicy Parameters Parameter name Value Description Path parameters project string Project ID for this request. resource string Name or id of the resource for this request.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Reference Send feedback Deployments: setIamPolicy Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, storage.googleapis.com, cloudsql.googleapis.com. allServices is a special value that covers all services. policy.auditConfigs[]. exemptedMembers[] list policy.auditConfigs[]. auditLogConfigs[] list The configuration for logging of each type of permission. policy.auditConfigs[].auditLogConfigs[]. logType string The log type that this config enables. policy.auditConfigs[].auditLogConfigs[]. exemptedMembers[] list Specifies the identities that do not cause logging for this type of permission."
+        ]
+      },
+      {
+        "title": "\"Sharing Types Across Projects \\_|\\_ Cloud Deployment Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: { \"policy\" : { \"version\" : \"0\" , \"bindings\" : [ { \"role\" : \"roles/owner\" , \"members\" : [ \"user:example@gmail.com\" ] }, { \"role\" : \"roles/deploymentmanager.typeViewer\" , \"members\" : [ \"serviceAccount:123456789012@cloudservices.gserviceaccount.com\" ] } ] } } Using types from other projects in your configuration Once you have access to your types, you can specify the type in configurations using the syntax.",
+          "Granting users the ability to list and view types Granting the project's service account the deploymentmanager.typeViewer role allows the project to deploy these types in your configurations but does not allow users to view or list these types.",
+          "Read about Deployment Manager configurations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudservices.gserviceaccount.com",
+      "cloudsql.googleapis.com",
+      "deploymentmanager.typeViewer",
+      "e.g",
+      "gmail.com",
+      "policy.auditConfigs",
+      "policy.bindings",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/deploymentmanager.typeViewer",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/sharing-types-across-projects",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/setIamPolicy"
+      ]
+    }
+  ]
+}

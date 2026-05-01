@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "scheduler Jupyter plugin",
+  "feature_slug": "scheduler-jupyter-plugin",
+  "summary": "The scheduler Jupyter plugin is now preinstalled in JupyterLab 4 and includes support for Cloud Composer and Vertex AI notebook schedulers.",
+  "extended_definition": "The scheduler Jupyter plugin is now preinstalled in JupyterLab 4 and includes support for Cloud Composer and Vertex AI notebook schedulers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage access to a Vertex AI Workbench instance's JupyterLab interface \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JupyterLab access modes Vertex AI Workbench instances support the following access modes: Single user only : The Single user only access mode grants access only to the user that you specify.",
+          "To grant access to users through a service account, you grant the iam.serviceAccounts.actAs permission on the specified service account for each user who needs to access JupyterLab.",
+          "Manage access to an instance's JupyterLab interface This page describes how to grant access to the JupyterLab interface of a Vertex AI Workbench instance."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance's JupyterLab\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "JupyterLab access modes Managed notebooks instances support the following access modes: Single user only : The Single user only access mode grants access only to the user that you specify.",
+          "To grant access to users through a service account, you grant the iam.serviceAccounts.actAs permission on the specified service account for each user who needs to access JupyterLab.",
+          "Access limitations Granting a principal access to a managed notebooks instance's JupyterLab interface doesn't grant access to the instance itself."
+        ]
+      },
+      {
+        "title": "Create a notebook \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vertex AI Workbench instances are prepackaged with JupyterLab and have a preinstalled suite of deep learning packages, including support for the TensorFlow and PyTorch frameworks.",
+          "In the left-navigation pane of JupyterLab, find your new notebook, named Untitled.ipynb .",
+          "Go to Instances Next to your instance's name, click Open JupyterLab ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.serviceAccounts.actAs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook"
+      ]
+    }
+  ]
+}

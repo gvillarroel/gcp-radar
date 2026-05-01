@@ -120,6 +120,126 @@ async function loadStep08Inventory() {
   return { roles, permissions };
 }
 
+async function validateStep08CardsAreInternallyConsistent() {
+  const findings = [];
+  const products = [];
+
+  for (const productSlug of await listDirs(path.join(step08Root, "products"))) {
+    const cardPath = path.join(step08Root, "products", productSlug, "card.json");
+    const card = await readJson(cardPath, null);
+    if (!card) {
+      continue;
+    }
+    const features = Array.isArray(card.features) ? card.features : [];
+    const iamCounts = {
+      explicit: features.filter((feature) => feature.iam?.iam_mapping_status === "explicit").length,
+      derived_from_permission_prefix: features.filter((feature) => feature.iam?.iam_mapping_status === "derived_from_permission_prefix").length,
+      unknown: features.filter((feature) => feature.iam?.iam_mapping_status === "unknown").length,
+    };
+    const expectedSummary = {
+      explicit_feature_count: iamCounts.explicit,
+      derived_feature_count: iamCounts.derived_from_permission_prefix,
+      unknown_feature_count: iamCounts.unknown,
+    };
+    const actualSummary = {
+      explicit_feature_count: Number(card.iam_summary?.explicit_feature_count || 0),
+      derived_feature_count: Number(card.iam_summary?.derived_feature_count || 0),
+      unknown_feature_count: Number(card.iam_summary?.unknown_feature_count || 0),
+    };
+    const serviceCounts = {
+      explicit: Number(card.service_card?.iam_status_counts?.explicit || 0),
+      derived_from_permission_prefix: Number(card.service_card?.iam_status_counts?.derived_from_permission_prefix || 0),
+      unknown: Number(card.service_card?.iam_status_counts?.unknown || 0),
+    };
+
+    if (Number(card.feature_count || 0) !== features.length) {
+      findings.push({
+        severity: "error",
+        rule: "step08_product_feature_count_mismatch",
+        path: cardPath,
+        product_slug: productSlug,
+        expected: features.length,
+        actual: card.feature_count,
+      });
+    }
+    if (!jsonEquals(actualSummary, expectedSummary)) {
+      findings.push({
+        severity: "error",
+        rule: "step08_product_iam_summary_mismatch",
+        path: cardPath,
+        product_slug: productSlug,
+        expected: expectedSummary,
+        actual: actualSummary,
+      });
+    }
+    if (Number(card.service_card?.feature_count || 0) !== features.length) {
+      findings.push({
+        severity: "error",
+        rule: "step08_service_card_feature_count_mismatch",
+        path: cardPath,
+        product_slug: productSlug,
+        expected: features.length,
+        actual: card.service_card?.feature_count ?? null,
+      });
+    }
+    if (!jsonEquals(serviceCounts, iamCounts)) {
+      findings.push({
+        severity: "error",
+        rule: "step08_service_card_iam_status_counts_mismatch",
+        path: cardPath,
+        product_slug: productSlug,
+        expected: iamCounts,
+        actual: serviceCounts,
+      });
+    }
+
+    products.push({
+      product_slug: productSlug,
+      feature_count: features.length,
+      explicit_iam_feature_count: iamCounts.explicit,
+      derived_iam_feature_count: iamCounts.derived_from_permission_prefix,
+      unknown_iam_feature_count: iamCounts.unknown,
+    });
+  }
+
+  const indexPath = path.join(step08Root, "index.json");
+  const index = await readJson(indexPath, null);
+  if (index) {
+    const expectedProductSlugs = products.map((product) => product.product_slug).sort();
+    const actualProductSlugs = (index.products || []).map((product) => product.product_slug).filter(Boolean).sort();
+    const expectedCounts = {
+      product_count: products.length,
+      feature_count: products.reduce((sum, product) => sum + product.feature_count, 0),
+      explicit_iam_feature_count: products.reduce((sum, product) => sum + product.explicit_iam_feature_count, 0),
+      derived_iam_feature_count: products.reduce((sum, product) => sum + product.derived_iam_feature_count, 0),
+      unknown_iam_feature_count: products.reduce((sum, product) => sum + product.unknown_iam_feature_count, 0),
+    };
+    for (const [field, expected] of Object.entries(expectedCounts)) {
+      if (Number(index[field] || 0) !== expected) {
+        findings.push({
+          severity: "error",
+          rule: "step08_index_count_mismatch",
+          path: indexPath,
+          field,
+          expected,
+          actual: index[field] ?? null,
+        });
+      }
+    }
+    if (!jsonEquals(actualProductSlugs, expectedProductSlugs)) {
+      findings.push({
+        severity: "error",
+        rule: "step08_index_product_inventory_mismatch",
+        path: indexPath,
+        expected: expectedProductSlugs,
+        actual: actualProductSlugs,
+      });
+    }
+  }
+
+  return findings;
+}
+
 async function validateArtifacts() {
   const findings = [];
   let featureCount = 0;
@@ -2504,6 +2624,7 @@ async function validateRadarMatchesArtifacts() {
 }
 
 async function main() {
+  const step08ConsistencyFindings = await validateStep08CardsAreInternallyConsistent();
   const artifactValidation = await validateArtifacts();
   const artifactIndexFindings = await validateArtifactProductIndexes();
   const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
@@ -2521,6 +2642,7 @@ async function main() {
   const step09IndexFindings = await validateStep09IndexMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
+    ...step08ConsistencyFindings,
     ...artifactValidation.findings,
     ...artifactIndexFindings,
     ...artifactMarkdownExternalLinkFindings,

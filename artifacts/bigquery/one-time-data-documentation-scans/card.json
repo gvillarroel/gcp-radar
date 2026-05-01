@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "One-time data documentation scans",
+  "feature_slug": "one-time-data-documentation-scans",
+  "summary": "BigQuery supports one-time data documentation scans that execute immediately when created.",
+  "extended_definition": "BigQuery supports one-time data documentation scans that execute immediately when created.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+      "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Column-based time partitioning \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\" , pii = \"sensitive\" } } resource \"google bigquery table\" \"default\" { dataset id = google bigquery dataset.default.dataset id table id = \"mytable\" time partitioning { type = \"DAY\" field = \"Created\" expiration ms = 432000000 # 5 days } require partition filter = true schema = << EOF [ { \"name\" : \"ID\" , \"type\" : \"INT64\" , \"mode\" : \"NULLABLE\" , \"description\" : \"Item ID\" }, { \"name\" : \"Created\" , \"type\" : \"TIMESTAMP\" , \"description\" : \"Record creation timestamp\" }, { \"name\" : \"Item\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] EOF } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Column-based time partitioning Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function createTablePartitioned () { // Creates a new partitioned table named \"my table\" in \"my dataset\". / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = \"my dataset\"; // const tableId = \"my table\"; const schema = 'Name:string, Post Abbr:string, Date:date' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { schema : schema , location : 'US' , timePartitioning : { type : 'DAY' , expirationMs : '7776000000' , field : ' date ' , }, }; // Create a new table in the dataset const [ table ] = await bigquery . dataset ( datasetId ) . createTable ( tableId , options ); console . log ( Table ${ table . id } created with partitioning: ); console . log ( table . metadata . timePartitioning ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Introduction to partitioned tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "source_id": "site-docs-root",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ingestion time partitioning When you create a table partitioned by ingestion time, BigQuery automatically assigns rows to partitions based on the time when BigQuery ingests the data.",
+          "When you run a query that filters by the clustered column, BigQuery only scans the relevant blocks based on the clustered columns instead of the entire table or table partition.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Introduction to data masking \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following results are returned: SSN Priority Lifetime value Creation date Email NULL \"\" Zmy9vydG5q= March 8, 1983 NULL NULL \"\" GhwTwq6Ynm= December 29, 2009 NULL NULL \"\" B6y7dsgaT9= July 14, 2021 NULL NULL \"\" Uh02hnR1sg= May 5, 1997 NULL All other users : Any user who does not belong to one of the listed groups gets an access denied error, because they haven't been granted the Data Catalog Fine-Grained Reader or BigQuery Masked Reader roles.",
+          "The following results are returned: SSN Priority Lifetime value Creation date Email NULL High 90,000 March 8, 1983 NULL NULL High 84,875 December 29, 2009 NULL NULL Medium 38,000 July 14, 2021 NULL NULL Low 245 May 5, 1997 NULL fin-dev@example.com : This group has been granted the BigQuery Masked Reader role on the Financial policy tag.",
+          "Custom masking routines Custom masking routines are subject to the following limitations: Custom data masking supports all BigQuery data types except STRUCT , because data masking can only apply to leaf fields of the STRUCT data type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.default.dataset",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    }
+  ]
+}

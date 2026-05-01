@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.664Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "Cloud Healthcare API v1 general availability",
+  "feature_slug": "cloud-healthcare-api-v1-general-availability",
+  "summary": "Cloud Healthcare API reached general availability with release version v1.",
+  "extended_definition": "Cloud Healthcare API reached general availability with release version v1.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+      "https://docs.cloud.google.com/healthcare-api/docs/fhir",
+      "https://docs.cloud.google.com/healthcare-api/docs/tutorials/pre-built-tools-with-mcp-toolbox"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Cloud Healthcare API with MCP and other agents \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/tutorials/pre-built-tools-with-mcp-toolbox",
+        "source_id": "site-docs-root-2",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make the binary executable: chmod +x toolbox Verify the installation: ./toolbox --version Set up clients and connections This section explains how to connect the Cloud Healthcare API to your tools.",
+          "The following tools are available to the LLM: get dataset : Retrieves a dataset's details. list datasets : Lists health datasets in a project. list fhir stores : Lists the FHIR stores in the given dataset. list dicom stores : Lists the DICOM stores in the given dataset. get fhir store : Gets the configuration of the specified FHIR store. get fhir store metrics : Gets metrics associated with the FHIR store. get fhir resource : Gets the contents of a FHIR resource. get fhir resource version : Gets the contents of a version (current or historical) of a FHIR resource. fhir patient everything : Retrieves a FHIR Patient resource and resources related to that patient. fhir patient search : Searches for FHIR patient resources in the FHIR store according to criteria specified. get dicom store : Gets the configuration of the specified DICOM store. get dicom store metrics : Gets metrics associated with the DICOM store. search dicom studies : Returns a list of matching DICOM studies. search dicom series : Returns a list of matching DICOM series. search dicom instances : Returns a list of matching DICOM instances. retrieve dicom instance rendered : Returns a base64-encoding of a rendered image in JPEG format for a DICOM instance associated with the given study, series, and SOP Instance UID.",
+          "You must use MCP Toolbox version v0.19.1 or later: linux/amd64 curl -O https://storage.googleapis.com/genai-toolbox/ VERSION /linux/amd64/toolbox Replace VERSION with the MCP Toolbox version—for example v0.19.1 . macOS darwin/arm64 curl -O https://storage.googleapis.com/genai-toolbox/ VERSION /darwin/arm64/toolbox Replace VERSION with the MCP Toolbox version—for example v0.19.1 . macOS darwin/amd64 curl -O https://storage.googleapis.com/genai-toolbox/ VERSION /darwin/amd64/toolbox Replace VERSION with the MCP Toolbox version—for example v0.19.1 . windows/amd64 curl -O https://storage.googleapis.com/genai-toolbox/ VERSION /windows/amd64/toolbox Replace VERSION with the MCP Toolbox version—for example v0.19.1 ."
+        ]
+      },
+      {
+        "title": "\"FHIR conformance statement \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/fhir",
+        "source_id": "site-api-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "The v1 API supports the following versions: R5 version 5.0.0 (Release 5) R4 version 4.0.1 (Release 4) STU3 version 3.0.1 (Release 3 - Standard for Trial Use) DSTU2 version 1.0.2 (Draft Standard for Trial Use) When you create a FHIR store, you specify the FHIR version as a parameter to the fhirStores.create method.",
+          "FHIR stores within the Cloud Healthcare API support multiple versions of the Fast Healthcare Interoperability Resources ( FHIR ) specification published by Health Level 7 International ( HL7 ).",
+          "For example, the DSTU2 conformance interaction is different from the STU3 capabilities interaction but both share the /fhir/metadata REST path, so that path returns different responses based on the FHIR version of the store."
+        ]
+      },
+      {
+        "title": "\"Enable customer-managed encryption keys (CMEK) for Cloud Healthcare API\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following process describes how key availability is checked, and how a dataset can be disabled and deleted: After a CMEK-encrypted Cloud Healthcare API dataset is created, the Cloud Healthcare API checks the key's status every five minutes to ensure the key is available.",
+          "Key unavailability and data loss If a dataset is encrypted by a key, and that key becomes unavailable and remains unavailable, the Cloud Healthcare API disables and eventually deletes the dataset.",
+          "Rotating a key results in the following: Cloud Healthcare API datasets created after the rotation use the new key version for encryption and all operations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.googleapis.com",
+      "v0.19.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/pre-built-tools-with-mcp-toolbox",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/pre-built-tools-with-mcp-toolbox",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Custom caller ID using SIP headers",
+  "feature_slug": "custom-caller-id-using-sip-headers",
+  "summary": "Administrators can set a custom caller ID from an incoming SIP header for call connecting and connected screens.",
+  "extended_definition": "Administrators can set a custom caller ID from an incoming SIP header for call connecting and connected screens.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Supervisory_Monitoring_Data_Set"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customizing languages, recordings, & messages \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "source_id": "site-docs-reference-2",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom Audio Files & Hold Music Details Overview Almost all messages that are played to callers can be customized with your audio recordings.",
+          "Customer-facing languages currently include: Arabic Czech Chinese, Simplified Chinese, Traditional Danish Dutch English (Australian) English (Canada) English (UK) English (US) Finnish French (France) French (Canada) German Hungarian Italian Japanese Korean Norwegian Polish Portuguese (Brazil) Portuguese (Portugal) Spanish (Spain) Spanish (Mexico) Swedish Thai Turkish Vietnamese Note: Text-to-Speech (TTS) is not yet available for these languages.",
+          "If you still need help, email support@yourcompany.com Chat : Shows once the chat option is selected with other queues available for selection below Example after hours chat screen: Sample variable attributes for customizing web and mobile messages The following variables can be inserted into Mobile and Web SDK messages and reference either information passed from the SDK or wait information."
+        ]
+      },
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Voicemail : directs the caller to voicemail with an option to customize the voicemail greeting.",
+          "Here is an example reserved data properties in a SIP header: se tt i n g : { redirec t io n : { op t io n : \"sip\" , sip : { uri : \"Destination SIP URI\" , da ta parame ters e na bled : true false , da ta parame ters : [ { f ield : \"verified customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"bad actor\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"repeat customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" } ], da ta records : { i n me ta da ta : true false , i n crm record : true false } } } } Support for virtual agents If you have a virtual agent (a support agent or a virtual task assistant) that performs end-user verification, the virtual agent can pass the end-user verification information to CCAI Platform.",
+          "Viewing live chat UI Agent : Name of Agent as entered on the Users and Teams page End User : Consumer name or unique ID if available Issue : Queue menu path View Case / Ticket : If your CRM is integrated with Contact Center AI Platform (CCAI Platform), click the link to view the CRM record associated with the chat session After Hour Deflection for Calls and Chats Overview Customize your consumer's experience by configuring specific deflection paths for when consumers try to contact you outside of your Hours of Operation are first configured, then deflection is enabled and configured at the global level in the Call Settings and Chat Settings pages."
+        ]
+      },
+      {
+        "title": "\"Standard Reports: Supervisory Monitoring Data Set \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Supervisory_Monitoring_Data_Set",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "yourcompany.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

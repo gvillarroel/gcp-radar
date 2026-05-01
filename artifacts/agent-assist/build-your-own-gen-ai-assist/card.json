@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.312Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "Build your own Gen AI Assist",
+  "feature_slug": "build-your-own-gen-ai-assist",
+  "summary": "Build your own Gen AI Assist is in preview, available in all Customer Engagement Suite regions and supporting Gemini foundation model access and trigger events based on agent and customer messages.",
+  "extended_definition": "Build your own Gen AI Assist is in preview, available in all Customer Engagement Suite regions and supporting Gemini foundation model access and trigger events based on agent and customer messages.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+      "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+      "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build your own GenAI assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following is a JSON example of a conversation profile. { \"displayName\" : \"build-your-own-assist-test\" , \"humanAgentAssistantConfig\" : { \"humanAgentSuggestionConfig\" : { \"generators\" : \"projects/PROJECT ID/locations/global/generators/GENERATOR ID\" } } } Verify with the simulator You can verify the conversation profile in the Agent Assist simulator .",
+          "Build your own GenAI assist includes the following quota limits: Name Description Limit Generator manager operations per minute (per region) Limit on the number of generator manager operations that can be performed each minute, such as creating, listing or deleting generators.",
+          "Generator outputs After you provide the inputs to the text generator, the Build your own GenAI assist generator provides suggestions such as article links, appropriate responses, or backend information about promotional offers."
+        ]
+      },
+      {
+        "title": "\"Integrate backend modules with your system \\_|\\_ Agent Assist \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the following IAM roles to your account: Project IAM Admin (roles/resourcemanager.projectIamAdmin) Service Usage Admin (roles/serviceusage.serviceUsageAdmin) Service Account Admin (roles/iam.serviceAccountAdmin) Service Account User (roles/iam.serviceAccountUser) Pub/Sub Admin (roles/pubsub.admin) Secret Manager Admin (roles/secretmanager.admin) Cloud Build Editor (roles/cloudbuild.builds.editor) Artifact Registry Administrator (roles/artifactregistry.admin) Storage Admin (roles/storage.admin) Cloud Run Admin (roles/run.admin) Cloud Memorystore Redis Admin (roles/redis.admin) Serverless VPC Access Admin (roles/vpcaccess.admin) Build images for UI Connector and for Cloud Pub/Sub Interceptor and note the image name.",
+          "New suggestion events Replace your-new-suggestion-topic-id with the Cloud Pub/Sub topic you configured for new suggestions: $ export TOPIC ID = 'your-new-suggestion-topic-id' && gcloud pubsub subscriptions create $SUBSCRIPTION NAME --topic $TOPIC ID \\ --push-endpoint = $INTERCEPTOR SERVICE URL /human-agent-assistant-event \\ --push-auth-service-account = cloud-run-pubsub-invoker@ $GCP PROJECT ID .iam.gserviceaccount.com New message events Replace your-new-message-event-topic-id with the Cloud Pub/Sub topic you configured for new message events: $ export TOPIC ID = 'your-new-message-event-topic-id' && gcloud pubsub subscriptions create $SUBSCRIPTION NAME --topic $TOPIC ID \\ --push-endpoint = $INTERCEPTOR SERVICE URL /new-message-event \\ --push-auth-service-account = cloud-run-pubsub-invoker@ $GCP PROJECT ID .iam.gserviceaccount.com Conversation lifecycle events Replace your-conversation-lifecycle-event-topic with the Cloud Pub/Sub topic you configured for new conversation lifecycle events: $ export TOPIC ID = 'your-conversation-lifecycle-event-topic' && gcloud pubsub subscriptions create $SUBSCRIPTION NAME --topic $TOPIC ID \\ --push-endpoint = $INTERCEPTOR SERVICE URL /conversation-lifecycle-event \\ --push-auth-service-account = cloud-run-pubsub-invoker@ $GCP PROJECT ID .iam.gserviceaccount.com New recognition-result notification events $ export TOPIC ID = 'your-new-recognition-result-notification-event-topic' && gcloud pubsub subscriptions create $SUBSCRIPTION NAME --topic $TOPIC ID \\ --push-endpoint = $INTERCEPTOR SERVICE URL /new-recognition-result-notification-event \\ --push-auth-service-account = cloud-run-pubsub-invoker@ $GCP PROJECT ID .iam.gserviceaccount.com Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Build the Docker image Under the /ui-connector folder, run the following command: $ gcloud builds submit --tag gcr.io/ $GCP PROJECT ID / $CONNECTOR IMAGE NAME Deploy UI connector to Cloud Run Under the /ui-connector folder , run the following command: If using Direct Egress to connect for Redis connection. $ gcloud run deploy $CONNECTOR IMAGE NAME \\ --image gcr.io/ $GCP PROJECT ID / $CONNECTOR IMAGE NAME \\ --platform managed \\ --service-account = $CONNECTOR SERVICE ACCOUNT NAME \\ --allow-unauthenticated \\ --timeout 3600 \\ --region $SERVICE REGION \\ --network $VPC NETWORK \\ --subnet $VPC SUBNET \\ --clear-vpc-connector \\ --min-instances = 1 \\ --set-env-vars REDISHOST = $REDIS HOST ,REDISPORT = $REDIS PORT ,GCP PROJECT ID = $GCP PROJECT ID ,AUTH OPTION = $AUTH OPTION \\ --update-secrets = /secret/jwt secret key = ${ JWT SECRET NAME } :latest If using a created Serverless VPC Access connector for Redis connection. $ gcloud run deploy $CONNECTOR IMAGE NAME \\ --image gcr.io/ $GCP PROJECT ID / $CONNECTOR IMAGE NAME \\ --platform managed \\ --service-account = $CONNECTOR SERVICE ACCOUNT NAME \\ --allow-unauthenticated \\ --timeout 3600 \\ --region $SERVICE REGION \\ --vpc-connector $VPC CONNECTOR NAME \\ --clear-network \\ --min-instances = 1 \\ --no-cpu-throttling \\ --set-env-vars REDISHOST = $REDIS HOST ,REDISPORT = $REDIS PORT ,GCP PROJECT ID = $GCP PROJECT ID ,AUTH OPTION = $AUTH OPTION \\ --update-secrets = /secret/jwt secret key = ${ JWT SECRET NAME } :latest Make a note of the service URL for the deployed UI Connector, which will be used by clients (agent desktops)."
+        ]
+      },
+      {
+        "title": "\"User guide: Build your own GenAI assist extension \\_|\\_ Agent Assist \\_\\",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/byoa-extension",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Agent Assist Guides Send feedback User guide: Build your own GenAI assist extension Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide provides instructions for using Vertex AIExtensions to create a Build your own GenAI assist (BYOA) generator.",
+          "Agent Assist console Click Build-your-own-assist > Create ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.admin",
+      "cloudbuild.builds.editor",
+      "compute.viewer",
+      "dialogflow.agentAssistClient",
+      "gcr.io",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountUser",
+      "pubsub.admin",
+      "pubsub.editor",
+      "redis.admin",
+      "redis.editor",
+      "resourcemanager.projectIamAdmin",
+      "run.admin",
+      "secretmanager.admin",
+      "secretmanager.secretAccessor",
+      "serviceusage.serviceUsageAdmin",
+      "storage.admin",
+      "vpcaccess.admin",
+      "vpcaccess.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.admin",
+      "roles/cloudbuild.builds.editor",
+      "roles/compute.viewer",
+      "roles/dialogflow.agentAssistClient",
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountUser",
+      "roles/pubsub.admin",
+      "roles/pubsub.editor",
+      "roles/redis.admin",
+      "roles/redis.editor",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/run.admin",
+      "roles/secretmanager.admin",
+      "roles/secretmanager.secretAccessor",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin",
+      "roles/vpcaccess.admin",
+      "roles/vpcaccess.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ]
+    }
+  ]
+}

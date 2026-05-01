@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.063Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine",
+  "feature_name": "Default Google Cloud Armor enforcement",
+  "feature_slug": "default-google-cloud-armor-enforcement",
+  "summary": "Google Cloud Armor is automatically enabled for Blockchain Node Engine nodes.",
+  "extended_definition": "Google Cloud Armor is automatically enabled for Blockchain Node Engine nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+      "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "Defaults to false . apiEnableDebug boolean Immutable.",
+          "JSON representation { // Union field execution client details can be only one of the following: \"gethDetails\" : { object ( GethDetails ) } // End of list of possible types for union field execution client details . \"network\" : enum ( Network ) , \"nodeType\" : enum ( NodeType ) , \"executionClient\" : enum ( ExecutionClient ) , \"consensusClient\" : enum ( ConsensusClient ) , \"apiEnableAdmin\" : boolean , \"apiEnableDebug\" : boolean , \"additionalEndpoints\" : { object ( EthereumEndpoints ) } , \"validatorConfig\" : { object ( ValidatorConfig ) } } Fields Union field execution client details .",
+          "JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"connectionInfo\" : { object ( ConnectionInfo ) } , \"state\" : enum ( State ) , \"privateServiceConnectEnabled\" : boolean , // Union field blockchain type details can be only one of the following: \"ethereumDetails\" : { object ( EthereumDetails ) } // End of list of possible types for union field blockchain type details . \"blockchainType\" : enum ( BlockchainType ) } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.blockchainnodeengine.v1 \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "source_id": "site-api-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "If unspecified, server will pick an appropriate default. page token string A token identifying a page of results the server should return. filter string Filtering results. order by string Hint for how to order the results.",
+          "A status representing the state of the node. private service connect enabled bool Optional.",
+          "Defaults to false . additional endpoints EthereumEndpoints Output only."
+        ]
+      },
+      {
+        "title": "\"Permissions that principal access boundary policies block \\_|\\_ Identity\\",
+        "url": "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default enforcement version The default enforcement version is used for the following principal access boundary policies: New policies that don't specify a version number Policies that use the value latest for the version The current default enforcement version is version 3 .",
+          "None Secure Source Manager securesourcemanager.googleapis.com/ branchRules. securesourcemanager.googleapis.com/ hooks. securesourcemanager.googleapis.com/ instances. access securesourcemanager.googleapis.com/ instances. create securesourcemanager.googleapis.com/ instances. delete securesourcemanager.googleapis.com/ instances. get securesourcemanager.googleapis.com/ instances. getIamPolicy securesourcemanager.googleapis.com/ instances. linkDeveloperConnect securesourcemanager.googleapis.com/ instances. list securesourcemanager.googleapis.com/ instances. setIamPolicy securesourcemanager.googleapis.com/ issuecomments. securesourcemanager.googleapis.com/ issues. securesourcemanager.googleapis.com/ locations. securesourcemanager.googleapis.com/ operations. securesourcemanager.googleapis.com/ prcomments. securesourcemanager.googleapis.com/ pullRequests. securesourcemanager.googleapis.com/ repositories. create securesourcemanager.googleapis.com/ repositories. delete securesourcemanager.googleapis.com/ repositories. fetch securesourcemanager.googleapis.com/ repositories. get securesourcemanager.googleapis.com/ repositories. getIamPolicy securesourcemanager.googleapis.com/ repositories. list securesourcemanager.googleapis.com/ repositories. setIamPolicy securesourcemanager.googleapis.com/ repositories. update None Connectors connectors.googleapis.com/ . connectors.googleapis.com/ connections. executeSqlQuery connectors.googleapis.com/ connections. generateOpenAPISpec connectors.googleapis.com/ connections. listenEvent Dataproc Metastore metastore.googleapis.com/ backups. metastore.googleapis.com/ databases. delete metastore.googleapis.com/ databases. getIamPolicy metastore.googleapis.com/ databases. setIamPolicy metastore.googleapis.com/ databases. update metastore.googleapis.com/ federations. metastore.googleapis.com/ imports. metastore.googleapis.com/ locations. metastore.googleapis.com/ operations. metastore.googleapis.com/ services. metastore.googleapis.com/ tables. delete metastore.googleapis.com/ tables. getIamPolicy metastore.googleapis.com/ tables. setIamPolicy metastore.googleapis.com/ tables. update metastore.googleapis.com/ federations. use metastore.googleapis.com/ services. use Enforcement version 3 Policies with enforcement version 3 can block all of the permissions listed in the following enforcement versions: Enforcement version 1 Enforcement version 2 Additionally, policies with the enforcement version 3 can also block all of the permissions listed in the following table.",
+          "None reCAPTCHA recaptchaenterprise.googleapis.com/ None Resource Manager cloudresourcemanager.googleapis.com/ cloudresourcemanager.googleapis.com/ . createPolicyBinding cloudresourcemanager.googleapis.com/ . deletePolicyBinding cloudresourcemanager.googleapis.com/ . searchPolicyBindings cloudresourcemanager.googleapis.com/ . updatePolicyBinding Video Stitcher API videostitcher.googleapis.com/ None Enforcement version 1 The following table lists the permissions that principal access boundary policies with enforcement version 1 can block."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "connectors.googleapis.com",
+      "metastore.googleapis.com",
+      "projects.locations.blockchainNodes",
+      "projects.locations.blockchainNodes.create",
+      "recaptchaenterprise.googleapis.com",
+      "securesourcemanager.googleapis.com",
+      "videostitcher.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/iam/docs/pab-blocked-permissions"
+      ]
+    }
+  ]
+}

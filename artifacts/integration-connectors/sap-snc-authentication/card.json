@@ -1,0 +1,212 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.098Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "SAP SNC authentication",
+  "feature_slug": "sap-snc-authentication",
+  "summary": "The SAP ERP connector supports authentication through SAP Secured Network Communications (SNC).",
+  "extended_definition": "The SAP ERP connector supports authentication through SAP Secured Network Communications (SNC).",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Acumatica \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action: An action is a first class function that is made available to the integration through the connector interface.",
+          "You can use the connection in an integration through the Connectors task.",
+          "REST connection type Field name Details Location europe-west1 Connector Acumatica Connector version 1 Connection Name acumatica Enable Cloud Logging False Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Verbosity Level 5 Minimum number of nodes 2 Maximum number of nodes 50 Host https://examplepetstore.com Username USERNAME Password PASSWORD Secret version 1 OData connection type Field name Details Location europe-west1 Connector Acumatica Connector version 1 Connection Name acumatica Enable Cloud Logging False Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Company Example Organization Endpoint Version 22.200.001 Inquiry Table PX Objects AP APInvoice Schema OData Verbosity Level 5 Minimum number of nodes 2 Maximum number of nodes 50 Host https://examplepetstore.com Username USERNAME Password PASSWORD Secret version 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application."
+        ]
+      },
+      {
+        "title": "Azure AD (Entra ID) \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"UserId\" : \"9630c9d7-cf15-4406-8d21-598e41a058cc\" } If the action is successful, the FetchAdditionalUserFields task's connectorOutputPayload response parameter has a value similar to the following: [{ \"id\" : \"9630c9d7-cf15-4406-8d21-598e41a058cc\" , \"deleteddatetime\" : null , \"accountenabled\" : \"true\" , \"agegroup\" : null , \"businessphones\" : \"\" , \"city\" : null , \"companyname\" : null , \"consentprovidedforminor\" : null , \"country\" : null , \"createddatetime\" : \"2024-04-12T10:24:42Z\" , \"creationtype\" : null , \"department\" : null , \"displayname\" : \"Azure AD Test\" , \"employeehiredate\" : null , \"employeeid\" : null , \"employeeleavedatetime\" : null , \"employeetype\" : null , \"externaluserstate\" : null , \"externaluserstatechangedatetime\" : null , \"faxnumber\" : null , \"givenname\" : null , \"imaddresses\" : \"\" , \"isresourceaccount\" : null , \"jobtitle\" : null , \"lastpasswordchangedatetime\" : \"2024-05-14T05:07:15Z\" , \"legalagegroupclassification\" : null , \"mail\" : null , \"mailnickname\" : \"Azure AD Test\" , \"mobilephone\" : null , \"officelocation\" : null , \"onpremisesdistinguishedname\" : null , \"onpremisesdomainname\" : null , \"onpremisesimmutableid\" : null , \"onpremiseslastsyncdatetime\" : null , \"onpremisessamaccountname\" : null , \"onpremisessecurityidentifier\" : null , \"onpremisessyncenabled\" : null , \"onpremisesuserprincipalname\" : null , \"othermails\" : \"\" , \"passwordpolicies\" : null , \"postalcode\" : null , \"preferreddatalocation\" : null , \"preferredlanguage\" : null , \"proxyaddresses\" : \"\" , \"securityidentifier\" : \"S-1-12-1-2519779799-1141296917-2388205965-3428360257\" , \"showinaddresslist\" : null , \"signinsessionsvalidfromdatetime\" : \"2024-05-14T05:07:15Z\" , \"state\" : null , \"streetaddress\" : null , \"surname\" : null , \"usagelocation\" : \"IN\" , \"userprincipalname\" : \"Azure AD Test@z8474.onmicrosoft.com\" , \"usertype\" : \"Member\" , \"aboutme\" : null , \"birthday\" : \"0001-01-01T08:00:00Z\" , \"hiredate\" : \"0001-01-01T08:00:00Z\" , \"interests\" : \"\" , \"mysite\" : null , \"pastprojects\" : \"\" , \"preferredname\" : \"\" , \"responsibilities\" : \"\" , \"schools\" : \"\" , \"skills\" : \"\" , \"assignedlicenses\" : \"\" , \"assignedplans\" : \"[\\r\\n {\\r\\n \\\"assignedDateTime\\\": \\\"2024-05-16T10:17:45Z\\\",\\r\\n \\\"capabilityStatus\\\": \\\"Deleted\\\",\\r\\n \\\"service\\\": \\\"DynamicsNAV\\\",\\r\\n \\\"servicePlanId\\\": \\\"3f2afeed-6fb5-4bf9-998f-f2912133aead\\\"\\r\\n }\\r\\n]\" , \"authorizationinfo certificateuserids\" : \"\" , \"identities\" : \"[\\r\\n {\\r\\n \\\"signInType\\\": \\\"userPrincipalName\\\",\\r\\n \\\"issuer\\\": \\\"z8474.onmicrosoft.com\\\",\\r\\n \\\"issuerAssignedId\\\": \\\"Azure AD Test@z8474.onmicrosoft.com\\\"\\r\\n }\\r\\n]\" , \"licenseassignmentstates\" : \"\" , \"onpremisesextensionattributes extensionattribute1\" : null , \"onpremisesextensionattributes extensionattribute2\" : null , \"onpremisesextensionattributes extensionattribute3\" : null , \"onpremisesextensionattributes extensionattribute4\" : null , \"onpremisesextensionattributes extensionattribute5\" : null , \"onpremisesextensionattributes extensionattribute6\" : null , \"onpremisesextensionattributes extensionattribute7\" : null , \"onpremisesextensionattributes extensionattribute8\" : null , \"onpremisesextensionattributes extensionattribute9\" : null , \"onpremisesextensionattributes extensionattribute10\" : null , \"onpremisesextensionattributes extensionattribute11\" : null , \"onpremisesextensionattributes extensionattribute12\" : null , \"onpremisesextensionattributes extensionattribute13\" : null , \"onpremisesextensionattributes extensionattribute14\" : null , \"onpremisesextensionattributes extensionattribute15\" : null , \"onpremisesprovisioningerrors\" : \"\" , \"provisionedplans\" : \"\" , \"serviceprovisioningerrors\" : \"\" , \"customsecurityattributes\" : \"{\\r\\n \\\"ConnectorTesting\\\": {\\r\\n \\\"@odata.type\\\": \\\"#microsoft.graph.customSecurityAttributeValue\\\",\\r\\n \\\"FavouriteSport\\\": \\\"cricket\\\",\\r\\n \\\"FavouriteMovie\\\": \\\"3 idiots\\\"\\r\\n }\\r\\n}\" , \"signinactivity lastsignindatetime\" : \"2024-05-14T07:04:51Z\" , \"signinactivity lastsigninrequestid\" : \"ed35b322-d0d9-4fcb-8e71-f9ee7e065e00\" , \"signinactivity lastnoninteractivesignindatetime\" : \"2024-05-15T09:00:02Z\" , \"signinactivity lastnoninteractivesigninrequestid\" : \"0d4ce88b-710a-440f-a612-f590954d6800\" , \"signinactivity lastsuccessfulsignindatetime\" : \"2024-05-15T06:45:42Z\" , \"signinactivity lastsuccessfulsigninrequestid\" : \"64643e9d-3468-4e4d-b7c3-8bd316956600\" } Note: By default, the entity retrieves the mandatory attributes coming from the Azure AD OData endpoint.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"UserId\" : \"8e22c728-c523-436b-8f46-3b21cc1b5f80\" } If the action is successful, the RetrieveUserPhoto task's connectorOutputPayload response parameter has a value similar to the following: [{ \"Status\" : \"Success\" , \"FileData\" : \"77+9UE5HDQoaCgAAAA1JSERSAAADUgAAAjYIBgAAAFo077+977+9AAAAAXNSR0IA77+977+9HO+/vQAAAARnQU1BAADvv73vv70L77+9YQUAAAAJcEhZcwAADu+/vQAADu+/vQHvv71v77+9ZAAA77+977+9SURBVHhe77+977+9ZXwcV9K+LWlmZCbvv71O77+977+977+9ZO+/vcmG77+9Ge+/vThmZmZm77+9OO+/vcmG77+977+9MTMzM++/vS0z77+977+977+9eu+/ve+/vXTvv71o77+9KAvvv73vv73vv71w77+9DjRO77+977+9Vl3vv70677+9KWsrR2zvv71zEe+/ve+/vUTvv73vv717KGrvv709EO+/ve+/vWjvv71RG01777+977+9Me+/ve+/vWjvv73vv719OmJLyqfZuu+/vRHvv71ZK++/vQ7Uj9iJ77+977+9du+/vUXEslrvv73vv73vv70uzbzvv70pFu+/vUrvv709Yl4P77+9eu+/vSDvv73vv71n77+977+977+9Gu+/ve+/vV3vv71sP2Vm77+977+9be+/vWbvv707RmxV77+9VFvvv70u77+9Fu+/ve+/vdqi77+9aTbvv71N77+977+9Re+/ve+/vWPvv70tYe+/vRXvv73vv70677+9bu+/vTRbS++/ve+/ve+/vWxkP1vvv71FbWt377+977+9LdW277+977+977+977+977+9ae+/ve+/vXvvv73vv73vv70Z77+9Xe+/vSLvv73vv70X77+977+9E++/vT1ob1/vv71+ae+/ve+/vWx3by1P77+9XT3vv71sL++/ve+/ve+/vWbvv73vv73vv71m77+9F+e0s2vvv712dErvv73vv73vv73vv73vv73vv71p77+977+9Le+/vW/vv73vv71oZ0vvv73vv70577+9R3tb77+92b7vv70R77+977+9KmIHKQ/vv73vv73agdapdu+/vU3vv73vv73vv73vv73vv71zXe+/ve+/ve+/ve+/ve+/vRTvv70777+977+977+96pqK77+9LO+/vXN077+9PO+/ve+/ve+/vVp2f++/vdOgNO+/ve+/veyBlO+/ve+/vQdQ77+9cO+/vTc477+9bBDvv71S77+977+977+977+9Zu+/ve+/vW8I77+977+977+9ZQ8paFnvv70LWnxwYe+/ve+/vVEWNBvvv71O77+977+9eQMKW++/vV8x77+977+9FO+/vd6k77+977+9LmHvv70eRS3erQBiG++/vXXvv71DzLI577+9LO+/vT3vv73vv71077+9Ze+/ve+/ve+/vTcebe+/vWbvv73vv71E77+9UEPvv71r77+9NMus77+9Zu+/ve+/vUVsXe+/ve+/ve+/ve+/ve+/vWZr77+9c29qRG0177+9VdWi77+977+9eu+/ve+/ve+/vUlfTe+/ve+/vW/vv73NujVTbX3vv73vv73vv73vv70V77+9He+/ve+/vXUj77+977+9AdeeMe+/ve+/ve+/ve+/ve+/ve+/vQHvv73vv70Y77+9aFcj77+9Y2Pvv700Zjtpb2vvv73vv73vv73vv73ZmHvXnHvvv70Y77+904Lvv73vv70y77+977+9EO+/ve+/vRjvv73vv71077+9dDvbs++/ve+/vXsX4bqU77+9Wu+/vVsH77+977+977+977+9P1vvv73vv70y77+9fO+/ve+/vV8pZd6rJe+/vXvvv70cy6Yef++/ve+/vWXvv71U1LJf77+9Wg3vv73vv71j1otF77+9NO+/ve+/vQTvv73vv70A77+9SO+/vWZHD++/vQ3vv71ta++/ve+/ve+/veO+rmDvv73vv73vv71c77+9cD1+77+9Hu+/ve+/vSpG77+977+9Y++/ve+/vWfvv73vv73vv70zMXvvv73vv73vv73 ...[too long to view on UI.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"UserId\" : \"8cbe82b6-0dd5-4f10-bf67-82bf88ac6cb8\" , \"Levels\" : \"max\" } If the action is successful, the RetrieveManagerChain task's connectorOutputPayload response parameter has a value similar to the following: [{ \"id\" : \"8cbe82b6-0dd5-4f10-bf67-82bf88ac6cb8\" , \"displayName\" : \"test1\" , \"manager\" : \"{\\r\\n \\\"@odata.type\\\": \\\"#microsoft.graph.user\\\",\\r\\n \\\"id\\\": \\\"9630c9d7-cf15-4406-8d21-598e41a058cc\\\",\\r\\n \\\"deletedDateTime\\\": null,\\r\\n \\\"accountEnabled\\\": true,\\r\\n \\\"ageGroup\\\": null,\\r\\n \\\"businessPhones\\\": [],\\r\\n \\\"city\\\": null,\\r\\n \\\"companyName\\\": null,\\r\\n \\\"consentProvidedForMinor\\\": null,\\r\\n \\\"country\\\": null,\\r\\n \\\"createdDateTime\\\": \\\"2024-04-12T10:24:42Z\\\",\\r\\n \\\"creationType\\\": null,\\r\\n \\\"department\\\": null,\\r\\n \\\"displayName\\\": \\\"Azure AD Test\\\",\\r\\n \\\"employeeId\\\": null,\\r\\n \\\"employeeHireDate\\\": null,\\r\\n \\\"employeeLeaveDateTime\\\": null,\\r\\n \\\"employeeType\\\": null,\\r\\n \\\"externalUserState\\\": null,\\r\\n \\\"externalUserStateChangeDateTime\\\": null,\\r\\n \\\"faxNumber\\\": null,\\r\\n \\\"givenName\\\": null,\\r\\n \\\"isLicenseReconciliationNeeded\\\": false,\\r\\n \\\"jobTitle\\\": null,\\r\\n \\\"legalAgeGroupClassification\\\": null,\\r\\n \\\"mail\\\": null,\\r\\n \\\"mailNickname\\\": \\\"Azure AD Test\\\",\\r\\n \\\"mobilePhone\\\": null,\\r\\n \\\"onPremisesDistinguishedName\\\": null,\\r\\n \\\"onPremisesDomainName\\\": null,\\r\\n \\\"onPremisesImmutableId\\\": null,\\r\\n \\\"onPremisesLastSyncDateTime\\\": null,\\r\\n \\\"onPremisesSecurityIdentifier\\\": null,\\r\\n \\\"onPremisesSamAccountName\\\": null,\\r\\n \\\"onPremisesSyncEnabled\\\": null,\\r\\n \\\"onPremisesUserPrincipalName\\\": null,\\r\\n \\\"otherMails\\\": [],\\r\\n \\\"passwordPolicies\\\": null,\\r\\n \\\"officeLocation\\\": null,\\r\\n \\\"postalCode\\\": null,\\r\\n \\\"preferredDataLocation\\\": null,\\r\\n \\\"preferredLanguage\\\": null,\\r\\n \\\"proxyAddresses\\\": [],\\r\\n \\\"refreshTokensValidFromDateTime\\\": \\\"2024-05-14T05:07:15Z\\\",\\r\\n \\\"imAddresses\\\": [],\\r\\n \\\"isResourceAccount\\\": null,\\r\\n \\\"showInAddressList\\\": null,\\r\\n \\\"securityIdentifier\\\": \\\"S-1-12-1-2519779799-1141296917-2388205965-3428360257\\\",\\r\\n \\\"signInSessionsValidFromDateTime\\\": \\\"2024-05-14T05:07:15Z\\\",\\r\\n \\\"state\\\": null,\\r\\n \\\"streetAddress\\\": null,\\r\\n \\\"surname\\\": null,\\r\\n \\\"usageLocat ...[too long to view on UI."
+        ]
+      },
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "SSL - Certificate connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-conn Service Account NAME-compute@developer.gserviceaccount.com Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 SSL Configuration Enable SSL True Trust Store Private Custom Trust Store A full PEM Certificate (-----BEGIN CERTIFICATE----- MIIChTCCAe4CAQAwDQYJKoZIhv......Qw== -----END CERTIFICATE-----) Secret version 1 Host Address xx.1HOST NAME.cloud.couchbase.com:18xxx Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Analytics Couchbase connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-Analytics-conn Service Account NAME-compute@developer.gserviceaccount.com Analytics Port 18095 Couchbase Service Analytics Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 Host Address xx.1HOST NAME.cloud.couchbase.com:18095 Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "Action: An action is a first class function that is made available to the integration through the connector interface.",
+          "Actions This connector supports execution of the following actions: User-defined stored procedures and functions."
+        ]
+      },
+      {
+        "title": "Box \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "OAuth JWT token method connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name box-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User Minimum number of nodes 2 Maximum number of nodes 2 Authentication JWT Authentication Client ID XXXX Client Secret XXXX Secret Version 1 Private key XXXX Secret Version 1 Private key Password XXXX Secret Version 1 Box Application Access level Enterprise Enterprise ID/User Id XXXX OAuth JWT Public Key Id XXXX Auth Scheme OAuthJWT Initiatiate OAuth GETANDREFRESH OAuth JWT Cert Type PEMKEY BLOB You can access the Client ID, Client Secret, Box Application Access Level, and Enterprise Id/User Id from the Box account.",
+          "OAuth Client Credentials connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name oauth-clientcred-conn Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User As User Id XXXX Minimum number of nodes 2 Maximum number of nodes 2 Authentication OAuth Client Credentials OAuth Client ID XXXX OAuth Client Secret XXXX Secret Version 1 Subject ID XXXX Box Application Access Level enterprise You can access Client ID, Client Secret, Box Application Access Level, and Enterprise Id/User Id from the Box account.",
+          "Box Json for JWT Auth method connection type Field name Details Location us-central1 Connector Box Connector version 1 Connection Name gcp-box-conn-new Enable Cloud Logging yes Service Account XXXX@serviceaccount Impersonate User Mode User As User Id XXXX Minimum number of nodes 2 Maximum number of nodes 2 Authentication Box JSON Box JSON for JWT Auth XXXX Secret Version 1 You can use the Box account to set up Box Json for JWT auth."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.gserviceaccount.com",
+      "examplepetstore.com",
+      "iam.gserviceaccount.com",
+      "microsoft.graph.customSecurityAttributeValue",
+      "microsoft.graph.user",
+      "odata.type",
+      "xx.1HOST",
+      "z8474.onmicrosoft.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Spark event log Cloud Storage flush control properties",
+  "feature_slug": "spark-event-log-cloud-storage-flush-control-properties",
+  "summary": "Dataproc images 1.4 and later support Spark properties that control Cloud Storage flush behavior for event logs.",
+  "extended_definition": "Dataproc images 1.4 and later support Spark properties that control Cloud Storage flush behavior for event logs.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+      "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a set of directories with the path src/main/java/dataproc/codelab : mkdir -p src/main/java/dataproc/codelab Copy WordCount.java to your local machine into src/main/java/dataproc/codelab : cp WordCount.java src/main/java/dataproc/codelab WordCount.java is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab ; import java.util.Arrays ; import org.apache.spark.SparkConf ; import org.apache.spark.api.java.JavaPairRDD ; import org.apache.spark.api.java.JavaRDD ; import org.apache.spark.api.java.JavaSparkContext ; import scala.Tuple2 ; public class WordCount { public static void main ( String [] args ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( \"Exactly 2 arguments are required: <inputUri> <outputUri>\" ); } String inputPath = args [ 0 ] ; String outputPath = args [ 1 ] ; JavaSparkContext sparkContext = new JavaSparkContext ( new SparkConf (). setAppName ( \"Word Count\" )); JavaRDD<String> lines = sparkContext . textFile ( inputPath ); JavaRDD<String> words = lines . flatMap ( ( String line ) - > Arrays . asList ( line . split ( \" \" )). iterator () ); JavaPairRDD<String , Integer > wordCounts = words . mapToPair ( ( String word ) - > new Tuple2 <> ( word , 1 ) ). reduceByKey ( ( Integer count1 , Integer count2 ) - > count1 + count2 ); wordCounts . saveAsTextFile ( outputPath ); } } Build the package. mvn clean package If the build is successful, a target/word-count-1.0.jar is created.",
+          "Note that the spark-core artifact number is the Scala major.minor version number. < ? xml version = \"1.0\" encoding = \"UTF-8\" ? > < project xmlns = \"http://maven.apache.org/POM/4.0.0\" xmlns : xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xsi : schemaLocation = \"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" > < modelVersion>4 .0.0 < / modelVersion > < groupId>dataproc . codelab < / groupId > < artifactId>word - count < / artifactId > < version>1 .0 < / version > < properties > < maven . compiler . source>1 .8 < / maven . compiler . source > < maven . compiler . target>1 .8 < / maven . compiler . target > < / properties > < dependencies > < dependency > < groupId>org . scala - lang < / groupId > < artifactId>scala - library < / artifactId > < version> Scala version , for example , 2.11.8 < / version > < scope>provided < / scope > < / dependency > < dependency > < groupId>org . apache . spark < / groupId > < artifactId>spark - core Scala major . minor . version , for example , 2.11 < / artifactId > < version> Spark version , for example , 2.3.1 < / version > < scope>provided < / scope > < / dependency > < / dependencies > < / project > Copy the WordCount.java code listed, below, to your local machine.",
+          "Java gcloud dataproc jobs submit spark \\ --cluster=${CLUSTER} \\ --class=dataproc.codelab.WordCount \\ --jars=gs://${BUCKET NAME}/java/word-count-1.0.jar \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Scala gcloud dataproc jobs submit spark \\ --cluster=${CLUSTER} \\ --class=dataproc.codelab.WordCount \\ --jars=gs://${BUCKET NAME}/scala/word-count 2.11-1.0.jar \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Python gcloud dataproc jobs submit pyspark word-count.py \\ --cluster=${CLUSTER} \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ View the output After the job finishes, run the following gcloud CLI command to view the wordcount output. gcloud storage cat gs://${BUCKET NAME}/output/ The wordcount output should be similar to the following: (a,2) (call,1) (What's,1) (sweet.,1) (we,1) (as,1) (name?,1) (any,1) (other,1) (rose,1) (smell,1) (name,1) (would,1) (in,1) (which,1) (That,1) (By,1) Clean up After you finish the tutorial, you can clean up the resources that you created so that they stop using quota and incurring charges."
+        ]
+      },
+      {
+        "title": "\"Using Spark data lineage \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "source_id": "site-iam-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Disable Spark data lineage on a job If Spark data lineage is enabled on a cluster, you can disable Spark data lineage on a job by passing the spark.extraListeners property with an empty value (\"\") when you submit the job. gcloud dataproc jobs submit spark \\ --cluster = CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --class CLASS \\ --jars = gs:// APPLICATION BUCKET /spark-application.jar \\ --properties = spark.extraListeners = '' Submit a Spark job When you submit a supported Spark job on a Managed Service for Apache Spark cluster that was created with Spark data lineage enabled, Managed Service for Apache Spark captures and reports the data lineage information to the Data Lineage API. gcloud dataproc jobs submit spark \\ --cluster = CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --class CLASS \\ --jars = gs:// APPLICATION BUCKET /spark-application.jar \\ --properties = spark.openlineage.namespace = CUSTOM NAMESPACE ,spark.openlineage.appName = CUSTOM APPNAME Notes: Adding the spark.openlineage.namespace and spark.openlineage.appName properties, which are used to uniquely identify the job, is optional.",
+          "To enable Spark data lineage on a cluster, create a Managed Service for Apache Spark cluster with the dataproc:dataproc.lineage.enabled cluster property set to true . gcloud CLI example: gcloud dataproc clusters create CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --properties 'dataproc:dataproc.lineage.enabled=true' You can disable Spark data lineage on a cluster by setting the dataproc:dataproc.lineage.enabled property to false when you create the cluster.",
+          "It uses a Cloud Storage bucket for temporary storage. #!/usr/bin/env python from pyspark.sql import SparkSession import sys spark = SparkSession \\ . builder \\ . appName ( 'LINEAGE BQ TO BQ' ) \\ . getOrCreate () bucket = 'gs:// BUCKET ` spark . conf . set ( 'temporaryCloudStorageBucket' , bucket ) source = 'bigquery-public-data:samples.shakespeare' words = spark . read . format ( 'bigquery' ) \\ . option ( 'table' , source ) \\ . load () words . createOrReplaceTempView ( 'words' ) word count = spark . sql ( 'SELECT word, SUM(word count) AS word count FROM words GROUP BY word' ) destination table = ' PROJECT ID : DATASET ."
+        ]
+      },
+      {
+        "title": "\"Create a Managed Service for Apache Spark custom image \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample dataproc.custom.properties file: dataproc.conscrypt.provider.enable= VALUE dataproc.logging.stackdriver.enable= VALUE Sample customization script file-creation snippet to override two cluster properties: cat <<EOF >/etc/google-dataproc/dataproc.custom.properties dataproc.conscrypt.provider.enable=true dataproc.logging.stackdriver.enable=false EOF Create a cluster with an expired custom image Managed Service for Apache Spark cannot guarantee support of issues that arise with clusters created with expired custom images.",
+          "Use the gcloud CLI to create the Managed Service for Apache Spark cluster again, adding the copied TOKEN VALUE as a cluster property. gcloud dataproc clusters create CLUSTER-NAME \\ --image= CUSTOM-IMAGE-NAME \\ --properties=dataproc:dataproc.custom.image.expiration.token= TOKEN VALUE \\ --region= REGION \\ ... other flags Cluster creation with the custom image should succeed.",
+          "Advanced usage: If you use your own process to create a custom Managed Service for Apache Spark image, you must add the goog-dataproc-version label manually to your custom image, as follows: Extract the goog-dataproc-version label from the base Managed Service for Apache Spark image used to create the custom image. gcloud compute images describe ${BASE DATAPROC IMAGE} \\ --project cloud-dataproc \\ --format=\"value(labels.goog-dataproc-version)\" Set the label on the custom image. gcloud compute images add-labels IMAGE NAME --labels= [KEY=VALUE,...] Use a custom image You specify the custom image when you create a Managed Service for Apache Spark cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.jar",
+      "count.py",
+      "datalineage.admin",
+      "datalineage.editor",
+      "datalineage.producer",
+      "dataproc.codelab",
+      "dataproc.codelab.WordCount",
+      "dataproc.conscrypt.provider.enable",
+      "dataproc.custom.image.expiration.token",
+      "dataproc.custom.properties",
+      "dataproc.lineage.enabled",
+      "dataproc.logging.stackdriver.enable",
+      "dataproc.worker",
+      "java.util.Arrays",
+      "labels.goog",
+      "major.minor",
+      "maven.apache.org",
+      "org.apache.spark.api.java.JavaPairRDD",
+      "org.apache.spark.api.java.JavaRDD",
+      "org.apache.spark.api.java.JavaSparkContext",
+      "org.apache.spark.SparkConf",
+      "org.apache.spark.SparkContext",
+      "pyspark.sql",
+      "samples.shakespeare",
+      "scala.Tuple2",
+      "spark.extraListeners",
+      "spark.openlineage.appName",
+      "spark.openlineage.namespace"
+    ],
+    "missing_inventory_roles": [
+      "roles/datalineage.admin",
+      "roles/datalineage.editor",
+      "roles/datalineage.producer",
+      "roles/dataproc.worker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images"
+      ]
+    }
+  ]
+}

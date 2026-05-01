@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.104Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Document OCR symbol-level extraction",
+  "feature_slug": "document-ocr-symbol-level-extraction",
+  "summary": "Document OCR now supports symbol-level extraction.",
+  "extended_definition": "Document OCR now supports symbol-level extraction.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+      "https://docs.cloud.google.com/document-ai/docs/handle-response",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported layout detection and extraction attributes: Printed text Handwriting Paragraph Block Line Word Symbol-level Page number Default Default Default Default Default Default Configurable Default Configurable Enterprise Document OCR features include the following: Extract embedded or native text from digital PDFs: This feature extracts text and symbols exactly as they appear in the source documents, even for rotated texts, extreme font sizes or styles, and partially hidden text.",
+          "Detection and extraction Enterprise Document OCR can detect blocks, paragraphs, lines, words, and symbols from PDFs and images, as well as deskew documents for better accuracy.",
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "source_id": "site-docs-root-2",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported layout detection and extraction attributes: Printed text Handwriting Paragraph Block Line Word Symbol-level Page number Default Default Default Default Default Default Configurable Default Configurable Enterprise Document OCR features include the following: Extract embedded or native text from digital PDFs: This feature extracts text and symbols exactly as they appear in the source documents, even for rotated texts, extreme font sizes or styles, and partially hidden text.",
+          "Detection and extraction Enterprise Document OCR can detect blocks, paragraphs, lines, words, and symbols from PDFs and images, as well as deskew documents for better accuracy.",
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Handle processing response \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "source_id": "site-docs-root-2",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "Document . from batch process operation ( location = \"us\" , operation name = batch process operation ) wrapped document = wrapped documents [ 0 ] else : raise ValueError ( \"No document source provided.\" ) For all properties and methods, refer to: https://cloud.google.com/python/docs/reference/documentai-toolbox/latest/google.cloud.documentai toolbox.wrappers.document.Document print ( \"Document Successfully Loaded!\" ) print ( f \" \\t Number of Pages: { len ( wrapped document . pages ) } \" ) print ( f \" \\t Number of Entities: { len ( wrapped document . entities ) } \" ) for page in wrapped document . pages : print ( f \"Page { page . page number } \" ) for block in page . blocks : print ( block . text ) for paragraph in page . paragraphs : print ( paragraph . text ) for line in page . lines : print ( line . text ) for token in page . tokens : print ( token . text ) Only supported with Form Parser processor https://cloud.google.com/document-ai/docs/form-parser for form field in page . form fields : print ( f \" { form field . field name } : { form field . field value } \" ) Only supported with Enterprise Document OCR version pretrained-ocr-v2.0-2023-06-02 https://cloud.google.com/document-ai/docs/process-documents-ocr#enable symbols for symbol in page . symbols : print ( symbol . text ) Only supported with Enterprise Document OCR version pretrained-ocr-v2.0-2023-06-02 https://cloud.google.com/document-ai/docs/process-documents-ocr#math ocr for math formula in page . math formulas : print ( math formula . text ) Only supported with Entity Extraction processors https://cloud.google.com/document-ai/docs/processors-list for entity in wrapped document . entities : print ( f \" { entity . type } : { entity . mention text } \" ) if entity . normalized text : print ( f \" \\t Normalized Text: { entity . normalized text } \" ) Only supported with Layout Parser for chunk in wrapped document . chunks : print ( f \"Chunk { chunk . chunk id } : { chunk . content } \" ) for block in wrapped document . document layout blocks : print ( f \"Document Layout Block { block . block id } \" ) if block . text block : print ( f \" { block . text block . type } : { block . text block . text } \" ) if block . list block : print ( f \" { block . list block . type } : { block . list block . list entries } \" ) if block . table block : print ( block . table block . header rows , block . table block . body rows ) Tables from google.cloud.documentai toolbox import document TODO(developer): Uncomment these variables before running the sample.",
+          "The first page is page 1. { \"pages:\" [ { \"pageNumber\" : 1 , \"dimension\" : { \"width\" : 679.0 , \"height\" : 460.0 , \"unit\" : \"pixels\" }, } ] } The pages[].detectedLanguages[] field contains the languages found on a given page, along with the confidence score. { \"pages\" : [ { \"detectedLanguages\" : [ { \"confidence\" : 0.98009938 , \"languageCode\" : \"en\" }, { \"confidence\" : 0.01990064 , \"languageCode\" : \"und\" } ] } ] } OCR data Document AI OCR detects text with various granularity or organization in the page, such as the text blocks, paragraphs, tokens and symbols (symbol level is optional, if configured to output symbol level data).",
+          "PremiumFeatures ( compute style info = True , enable math ocr = False , # Enable to use Math OCR Model enable selection mark detection = True , ), ) ) Online processing request to Document AI document = process document ( project id , location , processor id , processor version , file path , mime type , process options = process options , ) text = document . text print ( f \"Full document text: { text } \\n \" ) print ( f \"There are { len ( document . pages ) } page(s) in this document. \\n \" ) for page in document . pages : print ( f \"Page { page . page number } :\" ) print page dimensions ( page . dimension ) print detected languages ( page . detected languages ) print blocks ( page . blocks , text ) print paragraphs ( page . paragraphs , text ) print lines ( page . lines , text ) print tokens ( page . tokens , text ) if page . symbols : print symbols ( page . symbols , text ) if page . image quality scores : print image quality scores ( page . image quality scores ) if page . visual elements : print visual elements ( page . visual elements , text ) def print page dimensions ( dimension : documentai ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.documentai.v1 (2.92.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1",
+        "source_id": "site-java-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom Document Extraction Options Options to control the training of the Custom Document Extraction (CDE) Processor. com. google. cloud. documentai. v1.",
+          "Builder Options to control the training of the Custom Document Extraction (CDE) Processor. com. google. cloud. documentai. v1.",
+          "Confidence Level Metrics Evaluations metrics, at a specific confidence level. com. google. cloud. documentai. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1",
+      "documentai.googleapis.com",
+      "toolbox.wrappers.document.Document",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+      ]
+    }
+  ]
+}

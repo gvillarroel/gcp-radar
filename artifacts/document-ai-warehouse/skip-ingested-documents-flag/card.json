@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.532Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "Skip ingested documents flag",
+  "feature_slug": "skip-ingested-documents-flag",
+  "summary": "Adds a Cloud Storage ingest pipeline flag to skip documents that have already been ingested.",
+  "extended_definition": "Adds a Cloud Storage ingest pipeline flag to skip documents that have already been ingested.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+      "https://docs.cloud.google.com/document-warehouse/docs",
+      "https://docs.cloud.google.com/document-warehouse/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Process documents by using client libraries \\_|\\_ Document AI\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . require \"google/cloud/document ai/v1\" Document AI quickstart @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param location id [String] Your Processor Location (e.g. \"us\") @param processor id [String] Your Processor ID (e.g. \"a14dae8f043b60bd\") @param file path [String] Path to Local File (e.g. \"invoice.pdf\") @param mime type [String] Refer to https://cloud.google.com/document-ai/docs/file-types (e.g. \"application/pdf\") def quickstart project id :, location id :, processor id :, file path :, mime type : Create the Document AI client. client = :: Google :: Cloud :: DocumentAI :: V1 :: DocumentProcessorService :: Client . new do config config . endpoint = \" #{ location id } -documentai.googleapis.com\" end Build the resource name from the project. name = client . processor path ( project : project id , location : location id , processor : processor id ) Read the bytes into memory content = File . binread file path Create request request = Google :: Cloud :: DocumentAI :: V1 :: ProcessRequest . new ( skip human review : true , name : name , raw document : { content : content , mime type : mime type } ) Process document response = client . process document request Handle response puts response . document . text end Congratulations!",
+          "FullName () + \"/processors/\" + argv [ 3 ]); req . set skip human review ( true ); auto & doc = req . mutable raw document (); doc . set mime type ( \"application/pdf\" ); std :: ifstream is ( argv [ 4 ]); doc . set content ( std :: string { std :: istreambuf iterator<char> ( is ), {}}); auto resp = client .",
+          "For more information, see Set up authentication for a local development environment . import ( \"context\" \"flag\" \"fmt\" \"os\" documentai \"cloud.google.com/go/documentai/apiv1\" \"cloud.google.com/go/documentai/apiv1/documentaipb\" \"google.golang.org/api/option\" ) func main () { projectID := flag ."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Doc extractors (DocAI and others) Documents may be extracted by an AI pipeline, so that the extractions can be ingested and managed in Document AI Warehouse (as Metadata) along with the Raw Document.",
+          "Note that Document AI Warehouse can work with any extraction pipeline that calls Document AI Warehouse APIs to ingest/update documents.",
+          "Migrate vs Federate flexibility : The product supports a flexible architecture such that your document content can be migrated to Document AI Warehouse or stay-in-place if there are constraints in migrating content (we simply index the content and metadata) Integrated with Document Workflows - this integrates with Google Workflows and other document processing workflows by supporting: Properties - that represent the state of a document in a workflow and APIs that workflows can use to update the state of documents Doc Explorer interface - to track the progress of documents through a workflow pipeline, enabling a human to inspect, manage failures and stalled documents in the workflow pipeline."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Doc extractors (DocAI and others) Documents may be extracted by an AI pipeline, so that the extractions can be ingested and managed in Document AI Warehouse (as Metadata) along with the Raw Document.",
+          "Note that Document AI Warehouse can work with any extraction pipeline that calls Document AI Warehouse APIs to ingest/update documents.",
+          "Migrate vs Federate flexibility : The product supports a flexible architecture such that your document content can be migrated to Document AI Warehouse or stay-in-place if there are constraints in migrating content (we simply index the content and metadata) Integrated with Document Workflows - this integrates with Google Workflows and other document processing workflows by supporting: Properties - that represent the state of a document in a workflow and APIs that workflows can use to update the state of documents Doc Explorer interface - to track the progress of documents through a workflow pipeline, enabling a human to inspect, manage failures and stalled documents in the workflow pipeline."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.googleapis.com",
+      "e.g",
+      "invoice.pdf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.556Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api",
+  "feature_name": "Drive file content approvals",
+  "feature_slug": "drive-file-content-approvals",
+  "summary": "The Drive API supports reading content approvals on Drive files through the approvals resource using get and list.",
+  "extended_definition": "The Drive API supports reading content approvals on Drive files through the approvals resource using get and list.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/approvals",
+      "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+      "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+      "https://developers.google.com/workspace/drive/api/reference/rest/v3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Protect file content \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Google Drive API supports several ways to prevent file modification, including file content restriction and prohibiting the option to download, print, or copy files.",
+          "The following code sample shows how to add a content restriction for file owners only: Java File updatedFile = new File () . setContentRestrictions ( ImmutableList . of ( new ContentRestriction (). setReadOnly ( true ). setOwnerRestricted ( true ). setReason ( \"Finalized contract.\" )); File response = driveService . files (). update ( \" FILE ID \" , updatedFile ). setFields ( \"contentRestrictions\" ). execute (); Python content restriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' } response = drive service . files () . update ( fileId = \" FILE ID \" , body = { 'contentRestrictions' : [ content restriction ]}, fields = \"contentRestrictions\" ) . execute (); Node.js / Set an owner restricted content restriction on a file. @return{obj} updated file / async function addOwnerRestrictedContentRestriction () { // Get credentials and build service // TODO (developer) - Use appropriate auth mechanism for your app const { GoogleAuth } = require ( 'google-auth-library' ); const { google } = require ( 'googleapis' ); const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/drive' }); const service = google . drive ({ version : 'v3' , auth }); const contentRestriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' , }; const updatedFile = { 'contentRestrictions' : [ contentRestriction ], }; try { const response = await service . files . update ({ fileId : ' FILE ID ' , resource : updatedFile , fields : 'contentRestrictions' , }); return response ; } catch ( err ) { // TODO (developer) - Handle error throw err ; } } Replace FILE ID with the fileId of the file that you want to modify.",
+          "Add an optional reason for why you're adding the restriction, such as \"Finalized contract.\" The following code sample shows how to add a content restriction: Java File updatedFile = new File () . setContentRestrictions ( ImmutableList . of ( new ContentRestriction (). setReadOnly ( true ). setReason ( \"Finalized contract.\" )); File response = driveService . files (). update ( \" FILE ID \" , updatedFile ). setFields ( \"contentRestrictions\" ). execute (); Python content restriction = { 'readOnly' : True , 'reason' : 'Finalized contract.' } response = drive service . files () . update ( fileId = \" FILE ID \" , body = { 'contentRestrictions' : [ content restriction ]}, fields = \"contentRestrictions\" ) . execute (); Node.js / Set a content restriction on a file. @return{obj} updated file / async function addContentRestriction () { // Get credentials and build service // TODO (developer) - Use appropriate auth mechanism for your app const { GoogleAuth } = require ( 'google-auth-library' ); const { google } = require ( 'googleapis' ); const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/drive' }); const service = google . drive ({ version : 'v3' , auth }); const contentRestriction = { 'readOnly' : True , 'reason' : 'Finalized contract.' , }; const updatedFile = { 'contentRestrictions' : [ contentRestriction ], }; try { const response = await service . files . update ({ fileId : ' FILE ID ' , resource : updatedFile , fields : 'contentRestrictions' , }); return response ; } catch ( err ) { // TODO (developer) - Handle error throw err ; } } Replace FILE ID with the fileId of the file that you want to modify."
+        ]
+      },
+      {
+        "title": "Google Drive API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "source_id": "site-docs-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v3.about REST Resource: v3.accessproposals REST Resource: v3.approvals REST Resource: v3.apps REST Resource: v3.changes REST Resource: v3.channels REST Resource: v3.comments REST Resource: v3.drives REST Resource: v3.files REST Resource: v3.operations REST Resource: v3.permissions REST Resource: v3.replies REST Resource: v3.revisions Service: googleapis.com/drive/v3 To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v3.files Methods copy POST /drive/v3/files/{fileId}/copy Creates a copy of a file and applies any requested updates with patch semantics. create POST /drive/v3/files POST /upload/drive/v3/files Creates a file. delete DELETE /drive/v3/files/{fileId} Permanently deletes a file owned by the user without moving it to the trash. download POST /drive/v3/files/{fileId}/download Downloads the content of a file. emptyTrash DELETE /drive/v3/files/trash Permanently deletes all of the user's trashed files. export GET /drive/v3/files/{fileId}/export Exports a Google Workspace document to the requested MIME type and returns exported byte content. generateIds GET /drive/v3/files/generateIds Generates a set of file IDs which can be provided in create or copy requests. get GET /drive/v3/files/{fileId} Gets a file's metadata or content by ID. list GET /drive/v3/files Lists the user's files. listLabels GET /drive/v3/files/{fileId}/listLabels Lists the labels on a file. modifyLabels POST /drive/v3/files/{fileId}/modifyLabels Modifies the set of labels applied to a file. update PATCH /drive/v3/files/{fileId} PATCH /upload/drive/v3/files/{fileId} Updates a file's metadata, content, or both. watch POST /drive/v3/files/{fileId}/watch Subscribes to changes to a file.",
+          "REST Resource: v3.approvals Methods get GET /drive/v3/files/{fileId}/approvals/{approvalId} Gets an Approval by ID. list GET /drive/v3/files/{fileId}/approvals Lists the Approvals on a file."
+        ]
+      },
+      {
+        "title": "Manage approvals \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/approvals",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Related topics Manage Approvals Get approvals on files in Google Drive Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The Google Drive API provides the approvals resource so you can get and list the status of your approvals.",
+          "This document explains how to manage approvals in the Google Drive API."
+        ]
+      },
+      {
+        "title": "Implement shared drive support \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To begin, you must include the supportsAllDrives=true query parameter in your requests when your app performs the following operations: Drive API v3 files.get files.list files.create files.update files.copy files.delete changes.list changes.getStartPageToken permissions.list permissions.get permissions.create permissions.update permissions.delete Drive API v2 files.get files.list files.insert files.update files.patch files.copy files.trash files.untrash files.delete files.touch children.insert parents.insert changes.list changes.getStartPageToken changes.get permissions.list permissions.get permissions.insert permissions.update permissions.patch permissions.delete The supportsAllDrives=true parameter informs Google Drive that your application is designed to handle files on shared drives.",
+          "To refer to a specific shared drive change, both the shared drive ID and change ID must be used as an identifier. includeItemsFromAllDrives : Whether shared drive files or changes should be included in the list of changes. supportsAllDrives : Whether the requesting application supports shared drives.",
+          "Enable shared drive support in the Drive UI To access shared drive content using the Drive UI, make sure you have checked the Shared drives support box on the Drive UI integration tab of the Google Drive API in the Google Cloud console ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "changes.get",
+      "changes.getStartPageToken",
+      "changes.list",
+      "children.insert",
+      "developers.google.com",
+      "files.copy",
+      "files.create",
+      "files.delete",
+      "files.get",
+      "files.insert",
+      "files.list",
+      "files.patch",
+      "files.touch",
+      "files.trash",
+      "files.untrash",
+      "files.update",
+      "googleapis.com",
+      "parents.insert",
+      "permissions.create",
+      "permissions.delete",
+      "permissions.get",
+      "permissions.insert",
+      "permissions.list",
+      "permissions.patch",
+      "permissions.update",
+      "v3.about",
+      "v3.accessproposals",
+      "v3.approvals",
+      "v3.apps",
+      "v3.changes",
+      "v3.channels",
+      "v3.comments",
+      "v3.drives",
+      "v3.files",
+      "v3.operations",
+      "v3.permissions",
+      "v3.replies",
+      "v3.revisions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/approvals",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/approvals",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/approvals",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/approvals",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/approvals",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives"
+      ]
+    }
+  ]
+}

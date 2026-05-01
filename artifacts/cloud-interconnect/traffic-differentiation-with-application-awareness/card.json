@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.758Z",
+  "source_step08_card": "data/step-08/current/products/cloud-interconnect/card.json",
+  "product_name": "Cloud Interconnect",
+  "product_slug": "cloud-interconnect",
+  "feature_name": "Traffic differentiation with application awareness",
+  "feature_slug": "traffic-differentiation-with-application-awareness",
+  "summary": "Cloud Interconnect supports network traffic differentiation through application awareness for Dedicated Interconnect and Cross-Cloud Interconnect.",
+  "extended_definition": "Cloud Interconnect supports network traffic differentiation through application awareness for Dedicated Interconnect and Cross-Cloud Interconnect.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Differentiate network traffic Dedicated Interconnect and Cross-Cloud Interconnect support network traffic differentiation through application awareness on Cloud Interconnect.",
+          "Application awareness on Cloud Interconnect uses differentiated services field codepoint (DSCP) in the IP header for traffic differentiation.",
+          "The following reserved IP address ranges are not supported: Reserved IPv4 address ranges: 0.0.0.0/8 10.0.0.0/8 100.64.0.0/10 127.0.0.0/8 172.16.0.0/12 192.0.0.0/24 192.0.2.0/24 192.88.99.0/24 192.168.0.0/16 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 224.0.0.0/4 240.0.0.0/4 Reserved IPv6 address ranges: ::ffff:0:0/96 64:ff9b::/96 64:ff9b:1::/48 100::/64 2001:/32 2001:20::/28 2001:db8::/32 fe80::/10 2002::/16 3fff::/20 5f00::/16 fc00::/7 fe80::/10 ff00::/8 Configure custom IP address ranges To create VLAN attachments with custom IP address ranges, see the following pages: Dedicated Interconnect: configure custom IP address ranges Layer 2 Partner Interconnect connections: use custom IP address ranges with Layer 2 connections Layer 3 Partner Interconnect connections: use custom IP address ranges with Layer 3 connections Cross-Cloud Interconnect: Alibaba Cloud: configure custom IP address ranges Amazon Web Services (AWS): configure custom IP address ranges Microsoft Azure: configure custom IP address ranges Oracle Cloud Infrastructure: configure custom IP address ranges Support for GRE traffic Cloud Interconnect supports GRE traffic."
+        ]
+      },
+      {
+        "title": "HA VPN over Cloud Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Connectivity Cloud Interconnect Guides Send feedback HA VPN over Cloud Interconnect overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Multi-region deployment for production-level applications If the deployment uses a multi-region Cloud Interconnect topology, the HA VPN over Cloud Interconnect deployment has an SLA of 99.99%.",
+          "Single region deployment for non-critical applications If the deployment uses a single region Cloud Interconnect topology, the HA VPN over Cloud Interconnect deployment has an SLA of 99.9%."
+        ]
+      },
+      {
+        "title": "Partner Cross-Cloud Interconnect for OCI overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner Cross-Cloud Interconnect for OCI supports connections at multiple speeds with no data transfer charges for traffic that is exchanged between Google Cloud and OCI.",
+          "To achieve a specific level of reliability, Google has two prescriptive configurations: Establish 99.99% availability for Partner Interconnect (recommended) Establish 99.9% availability for Partner Interconnect We recommend that you use the 99.99% availability configuration for production-level applications with a low tolerance for downtime.",
+          "Home Documentation Networking Network Connectivity Cloud Interconnect Guides Send feedback Partner Cross-Cloud Interconnect for OCI overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Choosing a Network Connectivity product \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connecting to CDN providers CDN Interconnect CDN Interconnect enables select third-party Content Delivery Network (CDN) providers to establish direct peering links with Google's edge network at various locations, which enables you to direct your traffic from your Virtual Private Cloud (VPC) networks to a provider's network.",
+          "Features Verified Peering Providers offer the following features: Simplified connectivity No need to meet Google's peering requirements Leave the complexities of peering arrangements to the Verified Peering Providers Spend less time deploying and managing the technical complexities of the Direct Peering arrangement Acquire IP address transit or dedicated internet access from a Verified Peering Provider and let the Verified Peering Provider handle the peering with Google High availability Google badge verifies redundant connectivity to Google Gold badge indicates metro redundancy; silver indicates points of presence (PoPs) redundancy For redundant connectivity details, see Google Edge Network Enterprise grade connectivity Connect to Google through internet products designed for enterprises Access Google with or without the need for border gateway protocol (BGP) or an autonomous system number (ASN) Work directly with internet service provider (ISP) customer services teams and operational escalations Dedicated private Google connectivity All Google connectivity is through private dedicated fiber optics Leverage the same Google fibers that carry all Google services Access all Google services Access to Google Cloud services includes Google Workspace, Cloud APIss, Cloud VPN, public IP addresses, Network Service Tiers, and more Any Google service that is reachable over the internet can be used with a Verified Peering Provider Compare Verified Peering Provider and Cloud Interconnect The following table describes the differences between Verified Peering Provider and Cloud Interconnect.",
+          "For more information, see the following resources: Cloud Interconnect overview Dedicated Interconnect overview Partner Interconnect overview Topology for production-level applications overview Topology for non-critical applications overview Cross-Cloud Interconnect If you need to connect your Google Cloud VPC network to your network that's hosted by another cloud service provider, use Cross-Cloud Interconnect."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/ha-vpn-interconnect",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-cci-for-oci-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product"
+      ]
+    }
+  ]
+}

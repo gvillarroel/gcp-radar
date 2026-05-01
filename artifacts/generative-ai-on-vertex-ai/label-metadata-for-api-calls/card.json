@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Label metadata for API calls",
+  "feature_slug": "label-metadata-for-api-calls",
+  "summary": "GenerateContent and streamGenerateContent API calls can include label metadata.",
+  "extended_definition": "GenerateContent and streamGenerateContent API calls can include label metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: publishers.models.streamGenerateContent \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI API reference Send feedback Method: publishers.models.streamGenerateContent Stay organized with collections Save and categorize content based on your preferences.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1 /{model}:streamGenerateContent Path parameters model string Required.",
+          "It is used for billing and reporting only. label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes."
+        ]
+      },
+      {
+        "title": "\"Method: publishers.models.streamGenerateContent \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI API reference Send feedback Method: publishers.models.streamGenerateContent Stay organized with collections Save and categorize content based on your preferences.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1beta1 /{model}:streamGenerateContent Path parameters model string Required.",
+          "It is used for billing and reporting only. label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes."
+        ]
+      },
+      {
+        "title": "\"Grounding with your search API \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud au t h pri nt - access - t oke n $headers = @ { \"Authorization\" = \"Bearer $cred\" } I n voke - WebReques t - Me t hod POST - Headers $headers - Co ntent Type : \"application/json; charset=utf-8\" - I n File reques t .jso n ` - Uri \"https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent\" Selec t - Objec t -E xpa n d Co ntent You should receive a JSON response similar to the following: { \"candidates\" : [ { \"content\" : { \"role\" : \"model\" , \"parts\" : [ { \"text\" : \"You can make an appointment on the website https://dmv.gov/\" } ] }, \"finishReason\" : \"STOP\" , \"safetyRatings\" : [ \"...\" ], \"groundingMetadata\" : { \"retrievalQueries\" : [ \"How to make appointment to renew driving license?\" ], \"groundingChunks\" : [ { \"retrievedContext\" : { \"uri\" : \"https://...\" , \"snippet\" : \"Snippet text about driving license renewal\" } } ], \"groundingSupport\" : [ { \"segment\" : { \"startIndex\" : 25 , \"endIndex\" : 147 }, \"segment text\" : \"ipsum lorem ...\" , \"supportChunkIndices\" : [ 1 , 2 ], \"confidenceScore\" : [ 0.9541752 , 0.97726375 ] }, { \"segment\" : { \"startIndex\" : 294 , \"endIndex\" : 439 }, \"segment text\" : \"ipsum lorem ...\" , \"supportChunkIndices\" : [ 1 ], \"confidenceScore\" : [ 0.9541752 , 0.9325467 ] } ] } } ], \"usageMetadata\" : { \"...\" } } Set up a search API endpoint If you don't have an existing API endpoint that meets the requirements, this section guides you through setting one up using Cloud Functions and API Gateway.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent Request JSON body: { \"contents\" : [{ \"role\" : \"user\" , \"parts\" : [{ \"text\" : \" PROMPT \" }] }], \"tools\" : [{ \"retrieval\" : { \"externalApi\" : { \"api spec\" : \"SIMPLE SEARCH\" , \"endpoint\" : \" EXTERNAL API ENDPOINT \" , \"apiAuth\" : { \"apiKeyConfig\" : { \"apiKeyString\" : \" EXTERNAL API KEY \" } } } } }] } To send your request, use one of these options: curl The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud CLI init or gcloud CLI auth login , or by using Cloud Shell, which automatically logs you into the gcloud CLI.",
+          "Save the request body in a file named request.json , and execute the following command: curl - X POST \\ - H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ - H \"Content-Type: application/json\" \\ - d @reques t .jso n \\ \"https://LOCATION-aiplatform.googleapis.com/v1beta1/projects/PROJECT ID/locations/LOCATION/publishers/google/models/MODEL ID:generateContent\" Powershell The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud CLI init or gcloud CLI auth login."
+        ]
+      },
+      {
+        "title": "Flex PayGo \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The timeout is specified in seconds. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Server-Timeout: 600\" \\ -H \"X-Vertex-AI-LLM-Request-Type: shared\" \\ -H \"X-Vertex-AI-LLM-Shared-Request-Type: flex\" \\ \"https://aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/global/publishers/google/models/ MODEL ID :generateContent\" -d \\ $'{ \"contents\": { \"role\": \"model\", \"parts\": { \"text\": \" PROMPT TEXT \" } } }' You should receive a JSON response similar to the following. { \"candidates\" : [ { \"content\" : { \"role\" : \"model\" , \"parts\" : [ { \"text\" : \"Response to sample request.\" } ] } , \"finishReason\" : \"STOP\" } ] , \"usageMetadata\" : { \"promptTokenCount\" : 3 , \"candidatesTokenCount\" : 900 , \"totalTokenCount\" : 1957 , \"trafficType\" : \"ON DEMAND FLEX\" , \"thoughtsTokenCount\" : 1054 } } Note the following in the URL for this sample: Use the generateContent method to request that the response is returned after it's fully generated.",
+          "The timeout is specified in seconds. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Server-Timeout: 600\" \\ -H \"X-Vertex-AI-LLM-Shared-Request-Type: flex\" \\ \"https://aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/global/publishers/google/models/ MODEL ID :generateContent\" -d \\ $'{ \"contents\": { \"role\": \"model\", \"parts\": { \"text\": \" PROMPT TEXT \" } } }' You should receive a JSON response similar to the following. { \"candidates\" : [ { \"content\" : { \"role\" : \"model\" , \"parts\" : [ { \"text\" : \"Response to sample request.\" } ] } , \"finishReason\" : \"STOP\" } ] , \"usageMetadata\" : { \"promptTokenCount\" : 3 , \"candidatesTokenCount\" : 900 , \"totalTokenCount\" : 1957 , \"trafficType\" : \"ON DEMAND FLEX\" , \"thoughtsTokenCount\" : 1054 } } Note the following in the URL for this sample: Use the generateContent method to request that the response is returned after it's fully generated.",
+          "If your request was processed using Flex PayGo, the trafficType field is set to ON DEMAND FLEX . { \"candidates\": [ { \"content\": { \"role\": \"model\", \"parts\": [ { \"text\": \"Response to sample request.\" } ] }, \"finishReason\": \"STOP\" } ], \"usageMetadata\": { \"promptTokenCount\": 3, \"candidatesTokenCount\": 900, \"totalTokenCount\": 1957, \"trafficType\": \"ON DEMAND FLEX\", \"thoughtsTokenCount\": 1054 } } Additional quota for Flex PayGo In addition to the available quotas for content generation requests (including Provisioned Throughput quota for spillover traffic), requests utilizing Flex PayGo are subject to the following quota: Description QPM for each base model in a project Quota for each base model in a project requests utilizing Flex PayGo 3000 What's next Resource Generative AI quotas and limits Quotas and limits related specifically to generative AI on Vertex AI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "dmv.gov",
+      "publishers.models",
+      "publishers.models.generateContent",
+      "publishers.models.streamGenerateContent",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/streamGenerateContent",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-search-api",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo"
+      ]
+    }
+  ]
+}

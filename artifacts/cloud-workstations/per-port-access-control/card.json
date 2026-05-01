@@ -1,0 +1,229 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.130Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "Per-port access control",
+  "feature_slug": "per-port-access-control",
+  "summary": "Cloud Workstations supports granting access to individual ports.",
+  "extended_definition": "Cloud Workstations supports granting access to individual ports.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/access-control",
+      "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+      "https://docs.cloud.google.com/workstations/docs/configure-port-access",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Workstations Policy Admin : for developers updating IAM policy of their workstations To get the permissions that you need to update IAM policy of the workstation which allows granting access to the entire workstation or its individual ports, ask your administrator to grant you the Cloud Workstations Policy Admin ( roles/workstations.policyAdmin ) IAM role on the workstation.",
+          "Enable required Identity and Access Management roles If the Identity and Access Management permissions you need haven't yet been set up, follow these instructions to set up one or more of the following roles: Cloud Workstations User Cloud Workstations Creator Cloud Workstations Admin Cloud Workstations Network Admin Cloud Workstations Limit Exempted Creator Cloud Workstations Policy Admin Cloud Workstations User : for developers using a workstation To get the permissions that you need to access a workstation, ask your administrator to grant you the following IAM roles: Cloud Workstations User ( roles/workstations.user ) on the workstation Cloud Workstations Operation Viewer ( roles/workstations.operationViewer ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Cloud Workstations Limit Exempted Creator : for developers creating and connecting to workstations To get the permissions that you need to view workstation configurations, create workstations exempted from maxUsableWorkstations limit, and access workstations, ask your administrator to grant you the following IAM roles on the project: Cloud Workstations Limit Exempted Creator ( roles/workstations.workstationLimitExemptedCreator ) - the project or individual workstation configuration Cloud Workstations Operation Viewer ( roles/workstations.operationViewer ) - the project For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Authenticate to the Cloud Workstations API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "source_id": "site-docs-root-2",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're new to the Cloud Workstations API, make sure that you read the following sections first: Before you begin Access control with IAM Authenticate and setup API access within a workstation For more information about Google Cloud authentication, see the Authentication methods .",
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Cloud Workstations client libraries provide high-level language support for authenticating to Cloud Workstations programmatically.",
+          "Access control for Cloud Workstations After you authenticate to Cloud Workstations, you must be authorized to access Google Cloud resources."
+        ]
+      },
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"reconciling\" : boolean , \"annotations\" : { string : string , ... } , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"etag\" : string , \"idleTimeout\" : string , \"runningTimeout\" : string , \"maxUsableWorkstations\" : integer , \"host\" : { object ( Host ) } , \"persistentDirectories\" : [ { object ( PersistentDirectory ) } ] , \"ephemeralDirectories\" : [ { object ( EphemeralDirectory ) } ] , \"container\" : { object ( Container ) } , \"encryptionKey\" : { object ( CustomerEncryptionKey ) } , \"readinessChecks\" : [ { object ( ReadinessCheck ) } ] , \"replicaZones\" : [ string ] , \"degraded\" : boolean , \"conditions\" : [ { object ( Status ) } ] , \"enableAuditAgent\" : boolean , \"disableTcpConnections\" : boolean , \"allowedPorts\" : [ { object ( PortRange ) } ] , \"grantWorkstationAdminRoleOnCreate\" : boolean } Fields name string Identifier.",
+          "REST Resource: projects.locations.workstationClusters.workstationConfigs Resource: WorkstationConfig JSON representation Host JSON representation GceInstance JSON representation GceShieldedInstanceConfig JSON representation GceConfidentialInstanceConfig JSON representation Accelerator JSON representation BoostConfig JSON representation PersistentDirectory JSON representation GceRegionalPersistentDisk JSON representation ReclaimPolicy GceHyperdiskBalancedHighAvailability JSON representation ReclaimPolicy EphemeralDirectory JSON representation GcePersistentDisk JSON representation Container JSON representation CustomerEncryptionKey JSON representation ReadinessCheck JSON representation PortRange JSON representation Methods Resource: WorkstationConfig A workstation configuration resource in the Cloud Workstations API.",
+          "Methods create Creates a new workstation configuration. delete Deletes the specified workstation configuration. get Returns the requested workstation configuration. getIamPolicy Gets the access control policy for a resource. list Returns all workstation configurations in the specified cluster. listUsable Returns all workstation configurations in the specified cluster on which the caller has the \"workstations.workstation.create\" permission. patch Updates an existing workstation configuration. setIamPolicy Sets the access control policy on the specified resource. testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      },
+      {
+        "title": "Grant access to individual Cloud Workstations ports \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/configure-port-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 229,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Condition Editor tab, enter the following condition: destination.port == WORKSTATIONS PORT Click Save to finalize granting conditional access to the specific port to the principal. gcloud Get the workstation IAM policy by using the gcloud CLI workstations get-iam-policy command.",
+          "For more information about IAM Conditions, see the following: Conditions overview Managing conditional role bindings Before you begin Before you can grant access to individual workstation ports, you must have the Cloud Workstations Policy Admin ( roles/workstations.policyAdmin ) role on the workstation.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Grant access to individual Cloud Workstations ports Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "destination.port",
+      "projects.locations.workstationClusters.workstationConfigs",
+      "workstations.operationViewer",
+      "workstations.policyAdmin",
+      "workstations.user",
+      "workstations.workstation.create",
+      "workstations.workstation.use",
+      "workstations.workstationConfigs.exemptMaxUsableWorkstationLimit",
+      "workstations.workstationCreator",
+      "workstations.workstationLimitExemptedCreator"
+    ],
+    "missing_inventory_roles": [
+      "roles/workstations.operationViewer",
+      "roles/workstations.policyAdmin",
+      "roles/workstations.user",
+      "roles/workstations.workstationCreator",
+      "roles/workstations.workstationLimitExemptedCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/access-control",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/configure-port-access"
+      ]
+    }
+  ]
+}

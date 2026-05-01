@@ -1,0 +1,265 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.130Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "Customer-managed encryption keys for persistent disks",
+  "feature_slug": "customer-managed-encryption-keys-for-persistent-disks",
+  "summary": "Cloud Workstations supports protecting persistent disks with customer-managed encryption keys.",
+  "extended_definition": "Cloud Workstations supports protecting persistent disks with customer-managed encryption keys.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/create-configuration",
+      "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+      "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"reconciling\" : boolean , \"annotations\" : { string : string , ... } , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"etag\" : string , \"idleTimeout\" : string , \"runningTimeout\" : string , \"maxUsableWorkstations\" : integer , \"host\" : { object ( Host ) } , \"persistentDirectories\" : [ { object ( PersistentDirectory ) } ] , \"ephemeralDirectories\" : [ { object ( EphemeralDirectory ) } ] , \"container\" : { object ( Container ) } , \"encryptionKey\" : { object ( CustomerEncryptionKey ) } , \"readinessChecks\" : [ { object ( ReadinessCheck ) } ] , \"replicaZones\" : [ string ] , \"degraded\" : boolean , \"conditions\" : [ { object ( Status ) } ] , \"enableAuditAgent\" : boolean , \"disableTcpConnections\" : boolean , \"allowedPorts\" : [ { object ( PortRange ) } ] , \"grantWorkstationAdminRoleOnCreate\" : boolean } Fields name string Identifier.",
+          "REST Resource: projects.locations.workstationClusters.workstationConfigs Resource: WorkstationConfig JSON representation Host JSON representation GceInstance JSON representation GceShieldedInstanceConfig JSON representation GceConfidentialInstanceConfig JSON representation Accelerator JSON representation BoostConfig JSON representation PersistentDirectory JSON representation GceRegionalPersistentDisk JSON representation ReclaimPolicy GceHyperdiskBalancedHighAvailability JSON representation ReclaimPolicy EphemeralDirectory JSON representation GcePersistentDisk JSON representation Container JSON representation CustomerEncryptionKey JSON representation ReadinessCheck JSON representation PortRange JSON representation Methods Resource: WorkstationConfig A workstation configuration resource in the Cloud Workstations API.",
+          "If the customer-managed encryption key is rotated, when the workstation instance is stopped, the system attempts to recreate the persistent disk with the new version of the key."
+        ]
+      },
+      {
+        "title": "\"Encrypt workstation resources using CMEK \\_|\\_ Cloud Workstations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rotate customer-managed encryption keys When you granted the Cloud Workstations Service Agent Cloud KMS Viewer role ( roles/cloudkms.viewer ) on the CMEK key, the workstation service is able to detect key rotation and re-encrypt your home disk using the new primary key version.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Cloud Workstations.",
+          "By default, Cloud Workstations uses a Google-owned and Google-managed encryption key to encrypt workstation resources such as VMs and persistent disks when data is at rest ."
+        ]
+      },
+      {
+        "title": "Create custom constraints for Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Field workstations.googleapis.com/Workstation resource.annotations resource.displayName resource.env resource.name resource.sourceWorkstation workstations.googleapis.com/WorkstationCluster resource.annotations resource.displayName resource.domainConfig.domain resource.name resource.network resource.privateClusterConfig.allowedProjects resource.privateClusterConfig.enablePrivateEndpoint resource.subnetwork resource.tags workstations.googleapis.com/WorkstationConfig resource.allowedPorts.first resource.allowedPorts.last resource.annotations resource.container.args resource.container.command resource.container.env resource.container.image resource.container.runAsUser resource.container.workingDir resource.disableTcpConnections resource.displayName resource.enableAuditAgent resource.encryptionKey.kmsKey resource.encryptionKey.kmsKeyServiceAccount resource.ephemeralDirectories.gcePd.diskType resource.ephemeralDirectories.gcePd.readOnly resource.ephemeralDirectories.gcePd.sourceImage resource.ephemeralDirectories.gcePd.sourceSnapshot resource.ephemeralDirectories.mountPath resource.grantWorkstationAdminRoleOnCreate resource.host.gceInstance.accelerators.count resource.host.gceInstance.accelerators.type resource.host.gceInstance.boostConfigs.accelerators.count resource.host.gceInstance.boostConfigs.accelerators.type resource.host.gceInstance.boostConfigs.bootDiskSizeGb resource.host.gceInstance.boostConfigs.enableNestedVirtualization resource.host.gceInstance.boostConfigs.machineType resource.host.gceInstance.boostConfigs.poolSize resource.host.gceInstance.bootDiskSizeGb resource.host.gceInstance.confidentialInstanceConfig.enableConfidentialCompute resource.host.gceInstance.disablePublicIpAddresses resource.host.gceInstance.disableSsh resource.host.gceInstance.enableNestedVirtualization resource.host.gceInstance.machineType resource.host.gceInstance.poolSize resource.host.gceInstance.serviceAccount resource.host.gceInstance.serviceAccountScopes resource.host.gceInstance.shieldedInstanceConfig.enableIntegrityMonitoring resource.host.gceInstance.shieldedInstanceConfig.enableSecureBoot resource.host.gceInstance.shieldedInstanceConfig.enableVtpm resource.host.gceInstance.tags resource.host.gceInstance.vmTags resource.idleTimeout resource.maxUsableWorkstations resource.name resource.persistentDirectories.gcePd.diskType resource.persistentDirectories.gcePd.fsType resource.persistentDirectories.gcePd.reclaimPolicy resource.persistentDirectories.gcePd.sizeGb resource.persistentDirectories.gcePd.sourceSnapshot resource.persistentDirectories.mountPath resource.readinessChecks.path resource.readinessChecks.port resource.replicaZones resource.runningTimeout What's next Learn more about Organization Policy Service .",
+          "Test the policy To test the policy on a workstation cluster with public gateway, create a cluster: gcloud workstations clusters create CLUSTER --region = REGION Replace the following: CLUSTER : the cluster ID—for example, public-gateway-cluster REGION : the region ID—for example, us-central1 The output will be similar to the following: Operation denied by custom org policies: [\"customConstraints/custom.workstationsPrivateGatewayClusters\": \"All workstation clusters must enable private gateway endpoint\"] To create a cluster successfully, add the --enable-private-endpoint flag to the gcloud workstations clusters create command: gcloud workstations clusters create CLUSTER --region = REGION --enable-private-endpoint Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.",
+          "Before you begin, you must know the following: Your organization ID A project ID Create the constraint Save the following file as constraint-ws-private-gateway.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.workstationsPrivateGatewayClusters resourceTypes : - workstations.googleapis.com/WorkstationCluster methodTypes : - CREATE - UPDATE condition : resource.privateClusterConfig.enablePrivateEndpoint == true actionType : ALLOW displayName : Require workstation cluster to enable private gateway endpoint description : All workstation clusters must enable private gateway endpoint This defines a constraint where for every new workstation cluster, if the public gateway is enabled, the operation is denied."
+        ]
+      },
+      {
+        "title": "\"Create a workstation configuration \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/create-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Choosing Retain allows administrators to audit the content of workstation home disks after the workstations are deleted, but administrators are responsible for manually deleting the disk.",
+          "By default, Cloud Workstations encrypts resources created with this workstation configuration using a Google-owned and Google-managed encryption key .",
+          "To use a customer-managed encryption key instead, select Use customer-managed encryption key (CMEK) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.viewer",
+      "custom.workstationsPrivateGatewayClusters",
+      "gateway.yaml",
+      "projects.locations.workstationClusters.workstationConfigs",
+      "resource.allowedPorts.first",
+      "resource.allowedPorts.last",
+      "resource.annotations",
+      "resource.container.args",
+      "resource.container.command",
+      "resource.container.env",
+      "resource.container.image",
+      "resource.container.runAsUser",
+      "resource.container.workingDir",
+      "resource.disableTcpConnections",
+      "resource.displayName",
+      "resource.domainConfig.domain",
+      "resource.enableAuditAgent",
+      "resource.encryptionKey.kmsKey",
+      "resource.encryptionKey.kmsKeyServiceAccount",
+      "resource.env",
+      "resource.ephemeralDirectories.gcePd.diskType",
+      "resource.ephemeralDirectories.gcePd.readOnly",
+      "resource.ephemeralDirectories.gcePd.sourceImage",
+      "resource.ephemeralDirectories.gcePd.sourceSnapshot",
+      "resource.ephemeralDirectories.mountPath",
+      "resource.grantWorkstationAdminRoleOnCreate",
+      "resource.host.gceInstance.accelerators.count",
+      "resource.host.gceInstance.accelerators.type",
+      "resource.host.gceInstance.boostConfigs.accelerators.count",
+      "resource.host.gceInstance.boostConfigs.accelerators.type",
+      "resource.host.gceInstance.boostConfigs.bootDiskSizeGb",
+      "resource.host.gceInstance.boostConfigs.enableNestedVirtualization",
+      "resource.host.gceInstance.boostConfigs.machineType",
+      "resource.host.gceInstance.boostConfigs.poolSize",
+      "resource.host.gceInstance.bootDiskSizeGb",
+      "resource.host.gceInstance.confidentialInstanceConfig.enableConfidentialCompute",
+      "resource.host.gceInstance.disablePublicIpAddresses",
+      "resource.host.gceInstance.disableSsh",
+      "resource.host.gceInstance.enableNestedVirtualization",
+      "resource.host.gceInstance.machineType",
+      "resource.host.gceInstance.poolSize",
+      "resource.host.gceInstance.serviceAccount",
+      "resource.host.gceInstance.serviceAccountScopes",
+      "resource.host.gceInstance.shieldedInstanceConfig.enableIntegrityMonitoring",
+      "resource.host.gceInstance.shieldedInstanceConfig.enableSecureBoot",
+      "resource.host.gceInstance.shieldedInstanceConfig.enableVtpm",
+      "resource.host.gceInstance.tags",
+      "resource.host.gceInstance.vmTags",
+      "resource.idleTimeout",
+      "resource.maxUsableWorkstations",
+      "resource.name",
+      "resource.network",
+      "resource.persistentDirectories.gcePd.diskType",
+      "resource.persistentDirectories.gcePd.fsType",
+      "resource.persistentDirectories.gcePd.reclaimPolicy",
+      "resource.persistentDirectories.gcePd.sizeGb",
+      "resource.persistentDirectories.gcePd.sourceSnapshot",
+      "resource.persistentDirectories.mountPath",
+      "resource.privateClusterConfig.allowedProjects",
+      "resource.privateClusterConfig.enablePrivateEndpoint",
+      "resource.readinessChecks.path",
+      "resource.readinessChecks.port",
+      "resource.replicaZones",
+      "resource.runningTimeout",
+      "resource.sourceWorkstation",
+      "resource.subnetwork",
+      "resource.tags",
+      "workstations.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/encrypt-workstation-resources-using-cmek",
+        "https://docs.cloud.google.com/workstations/docs/custom-constraints",
+        "https://docs.cloud.google.com/workstations/docs/create-configuration"
+      ]
+    }
+  ]
+}

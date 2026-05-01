@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.432Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "Additional assessment file uploads",
+  "feature_slug": "additional-assessment-file-uploads",
+  "summary": "Lets you upload additional zip files with new application files into an existing assessment.",
+  "extended_definition": "Lets you upload additional zip files with new application files into an existing assessment.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Missing from file: the specific source file that contains a reference to a module or component that couldn't be found within the uploaded assessment files.",
+          "Discover and analyze source code The Discovery page provides an overview of analysis of the application source code that you uploaded for assessment.",
+          "This page describes how to review the assessment of the discovered assets, and analyze the application source files using generative AI."
+        ]
+      },
+      {
+        "title": "\"Create and update assessments \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool Set up and access Mainframe Assessment Tool Upload your mainframe application files to Mainframe Assessment Tool To upload the application files to Mainframe Assessment Tool, follow these steps: Create a zip file containing all the applications that you want to migrate.",
+          "To upload the zip file to Mainframe Assessment Tool, follow these steps: To open Mainframe Assessment Tool on your local machine, open a web browser window and go to http://localhost: PORT .",
+          "Add files to an existing assessment After you create an assessment, you can add additional zip files to it."
+        ]
+      },
+      {
+        "title": "\"Configure your Google Cloud project for Mainframe Assessment Tool \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable Vertex AI API Configure firewall rules To enable secure access to the Mainframe Assessment Tool instance through IAP, create the following firewall rules: Create a firewall rule to allow ingress traffic on TCP port 4000 by using IAP for TCP forwarding : gcloud compute firewall-rules create allow-ingress-from-iap \\ --direction=INGRESS \\ --action=allow \\ --rules=tcp:4000\\ --source-ranges=35.235.240.0/20 Create a firewall rule to deny all other ingress traffic to your Mainframe Assessment Tool instance: gcloud compute firewall-rules create deny-all-other-ingress \\ --direction=ingress \\ --action=deny \\ --rules=all \\ --source-ranges=0.0.0.0/0 \\ --network=your-network-name \\ --priority=65535 Assign IAM roles and permissions To ensure that the dedicated service account that you created has the necessary permissions to give the Mainframe Assessment Tool components the required access to the Vertex AI API and other services, ask your administrator to grant the following IAM roles to the dedicated service account that you created: Important: You must grant these roles to the dedicated service account that you created, not to your user account.",
+          "Home Documentation Migration Mainframe Assessment Tool Guides Send feedback Configure your Google Cloud project for Mainframe Assessment Tool Stay organized with collections Save and categorize content based on your preferences.",
+          "Vertex AI User ( roles/aiplatform.user ) Cloud Logging: Cloud Logging Writer ( roles/logging.logWriter ) What's next Learn how to Set up and access Mainframe Assessment Tool ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.user",
+      "logging.logWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.266Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub",
+  "feature_name": "Gemini Cloud Assist in App Hub",
+  "feature_slug": "gemini-cloud-assist-in-app-hub",
+  "summary": "App Hub now supports Gemini Cloud Assist in Preview, allowing users to retrieve application information through a chat panel in app-enabled folders.",
+  "extended_definition": "App Hub now supports Gemini Cloud Assist in Preview, allowing users to retrieve application information through a chat panel in app-enabled folders.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+      "https://docs.cloud.google.com/app-hub/docs/optimize-applications",
+      "https://docs.cloud.google.com/app-hub/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enable APIs on the management project \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "source_id": "site-docs-root-2",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Required or recommended More information Gemini for Google Cloud API ( cloudaicompanion.googleapis.com ) Recommended Gemini Cloud Assist pricing VPC Service Controls Enable recommended APIs To enable recommended APIs after application management setup, follow these steps: To get the permissions that you need to enable APIs, ask your administrator to grant you the Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) role on the management project.",
+          "API Required or recommended More information Developer Connect API ( developerconnect.googleapis.com ) Recommended Developer Connect pricing VPC Service Controls Gemini Cloud Assist APIs Gemini Cloud Assist integrates the power of AI into your application-centric experience, offering assistance across the application lifecycle.",
+          "Use Gemini Cloud Assist to help you with application tasks such as designing an application in App Design Center or troubleshoot issues with your applications."
+        ]
+      },
+      {
+        "title": "App Hub overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "AI-powered assistance from Gemini Cloud Assist , which uses App Hub's data model to help you design, operate, and troubleshoot your applications.",
+          "This approach aligns your application management boundary with your organization's structure by business unit, environment, or team, and automatically includes all projects within that folder. ( Preview ) Single-project boundary : For small applications where all Google Cloud resources reside in one project, you can designate that single project as your boundary.",
+          "For example, when an AI agent is deployed through a managed platform like Vertex AI Agent Engine , App Hub automatically classifies the resource with the AGENT functional type value to indicate that the workload runs an AI agent. ( Preview ) Extended metadata : an schema-driven property that provides rich, structured information about the service or workload."
+        ]
+      },
+      {
+        "title": "\"Optimize an application with design recommendations \\_|\\_ App Hub \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/optimize-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Analyze the application for optimization opportunities Use Cloud Hub and Gemini Cloud Assist to get a consolidated view of your application's operational data and receive recommendations: In the Google Cloud console, use the project picker to select your management project.",
+          "Optionally, use the Gemini Cloud Assist panel to ask for optimization recommendations using natural language prompts, for example: Give me recommendations to optimize my application.",
+          "Application insights and assistance services, such as Cloud Hub and Gemini Cloud Assist , help you identify optimization opportunities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "developerconnect.googleapis.com",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/optimize-applications"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/optimize-applications"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/optimize-applications"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.158Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api",
+  "feature_name": "Conference data for Hangouts and Google Meet",
+  "feature_slug": "conference-data-for-hangouts-and-google-meet",
+  "summary": "The Calendar API supports Hangouts and Google Meet conference data in events through the conferenceData field, including reading, copying, creating, and clearing conference details.",
+  "extended_definition": "The Calendar API supports Hangouts and Google Meet conference data in events through the conferenceData field, including reading, copying, creating, and clearing conference details.",
+  "lifecycle": {
+    "latest_feature_date": "2017-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/guides/create-events",
+      "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+      "https://developers.google.com/workspace/calendar/api/v3/reference/calendars"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create events \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "source_id": "site-docs-root",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are three types of conferenceData currently supported, as denoted by the conferenceData.conferenceSolution.key.type : Hangouts for consumers ( eventHangout ) Classic Hangouts for Google Workspace users (deprecated; eventNamedHangout ) Google Meet ( hangoutsMeet ) You can learn which conference type is supported for any given calendar of a user by looking at the conferenceProperties.allowedConferenceSolutionTypes in the calendars and calendarList collections.",
+          "For example, to request conference generation for an existing event: JavaScript const eventPatch = { conferenceData : { createRequest : { requestId : \"7qxalsvy0e\" } } }; gapi . client . calendar . events . patch ({ calendarId : \"primary\" , eventId : \"7cbh8rpc10lrc0ckih9tafss99\" , resource : eventPatch , sendUpdates : \"all\" , conferenceDataVersion : 1 }). execute ( function ( event ) { console . log ( \"Conference created for event: %s\" , event . htmlLink ); }); The immediate response to this call might not yet contain the fully-populated conferenceData ; this is indicated by a status code of pending in the status field.",
+          "Add video and phone conferences to events You can associate events with Hangouts and Google Meet conferences to allow your users to meet remotely via a phone call or a video call."
+        ]
+      },
+      {
+        "title": "CalendarList \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The possible values are: \"eventHangout\" \"eventNamedHangout\" \"hangoutsMeet\" Optional. dataOwner string The email of the owner of the calendar.",
+          "Resource representations { \"kind\" : \"calendar#calendarListEntry\" , \"etag\" : etag , \"id\" : string , \"summary\" : string , \"description\" : string , \"location\" : string , \"timeZone\" : string , \"dataOwner\" : string , \"summaryOverride\" : string , \"colorId\" : string , \"backgroundColor\" : string , \"foregroundColor\" : string , \"hidden\" : boolean , \"selected\" : boolean , \"accessRole\" : string , \"defaultReminders\" : [ { \"method\" : string , \"minutes\" : integer } ], \"notificationSettings\" : { \"notifications\" : [ { \"type\" : string , \"method\" : string } ] } , \"primary\" : boolean , \"deleted\" : boolean , \"conferenceProperties\" : { \"allowedConferenceSolutionTypes\" : [ string ] } , \"autoAcceptInvitations\" : boolean } Property name Value Description Notes accessRole string The effective access role that the authenticated user has on the calendar.",
+          "Possible values are: \" eventCreation \" - Notification sent when a new event is put on the calendar. \" eventChange \" - Notification sent when an event is changed. \" eventCancellation \" - Notification sent when an event is cancelled. \" eventResponse \" - Notification sent when an attendee responds to the event invitation. \" agenda \" - An agenda with the events of the day (sent out in the morning)."
+        ]
+      },
+      {
+        "title": "Calendars \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference/calendars",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The possible values are: \"eventHangout\" \"eventNamedHangout\" \"hangoutsMeet\" Optional. dataOwner string The email of the owner of the calendar.",
+          "Resource representations { \"kind\": \"calendar#calendar\", \"etag\": etag , \"id\": string , \"summary\": string , \"description\": string , \"location\": string , \"timeZone\": string , \"dataOwner\": string , \"conferenceProperties\": { \"allowedConferenceSolutionTypes\": [ string ] }, \"autoAcceptInvitations\": boolean } Property name Value Description Notes autoAcceptInvitations boolean Whether this calendar automatically accepts invitations.",
+          "Only valid for resource calendars. conferenceProperties nested object Conferencing properties for this calendar, for example what types of conferences are allowed. conferenceProperties. allowedConferenceSolutionTypes[] list The types of conference solutions that are supported for this calendar."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "calendars.clear",
+      "developers.google.com",
+      "key.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendars",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendars",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendars",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendars",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendars",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
+      ]
+    }
+  ]
+}

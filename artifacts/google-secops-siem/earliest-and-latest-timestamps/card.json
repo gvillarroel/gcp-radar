@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.409Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "earliest and latest timestamps",
+  "feature_slug": "earliest-and-latest-timestamps",
+  "summary": "Adds earliest and latest timestamps for extracting the time range of aggregated data.",
+  "extended_definition": "Adds earliest and latest timestamps for extracting the time range of aggregated data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you adjust the time range, the Filtered events and Query events checkboxes appear, which lets you further limit the types of events displayed.",
+          "You can also click any bar in the histogram to apply its time range as a snapshot filter and view events from that period.",
+          "When you adjust the time range, the UDM fields and values and Events tables update to reflect your selection."
+        ]
+      },
+      {
+        "title": "\"Understand rule detection delays \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "source_id": "site-docs-root",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "When reviewing a detection, carefully check the UDM event and ingestion timestamps.",
+          "For details, see Modifying log body timestamps using BindPlane .",
+          "Use the following techniques to reduce delays where possible: For latency-sensitive rules, use the most frequent run options: Increase the rule frequency : To reduce delays, configure the highest possible frequency based on the rule type and match window: For single-event rules: Use Near-real time ."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here are examples of valid time zone specifiers, which you can pass as the second argument to time extraction functions: \"America/Los Angeles\", or \"-08:00\". (\"PST\" is not supported) \"America/New York\", or \"-05:00\". (\"EST\" is not supported) \"Europe/London\" \"UTC\" \"GMT\" Param data types INT , STRING , STRING Return type STRING Code samples Example 1 In this example, the time zone argument is omitted, so it defaults to GMT . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts) = \"2024-02-22 10:43:51\" Example 2 This example uses a string literal to define the time zone . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts, \"%F %T\", \"America/Los Angeles\") = \"2024-02-22 10:43:51\" Example 3 This example uses a string literal to define the timestamp format . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts, \"%Y-%m\", \"GMT\") = \"2024-02\" Example 4 This example formats a unix timestamp as a string at second granularity. timestamp.get timestamp(1708598631, \"SECOND\", \"GMT\") = \"2024-02-22 10:43:51\" Example 5 This example formats a unix timestamp as a string at minute granularity. timestamp.get timestamp(1708598631, \"MINUTE\", \"GMT\") = \"2024-02-22 10:43\" Example 6 This example formats a unix timestamp as a string at hour granularity. timestamp.get timestamp(1708598631, \"HOUR\", \"GMT\") = \"2024-02-22 10\" Example 7 This example formats a unix timestamp as a string at day granularity. timestamp.get timestamp(1708598631, \"DATE\", \"GMT\") = \"2024-02-22\" Example 8 This example formats a unix timestamp as a string at week granularity. timestamp.get timestamp(1708598631, \"WEEK\", \"GMT\") = \"2024-02-18\" Example 9 This example formats a unix timestamp as a string at month granularity. timestamp.get timestamp(1708598631, \"MONTH\", \"GMT\") = \"2024-02\" Example 10 This example formats a unix timestamp as a string at year granularity. timestamp.get timestamp(1708598631, \"YEAR\", \"GMT\") = \"2024\" timestamp.get week Supported in: Rules Search timestamp.get week(unix seconds [, time zone]) Description This function returns an integer in the range [0, 53] representing the week of the year.",
+          "Here are examples of valid time zone specifiers, which you can pass as the second argument to time extraction functions: \"America/Los Angeles\", or \"-08:00\". (\"PST\" is not supported) \"America/New York\", or \"-05:00\". (\"EST\" is not supported) \"Europe/London\" \"UTC\" \"GMT\" Param data types INT , STRING Return type STRING Code samples Example 1 In this example, the time zone argument is omitted, so it defaults to \"GMT\". $ts = $e.metadata.collected timestamp.seconds timestamp.get date($ts) = \"2024-02-19\" Example 2 This example uses a string literal to define the time zone . $ts = $e.metadata.collected timestamp.seconds timestamp.get date($ts, \"America/Los Angeles\") = \"2024-02-20\" timestamp.get minute Supported in: Rules Search timestamp.get minute(unix seconds [, time zone]) Description This function returns an integer in the range [0, 59] representing the minute. unix seconds is an integer representing the number of seconds past Unix epoch, such as $e.metadata.event timestamp.seconds , or a placeholder containing that value. time zone is optional and is a string representing a time zone.",
+          "Here are examples of valid time zone specifiers, which you can pass as the second argument to time extraction functions: \"America/Los Angeles\", or \"-08:00\". (\"PST\" is not supported) \"America/New York\", or \"-05:00\". (\"EST\" is not supported) \"Europe/London\" \"UTC\" \"GMT\" Param data types INT , STRING Return type INT Code samples Example 1 In this example, the time zone argument is omitted, so it defaults to \"GMT\". $ts = $e.metadata.collected timestamp.seconds timestamp.get hour($ts) = 15 Example 2 This example uses a string literal to define the time zone . $ts = $e.metadata.collected timestamp.seconds timestamp.get hour($ts, \"America/Los Angeles\") = 15 timestamp.get hour Supported in: Rules Search timestamp.get hour(unix seconds [, time zone]) Description This function returns an integer in the range [0, 23] representing the hour. unix seconds is an integer representing the number of seconds past Unix epoch, such as $e.metadata.event timestamp.seconds , or a placeholder containing that value. time zone is optional and is a string representing a time zone."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.metadata.collected",
+      "e.metadata.event",
+      "timestamp.get",
+      "timestamp.seconds"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ]
+}

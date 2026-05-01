@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.111Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Cloud Tasks",
+  "feature_slug": "cloud-tasks",
+  "summary": "Cloud Tasks runs asynchronous tasks outside the scope of user requests.",
+  "extended_definition": "Cloud Tasks runs asynchronous tasks outside the scope of user requests.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "With Cloud Tasks, HTTP requests are long-lived and return a response only after any asynchronous work ends.",
+          "Any request can be routed to any instance, so consecutive requests from the same user are not necessarily sent to the same instance.",
+          "App Engine runs multiple instances of your application, and each instance has its own web server for handling requests."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference-3",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "With Cloud Tasks, HTTP requests are long-lived and return a response only after any asynchronous work ends.",
+          "Any request can be routed to any instance, so consecutive requests from the same user are not necessarily sent to the same instance.",
+          "App Engine runs multiple instances of your application, and each instance has its own web server for handling requests."
+        ]
+      },
+      {
+        "title": "\"Run asynchronous tasks \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Run asynchronous tasks Stay organized with collections Save and categorize content based on your preferences.",
+          "To run asynchronous tasks, you can: Create Cloud Tasks queues, see Create Cloud Tasks queues .",
+          "Create App Engine tasks in the form of an HTTP request and then place them in Cloud Tasks queues, see Create App Engine tasks ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cron.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

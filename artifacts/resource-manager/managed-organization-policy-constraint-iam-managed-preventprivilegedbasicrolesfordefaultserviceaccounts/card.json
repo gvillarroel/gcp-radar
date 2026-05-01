@@ -1,0 +1,491 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.433Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Managed organization policy constraint iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts",
+  "feature_slug": "managed-organization-policy-constraint-iam-managed-preventprivilegedbasicrolesfordefaultserviceaccounts",
+  "summary": "This managed organization policy constraint prevents default service accounts from being granted the Editor or Owner role.",
+  "extended_definition": "This managed organization policy constraint prevents default service accounts from being granted the Editor or Owner role.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+      "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Restrict IAM service account usage | Organization Policy | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "source_id": "feature-recovery-http",
+        "final_score": 324,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disable service account key upload Note: To make your organization policies more flexible and to get greater insight from Policy Intelligence tools, we recommend using the equivalent managed constraint: iam.managed.disableServiceAccountKeyUpload .",
+          "Disable service account creation Note: To make your organization policies more flexible and to get greater insight from Policy Intelligence tools, we recommend using the equivalent managed constraint: iam.managed.disableServiceAccountCreation .",
+          "To disable the automatic Editor role grant and prevent the Editor and Owner roles from being granted to default service accounts in the future, use the iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts managed constraint ."
+        ]
+      },
+      {
+        "title": "Troubleshoot organization policy errors for service accounts | Identity and Access Management (IAM) | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "source_id": "feature-recovery-http",
+        "final_score": 312,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn which roles to grant to each service account, see https://cloud.google.com/iam/help/service-accounts/troubleshoot-roles-default.\\\"].\" , \"status\" : \"FAILED_PRECONDITION\" , \"details\" : [ { \"@type\" : \"type.googleapis.com/google.rpc.ErrorInfo\" , \"reason\" : \"CUSTOM_ORG_POLICY_VIOLATION\" , \"domain\" : \"googleapis.com\" , \"metadata\" : { \"customConstraints\" : \"constraints/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts\" , \"resource\" : \"projects/ PROJECT_ID \" } } ] } } Recommended resolution for granting roles to default service accounts If an organization policy prevents you from granting the Editor or Owner role to a default service account, then you should find a less permissive role to grant to the service account.",
+          "The constraints listed includes the customConstraints/custom.cantGrantProjectIamAdmin constraint. gcloud ERROR: (gcloud.projects.set-iam-policy) FAILED_PRECONDITION : Operation denied by org policy on resource ' RESOURCE_ID ' : [ \"constraints/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts\" : \"When this constraint is enforced, it prevents anyone from granting the Editor role (roles/editor) or the Owner role (roles/owner) to the Compute Engine and App Engine default service accounts, at any time.",
+          "REST { \"error\" : { \"code\" : 400 , \"message\" : \"Operation denied by org policy on resource ' RESOURCE_ID ': [\\\"constraints/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts\\\": \\\"When this constraint is enforced, it prevents anyone from granting the Editor role (roles/editor) or the Owner role (roles/owner) to the Compute Engine and App Engine default service accounts, at any time."
+        ]
+      },
+      {
+        "title": "組織ポリシーの制約 | Resource Manager | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "source_id": "feature-recovery-http",
+        "final_score": 302,
+        "relevance": "",
+        "evidence_snippets": [
+          "組織ポリシーの制約 | Resource Manager | Google Cloud Documentation メイン コンテンツにスキップ テクノロジー分野 close AI と ML アプリケーション開発 アプリケーションのホスティング コンピューティング データ分析とパイプライン データベース 分散型クラウド、ハイブリッド クラウド、マルチクラウド 業種別ソリューション 移行 ネットワーキング オブザーバビリティとモニタリング セキュリティ Storage プロダクト横断型のツール close アクセスとリソースの管理 費用と使用量の管理 Infrastructure as code SDK、言語、フレームワーク、ツール / コンソール English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 ログイン Resource Manager 無料で利用開始 テクノロジー分野 その他 プロダクト横断型のツール その他 コンソール AI と ML アプリケーション開発 アプリケーションのホスティング コンピューティング データ分析とパイプライン データベース 分散型クラウド、ハイブリッド クラウド、マルチクラウド 業種別ソリューション 移行 ネットワーキング オブザーバビリティとモニタリング セキュリティ Storage アクセスとリソースの管理 費用と使用量の管理 Infrastructure as code SDK、言語、フレームワーク、ツール Home Documentation Security Resource Manager フィードバックを送信 組織ポリシーの制約 コレクションでコンテンツを整理 必要に応じて、コンテンツの保存と分類を行います。 このページでは、利用可能なすべての Google マネージド組織のポリシー制約のリストを示します。 自動的に適用される制約 組織のポリシーが適用されていない場合、組織のポリシーが適用されている最下位の祖先から継承されます。祖先階層のどこにも組織のポリシーが適用されていない場合、制約の Google 管理のデフォルトの動作が適用されます。 組織のポリシーの制約の Google 管理のデフォルトの動作によってオペレーションが制限されている場合、組織のポリシーを明示的に定義していなくても、そのオペレーションは制限されます。これらのオペレーションを許可するには、親ポリシーをオーバーライドする組織のポリシーを作成する必要があります。 次の組織のポリシーの制約には、オペレーションを制限する Google 管理のデフォルトの動作があります。 組織のポリシーの制約 制約タイプ constraints/appengine.runtimeDeploymentExemption 管理対象（以前の方法） constraints/cloudbuild.disableCreateDefaultServiceAccount 管理対象（以前の方法） constraints/cloudbuild.useBuildServiceAccount 管理対象（以前の方法） constraints/cloudbuild.useComputeServiceAccount 管理対象（以前の方法） constraints/commerceorggovernance.marketplaceServices 管理対象（以前の方法） constraints/compute.managed.blockPreviewFeatures マネージド constraints/compute.sharedReservationsOwnerProjects 管理対象（以前の方法） constraints/iam.allowServiceAccountCredentialLifetimeExtension 管理対象（以前の方法） constraints/iam.disableCrossProjectServiceAccountUsage 管理対象（以前の方法） constraints/iam.managed.disableServiceAccountApiKeyCreation マネージド constraints/iam.serviceAccountKeyExposureResponse 管理対象（以前の方法） constraints/resourcemanager.allowedExportDestinations 管理対象（以前の方法） constraints/resourcemanager.allowedImportSources 管理対象（以前の方法） constraints/resourcemanager.allowEnabledServicesForExport 管理対象（以前の方法） constraints/vertexai.allowedPartnerModelFeatures 管理対象（以前の方法） 使用可能な制約 次の制約を使用して組織のポリシーを作成できます。 マネージド制約 サービス 制約 説明 Compute Engine 許可された VLAN アタッチメント暗号化設定 このリスト型制約は、新しい VLAN アタッチメントで許可される暗号化設定を定義します。 デフォルトでは、VLAN アタッチメントで任意の暗号化設定を使用できます。 暗号化された VLAN アタッチメントのみが作成されるようにするには、許可される値として IPSEC を設定します。 constraints/compute.managed.allowedVlanAttachmentEncryption Compute Engine Compute Engine のプレビュー機能をブロックする この制約により、この制約が明示的に許可されない限り、プレビュー機能はブロックされます。許可に設定すると、プロジェクトで個別に有効または無効にできるプレビュー機能を制御できます。プロジェクトでアクセスできるのは、有効になっているプレビュー機能のみです。ポリシーを無効にしても、すでに設定されている個々のプレビュー機能のステータスは変更されません。個々のプレビュー機能は個別に無効にできます。この制約は、Compute Alpha API の機能にのみ適用されます。 constraints/compute.managed.blockPreviewFeatures Compute Engine VM のネストされた仮想化を無効化 [パブリック プレビュー] このブール型制約により、制約が True に設定されている組織、プロジェクト、フォルダに属するすべての Compute Engine VM に対するハードウェア アクセラレーションによりネストされた仮想化は無効になります。 デフォルトでは、Intel Haswell 以降の CPU プラットフォームで実行されているすべての Compute Engine VM に対して、ハードウェア アクセラレーションによりネストされた仮想化は許可されています。 constraints/compute.managed.disableNestedVirtualization Compute Engine VM シリアルポート アクセス メタデータの有効化を制限する プレビュー: この制約により、この制約が適用されている組織、プロジェクト、フォルダ内の Compute Engine VM で serial-port-enable メタデータキーを true に設定できなくなります。デフォルトでは、このメタデータキーを使用して、VM 単位、ゾーン単位、プロジェクト単位でシリアルポート アクセスを有効にできます。特定の VM のシリアルポート アクセスを許可するには、タグと条件付きルールを使用して、このポリシーから除外します。 重要: この制約を適用しても、serial-port-enable がすでに true に設定されている既存の VM には影響しません。メタデータが更新されない限り、アクセス権は保持されます。 constraints/compute.managed.disableSerialPortAccess Compute Engine Stackdriver への VM シリアルポート ロギングを無効化 [一般提供] この制約が適用されると、Compute Engine VM から Stackdriver へのシリアルポート ロギングが無効になります。 デフォルトでは、Compute Engine VM のシリアルポート ロギングは無効になっており、 メタデータ属性 を使用して VM 単位またはプロジェクト単位で選択して有効にできます。シリアルポート ロギングを無効にすると、この機能に依存する特定のサービス（Google Kubernetes Engine クラスタなど）が正しく機能しなくなるおそれがあります。この制約を適用する前に、プロジェクト内のプロダクトがシリアル ポート ロギングに依存していないことを確認してください。特定の VM インスタンスでシリアルポート ロギングを使用できます。まず、タグを適用してインスタンスをマークし、次にタグ値に基づく条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.disableSerialPortLogging Compute Engine ZonalOnly DNS 設定を持つプロジェクトのグローバル内部 DNS（gDNS）の使用を制限します。 [パブリック プレビュー] この制約を適用すると、gDNS の使用が制限されます。この制限により、gDNS VM の作成と、gDNS を使用するための VM の更新が無効になります。zDNS プロジェクトを gDNS に戻すことはブロックされませんが、後続の Instance API 呼び出しでポリシー違反が適用されます。 constraints/compute.managed.disallowGlobalDns Compute Engine OS Config が必要 [パブリック プレビュー] この制約を適用すると、すべての新しいプロジェクトで VM Manager（OS Config）を有効にする必要があります。この制約を適用すると、新規および既存のプロジェクトにおいて、プロジェクト、プロジェクト ゾーン、インスタンス レベルで VM Manager を無効にするようなメタデータの更新を行うことができなくなります。特定の VM インスタンスで VM Manager を無効にすることを許可できます。まず、タグを適用してインスタンスをマークし、次にタグ値に基づく条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.requireOsConfig Compute Engine OS ログインが必須 [パブリック プレビュー] この制約を適用すると、新しく作成するすべてのプロジェクトで OS Login を有効にする必要があります。この制約は、新規および既存のプロジェクトについて、プロジェクト、プロジェクト ゾーン、インスタンス レベルで OS Login が無効なメタデータが更新されるのを防ぎます。特定の VM インスタンスで OS Login を無効にすることができます。まず、タグを適用してインスタンスをマークし、次にタグ値に基づく条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.requireOsLogin Compute Engine プロトコル転送の使用を制限する この制約を使用すると、組織で作成できるプロトコル転送デプロイのタイプ（内部または外部）を制限できます。制約を構成するには、許可するプロトコル転送デプロイメントのタイプの許可リストを指定します。許可リストには、次の値のみを含めることができます。 INTERNAL EXTERNAL 。たとえば、許可リストが INTERNAL に設定されている場合、ユーザーは内部プロトコル転送のみを設定できます。つまり、ターゲット インスタンスに関連付けられた転送ルールは、内部ロード バランシング スキームに制限され、内部 IP アドレスのみを使用する必要があります。 constraints/compute.managed.restrictProtocolForwardingCreationForTypes Compute Engine VM IP 転送を制限する [パブリック プレビュー] この制約は、Compute Engine VM インスタンスで IP 転送を有効にできるかどうかを定義します。デフォルトでは、ポリシーが指定されていない場合、すべての VM がすべての仮想ネットワークで IP 転送を有効にできます。この制約が適用されると、IP 転送が有効になっている VM インスタンスの作成または更新が拒否されます。特定の VM インスタンスで IP 転送を有効にできます。まず、タグを適用してインスタンスをマークし、次にタグ値に基づく条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.vmCanIpForward Compute Engine VM インスタンスの外部 IP を制限する [パブリック プレビュー] この制約は、Compute Engine VM インスタンスで IPv4 外部 IP アドレスの使用が許可されているかどうかを定義します。デフォルトでは、すべての VM インスタンスで外部 IP アドレスの使用が許可されます。この制約が適用されると、IPv4 外部 IP アドレスを持つ VM インスタンスの作成または更新が拒否されます。この制約は、IPv6 外部 IP アドレスの使用を制限しません。特定の VM インスタンスで外部 IPv4 IP アドレスを使用できるようにすることができます。まず、タグを適用してインスタンスをマークし、次にタグ値に基づく条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.vmExternalIpAccess Google Kubernetes Engine DenyServiceExternalIPs アドミッション コントローラが有効になっていることを要求する GKE クラスタで DenyServiceExternalIPs アドミッション コントローラを有効のままにする必要があります。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster#deny_external_IPs をご覧ください。 constraints/container.managed.denyServiceExternalIPs Google Kubernetes Engine 属性ベースのアクセス制御が無効になっていることを必須にする GKE クラスタで属性ベースのアクセス制御（ABAC）を有効にするリクエストを拒否します。ABAC は、すべての新しいクラスタでデフォルトで無効になっている以前の認証方法です。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster#leave_abac_disabled をご覧ください。 constraints/container.managed.disableABAC Google Kubernetes Engine GKE クラスタで安全でない kubelet 読み取り専用ポートを無効にする必要がある 安全でない kubelet 読み取り専用ポート（10255）が無効のままになるようにします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port をご覧ください。 constraints/container.managed.disableInsecureKubeletReadOnlyPort Google Kubernetes Engine クライアント証明書認証が無効になっていることを必須にする クライアント証明書認証の以前の方法を手動で有効にしないでください。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication#disabling_authentication_with_a_client_certificate をご覧ください。 constraints/container.managed.disableLegacyClientCertificateIssuance Google Kubernetes Engine GKE クラスタでシステム ID への RBAC バインディングを無効にする必要があります。 GKE クラスタの作成時または更新時に、system:anonymous、system:authenticated、system:unauthenticated システム ID を参照するデフォルト以外の ClusterRoleBinding と RoleBinding を無効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/best-practices/rbac#prevent-default-group-usage をご覧ください。 constraints/container.managed.disableRBACSystemBindings Google Kubernetes Engine デフォルトの Compute Engine サービス アカウントをノードプールのサービス アカウントとして使用することを禁止します。 デフォルトの Compute Engine サービス アカウントをクラスタまたはノードプールのサービス アカウントとして使用しないでください。代わりに、最小権限の IAM サービス アカウントを使用します。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster#use_least_privilege_sa をご覧ください。 constraints/container.managed.disallowDefaultComputeServiceAccount Google Kubernetes Engine GKE クラスタで Binary Authorization を有効にする必要があります。 GKE クラスタを作成または更新するときに Binary Authorization を有効にします。詳細については、https://cloud.google.com/binary-authorization/docs/setting-up をご覧ください。 constraints/container.managed.enableBinaryAuthorization Google Kubernetes Engine GKE クラスタで Cloud Logging が有効になっていることを要件とする すべての GKE クラスタで、少なくともデフォルトの Cloud Logging 構成を使用するように要求します。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster#stackdriver_logging をご覧ください。 constraints/container.managed.enableCloudLogging Google Kubernetes Engine GKE クラスタへのアクセスに DNS ベースのエンドポイントのみを使用するように要求します。 クラスタの作成または更新時に、GKE コントロール プレーン アクセス用に DNS ベースのエンドポイントを有効にし、IP ベースのエンドポイントを無効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/latest/network-isolation#dns-based-endpoint をご覧ください。 constraints/container.managed.enableControlPlaneDNSOnlyAccess Google Kubernetes Engine GKE クラスタで RBAC 向け Google グループを有効にする必要があります。 GKE クラスタの作成時または更新時に、RBAC 向け Google グループを有効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/google-groups-rbac をご覧ください。 constraints/container.managed.enableGoogleGroupsRBAC Google Kubernetes Engine GKE クラスタでネットワーク ポリシーの適用を有効にする必要があります。 ネットワーク ポリシーの適用または GKE Dataplane V2 を有効にして、Kubernetes NetworkPolicies の使用を有効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/network-policy または https://cloud.google.com/kubernetes-engine/docs/how-to/dataplane-v2 をご覧ください。 constraints/container.managed.enableNetworkPolicy Google Kubernetes Engine GKE クラスタでプライベート ノードを有効にする必要があります。 GKE クラスタとノードプールの作成時または更新時に、プライベート ノードを有効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/latest/network-isolation#configure-cluster-networking をご覧ください。 constraints/container.managed.enablePrivateNodes Google Kubernetes Engine GKE クラスタでセルフマネージド Secret の暗号化を有効にする必要があります。 GKE クラスタを作成または更新するときに、セルフマネージド鍵による Secret の暗号化を有効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets をご覧ください。 constraints/container.managed.enableSecretsEncryption Google Kubernetes Engine GKE クラスタでセキュリティに関する公開情報の通知を有効にする必要があります。 GKE クラスタを作成または更新するときに、セキュリティに関する公開情報の通知を有効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-notifications#securitybulletin をご覧ください。 constraints/container.managed.enableSecurityBulletinNotifications Google Kubernetes Engine GKE クラスタで Shielded Nodes の有効化を必須にする シールドされたノードが有効な状態を維持することを必須にします。シールドされた GKE ノードは、強固で検証可能なノード ID と整合性を提供し、GKE ノードのセキュリティを強化します。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/shielded-gke-nodes をご覧ください。 constraints/container.managed.enableShieldedNodes Google Kubernetes Engine Workload Identity Federation for GKE を有効にする必要があります。 クラスタの作成または更新時に Workload Identity Federation for GKE を有効にします。詳細については、https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity をご覧ください。 constraints/container.managed.enableWorkloadIdentityFederation Dataflow プロジェクトの SSH 認証鍵をブロックする プロジェクト全体の SSH 認証鍵が Dataflow ワーカー VM にアクセスできないようにします。 constraints/dataflow.managed.blockProjectSshKeys Dataflow パブリック IP の無効化 Dataflow ワーカー VM でパブリック IP の使用を無効にします。 constraints/dataflow.managed.disableUsePublicIps 重要な連絡先 連絡先のドメインを制限する この制約は、[重要な連絡先] に追加できるメールアドレスの一連の許可ドメインを定義します。 デフォルトでは、すべてのドメインのメールアドレスを [重要な連絡先] に追加できます。 allowedDomains リストには、 @example.com という形式の 1 つまたは複数のドメインを指定する必要があります。この制約が適用されている場合、許可されたドメインのリストに指定したエントリのいずれかとサフィックスが一致するメールアドレスのみが [重要な連絡先] への追加対象になります。 この制約は、既存の連絡先の更新や削除には影響しません。 constraints/essentialcontacts.managed.allowedContactDomains 複数の Google Cloud サービス サービス mcp エンドポイントの有効化を制限します。 適用されると、許可リストに登録されたサービスのみが mcp エンドポイントを有効にできます。デフォルトでは、この制約が適用され、許可されるサービスのリストは空であるため、mcp エンドポイントを有効にすることはできません。 constraints/gcp.managed.mcpAllowedServices Identity and Access Management IAM 許可ポリシーで許可されるポリシー メンバーを制限する この制約は、組織内で IAM ロールを付与できる組織プリンシパル セットを定義します。 組織プリンシパル セットを指定すると、その組織に関連付けられているすべての ID（Workspace アカウント、Workspace グループ、サービス アカウント、Workforce プール ID、Workload プール ID、サービス エージェントなど）に、組織内のロールを付与できます。組織のプリンシパル セットは自動的に許可されず、許可されたプリンシパル セットとして含める必要があります。 プリンシパル タイプの接頭辞（`user:` や `serviceAccount:` など）を使用して個々のメンバーを指定し、組織内のロールと関連するエイリアスを付与できます。 この制約を適用すると、フォルダ管理者ロールとフォルダ編集者ロールの自動付与によりフォルダ リソースの作成がブロックされ、オーナーロールの自動付与によりプロジェクト リソースの作成がブロックされる可能性があります。 constraints/iam.managed.allowedPolicyMembers Identity and Access Management サービス アカウントの API キーのバインディングをブロックする 適用すると、サービス アカウントにバインドされた API キーの作成が無効になります。 詳細については、 サービス アカウントへのキー バインディングを有効にする をご覧ください。 constraints/iam.managed.disableServiceAccountApiKeyCreation Identity and Access Management サービス アカウント作成の無効化 このブール型制約が True に設定されているサービス アカウントの作成が無効になります。 デフォルトでは、ユーザーは Cloud IAM のロールと権限に基づいてサービス アカウントを作成できます。 constraints/iam.managed.disableServiceAccountCreation Identity and Access Management サービス アカウント キー作成を無効にする この制約を適用すると、サービス アカウント キーの作成がブロックされます。 constraints/iam.managed.disableServiceAccountKeyCreation Identity and Access Management サービス アカウント キーのアップロードを無効にする このブール型制約が「True」に設定されているサービス アカウントに公開鍵をアップロードできるようにする機能は、このブール型制約により無効になります。 デフォルトでは、ユーザーは Cloud IAM のロールと権限に基づいて公開鍵をサービス アカウントにアップロードできます。 constraints/iam.managed.disableServiceAccountKeyUpload Identity and Access Management デフォルトのサービス アカウントの特権基本ロールを防止する この制約が適用されると、Compute Engine と App Engine のデフォルトのサービス アカウントに、編集者ロール（ roles/editor ）またはオーナーロール（ roles/owner ）を付与できなくなります。デフォルトのサービス アカウントの詳細については、https://cloud.google.com/iam/help/service-accounts/default をご覧ください。この制約を適用すると、デフォルトのサービス アカウントに編集者ロール（ roles/editor ）が自動的に付与されなくなります。これにより、これらのサービス アカウントを使用するサービスで権限に関する問題が発生する可能性があります。各サービス アカウントに付与するロールについては、https://cloud.google.com/iam/help/service-accounts/troubleshoot-roles-default をご覧ください。 constraints/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts Identity and Access Management Cloud IAM での Workload Identity 連携用に構成できる AWS アカウント Cloud IAM での Workload Identity 連携用に構成できる AWS アカウント ID のリスト。 constraints/iam.managed.workloadIdentityPoolAwsAccounts Identity and Access Management Cloud IAM のワークロード向けに許可されている外部の ID プロバイダ Cloud IAM 内のワークロード認証用に構成可能な ID プロバイダ。URI/URL により指定します。この制約は Google によって管理されます。 constraints/iam.managed.workloadIdentityPoolProviders Google Cloud Managed Service for Apache Kafka Kafka Connect クラスタの作成と更新を無効にする このブール型制約を適用すると、Kafka Connect クラスタの作成と更新が無効になります。 constraints/managedkafka.managed.disableKafkaConnectClusterCreateAndUpdate Pub/Sub サブスクリプションの単一メッセージ変換（SMT）を無効にします このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約が適用されると、Pub/Sub サブスクリプションで単一メッセージ変換（SMT）を設定できなくなります。 constraints/pubsub.managed.disableSubscriptionMessageTransforms Pub/Sub トピックの単一メッセージ変換（SMT）を無効にします このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約が適用されると、Pub/Sub トピックで単一メッセージ変換（SMT）を設定できなくなります。 constraints/pubsub.managed.disableTopicMessageTransforms Cloud Run Cloud Run サービスに IAM 起動元のチェックを要求する この制約を適用すると、Cloud Run サービスで IAM 呼び出し元チェックを有効にする必要があります。 この制約が適用されていない場合は、Cloud Run サービスの service.invoker_iam_disabled フィールド（v2）または run.googleapis.com/invoker-iam-disabled アノテーション（v1）を True に設定できます。allUsers に run.routes.invoke 権限を付与することで、同様の結果を得ることもできます。詳細については、https://cloud.google.com/run/docs/securing/managing-access#make-service-public と https://cloud.google.com/run/docs/securing/security をご覧ください。 constraints/run.managed.requireInvokerIam Spanner Cloud Spanner インスタンスで拒否されたエディション 使用しようとしているエディションは、組織のポリシーで許可されていません。ポリシーを確認して、許可されているエディションを選択してください。 constraints/spanner.managed.restrictCloudSpannerEditions 以前のマネージド制約 サービス 制約 ルールの種類 説明 Vertex AI Workbench Vertex AI Workbench のノートブックとインスタンスのアクセスモードを定義する リスト このリスト型制約は、適用される Vertex AI Workbench のノートブックとインスタンスに対して許可されるアクセスのモードを定義します。許可リストまたは拒否リストでは、 service-account モードで複数のユーザーの指定、または single-user モードでシングル ユーザー アクセスの指定を行えます。許可または拒否するアクセスモードを明示的に指定する必要があります。 サポートされている接頭辞: is: constraints/ainotebooks.accessMode Vertex AI Workbench 新しい Vertex AI Workbench インスタンスでファイルのダウンロードを無効にする ブール値 このブール型制約を適用すると、ファイル ダウンロード オプションを有効にした状態では Vertex AI Workbench インスタンスを作成できなくなります。デフォルトでは、任意の Vertex AI Workbench インスタンスでファイル ダウンロード オプションを有効にできます。 constraints/ainotebooks.disableFileDownloads Vertex AI Workbench 新しい Vertex AI Workbench のユーザー管理のノートブックとインスタンスで root アクセスを無効にする ブール値 このブール型制約を適用すると、新しく作成された Vertex AI Workbench のユーザー管理のノートブックとインスタンスで、root アクセスを有効にできなくなります。デフォルトでは、Vertex AI Workbench のユーザー管理のノートブックとインスタンスで root アクセスを有効にできます。 constraints/ainotebooks.disableRootAccess Vertex AI Workbench 新しい Vertex AI Workbench インスタンスでターミナルを無効にする ブール値 このブール型制約を適用すると、ターミナルが有効な状態で Vertex AI Workbench インスタンスを作成できなくなります。デフォルトでは、Vertex AI Workbench インスタンスでターミナルを有効にすることができます。 constraints/ainotebooks.disableTerminal Vertex AI Workbench Vertex AI Workbench の新しいユーザー管理ノートブックに関する環境オプションを制限する リスト このリスト型制約は、新しい Vertex AI Workbench のユーザー管理ノートブックを作成するときにユーザーが選択できる VM とコンテナ イメージのオプションを定義します。許可または拒否するオプションは、明示的に指定する必要があります。 VM インスタンスの想定される形式は ainotebooks-vm/PROJECT_ID/IMAGE_TYPE/CONSTRAINED_VALUE です。IMAGE_TYPE は、 image-family または image-name に置き換えます。例: ainotebooks-vm/deeplearning-platform-release/image-family/pytorch-1-4-cpu 、 ainotebooks-vm/deeplearning-platform-release/image-name/pytorch-latest-cpu-20200615 。 コンテナ イメージの想定される形式は ainotebooks-container/CONTAINER_REPOSITORY:TAG です。例: ainotebooks-container/gcr.io/deeplearning-platform-release/tf-gpu.1-15:latest 、 ainotebooks-container/gcr.io/deeplearning-platform-release/tf-gpu.1-15:m48 。 サポートされている接頭辞: is: constraints/ainotebooks.environmentOptions Vertex AI Workbench 新しい Vertex AI Workbench のユーザー管理のノートブックとインスタンスで自動アップグレードのスケジュール設定を必須とする ブール値 このブール型制約を適用すると、新たに作成される Vertex AI Workbench のユーザー管理の Notebooks とインスタンスでは、自動アップグレード スケジュールの設定が必須となります。自動アップグレード スケジュールを定義するには、 notebook-upgrade-schedule メタデータ フラグを使用して、自動アップグレードの cron スケジュールを指定します。例: --metadata=notebook-upgrade-schedule=\"00 19 * * MON\" 。 constraints/ainotebooks.requireAutoUpgradeSchedule Vertex AI Workbench 新しい Vertex AI Workbench のノートブックとインスタンスに対するパブリック IP アクセスを制限する ブール値 このブール型制約を適用すると、新しく作成された Vertex AI Workbench のノートブックとインスタンスへのパブリック IP アクセスが制限されます。デフォルトでは、パブリック IP から Vertex AI Workbench のノートブックとインスタンスにアクセスできます。 constraints/ainotebooks.restrictPublicIp Vertex AI Workbench 新しい Vertex AI Workbench インスタンスで VPC ネットワークを制限する リスト このリスト型制約では、この制約が適用される新しい Vertex AI Workbench インスタンスの作成時にユーザーが選択できる VPC ネットワークを定義します。デフォルトでは、Vertex AI Workbench インスタンスは任意の VPC ネットワークを指定して作成できます。ネットワークの許可 / 拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /global/networks/ NETWORK_NAME という形式で識別される必要があります。 サポートされている接頭辞: is: 、 under: constraints/ainotebooks.restrictVpcNetworks Vertex AI Vertex AI で Google 独自の生成 AI モデルへのアクセスを定義します リスト このリスト型制約は、Vertex AI API での使用が許可される生成 AI モデルと機能のセットを定義します。許可リストの値は model_id : feature_family の形式にする必要があります。例: publishers/google/models/text-bison:predict このリスト型制約は、Google が所有する生成 AI モデルへのアクセスのみを制限するものであり、サードパーティが所有するモデルやオープンソースのモデルには影響しません。制約 vertexai.allowedModels を使用すると、Google が所有するモデル、サードパーティが所有するモデル、オープンソースのモデルなど、より広範なモデルセットへのアクセスを定義できます。デフォルトでは、すべてのモデルを Vertex AI API で使用できます。 サポートされている接頭辞: is: constraints/vertexai.allowedGenAIModels Vertex AI Vertex AI のモデルへのアクセスを定義します リスト このリスト型制約は、Vertex AI API での使用が許可されるモデルと機能のセットを定義します。許可リストの値は「 model_id : feature_family 」の形式にする必要があります（例: 「 publishers/google/models/gemini-1.0-pro:predict 」）。デフォルトでは、すべてのモデルを Vertex AI API で使用できます。 サポートされている接頭辞: is: 詳細については、 Model Garden モデルへのアクセスを制御する をご覧ください。 constraints/vertexai.allowedModels Vertex AI Vertex AI で使用できるマネージド パートナー モデルの高度な機能を定義します リスト このリスト型制約は、Vertex AI API で使用できるマネージド パートナー モデルの高度な機能のセットを定義します。許可リストの値は「 publishers/ publisher_id /models[/ model_id : feature_family ] 」の形式にする必要があります（例: 「 publishers/anthropic/models/claude-sonnet-4:web_search 」、「 publishers/anthropic/models/claude-sonnet-4 」、「 publishers/anthropic 」）。デフォルトでは、マネージド パートナー モデルのすべての高度な機能は Vertex AI API でブロックされます。 サポートされている接頭辞: is: constraints/vertexai.allowedPartnerModelFeatures Vertex AI 生成 AI API での Google 検索を使用したグラウンディングを無効にする ブール値 このブール型制約を適用すると、生成 AI API での Google 検索によるグラウンディング機能を無効にできます。この機能はデフォルトで有効になっています。 constraints/vertexai.disableGenAIGoogleSearchGrounding Vertex AI Vertex AI の生成 API でのグラウンディング ソースの制御 リスト このリスト型制約は、Vertex AI の生成 API での使用が許可または拒否されるグラウンディング ソースのセットを定義します。 デフォルトでは、すべてのグラウンディング ソースが許可されます。 有効な値は、 GoogleMaps 、 VertexAiSearch 、 VertexRagStore 、 EnterpriseWebSearch 、 ExternalApiSimpleSearch 、 ExternalApiElasticSearch 、 UrlContext です。 サポートされている接頭辞: is: constraints/vertexai.genAIGroundingSources App Engine ソースコードのダウンロードを無効にする ブール値 以前に App Engine にアップロードされたソースコードのダウンロードを無効にします。 constraints/appengine.disableCodeDownload App Engine ランタイム デプロイの除外（App Engine） リスト このリスト型制約は、サポート終了日以降にデプロイできる一連の App Engine スタンダード環境のレガシー ランタイム（Python 2.7、PHP 5.5、Java 8）を定義します。App Engine スタンダード環境のレガシー ランタイムのサポートは 2024 年 1 月 30 日に終了します。通常は、この日付以降にレガシー ランタイムを使用したアプリケーションのデプロイを試みてもブロックされます。詳しくは、App Engine スタンダード環境のランタイム サポート スケジュールをご覧ください。この制約を [許可] に設定すると、ランタイムの廃止日までの間、指定したレガシー ランタイムを App Engine スタンダード環境でデプロイできます。この制約を [すべて許可] に設定すると、ランタイムの廃止日までの間、すべてのレガシー ランタイムを App Engine スタンダード環境でデプロイできます。サポート終了日を過ぎたランタイムには、セキュリティ パッチおよびメンテナンス パッチが定期的に適用されなくなります。アプリケーションをアップグレードして、一般提供されているランタイム バージョンを使用することを強くおすすめします。 サポートされている接頭辞: is: constraints/appengine.runtimeDeploymentExemption BigQuery BigQuery Omni for Cloud AWS を無効にする ブール値 このブール型制約を適用した場合、ユーザーは Amazon Web Services のデータを BigQuery Omni で処理できなくなります。 constraints/bigquery.disableBQOmniAWS BigQuery BigQuery Omni for Cloud Azure を無効にする ブール値 このブール型制約を適用した場合、ユーザーは Microsoft Azure のデータを BigQuery Omni で処理できなくなります。 constraints/bigquery.disableBQOmniAzure Cloud Build 許可された統合（Cloud Build） リスト このリスト型制約は、Google Cloud 外のサービスから Webhook の受信を介してビルドを実行するための許可された Cloud Build の統合を定義します。この制約を適用すると、許可された値のいずれかにホストが一致するサービスの Webhook のみが処理されます。 デフォルトでは、Cloud Build はアクティブなトリガーが 1 つ以上あるプロジェクトのすべての Webhook を処理します。 サポートされている接頭辞: is: 詳細については、 組織のポリシーに基づくゲートビルド をご覧ください。 constraints/cloudbuild.allowedIntegrations Cloud Build デフォルトのサービス アカウント作成を無効にする（Cloud Build） ブール値 このブール型制約を適用すると、従来の Cloud Build サービス アカウントを作成できなくなります。 constraints/cloudbuild.disableCreateDefaultServiceAccount Cloud Build デフォルトのサービス アカウントを使用する（Cloud Build） ブール値 このブール型制約を適用すると、デフォルトで以前の Cloud Build サービス アカウントを使用できます。 constraints/cloudbuild.useBuildServiceAccount Cloud Build デフォルトで Compute Engine サービス アカウントを使用する（Cloud Build） ブール値 このブール型制約を適用すると、デフォルトで Compute Engine サービス アカウントを使用できます。 constraints/cloudbuild.useComputeServiceAccount Cloud Deploy Cloud Deploy サービスラベルを無効にする ブール値 このブール型制約が適用されると、Cloud Deploy はデプロイされるオブジェクトに対して Cloud Deploy 識別子ラベルを追加しなくなります。 デフォルトでは、リリースの作成時にデプロイされるオブジェクトに対して、Cloud Deploy リソースを識別するラベルが追加されます。 constraints/clouddeploy.disableServiceLabelGeneration Cloud Run functions 許可される上り設定（Cloud Functions） リスト このリスト型制約は、Cloud Functions（第 1 世代）のデプロイにおいて許可される上り（内向き）設定を定義します。この制約が適用される場合、許可された値のいずれかに一致する Ingress の設定が関数に必要です。 デフォルトでは、Cloud Functions は任意の上り（内向き）設定を使用できます。 上り（内向き）設定は、 IngressSettings 列挙型の値を使用して許可リストで指定する必要があります。列挙型のデフォルト値は INGRESS_SETTINGS_UNSPECIFIED です。組織のポリシーで使用するには、列挙型を別の値に変更する必要があります。 Cloud Functions（第 2 世代）では、制約 constraints/run.allowedIngress を使用します。 サポートされている接頭辞: is: 詳細については、 組織のポリシーを設定する をご覧ください。 constraints/cloudfunctions.allowedIngressSettings Cloud Run functions 許可される VPC コネクタの下り設定（Cloud Functions） リスト このリスト型制約は、Cloud Functions（第 1 世代）のデプロイにおいて許可される VPC コネクタの下り（外向き）設定を定義します。この制約が適用されると、Cloud Functions には許可された値の 1 つに一致する VPC コネクタ出力設定が必要になります。 デフォルトでは、Cloud Functions はすべての VPC コネクタの下り（外向き）設定を使用できます。 VPC コネクタの下り（外向き）設定は、 VpcConnectorEgressSettings 列挙型の値を使用して許可リストで指定する必要があります。列挙型のデフォルト値である VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED はサポートされていません。ポリシーに含めるとエラーになります。 Cloud Functions（第 2 世代）では、制約 constraints/run.allowedVPCEgress を使用します。 サポートされている接頭辞: is: 詳細については、 組織のポリシーを設定する をご覧ください。 constraints/cloudfunctions.allowedVpcConnectorEgressSettings Cloud Run functions VPC コネクタが必須（Cloud Functions） ブール値 このブール値制約により、Cloud Functions（第 1 世代）をデプロイするときに VPC コネクタを設定することが求められます。この制約が適用されると、Cloud Functions は VPC コネクタを指定する必要があります。 デフォルトでは、VPC コネクタを指定するのに Cloud Functions の関数をデプロイする必要はありません。 詳細については、 組織のポリシーを設定する をご覧ください。 constraints/cloudfunctions.requireVPCConnector Cloud Run functions 許可された Cloud Functions の世代 リスト このリスト型制約は、新しい関数リソースの作成に使用できる Cloud Functions の世代を定義します。有効な値は 1stGen 、 2ndGen です。 サポートされている接頭辞: is: constraints/cloudfunctions.restrictAllowedGenerations Cloud Key Management Service 作成できる KMS CryptoKey のタイプを制限します。 リスト このリスト型制約は、特定の階層ノードの下に作成できる Cloud KMS 鍵タイプを定義します。この制約が適用されると、この組織のポリシー内に指定された KMS 鍵タイプのみを、関連する階層ノード内に作成できます。この組織のポリシーを設定すると、インポート ジョブと鍵バージョンの保護レベルにも影響があります。デフォルトでは、すべての鍵タイプが許可されます。指定できる値は SOFTWARE 、 HSM 、 EXTERNAL 、 EXTERNAL_VPC です。拒否ポリシーは使用できません。 サポートされている接頭辞: is: constraints/cloudkms.allowedProtectionLevels Cloud Key Management Service 鍵の破棄を無効な鍵バージョンに制限する ブール値 このブール型制約を適用すると、無効な状態の鍵バージョンの破棄のみが許可されます。デフォルトでは、有効な状態の鍵バージョンと無効な状態の鍵バージョンを破棄できます。この制約は、新規の鍵バージョンと既存の鍵バージョンの両方に適用されます。 constraints/cloudkms.disableBeforeDestroy Cloud Key Management Service 鍵ごとの破棄期間のスケジュールの最小値 リスト このリスト型制約は、新しい鍵を作成するときにユーザーが指定できる破棄予定日までの最小期間（日数）を定義します。制約を適用した後に、破棄スケジュール期間がこの値より短い鍵を作成することはできません。デフォルトでは、インポート専用の鍵の破棄予定日までの最小期間は 0 日です。それ以外のすべての鍵の場合は 1 日です。 利用できる値は 1 つだけ指定できます。形式は in:1d 、 in:7d 、 in:15d 、 in:30d 、 in:60d 、 in:90d 、または in:120d です。たとえば、constraints/cloudkms.minimumDestroyScheduledDuration が in:15d に設定されている場合、ユーザーは破棄予定日までの期間を 15 日以上の任意の期間（16 日や 31 日）に設定して鍵を作成できます。ただし、破棄予定日までの期間を 15 日未満（14 日など）に設定して鍵を作成することはできません。階層内の各リソースでは、破棄予定日までの最小期間を親のポリシーから継承したり、親のポリシーのものに置換したり、親のポリシーのものと結合したりできます。リソースのポリシーが親のポリシーと結合されている場合、そのリソースの破棄予定日までの最小期間としてリソースのポリシーで指定されている期間と、親のポリシーで有効な最小期間のどちらか短い方の期間が有効となります。たとえば、組織の最小破棄スケジュール期間が 7 日間で、子プロジェクトのポリシーが in:15d の値で「親と結合する」に設定されている場合、プロジェクトで有効な最小破棄スケジュールの長さは 7 日になります。 サポートされている接頭辞: is: 、 in: constraints/cloudkms.minimumDestroyScheduledDuration Cloud Scheduler ジョブに対して許可されるターゲット タイプ リスト このリスト型制約は、Cloud Scheduler ジョブで指定できるターゲット タイプ（App Engine HTTP、HTTP、Pub/Sub など）のリストを定義します。 デフォルトでは、すべてのジョブ ターゲットを指定できます。 指定できる値は、 APPENGINE 、 HTTP 、 PUBSUB です。 サポートされている接頭辞: is: constraints/cloudscheduler.allowedTargetTypes Cloud SQL Cloud SQL インスタンスに対する承認済みネットワークを制限する ブール値 このブール型制約を適用した場合、プロキシを介さないデータベース アクセスのために Cloud SQL インスタンスに承認済みネットワークを追加することができなくなります。この制約は遡って適用されません。承認済みネットワークがすでにある Cloud SQL インスタンスは、この制約の適用後も機能します。 デフォルトでは、Cloud SQL インスタンスに承認済みネットワークを追加できます。 constraints/sql.restrictAuthorizedNetworks Cloud SQL コンプライアンス要件を満たすために Cloud SQL における診断用および管理者権限のアクセス経路を無効にする。 ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理のためにのみ使用されます。このブール型制約を適用すると、サポート性が一部損なわれ、Assured Workloads の高度な主権要件を満たさない、診断やその他のカスタマー サポート ユースケースのためのアクセス経路がすべて無効となります。 constraints/sql.restrictNoncompliantDiagnosticDataAccess Cloud SQL Cloud SQL インスタンスについて非準拠のワークロードを制限する。 ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約を適用すると、サポート性が部分的に低下し、プロビジョニングされたリソースが Assured Workloads の高度な主権要件に厳密に従うようになります。このポリシーは、既存のプロジェクトに適用されるという点で遡及的ですが、すでにプロビジョニングされているリソースには影響しません。すなわち、ポリシーの変更は、ポリシーの変更後に作成されたリソースにのみ反映されます。 constraints/sql.restrictNoncompliantResourceCreation Cloud SQL Cloud SQL インスタンスに対するパブリック IP のアクセスを制限する ブール値 このブール型制約が適用されている Cloud SQL インスタンスに対するパブリック IP の構成が制限されます。この制約は遡って適用されません。パブリック IP アクセスがすでにある Cloud SQL インスタンスは、この制約の適用後も機能します。 デフォルトでは、Cloud SQL インスタンスへのパブリック IP アクセスは許可されます。 constraints/sql.restrictPublicIp Google Cloud Marketplace 一般公開マーケットプレイスを無効にする ブール値 このブール型制約を適用すると、組織のすべてのユーザーの Google Cloud Marketplace が無効になります。デフォルトでは、組織に対して一般公開マーケットプレイスへのアクセスが有効になっています。このポリシーは、プライベート マーケットプレイスが有効になっている場合にのみ機能します（https://cloud.google.com/marketplace/docs/governance/enable-private-marketplace）。 重要: 最適なエクスペリエンスを実現するため、この組織のポリシーではなく、https://cloud.google.com/marketplace/docs/governance/strict-user-access で説明されているマーケットプレイス ユーザー アクセス制限機能を使用して、組織内でのマーケットプレイスの不正使用を防ぐことを強くおすすめします。 constraints/commerceorggovernance.disablePublicMarketplace Google Cloud Marketplace マーケットプレイス サービスでのアクセスを制限する リスト このリスト型制約は、マーケットプレイス組織に対して許可されている一連のサービスを定義し、次のリストの値のみを含めることができます。 PRIVATE_MARKETPLACE IAAS_PROCUREMENT 許可する値のリストに IAAS_PROCUREMENT を指定した場合、すべてのプロダクトで IaaS 調達ガバナンスのエクスペリエンスが有効になります。デフォルトでは、IaaS 調達ガバナンス エクスペリエンスは無効になっています。 IAAS_PROCUREMENT ポリシーは、Cloud Marketplace に掲載されている SaaS プロダクト用の「調達をリクエスト」ガバナンス機能とは独立して機能します。 注: PRIVATE_MARKETPLACE 値はサポートされなくなり、使用しても効果はありません。Google プライベート マーケットプレイスを有効にするには、https://cloud.google.com/marketplace/docs/governance/enable-private-marketplace をご覧ください。 サポートされている接頭辞: is: constraints/commerceorggovernance.marketplaceServices Compute Engine 許可された VLAN アタッチメント暗号化設定 リスト このリスト型制約は、新しい VLAN アタッチメントで許可される暗号化設定を定義します。 デフォルトでは、VLAN アタッチメントで任意の暗号化設定を使用できます。 暗号化された VLAN アタッチメントのみが作成されるようにするには、許可される値として IPSEC を設定します。 サポートされている接頭辞: is: constraints/compute.allowedVlanAttachmentEncryption Compute Engine すべての IPv6 の使用を無効にする ブール値 このブール型制約を適用した場合、IPv6 の使用に関連するすべての Google Compute Engine リソースの作成または更新が無効になります。 デフォルトでは、適切な Cloud IAM 権限を持つユーザーは誰でも、任意のプロジェクト、フォルダ、組織で IPv6 を使用する Google Compute Engine リソースを作成または更新できます。 この制約を設定すると、他の IPv6 に関連する組織制約（ disableVpcInternalIpv6 、 disableVpcExternalIpv6 、 disableHybridCloudIpv6 など）よりも優先順位が高くなります。 constraints/compute.disableAllIpv6 Compute Engine Cloud Armor セキュリティ ポリシーの作成を無効にする ブール値 このブール型制約を適用すると、新しいグローバル Cloud Armor セキュリティ ポリシーの作成が無効になります。また、既存のグローバル Cloud Armor セキュリティ ポリシーへのルールの追加または更新も無効になります。この制約は、ルールの削除や、グローバル Cloud Armor セキュリティ ポリシーの削除、説明、一覧取得を制限するものではありません。リージョン Cloud Armor セキュリティ ポリシーは、この制約の影響を受けません。この制約の適用前から存在するグローバル セキュリティ ポリシーとリージョン セキュリティ ポリシーは引き続き有効です。 デフォルトでは、任意の組織、フォルダ、プロジェクトで Cloud Armor セキュリティ ポリシーの作成または更新を行うことができます。 constraints/compute.disableGlobalCloudArmorPolicy Compute Engine グローバル ロード バランシングを無効にする ブール値 このブール型制約は、グローバル ロード バランシング サービスの作成を無効にします。これを適用すると、グローバルな依存関係のないリージョン ロード バランシング サービスのみを作成できます。デフォルトでは、グローバル ロード バランシングを作成できます。 constraints/compute.disableGlobalLoadBalancing Compute Engine グローバル セルフマネージド SSL 証明書の作成を無効にする ブール値 このブール型制約を適用すると、グローバル セルフマネージド SSL 証明書を作成できなくなります。Google マネージド証明書またはリージョン セルフマネージド証明書の作成が、この制約によって阻止されることはありません。 デフォルトでは、任意の組織、フォルダ、プロジェクトにグローバル セルフマネージド SSL 証明書を作成できます。 constraints/compute.disableGlobalSelfManagedSslCertificate Compute Engine VM のシリアルポートへのグローバル アクセスを無効にする ブール値 このブール型制約により、制約が適用される組織、プロジェクト、フォルダに属する Compute Engine VM へのグローバルなシリアルポート アクセスが無効になります。デフォルトでは、Compute Engine VM へのシリアルポート アクセスは、メタデータ属性を使用して VM 単位またはプロジェクト単位で有効にできます。この制約を適用すると、メタデータの属性にかかわらず、Compute Engine VM のグローバル・シリアルポート アクセスが無効になります。リージョン内のシリアルポート アクセスはこの制約による影響を受けません。すべてのシリアルポート アクセスを無効にするには、代わりに compute.disableSerialPortAccess 制約を使用します。 constraints/compute.disableGlobalSerialPortAccess Compute Engine Compute Engine メタデータのゲスト属性の無効化 ブール値 このブール型制約を適用した場合、組織、プロジェクト、フォルダに属する Compute Engine VM の ゲスト属性 への Compute Engine API によるアクセスが無効になります。 デフォルトでは、Compute Engine API を使用して Compute Engine VM のゲスト属性にアクセスできます。 constraints/compute.disableGuestAttributesAccess Compute Engine ハイブリッド クラウド IPv6 の使用の無効化 ブール値 このブール型制約を適用すると、 stack_type が IPV4_IPV6 または IPV6_ONLY 、 gatewayIpVersion が IPv6 の相互接続のアタッチメント、Cloud VPN ゲートウェイなどのハイブリッド クラウド リソースの作成と更新が無効になります。 Cloud Router リソースに適用した場合、IPv6 Border Gateway Protocol（BGP）セッションを作成する機能、および IPv4 BGP セッションを介して IPv6 ルート交換を有効にする機能が無効になります。 デフォルトでは、適切な Cloud IAM アクセス許可を持つユーザーは、任意のプロジェクト、フォルダ、組織で stack_type が IPV4_IPV6 のハイブリッド クラウド リソースを作成または更新できます。 constraints/compute.disableHybridCloudIpv6 Compute Engine インスタンス データ アクセス API を無効にする ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約を適用すると、VM のシリアルポート出力にアクセスする GetSerialPortOutput API と、VM の UI からスクリーンショットをキャプチャする GetScreenshot API が無効になります。 constraints/compute.disableInstanceDataAccessApis Compute Engine インターネット ネットワーク エンドポイント グループの無効化 ブール値 このブール型制約は、ユーザーが INTERNET_FQDN_PORT および INTERNET_IP_PORT の type でインターネット ネットワーク エンドポイント グループ（NEG）を作成できるかどうかを制限します。 デフォルトでは、適切な IAM 権限を持つすべてのユーザーは、任意のプロジェクトでインターネット NEG を作成できます。 constraints/compute.disableInternetNetworkEndpointGroup Compute Engine VM のネストされた仮想化を無効にする ブール値 このブール型制約により、制約が True に設定されている組織、プロジェクト、フォルダに属するすべての Compute Engine VM に対するハードウェア アクセラレーションによりネストされた仮想化は無効になります。 デフォルトでは、Intel Haswell 以降の CPU プラットフォームで実行されているすべての Compute Engine VM に対して、ハードウェア アクセラレーションによりネストされた仮想化は許可されています。 constraints/compute.disableNestedVirtualization Compute Engine FIPS 準拠のマシンタイプを強制適用する ブール値 このブール型制約を適用すると、FIPS 要件に準拠しない VM インスタンス タイプの作成が無効になります。 constraints/compute.disableNonFIPSMachineTypes Compute Engine コンシューマ向け Private Service Connect の無効化 リスト このリスト型制約は、ユーザーが転送ルールを作成できない Private Service Connect エンドポイント タイプを定義します。この制約が適用されると、ユーザーはその Private Service Connect エンドポイント タイプに対する転送ルールを作成できなくなります。この制約が過去にさかのぼって適用されることはありません。 デフォルトでは、すべての Private Service Connect エンドポイント タイプに対して転送ルールを作成できます。 Private Service Connect エンドポイントの許可/拒否リストは、次のリストから指定する必要があります。 GOOGLE_APIS SERVICE_PRODUCERS 許可/拒否リストで GOOGLE_APIS を使用すると、Google API にアクセスするための Private Service Connect 転送ルールの作成が制限されます。許可/拒否リストで SERVICE_PRODUCERS を使用すると、別の VPC ネットワーク内のサービスにアクセスするための Private Service Connect 転送ルールの作成が制限されます。 サポートされている接頭辞: is: constraints/compute.disablePrivateServiceConnectCreationForConsumers Compute Engine VM シリアルポート アクセスを無効にする ブール値 このブール型制約を適用した場合、組織、プロジェクト、フォルダに属する Compute Engine VM へのシリアルポート アクセスが無効になります。 デフォルトでは、Compute Engine VM へのシリアルポート アクセスは、メタデータ属性を使用して VM 単位またはプロジェクト単位で有効にできます。この制約を適用すると、メタデータの属性にかかわらず、Compute Engine VM のシリアルポート アクセスが無効になります。 constraints/compute.disableSerialPortAccess Compute Engine Stackdriver への VM シリアルポート ロギングを無効化 ブール値 このブール型制約は、この制約が適用されている組織、プロジェクト、フォルダに属する Compute Engine VM から Stackdriver へのシリアルポート ロギングを無効にします。 デフォルトでは、Compute Engine VM のシリアルポート ロギングは無効になっており、 メタデータ属性 を使用して VM 単位またはプロジェクト単位で選択して有効にできます。この制約が適用されると、新しい VM が作成されるたびに、新しい Compute Engine VM に対するシリアルポート ロギングが無効になり、ユーザーは VM（旧または新）のメタデータ属性を True に変更できなくなります。シリアルポート ロギングを無効にすると、この機能に依存する特定のサービス（Google Kubernetes Engine クラスタなど）が正しく機能しなくなるおそれがあります。この制約を適用する前に、プロジェクト内のプロダクトがシリアル ポート ロギングに依存していないことを確認してください。 constraints/compute.disableSerialPortLogging Compute Engine ブラウザでの SSH を無効にする ブール値 このブール型制約は、OS Login と App Engine フレキシブル環境 VM を使用する VM で、Cloud コンソールのブラウザでの SSH ツールを無効にします。この制約を適用すると、ブラウザでの SSH ボタンが無効になります。デフォルトでは、ブラウザでの SSH ツールの使用が許可されています。 constraints/compute.disableSshInBrowser Compute Engine VPC 外部 IPv6 の使用を無効にする ブール値 このブール型制約を適用すると、 stack_type が IPV4_IPV6 で ipv6_access_type が EXTERNAL のサブネットワークの作成または更新が無効になります。 デフォルトでは、適切な Cloud IAM 権限を持つユーザーは誰でも、任意のプロジェクト、フォルダ、組織で stack_type が IPV4_IPV6 であるサブネットワークを作成または更新できます。 constraints/compute.disableVpcExternalIpv6 Compute Engine VPC 内部 IPv6 の使用を無効にする ブール値 このブール型制約を適用すると、 stack_type が IPV4_IPV6 で ipv6_access_type が INTERNAL のサブネットワークの作成または更新が無効になります。 デフォルトでは、適切な Cloud IAM 権限を持つユーザーは誰でも、任意のプロジェクト、フォルダ、組織で stack_type が IPV4_IPV6 であるサブネットワークを作成または更新できます。 constraints/compute.disableVpcInternalIpv6 Compute Engine コンプライアンス メモリ保護ワークロードに必要な設定を有効にする ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。この制約は、VM コアメモリへの潜在的なアクセス経路を除去するために必要な設定を制御します。この制約を適用すると、アクセス経路を無効にすることで VM コアメモリへのアクセスが制限されるとともに、エラーが発生したときの内部データ収集が制限されます。 constraints/compute.enableComplianceMemoryProtection Compute Engine リージョンの割り当て情報を表示する list メソッドのフェイルオープン動作を無効にする ブール値 このブール型制約を適用すると、 regions.list 、 regions.get 、 projects.get の各メソッドのサーバーサイド エラーにおけるフェイルオープン動作が無効になります。そのため、割り当て情報が利用できない場合、この制約が適用されるとこれらのメソッドは失敗します。デフォルトでは、これらのメソッドはサーバーサイド エラー時は成功し、割り当て情報が利用できない場合には警告メッセージを表示します。 constraints/compute.requireBasicQuotaInResponse Compute Engine OS Config が必要 ブール値 このブール型制約を適用すると、すべての新しいプロジェクトで VM Manager（OS Config）が有効になります。新しいプロジェクトのすべての VM インスタンスで VM Manager が有効になります。この制約を適用すると、新規および既存のプロジェクトにおいて、プロジェクトまたはインスタンス レベルで VM Manager を無効にするようなメタデータの更新を行うことができなくなります。 Compute Engine プロジェクトでは、VM Manager はデフォルトで無効になっています。 詳細については、 OS Config 組織のポリシーを有効にする をご覧ください。 constraints/compute.requireOsConfig Compute Engine OS ログインが必須 ブール値 このブール型制約を適用した場合、新しく作成するすべてのプロジェクトで OS Login が有効になります。新しいプロジェクトで作成するすべての VM インスタンスで OS Login が有効になります。この制約は、新規と既存のプロジェクトで、プロジェクト レベルまたはインスタンス レベルで OS Login を無効にするメタデータの更新を防ぎます。 Compute Engine プロジェクトでは、OS Login 機能はデフォルトで無効になっています。 constraints/compute.requireOsLogin Compute Engine Shielded VM ブール値 このブール型制約を適用した場合、すべての新しい Compute Engine VM インスタンスに、セキュアブート、vTPM、整合性モニタリングのオプションを有効にした Shielded ディスク イメージを使用することが必要になります。必要に応じて、セキュアブートは作成後に無効にできます。既存の実行中のインスタンスは、引き続き通常どおり動作します。 デフォルトでは、Compute Engine VM インスタンスを作成するために Shielded VM の機能を有効にする必要はありません。Shielded VM の機能により、VM には、検証可能な整合性と情報流出防止機能が追加されます。 constraints/compute.requireShieldedVm Compute Engine SSL ポリシーを必須にする リスト このリスト型制約では、デフォルトの SSL ポリシーの使用を許可するターゲット SSL プロキシとターゲット HTTPS プロキシのセットを定義します。デフォルトでは、すべてのターゲット SSL プロキシとターゲット HTTPS プロキシにデフォルトの SSL ポリシーの使用が許可されます。この制約を適用した場合、新しいターゲット SSL プロキシとターゲット HTTPS プロキシで SSL ポリシーを指定する必要があります。この制約が遡って適用されることはありません。デフォルトの SSL ポリシーを使用する既存のターゲット プロキシに影響はありません。ターゲット SSL プロキシとターゲット HTTPS プロキシの許可リストと拒否リストは、次の形式で識別する必要があります。 under:organizations/ ORGANIZATION_ID under:folders/ FOLDER_ID under:projects/ PROJECT_ID projects/ PROJECT_ID /global/targetHttpsProxies/ TARGET_PROXY_NAME projects/ PROJECT_ID /regions/ REGION_NAME /targetHttpsProxies/ TARGET_PROXY_NAME projects/ PROJECT_ID /global/targetSslProxies/ TARGET_PROXY_NAME サポートされている接頭辞: is: 、 under: constraints/compute.requireSslPolicy Compute Engine VPC Flow Logs に対して、事前定義されたポリシーが必須 リスト このリスト型制約は、VPC Flow Logs に適用できる事前定義されたポリシーのセットを定義します。 デフォルトでは、各サブネットの任意の設定を使用して VPC Flow Logs を構成できます。 この制約により、スコープ内のすべてのサブネットワークで、必要な最小サンプリング レートでフローログが有効になります。 次の有効な値を 1 つ以上指定します。 ESSENTIAL （値 >= 0.1、< 0.5 を許可） LIGHT （値が 0.5 以上 1.0 未満の場合を許可） COMPREHENSIVE （値 1.0 を許可） サポートされている接頭辞: is: 詳細については、 VPC Flow Logs の組織のポリシーの制約を構成する をご覧ください。 constraints/compute.requireVpcFlowLogs Compute Engine Cloud NAT の使用制限 リスト このリスト型制約は、Cloud NAT の使用を許可するサブネットワークのセットを定義します。デフォルトでは、すべてのサブネットワークで Cloud NAT を使用できます。サブネットワークの許可リストまたは拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /regions/ REGION_NAME /subnetworks/ SUBNETWORK_NAME という形式で識別される必要があります。 サポートされている接頭辞: is: 、 under: 詳細については、 組織のポリシーの制約 をご覧ください。 constraints/compute.restrictCloudNATUsage Compute Engine プロジェクト間のバックエンド バケットとバックエンド サービスを制限する リスト このリスト型制約は、urlMap リソースがアタッチできるバックエンド バケットとバックエンド サービスのリソースを制限します。この制約は、urlMap リソースと同じプロジェクト内のバックエンド バケットとバックエンド サービスには適用されません。デフォルトでは、ユーザーが compute.backendService.use、compute.regionBackendServices.use、compute.backendBuckets.use のいずれかの権限を持っている限り、1 つのプロジェクト内の urlMap リソースは、同じ組織内の他のプロジェクト内にある互換性のあるバックエンド バケットとバックエンド サービスを参照できます。競合を防ぐために、この制約は compute.restrictSharedVpcBackendServices 制約と一緒に使用しないことをおすすめします。許可リストまたは拒否リストにプロジェクト、フォルダ、組織リソースを指定した場合、リソース階層でそれらの下にあるすべてのバックエンド バケットとバックエンド サービスが対象になります。許可リストまたは拒否リストには、プロジェクト、フォルダ、組織リソースのみを含めることができ、次の形式で指定する必要があります。 under:organizations/ ORGANIZATION_ID under:folders/ FOLDER_ID under:projects/ PROJECT_ID projects/ PROJECT_ID /regions/ REGION /backendBuckets/ BACKEND_BUCKET_NAME projects/ PROJECT_ID /global/backendBuckets/ BACKEND_BUCKET_NAME projects/ PROJECT_ID /regions/ REGION /backendServices/ BACKEND_SERVICE_NAME projects/ PROJECT_ID /global/backendServices/ BACKEND_SERVICE_NAME サポートされている接頭辞: is: 、 under: constraints/compute.restrictCrossProjectServices Compute Engine Dedicated Interconnect の使用を制限する リスト このリスト型制約は、Dedicated Interconnect の使用を許可されている Compute Engine ネットワークのセットを定義します。デフォルトでは、ネットワークはすべての種類の Interconnect を使用できます。ネットワークの許可/拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /global/networks/ NETWORK_NAME という形式で識別される必要があります。 サポートされている接頭辞: is: 、 under: 詳細については、 Cloud Interconnect の使用を制限する をご覧ください。 constraints/compute.restrictDedicatedInterconnectUsage Compute Engine ロードバランサの種類に基づいてロードバランサの作成を制限する リスト このリスト型制約は、組織、フォルダ、プロジェクトに対して作成可能な、一連のロードバランサのタイプを定義します。許可または拒否するすべてのロードバランサ タイプの一覧を明示的に指定する必要があります。デフォルトでは、すべての種類のロードバランサの作成が許可されています。 許可値または拒否値のリストは、ロードバランサの文字列名として識別される必要があります。また、次のリストにある値のみを含めることができます。 INTERNAL_TCP_UDP INTERNAL_HTTP_HTTPS GLOBAL_INTERNAL_MANAGED_HTTP_HTTPS GLOBAL_INTERNAL_MANAGED_TCP_PROXY REGIONAL_INTERNAL_MANAGED_TCP_PROXY EXTERNAL_NETWORK_TCP_UDP EXTERNAL_TCP_PROXY EXTERNAL_SSL_PROXY EXTERNAL_HTTP_HTTPS EXTERNAL_MANAGED_HTTP_HTTPS GLOBAL_EXTERNAL_MANAGED_HTTP_HTTPS GLOBAL_EXTERNAL_MANAGED_TCP_PROXY GLOBAL_EXTERNAL_MANAGED_SSL_PROXY REGIONAL_EXTERNAL_MANAGED_TCP_PROXY すべての内部または外部のロードバランサ タイプを含めるには、「in:」接頭辞に「INTERNAL」または「EXTERNAL」を続けて使用します。たとえば、「in:INTERNAL」を許可すると、上記のリストにある INTERNAL を含むすべてのロードバランサ タイプが許可されます。ロードバランサの種類の制限について詳しくは、https://cloud.google.com/load-balancing/docs/org-policy-constraints をご覧ください。 サポートされている接頭辞: is: 、 in: 詳細については、 Cloud Load Balancing の組織のポリシーに関する制約 をご覧ください。 constraints/compute.restrictLoadBalancerCreationForTypes Compute Engine Confidential Computing 以外を制限する リスト このリスト型制約の拒否リストでは、Confidential Computing を有効にしてすべての新しいリソースを作成する必要がある一連のサービスを定義します。デフォルトでは、新しいリソースは Confidential Computing を使用する必要はありません。このリスト型制約の適用中は、リソースのライフサイクル全体で Confidential Computing を無効にすることはできません。既存のリソースは、引き続き通常どおり動作します。サービスの拒否リストは、API の文字列名として識別される必要があります。さらに、以下のリストにある明示的な拒否値のみを含めることができます。現在、API を明示的に許可する機能はサポートされていません。このリストにない API を明示的に拒否すると、エラーが発生します。サポートされている API のリスト: [compute.googleapis.com, container.googleapis.com] サポートされている接頭辞: is: constraints/compute.restrictNonConfidentialComputing Compute Engine Partner Interconnect の使用の制限 リスト このリスト型制約は、Partner Interconnect の使用が許可されている Compute Engine ネットワークのセットを定義します。デフォルトでは、ネットワークはすべての種類の Interconnect を使用できます。ネットワークの許可/拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /global/networks/ NETWORK_NAME という形式で識別される必要があります。 サポートされている接頭辞: is: 、 under: 詳細については、 Cloud Interconnect の使用を制限する をご覧ください。 constraints/compute.restrictPartnerInterconnectUsage Compute Engine 許可される Private Service Connect コンシューマを制限する リスト このリスト型制約は、プロデューサーの組織またはプロジェクト内のサービス アタッチメントに接続できる組織、フォルダ、プロジェクトを定義します。許可リストまたは拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、または under:projects/ PROJECT_ID の形式で指定する必要があります。デフォルトでは、すべての接続が許可されます。 サポートされている接頭辞: is: 、 under: 詳細については、 Private Service Connect コンシューマーのセキュリティを管理する をご覧ください。 constraints/compute.restrictPrivateServiceConnectConsumer Compute Engine 許可される Private Service Connect プロデューサーを制限する リスト このリスト型制約は、Private Service Connect コンシューマが接続できるサービス アタッチメントを定義します。この制約は、Private Service Connect のエンドポイントまたはバックエンドが参照するサービス アタッチメントの組織、フォルダ、またはプロジェクト リソースに基づき、エンドポイントまたはバックエンドのデプロイをブロックします。許可リストまたは拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、または under:projects/ PROJECT_ID の形式で指定する必要があります。デフォルトでは、すべての接続が許可されます。 サポートされている接頭辞: is: 、 under: 詳細については、 Private Service Connect コンシューマーのセキュリティを管理する をご覧ください。 constraints/compute.restrictPrivateServiceConnectProducer Compute Engine プロトコル転送の使用を制限する リスト このリスト型制約は、ユーザーが作成できるターゲット インスタンスを持つプロトコル転送ルール オブジェクトのタイプを定義します。この制約が適用される場合、ターゲット インスタンスを持つ新しい転送ルール オブジェクトは、指定されたタイプに基づいて、内部 IP アドレスまたは外部 IP アドレスに限定されます。許可または拒否するタイプは、明示的に指定する必要があります。デフォルトでは、ターゲット インスタンスで内部および外部プロトコル転送ルール オブジェクトの両方を作成できます。 許可または拒否される値のリストには、以下のリストの値のみを含めることができます。 INTERNAL EXTERNAL この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 サポートされている接頭辞: is: 詳細については、 プロトコル転送の概要 をご覧ください。 constraints/compute.restrictProtocolForwardingCreationForTypes Compute Engine 共有 VPC バックエンド サービスを制限する リスト このリスト型制約は、適格リソースで使用できる一連の共有 VPC バックエンド サービスを定義します。この制約は、同じプロジェクト内のリソースには適用されません。デフォルトでは、適格リソースは、すべての共有 VPC バックエンド サービスを使用できます。バックエンド サービスの許可 / 拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、 projects/ PROJECT_ID /regions/ REGION /backendServices/ BACKEND_SERVICE_NAME 、または projects/ PROJECT_ID /global/backendServices/ BACKEND_SERVICE_NAME の形式で指定する必要があります。この制約は遡って適用されることはありません。 サポートされている接頭辞: is: 、 under: constraints/compute.restrictSharedVpcBackendServices Compute Engine 共有 VPC ホスト プロジェクトの制限 リスト このリスト型制約は、このリソースと同じ位置かその下にあるプロジェクトで接続先にできる、一連の共有 VPC ホスト プロジェクトを定義します。デフォルトでは、プロジェクトは同じ組織内の任意のホスト プロジェクトに接続して、サービス プロジェクトになることができます。許可リストまたは拒否リスト内のプロジェクト、フォルダ、組織は、リソース階層でそれらの下にあるすべてのオブジェクトに影響を及ぼします。また、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、または projects/ PROJECT_ID の形式で指定する必要があります。 サポートされている接頭辞: is: 、 under: constraints/compute.restrictSharedVpcHostProjects Compute Engine 共有 VPC サブネットワークの制限 リスト このリスト型制約は、適格リソースで使用できる一連の共有 VPC サブネットワークを定義します。この制約は、同じプロジェクト内のリソースには適用されません。デフォルトでは、適格リソースはすべての共有 VPC サブネットワークを使用できます。サブネットワークの許可リストまたは拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /regions/ REGION /subnetworks/ SUBNETWORK-NAME という形式で指定する必要があります。 サポートされている接頭辞: is: 、 under: constraints/compute.restrictSharedVpcSubnetworks Compute Engine VPC ピアリング使用の制限 リスト このリスト型制約では、このプロジェクト、フォルダ、組織に属する VPC ネットワークとピアリングできる一連の VPC ネットワークを定義します。各ピアリング側にピアリング権限が必要です。デフォルトでは、あるネットワークのネットワーク管理者は、他のすべてのネットワークとピアリングできます。ネットワークの許可リストまたは拒否リストは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /global/networks/ NETWORK_NAME という形式で識別される必要があります。 サポートされている接頭辞: is: 、 under: constraints/compute.restrictVpcPeering Compute Engine VPN ピア IP の制限 リスト このリスト型制約は、VPN ピア IP として構成できる一連の有効な IP アドレスを定義します。デフォルトでは、すべての IP を VPC ネットワークの VPN ピア IP にすることができます。IP アドレスの許可リストや拒否リストは、 IP_V4_ADDRESS または IP_V6_ADDRESS の形式で有効な IP アドレスとして指定する必要があります。 サポートされている接頭辞: is: 詳細については、 Cloud VPN トンネルを経由したピア IP アドレスの制限 をご覧ください。 constraints/compute.restrictVpnPeerIPs Compute Engine 新しいプロジェクトの内部 DNS 設定をゾーン DNS のみに設定する ブール値 適用した場合、新しく作成するプロジェクトでは、ゾーン DNS がデフォルトとして使用されるようになります。デフォルトではこの制約は False に設定され、新しく作成したプロジェクトで デフォルトの DNS タイプ が使用されます。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 constraints/compute.setNewProjectDefaultToZonalDNSOnly Compute Engine 共有予約オーナー プロジェクト リスト このリスト型制約は、組織内で共有予約を作成および所有できる一連のプロジェクトを定義します。共有予約はローカルの予約に似ていますが、オーナー プロジェクト以外に、リソース階層にある他の Compute Engine プロジェクトからも使用可能であるという点が異なります。共有予約にアクセスできるプロジェクトのリストは、 projects/PROJECT_NUMBER または under:projects/PROJECT_NUMBER の形式にする必要があります。 サポートされている接頭辞: is: 、 under: constraints/compute.sharedReservationsOwnerProjects Compute Engine デフォルト ネットワークの作成をスキップ ブール値 このブール値制約を適用した場合、Google Cloud Platform プロジェクト リソースの作成時に、デフォルトのネットワークと関連リソースの作成がスキップされます。デフォルトでは、プロジェクト リソースの作成時に、デフォルトのネットワークと補助的リソースが自動的に作成されます。 constraints/compute.skipDefaultNetworkCreation Compute Engine Compute ストレージ リソースの使用制限（Compute Engine のディスク、イメージ、スナップショット） リスト このリスト型制約は、Compute Engine のストレージ リソースの使用を許可される一連のプロジェクトを定義します。デフォルトでは、適切な Cloud IAM アクセス許可を持つユーザーは誰でも Compute Engine のリソースにアクセスできます。この制約を使用する場合、ユーザーには Cloud IAM のアクセス許可が必要であり、リソースへのアクセスが制約で制限されていてはなりません。 許可リストまたは拒否リストで指定するプロジェクト、フォルダ、組織は、 under:projects/ PROJECT_ID 、 under:folders/ FOLDER_ID 、 under:organizations/ ORGANIZATION_ID の形式である必要があります。 サポートされている接頭辞: is: 、 under: constraints/compute.storageResourceUseRestrictions Compute Engine 信頼できるイメージ プロジェクトを定義する リスト このリスト型制約は、Compute Engine のイメージ保存やディスク インスタンス化に使用できる一連のプロジェクトを定義します。 デフォルトでは、イメージを公開で共有しているかユーザーと明示的に共有している任意のプロジェクト内のイメージから、インスタンスを作成できます。 パブリッシャー プロジェクトの許可リストまたは拒否リストは、 projects/ PROJECT_ID の形式の文字列である必要があります。この制約がアクティブな場合は、 信頼できるプロジェクト 内のイメージのみが、新しいインスタンスのブートディスクのソースとして許可されます。 サポートされている接頭辞: is: 詳細については、 イメージ アクセスの制限を設定する をご覧ください。 constraints/compute.trustedImageProjects Compute Engine VM IP 転送の制限 リスト このリスト型制約は、IP 転送を有効にできる一連の VM インスタンスを定義します。デフォルトでは、すべての VM がすべての仮想ネットワークで IP 転送を有効にすることができます。VM インスタンスは、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 under:projects/ PROJECT_ID 、または projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE-NAME の形式で指定する必要があります。この制約は遡って適用されることはありません。 サポートされている接頭辞: is: 、 under: constraints/compute.vmCanIpForward Compute Engine VM インスタンスに対して許可されている外部 IP を定義する リスト このリスト型制約は、外部 IPv4 アドレスの使用を許可する Compute Engine VM インスタンスのセットを定義します。この制約は、IPv6 アドレスの使用を制限するものではありません。 デフォルトでは、すべての VM インスタンスで、外部 IPv4 アドレスと外部 IPv6 アドレスの使用が許可されます。 VM インスタンスの許可リストまたは拒否リストは、 projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE という形式の VM インスタンス名で識別する必要があります。 サポートされている接頭辞: is: 詳細については、 外部 IP アクセスを特定のインスタンスに制限する をご覧ください。 constraints/compute.vmExternalIpAccess Compute Engine グローバル リソースでの Identity-Aware Proxy（IAP）の有効化を無効にする ブール値 このブール型制約を適用すると、グローバル リソースで Identity-Aware Proxy を有効にできなくなります。リージョン リソースでの IAP の有効化は、この制約で制限されることはありません。 デフォルトでは、グローバル リソースで IAP を有効にすることができます。 constraints/iap.requireGlobalIapWebDisabled Google Kubernetes Engine GKE における診断用および管理用のアクセス経路を無効にする。 ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約を適用すると、Assured Workloads の要件に準拠しない、診断やその他のカスタマー サポート ユースケースのアクセス経路がすべて無効となります。 constraints/container.restrictNoncompliantDiagnosticDataAccess Dataform Dataform のリポジトリの git リモートを制限する リスト このリスト型制約は、Dataform プロジェクトのリポジトリで通信できる一連のリモートを定義します。すべてのリモートとの通信をブロックするには、値を Deny all に設定します。この制約は過去に遡って適用され、違反している既存のリポジトリの通信はブロックされます。エントリは、Dataform で指定された形式と同じ形式の信頼できるリモートへのリンクである必要があります。 デフォルトでは、Dataform プロジェクトのリポジトリは任意のリモートと通信できます。 サポートされている接頭辞: is: 詳細については、 リモート リポジトリを制限する をご覧ください。 constraints/dataform.restrictGitRemotes Datastream Datastream - パブリック接続方法のブロック ブール値 デフォルトでは、Datastream 接続プロファイルはパブリックまたはプライベート接続方法で作成できます。この組織ポリシーにブール型制約が適用される場合、接続プロファイルの作成に使用できるのはプライベート接続方法（VPC ピアリングなど）のみです。 constraints/datastream.disablePublicConnectivity 重要な連絡先 ドメインで制限された連絡先 リスト このリスト型制約は、[重要な連絡先] に追加できるメールアドレスのドメインのセットを定義します。 デフォルトでは、すべてのドメインのメールアドレスを [重要な連絡先] に追加できます。 許可リストまたは拒否リストには、 @example.com という形式の 1 つまたは複数のドメインを指定する必要があります。この制約が有効で、許可されている値で構成されている場合、許可されたドメインのリスト内のいずれかのエントリとサフィックスが一致するメールアドレスのみが、Essential Contacts に追加されます。 この制約は既存の連絡先の更新や削除には影響しません。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 サポートされている接頭辞: is: constraints/essentialcontacts.allowedContactDomains 重要な連絡先 プロジェクトのセキュリティの連絡先を無効にする ブール値 このブール型制約を適用すると、組織のポリシーの管理者は、組織レベルまたはフォルダレベルで割り当てられた連絡先のみがセキュリティ通知を受信するように構成できます。具体的には、この制約を適用すると、連絡先にプロジェクト リソースも親として含まれている場合、プロジェクト オーナーと連絡先管理者は、 SECURITY や ALL カテゴリを含む notification_category_subscriptions フィールドに重要な連絡先を作成、更新できなくなります。 constraints/essentialcontacts.disableProjectSecurityContacts Firestore インポート / エクスポート用に必要な Firestore サービス エージェント ブール値 このブール型制約を適用する場合は、Firestore のインポートとエクスポートで Firestore サービス エージェントを使用する必要があります。 Firestore のインポートとエクスポートは、デフォルトで App Engine サービス アカウントを使用している場合があります。 今後、Firestore はインポートとエクスポートに App Engine サービス アカウントを使用しなくなり、すべてのアカウントが Firestore サービス エージェントに移行する必要があります。移行後は、この制約は不要になります。 constraints/firestore.requireP4SAforImportExport Cloud Healthcare API Cloud Healthcare API の Cloud Logging を無効にする ブール値 このブール型制約を適用すると、Cloud Healthcare API の Cloud Logging が無効になります。 監査ログはこの制約の影響を受けません。 制約が適用される前に Cloud Healthcare API 向けに生成された Cloud ログは削除されず、引き続きアクセス可能です。 詳細については、 Cloud Healthcare API の Cloud Logging を無効にする をご覧ください。 constraints/gcp.disableCloudLogging Identity and Access Management OAuth 2.0 アクセス トークンの存続期間を最大 12 時間延長することを許可する リスト このリスト型制約は、存続期間が最大 12 時間の OAuth 2.0 アクセス トークンを付与できる一連のサービス アカウントを定義します。デフォルトでは、これらのアクセス トークンの最大存続期間は 1 時間です。 サービス アカウントの許可リストまたは拒否リストには、1 つ以上のサービス アカウントのメールアドレスを指定する必要があります。 サポートされている接頭辞: is: 詳細については、 OAuth 2.0 アクセス トークンの存続時間を延長する をご覧ください。 constraints/iam.allowServiceAccountCredentialLifetimeExtension Identity and Access Management ドメインで制限された共有 リスト このリスト型制約は、プリンシパルを IAM ポリシーに追加できる組織プリンシパル セットと Google Workspace のお客様 ID を定義します。 デフォルトでは、すべてのユーザー ID を IAM ポリシーに追加できます。この制約で定義できるのは、許可する値のみです。拒否する値は定義できません。 allowed_values に一覧表示されている Google Workspace アカウントまたはプリンシパル セットに関連付けられているすべてのドメインは、組織のポリシーで許可されます。その他のドメインはすべて組織のポリシーによってブロックされます。 Google サービスとの相互運用のために、お客様 ID としてこのリストに google.com を追加する必要はありません。google.com を追加すると、Google の従業員や非本番環境用システムとの共有が許可されるため、Google の従業員とデータを共有する場合にのみ追加します。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 サポートされている接頭辞: is: 詳細については、 ドメイン別の ID の制限 をご覧ください。 constraints/iam.allowedPolicyMemberDomains Identity and Access Management Audit Logging の除外を無効にする ブール値 このブール型制約を適用すると、監査ログから追加のプリンシパルが除外されなくなります。この制約は、制約を適用する前に存在していた監査ログでの除外には影響しません。 constraints/iam.disableAuditLoggingExemption Identity and Access Management プロジェクト間サービス アカウントの使用の無効化 ブール値 適用した場合、サービス アカウントは、そのサービス アカウントと同じプロジェクトで実行中のジョブ（VM、関数など）にのみ（ServiceAccountUser ロールを使用して）デプロイできます。 詳細については、 別のプロジェクトのリソースを構成する をご覧ください。 constraints/iam.disableCrossProjectServiceAccountUsage Identity and Access Management サービス アカウント作成の無効化 ブール値 このブール型制約が適用されているサービス アカウントの作成が無効になります。 デフォルトでは、ユーザーは Cloud IAM のロールと権限に基づいてサービス アカウントを作成できます。 詳細については、 サービス アカウントの作成を無効にする をご覧ください。 constraints/iam.disableServiceAccountCreation Identity and Access Management サービス アカウント キー作成を無効にする ブール値 このブール型制約を適用すると、サービス アカウントの外部キーと Cloud Storage の HMAC キーの作成が無効になります。 デフォルトでは、ユーザーは Cloud IAM のロールと権限に基づいてサービス アカウントの外部鍵を作成できます。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 詳細については、 サービス アカウント キーの作成を無効にする をご覧ください。 constraints/iam.disableServiceAccountKeyCreation Identity and Access Management サービス アカウント キー アップロードの無効化 ブール値 このブール型制約を適用すると、サービス アカウントに公開鍵をアップロードする機能が無効になります。 デフォルトでは、ユーザーは Cloud IAM のロールと権限に基づいて公開鍵をサービス アカウントにアップロードできます。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 詳細については、 サービス アカウント キーのアップロードを無効にする をご覧ください。 constraints/iam.disableServiceAccountKeyUpload Identity and Access Management Workload Identity クラスタ作成の無効化 ブール値 このブール型制約を適用した場合、新規 GKE クラスタはすべて、作成時に Workload Identity を無効にすることが必要になります。Workload Identity がすでに有効な既存の GKE クラスタは、引き続き通常どおり動作します。デフォルトでは、すべての GKE クラスタに対して Workload Identity を有効にすることができます。 詳細については、 Workload Identity クラスタの作成を無効にする をご覧ください。 constraints/iam.disableWorkloadIdentityClusterCreation Identity and Access Management サービス アカウント キーの有効期限（時間） リスト このリスト型制約は、サービス アカウント キーの有効期間として許可される最大の期間を定義します。デフォルトでは、作成されたキーに有効期間はありません。 許可される期間の単位は「時間」で、以下に示すリストのいずれかの値を指定します。許容値を 1 つだけ指定できます。拒否値はサポートされません。このリストにない期間を指定すると、エラーが発生します。 1h 8h 24h 168h 336h 720h 1440h 2160h この制約を適用するには、Cloud コンソールで親ポリシーを置き換えるように設定するか、gcloud CLI を使用する場合はポリシー ファイルで inheritFromParent=false を設定する必要があります。この制約を親ポリシーと結合することはできません。制約が遡って適用されることはなく、既存のキーは変更されません。 サポートされている接頭辞: is: constraints/iam.serviceAccountKeyExpiryHours Identity and Access Management サービス アカウント キーの漏洩レスポンス リスト このリスト型制約は、サービス アカウントにリンクしているキーが公開されていることを Google が検出した場合の対応を定義します。モニタリング対象のキーには、サービス アカウントにバインドされている長期有効なサービス アカウント キーと API キーが含まれます。設定されていない場合、デフォルトは DISABLE_KEY で説明されている動作になります。 指定できる値は DISABLE_KEY と WAIT_FOR_ABUSE です。このリストに明示的に含まれていない値は使用できません。許可する値は 1 つだけ指定できます。拒否する値は指定できません。 DISABLE_KEY 値を許可すると、公開されているサービス アカウント キーが自動的に無効になり、監査ログにエントリが作成されます。 WAIT_FOR_ABUSE 値を許可すると、この保護はオプトアウトされます。公開されているサービス アカウント キーが自動的に無効になることはありません。ただし、公開されたサービス アカウント キーがプラットフォームに悪影響を及ぼす方法で使用されている場合、Google Cloud はそのキーを無効にする可能性がありますが、そうすることを保証するものではありません。 この制約を適用するには、Google Cloud コンソールで親ポリシーを置き換えるように設定するか、gcloud CLI を使用する場合はポリシー ファイルで inheritFromParent=false を設定します。この制約を親ポリシーと結合することはできません。 サポートされている接頭辞: is: constraints/iam.serviceAccountKeyExposureResponse Identity and Access Management Cloud IAM での Workload Identity 連携用に構成できる AWS アカウント リスト Cloud IAM での Workload Identity 連携用に構成できる AWS アカウント ID のリスト。 サポートされている接頭辞: is: constraints/iam.workloadIdentityPoolAwsAccounts Identity and Access Management Cloud IAM のワークロード向けに許可されている外部の ID プロバイダ リスト Cloud IAM 内のワークロード認証用に構成可能な ID プロバイダ。URI / URL により指定します。 サポートされている接頭辞: is: constraints/iam.workloadIdentityPoolProviders Cloud Service Mesh Anthos Service Mesh マネージド コントロール プレーンの許可済み VPC Service Controls モード リスト この制約によって、新しい Anthos Service Mesh マネージド コントロール プレーンのプロビジョニング時に設定できる VPC Service Controls モードが決まります。有効な値は「NONE」と「COMPATIBLE」です。 サポートされている接頭辞: is: constraints/meshconfig.allowedVpcscModes VM Manager VM Manager - インライン スクリプトと出力ファイルの使用の制限 ブール値 このブール型制約を「True」に設定すると、インライン スクリプトまたはバイナリ出力ファイルを使用している VM Manager リソースの作成や変更が制限され、Assured Workloads の要件を遵守することが必要になります。具体的には、OSPolicyAssignment リソースと PolicyOrchestrator リソース内の「script」フィールドと「output_file_path」フィールドは空のままにしておく必要があります。 constraints/osconfig.restrictInlineScriptAndOutputFileUsage Pub/Sub Pub/Sub メッセージの転送中リージョンの制約を適用する ブール値 このブール型制約を適用すると、すべての新しい Pub/Sub トピックの作成時に MessageStoragePolicy::enforce_in_transit が true に設定されます。これによりお客様のデータは、トピックのメッセージ ストレージ ポリシーで指定された、許可されるリージョン内でのみ転送されます。 constraints/pubsub.enforceInTransitRegions Resource Manager 共有 VPC プロジェクト リーエンの削除を制限する ブール値 このブール型制約を適用した場合、組織レベルの権限なしで共有 VPC ホスト プロジェクト リーエンを削除できるユーザーが制限されます。 デフォルトでは、リーエンの更新権限を持つすべてのユーザーに共有 VPC ホスト プロジェクト リーエンの削除が許可されます。この制約を適用するには、組織レベルで権限を付与する必要があります。 constraints/compute.restrictXpnProjectLienRemoval Resource Manager プロジェクト間サービス アカウントのリーエンの削除の制限 ブール値 このブール型制約が「適用」された場合、ユーザーは組織レベルの権限がなければ、プロジェクト間サービス アカウントのリーエンを削除できなくなります。デフォルトでは、リーエンの更新権限を持つすべてのユーザーがプロジェクト間サービス アカウントのリーエンを削除できます。この制約を適用するには、組織レベルで権限を付与する必要があります。 詳細については、 別のプロジェクトのリソースを構成する をご覧ください。 constraints/iam.restrictCrossProjectServiceAccountLienRemoval Resource Manager リソースクエリの公開設定を制限する リスト このリスト型制約を組織リソースに適用すると、この制約が適用される組織のドメインのユーザーに関して、リスト取得と検索のメソッドで返される Google Cloud リソースのセットが定義されます。これを使用すると、リソース選択ツール、検索、[リソースの管理] ページなど、Cloud Console のさまざまな部分に表示されるリソースを制限できます。この制約は組織レベルのみで評価されます。許可リストまたは拒否リストで指定する値は、 under:organizations/ ORGANIZATION_ID の形式である必要があります。 サポートされている接頭辞: is: 、 under: 詳細については、 ユーザーのプロジェクト公開設定の制限 をご覧ください。 constraints/resourcemanager.accessBoundaries Resource Manager 組織間の移動には有効なサービスの許可リストが必要 リスト このリスト型制約は、サービスが有効になっているプロジェクトで組織間の移動が可能かどうかを確認するチェックとして機能します。サポートされているサービスが有効になっているリソースには、この制約を適用する必要があります。また、そのサポートされているサービスが、組織間での移動が可能となるよう、許可された値に含まれていることも必要です。サポートされている使用可能なサービス用に許可されている値の現在のリストは次のとおりです。 SHARED_VPC この制約により、constraints/resourcemanager.allowedExportDestinations をさらに制御できます。この list_constraint はデフォルトでは空であり、エクスポート対象のリソースでサポートされているサービスが有効になっていない限り、組織間の移動はブロックされません。この制約により、別の組織への移動の際に特に注意を要する機能を使用して、リソースを細かく制御できます。デフォルトでは、サポートされているサービスが有効になっているリソースは、組織間で移動できません。 サポートされている接頭辞: is: constraints/resourcemanager.allowEnabledServicesForExport Resource Manager リソースのエクスポートが許可されている宛先 リスト このリスト型制約は、リソースを移動できる外部組織を定義し、他のすべての組織へのすべての移動を拒否します。デフォルトでは、組織間でリソースを移動することはできません。この制約をリソースに適用すると、そのリソースは制約で明示的に許可されている組織にのみ移動できます。組織内の移動には、この制約は適用されません。移動オペレーションでは、通常のリソース移動と同じ IAM 権限が引き続き必要になります。許可リストまたは拒否リストで指定する値は、 under:organizations/ ORGANIZATION_ID の形式である必要があります。 サポートされている接頭辞: is: 、 under: constraints/resourcemanager.allowedExportDestinations Resource Manager リソースのインポートを許可されている送信元 リスト このリスト型制約は、リソースのインポート元として許可する外部組織を定義し、他のすべての組織からのすべての移動を拒否します。デフォルトでは、組織間でリソースを移動することはできません。この制約をリソースに適用する場合、このリソースで直接インポートしたリソースを、この制約で明示的に許可する必要があります。組織内での移動も、組織外から組織内への移動も、この制約で管理されるわけではありません。移動オペレーションでは、通常のリソース移動と同じ IAM 権限が引き続き必要になります。許可リストまたは拒否リストで指定する値は、 under:organizations/ ORGANIZATION_ID の形式である必要があります。 サポートされている接頭辞: is: 、 under: constraints/resourcemanager.allowedImportSources Cloud Run 許可される Binary Authorization ポリシー（Cloud Run） リスト このリスト型制約は、Cloud Run リソースに指定できる Binary Authorization ポリシー名のセットを定義します。デフォルト ポリシーを許可または禁止するには、値 default を使用します。1 つ以上のカスタム プラットフォームのポリシーを許可または禁止するには、そのような各ポリシーのリソース ID を個別に追加する必要があります。 サポートされている接頭辞: is: constraints/run.allowedBinaryAuthorizationPolicies Cloud Run 許可される内向き設定（Cloud Run） リスト このリスト型制約は、Cloud Run サービスに対して許可される上り（内向き）設定を定義します。この制約が適用されると、許可された値のいずれかに一致する上り（内向き）設定がサービスで必要になります。この制約に従わない上り（内向き）設定がある既存の Cloud Run サービスは、サービスの上り（内向き）設定がこの制約に従うように変更されるまで、引き続き更新できます。サービスがこの制約に従うようになると、サービスはこの制約で許可されている上り（内向き）設定のみを使用できます。 デフォルトでは、Cloud Run サービスは任意の上り（内向き）設定を使用できます。 許可リストには、サポートされている上り（内向き）設定値（ all 、 internal 、 internal-and-cloud-load-balancing ）を含める必要があります。 サポートされている接頭辞: is: 詳細については、 許可される上り（内向き）設定を制限する をご覧ください。 constraints/run.allowedIngress Cloud Run 許可される VPC 外向き設定（Cloud Run） リスト このリスト型制約は、Cloud Run リソースに指定できる VPC 下り（外向き）設定を定義します。この制約が適用されると、Cloud Run リソースはサーバーレス VPC アクセス コネクタまたはダイレクト VPC 下り（外向き）を有効にしてデプロイする必要があり、VPC 下り（外向き）設定は使用できる値のいずれかに一致している必要があります。 デフォルトでは、Cloud Run のリソースは VPC 下り（外向き）設定を、サポートされている任意の値に設定できます。 許可リストには、サポートされている VPC 下り（外向き）設定の値（ private-ranges-only と all-traffic ）を含める必要があります。 既存の Cloud Run サービスでは、新しいリビジョンはすべてこの制約に従う必要があります。この制約に従わないトラフィックを処理するリビジョンの既存のサービスは、この制約に従わないリビジョンに引き続きトラフィックを移行できます。サービスのすべてのトラフィックが、この制約に従ったリビジョンによって処理されると、それ以降のトラフィックの移行では、この制約に従うリビジョンにのみトラフィックを移行する必要があります。 サポートされている接頭辞: is: 詳細については、 許可された VPC 下り（外向き）設定を制限する をご覧ください。 constraints/run.allowedVPCEgress Service Consumer Management デフォルトのサービス アカウントに対する IAM ロールの自動付与の無効化 ブール値 このブール型制約を適用すると、プロジェクトで作成された デフォルト の App Engine サービス アカウントと Compute Engine サービス アカウントは、アカウント作成時にプロジェクトの IAM ロールを自動的に付与しなくなります。 デフォルトでは、これらのサービス アカウントには作成時に編集者のロールが自動的に付与されます。デフォルトのサービス アカウントについては、https://cloud.google.com/iam/help/service-accounts/default をご覧ください。 編集者ロールの代わりに付与するロールについては、https://cloud.google.com/iam/help/service-accounts/troubleshoot-roles-default をご覧ください。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 constraints/iam.automaticIamGrantsForDefaultServiceAccounts 複数の Google Cloud サービス 許可されたワーカープール（Cloud Build） リスト このリスト型制約は、Cloud Build を使用してビルドを実行するための許可された Cloud Build ワーカープールのセットを定義します。この制約が適用されると、許可された値のいずれかに一致するワーカープールでビルドすることが要求されます。 デフォルトでは、Cloud Build はすべてのワーカープールを使用できます。 ワーカープールの許可リストの形式は次のとおりです。 under:organizations/ ORGANIZATION_ID under:folders/ FOLDER_ID under:projects/ PROJECT_ID projects/ PROJECT_ID /locations/ REGION /workerPools/ WORKER_POOL_ID サポートされている接頭辞: is: 、 under: constraints/cloudbuild.allowedWorkerPools 複数の Google Cloud サービス Google Cloud Platform - リソース ロケーションの制限 リスト このリスト型制約は、ロケーション ベースの Google Cloud リソースを作成できる一連のロケーションを定義します。重要: このページの情報は、顧客データ（Google が Google Cloud Platform サービスを提供することに同意した契約に定義されており、https://cloud.google.com/terms/services の Google Cloud Platform サービス概要に記載されている）に対する、Google Cloud Platform のデータの保管場所に関する義務を説明するものではありません。顧客がデータの保管場所を選択できる Google Cloud Platform サービスのリストについては、データ所在地がある Google Cloud Platform サービス（https://cloud.google.com/terms/data-residency）をご覧ください。 デフォルトでは、任意のロケーションにリソースを作成できます。サポートされているサービスの完全なリストについては、https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations-supported-services をご覧ください。 この制約に関するポリシーでは、許可または拒否するロケーションとして、 asia や europe などのマルチリージョン、 us-east1 や europe-west1 などのリージョンを指定できます。マルチリージョンを許可または拒否しても、それらに含まれるすべてのサブロケーションまで許可または拒否されることにはなりません。たとえば、ポリシーで us マルチリージョン（一部のストレージ サービスなどのマルチリージョン リソースを指す）が拒否されていても、リージョン ロケーション us-east1 には依然としてリソースを作成できます。一方、 in:us-locations グループは us リージョン内のすべてのロケーションを含み、すべてのリージョンをブロックするために使用できます。 値グループを使用してポリシーを定義することをおすすめします。 値グループ （リソースのロケーションを簡単に定義できるようにするために Google によってキュレートされた、ロケーションのコレクション）を指定できます。組織のポリシーで値グループを使用するには、エントリの先頭に文字列 in: を付加し、その後に値グループを配置します。 たとえば、物理的に米国内にのみ存在するリソースを作成するには、使用できる値のリストに in:us-locations を設定します。 ロケーション ポリシーで suggested_value フィールドが使用されている場合は、リージョンを指定する必要があります。指定した値がリージョンの場合は、ゾーンリソースの UI にこのリージョン内のすべてのゾーンが事前に入力されます。 サポートされている接頭辞: is: 、 in: 詳細については、 リソース ロケーションの制限 をご覧ください。 constraints/gcp.resourceLocations 複数の Google Cloud サービス CMEK 用の KMS CryptoKey を提供できるプロジェクトを制限する リスト このリスト型制約は、リソースの作成時に顧客管理の暗号鍵（CMEK）を提供するために使用できるプロジェクトを定義します。この制約を [ Allow ] に設定した場合（これらのプロジェクトからの CMEK 鍵のみを許可する場合）、他のプロジェクトの CMEK 鍵を使用して、新規に作成されるリソースを保護できなくなります。この制約の値は、 under:organizations/ ORGANIZATION_ID 、 under:folders/ FOLDER_ID 、 projects/ PROJECT_ID の形式で指定する必要があります。この制約を適用するサポート対象のサービスは次のとおりです。 aiplatform.googleapis.com alloydb.googleapis.com apigee.googleapis.com artifactregistry.googleapis.com bigquery.googleapis.com bigquerydatatransfer.googleapis.com bigtable.googleapis.com cloudfunctions.googleapis.com cloudscheduler.googleapis.com cloudtasks.googleapis.com composer.googleapis.com compute.googleapis.com contactcenterinsights.googleapis.com container.googleapis.com dataflow.googleapis.com dataform.googleapis.com datafusion.googleapis.com dataplex.googleapis.com dataproc.googleapis.com dialogflow.googleapis.com discoveryengine.googleapis.com documentai.googleapis.com eventarc.googleapis.com file.googleapis.com firestore.googleapis.com gkebackup.googleapis.com integrations.googleapis.com logging.googleapis.com looker.googleapis.com netapp.googleapis.com notebooks.googleapis.com pubsub.googleapis.com redis.googleapis.com run.googleapis.com secretmanager.googleapis.com securesourcemanager.googleapis.com securitycenter.googleapis.com spanner.googleapis.com speech.googleapis.com sqladmin.googleapis.com storage.googleapis.com workstations.googleapis.com この制約の適用は、追加サービスを追加するために、随時拡大される場合があります。サポートされているサービスとサポートされていないサービスが混在しているプロジェクト、フォルダ、組織にこの制約を適用する場合は、注意が必要です。この制約を [ Deny または Deny All ] に設定することはできません。この制約が遡って適用されることはありません。許可されていないプロジェクトからの KMS CryptoKey を持つ既存の CMEK Google Cloud リソースは、手動で再構成または再作成して、この制約を適用する必要があります。 サポートされている接頭辞: is: 、 under: 詳しくは、 CMEK の組織のポリシー をご覧ください。 constraints/gcp.restrictCmekCryptoKeyProjects 複数の Google Cloud サービス エンドポイント使用の制限 リスト このリスト制約は、組織、フォルダ、プロジェクト内のリソースへのアクセスに使用できる一連の Google Cloud API エンドポイントを定義します。 この制約は、グローバル API エンドポイントを介した Google Cloud リソースへのアクセスをブロックし、ロケーションまたはリージョンのエンドポイントの使用を強制するために使用できます。たとえば、このポリシーの拒否リストに bigquery.googleapis.com を指定すると、 bigquery.googleapis.com/... へのリクエストは失敗しますが、 {location}-bigquery.googleapis.com/... へのリクエストは成功します。 デフォルトでは、すべての Google Cloud API エンドポイントへのアクセスが許可されます。 エンドポイントの拒否リストは、次のリストから取得する必要があります。他の値が含まれる拒否リストを保存しようとすると失敗します。 有効な制約値のリストなどの詳細については、 エンドポイント使用の制限に関するユーザーガイド をご覧ください。 この制約は、 ドライラン モード で使用できます。 サポートされている接頭辞: is: 、 in: 詳細については、 エンドポイントの使用の制限 をご覧ください。 constraints/gcp.restrictEndpointUsage 複数の Google Cloud サービス CMEK を使用せずにリソースを作成できるサービスを制限する リスト このリスト型制約は、顧客管理の暗号鍵（CMEK）を必要とするサービスを定義します。この制約を Deny に設定した場合（CMEK を使用しないリソース作成を認めない場合）、指定するサービスでは、新規に作成されるリソースを CMEK 鍵で保護する必要があります。この制約で設定できるサポート対象のサービスは次のとおりです。 aiplatform.googleapis.com alloydb.googleapis.com apigee.googleapis.com artifactregistry.googleapis.com bigquery.googleapis.com bigquerydatatransfer.googleapis.com bigtable.googleapis.com cloudfunctions.googleapis.com cloudscheduler.googleapis.com cloudtasks.googleapis.com composer.googleapis.com compute.googleapis.com contactcenterinsights.googleapis.com container.googleapis.com dataflow.googleapis.com dataform.googleapis.com datafusion.googleapis.com dataplex.googleapis.com dataproc.googleapis.com dialogflow.googleapis.com discoveryengine.googleapis.com documentai.googleapis.com eventarc.googleapis.com file.googleapis.com firestore.googleapis.com gkebackup.googleapis.com integrations.googleapis.com logging.googleapis.com looker.googleapis.com netapp.googleapis.com notebooks.googleapis.com pubsub.googleapis.com redis.googleapis.com run.googleapis.com secretmanager.googleapis.com securesourcemanager.googleapis.com securitycenter.googleapis.com spanner.googleapis.com speech.googleapis.com sqladmin.googleapis.com storage.googleapis.com storagetransfer.googleapis.com workstations.googleapis.com この制約を [ Deny All ] に設定することはできません。この制約を [ Allow ] に設定することはできません。この制約が遡って適用されることはありません。CMEK がない既存の Google Cloud リソースは、手動で再構成または再作成して、この制約を適用する必要があります。 サポートされている接頭辞: is: 詳しくは、 CMEK の組織のポリシー をご覧ください。 constraints/gcp.restrictNonCmekServices 複数の Google Cloud サービス リソース サービスの使用を制限する リスト この制約は、組織、フォルダ、プロジェクト内で使用できる一連の Google Cloud リソース サービス（compute.googleapis.com や storage.googleapis.com など）を定義します。 デフォルトでは、すべての Google Cloud リソース サービスが許可されています。 詳細については、https://cloud.google.com/resource-manager/help/organization-policy/restricting-resources をご覧ください。 この制約は、 ドライラン モード で使用できます。 サポートされている接頭辞: is: 詳細については、 リソース使用量の制限 をご覧ください。 constraints/gcp.restrictServiceUsage 複数の Google Cloud サービス TLS 暗号スイートの制限 リスト このリスト型制約は、この制約が適用される組織、フォルダ、またはプロジェクト内のリソースへのアクセスに使用できる TLS 暗号スイートのセットを定義します。 デフォルトでは、すべての TLS 暗号スイートが許可されています。TLS 暗号スイートは許可リストまたは拒否リストとして指定でき、名前を使用して識別する必要があります。たとえば、 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 、 TLS_AES_128_GCM_SHA256 などです。また、値グループ（制約を簡単に定義できるようにするために Google によってキュレートされた暗号スイートのコレクション）を指定することもできます。組織のポリシーで値グループを使用するには、エントリの先頭に文字列 in: を付加し、その後に値グループを配置します。たとえば、 in:CNSA-2.0-recommended-ciphers などです。 この制約は、TLS を使用するリクエストにのみ適用されます。暗号化されていないリクエストを制限するためには使用されません。 詳しくは、 TLS 暗号スイートの制限に関するユーザーガイド をご覧ください。 この制約は、 ドライラン モード で使用できます。 サポートされている接頭辞: is: 、 in: constraints/gcp.restrictTLSCipherSuites 複数の Google Cloud サービス TLS バージョンを制限する リスト この制約は、この制約が適用される組織、フォルダ、またはプロジェクト、あるいはそのリソースの階層内における子リソースでは使用できない TLS バージョンのセットを定義します。 デフォルトでは、すべての TLS バージョンが許可されます。TLS バージョンは拒否リストでのみ指定でき、 TLS_VERSION_1 または TLS_VERSION_1_1 の形式で指定する必要があります。 この制約は、TLS を使用するリクエストにのみ適用されます。暗号化されていないリクエストの制限には使用されません。 詳細については、https://cloud.google.com/assured-workloads/docs/restrict-tls-versions をご覧ください。 この制約は、 ドライラン モード で使用できます。 サポートされている接頭辞: is: 詳細については、 TLS バージョンを制限する をご覧ください。 constraints/gcp.restrictTLSVersion 複数の Google Cloud サービス リージョン リソースでの Identity-Aware Proxy（IAP）の有効化を無効にする ブール値 このブール型制約を適用すると、リージョン リソースで Identity-Aware Proxy を有効にできなくなります。グローバル リソースでの IAP の有効化は、この制約で制限されることはありません。 デフォルトでは、リージョン リソースで IAP を有効にすることができます。 constraints/iap.requireRegionalIapWebDisabled 複数の Google Cloud サービス 許可される Google Cloud API とサービスを制限する リスト このリスト型制約は、このリソースで有効にできるサービスと、そのサービスの API を制限します。デフォルトでは、すべてのサービスが許可されます。 サービスの拒否リストは、以下のリストから指定する必要があります。現在、この制約を介した API を明示的に有効にすることはできません。このリストにない API を指定すると、エラーが発生します。 compute.googleapis.com deploymentmanager.googleapis.com dns.googleapis.com この制約は遡って適用されることはありません。この制約が適用された時点でサービスがリソース上ですでに有効になっている場合、サービスは有効のままです。 サポートされている接頭辞: is: constraints/serviceuser.services Spanner コンプライアンス ワークロードの高度なサービス制御を有効にする ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約を適用すると、サポート性が一部影響を受け、プロビジョニングされたリソースが Assured Workloads の高度な主権要件に厳密に従うようになります。このポリシーは、既存のプロジェクトに適用されますが、すでにプロビジョニングされているリソースには影響しません。つまり、ポリシーを変更した場合、その変更内容はポリシー変更後に作成されたリソースにのみ反映されます。 constraints/spanner.assuredWorkloadsAdvancedServiceControls Spanner ロケーションが選択されていない場合に Cloud Spanner マルチリージョンを無効にする ブール値 このポリシーは構成または変更しないでください。この制約は Assured Workloads のオンボーディング時に自動的に構成され、Assured Workloads における高度な規制管理にのみ使用されます。このブール型制約を適用すると、ロケーションが選択されている場合を除き、マルチリージョン インスタンス構成を使用した Spanner インスタンスを作成できなくなります。現在のところ Cloud Spanner ではロケーションの選択はサポートされていないため、マルチリージョンはすべて禁止されます。将来的に、Spanner では、ユーザーがマルチリージョンのロケーションを選択する機能を提供する予定です。この制約が遡って適用されることはありません。作成済みの Spanner インスタンスは影響を受けません。 constraints/spanner.disableMultiRegionInstanceIfNoLocationSelected Cloud Storage Google Cloud Platform - 詳細な監査ログモード ブール値 詳細な監査ログモードが適用されている場合は、リクエストとレスポンスの両方が Cloud Audit Logs に含まれます。この機能を変更すると、反映されるまで 10 分ほどかかることがあります。SEC Rule 17a-4(f)、CFTC Rule 1.31(c)-(d)、FINRA Rule 4511(c) などの標準への準拠が目標である場合は、この組織のポリシーをバケットロックと連携して使用することを強くおすすめします。現時点では、このポリシーは Cloud Storage のみでサポートされています。 詳細については、 Cloud Storage の組織のポリシーの制約 をご覧ください。 constraints/gcp.detailedAuditLoggingMode Cloud Storage 公開アクセスの防止を適用する ブール値 公開アクセスの防止を適用して、Cloud Storage データが一般に公開されないようにします。このガバナンス ポリシーは、既存のリソースや将来のリソースが公共のインターネットを介してアクセスされないように、 allUsers と allAuthenticatedUsers にアクセス権を付与する ACL と IAM 権限を無効にしてブロックします。組織全体（推奨）、特定のプロジェクト、特定のフォルダにこのポリシーを適用することによって、データが公開されないようにできます。 このポリシーは、一般公開につながる既存の権限をオーバーライドします。このポリシーを有効にすると、既存のバケットとオブジェクトに対する公開アクセスが取り消されます。この制約の適用を変更した場合のリソースへの影響の詳細については、https://cloud.google.com/storage/docs/public-access-prevention をご覧ください。 詳細については、 Cloud Storage の組織のポリシーの制約 をご覧ください。 constraints/storage.publicAccessPrevention Cloud Storage Cloud Storage - 認証タイプを制限する リスト この制約は、Cloud Storage で組織のストレージ リソースへのアクセスが制限される認証タイプを定義します。サポートされる値は USER_ACCOUNT_HMAC_SIGNED_REQUESTS 、 SERVICE_ACCOUNT_HMAC_SIGNED_REQUESTS 、 RSA_SIGNED_REQUESTS です。ユーザー アカウントとサービス アカウントの HMAC で署名されたリクエストを含めるには、 in:ALL_HMAC_SIGNED_REQUESTS を使用します。HMAC と RSA で署名されたリクエストを含めるには、 in:ALL_SIGNED_REQUESTS を使用します。 サポートされている接頭辞: is: 、 in: constraints/storage.restrictAuthTypes Cloud Storage 保持ポリシー期間（秒） リスト このリスト型制約は、Cloud Storage バケットに設定できる保持ポリシーの期間を定義します。 デフォルトでは、組織のポリシーが指定されない場合、任意の期間の保持ポリシーを Cloud Storage バケットに格納できます。 許可期間のリストは、保持ポリシーを秒単位で表す、0 より大きい正の整数値として指定される必要があります。 組織リソース内のバケットに対する挿入、更新、またはパッチ オペレーションには、制約と一致する保持ポリシー期間を設定する必要があります。 この制約は遡って適用されることはありません。新しい組織ポリシーが適用されても、既存のバケットの保持ポリシーは変更されず有効なままです。 サポートされている接頭辞: is: 詳細については、 Cloud Storage の組織のポリシーの制約 をご覧ください。 constraints/storage.retentionPolicySeconds Cloud Storage 暗号化されていない HTTP アクセスを制限する ブール値 このブール型制約を適用すると、すべてのストレージ リソースへの HTTP（暗号化なし）アクセスが明示的に拒否されます。デフォルトでは、Cloud Storage XML API は暗号化されていない HTTP アクセスを許可します。Cloud Storage JSON API、gRPC、Cloud コンソールでは、Cloud Storage リソースへの暗号化された HTTP アクセスのみが許可されます。 constraints/storage.secureHttpTransport Cloud Storage Cloud Storage - 削除（復元可能）ポリシーの保持期間（秒） リスト この制約は、この制約の対象の Cloud Storage バケットに設定された削除（復元可能）ポリシーの許容保持期間を定義します。この制約が適用されるバケットへの挿入、更新、パッチ適用オペレーションには、制約と一致する削除（復元可能）ポリシー期間が存在する必要があります。新しい組織のポリシーが適用されても、既存のバケットの削除（復元可能）ポリシーは変更されず有効なままです。デフォルトでは、組織のポリシーが指定されない場合、任意の期間の削除（復元可能）ポリシーを Cloud Storage バケットに設定できます。 サポートされている接頭辞: is: constraints/storage.softDeletePolicySeconds Cloud Storage 均一なバケットレベルのアクセスの適用 ブール値 このブール型制約を True に設定すると、バケットで、均一なバケットレベルのアクセスを使用することが必須となります。組織リソース内に新規作成するバケットでは、均一なバケットレベルのアクセスを有効にする必要があります。組織リソース内の既存バケットで、均一なバケットレベルのアクセスを無効にすることはできません。 この制約は遡って適用されることはありません。均一なバケットレベルのアクセスが無効になっている既存のバケットでは、無効なままです。この制約のデフォルト値は False です。 均一なバケットレベルのアクセスでは、バケット内の Cloud Storage オブジェクトに割り当てられた ACL の評価は無効になります。そのため、IAM ポリシーによってのみ、これらのバケット内のオブジェクトへのアクセス権が付与されます。 この制約は、 Google Cloud セキュリティ ベースライン の一部として自動的にプロビジョニングされます。 詳細については、 Cloud Storage の組織のポリシーの制約 をご覧ください。 constraints/storage.uniformBucketLevelAccess 詳細 組織ポリシーの基本コンセプトの詳細については、以下をご覧ください。 組織ポリシーの概要 を読む。 制約について 読む。 組織ポリシーを作成して制約を使用する 方法について読む。 階層評価 の仕組みについて読む。 フィードバックを送信 特に記載のない限り、このページのコンテンツは クリエイティブ・コモンズの表示 4.0 ライセンス により使用許諾されます。コードサンプルは Apache 2.0 ライセンス により使用許諾されます。詳しくは、 Google Developers サイトのポリシー をご覧ください。Java は Oracle および関連会社の登録商標です。 最終更新日 2026-03-18 UTC。 ご意見をお聞かせください [[[\"わかりやすい\",\"easyToUnderstand\",\"thumb-up\"],[\"問題の解決に役立った\",\"solvedMyProblem\",\"thumb-up\"],[\"その他\",\"otherUp\",\"thumb-up\"]],[[\"わかりにくい\",\"hardToUnderstand\",\"thumb-down\"],[\"情報またはサンプルコードが不正確\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"必要な情報 / サンプルがない\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"翻訳に関する問題\",\"translationIssue\",\"thumb-down\"],[\"その他\",\"otherDown\",\"thumb-down\"]],[\"最終更新日 2026-03-18 UTC。\"],[],[]] プロダクトと料金 すべてのプロダクトを見る Google Cloud の料金 Google Cloud Marketplace お問い合わせ サポート コミュニティ フォーラム サポート リリースノート システム ステータス リソース GitHub Google Cloud の概要 コードサンプル Cloud アーキテクチャ センター トレーニングと認定資格 つながる ブログ イベント X（Twitter） YouTube の Google Cloud チャンネル YouTube の Google Cloud Tech チャンネル Google について プライバシー サイトの利用規約 Google Cloud 利用規約 Manage cookies Google の 30 年の気候変動対策: ご参加ください Google Cloud ニュースレターに登録 購読 English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ainotebooks.accessMode",
+      "ainotebooks.disableFileDownloads",
+      "ainotebooks.disableRootAccess",
+      "ainotebooks.disableTerminal",
+      "ainotebooks.environmentOptions",
+      "ainotebooks.requireAutoUpgradeSchedule",
+      "ainotebooks.restrictPublicIp",
+      "ainotebooks.restrictVpcNetworks",
+      "aiplatform.googleapis.com",
+      "alloydb.googleapis.com",
+      "apigee.googleapis.com",
+      "appengine.disableCodeDownload",
+      "appengine.runtimeDeploymentExemption",
+      "artifactregistry.googleapis.com",
+      "bigquery.disableBQOmniAWS",
+      "bigquery.disableBQOmniAzure",
+      "bigquery.googleapis.com",
+      "bigquerydatatransfer.googleapis.com",
+      "bigtable.googleapis.com",
+      "cloudbuild.allowedIntegrations",
+      "cloudbuild.allowedWorkerPools",
+      "cloudbuild.disableCreateDefaultServiceAccount",
+      "cloudbuild.useBuildServiceAccount",
+      "cloudbuild.useComputeServiceAccount",
+      "clouddeploy.disableServiceLabelGeneration",
+      "cloudfunctions.allowedIngressSettings",
+      "cloudfunctions.allowedVpcConnectorEgressSettings",
+      "cloudfunctions.googleapis.com",
+      "cloudfunctions.requireVPCConnector",
+      "cloudfunctions.restrictAllowedGenerations",
+      "cloudkms.allowedProtectionLevels",
+      "cloudkms.disableBeforeDestroy",
+      "cloudkms.minimumDestroyScheduledDuration",
+      "cloudscheduler.allowedTargetTypes",
+      "cloudscheduler.googleapis.com",
+      "cloudtasks.googleapis.com",
+      "commerceorggovernance.disablePublicMarketplace",
+      "commerceorggovernance.marketplaceServices",
+      "composer.googleapis.com",
+      "compute.allowedVlanAttachmentEncryption",
+      "compute.backendBuckets.use",
+      "compute.backendService.use",
+      "compute.disableAllIpv6",
+      "compute.disableGlobalCloudArmorPolicy",
+      "compute.disableGlobalLoadBalancing",
+      "compute.disableGlobalSelfManagedSslCertificate",
+      "compute.disableGlobalSerialPortAccess",
+      "compute.disableGuestAttributesAccess",
+      "compute.disableHybridCloudIpv6",
+      "compute.disableInstanceDataAccessApis",
+      "compute.disableInternetNetworkEndpointGroup",
+      "compute.disableNestedVirtualization",
+      "compute.disableNonFIPSMachineTypes",
+      "compute.disablePrivateServiceConnectCreationForConsumers",
+      "compute.disableSerialPortAccess",
+      "compute.disableSerialPortLogging",
+      "compute.disableSshInBrowser",
+      "compute.disableVpcExternalIpv6",
+      "compute.disableVpcInternalIpv6",
+      "compute.enableComplianceMemoryProtection",
+      "compute.googleapis.com",
+      "compute.managed.allowedVlanAttachmentEncryption",
+      "compute.managed.blockPreviewFeatures",
+      "compute.managed.disableNestedVirtualization",
+      "compute.managed.disableSerialPortAccess",
+      "compute.managed.disableSerialPortLogging",
+      "compute.managed.disallowGlobalDns",
+      "compute.managed.requireOsConfig",
+      "compute.managed.requireOsLogin",
+      "compute.managed.restrictProtocolForwardingCreationForTypes",
+      "compute.managed.vmCanIpForward",
+      "compute.managed.vmExternalIpAccess",
+      "compute.regionBackendServices.use",
+      "compute.requireBasicQuotaInResponse",
+      "compute.requireOsConfig",
+      "compute.requireOsLogin",
+      "compute.requireShieldedVm",
+      "compute.requireSslPolicy",
+      "compute.requireVpcFlowLogs",
+      "compute.restrictCloudNATUsage",
+      "compute.restrictCrossProjectServices",
+      "compute.restrictDedicatedInterconnectUsage",
+      "compute.restrictLoadBalancerCreationForTypes",
+      "compute.restrictNonConfidentialComputing",
+      "compute.restrictPartnerInterconnectUsage",
+      "compute.restrictPrivateServiceConnectConsumer",
+      "compute.restrictPrivateServiceConnectProducer",
+      "compute.restrictProtocolForwardingCreationForTypes",
+      "compute.restrictSharedVpcBackendServices",
+      "compute.restrictSharedVpcHostProjects",
+      "compute.restrictSharedVpcSubnetworks",
+      "compute.restrictVpcPeering",
+      "compute.restrictVpnPeerIPs",
+      "compute.restrictXpnProjectLienRemoval",
+      "compute.setNewProjectDefaultToZonalDNSOnly",
+      "compute.sharedReservationsOwnerProjects",
+      "compute.skipDefaultNetworkCreation",
+      "compute.storageResourceUseRestrictions",
+      "compute.trustedImageProjects",
+      "compute.vmCanIpForward",
+      "compute.vmExternalIpAccess",
+      "contactcenterinsights.googleapis.com",
+      "container.googleapis.com",
+      "container.managed.denyServiceExternalIPs",
+      "container.managed.disableABAC",
+      "container.managed.disableInsecureKubeletReadOnlyPort",
+      "container.managed.disableLegacyClientCertificateIssuance",
+      "container.managed.disableRBACSystemBindings",
+      "container.managed.disallowDefaultComputeServiceAccount",
+      "container.managed.enableBinaryAuthorization",
+      "container.managed.enableCloudLogging",
+      "container.managed.enableControlPlaneDNSOnlyAccess",
+      "container.managed.enableGoogleGroupsRBAC",
+      "container.managed.enableNetworkPolicy",
+      "container.managed.enablePrivateNodes",
+      "container.managed.enableSecretsEncryption",
+      "container.managed.enableSecurityBulletinNotifications",
+      "container.managed.enableShieldedNodes",
+      "container.managed.enableWorkloadIdentityFederation",
+      "container.restrictNoncompliantDiagnosticDataAccess",
+      "custom.cantGrantProjectIamAdmin",
+      "dataflow.googleapis.com",
+      "dataflow.managed.blockProjectSshKeys",
+      "dataflow.managed.disableUsePublicIps",
+      "dataform.googleapis.com",
+      "dataform.restrictGitRemotes",
+      "datafusion.googleapis.com",
+      "dataplex.googleapis.com",
+      "dataproc.googleapis.com",
+      "datastream.disablePublicConnectivity",
+      "deploymentmanager.googleapis.com",
+      "dialogflow.googleapis.com",
+      "discoveryengine.googleapis.com",
+      "dns.googleapis.com",
+      "documentai.googleapis.com",
+      "essentialcontacts.allowedContactDomains",
+      "essentialcontacts.disableProjectSecurityContacts",
+      "essentialcontacts.managed.allowedContactDomains",
+      "eventarc.googleapis.com",
+      "example.com",
+      "file.googleapis.com",
+      "firestore.googleapis.com",
+      "firestore.requireP4SAforImportExport",
+      "folders.listAvailableOrgPolicyConstraints",
+      "gcloud.projects.set",
+      "gcp.detailedAuditLoggingMode",
+      "gcp.disableCloudLogging",
+      "gcp.managed.mcpAllowedServices",
+      "gcp.resourceLocations",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictEndpointUsage",
+      "gcp.restrictNonCmekServices",
+      "gcp.restrictServiceUsage",
+      "gcp.restrictTLSCipherSuites",
+      "gcp.restrictTLSVersion",
+      "gcr.io",
+      "gkebackup.googleapis.com",
+      "googleapis.com",
+      "gpu.1",
+      "iam.allowedPolicyMemberDomains",
+      "iam.allowServiceAccountCredentialLifetimeExtension",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.disableAuditLoggingExemption",
+      "iam.disableCrossProjectServiceAccountUsage",
+      "iam.disableServiceAccountCreation",
+      "iam.disableServiceAccountKeyCreation",
+      "iam.disableServiceAccountKeyUpload",
+      "iam.disableWorkloadIdentityClusterCreation",
+      "iam.managed.allowedPolicyMembers",
+      "iam.managed.disableServiceAccountApiKeyCreation",
+      "iam.managed.disableServiceAccountCreation",
+      "iam.managed.disableServiceAccountKeyCreation",
+      "iam.managed.disableServiceAccountKeyUpload",
+      "iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts",
+      "iam.managed.workloadIdentityPoolAwsAccounts",
+      "iam.managed.workloadIdentityPoolProviders",
+      "iam.restrictCrossProjectServiceAccountLienRemoval",
+      "iam.serviceAccountKeyExpiryHours",
+      "iam.serviceAccountKeyExposureResponse",
+      "iam.workloadIdentityPoolAwsAccounts",
+      "iam.workloadIdentityPoolProviders",
+      "iap.requireGlobalIapWebDisabled",
+      "iap.requireRegionalIapWebDisabled",
+      "integrations.googleapis.com",
+      "logging.googleapis.com",
+      "looker.googleapis.com",
+      "managedkafka.managed.disableKafkaConnectClusterCreateAndUpdate",
+      "meshconfig.allowedVpcscModes",
+      "netapp.googleapis.com",
+      "notebooks.googleapis.com",
+      "osconfig.restrictInlineScriptAndOutputFileUsage",
+      "projects.get",
+      "pubsub.enforceInTransitRegions",
+      "pubsub.googleapis.com",
+      "pubsub.managed.disableSubscriptionMessageTransforms",
+      "pubsub.managed.disableTopicMessageTransforms",
+      "redis.googleapis.com",
+      "regions.get",
+      "regions.list",
+      "resourcemanager.accessBoundaries",
+      "resourcemanager.allowedExportDestinations",
+      "resourcemanager.allowedImportSources",
+      "resourcemanager.allowEnabledServicesForExport",
+      "run.allowedBinaryAuthorizationPolicies",
+      "run.allowedIngress",
+      "run.allowedVPCEgress",
+      "run.googleapis.com",
+      "run.managed.requireInvokerIam",
+      "run.routes.invoke",
+      "secretmanager.googleapis.com",
+      "securesourcemanager.googleapis.com",
+      "securitycenter.googleapis.com",
+      "service.invoker_iam_disabled",
+      "serviceuser.services",
+      "spanner.assuredWorkloadsAdvancedServiceControls",
+      "spanner.disableMultiRegionInstanceIfNoLocationSelected",
+      "spanner.googleapis.com",
+      "spanner.managed.restrictCloudSpannerEditions",
+      "speech.googleapis.com",
+      "sql.restrictAuthorizedNetworks",
+      "sql.restrictNoncompliantDiagnosticDataAccess",
+      "sql.restrictNoncompliantResourceCreation",
+      "sql.restrictPublicIp",
+      "sqladmin.googleapis.com",
+      "storage.googleapis.com",
+      "storage.publicAccessPrevention",
+      "storage.restrictAuthTypes",
+      "storage.retentionPolicySeconds",
+      "storage.secureHttpTransport",
+      "storage.softDeletePolicySeconds",
+      "storage.uniformBucketLevelAccess",
+      "storagetransfer.googleapis.com",
+      "type.googleapis.com",
+      "vertexai.allowedGenAIModels",
+      "vertexai.allowedModels",
+      "vertexai.allowedPartnerModelFeatures",
+      "vertexai.disableGenAIGoogleSearchGrounding",
+      "vertexai.genAIGroundingSources",
+      "workstations.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/organization-policy/restrict-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+      ]
+    }
+  ]
+}

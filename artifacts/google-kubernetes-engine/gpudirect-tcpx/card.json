@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GPUDirect-TCPX",
+  "feature_slug": "gpudirect-tcpx",
+  "summary": "GPUDirect-TCPX support is available on supported GKE versions for GPU network acceleration.",
+  "extended_definition": "GPUDirect-TCPX support is available on supported GKE versions for GPU network acceleration.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Train Llama2 with Megatron-LM on A3 Mega virtual machines \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Set up your environment Create environment variables for some common parameters export CLUSTER NAME= CLUSTER NAME export CONTROL PLANE LOCATION= CONTROL PLANE LOCATION export PROJECT ID= PROJECT ID Replace the following: CLUSTER NAME : the name of your A3 Mega GKE cluster that has GPUDirect-TCPXO and multi-networking enabled.",
+          "Create an A3 Mega cluster Create a A3 Mega GKE cluster with GPUDirect-TCPXO and multi-networking.",
+          "Set up the service account: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/gpudirect-tcpxo/topology-scheduler/service-account.yaml Install the topology scheduler scripts in a configmap: curl -OL https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/gpudirect-tcpxo/topology-scheduler/schedule-daemon.py curl -OL https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/gpudirect-tcpxo/topology-scheduler/label-nodes-daemon.py kubectl -n kube-system create configmap topology-scheduler-scripts \\ --from-file=schedule-daemon.py=schedule-daemon.py \\ --from-file=label-nodes-daemon.py=label-nodes-daemon.py Install the topology label daemonset and topology scheduler Pod: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/gpudirect-tcpxo/topology-scheduler/label-nodes-daemon.yaml $ kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/gpudirect-tcpxo/topology-scheduler/schedule-daemon.yaml Observe the actions of the topology scheduler: kubectl -n kube-system logs topology-scheduler-pod Run the workload Build the Dockerfile and push to the Google Cloud Artifact Registry Create a Cloud Storage bucket and a Docker repository ."
+        ]
+      },
+      {
+        "title": "\"Allocate network resources by using GKE managed DRANET \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request a specific number of network devices The preceding examples show how to request all available network devices of a certain type by setting allocationMode to All .",
+          "Common use cases for requesting network interfaces for a Pod include: Requesting all available RDMA-capable interfaces.",
+          "In GKE versions 1.34.1-gke.1829001 and later, GKE automatically installs DeviceClass resources for networking."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "AdvancedDatapathObservabilityConfig JSON representation { \"enableMetrics\" : boolean , \"relayMode\" : enum ( RelayMode ) , // Union field enable relay can be only one of the following: \"enableRelay\" : boolean // End of list of possible types for union field enable relay . } Fields enableMetrics boolean Expose flow metrics on nodes relayMode enum ( RelayMode ) Method used to make Relay available Union field enable relay . enable relay can be only one of the following: enableRelay boolean Enable Relay component NodePoolAutoConfig JSON representation { \"networkTags\" : { object ( NetworkTags ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"nodeKubeletConfig\" : { object ( NodeKubeletConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } } Fields networkTags object ( NetworkTags ) The list of instance tags applied to all nodes.",
+          "Leave blank to have one automatically chosen or specify a /14 block in 10.0.0.0/8 . addonsConfig object ( AddonsConfig ) Configurations for the various addons available to run in the cluster. subnetwork string The name of the Google Compute Engine subnetwork to which the cluster is connected. nodePools[] object ( NodePool ) The node pools associated with this cluster.",
+          "If left as an empty string, monitoring.googleapis.com/kubernetes will be used for GKE 1.14+ or monitoring.googleapis.com for earlier versions. network string The name of the Google Compute Engine network to which the cluster is connected."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.yaml",
+      "container.googleapis.com",
+      "daemon.py",
+      "daemon.yaml",
+      "gke.1829001",
+      "monitoring.googleapis.com",
+      "raw.githubusercontent.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/training-megatron-llama-workload",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

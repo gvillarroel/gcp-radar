@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Advanced Reports",
+  "feature_slug": "advanced-reports",
+  "summary": "Advanced Reports now supports case custom fields for Looker-based analysis and visualizations.",
+  "extended_definition": "Advanced Reports now supports case custom fields for Looker-based analysis and visualizations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cases Folder Path String I:\\SiemShare\\CorrelationSource Yes The location of the case files, such as I:\\SiemShare\\CorrelationSource Note: The Cases Folder Path parameter can be changed from one customer to another.",
+          "Example: CustomDeviceString2 Alert Custom Fields Names String N/A No Pull custom field values from ArcSight into the alert, such as baseEventCount,agent address,device assetId.",
+          "Environment Field Name String event.customerURI Yes The name of the field to get the case's environment, for example, event.customerUri."
+        ]
+      },
+      {
+        "title": "\"Integrate Active Directory with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Get Manager Contact Details action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Entity enrichment table Available JSON result Available Output messages Available Script result Available Entity enrichment The Get Manager Contact Details action supports the following entity enrichment: Enrichment field name Logic AD Manager Name The action returns the value if it exists in the JSON result.",
+          "Action outputs The Enrich Entities action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Entity enrichment table Available JSON result Available Script result Available Entity enrichment The Enrich Entities action supports the following entity enrichment: Enrichment field name Logic AD primaryGroupID The action returns the value if it exists in the JSON result.",
+          "Custom fields of the Active Directory integration, such as customField1, customField2 ."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.",
+          "Supported fields You can download the following fields to a CSV file from the platform: user hostname process name event type timestamp raw log (valid only when raw logs are enabled for the customer) All fields starting with udm.additional Valid field types You can download the following field types to a CSV file: double float int32 uint32 int64 uint64 bool string enum bytes google.protobuf.Timestamp google.protobuf.Duration Unsupported fields Fields that start with \"udm\" (not udm.additional) and meet either of the following conditions cannot be downloaded to CSV: The nesting of the field is more than 10 deep in udm proto.",
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "event.customerUri",
+      "event.customerURI",
+      "example.com",
+      "fields.value",
+      "file.full",
+      "labels.value",
+      "metadata.description",
+      "metadata.event",
+      "metadata.product",
+      "network.http.user",
+      "network.parent",
+      "network.sent",
+      "network.session",
+      "powershell.exe",
+      "principal.asset",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.process.product",
+      "principal.registry.registry",
+      "principal.resource.id",
+      "principal.url",
+      "registry.registry",
+      "resource.id",
+      "result.description",
+      "result.detection",
+      "result.rule",
+      "result.summary",
+      "src.labels.value",
+      "target.hostname",
+      "target.process.file.full",
+      "target.process.pid",
+      "udm.additional",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    }
+  ]
+}

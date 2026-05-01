@@ -1,0 +1,359 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.664Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "HL7v2 message import from Cloud Storage",
+  "feature_slug": "hl7v2-message-import-from-cloud-storage",
+  "summary": "Cloud Healthcare API now supports importing HL7v2 messages from Cloud Storage.",
+  "extended_definition": "Cloud Healthcare API now supports importing HL7v2 messages from Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Import and export FHIR resources using Cloud Storage \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Setting Cloud Storage permissions Before exporting and importing FHIR resources to and from Cloud Storage, you must grant additional permissions to the Cloud Healthcare Service Agent service account .",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), responseType : 'json' , }); const sleep = ms = > { return new Promise ( resolve = > setTimeout ( resolve , ms )); }; const importFhirResources = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const gcsUri = 'my-bucket/my-directory/ .json' const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { name , resource : { contentStructure : 'RESOURCE' , gcsSource : { uri : gs:// ${ gcsUri } , }, }, }; try { const operation = await healthcare . projects . locations . datasets . fhirStores . import ( request ); const operationName = operation . data . name ; console . log ( Import operation started: ${ operationName } ); let done = false ; let operationStatus ; let attempts = 0 ; while ( ! done && attempts < 100 ) { console . log ( 'Waiting for import operation to complete...' ); attempts ++ ; await sleep ( 5000 ); // Wait 5 seconds between polls operationStatus = await healthcare . projects . locations . datasets . operations . get ({ name : operationName , }); done = operationStatus . data . done ; } if ( operationStatus . data . error ) { console . error ( 'Import FHIR resources failed:' , operationStatus . data . error ); } else if ( done ) { const successCount = operationStatus . data . metadata ? . counter ? . success 0 ; console . log ( Import FHIR resources succeeded. ${ successCount } resources imported. ); } else { console . error ( 'Import operation timed out in the sample.' ); } } catch ( error ) { console . error ( 'An error occurred during the import process:' , error . message error ); } }; importFhirResources (); Python def import fhir resources ( project id , location , dataset id , fhir store id , gcs uri ): \"\"\"Import resources into the FHIR store by copying them from the specified source.",
+          "To track the status of the operation, you can use the Operation get method : curl -X GET \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \" If the request is successful, the server returns a response with the status of the operation in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.fhir.FhirService.ImportResources\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": \"https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL \", \"counter\": { \"success\": \" SUCCESS COUNT \" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.fhir.rest.ImportResourcesResponse\", } } PowerShell To import FHIR resources into a FHIR store, make a POST request and specify the following information: The name of the parent dataset The name of the FHIR store The location of the object in a Cloud Storage bucket An access token The following sample shows a POST request using Windows PowerShell. $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Body \"{ 'contentStructure': ' CONTENT STRUCTURE ', 'gcsSource': { 'uri': 'gs:// BUCKET / DIRECTORY / FHIR RESOURCE FILE ' } }\" -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID :import\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \" } The response contains an operation name."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Consent store roles Consent store role Permissions Healthcare Consent Store Viewer ( roles/ healthcare.consentStoreViewer ) List Consent Stores in a dataset. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Store Administrator ( roles/ healthcare.consentStoreAdmin ) Administer Consent stores. healthcare.consentStores. healthcare. consentStores. checkDataAccess healthcare. consentStores. create healthcare. consentStores. delete healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare. consentStores. getIamPolicy healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare. consentStores. setIamPolicy healthcare. consentStores. update healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Consents roles Consents role Permissions Healthcare Attribute Definition Reader ( roles/ healthcare.attributeDefinitionReader ) Read AttributeDefinition objects in a consent store. healthcare. attributeDefinitions. get healthcare. attributeDefinitions. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Attribute Definition Editor ( roles/ healthcare.attributeDefinitionEditor ) Edit AttributeDefinition objects. healthcare. attributeDefinitions. healthcare. attributeDefinitions. create healthcare. attributeDefinitions. delete healthcare. attributeDefinitions. get healthcare. attributeDefinitions. list healthcare. attributeDefinitions. update healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Artifact Reader ( roles/ healthcare.consentArtifactReader ) Read ConsentArtifact objects in a consent store. healthcare. consentArtifacts. get healthcare. consentArtifacts. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Artifact Editor ( roles/ healthcare.consentArtifactEditor ) Edit ConsentArtifact objects. healthcare. consentArtifacts. create healthcare. consentArtifacts. get healthcare. consentArtifacts. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Artifact Administrator ( roles/ healthcare.consentArtifactAdmin ) Administer ConsentArtifact objects. healthcare.consentArtifacts. healthcare. consentArtifacts. create healthcare. consentArtifacts. delete healthcare. consentArtifacts. get healthcare. consentArtifacts. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Reader ( roles/ healthcare.consentReader ) Read Consent objects in a consent store. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.consents.get healthcare.consents.list healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Editor ( roles/ healthcare.consentEditor ) Edit Consent objects. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.consents. healthcare.consents.activate healthcare.consents.create healthcare.consents.delete healthcare.consents.get healthcare.consents.list healthcare.consents.reject healthcare.consents.revoke healthcare.consents.update healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare User Data Mapping Reader ( roles/ healthcare.userDataMappingReader ) Read UserDataMapping objects in a consent store. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get healthcare. userDataMappings. get healthcare. userDataMappings. list resourcemanager.projects.get resourcemanager.projects.list Healthcare User Data Mapping Editor ( roles/ healthcare.userDataMappingEditor ) Edit UserDataMapping objects. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get healthcare.userDataMappings. healthcare. userDataMappings. archive healthcare. userDataMappings. create healthcare. userDataMappings. delete healthcare. userDataMappings. get healthcare. userDataMappings. list healthcare. userDataMappings. update resourcemanager.projects.get resourcemanager.projects.list Datasets roles Datasets role Permissions Healthcare Dataset Viewer ( roles/ healthcare.datasetViewer ) List the Healthcare Datasets in a project. healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Dataset Administrator ( roles/ healthcare.datasetAdmin ) Administer Healthcare Datasets. healthcare.datasets. healthcare.datasets.create healthcare.datasets.deidentify healthcare.datasets.delete healthcare.datasets.get healthcare. datasets. getIamPolicy healthcare.datasets.list healthcare. datasets. setIamPolicy healthcare.datasets.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations. healthcare.operations.cancel healthcare.operations.get healthcare.operations.list resourcemanager.projects.get resourcemanager.projects.list DICOM store roles DICOM store role Permissions Healthcare DICOM Store Viewer ( roles/ healthcare.dicomStoreViewer ) List DICOM Stores in a dataset. healthcare.datasets.get healthcare.datasets.list healthcare.dicomStores.get healthcare.dicomStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare DICOM Store Administrator ( roles/ healthcare.dicomStoreAdmin ) Administer DICOM stores. healthcare.datasets.get healthcare.datasets.list healthcare.dicomStores.create healthcare. dicomStores. deidentify healthcare.dicomStores.delete healthcare. dicomStores. dicomWebDelete healthcare.dicomStores.get healthcare. dicomStores. getIamPolicy healthcare.dicomStores.list healthcare. dicomStores. setIamPolicy healthcare.dicomStores.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare DICOM Viewer ( roles/ healthcare.dicomViewer ) Retrieve DICOM images from a DICOM store. healthcare.datasets.get healthcare.datasets.list healthcare. dicomStores. dicomWebRead healthcare.dicomStores.export healthcare.dicomStores.get healthcare.dicomStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare DICOM Editor ( roles/ healthcare.dicomEditor ) Edit DICOM images individually and in bulk. healthcare.datasets.get healthcare.datasets.list healthcare. dicomStores. dicomWebDelete healthcare. dicomStores. dicomWebRead healthcare. dicomStores. dicomWebUpdate healthcare. dicomStores. dicomWebWrite healthcare.dicomStores.export healthcare.dicomStores.get healthcare.dicomStores.import healthcare.dicomStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list FHIR store roles FHIR store role Permissions Healthcare FHIR Store Viewer ( roles/ healthcare.fhirStoreViewer ) List FHIR Stores in a dataset. healthcare.datasets.get healthcare.datasets.list healthcare.fhirStores.get healthcare.fhirStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare FHIR Store Administrator ( roles/ healthcare.fhirStoreAdmin ) Administer FHIR resource stores. healthcare.datasets.get healthcare.datasets.list healthcare.fhirResources.purge healthcare. fhirStores. applyConsents healthcare. fhirStores. bulkDelete healthcare. fhirStores. configureSearch healthcare.fhirStores.create healthcare. fhirStores. deidentify healthcare.fhirStores.delete healthcare. fhirStores. deleteFhirOperation healthcare. fhirStores. explainDataAccess healthcare.fhirStores.export healthcare.fhirStores.get healthcare. fhirStores. getFhirOperation healthcare. fhirStores. getIamPolicy healthcare.fhirStores.import healthcare.fhirStores.list healthcare.fhirStores.rollback healthcare. fhirStores. setIamPolicy healthcare.fhirStores.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare FHIR Resource Reader ( roles/ healthcare.fhirResourceReader ) Read and search FHIR resources. healthcare.datasets.get healthcare.datasets.list healthcare.fhirResources.get healthcare. fhirResources. translateConceptMap healthcare. fhirStores. executeBundle healthcare.fhirStores.get healthcare.fhirStores.list healthcare. fhirStores. searchResources healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare FHIR Resource Editor ( roles/ healthcare.fhirResourceEditor ) Create, delete, update, read and search FHIR resources. healthcare.datasets.get healthcare.datasets.list healthcare. fhirResources. create healthcare. fhirResources. delete healthcare.fhirResources.get healthcare.fhirResources.patch healthcare. fhirResources. translateConceptMap healthcare. fhirResources. update healthcare. fhirStores. executeBundle healthcare.fhirStores.get healthcare.fhirStores.list healthcare. fhirStores. searchResources healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list HL7v2 store roles HL7v2 store role Permissions Healthcare HL7v2 Store Viewer ( roles/ healthcare.hl7V2StoreViewer ) View HL7v2 Stores in a dataset. healthcare.datasets.get healthcare.datasets.list healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Store Administrator ( roles/ healthcare.hl7V2StoreAdmin ) Administer HL7v2 Stores. healthcare.datasets.get healthcare.datasets.list healthcare.hl7V2Stores. healthcare.hl7V2Stores.create healthcare.hl7V2Stores.delete healthcare.hl7V2Stores.export healthcare.hl7V2Stores.get healthcare. hl7V2Stores. getIamPolicy healthcare.hl7V2Stores.import healthcare.hl7V2Stores.list healthcare. hl7V2Stores. rollback healthcare. hl7V2Stores. setIamPolicy healthcare.hl7V2Stores.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Message Ingest ( roles/ healthcare.hl7V2Ingest ) Ingest HL7v2 messages received from a source network. healthcare.datasets.get healthcare.datasets.list healthcare. hl7V2Messages. ingest healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Message Consumer ( roles/ healthcare.hl7V2Consumer ) List and read HL7v2 messages, update message labels, and publish new messages. healthcare.datasets.get healthcare.datasets.list healthcare. hl7V2Messages. create healthcare.hl7V2Messages.get healthcare.hl7V2Messages.list healthcare. hl7V2Messages. update healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Message Editor ( roles/ healthcare.hl7V2Editor ) Read, write, and delete access to HL7v2 messages. healthcare.datasets.get healthcare.datasets.list healthcare.hl7V2Messages. healthcare. hl7V2Messages. create healthcare. hl7V2Messages. delete healthcare.hl7V2Messages.get healthcare. hl7V2Messages. ingest healthcare.hl7V2Messages.list healthcare. hl7V2Messages. update healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Natural Language API roles Healthcare Natural Language API role Permissions Healthcare NLP Service Viewer Beta ( roles/ healthcare.nlpServiceViewer ) Extract and analyze medical entities from a given text. healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare. nlpservice. analyzeEntities resourcemanager.projects.get resourcemanager.projects.list Cloud Healthcare Service Agent The Cloud Healthcare Service Agent is a shared service account in your project that Cloud Healthcare API uses to interact with other resources in Google Cloud.",
+          "See Importing data from Cloud Storage for instructions. datasets.dicomStores.list healthcare.dicomStores.list on the parent dataset. datasets.dicomStores.patch healthcare.dicomStores.update on the requested DICOM store. datasets.dicomStores.searchForInstances healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.searchForSeries healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.searchForStudies healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.setIamPolicy healthcare.dicomStores.setIamPolicy on the requested DICOM store. datasets.dicomStores.storeInstances healthcare.dicomStores.dicomWebWrite on the requested DICOM store. datasets.dicomStores.studies.delete healthcare.dicomStores.dicomWebDelete on the requested DICOM store. datasets.dicomStores.studies.retrieveMetadata healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.retrieveStudy healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.searchForInstances healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.searchForSeries healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.storeInstances healthcare.dicomStores.dicomWebWrite on the requested DICOM store. datasets.dicomStores.studies.updateInstances healthcare.dicomStores.dicomWebUpdate on the requested DICOM store. datasets.dicomStores.studies.updateMetadata healthcare.dicomStores.dicomWebUpdate on the requested DICOM store. datasets.dicomStores.studies.series.delete healthcare.dicomStores.dicomWebDelete on the requested DICOM store. datasets.dicomStores.studies.series.retrieveMetadata healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.retrieveSeries healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.searchForInstances healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.updateMetadata healthcare.dicomStores.dicomWebUpdate on the requested DICOM store. datasets.dicomStores.studies.series.instances.delete healthcare.dicomStores.dicomWebDelete on the requested DICOM store. datasets.dicomStores.studies.series.instances.retrieveInstance healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.instances.retrieveMetadata healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.instances.retrieveRendered healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.instances.updateMetadata healthcare.dicomStores.dicomWebUpdate on the requested DICOM store. datasets.dicomStores.studies.series.instances.frames.retrieveFrames healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.instances.frames.retrieveRendered healthcare.dicomStores.dicomWebRead on the requested DICOM store. datasets.dicomStores.studies.series.instances.bulkdata.retrieveBulkdata healthcare.dicomStores.dicomWebRead on the requested DICOM store.",
+          "See Importing FHIR resources from Cloud Storage for instructions. datasets.fhirStores.list healthcare.fhirStores.list on the parent dataset. datasets.fhirStores.patch healthcare.fhirStores.update on the requested FHIR store. datasets.fhirStores.rollback healthcare.fhirStores.rollback on the requested FHIR store. datasets.fhirStores.setIamPolicy healthcare.fhirStores.setIamPolicy on the requested FHIR store. datasets.fhirStores.fhir.Encounter-everything healthcare.fhirResources.get on each resource returned. datasets.fhirStores.fhir.Observation-lastn healthcare.fhirStores.searchResources on the parent FHIR store. datasets.fhirStores.fhir.Patient-everything healthcare.fhirResources.get on each resource returned. datasets.fhirStores.fhir.Resource-purge healthcare.fhirResources.purge on the requested FHIR store resource. datasets.fhirStores.fhir.capabilities healthcare.fhirStores.get on the requested FHIR store. datasets.fhirStores.fhir.conditionalDelete healthcare.fhirStores.searchResources on the parent FHIR store. healthcare.fhirResources.delete on the requested FHIR store resource. datasets.fhirStores.fhir.conditionalPatch healthcare.fhirStores.searchResources on the parent FHIR store. healthcare.fhirResources.patch on the requested FHIR store resource. datasets.fhirStores.fhir.conditionalUpdate healthcare.fhirStores.searchResources on the parent FHIR store. healthcare.fhirResources.update on the requested FHIR store resource. datasets.fhirStores.fhir.create For conditional create interactions: healthcare.fhirResources.create and healthcare.fhirStores.searchResources on the parent FHIR store."
+        ]
+      },
+      {
+        "title": "\"Transmitting HL7v2 messages over TCP/IP connections \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the directory where you downloaded the file, call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file called hl7v2-sample.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=\", \"sendFacility\": \"SEND FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=\", \"sendFacility\": \"SEND FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } After creating the message, the MLLP adapter returns a response similar to the following: I0214 00:00:00.000000 1 healthapiclient.go:244] Started to fetch message from the Cloud Healthcare API HL7V2 Store I0214 00:00:00.000000 1 healthapiclient.go:283] Message was successfully fetched from the Cloud Healthcare API HL7V2 Store.",
+          "In the directory where you downloaded hl7v2-sample1.json , call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file, hl7v2-sample1.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample1.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzF8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 1\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample1.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample1.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzF8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 1\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } In this response, sendFacility is set to SEND FACILITY 1 , therefore the Pub/Sub notification is only sent to the first Pub/Sub topic.",
+          "In the directory where you downloaded hl7v2-sample2.json , call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file, hl7v2-sample2.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample2.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzJ8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 2\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file, hl7v2-sample2.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample2.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZXzJ8QXxBfDIwMTgwMTAxMDAwMDAwfHxUWVBFXkF8MjAxODAxMDEwMDAwMDB8VHwwLjB8fHxBQXx8MDB8QVNDSUkNRVZOfEEwMHwyMDE4MDEwMTA0MDAwMA1QSUR8fDE0ATExMV5eXl5NUk58MTExMTExMTFeXl5eTVJOfjExMTExMTExMTFeXl5eT1JHTk1CUg==\", \"sendFacility\": \"SEND FACILITY 2\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } Note that the sendFacility is SEND FACILITY 2 , therefore the Pub/Sub notification is only sent to the second Pub/Sub topic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "datasets.dicomStores.list",
+      "datasets.dicomStores.patch",
+      "datasets.dicomStores.searchForInstances",
+      "datasets.dicomStores.searchForSeries",
+      "datasets.dicomStores.searchForStudies",
+      "datasets.dicomStores.setIamPolicy",
+      "datasets.dicomStores.storeInstances",
+      "datasets.dicomStores.studies.delete",
+      "datasets.dicomStores.studies.retrieveMetadata",
+      "datasets.dicomStores.studies.retrieveStudy",
+      "datasets.dicomStores.studies.searchForInstances",
+      "datasets.dicomStores.studies.searchForSeries",
+      "datasets.dicomStores.studies.series.delete",
+      "datasets.dicomStores.studies.series.instances.bulkdata.retrieveBulkdata",
+      "datasets.dicomStores.studies.series.instances.delete",
+      "datasets.dicomStores.studies.series.instances.frames.retrieveFrames",
+      "datasets.dicomStores.studies.series.instances.frames.retrieveRendered",
+      "datasets.dicomStores.studies.series.instances.retrieveInstance",
+      "datasets.dicomStores.studies.series.instances.retrieveMetadata",
+      "datasets.dicomStores.studies.series.instances.retrieveRendered",
+      "datasets.dicomStores.studies.series.instances.updateMetadata",
+      "datasets.dicomStores.studies.series.retrieveMetadata",
+      "datasets.dicomStores.studies.series.retrieveSeries",
+      "datasets.dicomStores.studies.series.searchForInstances",
+      "datasets.dicomStores.studies.series.updateMetadata",
+      "datasets.dicomStores.studies.storeInstances",
+      "datasets.dicomStores.studies.updateInstances",
+      "datasets.dicomStores.studies.updateMetadata",
+      "datasets.fhirStores.fhir.capabilities",
+      "datasets.fhirStores.fhir.conditionalDelete",
+      "datasets.fhirStores.fhir.conditionalPatch",
+      "datasets.fhirStores.fhir.conditionalUpdate",
+      "datasets.fhirStores.fhir.create",
+      "datasets.fhirStores.fhir.Encounter",
+      "datasets.fhirStores.fhir.Observation",
+      "datasets.fhirStores.fhir.Patient",
+      "datasets.fhirStores.fhir.Resource",
+      "datasets.fhirStores.list",
+      "datasets.fhirStores.patch",
+      "datasets.fhirStores.rollback",
+      "datasets.fhirStores.setIamPolicy",
+      "datasets.hl7V2Stores.create",
+      "datasets.hl7V2Stores.delete",
+      "datasets.hl7V2Stores.export",
+      "datasets.hl7V2Stores.get",
+      "datasets.hl7V2Stores.getIamPolicy",
+      "datasets.hl7V2Stores.import",
+      "datasets.hl7V2Stores.list",
+      "datasets.hl7V2Stores.messages.create",
+      "datasets.hl7V2Stores.messages.delete",
+      "datasets.hl7V2Stores.messages.get",
+      "datasets.hl7V2Stores.messages.ingest",
+      "datasets.hl7V2Stores.messages.list",
+      "datasets.hl7V2Stores.messages.patch",
+      "datasets.hl7V2Stores.patch",
+      "datasets.hl7V2Stores.setIamPolicy",
+      "github.com",
+      "healthapiclient.go",
+      "healthcare.attributeDefinitionEditor",
+      "healthcare.attributeDefinitionReader",
+      "healthcare.consentArtifactAdmin",
+      "healthcare.consentArtifactEditor",
+      "healthcare.consentArtifactReader",
+      "healthcare.consentArtifacts",
+      "healthcare.consentEditor",
+      "healthcare.consentReader",
+      "healthcare.consents",
+      "healthcare.consents.activate",
+      "healthcare.consents.create",
+      "healthcare.consents.delete",
+      "healthcare.consents.get",
+      "healthcare.consents.list",
+      "healthcare.consents.reject",
+      "healthcare.consents.revoke",
+      "healthcare.consents.update",
+      "healthcare.consentStoreAdmin",
+      "healthcare.consentStores",
+      "healthcare.consentStores.get",
+      "healthcare.consentStores.list",
+      "healthcare.consentStoreViewer",
+      "healthcare.datasetAdmin",
+      "healthcare.datasets",
+      "healthcare.datasets.create",
+      "healthcare.datasets.deidentify",
+      "healthcare.datasets.delete",
+      "healthcare.datasets.get",
+      "healthcare.datasets.list",
+      "healthcare.datasets.update",
+      "healthcare.datasetViewer",
+      "healthcare.dicomEditor",
+      "healthcare.dicomStoreAdmin",
+      "healthcare.dicomStores.create",
+      "healthcare.dicomStores.delete",
+      "healthcare.dicomStores.dicomWebDelete",
+      "healthcare.dicomStores.dicomWebRead",
+      "healthcare.dicomStores.dicomWebUpdate",
+      "healthcare.dicomStores.dicomWebWrite",
+      "healthcare.dicomStores.export",
+      "healthcare.dicomStores.get",
+      "healthcare.dicomStores.import",
+      "healthcare.dicomStores.list",
+      "healthcare.dicomStores.setIamPolicy",
+      "healthcare.dicomStores.update",
+      "healthcare.dicomStoreViewer",
+      "healthcare.dicomViewer",
+      "healthcare.fhirResourceEditor",
+      "healthcare.fhirResourceReader",
+      "healthcare.fhirResources.create",
+      "healthcare.fhirResources.delete",
+      "healthcare.fhirResources.get",
+      "healthcare.fhirResources.patch",
+      "healthcare.fhirResources.purge",
+      "healthcare.fhirResources.update",
+      "healthcare.fhirStoreAdmin",
+      "healthcare.fhirStores.create",
+      "healthcare.fhirStores.delete",
+      "healthcare.fhirStores.export",
+      "healthcare.fhirStores.get",
+      "healthcare.fhirStores.import",
+      "healthcare.fhirStores.list",
+      "healthcare.fhirStores.rollback",
+      "healthcare.fhirStores.searchResources",
+      "healthcare.fhirStores.setIamPolicy",
+      "healthcare.fhirStores.update",
+      "healthcare.fhirStoreViewer",
+      "healthcare.googleapis.com",
+      "healthcare.hl7V2Consumer",
+      "healthcare.hl7V2Editor",
+      "healthcare.hl7V2Ingest",
+      "healthcare.hl7V2Messages",
+      "healthcare.hl7V2Messages.create",
+      "healthcare.hl7V2Messages.delete",
+      "healthcare.hl7V2Messages.get",
+      "healthcare.hl7V2Messages.ingest",
+      "healthcare.hl7V2Messages.list",
+      "healthcare.hl7V2Messages.update",
+      "healthcare.hl7V2StoreAdmin",
+      "healthcare.hl7V2Stores",
+      "healthcare.hl7V2Stores.create",
+      "healthcare.hl7V2Stores.delete",
+      "healthcare.hl7V2Stores.export",
+      "healthcare.hl7V2Stores.get",
+      "healthcare.hl7V2Stores.getIamPolicy",
+      "healthcare.hl7V2Stores.import",
+      "healthcare.hl7V2Stores.list",
+      "healthcare.hl7V2Stores.setIamPolicy",
+      "healthcare.hl7V2Stores.update",
+      "healthcare.hl7V2StoreViewer",
+      "healthcare.locations",
+      "healthcare.locations.get",
+      "healthcare.locations.list",
+      "healthcare.nlpServiceViewer",
+      "healthcare.operations",
+      "healthcare.operations.cancel",
+      "healthcare.operations.get",
+      "healthcare.operations.list",
+      "healthcare.userDataMappingEditor",
+      "healthcare.userDataMappingReader",
+      "healthcare.userDataMappings",
+      "messages.create",
+      "sample.json",
+      "sample1.json",
+      "sample2.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+      ]
+    }
+  ]
+}

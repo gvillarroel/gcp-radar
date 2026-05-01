@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.011Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "NodeJS attack preconfigured WAF ruleset",
+  "feature_slug": "nodejs-attack-preconfigured-waf-ruleset",
+  "summary": "Cloud Armor adds a preconfigured WAF ruleset for NodeJS attack traffic.",
+  "extended_definition": "Cloud Armor adds a preconfigured WAF ruleset for NodeJS attack traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/common-use-cases",
+      "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+      "https://docs.cloud.google.com/armor/docs/configure-waf",
+      "https://docs.cloud.google.com/armor/docs/rule-tuning"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tune Cloud Armor preconfigured WAF rules \\_|\\_ Google Cloud Armor \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/armor/docs/rule-tuning",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "This excludes request URIs that contain /bad-path from inspection: gcloud compute security-policies rules add-preconfig-waf-exclusion PRIORITY \\ --security-policy POLICY 4 \\ --target-rule-set \"lfi-v422-stable\" \\ --target-rule-ids \"owasp-crs-v042200-id930100-lfi\" \\ --request-uri-to-exclude \"op=CONTAINS,val=/bad-path\" Replace the following: PRIORITY : the priority of the rule POLICY 4 : the name of the security policy The fifth example updates the rule in the security policy POLICY 5 at PRIORITY to remove all the request field exclusions for the rule IDs owasp-crs-v042200-id942110-sqli and owasp-crs-v042200-id942120-sqli under sqli-v422-stable . gcloud compute security-policies rules remove-preconfig-waf-exclusion PRIORITY \\ --security-policy POLICY 5 \\ --target-rule-set \"sqli-v422-stable\" \\ --target-rule-ids \"owasp-crs-v042200-id942110-sqli,owasp-crs-v042200-id942120-sqli\" Replace the following: PRIORITY : the priority of the rule POLICY 5 : the name of the security policy Apply parsing on custom Content-Type header values When Cloud Armor evaluates the request body against preconfigured WAF rules, the Content-Type header indicates the format of the data in the request body.",
+          "By default, Cloud Armor treats the contents of the request body as one string, all of which is eligible for inspection and matching on your preconfigured WAF rules.",
+          "Examples The first example updates the rule in the security policy POLICY 1 at PRIORITY to add an exclusion configuration for all signatures under the sqli-v422-stable preconfigured WAF rule, to exclude all request cookies from inspection: gcloud compute security-policies rules add-preconfig-waf-exclusion PRIORITY \\ --security-policy POLICY 1 \\ --target-rule-set \"sqli-v422-stable\" \\ --request-cookie-to-exclude \"op=EQUALS ANY\" Replace the following: PRIORITY : the priority of the rule POLICY 1 : the name of the security policy The second example updates the rule in the security policy POLICY 2 at PRIORITY to add an exclusion configuration for signatures owasp-crs-v042200-id941140-xss and owasp-crs-v042200-id941270-xss under the xss-v422-stable preconfigured WAF rule, to exclude request headers that either start with abc or end with xyz from inspection: gcloud compute security-policies rules add-preconfig-waf-exclusion PRIORITY \\ --security-policy POLICY 2 \\ --target-rule-set \"xss-v422-stable\" \\ --target-rule-ids \"owasp-crs-v042200-id941140-xss,owasp-crs-v042200-id941270-xss\" \\ --request-header-to-exclude \"op=STARTS WITH,val=abc\" \\ --request-header-to-exclude \"op=ENDS WITH,val=xyz\" Replace the following: PRIORITY : the priority of the rule POLICY 2 : the name of the security policy The third example updates the rule in the security policy POLICY 3 at PRIORITY to add an exclusion configuration for all signatures under the sqli-v422-stable preconfigured WAF rule."
+        ]
+      },
+      {
+        "title": "\"Configure Cloud Armor security policies \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following command adds a rule to allow traffic from the IP address 1.2.3.4 and contains the string example in the user-agent header: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"inIpRange(origin.ip, '1.2.3.4/32') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('example')\" \\ --action allow \\ --description \"Block User-Agent 'example'\" The following command adds a rule to block requests if the request's cookie contains a specific value: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"has(request.headers['cookie']) && request.headers['cookie'].contains('80=BLAH')\" \\ --action deny-403 \\ --description \"Cookie Block\" The following command adds a rule to block requests from the region AU : gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"origin.region code == 'AU'\" \\ --action deny-403 \\ --description \"AU block\" The following command adds a rule to block requests from the region AU that are not in the specified IP range: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"origin.region code == \"AU\" && !inIpRange(origin.ip, '1.2.3.0/24')\" \\ --action deny-403 \\ --description \"country and IP block\" The following command adds a rule to block requests with a URI that matches a regular expression: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"request.path.matches('/example path/')\" \\ --action deny-502 \\ --description \"regex block\" The following command adds a rule to block requests if the Base64 decoded value of the user-id header contains a specific value: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"has(request.headers['user-id']) && request.headers['user-id'].base64Decode().contains('myValue')\" \\ --action deny-403 \\ --description \"country and IP block\" The following command adds a rule that uses a preconfigured expression set to mitigate SQLi attacks: gcloud compute security-policies rules create 1000 \\ --security-policy my-policy \\ --expression \"evaluatePreconfiguredWaf('sqli-stable')\" \\ --action deny-403 Update a single rule in a security policy Use these instructions to update a single rule in a Cloud Armor security policy.",
+          "The following expression matches against requests from the IP address 1.2.3.4 and contains the string example in the user-agent header: inIpRange(origin.ip, '1.2.3.4/32') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('example') Alternatively, you can match on the IP address range of a custom client IP address header by using the origin.user ip attribute: inIpRange(origin.user ip, '1.2.3.4/32') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('example') The following expression matches against requests that have a cookie with a specific value: has(request.headers['cookie']) && request.headers['cookie'].contains('cookie name=cookie value') The following expression matches against requests from the region AU : origin.region code == 'AU' The following expression matches against requests from the region AU that are not in the specified IP range: origin.region code == \"AU\" && !inIpRange(origin.ip, '1.2.3.0/24') The following expression matches against requests with a numbered variable path to a specific file if the URI matches a regular expression: request.path.matches('/path/[0-9]+/target file.html') The following expression matches against requests if the Base64 decoded value of the user-id header contains a specific value: has(request.headers['user-id']) && request.headers['user-id'].base64Decode().contains('myValue') The following expression uses a preconfigured expression set match against SQLi attacks: evaluatePreconfiguredWaf('sqli-stable') Path traversal and normalization When you normalize content in your path-based rules, you can manage path traversal and encoding rules straightforwardly and create generalized rules that avoid capitalization or content-specific encoding.",
+          "For example, you can modify the the priorities of the existing rules and add a new rule: description: my description fingerprint: PWfLGDWQDLY= id: '123' name: my-policy rules: - action: deny(404) description: my-rule-1 match: expr: expression: evaluatePreconfiguredWaf('xss-stable') versionedExpr: SRC IPS V1 preview: false priority: 1 - action: allow description: my-new-rule match: config: srcIpRanges: - '1.2.3.1' versionedExpr: SRC IPS V1 preview: false priority: 10 - action: allow description: my-rule-2 match: config: srcIpRanges: - '1.2.3.4' versionedExpr: SRC IPS V1 preview: false priority: 11 - action: deny description: default rule kind: compute#securityPolicyRule match: config: srcIpRanges: - ' ' versionedExpr: SRC IPS V1 preview: false priority: 2147483647 selfLink: https://www.googleapis.com/compute/v1/projects/my-project/global/securityPolicies/my-policy Create a new Cloud Armor security policy and specify the modified filename and format, as shown in the following example: gcloud compute security-policies create new-policy \\ --file-name modified-policy \\ --file-format yaml Remove the old security policy from the relevant backend service, as shown in the following example: gcloud compute backend-services update my-backend \\ --security-policy \"\" Add the new security policy to the backend service, as shown in the following example: gcloud compute backend-services update my-backend \\ --security-policy new-policy If the old policy is unused, delete it: gcloud compute security-policies delete my-policy Delete rules from a security policy Use these instructions to delete rules from a Cloud Armor security policy."
+        ]
+      },
+      {
+        "title": "\"Set up preconfigured WAF rules \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-waf",
+        "source_id": "site-iam-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that you can only opt in rule signatures when you set the sensitivity level to 0 : Console Select Advanced mode , then use the following example expression in the Match field: evaluatePreconfiguredWaf('xss-v422-stable', {'sensitivity': 0, 'opt in rule ids': ['owasp-crs-v042200-id941150-xss']}) gcloud gcloud compute security-policies rules create PRIORITY \\ --security-policy POLICY NAME \\ --expression \"evaluatePreconfiguredWaf('xss-v422-stable', {'sensitivity': 0, 'opt in rule ids': ['owasp-crs-v042200-id941150-xss']})\" \\ --action deny-403 Replace the following: PRIORITY : the priority of the security policy POLICY NAME : the name of the security policy that you want to set up If you want to include two or more signatures from a rule, provide a comma-separated list of signatures with the opt in rule ids argument, as follows: Console Select Advanced mode , then use the following example expression in the Match field: evaluatePreconfiguredWaf('xss-v422-stable', {'sensitivity': 0, 'opt in rule ids': ['owasp-crs-v042200-id941150-xss', 'owasp-crs-v042200-id941320-xss']}) gcloud gcloud compute security-policies rules create PRIORITY \\ --security-policy POLICY NAME \\ --expression \"evaluatePreconfiguredWaf('xss-v422-stable', {'sensitivity': 0, 'opt in rule ids': ['owasp-crs-v042200-id941150-xss', 'owasp-crs-v042200-id941320-xss']})\" \\ --action deny-403 Replace the following: PRIORITY : the priority of the security policy POLICY NAME : the name of the security policy that you want to set up What's next For more information about WAF rule tuning, see Tune Cloud Armor preconfigured WAF rules Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Mitigate risk on request body that exceeds configured inspection limit When a preconfigured WAF rule is evaluated in a Cloud Armor security policy, up to the first 64 kB (either 8 kB, 16 kB, 32 kB, 48 kB, or 64 kB) of a request body is inspected for signature matches against the WAF rules.",
+          "Update inspection limit for preconfigured WAF rules Cloud Armor preconfigured WAF rules can only inspect up to the first 64 kB (either 8 kB, 16 kB, 32 kB, 48 kB, or 64 kB) of a request body."
+        ]
+      },
+      {
+        "title": "\"Common use cases for security policies \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/common-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example uses a preconfigured rule to mitigate SQLi attacks from the 192.0.2.1/24 IP address range: inIpRange(origin.ip, '192.0.2.1/24') && evaluatePreconfiguredWaf('sqli-v422-stable') OWASP Top 10 mitigation for hybrid workloads Cloud Armor offers mitigations for the following attacks, whether they are deployed in Google Cloud,on-premises, or in a third-party provider: SQL injection (SQLi) Cross-site scripting (XSS) Local File Inclusion (LFI) Remote File Inclusion (RFI) Remote Code Execution (RCE) You can use these capabilities to address some of the most common web application security risks, including those risks identified in the OWASP Top 10 list.",
+          "The following example uses a preconfigured rule to mitigate cross-site scripting (XSS) attacks: evaluatePreconfiguredWaf('xss-v422-stable') The following example uses a preconfigured rule to mitigate SQL injection (SQLi) attacks: evaluatePreconfiguredWaf('sqli-v422-stable') You can also combine preconfigured rules with other expressions.",
+          "Cloud Armor security policies can protect your application with features like IP address allowlists and denylists, and preconfigured rules to deter common web attacks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file.html",
+      "origin.ip",
+      "origin.region",
+      "origin.user",
+      "request.headers",
+      "request.path.matches"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rule-tuning",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/configure-waf",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rule-tuning",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/configure-waf",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rule-tuning",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/configure-waf",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rule-tuning",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/configure-waf",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rule-tuning",
+        "https://docs.cloud.google.com/armor/docs/configure-security-policies",
+        "https://docs.cloud.google.com/armor/docs/configure-waf",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    }
+  ]
+}

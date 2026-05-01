@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable Key Visualizer beta availability",
+  "feature_slug": "cloud-bigtable-key-visualizer-beta-availability",
+  "summary": "Key Visualizer for Cloud Bigtable became available in beta for analyzing usage and troubleshooting performance.",
+  "extended_definition": "Key Visualizer for Cloud Bigtable became available in beta for analyzing usage and troubleshooting performance.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and configure app profiles \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Save . gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list If you don't know the app profile's ID, use the bigtable app-profiles list command to view a list of the instance's app profiles: gcloud bigtable app-profiles list --instance= INSTANCE ID Replace INSTANCE ID with the permanent identifier for the instance. (Optional) Use the bigtable app-profiles describe command to view the app profile's settings: gcloud bigtable app-profiles describe APP PROFILE ID \\ --instance= INSTANCE ID Use the gcloud beta bigtable app-profiles update command to convert the app profile: gcloud bigtable app-profiles update APP PROFILE ID \\ --instance= INSTANCE ID \\ --standard \\ [--route-any] \\ [--restrict-to= CLUSTER ID 1 , CLUSTER ID 2 ...] [--route-to= CLUSTER ID ] \\ [--transactional-writes] Provide the following: APP PROFILE ID : The permanent identifier for the app profile.",
+          "Update your application's code for connecting to Bigtable so that it uses the new app profile. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list Use the gcloud beta bigtable app-profiles create command to create an app profile: gcloud bigtable app-profiles create APP PROFILE ID \\ --instance= INSTANCE ID \\ --data-boost \\ --data-boost-compute-billing-owner=HOST PAYS \\ --route-to= CLUSTER ID Provide the following: APP PROFILE ID : The permanent identifier for the app profile.",
+          "Use the gcloud beta bigtable app-profiles update command to convert an app profile from standard to Data Boost: gcloud bigtable app-profiles update APP PROFILE ID \\ --instance= INSTANCE ID \\ --data-boost \\ --data-boost-compute-billing-owner=HOST PAYS \\ --route-to= CLUSTER ID Provide the following: APP PROFILE ID : The permanent identifier for the app profile."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes.",
+          "Cassandra provides fault tolerance through availability levels that are correlated with the tunable consistency level, allowing a cluster to serve clients while one or more nodes are impaired.",
+          "If the node that's responsible for the requested key range is overloaded or temporarily unavailable in a cluster, this profile type provides automatic failover."
+        ]
+      },
+      {
+        "title": "Create and manage tables \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Save . gcloud To disable infrequent access storage, use the gcloud beta bigtable instances tables update command with the --clear-tiered-storage-config flag: gcloud beta bigtable instances tables update TABLE ID \\ --instance = INSTANCE ID \\ --project = PROJECT ID \\ --clear-tiered-storage-config Replace the following: TABLE ID : the ID for the table that you want to update INSTANCE ID : the ID of the instance PROJECT ID : the project that contains the table that you want to update What's next Learn how to import and export data into and from your table.",
+          "The number must be 30 or greater. gcloud To modify the age threshold of infrequent access storage, run the gcloud beta bigtable instances tables update command with the --tiered-storage-infrequent-access-older-than flag: gcloud beta bigtable instances tables update TABLE ID \\ --instance = INSTANCE ID \\ --project = PROJECT ID \\ --tiered-storage-infrequent-access-older-than = AGE THRESHOLD Replace the following: TABLE ID : the ID for the table that you want to update.",
+          "Example: 32d or 32d12h . gcloud beta bigtable instances tables create TABLE ID \\ --instance = INSTANCE ID \\ --project = PROJECT ID \\ --tiered-storage-infrequent-access-older-than = AGE THRESHOLD cbt Use the following command, replacing TABLE NAME with the name of your table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    }
+  ]
+}

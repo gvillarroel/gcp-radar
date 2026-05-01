@@ -1,0 +1,284 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.734Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "BackupDRBackupPlan retention and backup window",
+  "feature_slug": "backupdrbackupplan-retention-and-backup-window",
+  "summary": "Config Connector added BackupDRBackupPlan fields for retention period and backup window.",
+  "extended_definition": "Config Connector added BackupDRBackupPlan fields for retention period and backup window.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BackupDRBackupPlanAssociation | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "source_id": "feature-recovery-http",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample YAML(s) Typical Use Case # Copyright 2025 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : backupdr.cnrm.cloud.google.com/v1beta1 kind : BackupDRBackupPlanAssociation metadata : name : backupdrbackupplanassociation-sample spec : location : us-central1 resourceType : \"compute.googleapis.com/Instance\" resource : computeInstanceRef : name : \"backupdrbackupplanassociation-dep\" backupPlanRef : name : \"backupdrbackupplanassociation-dep\" projectRef : external : \"projects/${PROJECT_ID?}\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstance metadata : name : backupdrbackupplanassociation-dep spec : machineType : n1-standard-1 zone : us-central1-a bootDisk : initializeParams : sourceImageRef : external : debian-cloud/debian-11 networkInterface : - networkRef : external : backupdrbackupplanassociation-dep --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computedisk-dep spec : location : us-west1-a imageRef : external : debian-cloud/debian-11 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeImage metadata : name : computeimage-dep spec : diskRef : name : computedisk-dep --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : backupdrbackupplanassociation-dep annotations : cnrm.cloud.google.com/deletion-policy : \"deletion\" spec : description : network for the project --- apiVersion : backupdr.cnrm.cloud.google.com/v1alpha1 kind : BackupDRBackupVault metadata : name : backupdrbackupplanassociation-dep spec : projectRef : external : \"projects/${PROJECT_ID?}\" location : us-central1 backupMinimumEnforcedRetentionDuration : \"86400s\" --- apiVersion : backupdr.cnrm.cloud.google.com/v1alpha1 kind : BackupDRBackupPlan metadata : name : backupdrbackupplanassociation-dep spec : projectRef : external : \"projects/${PROJECT_ID?}\" location : us-central1 resourceType : \"compute.googleapis.com/Instance\" backupVaultRef : name : \"backupdrbackupplanassociation-dep\" backupRules : - ruleID : \"daily-backups\" backupRetentionDays : 30 standardSchedule : recurrenceType : \"DAILY\" backupWindow : startHourOfDay : 6 endHourOfDay : 10 timeZone : \"America/New_York\" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "BackupDRBackupPlanAssociation Property Value Google Cloud Service Name Backup and DR Google Cloud Service Documentation /backup-disaster-recovery/docs/ Google Cloud REST Resource Name v1.projects.locations.backupPlanAssociations Google Cloud REST Resource Documentation /backup-disaster-recovery/docs/reference/rest/v1/projects.locations.backupPlanAssociations Config Connector Resource Short Names gcpbackupdrbackupplanassociation gcpbackupdrbackupplanassociations backupdrbackupplanassociation Config Connector Service Name backupdr.googleapis.com Config Connector Resource Fully Qualified Name backupdrbackupplanassociations.backupdr.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema backupPlanRef : external : string name : string namespace : string location : string projectRef : external : string kind : string name : string namespace : string resource : computeInstanceRef : external : string name : string namespace : string resourceID : string resourceType : string Fields backupPlanRef Required object Required.",
+          "BackupDRBackupPlanAssociation | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "AlloyDBCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "AlloyDBCluster Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpalloydbcluster gcpalloydbclusters alloydbcluster Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbclusters.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema automatedBackupPolicy : backupWindow : string enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string labels : string : string location : string quantityBasedRetention : count : integer timeBasedRetention : retentionPeriod : string weeklySchedule : daysOfWeek : - string startTimes : - hours : integer minutes : integer nanos : integer seconds : integer clusterType : string continuousBackupConfig : enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string recoveryWindowDays : integer databaseVersion : string deletionPolicy : string displayName : string encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string initialUser : password : value : string valueFrom : secretKeyRef : key : string name : string user : string location : string maintenanceUpdatePolicy : maintenanceWindows : - day : string startTime : hours : integer minutes : integer nanos : integer seconds : integer networkConfig : allocatedIpRange : string networkRef : external : string name : string namespace : string networkRef : external : string name : string namespace : string projectRef : external : string kind : string name : string namespace : string resourceID : string restoreBackupSource : backupNameRef : external : string name : string namespace : string restoreContinuousBackupSource : clusterRef : external : string name : string namespace : string pointInTime : string secondaryConfig : primaryClusterNameRef : external : string name : string namespace : string Fields automatedBackupPolicy Optional object The automated backup policy for this cluster.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-regular spec : location : asia-south2 networkConfig : networkRef : name : alloydbcluster-dep-regular projectRef : external : ${PROJECT ID?} automatedBackupPolicy : backupWindow : 3600s encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep-regular enabled : true labels : source : kcc location : asia-south2 timeBasedRetention : retentionPeriod : 43200s weeklySchedule : daysOfWeek : [ MONDAY ] startTimes : - hours : 4 minutes : 0 seconds : 0 nanos : 0 encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep-regular maintenanceUpdatePolicy : maintenanceWindows : - day : WEDNESDAY startTime : hours : 12 minutes : 0 seconds : 0 nanos : 0 initialUser : user : \"postgres\" password : value : \"Postgres123\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-regular spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-regular prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-regular --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep-regular spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep-regular bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep-regular --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : labels : source : kcc-alloydbcluster-sample name : alloydbcluster-dep-regular spec : keyRingRef : name : alloydbcluster-dep-regular --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep-regular spec : location : asia-south2 --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-regular spec : networkRef : name : alloydbcluster-dep-regular reservedPeeringRanges : - external : alloydbcluster-dep-regular service : servicenetworking.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep-regular spec : projectRef : external : ${PROJECT ID?} resourceID : alloydb.googleapis.com Restored From Backup Cluster Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Field is required when parent field is specified Status Schema backupSource : - backupName : string conditions : - lastTransitionTime : string message : string reason : string status : string type : string continuousBackupInfo : - earliestRestorableTime : string enabledTime : string encryptionInfo : - encryptionType : string kmsKeyVersions : - string schedule : - string databaseVersion : string encryptionInfo : - encryptionType : string kmsKeyVersions : - string externalRef : string migrationSource : - hostPort : string referenceId : string sourceType : string name : string observedGeneration : integer observedState : clusterType : string databaseVersion : string uid : string Fields backupSource list (object) Output only."
+        ]
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.",
+          "Replace ${PROJECT ID?} below with your project ID. workloadPool : ${PROJECT ID?}.svc.id.goog networkingMode : VPC NATIVE networkRef : name : containercluster-dep-vpcnative subnetworkRef : name : containercluster-dep-vpcnative ipAllocationPolicy : servicesSecondaryRangeName : servicesrange clusterSecondaryRangeName : clusterrange clusterAutoscaling : enabled : true autoscalingProfile : BALANCED resourceLimits : - resourceType : cpu maximum : 100 minimum : 10 - resourceType : memory maximum : 1000 minimum : 100 maintenancePolicy : dailyMaintenanceWindow : startTime : 00:00 releaseChannel : channel : STABLE notificationConfig : pubsub : enabled : true topicRef : name : containercluster-dep-vpcnative enableBinaryAuthorization : true enableIntranodeVisibility : true enableShieldedNodes : true addonsConfig : networkPolicyConfig : disabled : false dnsCacheConfig : enabled : true configConnectorConfig : enabled : true networkPolicy : enabled : true podSecurityPolicyConfig : enabled : true verticalPodAutoscaling : enabled : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : containercluster-dep-vpcnative spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : containercluster-dep-vpcnative spec : ipCidrRange : 10.2.0.0/16 region : us-central1 networkRef : name : containercluster-dep-vpcnative secondaryIpRange : - rangeName : servicesrange ipCidrRange : 10.3.0.0/16 - rangeName : clusterrange ipCidrRange : 10.4.0.0/16 --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : containercluster-dep-vpcnative Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Field is required when parent field is specified Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string endpoint : string labelFingerprint : string masterVersion : string observedGeneration : integer observedState : controlPlaneEndpointsConfig : dnsEndpointConfig : endpoint : string masterAuth : clientCertificate : string clusterCaCertificate : string privateClusterConfig : privateEndpoint : string publicEndpoint : string operation : string selfLink : string servicesIpv4Cidr : string tpuIpv4CidrBlock : string Fields conditions list (object) Conditions represent the latest available observation of the resource's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.cnrm.cloud.google.com",
+      "alloydb.googleapis.com",
+      "alloydbclusters.alloydb.cnrm.cloud.google.com",
+      "backupdr.cnrm.cloud.google.com",
+      "backupdr.googleapis.com",
+      "backupdrbackupplanassociations.backupdr.cnrm.cloud.google.com",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "compute.googleapis.com",
+      "container.googleapis.com",
+      "containerclusters.container.cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "kms.cnrm.cloud.google.com",
+      "projects.locations.backupPlanAssociations",
+      "projects.locations.clusters",
+      "pubsub.cnrm.cloud.google.com",
+      "servicenetworking.cnrm.cloud.google.com",
+      "servicenetworking.googleapis.com",
+      "serviceusage.cnrm.cloud.google.com",
+      "svc.id.goog",
+      "v1.projects.locations.backupPlanAssociations",
+      "v1.projects.locations.clusters"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/backupdr/backupdrbackupplanassociation",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    }
+  ]
+}

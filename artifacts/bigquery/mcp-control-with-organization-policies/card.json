@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "MCP control with organization policies",
+  "feature_slug": "mcp-control-with-organization-policies",
+  "summary": "BigQuery is deprecating the use of organization policies with the gcp.managed.allowedMCPServices constraint to control MCP use in favor of IAM deny policies; deprecated on 2026-03-17.",
+  "extended_definition": "BigQuery is deprecating the use of organization policies with the gcp.managed.allowedMCPServices constraint to control MCP use in favor of IAM deny policies; deprecated on 2026-03-17.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "2026-03-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/access-control",
+      "https://docs.cloud.google.com/mcp/deprecations",
+      "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Organization policy control of MCP servers deprecation \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "The custom constraint gcp.managed.allowedMCPServices and organization policy control of MCP use were deprecated on February 17, 2026 and shut down on March 17, 2026.",
+          "Home Documentation Developer tools Google Cloud MCP servers Resources Send feedback Organization policy control of MCP servers deprecation Stay organized with collections Save and categorize content based on your preferences.",
+          "Use Identity and Access Management (IAM) deny policies to manage control over who can use Google and Google Cloud MCP servers."
+        ]
+      },
+      {
+        "title": "Deprecations \\_|\\_ Google Cloud MCP servers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mcp/deprecations",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Deprecated date Shutdown date Details The custom constraint gcp.managed.allowedMCPServices and organization policy control of MCP use February 17, 2026 March 17, 2026 See Organization policy control of MCP servers deprecation .",
+          "Home Documentation Developer tools Google Cloud MCP servers Resources Send feedback Deprecations Stay organized with collections Save and categorize content based on your preferences.",
+          "The Google Cloud Platform Terms of Service (section \"Discontinuation of Services\") defines the deprecation policy that applies to Google Cloud MCP servers."
+        ]
+      },
+      {
+        "title": "\"Access control with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/access-control",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Access control with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "Google Cloud MCP servers roles and permissions The following sections describe the IAM roles required for interacting with and controlling the use of Google and Google Cloud MCP servers.",
+          "Google and Google Cloud remote MCP servers use Identity and Access Management (IAM) to control access to resources at different levels of your resource hierarchy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.managed.allowedMCPServices"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/deprecations",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    }
+  ]
+}

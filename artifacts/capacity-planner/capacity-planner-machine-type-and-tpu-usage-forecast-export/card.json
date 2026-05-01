@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.170Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner",
+  "feature_name": "Capacity Planner machine type and TPU usage/forecast export",
+  "feature_slug": "capacity-planner-machine-type-and-tpu-usage-forecast-export",
+  "summary": "Capacity Planner preview allows viewing and exporting usage and forecast data for machine types and TPUs across project, folder, or organization scopes.",
+  "extended_definition": "Capacity Planner supports viewing and exporting usage and forecast data for compute resources, including machine-type views and TPU views (for example, \"Usage and forecast by machine types\" and \"Usage and forecast by TPU type\"). It supports exporting usage/forecast data from the Console to a local workstation as a CSV file, with machine-type exports available via filters such as machine family or GPU type. Export can be performed for a selected scope, including project, folder, or organization.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "HIGH",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/export-data",
+      "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/ForecastType",
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "ForecastType \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/ForecastType",
+        "source_id": "site-api-reference",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Export data to your local workstation \\_|\\_ Capacity Planner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/export-data",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The Capacity Planner usage/forecast page confirms machine-type and TPU usage-forecast views plus scope context, while the export page confirms CSV export to local workstation with project/folder/organization scope and machine-family/GPU-type filtering for machine-type exports; ForecastType is the related API enum reference."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/ForecastType",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/ForecastType",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/ForecastType",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/ForecastType",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    }
+  ]
+}

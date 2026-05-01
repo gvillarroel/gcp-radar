@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.832Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "GeoTIFF geostationary projection support",
+  "feature_slug": "geotiff-geostationary-projection-support",
+  "summary": "Cloud Optimized GeoTIFFs now support the geostationary satellite projection during loading and asset creation.",
+  "extended_definition": "Cloud Optimized GeoTIFFs now support the geostationary satellite projection during loading and asset creation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides/auth",
+      "https://developers.google.com/earth-engine/guides/exporting_images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-21 UTC.\"],[],[\"This document details how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs).",
+          "Page Summary outlined flag Earth Engine supports assets backed by Cloud Optimized GeoTIFFs (COGs), which improve performance in collections by indexing spatial and metadata fields at creation time.",
+          "Run in Google Colab View source on GitHub Earth Engine supports assets backed by Cloud Optimized GeoTIFFs (COGs)."
+        ]
+      },
+      {
+        "title": "Exporting Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_images",
+        "source_id": "site-docs-root-2",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export . image . toDrive ( image = landsat , description = 'imageToCOGeoTiffExample' , crs = projection [ 'crs' ], crsTransform = projection [ 'transform' ], region = geometry , fileFormat = 'GeoTIFF' , formatOptions = { 'cloudOptimized' : True }, ) task . start () Cloud optimized GeoTIFFs can be reloaded from Cloud Storage into an Image .",
+          "Export . image . toDrive ({ image : landsat , description : 'imageToCOGeoTiffExample' , crs : projection . crs , crsTransform : projection . transform , region : geometry , fileFormat : 'GeoTIFF' , formatOptions : { cloudOptimized : true } }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Export a cloud-optimized GeoTIFF. task = ee . batch .",
+          "For example: Code Editor (JavaScript) // Set a nodata value and replace masked pixels around the image edge with it. var noDataVal = - 9999 ; landsat = landsat . unmask ( noDataVal ); Export . image . toDrive ({ image : landsat , description : 'imageNoDataExample' , crs : projection . crs , scale : 2000 , // large scale for minimal demo region : landsat . geometry (), // full image bounds fileFormat : 'GeoTIFF' , formatOptions : { noData : noDataVal , } }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Set a nodata value and replace masked pixels around the image edge with it. no data val = - 9999 landsat = landsat . unmask ( no data val ) task = ee . batch ."
+        ]
+      },
+      {
+        "title": "\"Authentication and Initialization \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/auth",
+        "source_id": "site-docs-root",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "geemap.core",
+      "out.tif"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    }
+  ]
+}

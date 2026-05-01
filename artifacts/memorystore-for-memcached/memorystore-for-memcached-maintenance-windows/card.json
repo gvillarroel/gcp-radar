@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.717Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-memcached/card.json",
+  "product_name": "Memorystore for Memcached",
+  "product_slug": "memorystore-for-memcached",
+  "feature_name": "Memorystore for Memcached maintenance windows",
+  "feature_slug": "memorystore-for-memcached-maintenance-windows",
+  "summary": "Memorystore for Memcached supports scheduled maintenance windows for instances.",
+  "extended_definition": "Memorystore for Memcached supports scheduled maintenance windows for instances.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey",
+      "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+      "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Find and set maintenance windows \\_|\\_ Memorystore for Memcached \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+        "source_id": "site-iam-reference",
+        "final_score": 315,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following command also shows what nodes have been updated for your instance. gcloud memcache instances describe INSTANCE NAME --region= REGION --format=\"table(updateAvailable.yesno(yes=\"YES\",no=\"NO\"),memcacheNodes:format='table(nodeId,updateAvailable.yesno(yes=\"YES\", no=\"NO\"))')\" What's next View the permissions required to manage maintenance windows for your Memcached instance.",
+          "Learn more about the deprecation Read the migration guide Home Documentation Databases Memorystore Memorystore for Memcached Guides Send feedback Find and set maintenance windows Stay organized with collections Save and categorize content based on your preferences.",
+          "Reschedule planned maintenance Caution: if you programmatically reschedule maintenance in bulk requests (not natively supported by Memorystore for Memcached), limit batch reschedule sizes to 100 instances per batch."
+        ]
+      },
+      {
+        "title": "About maintenance on Memorystore for Memcached \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+        "source_id": "site-iam-reference",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the Memorystore for Memcached cluster is not fully updated by the scheduled maintenance time, any remaining cluster nodes are updated automatically during the maintenance window.",
+          "FAQ The following are some frequently asked questions about the maintenance policy for Memorystore for Memcached: What is the impact of maintenance on Memcached instances?",
+          "When subscribing you opt into maintenance notifications for all Memorystore instances that have maintenance windows in a given project."
+        ]
+      },
+      {
+        "title": "About maintenance on Memorystore for Memcached \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy",
+        "source_id": "site-iam-reference",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the Memorystore for Memcached cluster is not fully updated by the scheduled maintenance time, any remaining cluster nodes are updated automatically during the maintenance window.",
+          "FAQ The following are some frequently asked questions about the maintenance policy for Memorystore for Memcached: What is the impact of maintenance on Memcached instances?",
+          "When subscribing you opt into maintenance notifications for all Memorystore instances that have maintenance windows in a given project."
+        ]
+      },
+      {
+        "title": "\"Migrate from Memorystore for Memcached to Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey",
+        "source_id": "site-api-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Then, to determine the node type for your corresponding Memorystore for Valkey instances, use the following table: Memorystore for Memcached node size Memorystore for Valkey node type Total node capacity vCPU count shared-core-nano 1.4 GB 0.5 (Shared) 1 GB – 5 GB standard-small 6.5 GB 2 6 GB – 12 GB highmem-medium 13.0 GB 2 13 GB – 50 GB highmem-xlarge 58.0 GB 8 The shared-core-nano node type is for small workloads.",
+          "For each of your Memorystore for Memcached instances, to determine its node size, check the value that's associated with the Memory per node property.",
+          "After February 1, 2027, you can't create Memorystore for Memcached instances in new projects unless these instances already exist in these projects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/memcached/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/maintenance-policy",
+        "https://docs.cloud.google.com/memorystore/docs/memcached/deprecation/migrate-to-valkey"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Cloud Operations for GKE metrics",
+  "feature_slug": "cloud-operations-for-gke-metrics",
+  "summary": "Provides 40 Kubernetes metrics as part of Cloud Operations for GKE.",
+  "extended_definition": "Provides 40 Kubernetes metrics as part of Cloud Operations for GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Autopilot partners \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot This page provides information about Google Kubernetes Engine (GKE) Autopilot partner organizations and the specialized workloads that they make available in Autopilot clusters.",
+          "Partner Description Aqua Aqua supports securing and ensuring compliance for the full lifecycle of workloads on GKE Autopilot, and specifically the Kubernetes pods, which run multiple containers with shared sets of storage and networking resources.",
+          "Datadog Datadog provides visibility into containerized apps running on GKE Autopilot by collecting metrics, logs, and traces, which helps to identify performance issues and provide context for troubleshooting."
+        ]
+      },
+      {
+        "title": "\"Collect and view control plane metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to measure the API server traffic per instance of the Kubernetes control plane, use the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \"}[1m])) To query the unsuccessful requests, filter the code label for 4xx and 5xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"[45]..\"}[5m])) To query the successful requests, filter the code label for 2xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"2..\"}[5m])) To query the rejected requests by the API server per instance of the Kubernetes control plane, filter the code label for the value 429 ( http.StatusTooManyRequests ) by using the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \", code=\"429\"}[1m])) Saturation You can measure the saturation in your system by using the apiserver current inflight requests and apiserver storage objects metrics.",
+          "Click Save Changes . gcloud Update your cluster to collect metrics emitted by the Kubernetes API server, Scheduler, and Controller Manager: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --monitoring = SYSTEM,API SERVER,SCHEDULER,CONTROLLER MANAGER Replace the following: CLUSTER NAME : the name of the cluster.",
+          "To diagnose latency issues with third-party webooks, use the apiserver admission webhook admission duration seconds metric. apiserver admission webhook admission duration seconds and apiserver admission step admission duration seconds These metrics measure the latency in external, third-party admission webhooks."
+        ]
+      },
+      {
+        "title": "\"Modern CI/CD with GKE: A software delivery framework \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Yet, even as Kubernetes and container adoption grows, many organizations don't fully realize the benefits in release velocity, stability, and operational efficiencies because their CI/CD practices don't take full advantage of Kubernetes or address operations and security concerns.",
+          "To investigate the operations of their applications, tenants need access to logs and metrics.",
+          "This document is part of a series: Modern CI/CD with GKE: A software delivery framework (this document) Modern CI/CD with GKE: Build a CI/CD system (reference architecture) Modern CI/CD with GKE: Apply the developer workflow This document is intended for enterprise architects and application developers, as well as IT security, DevOps, and Site Reliability Engineering teams."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "http.StatusTooManyRequests"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+      ]
+    }
+  ]
+}

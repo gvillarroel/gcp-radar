@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.431Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "BigLake managed table destination support",
+  "feature_slug": "biglake-managed-table-destination-support",
+  "summary": "The Datastream API supports streaming data to BigLake managed tables.",
+  "extended_definition": "The Datastream API supports streaming data to BigLake managed tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated",
+      "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigLake Iceberg tables destination In the Specify how Datastream should stream into a BigQuery dataset section, select how you want Datastream to create new schemas and tables from the Schema grouping drop-down: Dataset for each schema : Datastream creates a BigQuery dataset for each source schema, based on the schema name.",
+          "Datastream only supports the Append-only write mode when streaming to BigLake Iceberg tables.",
+          "Oracle user permissions Datastream verifies that the user which it uses to connect to the source database has all of the necessary permissions to retrieve schemas, tables, and data from the database so that Datastream can stream this information into the destination."
+        ]
+      },
+      {
+        "title": "Using Datastream APIs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } After a few seconds, retrieve information about the stream to confirm that it's running again. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from PAUSED back to RUNNING . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"RUNNING\" , \"backfillAll\" : {} } Now that you created and managed a stream, confirmed that there are no errors associated with the stream, and that the state of the stream is RUNNING , you're ready to verify that it can transfer data from the source database into a folder in the Cloud Storage destination bucket.",
+          "At the prompt, enter the following command: curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /connectionProfiles/ DESTINATION CONNECTION PROFILE ID Verify that the folder of the destination bucket of the Cloud Storage connection profile is now /root/tutorial . { \"name\" : \" PROJECT PATH /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"gcsProfile\" : { \"bucketName\" : \" BUCKET NAME \" , \"rootPath\" : \"/root/tutorial\" }, \"noConnectivity\" : {} } Use the Datastream discover API to discover the schemas and tables of the source Oracle database.",
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } Retrieve information about the stream to confirm that it's paused. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from RUNNING to PAUSED . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"PAUSED\" , \"backfillAll\" : {} } When a stream is paused, Datastream won't pull any new data from the source database into the destination."
+        ]
+      },
+      {
+        "title": "\"Class BigQueryDestinationConfig.Builder (1.87.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Big Lake Managed Tables (BLMT) configuration. .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt config = 1 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description BigQueryDestinationConfig.BlmtConfigOrBuilder getDataFreshness() public Duration getDataFreshness () The guaranteed data freshness (in seconds) when querying tables created by the stream.",
+          "Big Lake Managed Tables (BLMT) configuration. .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt config = 1 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description boolean Whether the blmtConfig field is set. hasDataFreshness() public boolean hasDataFreshness () The guaranteed data freshness (in seconds) when querying tables created by the stream.",
+          "Big Lake Managed Tables (BLMT) configuration. .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt config = 1 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description BigQueryDestinationConfig.BlmtConfig The blmtConfig. getBlmtConfigBuilder() public BigQueryDestinationConfig ."
+        ]
+      },
+      {
+        "title": "\"Create a stream using the automated flow \\_|\\_ Datastream \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated",
+        "source_id": "site-docs-root-2",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required permissions To use the automated stream creation flow, you need the following Identity and Access Management (IAM) roles or permissions: serviceusage.services.enable , compute.networkAdmin for enabling the required APIs and performing network configuration tasks. cloudsql.admin for instance configuration tasks. datastream.admin for administration tasks that Datastream performs on your behalf.",
+          "Datastream configures tables for CDC, sets up replication slots, sets up a publication for all tables in the database, and creates a dedicated Datastream user.",
+          "If a future table is created by a different user, then that user must explicitly grant the Datastream reader user SELECT permission on the table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.admin",
+      "com.google.cloud.datastream.v1",
+      "com.google.cloud.datastream.v1.BigQueryDestinationConfig",
+      "com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+      "compute.networkAdmin",
+      "datastream.admin",
+      "datastream.googleapis.com",
+      "serviceusage.services.enable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream-automated"
+      ]
+    }
+  ]
+}

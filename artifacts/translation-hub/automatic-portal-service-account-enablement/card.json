@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.587Z",
+  "source_step08_card": "data/step-08/current/products/translation-hub/card.json",
+  "product_name": "Translation Hub",
+  "product_slug": "translation-hub",
+  "feature_name": "Automatic portal service account enablement",
+  "feature_slug": "automatic-portal-service-account-enablement",
+  "summary": "Translation Hub can now automatically enable a portal's service account when creating a portal.",
+  "extended_definition": "Translation Hub can now automatically enable a portal's service account when creating a portal.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable users to request translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Portal service account Translation Hub assigns each portal a unique service account and, by default, automatically assigns the Translation Hub Portal User role to the service account.",
+          "After Translation Hub creates your portal, you can go to the Portals page to find and view details about your portal, such as its URL and its service account name.",
+          "Translation Hub automatically assigns the Translation Hub Portal User IAM role to the portal service account."
+        ]
+      },
+      {
+        "title": "Enable post-editing requests \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "source_id": "site-iam-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can set a default translation memory so that Translation Hub automatically sets a translation memory when a portal user requests a translation.",
+          "Go to the IAM page From the list of principals, check to see if the cloud-translation-hub@system.gserviceaccount.com service account already exists with the Storage Admin role.",
+          "To allow access, grant the Translation Hub service account the Storage Admin role, which allows Translation Hub to upload and read CSV files from your Cloud Storage buckets."
+        ]
+      },
+      {
+        "title": "\"Centrally manage saved translations \\_|\\_ Translation Hub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "source_id": "site-iam-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You might, for example, set a translation memory to read only for most portals so that users can apply the translation memory and freely make post edits without modifying the translation memory.",
+          "You can continue using Translation Hub until September 20, 2026, when it will be shut down.",
+          "In the Translation Hub section of the Google Cloud console, go to the Portals page."
+        ]
+      },
+      {
+        "title": "\"Save and reuse human-reviewed translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "source_id": "site-iam-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set a default translation memory You can set a default translation memory that Translation Hub automatically selects when portal users request a translation.",
+          "Portal users can apply a translation memory on their translation jobs so that exact matches on source-language segments are replaced by their corresponding target-language segments.",
+          "For example, if a portal user edits a segment that Translation Hub translated with a translation memory, Translation Hub replaces the existing segment with the newly edited segment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "system.gserviceaccount.com",
+      "translationhub.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory"
+      ]
+    }
+  ]
+}

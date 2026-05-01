@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.598Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python",
+  "feature_name": "Cloud Scheduler integration",
+  "feature_slug": "cloud-scheduler-integration",
+  "summary": "App Engine applications can use Cloud Scheduler to run scheduled jobs.",
+  "extended_definition": "App Engine applications can use Cloud Scheduler to run scheduled jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+      "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+      "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable billing in your new Google Cloud project by creating a new billing account or setting an existing one: Go to Billing Download and install the Google Cloud CLI and then initialize the gcloud CLI: Download the SDK Run the following gcloud command to create an App Engine application and specify in which geographical region that you want your app to run: gcloud app create Due to changes in the default behavior for how Cloud Build uses service accounts in new projects, and secure-by-default organization policy changes , you might need to grant additional roles to your deploying service account.",
+          "OK Download the Hello World app Choose one of the following to download the Hello World sample app from GitHub, to your local machine: Clone the Hello World sample app from the following repository: git clone https://github.com/GoogleCloudPlatform/appengine-custom-runtimes-samples Download the sample as a .zip file and then extract it to a local directory.",
+          "Before you begin Before running the sample app in this quickstart, you need to set up your environment and create a new Google Cloud project for App Engine: Create a new Google Cloud project by using the Google Cloud console: Open the Google Cloud console: Go to Projects Click Create Project and then name your new Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"An Overview of the Admin API \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 35,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The App Engine Admin API is a RESTful API for managing your App Engine applications regardless of programming language.",
+          "With the Admin API, you can manage your App Engine applications in manners that best suit your environment or process.",
+          "Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 35,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Go Java Node.js PHP Python Ruby .NET Custom To authenticate users in Google Cloud applications, Google offers the following user authentication methods: Authentication Service Summary Identity Platform (recommended) Authenticate users using passwords, phone numbers, popular federated identity providers like Google, Facebook, Twitter, and any provider that supports SAML or OpenID Connect protocol.",
+          "Similar to Identity Platform, Firebase Authentication supports multiple authentication methods (SAML, OIDC, email/password, social, mobile, and custom auth) to provide flexible integration options for any identity solution.",
+          "Identity Platform Identity Platform is a customer identity and access management (CIAM) platform that lets organizations customize identity and authentication for user sign-up and sign-in in their applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    }
+  ]
+}

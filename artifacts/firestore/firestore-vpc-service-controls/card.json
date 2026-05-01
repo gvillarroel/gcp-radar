@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.158Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore VPC Service Controls",
+  "feature_slug": "firestore-vpc-service-controls",
+  "summary": "Firestore can be protected with VPC Service Controls; Firestore can be protected with VPC Service Controls.",
+  "extended_definition": "Firestore can be protected with VPC Service Controls; Firestore can be protected with VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/cmek",
+      "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you use VPC Service Controls, you must use the service-specific Firestore service agent to fully protect import and export operations.",
+          "Note: If you use VPC Service Controls, you must use the Firestore service agent to fully protect import and export operations.",
+          "Note: Exporting a collection group won't automatically export subcollections of the collections within the group. gcloud firestore export gs:// [BUCKET NAME] \\ --collection-ids= [COLLECTION GROUP ID 1] , [COLLECTION GROUP ID 2] \\ --database= [DATABASE] For example, you can design a restaurants collection in the foo database to include multiple subcollections, such as ratings , reviews , or outlets ."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "source_id": "site-docs-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you use VPC Service Controls, you must use the service-specific Firestore service agent to fully protect import and export operations.",
+          "Note: If you use VPC Service Controls, you must use the Firestore service agent to fully protect import and export operations.",
+          "Note: Exporting a collection group won't automatically export subcollections of the collections within the group. gcloud firestore export gs:// [BUCKET NAME] \\ --collection-ids= [COLLECTION GROUP ID 1] , [COLLECTION GROUP ID 2] \\ --database= [DATABASE] For example, you can design a restaurants collection in the foo database to include multiple subcollections, such as ratings , reviews , or outlets ."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instead of Google managing the encryption keys that protect your data, your Firestore database is protected using a key that you control and manage in Cloud Key Management Service (Cloud KMS) .",
+          "Appropriate security controls are required for any application accessing Firestore data to make sure that data is only accessed by those with proper authorization.",
+          "When a CMEK-protected Firestore database creates a backup, it encrypts the backup with the primary key version used at the time of backup creation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/docs/cmek"
+      ]
+    }
+  ]
+}

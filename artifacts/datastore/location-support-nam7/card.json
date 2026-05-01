@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.372Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Location support: nam7",
+  "feature_slug": "location-support-nam7",
+  "summary": "Firestore in Datastore mode supports the nam7 multi-region in the United States Central and East geography.",
+  "extended_definition": "Firestore in Datastore mode supports the nam7 multi-region in the United States Central and East geography.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+      "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/store-query-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Store and query data in Firestore in Datastore mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.",
+          "When you create a new Firestore database, you have the option to use Firestore in either Native Mode or Datastore mode.",
+          "The location applies to both Datastore mode databases and App Engine apps for your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Getting started with the Firestore in Datastore mode API Stay organized with collections Save and categorize content based on your preferences.",
+          "This page provides a short exercise in building a command-line TaskList application with the Firestore in Datastore mode API.",
+          "For a deeper look into the Datastore mode capabilities, see What is Firestore in Datastore mode? ."
+        ]
+      },
+      {
+        "title": "\"Managing Firestore in Datastore mode from the Console \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Managing Firestore in Datastore mode from the Console Stay organized with collections Save and categorize content based on your preferences.",
+          "In the navigation menu, click Datastore Studio to view data for the entities in your application, as well as statistics for the built-in and composite indexes.",
+          "In the navigation menu, click Datastore Studio to view the entities that your application stored in your database."
+        ]
+      },
+      {
+        "title": "App Engine Requirement \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "source_id": "site-iam-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a google firestore database resource In your Terraform configuration file, create a new google firestore database resource: datastore.tf resource \"google firestore database\" \"database\" { project = \" project \" name = \"(default)\" location id = \" location \" type = \"DATASTORE MODE\" app engine integration mode = \"DISABLED\" // Optional, but recommended for safety delete protection state = \"DELETE PROTECTION ENABLED\" } See Datastore locations for the list of available locations.",
+          "Go to Datastore Admin Migrating Terraform App Engine Resources If you previously managed Datastore mode databases via the google app engine application Terraform resource, you can use the google firestore database Terraform resource instead.",
+          "Next, import the existing Datastore mode database into your Terraform state: terraform import google firestore database.database \"(default)\" Next, run: terraform plan Inspect the output to ensure the import completed successfully."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "database.database",
+      "datastore.databases.create",
+      "datastore.tf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement"
+      ]
+    }
+  ]
+}

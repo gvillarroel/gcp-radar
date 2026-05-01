@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.174Z",
+  "source_step08_card": "data/step-08/current/products/cluster-toolkit/card.json",
+  "product_name": "Cluster Toolkit",
+  "product_slug": "cluster-toolkit",
+  "feature_name": "AArch64 architecture support",
+  "feature_slug": "aarch64-architecture-support",
+  "summary": "Cluster Toolkit adds support for aarch64-based architecture.",
+  "extended_definition": "Cluster Toolkit adds support for aarch64-based architecture.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/tutorials/best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy an A3 Mega GKE cluster for ML training \\_|\\_ Cluster Toolkit \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Deploy an A3 Mega GKE cluster for ML training Stay organized with collections Save and categorize content based on your preferences.",
+          "For the clusters created with Cluster Toolkit, the cluster names are based on the DEPLOYMENT NAME name.",
+          "To go to the main Cluster Toolkit blueprint's working directory, run the following command from the CLI. cd cluster-toolkit Create a Cloud Storage bucket to store the state of the Terraform deployment: gcloud storage buckets create gs:// BUCKET NAME \\ --default-storage-class = STANDARD \\ --project = PROJECT ID \\ --location = COMPUTE REGION TERRAFORM STATE \\ --uniform-bucket-level-access gcloud storage buckets update gs:// BUCKET NAME --versioning Replace the following variables: BUCKET NAME : the name of the new Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "\"Deploy an A3 Mega Slurm cluster for ML training \\_|\\_ Cluster Toolkit \\_\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Deploy an A3 Mega Slurm cluster for ML training Stay organized with collections Save and categorize content based on your preferences.",
+          "To redeploy the cluster using an existing image run the following command from the main Cluster Toolkit directory : ./gcluster deploy -d \\ examples/machine-learning/a3-megagpu-8g/a3mega-slurm-deployment.yaml \\ examples/machine-learning/a3-megagpu-8g/a3mega-slurm-blueprint.yaml \\ --only primary,cluster --auto-approve -w This command is only for redeployments where an image already exists as it only redeploys the cluster and its infrastructure.",
+          "To learn how to cleanly destroy infrastructure and for advanced manual deployment instructions, see the deployment folder located at the root of the Cluster Toolkit directory: DEPLOYMENT FOLDER /instructions.txt Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Deploy an HPC cluster with Slurm \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Architecture diagram for an HPC cluster that uses Slurm Launch Cloud Shell In the Google Cloud console, activate Cloud Shell.",
+          "Ensure that the default Compute Engine service account is enabled Cluster Toolkit requires that the default Compute Engine service account is enabled in your project and that the Compute Instance Admin (v1) role ( roles/compute.instanceAdmin.v1 ) and the Service Account User role ( roles/iam.serviceAccountUser ) are granted to the service account."
+        ]
+      },
+      {
+        "title": "\"Best practices for running HPC workloads \\_|\\_ Cluster Toolkit \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/tutorials/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Best practices for running HPC workloads Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, this setting affects dnf automatic package updates on the following image families: HPC images, such as hpc-rocky-linux-8 (project cloud-hpc-image-public ) Slurm images, such as slurm-gcp-6-6-hpc-rocky-linux-8 (project schedmd-slurm-public ) Cluster Toolkit provides a convenient setting on relevant modules to set this metadata flag for you: allow automatic updates: false .",
+          "However, Cluster Toolkit automatically handles all of this tuning when you use a cluster blueprint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blueprint.yaml",
+      "compute.instanceAdmin.v1",
+      "deployment.yaml",
+      "iam.serviceAccountUser",
+      "instructions.txt"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/tutorials/best-practices"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/tutorials/best-practices"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/tutorials/best-practices"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/tutorials/best-practices"
+      ]
+    }
+  ]
+}

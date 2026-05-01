@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.927Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Enhanced rule ordering",
+  "feature_slug": "enhanced-rule-ordering",
+  "summary": "Chains rules in the order specified in a ruleset.",
+  "extended_definition": "Chains rules in the order specified in a ruleset.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modifying infoType detectors to refine scan results \\_|\\_ Sensitive Data\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rule ordering and chaining Sensitive Data Protection applies the rules in the order you specify them in the ruleset.",
+          "The order in which the rules in a ruleset are specified is important.",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\Dictionary; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\Dictionary\\WordList; use Google\\Cloud\\Dlp\\V2\\ExclusionRule; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectContentRequest; use Google\\Cloud\\Dlp\\V2\\InspectionRule; use Google\\Cloud\\Dlp\\V2\\InspectionRuleSet; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\MatchingType; / Inspect a string with an exclusion dictionary substring Omit scan matches that include the substring \"TEST\". @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. @param array $excludedSubStringArray The sub string to excluded. / function inspect string with exclusion dict substring( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = 'Some email addresses: gary@example.com, TEST@example.com', array $excludedSubStringArray = ['Test'] ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the type of info the inspection will look for. $infotypes = [ (new InfoType())->setName('PHONE NUMBER'), (new InfoType())->setName('EMAIL ADDRESS'), (new InfoType())->setName('DOMAIN NAME'), (new InfoType())->setName('PERSON NAME'), ]; // Exclude matches from the specified excludedSubstringList. $excludedSubstringList = (new Dictionary()) ->setWordList((new WordList()) ->setWords($excludedSubStringArray)); $exclusionRule = (new ExclusionRule()) ->setMatchingType(MatchingType::MATCHING TYPE PARTIAL MATCH) ->setDictionary($excludedSubstringList); // Construct a ruleset that applies the exclusion rule to the EMAIL ADDRESSES infotype. $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes($infotypes) ->setRules([ (new InspectionRule()) ->setExclusionRule($exclusionRule), ]); // Construct the configuration for the Inspect request, including the ruleset. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infotypes) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' ."
+        ]
+      },
+      {
+        "title": "\"Creating and scheduling Sensitive Data Protection inspection jobs \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also add custom infoType detectors in the Custom infoTypes section, and customize both built-in and custom infoType detectors in the Inspection rulesets section.",
+          "Select all infoType detectors that your rulesets modify (the target infoTypes) or use for assessment (the context infoTypes).",
+          "Select all infoType detectors that your rulesets modify (the target infoTypes) or use for assessment (the context infoTypes)."
+        ]
+      },
+      {
+        "title": "InspectConfig \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exclusion rules, contained in the set are executed in the end, other rules are executed in the order they are specified for each info type.",
+          "ExclusionRule The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.",
+          "InspectionRule A single inspection rule to be applied to infoTypes, specified in InspectionRuleSet ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    }
+  ]
+}

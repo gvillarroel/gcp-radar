@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.747Z",
+  "source_step08_card": "data/step-08/current/products/automl-translation/card.json",
+  "product_name": "AutoML Translation",
+  "product_slug": "automl-translation",
+  "feature_name": "Additional AutoML Translation language pairs",
+  "feature_slug": "additional-automl-translation-language-pairs",
+  "summary": "AutoML Translation added new supported language translation pairs, including Javanese-English, Khmer-English, Myanmar-Burmese-English, Nepali-English, Pashto-English, Tagalog-English, Tamil-English, Telugu-English, Uzbek-English, and Zulu-English.",
+  "extended_definition": "AutoML Translation added new supported language translation pairs, including Javanese-English, Khmer-English, Myanmar-Burmese-English, Nepali-English, Pashto-English, Tagalog-English, Tamil-English, Telugu-English, Uzbek-English, and Zulu-English.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Namespace Google.Api (2.17.0) \\_|\\_ .NET client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sub-example 6a Make the templates strict, so that if the table name does not have an instance information, nothing is sent. annotation: option (google.api.routing) = { // The routing code needs two keys instead of one composite // but works only for the tables with the \"project-instance\" name // syntax. routing parameters { field: \"table name\" path template: \"{project id=projects/ }/instances/ / \" } routing parameters { field: \"table name\" path template: \"projects/ /{instance id=instances/ }/ \" } }; result: x-goog-request-params: project id=projects/proj foo&instance id=instances/instance bar Sub-example 6b Make the templates loose, so that if the table name does not have an instance information, just the project id part is sent. annotation: option (google.api.routing) = { // The routing code wants two keys instead of one composite // but will work with just the project id for tables without // an instance in the table name. routing parameters { field: \"table name\" path template: \"{project id=projects/ }/ \" } routing parameters { field: \"table name\" path template: \"projects/ /{instance id=instances/ }/ \" } }; result (is the same as 6a for our example message because it has the instance information): x-goog-request-params: project id=projects/proj foo&instance id=instances/instance bar Example 7 Extracting multiple routing header key-value pairs by matching several path templates on multiple request fields.",
+          "The examples below will apply to an RPC which has the following request type: Message Definition: message Request { // The name of the Table // Values can be of the following formats: // - projects/<project>/tables/<table> // - projects/<project>/instances/<instance>/tables/<table> // - region/<region>/zones/<zone>/tables/<table> string table name = 1; // This value specifies routing for replication. // It can be in the following formats: // - profiles/<profile id> // - a legacy profile id that can be any string string app profile id = 2; } Example message: { table name: projects/proj foo/instances/instance bar/table/table baz, app profile id: profiles/prof qux } The routing header consists of one or multiple key-value pairs.",
+          "Example: service Messaging { rpc GetMessage(GetMessageRequest) returns (Message) { option (google.api.http) = { get: \"/v1/messages/{message id}\" additional bindings { get: \"/v1/users/{user id}/messages/{message id}\" } }; } } message GetMessageRequest { string message id = 1; string user id = 2; } This enables the following two alternative HTTP JSON to RPC mappings: HTTP: GET /v1/messages/123456 gRPC: GetMessage(message id: \"123456\") HTTP: GET /v1/users/me/messages/123456 gRPC: GetMessage(user id: \"me\" message id: \"123456\") Rules for HTTP mapping Leaf request fields (recursive expansion nested messages in the request message) are classified into three categories: Fields referred by the path template."
+        ]
+      },
+      {
+        "title": "Create and manage datasets \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"datasets\": [ { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID \", \"displayName\": \" DATASET NAME \", \"sourceLanguageCode\": \" SOURCE LANG CODE \", \"targetLanguageCode\": \" TARGET LANG CODE \", \"exampleCount\": 8720, \"createTime\": \"2022-10-19T23:24:34.734549Z\", \"updateTime\": \"2022-10-19T23:24:35.357525Z\" }, ... ] } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID :importData\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID :exportData\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET."
+        ]
+      },
+      {
+        "title": "Create and manage models \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"models\": [ { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/models/ MODEL ID \", \"displayName\": \" MODEL DISPLAY NAME \", \"dataset\": \"projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID \" \"sourceLanguageCode\": \" SOURCE LANG CODE \", \"targetLanguageCode\": \" TARGET LANG CODE \", \"trainExampleCount\": NUM TRAINING SEGMENTS , \"validateExampleCount\": NUM VALIDATION SEGMENTS , \"createTime\": \"2022-12-02T21:53:26.788521838Z\", \"updateTime\": \"2022-12-03T00:42:27.946594016Z\" }, ... ] } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/models/ MODEL ID \", \"displayName\": \" MODEL DISPLAY NAME \", \"dataset\": \"projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID \" \"sourceLanguageCode\": \" SOURCE LANG CODE \", \"targetLanguageCode\": \" TARGET LANG CODE \", \"trainExampleCount\": NUM TRAINING SEGMENTS , \"validateExampleCount\": NUM VALIDATION SEGMENTS , \"createTime\": \"2022-12-02T21:53:26.788521838Z\", \"updateTime\": \"2022-12-03T00:42:27.946594016Z\" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ location-id /operations/ operation-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ project-number /locations/ location-id /operations/ operation-id \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.translation.v3.SomeOperationMetadata\", \"state\": \"SUCCEEDED\", \"submitTime\": \"2019-11-27T22:59:40Z\" } } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.json",
+      "translation.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dotnet/docs/reference/Google.Api.CommonProtos/latest/Google.Api",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    }
+  ]
+}

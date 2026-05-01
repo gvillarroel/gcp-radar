@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.583Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Runtime Configurator requestId support",
+  "feature_slug": "runtime-configurator-requestid-support",
+  "summary": "The Runtime Configurator API supports an optional requestId field on create requests to ensure uniqueness.",
+  "extended_definition": "The Runtime Configurator API supports an optional requestId field on create requests to ensure uniqueness.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/patch",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/stop"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deployments: patch \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/patch",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from. targetId unsigned long [Output Only] The unique target ID, which identifies a specific incarnation of the target resource. status string [Output Only] The status of the operation, which can be one of the following: PENDING , RUNNING , or DONE . statusMessage string [Output Only] An optional textual description of the current status of the operation. user string [Output Only] User who requested the operation, for example: user@example.com . progress integer [Output Only] An optional progress indicator that ranges from 0 to 100.",
+          "This property is optional. error.errors[]. message string [Output Only] An optional, human-readable error message. warnings[] list [Output Only] If warning messages are generated during processing of the operation, this field will be populated. warnings[]. code string [Output Only] A warning code, if applicable.",
+          "It is not settable as a field in the request body. description string [Output Only] A textual description of the operation, which is set when the operation is created."
+        ]
+      },
+      {
+        "title": "\"Deployments: cancelPreview \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from. targetId unsigned long [Output Only] The unique target ID, which identifies a specific incarnation of the target resource. status string [Output Only] The status of the operation, which can be one of the following: PENDING , RUNNING , or DONE . statusMessage string [Output Only] An optional textual description of the current status of the operation. user string [Output Only] User who requested the operation, for example: user@example.com . progress integer [Output Only] An optional progress indicator that ranges from 0 to 100.",
+          "This property is optional. error.errors[]. message string [Output Only] An optional, human-readable error message. warnings[] list [Output Only] If warning messages are generated during processing of the operation, this field will be populated. warnings[]. code string [Output Only] A warning code, if applicable.",
+          "It is not settable as a field in the request body. description string [Output Only] A textual description of the operation, which is set when the operation is created."
+        ]
+      },
+      {
+        "title": "Deployments: stop \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/stop",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from. targetId unsigned long [Output Only] The unique target ID, which identifies a specific incarnation of the target resource. status string [Output Only] The status of the operation, which can be one of the following: PENDING , RUNNING , or DONE . statusMessage string [Output Only] An optional textual description of the current status of the operation. user string [Output Only] User who requested the operation, for example: user@example.com . progress integer [Output Only] An optional progress indicator that ranges from 0 to 100.",
+          "This property is optional. error.errors[]. message string [Output Only] An optional, human-readable error message. warnings[] list [Output Only] If warning messages are generated during processing of the operation, this field will be populated. warnings[]. code string [Output Only] A warning code, if applicable.",
+          "It is not settable as a field in the request body. description string [Output Only] A textual description of the operation, which is set when the operation is created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "error.errors",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

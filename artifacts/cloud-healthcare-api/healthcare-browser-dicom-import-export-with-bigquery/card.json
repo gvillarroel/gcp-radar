@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.664Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "Healthcare Browser DICOM import/export with BigQuery",
+  "feature_slug": "healthcare-browser-dicom-import-export-with-bigquery",
+  "summary": "The Cloud Healthcare Browser now supports importing DICOM data to BigQuery and exporting DICOM data from BigQuery.",
+  "extended_definition": "The Cloud Healthcare Browser now supports importing DICOM data to BigQuery and exporting DICOM data from BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating and managing DICOM stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" request = ( client . projects () . locations () . datasets () . dicomStores () . delete ( name = dicom store name ) ) response = request . execute () print ( f \"Deleted DICOM store: { dicom store id } \" ) return response What's next Export and import DICOM object instances to and from Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can add and manage DICOM instances in a DICOM store using the DICOMweb implementation in the Cloud Healthcare API, or you can import and export DICOM instances using Google Cloud services.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID pubsub topic = 'my-topic' # replace with an existing Pub/Sub topic dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" patch = { \"notificationConfig\" : { \"pubsubTopic\" : f \"projects/ { project id } /topics/ { pubsub topic } \" } } request = ( client . projects () . locations () . datasets () . dicomStores () . patch ( name = dicom store name , updateMask = \"notificationConfig\" , body = patch ) ) response = request . execute () print ( \"Patched DICOM store {} with Cloud Pub/Sub topic: {} \" . format ( dicom store id , pubsub topic ) ) return response Getting DICOM store details The following samples show how to get details about a DICOM store."
+        ]
+      },
+      {
+        "title": "\"Import and export FHIR resources using Cloud Storage \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID fhir store id = 'my-fhir-store' # replace with the FHIR store ID gcs uri = 'my-bucket' # replace with a Cloud Storage bucket fhir store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) fhir store name = f \" { fhir store parent } /fhirStores/ { fhir store id } \" body = { \"contentStructure\" : \"CONTENT STRUCTURE UNSPECIFIED\" , \"gcsSource\" : { \"uri\" : f \"gs:// { gcs uri } \" }, } Escape \"import()\" method keyword because \"import\" is a reserved keyword in Python request = ( client . projects () . locations () . datasets () . fhirStores () . import ( name = fhir store name , body = body ) ) response = request . execute () print ( f \"Imported FHIR resources: { gcs uri } \" ) return response Exporting FHIR resources The following samples show how to export FHIR resources to a Cloud Storage bucket.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID fhir store id = 'my-fhir-store' # replace with the FHIR store ID gcs uri = 'my-bucket' # replace with a Cloud Storage bucket fhir store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) fhir store name = f \" { fhir store parent } /fhirStores/ { fhir store id } \" body = { \"gcsDestination\" : { \"uriPrefix\" : f \"gs:// { gcs uri } /fhir export\" }} request = ( client . projects () . locations () . datasets () . fhirStores () . export ( name = fhir store name , body = body ) ) response = request . execute () print ( f \"Exported FHIR resources to bucket: gs:// { gcs uri } \" ) return response Incremental exports You can specify a timestamp to only export FHIR resources added to your FHIR store since a previous successful export.",
+          "To track the status of the operation, you can use the Operation get method : $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Get -Headers $headers -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \" Select-Object -Expand Content If the request is successful, the server returns a response with the status of the operation in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.fhir.FhirService.ExportResources\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": \"https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL \", \"counter\": { \"success\": \" SUCCESS COUNT \" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.fhir.rest.ExportResourcesResponse\", } } Go import ( \"context\" \"fmt\" \"io\" \"time\" healthcare \"google.golang.org/api/healthcare/v1\" ) // exportFHIRResource exports the resources in the FHIR store. func exportFHIRResource ( w io ."
+        ]
+      },
+      {
+        "title": "\"Configure DICOM Pub/Sub notifications \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID PUBSUB TOPIC : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC \\ --send-for-bulk-import Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC --send-for-bulk-import Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ^ --send-for-bulk-import You should receive a response similar to the following: Response Updated dicomStore [ DICOM STORE ID ]. ... name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC sendForBulkImport: true Store or import a DICOM instance and view the Pub/Sub notification Permissions required for this task To perform this task, you must have been granted the following permissions or the following Identity and Access Management (IAM) roles: Permissions healthcare.dicomStores.dicomWebWrite to store DICOM instances in the requested DICOM store. healthcare.dicomStores.import to import DICOM instances into the requested DICOM store.",
+          "Here are the key differences: dicomStore.notificationConfig supports only one subscriber, while dicomStore.notificationConfigs supports multiple subscribers. dicomStore.notificationConfig uses NotificationConfig , which is being deprecated and replaced by DicomNotificationConfig . dicomStore.notificationConfigs supports sending notifications for all available DICOM operations automatically, such as ImportDicomData , DeleteInstances , and others.",
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project PUBSUB SUBSCRIPTION ID : the ID of the subscription attached to the Pub/Sub topic configured on the DICOM store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull \\ projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID \\ --limit = 10 \\ --auto-ack \\ --format = json Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID --limit = 10 --auto-ack --format = json Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud pubsub subscriptions pull ^ projects/ PROJECT ID /subscriptions/ PUBSUB SUBSCRIPTION ID ^ --limit = 10 ^ --auto-ack ^ --format = json You should receive a response similar to the following: [ { \"ackId\": \"RFAGFixdRkhRNxkIaFEOT14jPzUgKEUaAggUBXx9cEFLdVhUcGhRDRlyfWB9bQ5GAgpGWixfURsHaE5tdR\", \"ackStatus\": \"SUCCESS\", \"message\": { \"attributes\": { \"action\": \"ImportDicomData\", \"lastUpdatedTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"storeName\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID \", \"studyInstanceUID\": \"1.3.6.1.4.1.1129.5.111396399361969898205364400549799252857604\", \"seriesInstanceUID\": \"1.3.6.1.4.1.1129.5.111396399361969898205364400549799252857605\", \"sopInstanceUID\": \"1.3.6.1.4.1.1129.5.111396399361969898205364400549799252857606\", \"versionId\": \"MTY4MzA2MDQzOTI5NjIxMDAwMA\", \"modality\": \"CT\", \"storageClass\": \"STANDARD\", }, \"data\": \"cHJvamVjdHMvbXlwcm9qZWN0L2xvY2F0aW9ucy91cy1jZW50cmFsMS9kYXRhc2V0cy9teS1kYXRhc2V0L2RpY29tU3RvcmVzL215LWRpY29tLXN0b3JlL2RpY29tV2ViL3N0dWRpZXMvMS4zLjYuMS40LjEuMTExMjkuNS41LjExMTM5NjM5OTM2MTk2OTg5ODIwNTM2NDQwMDU0OTc5OTI1Mjg1NzYwNC9zZXJpZXMvMS4zLjYuMS40LjEuMTExMjkuNS41LjE5NTYyODIxMzY5NDMwMDQ5ODk0Njc2MDc2NzQ4MTI5MTI2MzUxMTcyNC9pbnN0YW5jZXMvMS4zLjYuMS40LjEuMTExMjkuNS41LjE1Mzc1MTAwOTgzNTEwNzYxNDY2NjgzNDU2MzI5NDY4NDMzOTc0NjQ4MA==\", \"messageId\": \"7586159156345265\", \"publishTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \" } } ] Migrate from notificationConfig to notificationConfigs For existing DICOM store users, if you are using the notificationConfig field to configure your Pub/Sub topic, you should migrate to the notificationConfigs field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "com.google.api.services.healthcare.v1.CloudHealthcare",
+      "com.google.api.services.healthcare.v1.CloudHealthcare.Projects.Locations.Datasets.FhirStores",
+      "com.google.api.services.healthcare.v1.CloudHealthcareScopes",
+      "com.google.api.services.healthcare.v1.model.ExportResourcesRequest",
+      "com.google.api.services.healthcare.v1.model.GoogleCloudHealthcareV1FhirGcsDestination",
+      "com.google.api.services.healthcare.v1.model.Operation",
+      "com.google.auth.http",
+      "console.cloud.google.com",
+      "github.com",
+      "healthcare.dicomStores.dicomWebWrite",
+      "healthcare.dicomStores.import",
+      "healthcare.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    }
+  ]
+}

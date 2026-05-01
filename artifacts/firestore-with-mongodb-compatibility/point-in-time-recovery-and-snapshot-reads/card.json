@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.228Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "Point-in-time recovery and snapshot reads",
+  "feature_slug": "point-in-time-recovery-and-snapshot-reads",
+  "summary": "Firestore with MongoDB compatibility supports point-in-time recovery and snapshot reads in Preview.",
+  "extended_definition": "Firestore with MongoDB compatibility supports point-in-time recovery and snapshot reads in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command to export the database to your bucket. gcloud firestore export gs : //[ BUCKET NAME PATH ] \\ --snapshot-time=[ PITR TIMESTAMP ] Where PITR TIMESTAMP is a PITR timestamp at the minute granularity, for example, 2023-05-26T10:20:00.00Z .",
+          "In the navigation menu, click Import/Export . gcloud Use the operations describe command to show the status of an export or import operation. gcloud firestore operations describe [OPERATION NAME] Estimate the completion time A request for the status of a long-running operation returns the metrics workEstimated and workCompleted .",
+          "Export and import operations are charged for document reads and writes at the rates listed in Firestore pricing ."
+        ]
+      },
+      {
+        "title": "\"Transactions and batched writes \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "source_id": "site-docs-root-2",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to create and run a transaction: Web version 9 import { runTransaction } from \"firebase/firestore\" ; try { await runTransaction ( db , async ( transaction ) = > { const sfDoc = await transaction . get ( sfDocRef ); if ( ! sfDoc . exists ()) { throw \"Document does not exist!\" ; } const newPopulation = sfDoc . data (). population + 1 ; transaction . update ( sfDocRef , { population : newPopulation }); }); console . log ( \"Transaction successfully committed!\" ); } catch ( e ) { console . log ( \"Transaction failed: \" , e ); } transaction . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Create a reference to the SF doc. var sfDocRef = db . collection ( \"cities\" ). doc ( \"SF\" ); // Uncomment to initialize the doc. // sfDocRef.set({ population: 0 }); return db . runTransaction (( transaction ) = > { // This code may get re-run multiple times if there are conflicts. return transaction . get ( sfDocRef ). then (( sfDoc ) = > { if ( ! sfDoc . exists ) { throw \"Document does not exist!\" ; } // Add one person to the city population. // Note: this could be done without a transaction // by updating the population using FieldValue.increment() var newPopulation = sfDoc . data (). population + 1 ; transaction . update ( sfDocRef , { population : newPopulation }); }); }). then (() = > { console . log ( \"Transaction successfully committed!\" ); }). catch (( error ) = > { console . log ( \"Transaction failed: \" , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. let sfReference = db . collection ( \"cities\" ). document ( \"SF\" ) do { let = try await db . runTransaction ({ ( transaction , errorPointer ) - > Any ? in let sfDocument : DocumentSnapshot do { try sfDocument = transaction . getDocument ( sfReference ) } catch let fetchError as NSError { errorPointer ?. pointee = fetchError return nil } guard let oldPopulation = sfDocument . data ()?[ \"population\" ] as ?",
+          "FIRDocumentReference sfReference = [[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"SF\" ]; [ self . db runTransactionWithBlock :^ id ( FIRTransaction transaction , NSError errorPointer ) { FIRDocumentSnapshot sfDocument = [ transaction getDocument : sfReference error : errorPointer ]; if ( errorPointer != nil ) { return nil ; } if ( ! [ sfDocument . data [ @\"population\" ] isKindOfClass : [ NSNumber class ]]) { errorPointer = [ NSError errorWithDomain : @\"AppErrorDomain\" code : -1 userInfo : @{ NSLocalizedDescriptionKey : @\"Unable to retreive population from snapshot\" } ]; return nil ; } NSInteger population = [ sfDocument . data [ @\"population\" ] integerValue ]; population ++ ; if ( population > = 1000000 ) { errorPointer = [ NSError errorWithDomain : @\"AppErrorDomain\" code : -2 userInfo : @{ NSLocalizedDescriptionKey : @\"Population too big\" } ]; return @( population ) ; } [ transaction updateData : @{ @\"population\" : @( population ) } forDocument : sfReference ]; return nil ; } completion :^ ( id result , NSError error ) { if ( error != nil ) { NSLog ( @\"Transaction failed: %@\" , error ); } else { NSLog ( @\"Population increased to %@\" , result ); } }]; ViewController . m Kotlin Android val sfDocRef = db . collection ( \"cities\" ). document ( \"SF\" ) db . runTransaction { transaction - > val snapshot = transaction . get ( sfDocRef ) val newPopulation = snapshot . getDouble ( \"population\" ) !! + 1 if ( newPopulation < = 1000000 ) { transaction . update ( sfDocRef , \"population\" , newPopulation ) newPopulation } else { throw FirebaseFirestoreException ( \"Population too high\" , FirebaseFirestoreException .",
+          "Population is too big.\" ); } }); }). then (( newPopulation ) = > { console . log ( \"Population increased to \" , newPopulation ); }). catch (( err ) = > { // This will be an \"population is too big\" error. console . error ( err ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. let sfReference = db . collection ( \"cities\" ). document ( \"SF\" ) do { let object = try await db . runTransaction ({ ( transaction , errorPointer ) - > Any ? in let sfDocument : DocumentSnapshot do { try sfDocument = transaction . getDocument ( sfReference ) } catch let fetchError as NSError { errorPointer ?. pointee = fetchError return nil } guard let oldPopulation = sfDocument . data ()?[ \"population\" ] as ?"
+        ]
+      },
+      {
+        "title": "\"Plan disaster recovery \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PITR reads also provide a lower recovery time objective and lower recovery point objective than backups.",
+          "Disaster recovery planning for data To protect against data disasters like accidental deletion or modification of data, use scheduled backups and point-in-time recovery (PITR).",
+          "You can read data at a granularity level of 1 minute and surgically write back into the your database with a recovery time objective (maximum time for recovery) of 0."
+        ]
+      },
+      {
+        "title": "\"Manage Firestore with MongoDB compatibility resources using custom constraints\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note that the format of a database name in custom organization policies is projects/ project-id /databases/ database-id while only database-id is specified in database management operations. name : organizations/ ORGANIZATION ID /customConstraints/custom.nameSuffixMobile resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : \"resource.name.endsWith('-mobile')\" actionType : ALLOW displayName : Firestore database names end with \"-mobile\" description : Only allow the creation of database names ending with suffix \"-mobile\" Databases can only be created in specified locations . name : organizations/ ORGANIZATION ID /customConstraints/custom.locationUsCentral1 resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE condition : \"resource.locationId == 'us-central1'\" actionType : ALLOW displayName : Firestore database location id us-central1 description : Only allow the creation of databases in region us-central1 Databases must enable point-in-time-recovery . name : organizations/ ORGANIZATION ID /customConstraints/custom.pitrEnforce resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : \"resource.pointInTimeRecoveryEnablement == \" POINT IN TIME RECOVERY ENABLED\"\" actionType : ALLOW displayName : Firestore database enables PiTR description : Only allow the creation and updating of a databases if PiTR is enabled.",
+          "Resource Field firestore.googleapis.com/Database resource.appEngineIntegrationMode resource.cmekConfig.kmsKeyName resource.concurrencyMode resource.deleteProtectionState resource.locationId resource.name resource.pointInTimeRecoveryEnablement resource.type What's next Learn more about Organization Policy Service .",
+          "Benefits Security, compliance, and governance : you can use custom organization policies as follows: To enforce disaster recovery requirements, you can require specific disaster recovery settings on databases like delete protection, and point in time recovery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.deleteProtectionRequired",
+      "custom.locationUsCentral1",
+      "custom.nameSuffixMobile",
+      "custom.pitrEnforce",
+      "firestore.googleapis.com",
+      "future.get",
+      "resource.appEngineIntegrationMode",
+      "resource.cmekConfig.kmsKeyName",
+      "resource.concurrencyMode",
+      "resource.deleteProtectionState",
+      "resource.locationId",
+      "resource.name",
+      "resource.name.endsWith",
+      "resource.pointInTimeRecoveryEnablement",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    }
+  ]
+}

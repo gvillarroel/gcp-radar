@@ -1,0 +1,39 @@
+# Private cluster support with public control plane endpoint
+
+Product: Cloud Service Mesh
+Feature slug: `private-cluster-support-with-public-control-plane-endpoint`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Private cluster support with a public control plane endpoint allows private clusters to use the Google-managed control plane; Private cluster support with a public control plane endpoint allows private clusters to use the Google-managed control plane.
+
+## Lifecycle
+
+- Latest feature date: 2021-06-15
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- credential
+- iam
+- identity
+- permission
+- private
+- role
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview](https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview)
+- [https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane](https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane)
+- [https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster](https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster)
+- [https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster](https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster)

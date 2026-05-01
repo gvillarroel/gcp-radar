@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.285Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Subscription pricing with updated attributes",
+  "feature_slug": "subscription-pricing-with-updated-attributes",
+  "summary": "Apigee subscription plans are available with pricing attributes aligned to the updated Pay-as-you-go pricing model.",
+  "extended_definition": "Apigee subscription plans are available with pricing attributes aligned to the updated Pay-as-you-go pricing model.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managing rate plans for API products \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following provides an example of the response output, including the two rate plans, myrateplan1 and myrateplan2 associated with HelloworldProduct API product: { \"ratePlans\": [ { \"name\": \"6b51b501-ac15-41b7-bb3e-621edb849e13\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan2\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"setupFee\": { \"currencyCode\": \"USD\", \"units\": \"20\" }, \"fixedRecurringFee\": { \"currencyCode\": \"USD\", \"units\": \"25\" }, \"fixedFeeFrequency\": 1, \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"nanos\": 500000000 } } ], \"revenueShareType\": \"FIXED\", \"revenueShareRates\": [ { \"sharePercentage\": 2 } ], \"state\": \"DRAFT\" }, { \"name\": \"8c0b527c-ba2f-45f1-ac1c-b9e891546fc2\", \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan1\", \"billingPeriod\": \"MONTHLY\", \"currencyCode\": \"USD\", \"consumptionPricingType\": \"FIXED PER UNIT\", \"consumptionPricingRates\": [ { \"fee\": { \"currencyCode\": \"USD\", \"units\": \"3\" } } ], \"state\": \"PUBLISHED\", \"startTime\": \"1617302588000\" } ] } For more information about the API and its response payload, see the List rate plans API Viewing details for a rate plan using the API To view details for a rate plan, issue a GET request to the following API: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME To determine the name of the rate plan to pass in the resource path, see Listing the rate plans in an organization .",
+          "To update a rate plan, issue a PUT request to the following API, passing the modified request body in your request: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME For example, the following changes the consumption-based fee to 5 ; and the revenue share percentage to 6.5% all other configuration settings are included to ensure that they are maintained: curl \"https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME \" \\ -X PUT \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-type: application/json\" \\ -d '{ \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan3\", \"currencyCode\":\"USD\", \"billingPeriod\":\"MONTHLY\", \"consumptionPricingType\":\"FIXED PER UNIT\", \"consumptionPricingRates\":[{ \"fee\":{ \"units\":\"5\" , \"nanos\":0 } }], \"revenueShareType\":\"FIXED\", \"revenueShareRates\":[{ \"sharePercentage\":\"6.5\" }], \"state\":\"DRAFT\", \"startTime\": 1617302588000 }' For more information about the fields you can specify in the request body, see Resource: RatePlans .",
+          "To publish the rate plan, issue a PUT request to the following API, passing the modified request body in your request: https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME For example, the following changes the status of the rateplan1 rate plan to PUBLISHED and sets the activation time to April 1, 2021, specified as milliseconds since epoch: curl \"https://apigee.googleapis.com/v1/organizations/ $ORG /apiproducts/ $APIPRODUCT /rateplans/ $RATEPLAN NAME \" \\ -X PUT \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-type: application/json\" \\ -d '{ \"apiproduct\": \"HelloworldProduct\", \"displayName\": \"myrateplan3\", \"currencyCode\":\"USD\", \"billingPeriod\":\"MONTHLY\", \"consumptionPricingType\":\"FIXED PER UNIT\", \"consumptionPricingRates\":[{ \"fee\":{ \"units\":\"3\", \"nanos\":0 } }], \"revenueShareType\":\"FIXED\", \"revenueShareRates\":[{ \"sharePercentage\":\"5\" }], \"state\":\"PUBLISHED\", \"startTime\": 1617302588000 }' For more information about the fields you can specify in the request body, see Resource: RatePlans ."
+        ]
+      },
+      {
+        "title": "Flow variables reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "PostClientFlow ratelimit. policy name .identifier String Read-Only Returns the (client) identifier reference attached to the policy PostClientFlow ratelimit. policy name .class String Read-Only Returns the class associated with the client identifier PostClientFlow ratelimit. policy name .class.allowed.count Long Read-Only Returns the allowed quota count defined in the class PostClientFlow ratelimit. policy name .class.used.count Long Read-Only Returns the used quota within a class PostClientFlow ratelimit. policy name .class.available.count Long Read-Only Returns the available quota count in the class PostClientFlow ratelimit. policy name .class.exceed.count Long Read-Only Returns the count of requests that exceeds the limit in the class in the current quota interval PostClientFlow ratelimit. policy name .class.total.exceed.count Long Read-Only Returns the total count of requests that exceeds the limit in the class across all quota intervals, so it is the sum of class.exceed.count for all quota intervals.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "Proxy request mint.limitscheck.prepaid developer currency String Read only Currency of the balance available in the mint.limitscheck.prepaid developer balance variable."
+        ]
+      },
+      {
+        "title": "Manage attributes \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows the API call update the API Visibility user defined attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"name\": \"projects/test-15/locations/us-central1/attributes/API Visibility\", display name\" : \"API Visibility Updated\", \"allowedValues\": [ { \"id\": \"internal\", \"displayName\": \"Internal\", \"description\": \"The API is visible internally in an organization\" }, { \"id\": \"external\", \"displayName\": \"External\", \"description\": \"The API is visible externally in an organization\" }, { \"id\": \"public\", \"displayName\": \"Public\", \"description\": \"The API is visible public in an organization\" } ]}' \\ -X PATCH https://autopush-apihub.sandbox.googleapis.com/v1/projects/common-dev-15/locations/us-central1/attributes/API Visibility?update mask=display name,allowed values It's important to understand how API hub interprets the request payload for the UpdateAttribute API.",
+          "There are many other such attributes available.",
+          "The following example shows the API call to create the attribute-01 user defined attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\" : \"custom attribute\", \"description\" : \"custom attribute details\", \"definition type\" : \"USER DEFINED\", \"scope\" : \"API\", \"data type\" : \"ENUM\", \"allowed values\" : [ { \"id\" : \"value-1\", \"display name\" : \"Value 1\", \"description\" : \"Value 1 test description\", \"immutable\" : false, }, { \"id\" : \"value-2\", \"display name\" : \"Value 2\", \"description\" : \"Value 2 test description\", \"immutable\" : false, }, ], \"cardinality\" : 4, \"mandatory\" : false }' \\ -X POST https://apihub.googleapis.com/v1/projects/test-15/locations/us-central1/attributes?attribute id=attribute-01 Edit a user defined attribute Caution: Avoid adding sensitive data to user defined attributes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "apihub.googleapis.com",
+      "apihub.sandbox.googleapis.com",
+      "available.count",
+      "class.allowed.count",
+      "class.available.count",
+      "class.exceed.count",
+      "class.total.exceed.count",
+      "class.used.count",
+      "exceed.count",
+      "mint.limitscheck.prepaid"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/manage-rate-plans",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    }
+  ]
+}

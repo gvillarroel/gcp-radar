@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.584Z",
+  "source_step08_card": "data/step-08/current/products/managed-service-for-microsoft-active-directory/card.json",
+  "product_name": "Managed Service for Microsoft Active Directory",
+  "product_slug": "managed-service-for-microsoft-active-directory",
+  "feature_name": "Managed Microsoft AD regional availability",
+  "feature_slug": "managed-microsoft-ad-regional-availability",
+  "summary": "Managed Microsoft AD can be deployed in the africa-south1 (Johannesburg) region; Managed Microsoft AD can be deployed in the europe-west10 (Berlin) region.",
+  "extended_definition": "Managed Microsoft AD can be deployed in the africa-south1 (Johannesburg) region; Managed Microsoft AD can be deployed in the europe-west10 (Berlin) region.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy an Active Directory resource forest \\_|\\_ Managed Service for Microsoft\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "source_id": "site-docs-root",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note that you can only deploy Managed Microsoft AD in some regions (this doesn't affect the general availability of your domain, which is available in all regions where your VPC has a presence).",
+          "Protecting the project against accidental deletion Deleting a project also deletes any Managed Microsoft AD domains deployed inside it.",
+          "AD DNS DOMAIN=[AD-DNS-NAME] For example: AD DNS DOMAIN=cloud.example.com Enable Cloud DNS in the VPC host project: gcloud services enable dns.googleapis.com --project $VPCHOST PROJECT ID Enable Managed Microsoft AD API in the VPC host project: gcloud services enable managedidentities.googleapis.com --project $VPCHOST PROJECT ID Provision the domain controllers and create a new forest: gcloud active - directory domains create $AD DNS DOMAIN \\ -- admin - name = SetupAdmin \\ -- reserved - ip - range = $SUBNET RANGE MANAGEDAD \\ -- region = $SUBNET REGION \\ -- authorized - networks = projects / $VPCHOST PROJECT ID / global / networks / $SHAREDVPC NAME \\ -- project = $VPCHOST PROJECT ID Allow 15 to 20 minutes for the command to complete."
+        ]
+      },
+      {
+        "title": "\"Deploy domain controllers in additional regions \\_|\\_ Managed Service for\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 47,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Regions Managed Microsoft AD supports the following regions: Region name Region description africa-south1 Johannesburg asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-south2 Delhi asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne europe-central2 Warsaw europe-north1 Finland europe-southwest1 Madrid europe-west1 Belgium europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zürich europe-west8 Milan europe-west9 Paris europe-west10 Berlin europe-west12 Turin me-central1 Doha me-central2 Dammam me-west1 Tel Aviv northamerica-northeast1 Montréal northamerica-northeast2 Toronto southamerica-east1 São Paulo us-central1 Iowa us-east1 South Carolina us-east4 Northern Virginia us-east5 Columbus us-south1 Dallas us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City us-west4 Las Vegas Add a region Managed Microsoft AD uses a single Active Directory site .",
+          "Home Documentation Access and resource management Managed Microsoft AD Guides Send feedback Deploy domain controllers in additional regions Stay organized with collections Save and categorize content based on your preferences.",
+          "However, to increase availability and be resilient to regional outages , we recommend that you deploy domain controllers in additional regions."
+        ]
+      },
+      {
+        "title": "\"Managed Microsoft AD overview \\_|\\_ Managed Service for Microsoft Active\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multi-regional support Managed Microsoft AD supports multi-regional deployment of Active Directory forests when peered with Google Cloud's global low-latency Virtual Private Cloud (VPC).",
+          "To maintain high availability and improve fault tolerance , Managed Microsoft AD deploys two domain controllers to each region in non-overlapping Google Cloud zones.",
+          "Getting started with Managed Microsoft AD To get started with using Managed Microsoft AD, specify the name of the Managed Microsoft AD domain and the Google Cloud VPC networks where the Managed Microsoft AD domain is authorized to be available."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dns.googleapis.com",
+      "managedidentities.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/part-1-deploy-active-directory",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    }
+  ]
+}

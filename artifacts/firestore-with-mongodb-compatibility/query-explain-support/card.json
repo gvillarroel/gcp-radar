@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.228Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "Query explain support",
+  "feature_slug": "query-explain-support",
+  "summary": "Firestore with MongoDB compatibility supports explaining queries through the MongoDB API.",
+  "extended_definition": "Firestore with MongoDB compatibility supports explaining queries through the MongoDB API.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Command Supported cloneCollectionAsCapped No collMod No collMod: expireAfterSeconds No convertToCapped No copydb No create Yes createIndex Yes createIndexes Yes createView No currentOp No drop No dropDatabase No To delete a database, see Delete a database . dropIndex Yes To delete indexes, see Manage indexes . dropIndexes No filemd5 No getAuditConfig No killCursors Yes killOp No listCollections Yes listDatabases Yes listIndexes Yes reIndex No renameCollection No setAuditConfig No Diagnostic commands Command Supported buildInfo Yes collStats No connectionStatus Yes connPoolStats No dataSize No dbHash No dbStats No explain Yes For behavior differences and limitations, see Query Explain features No hello Yes hostInfo Yes listCommands No profiler No serverStatus No top No whatsmyuri No Role management commands To manage database access, Firestore with MongoDB compatibility supports Identity and Access Management roles and permissions .",
+          "Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators.",
+          "Geometry specifiers Specifier Supported $box No $center No $centerSphere No $geometry No $maxDistance No $minDistance No $polygon No $uniqueDocs No Query selectors Selector Supported $geoIntersects No $geoWithin No $near No $nearSphere No $nearSphere No $uniqueDocs No Indexes and index properties Firestore with MongoDB compatibility supports the following indexes and index operators."
+        ]
+      },
+      {
+        "title": "\"Query execution reference \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Firestore with MongoDB compatibility Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "To learn how to execute a query with Query Explain, see Analyze query execution with Query Explain .",
+          "Query execution reference This page explains the output of a query executed with Query Explain."
+        ]
+      },
+      {
+        "title": "\"Import and export data \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "source_id": "site-iam-reference",
+        "final_score": 236,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: You must export specific collections if you plan to: Import only specific collections Load Firestore with MongoDB compatibility data into BigQuery Export all documents Google Cloud Console In the Google Cloud console, go to the Databases page.",
+          "If a collection's BigQuery schema surpasses 10,000 columns, the Firestore with MongoDB compatibility export operation attempts to stay under the column limit by treating map fields as bytes.",
+          "Export to BigQuery You can load data from a Firestore with MongoDB compatibility export into BigQuery, but only if you specified a collection-ids filter."
+        ]
+      },
+      {
+        "title": "\"Supported MongoDB data types and drivers \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Languages and MongoDB drivers Firestore with MongoDB compatibility supports the following driver versions: Language Driver versions Java 5.x Node.js 6.x 5.x Python 4.x 3.x (x ≥ 12) Go 2.x C# 3.x Ruby 2.x (x ≥ 16) OIDC authentication support The Go, C#, and Ruby drivers support OpenID Connect (OIDC) authentication from Google Cloud for all supported driver versions.",
+          "The Java, Node.js, and Python drivers support OIDC authentication from Google Cloud starting with the following driver versions: Java: 4.10 Node.js: 6.7 Python: 4.7 Third-party tools Firestore with MongoDB compatibility supports third-party tools described in this section.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-data-types-drivers"
+      ]
+    }
+  ]
+}

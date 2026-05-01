@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable Console instance utilization graphs",
+  "feature_slug": "cloud-bigtable-console-instance-utilization-graphs",
+  "summary": "The Cloud Bigtable Console now provides instance graphs showing cluster node counts and CPU utilization, including average cluster CPU and busiest-node CPU usage.",
+  "extended_definition": "The Cloud Bigtable Console now provides instance graphs showing cluster node counts and CPU utilization, including average cluster CPU and busiest-node CPU usage.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/creating-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an instance \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . // Creates a Production Instance with the ID \"ssd-instance\" // with cluster id \"ssd-cluster\", 3 nodes and location us-central1-f const { BigtableInstanceAdminClient } = require ( ' @google-cloud/bigtable ' ). v2 ; const instanceAdminClient = new BigtableInstanceAdminClient (); const projectId = await instanceAdminClient . getProjectId (); const instanceOptions = { parent : projects/ ${ projectId } , instanceId : instanceID , instance : { displayName : instanceID , labels : { 'prod-label' : 'prod-label' }, type : ' PRODUCTION ' , }, clusters : { [ clusterID ] : { location : projects/ ${ projectId } /locations/us-central1-f , serveNodes : 3 , defaultStorageType : ' SSD ' , }, }, }; // Create production instance with given options const [ prodInstance , operation ] = await instanceAdminClient . createInstance ( instanceOptions ); await operation . promise (); console . log ( Created Instance: ${ prodInstance . name } ); PHP To learn how to install and use the client library for Bigtable, see Bigtable client libraries .",
+          "For Autoscaling , enter values for the following: Minimum number of nodes Maximum number of nodes CPU utilization target Storage utilization target Optional: To protect your instance with CMEK instead of the default Google-managed encryption, complete the following: Click Show encryption options .",
+          "Create an instance To create a Bigtable instance: Console In the Google Cloud console, go to the Create instance page."
+        ]
+      },
+      {
+        "title": "Autoscaling \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following metrics are displayed in graphs on the cluster overview page in the Google Cloud console.",
+          "The following table helps you understand how autoscaling recommends a node count based on both the SSD usage and the infrequent access usage: Scenario Storage utilization target Utilization percentage SSD usage Infrequent access usage Combined SSD and infrequent access storage Recommended node count SSD usage is within the target range and there is no infrequent access usage.",
+          "Percentage SSD HDD 80% 4 TB or 4,096 GiB 12.8 TB or 13,107 GiB 70% 3.5 TB or 3,584 GiB 11.2 TB or 11,468 GiB 60% 3 TB or 3,072 GiB 9.6 TB or 9,830 GiB 50% 2.5 TB or 2,560 GiB 8 TB or 8,192 GiB Tiered storage and autoscaling Tiered storage ( Preview ) doesn't impact SSD autoscaling described in the Determine the storage utilization target section of this document."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Bigtable Google Cloud console page comes with prebuilt dashboards for tracking throughput and utilization metrics at the instance, cluster, and table levels.",
+          "Nodes are given temporary responsibility for serving various ranges of data based on the operation load and the health of other nodes in the cluster. data center : similar to a Bigtable cluster, except some aspects of topology and replication strategy are configurable in Cassandra. rack : a grouping of nodes in a data center that influences replica placement. cluster : a group of nodes in the same geographic Google Cloud zone, colocated for latency and replication concerns. cluster : a Cassandra deployment consisting of a collection of data centers. instance : a group of Bigtable clusters in different Google Cloud zones or regions between which replication and connection routing occur. vnode : a fixed range of hash values assigned to a specific physical node.",
+          "Cluster size considerations When you size a Bigtable instance to prepare for migrating a Cassandra workload, there are considerations when you compare single-data center Cassandra clusters to single-cluster Bigtable instances, and Cassandra multiple-data center clusters to multi-cluster Bigtable instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Collation support for STRUCT comparisons",
+  "feature_slug": "collation-support-for-struct-comparisons",
+  "summary": "BigQuery collation supports STRUCT comparisons with =, !=, IN, and CASE.",
+  "extended_definition": "BigQuery collation supports STRUCT comparisons with =, !=, IN, and CASE.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/lexical",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Lexical structure and syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/lexical",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "String comparisons Yes However, string comparisons are case-insensitive in collations that are case-insensitive.",
+          "ALL AND ANY ARRAY AS ASC ASSERT ROWS MODIFIED AT BETWEEN BY CASE CAST COLLATE CONTAINS CREATE CROSS CUBE CURRENT DEFAULT DEFINE DESC DISTINCT ELSE END ENUM ESCAPE EXCEPT EXCLUDE EXISTS EXTRACT FALSE FETCH FOLLOWING FOR FROM FULL GRAPH TABLE GROUP GROUPING GROUPS HASH HAVING IF IGNORE IN INNER INTERSECT INTERVAL INTO IS JOIN LATERAL LEFT LIKE LIMIT LOOKUP MERGE NATURAL NEW NO NOT NULL NULLS OF ON OR ORDER OUTER OVER PARTITION PRECEDING PROTO QUALIFY RANGE RECURSIVE RESPECT RIGHT ROLLUP ROWS SELECT SET SOME STRUCT TABLESAMPLE THEN TO TREAT TRUE UNBOUNDED UNION UNNEST USING WHEN WHERE WINDOW WITH WITHIN Terminating semicolons You can optionally use a terminating semicolon ( ; ) when you submit a query string statement through an Application Programming Interface (API).",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Lexical structure and syntax Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "The STRING is formatted as follows: Type %t %T NULL of any type NULL NULL INT64 123 123 NUMERIC 123.0 (always with .0) NUMERIC \"123.0\" FLOAT64 123.0 (always with .0) 123e+10 inf -inf NaN 123.0 (always with .0) 123e+10 CAST(\"inf\" AS <type>) CAST(\"-inf\" AS <type>) CAST(\"nan\" AS <type>) STRING unquoted string value quoted string literal BYTES unquoted escaped bytes e.g., abc\\x01\\x02 quoted bytes literal e.g., b\"abc\\x01\\x02\" BOOL boolean value boolean value DATE 2011-02-03 DATE \"2011-02-03\" TIMESTAMP 2011-02-03 04:05:06+00 TIMESTAMP \"2011-02-03 04:05:06+00\" INTERVAL 1-2 3 4:5:6.789 INTERVAL \"1-2 3 4:5:6.789\" YEAR TO SECOND ARRAY [value, value, ...] where values are formatted with %t [value, value, ...] where values are formatted with %T STRUCT (value, value, ...) where fields are formatted with %t (value, value, ...) where fields are formatted with %T Special cases: Zero fields: STRUCT() One field: STRUCT(value) JSON one-line printable string representing JSON. { \"name\" : \"apple\" , \"stock\" : 3 } one-line printable string representing a JSON literal.",
+          "NORMALIZE AND CASEFOLD supports four optional normalization modes: Value Name Description NFC Normalization Form Canonical Composition Decomposes and recomposes characters by canonical equivalence.",
+          "GoogleSQL for BigQuery supports string functions."
+        ]
+      },
+      {
+        "title": "Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Even though the number of code points is different, the two strings are considered equal when the collation units are considered the same. '\\u0041\\u030A' is 'Å' (two code points) '\\u0061\\u030A' is 'å' (two code points) '\\u00C5' is 'Å' (one code point) In the following examples, the difference between '\\u0061\\u030A' and '\\u00C5' is tertiary. -- Returns FALSE ' \\ u0061 \\ u030A' LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) = COLLATE ( ' \\ u00C5' , 'und:ci' ); In the following example, '\\u0083' is a NO BREAK HERE character and is ignored. -- Returns FALSE ' \\ u0083' LIKE '' ; -- Returns TRUE COLLATE ( ' \\ u0083' , 'und:ci' ) LIKE '' ; Quantified LIKE operator The quantified LIKE operator supports the following syntax: search value [ NOT ] LIKE quantifier patterns quantifier : { ANY SOME ALL } patterns : { ( expression [ , ... ] ) UNNEST ( array expression ) } Description Checks search value for matches against several patterns.",
+          "This is equivalent to: IN ( SELECT element FROM UNNEST ( array expression ) AS element ) This operator supports collation , but these limitations apply: [NOT] IN UNNEST doesn't support collation.",
+          "This operator supports collation , but caveats apply: Each % character in pattern represents an arbitrary string specifier ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

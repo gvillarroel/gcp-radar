@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.588Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "Node Agent",
+  "feature_slug": "node-agent",
+  "summary": "Node Agent replaces Ansible over SSH with a more secure, agent-based model for cluster operations.",
+  "extended_definition": "Node Agent replaces Ansible over SSH with a more secure, agent-based model for cluster operations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network requirements \\_|\\_ Google Distributed Cloud (software only) for\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Control plane nodes Version 1.33 and later Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9192 (default, but can be configured ) Node Agent port (applies only for clusters using Node Agent) (applies to version 1.33 and higher) node-agent-port TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 10257 kube-controller-manager (port number change for version 1.28 and higher) Self TCP Inbound 10259 kube-scheduler (port number change for version 1.28 and higher) Self TCP Inbound 11002 GKE Identity Service core container binds to port through hostPort (applies to version 1.29 and higher) Self TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.29-1.32 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 10257 kube-controller-manager (port number change for version 1.28 and higher) Self TCP Inbound 10259 kube-scheduler (port number change for version 1.28 and higher) Self TCP Inbound 11002 GKE Identity Service core container binds to port through hostPort (applies to version 1.29 and higher) Self TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.28 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 8444 GKE Identity Service core container binds to port through hostPort (applies to version 1.28 only) All TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 10257 kube-controller-manager (port number change for version 1.28 and higher) Self TCP Inbound 10259 kube-scheduler (port number change for version 1.28 and higher) Self TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.16 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Inbound 2382 - 2384 etcd-events server client API, metrics and health (applies to version 1.16 and higher) kube-apiserver and etcd-events TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 9443 Serve/proxy metrics for control plane components (This port requirement is for cluster version 1.16 and lower.) kube-control-plane-metrics-proxy TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10251 kube-scheduler Self TCP Inbound 10252 kube-controller-manager Self TCP Inbound 10256 Node health check All TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Version 1.15 and lower Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of admin cluster nodes Admin workstation TCP Inbound 2379 - 2381 etcd server client API, metrics and health kube-apiserver and etcd TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 6444 Kubernetes API server All TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 9443 Serve/proxy metrics for control plane components (This port requirement is for cluster version 1.16 and lower.) kube-control-plane-metrics-proxy TCP Inbound 9977 Receive audit event from API server audit-proxy TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10251 kube-scheduler Self TCP Inbound 10252 kube-controller-manager Self TCP Inbound 10256 Node health check All TCP Inbound 14443 ANG Webhook Service kube-apiserver and ang-controller-manager Worker nodes Version 1.33 and later Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 9192 (default, but can be configured ) Node Agent port (applies only for clusters using Node Agent) (applies to version 1.33 and higher) node-agent-port TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.29-1.32 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.28 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 auth-proxy node-exporter TCP Inbound 9101 Serve node metrics on localhost only (applies to version 1.28 and higher) node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.16 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Version 1.15 and lower Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP Inbound 9100 Serve metrics node-exporter TCP Inbound 10250 kubelet API Self and control plane TCP Inbound 10256 Node health check All TCP Inbound 30000 - 32767 NodePort services Self Load balancer nodes Version 1.33 and later Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Inbound 443 Cluster management This port can be configured in the cluster configuration file with the controlPlaneLBPort field.",
+          "All TCP Both 4240 CNI health check All UDP Inbound 6081 GENEVE Encapsulation Self TCP and UDP Inbound 7946 MetalLB health check Load balancer nodes TCP Inbound 9192 (default, but can be configured ) Node Agent port (applies only for clusters using Node Agent) (applies to version 1.33 and higher) node-agent-port TCP Inbound 10256 Node health check All TCP Inbound 11000 Listening port for HAProxy metrics (immutable) (applies to version 1.29 and higher) All TCP Inbound 11001 Listening port for GKE Identity Service (immutable) (applies to version 1.29 and higher) All Version 1.29-1.32 Protocol Direction Port range Purpose Used by TCP Inbound 22 Provisioning and updating of user cluster nodes Admin cluster nodes TCP Inbound 443 Cluster management This port can be configured in the cluster configuration file with the controlPlaneLBPort field.",
+          "In particular, the Service and Pod ranges must not overlap with the following: IP addresses of nodes in any cluster VIPs used by control-plane nodes and load balancers IP addresses of DNS servers or NTP servers Preflight checks block cluster creation and upgrades if overlapping IP addresses are identified."
+        ]
+      },
+      {
+        "title": "\"Google Distributed Cloud (software only) for bare metal overview \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can learn more about how this agent works in the Connect Agent overview .",
+          "The following diagram shows the simplified result of a completed installation: Google Distributed Cloud architecture on bare metal with an admin cluster and a user cluster (Click to enlarge) Key components The following components make up a software-only installation on bare metal of Google Distributed Cloud: The admin cluster consists of one or more control plane nodes .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Deploy clusters on the edge \\_|\\_ Google Distributed Cloud (software only)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "source_id": "site-iam-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You will need to run the following 2 commands ( cut-copy-paste ) ============================== 1 : ./scripts/health-check.sh 2 : ansible-playbook all-full-install.yaml -i inventory 3 : Type 'exit' to exit the Docker shell after installation ============================== Thank you for using the quick helper script! ( you are now inside the Docker shell ) From inside the Docker container, verify access to the Compute Engine instances: ./scripts/health-check.sh When the script runs successfully, it produces an output like the following: ... cnuc-2 SUCCESS = > { \"ansible facts\" : { \"discovered interpreter python\" : \"/usr/bin/python3\" } , \"changed\" : false, \"ping\" : \"pong\" } cnuc-3 SUCCESS = > { \"ansible facts\" : { \"discovered interpreter python\" : \"/usr/bin/python3\" } , \"changed\" : false, \"ping\" : \"pong\" } cnuc-1 SUCCESS = > { \"ansible facts\" : { \"discovered interpreter python\" : \"/usr/bin/python3\" } , \"changed\" : false, \"ping\" : \"pong\" } From inside the Docker container, run the Ansible playbook for installing a bare metal cluster on Compute Engine instances: Upon completion you will see the Login Token for the cluster printed on screen. ansible-playbook all-full-install.yaml -i inventory tee ./build-artifacts/ansible-run.log When the install runs successfully, it produces an output like the following: ...",
+          "This image has all the tools required for the installation process, such as Ansible, Python, and Google Cloud CLI. gcloud builds submit --config docker-build/cloudbuild.yaml docker-build/ When the build runs successfully, it produces an output like the following: ... latest: digest: sha256:99ded20d221a0b2bcd8edf3372c8b1f85d6c1737988b240dd28ea1291f8b151a size: 4498 DONE ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ID CREATE TIME DURATION SOURCE IMAGES STATUS 2238baa2-1f41-440e-a157-c65900b7666b 2022-08-17T19:28:57+00:00 6M53S gs://my project cloudbuild/source/1660764535.808019-69238d8c870044f0b4b2bde77a16111d.tgz gcr.io/my project/consumer-edge-install (+1 more) SUCCESS Generate the Ansible inventory file from template: envsubst < templates/inventory-cloud-example.yaml > inventory/gcp.yaml Run the installation script that starts a Docker container from the image built previously.",
+          "Note: If you don't have access to the console output anymore, check the log file at ./build-artifacts/ansible-run.log to get your token."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baseline.sh",
+      "check.sh",
+      "cloudbuild.yaml",
+      "example.yaml",
+      "gcp.yaml",
+      "gcr.io",
+      "github.com",
+      "gsa.sh",
+      "install.yaml",
+      "run.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/network-reqs",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/concepts/about-bare-metal",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    }
+  ]
+}

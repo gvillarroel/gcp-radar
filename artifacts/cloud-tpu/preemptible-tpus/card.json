@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.970Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "Preemptible TPUs",
+  "feature_slug": "preemptible-tpus",
+  "summary": "Preemptible TPUs are lower-cost Cloud TPU nodes that can be terminated when Google Cloud reclaims capacity.",
+  "extended_definition": "Preemptible TPUs are lower-cost Cloud TPU nodes that can be terminated when Google Cloud reclaims capacity.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListNodesAsyncPager",
+      "https://docs.cloud.google.com/tpu/docs/ctpu-reference",
+      "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workloads that don't use TPUs are run on non-TPU nodes, freeing up compute on TPU slice nodes for code that uses TPUs.",
+          "You can configure collection scheduling in the following scenarios: When creating a TPU slice node pool in GKE Standard When deploying workloads on GKE Autopilot When creating a cluster that enables node auto-provisioning What's next To learn how to set up Cloud TPU in GKE, see the following pages: Plan TPUs in GKE to start your TPU setup Deploy TPU workloads in GKE Autopilot Deploy TPU workloads in GKE Standard Learn about best practices for using Cloud TPU for your ML tasks Video: Build large-scale machine learning on Cloud TPU with GKE Serve Large Language Models with KubeRay on TPUs Learn about Sandboxing GPU workloads with GKE Sandbox Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "TPU consumption To optimize resource utilization and cost while balancing workload performance, GKE supports the following TPU consumption options: Flex-start: to provision Flex-start VMs for up to seven days, with GKE automatically allocating the hardware on a best-effort basis based on availability."
+        ]
+      },
+      {
+        "title": "CTPU Reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/ctpu-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Compute Engine service can exit the VM instance at any time. (default = non-preemptible) --print-welcome Always print the welcome message. --project Override the GCP project name to use when allocating VMs and TPUs.",
+          "A preemptible Cloud TPU costs less per hour than a non-preemptible one.",
+          "A preemptible VM costs less per hour than a non-preemptible VM."
+        ]
+      },
+      {
+        "title": "\"Class ListNodesAsyncPager (1.26.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListNodesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.tpu v1.types.ListNodesRequest The initial request object. response google.cloud.tpu v1.types.ListNodesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "1.26.0 (latest) 1.25.0 1.24.0 1.23.2 1.22.0 1.21.0 1.20.0 1.19.1 1.18.5 1.17.0 1.16.0 1.15.0 1.14.0 1.13.0 1.12.0 1.11.2 1.10.1 1.9.0 1.8.0 1.7.2 1.6.0 1.5.2 1.4.1 1.3.4 1.2.1 1.1.0 1.0.2 0.2.2 0.1.0 ListNodesAsyncPager ( method : typing .",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListNodesAsyncPager (1.26.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "v1.types.ListNodesRequest",
+      "v1.types.ListNodesResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/ctpu-reference",
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListNodesAsyncPager"
+      ]
+    }
+  ]
+}

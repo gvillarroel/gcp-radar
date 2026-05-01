@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.299Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Committed Use Discount hourly usage analysis",
+  "feature_slug": "committed-use-discount-hourly-usage-analysis",
+  "summary": "The CUD Analysis dashboard now supports viewing usage data at an hourly granularity to assess spend-based or resource-based committed use discounts.",
+  "extended_definition": "The CUD Analysis dashboard now supports viewing usage data at an hourly granularity to assess spend-based or resource-based committed use discounts.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Structure of Detailed data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: The first full day of data with this field is January 22, 2018. credits Struct credits contains fields that describe the structure and value of the credits associated with Google Cloud and Google Maps Platform SKUs. credits.id String If present, indicates that a credit is associated with the product SKU. credits.id values are either an alphanumeric unique identifier (for example, 12-b34-c56-d78 ), or a description of the credit type (such as Committed Usage Discount: CPU ).",
+          "COMMITTED USAGE DISCOUNT DOLLAR BASE : For legacy spend-based committed use discounts (CUDs) that aren't part of the new pricing model , this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.",
+          "If the value of the credits.id is a description of the credit type (such as Committed Usage Discount: CPU ), then the credits.full name field is empty."
+        ]
+      },
+      {
+        "title": "\"Structure of Standard data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: The first full day of data with this field is January 22, 2018. credits Struct credits contains fields that describe the structure and value of the credits associated with Google Cloud and Google Maps Platform SKUs. credits.id String If present, indicates that a credit is associated with the product SKU. credits.id values are either an alphanumeric unique identifier (for example, 12-b34-c56-d78 ), or a description of the credit type (such as Committed Usage Discount: CPU ).",
+          "COMMITTED USAGE DISCOUNT DOLLAR BASE : For legacy spend-based committed use discounts (CUDs) that aren't part of the new pricing model , this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.",
+          "If the value of the credits.id is a description of the credit type (such as Committed Usage Discount: CPU ), then the credits.full name field is empty."
+        ]
+      },
+      {
+        "title": "\"Calculate savings with Compute flexible commitments \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis-flexible",
+        "source_id": "site-docs-root-2",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The calculation is determined by the following parameters: Variable/Field name Description LOOK BACK WINDOW The retrospective window for the analysis (such as 30 days, 90 days). credits from existing cuds Hourly credits received from active commitments already purchased. credits from existing suds Hourly credits received automatically from sustained use discounts (SUDs) . cost eligible for additional flex cuds considering cud credits Hourly eligible undiscounted usage, excluding CUDs credits only. cost eligible for additional flex cuds considering cud and sud credits Hourly eligible undiscounted usage, excluding CUDs and SUDs credits. min cost eligible for additional flex cuds considering cud credits Minimum undiscounted usage, excluding CUDs credits only. min cost eligible for additional flex cuds considering cud and sud credits Minimum undiscounted usage, excluding CUDs and SUDs credits; the most conservative estimate based on the look back window.",
+          "WITH base AS ( SELECT , IF ( total cost >= credits from existing cuds , ( total cost - credits from existing cuds ), 0 ) AS cost eligible for additional flex cuds considering cud credits , IF ( total cost >= ( credits from existing cuds + credits from existing suds ), ( total cost - ( credits from existing cuds + credits from existing suds )), 0 ) AS cost eligible for additional flex cuds considering cud and sud credits FROM ( SELECT usage start time , SUM ( cost ) AS total cost , ( SUM (( SELECT SUM ( c . amount ) FROM UNNEST ( credits ) AS c WHERE c . type IN ( \"COMMITTED USAGE DISCOUNT\" , \"COMMITTED USAGE DISCOUNT DOLLAR BASE\" ))) - 1 ) AS credits from existing cuds , ( SUM (( SELECT SUM ( c . amount ) FROM UNNEST ( credits ) AS c WHERE c . type IN ( \"SUSTAINED USAGE DISCOUNT\" ))) - 1 ) AS credits from existing suds , FROM PROJECT .",
+          "WITH base AS ( SELECT , IF ( total cost >= credits from existing cuds , ( total cost - credits from existing cuds ), 0 ) AS cost eligible for additional flex cuds considering cud credits , IF ( total cost >= ( credits from existing cuds + credits from existing suds ), ( total cost - ( credits from existing cuds + credits from existing suds )), 0 ) AS cost eligible for additional flex cuds considering cud and sud credits FROM ( SELECT usage start time , SUM ( cost ) AS total cost , ( SUM (( SELECT SUM ( c . amount ) FROM UNNEST ( credits ) AS c WHERE c . type IN ( \"COMMITTED USAGE DISCOUNT\" , \"COMMITTED USAGE DISCOUNT DOLLAR BASE\" ))) - 1 ) AS credits from existing cuds , ( SUM (( SELECT SUM ( c . amount ) FROM UNNEST ( credits ) AS c WHERE c . type IN ( \"SUSTAINED USAGE DISCOUNT\" ))) - 1 ) AS credits from existing suds , FROM PROJECT ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credits.full",
+      "credits.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable node storage limits increase",
+  "feature_slug": "cloud-bigtable-node-storage-limits-increase",
+  "summary": "Doubles the storage limit supported by each Cloud Bigtable node without increasing per-node cost.",
+  "extended_definition": "Doubles the storage limit supported by each Cloud Bigtable node without increasing per-node cost.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/bigtable/docs/schema-design"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Autoscaling \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The capacity limits for nodes are 5 TB per node for SSD storage and 16 TB per node for HDD storage.",
+          "See Storage per node for more details on storage limits.",
+          "You can also view these metrics using Cloud Monitoring . bigtable.googleapis.com/cluster/autoscaling/min node count bigtable.googleapis.com/cluster/autoscaling/max node count bigtable.googleapis.com/cluster/autoscaling/recommended node count for cpu bigtable.googleapis.com/cluster/autoscaling/recommended node count for storage Logging Bigtable emits a system event audit log each time it scales a cluster."
+        ]
+      },
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Aerospike Bigtable No directly corresponding item. instance : a managed group of clusters in different Google Cloud zones or regions between which replication and connection routing occur. cluster : an Aerospike deployment consisting of a collection of nodes. cluster : a group of nodes in the same geographic Google Cloud zones. node : a server providing compute and owning its storage. node : a server providing compute only.",
+          "Data types limits The following table compares the limits for data types used by Aerospike and Bigtable: Aerospike Bigtable namespace : The maximum number of namespaces for the Enterprise Edition is 32. table : An instance can have up to 1,000 tables.",
+          "No directly corresponding item. column family : The number of column families is unlimited, however more than 100 can cause performance degradation. bin : The number of bins is unlimited, however, each bin can hold not more than 1 MB of data."
+        ]
+      },
+      {
+        "title": "Schema design best practices \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/schema-design",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Bigtable has a limit of 1,000 tables per instance, but we recommend that you avoid creating a large number of tables for the following reasons: Sending requests to many different tables can increase backend connection overhead, resulting in increased tail latency.",
+          "Storing data in a protobuf format To reduce storage costs and improve read and write efficiency, you can group related data into a protocol buffer (protobuf) message and store it in a single column instead of storing each field in its own column.",
+          "Long row keys take up additional memory and storage and increase the time it takes to get responses from the Bigtable server."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/schema-design"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/schema-design"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/schema-design"
+      ]
+    }
+  ]
+}

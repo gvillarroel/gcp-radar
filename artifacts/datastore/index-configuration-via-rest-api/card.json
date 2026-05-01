@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.372Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Index configuration via REST API",
+  "feature_slug": "index-configuration-via-rest-api",
+  "summary": "Datastore indexes can be configured using the REST API.",
+  "extended_definition": "Datastore indexes can be configured using the REST API.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+      "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/tools/indexconfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multiple databases You can use gcloud firestore to manage a single index for Datastore mode or use gcloud datastore with an index.yaml file to manage all the indexes under a database. gcloud firestore gcloud firestore indexes composite create --api-scope=datastore-mode-api --query-scope= QUERY SCOPE --database= DATABASE ID gcloud datastore gcloud alpha datastore indexes create index.yaml --database= DATABASE ID Replace the following: DATABASE ID : a database ID.",
+          "Index configuration Firestore in Datastore mode provides built-in , or automatic, indexes for queries of the following forms: Kindless queries using only ancestor and key filters Queries using only ancestor and equality filters Queries using only inequality filters (which are limited to a single property ) Queries using only ancestor filters, equality filters on properties, and inequality filters on keys Queries with no filters and only one sort order on a property, either ascending or descending As an example, by default, Datastore mode databases automatically predefine two single property indexes for each property of each entity kind, one in ascending order and one in descending order.",
+          "This will require 9 index entries, one for each possible combination of property values: ( 'fun' , 'alice' , NOW() ) ( 'fun' , 'bob' , NOW() ) ( 'fun' , 'charlie' , NOW() ) ( 'programming' , 'alice' , NOW() ) ( 'programming' , 'bob' , NOW() ) ( 'programming' , 'charlie' , NOW() ) ( 'learn' , 'alice' , NOW() ) ( 'learn' , 'bob' , NOW() ) ( 'learn' , 'charlie' , NOW() ) When the same property is repeated multiple times, Firestore in Datastore mode can detect exploding indexes and suggest an alternative index."
+        ]
+      },
+      {
+        "title": "Composite Index Configuration \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a recently completed composite index build shows the following information: { \"operations\": [ { \"name\": \"projects/ project-id /operations/S01vcFVpSmdBQ0lDDCoDIGRiNTdiZDQNmE4YS0yMTVmNWUzZSQadGx1YWZlZAcSMXRzYWVzdS1yZXhlZG5pLW5pbWRhFQpWEg\", \"done\": true, \"metadata\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.IndexOperationMetadata\", \"common\": { \"endTime\": \"2020-06-23T16:55:29.923562Z\", \"operationType\": \"CREATE INDEX\", \"startTime\": \"2020-06-23T16:55:10Z\", \"state\": \"SUCCESSFUL\" }, \"indexId\": \"CICAJiUpoMK\", \"progressEntities\": { \"workCompleted\": \"2193027\", \"workEstimated\": \"2198182\" } }, \"response\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.Index\", \"ancestor\": \"NONE\", \"indexId\": \"CICAJiUpoMK\", \"kind\": \"Task\", \"projectId\": \" project-id \", \"properties\": [ { \"direction\": \"ASCENDING\", \"name\": \"priority\" }, { \"direction\": \"ASCENDING\", \"name\": \"done\" }, { \"direction\": \"DESCENDING\", \"name\": \"created\" } ], \"state\": \"READY\" } }, ] } Describing a single operation Instead of listing all long-running operations, you can list the details of a single operation: gcloud Use the operations describe command to show the status of a composite index build. gcloud datastore operations describe operation-name rest Before using any of the request data, make the following replacements: project-id : your project ID HTTP method and URL: GET https://datastore.googleapis.com/v1/projects/ project-id /operations To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Updating composite indexes The datastore indexes create command looks at your local Datastore composite index configuration (the index.yaml file), and if the composite index configuration defines an composite index that doesn't exist yet in your production Datastore mode database, your database creates the new composite index.",
+          "Deleting unused composite indexes When you change or remove a composite index from the composite index configuration, the original composite index is not deleted from your Datastore mode database automatically."
+        ]
+      },
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / Adds a task entity to the Datastore. @param description The task description @return The {@link Key} of the entity @throws DatastoreException if the ID allocation or put fails / Key addTask ( String description ) { Key key = datastore . allocateId ( keyFactory . newKey ()); Entity task = Entity . newBuilder ( key ) . set ( \"description\" , StringValue . newBuilder ( description ). setExcludeFromIndexes ( true ). build ()) . set ( \"created\" , Timestamp . now ()) . set ( \"done\" , false ) . build (); datastore . put ( task ); return key ; } Node.js To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "For more information, see Set up authentication for a local development environment . async function addTask ( description ) { const taskKey = datastore . key ( 'Task' ); const entity = { key : taskKey , data : [ { name : 'created' , value : new Date (). toJSON (), }, { name : 'description' , value : description , excludeFromIndexes : true , }, { name : 'done' , value : false , }, ], }; try { await datastore . save ( entity ); console . log ( Task ${ taskKey . id } created successfully. ); } catch ( err ) { console . error ( 'ERROR:' , err ); } } PHP To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "For more information, see Set up authentication for a local development environment . def add task description require \"google/cloud/datastore\" datastore = Google :: Cloud :: Datastore . new task = datastore . entity \"Task\" do t t [ \"description\" ] = description t [ \"created\" ] = Time . now t [ \"done\" ] = false t . exclude from indexes! \"description\" , true end datastore . save task puts task . key . id task . key . id end For this application, we also provide a method to update the done property, to indicate the task is complete: C# To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries ."
+        ]
+      },
+      {
+        "title": "Optimizing Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index merging Firestore in Datastore mode can use index merging when your query and your indexes meet all of the following constraints: The query uses only equality ( = ) filters No composite index exists that perfectly matches the filters and ordering of the query Each equality filter matches at least one existing index with the same ordering as the query In this situation, Firestore in Datastore mode can use existing indexes to support the query instead of requiring you to configure an additional composite index.",
+          "Client () query all properties = client . query ( kind = \"Photo\" , filters = [ ( \"owner id\" , \"=\" , \"user1234\" ), ( \"size\" , \"=\" , 2 ), ( \"coloration\" , \"=\" , 2 ), ( \"tag\" , \"=\" , \"family\" ), ], ) Firestore in Datastore mode can support these queries by merging built-in indexes.",
+          "Using built-in indexes and Firestore in Datastore mode's index merging feature, you can meet the index requirements of this Photo filter feature without adding additional composite indexes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.googleapis.com",
+      "index.yaml",
+      "projects.indexes",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Multi-network support for Pods",
+  "feature_slug": "multi-network-support-for-pods",
+  "summary": "GKE can create nodes and workloads with multiple network interfaces, including high-performance interfaces directly attached to Pods.",
+  "extended_definition": "GKE can create nodes and workloads with multiple network interfaces, including high-performance interfaces directly attached to Pods.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Orchestrate Multislice workloads using JobSet and Kueue \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 200,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Update your ClusterQueue to have a preemption policy: apiVersion : kueue.x-k8s.io/v1beta1 kind : ResourceFlavor metadata : name : \"vlp-24\" spec : nodeLabels : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} resourceGroups : - coveredResources : [ \"google.com/tpu\" ] flavors : - name : \"vlp-24\" resources : - name : \"google.com/tpu\" nominalQuota : 24 preemption : reclaimWithinCohort : Any withinClusterQueue : LowerPriority --- apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : default name : multislice-queue spec : clusterQueue : cluster-queue Create a PriorityClass for each distinct priority level you want to assign to workloads: apiVersion : scheduling.k8s.io/v1 kind : PriorityClass metadata : name : low-priority value : 100 globalDefault : false description : \"This low priority class should be used for some Pods only.\" Assign the priorityClassName to your JobSet: Autopilot apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : low-priority labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 priorityClassName : low-priority containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 # Number of TPU chips per worker Standard apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : low-priority labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 priorityClassName : low-priority containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 # Number of TPU chips per worker GKE includes a preemption policy, which defines how Kueue assigns the available resources.",
+          "Install the JobSet API in your cluster: VERSION = v0.8.1 kubectl apply --server-side -f https://github.com/kubernetes-sigs/jobset/releases/download/ $VERSION /manifests.yaml Create the following jobsets-multislice.yaml manifest: Autopilot apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-1slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-2slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 2 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' sleep 60 resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-3slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 3 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 Standard apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-1slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-2slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 2 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' sleep 60 resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-3slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 3 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 Apply the jobsets-multislice.yaml manifest: kubectl apply -f jobsets-multislice.yaml GKE creates the Jobs with the following resource requests: The multislice-1slice JobSet creates one Job that requires one TPU slice in total.",
+          "Create the Kueue resources Create the following kueue.yaml manifest: apiVersion : kueue.x-k8s.io/v1beta1 kind : ResourceFlavor metadata : name : \"vlp-24\" spec : nodeLabels : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} queueingStrategy : BestEffortFIFO resourceGroups : - coveredResources : [ \"google.com/tpu\" ] flavors : - name : \"vlp-24\" resources : - name : \"google.com/tpu\" nominalQuota : 24 --- apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : default name : multislice-queue spec : clusterQueue : cluster-queue Apply the kueue.yaml manifest: kubectl apply -f kueue.yaml GKE creates the following Kueue resources: ResourceFlavor : an abstraction of the resources in a cluster."
+        ]
+      },
+      {
+        "title": "\"Allocate network resources by using GKE managed DRANET \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "source_id": "site-docs-reference-2",
+        "final_score": 186,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable GKE managed DRANET driver on a GPU node pool To enable the GKE DRANET driver on a GPU node pool that supports RDMA, add the cloud.google.com/gke-networking-dra-driver=true label when you create the node pool. gcloud beta container node-pools create NODE POOL NAME \\ --region = REGION \\ --cluster = CLUSTER NAME \\ --node-locations = NODE LOCATIONS \\ --accelerator type = ACCELERATOR TYPE ,count = ACCELERATOR COUNT ,gpu-driver-version = DRIVER VERSION \\ --machine-type = MACHINE TYPE \\ --num-nodes = NUM NODES \\ --reservation-affinity = specific \\ --reservation = projects/ RESERVATION PROJECT /reservations/ RESERVATION NAME /reservationBlocks/ RESERVATION BLOCK \\ --accelerator-network-profile = auto \\ --node-labels = cloud.google.com/gke-networking-dra-driver = true Replace the following: NODE POOL NAME : the name of your new node pool.",
+          "Verify networking DeviceClasses Verify that the DeviceClass resources for networking exist in your cluster. kubectl get deviceclass netdev.google.com The output is similar to the following: NAME AGE netdev.google.com 2d22h Enable GKE managed DRANET driver on a TPU slice node pool To enable the GKE DRANET driver when creating a TPU slice node pool, add the cloud.google.com/gke-networking-dra-driver=true label. gcloud beta container node-pools create NODE POOL NAME \\ --location = LOCATION \\ --cluster = CLUSTER NAME \\ --node-locations = NODE LOCATIONS \\ --machine-type = MACHINE TYPE \\ --tpu-topology = TPU TOPOLOGY \\ --num-nodes = NUM NODES \\ --accelerator-network-profile = auto \\ --node-labels = cloud.google.com/gke-networking-dra-driver = true Replace the following: NODE POOL NAME : The name of your new node pool.",
+          "Similar to several other GKE system workloads, the DRANET driver's Pods only run on nodes where they are relevant (such as nodes with GPUs, TPUs, and other specialized hardware)."
+        ]
+      },
+      {
+        "title": "\"Best practices for running batch workloads on GKE \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Optimize your workloads networking and latency GKE supports compact placement policy for node pools which specifies that these nodes (and thus the workloads running on them) should be placed in closer physical proximity to each other within a zone.",
+          "Pods are groups of single or multiple containers, with shared storage and network resources.",
+          "Autopilot Standard This page introduces the best practices for building and optimizing batch processing platforms with Google Kubernetes Engine (GKE), including best practices for: Architecture Job management Multi-tenancy Security Queueing Storage Performance Cost efficiency Monitoring GKE provides a powerful framework for orchestrating batch workloads such as data processing, training machine learning models , running scientific simulations , and other high performance computing workloads ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alpha.jobset.sigs.k8s.io",
+      "github.com",
+      "jax.device",
+      "jobset.x",
+      "k8s.io",
+      "kueue.x",
+      "kueue.yaml",
+      "manifests.yaml",
+      "multislice.yaml",
+      "netdev.google.com",
+      "releases.html",
+      "scheduling.k8s.io",
+      "storage.googleapis.com",
+      "v0.8.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke"
+      ]
+    }
+  ]
+}

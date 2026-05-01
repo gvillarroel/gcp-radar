@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "google-fluentd third-party log support",
+  "feature_slug": "google-fluentd-third-party-log-support",
+  "summary": "The google-fluentd logging agent supports ingesting two dozen third-party log types.",
+  "extended_definition": "The google-fluentd logging agent supports ingesting two dozen third-party log types.",
+  "lifecycle": {
+    "latest_feature_date": "2015-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect logs from third-party applications \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party",
+        "source_id": "site-docs-root-2",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the full list of integrations that the Ops Agent supports, including the integrations that collect metrics from third-party applications, go to Monitoring third-party applications .",
+          "For a walkthrough on how to use Ansible to install the Ops Agent, configure a third-party application, and install a sample dashboard, see the Install the Ops Agent to troubleshoot third-party applications video.",
+          "Home Documentation Observability Cloud Logging Guides Send feedback Collect logs from third-party applications Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "C:\\Program Files (x86)\\Stackdriver\\LoggingAgent\\config.d is the third-party configuration directory for Windows.",
+          "C:\\Program Files (x86)\\Stackdriver\\LoggingAgent\\config.d is the third-party configuration directory for Windows.",
+          "To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{\"code\": \"send-log-via-fluent-cat\", \"message\": \"This is a log from in forward plugin.\"}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: \"1kvvmhsg1ib4689\" jsonPayload: { code: \"send-log-via-fluent-cat\" message: \"This is a log from in forward plugin.\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/log-via-in-forward-plugin\" receiveTimestamp: \"2018-03-21T02:11:27.981020900Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T02:11:22.717692494Z\" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation ."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.",
+          "Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.",
+          "Linux operating systems The agent supports the following Linux operating systems: Note: To use Cloud Logging on VMs with Container-Optimized OS, follow Using Cloud Logging with Container-Optimized OS instead."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "config.d"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party"
+      ]
+    }
+  ]
+}

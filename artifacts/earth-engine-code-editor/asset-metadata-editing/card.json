@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.664Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Asset metadata editing",
+  "feature_slug": "asset-metadata-editing",
+  "summary": "Asset metadata can be edited.",
+  "extended_definition": "Asset metadata can be edited.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides/best_practices",
+      "https://developers.google.com/earth-engine/guides/command_line"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically, collaborators must have the following permissions: storage.buckets.get on the bucket (to retrieve bucket metadata and location, allowing Earth Engine to properly resolve the asset's source). storage.objects.get on the bucket (to read the actual COG-backed asset data).",
+          "Page Summary outlined flag Earth Engine supports assets backed by Cloud Optimized GeoTIFFs (COGs), which improve performance in collections by indexing spatial and metadata fields at creation time.",
+          "An advantage of COG-backed assets is that the spatial and metadata fields of the image will be indexed at asset creation time, making the image more performant in collections."
+        ]
+      },
+      {
+        "title": "Coding Best Practices \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/best_practices",
+        "source_id": "site-docs-root-2",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Point ([ - 122.47555371521855 , 37.76884708376152 ]); var s2 = sentinel2 . filterBounds ( sf ) . filterDate ( '2018-01-01' , '2019-12-31' ); var withDoys = s2 . map ( function ( image ) { var ndvi = image . normalizedDifference ([ 'B4' , 'B8' ]). rename ( 'ndvi' ); var date = image . date (); var doy = date . getRelative ( 'day' , 'year' ); var time = image . metadata ( 'system:time start' ); var doyImage = ee .",
+          "This block is commented because the export is complete. / var link = '0b8023b0af6c1b0ac7b5be649b54db06' var desc = 'Logistic regression stack ' + link; Export.image.toAsset({ image: stack, description: desc, assetId: desc, region: geometry, scale: 30, maxPixels: 1e10 }) / // Load the exported image. var exportedStack = ee .",
+          "Also note that if you want to export toAsset , you will need to supply a geometry, which can be anything, for example the image centroid, which is small and cheap to compute. (i.e. don't use a complex geometry if you don't need it)."
+        ]
+      },
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key actions include: authenticate to sign in; acl to manage asset access; asset to view/edit asset metadata; cp/mv to copy/move assets; create to make folders/collections; ls to list contents; model prepare for TensorFlow model transformation; project config to configure project settings; rm to delete assets; set project to set the default cloud project; task to manage long running tasks; and upload to add images or tables from Google Cloud Storage.\\n\"]]",
+          "The special user identifier AllUsers may be used to grant or revoke read permission to or from all users. (Note that revoking AllUsers permissions does not revoke any additional permissions you may have also granted to individual users.) asset Prints or updates metadata associated with the an Earth Engine asset.",
+          "This will mask any pixels in the image with that value: earthengine upload image --asset id=users/myuser/asset --nodata value=255 gs://bucket/image.tif You may also specify metadata properties to set on the asset using the same flags that are accepted by the asset set command described above ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "i.e",
+      "image.tif",
+      "image.toAsset",
+      "storage.buckets.get",
+      "storage.objects.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    }
+  ]
+}

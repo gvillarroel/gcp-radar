@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Agent editing lock",
+  "feature_slug": "agent-editing-lock",
+  "summary": "Dialogflow CX provides a setting to lock agent editing.",
+  "extended_definition": "Dialogflow CX provides a setting to lock agent editing.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Agent settings Stay organized with collections Save and categorize content based on your preferences.",
+          "You can apply unique ML settings for each flow of an agent, and the model created by Dialogflow CX is unique for each flow.",
+          "Dialogflow CX console agent settings To access agent settings: Console Open the console."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "To access these settings: Go to the Dialogflow ES console Select your agent near the top of the left sidebar menu Click the settings settings button next to the agent name Note: If you're working on a small screen, and the sidebar menu is hidden, click the menu menu button in the upper left corner.",
+          "To read or change this setting with the API, you must have one of the following roles : IAM Dialogflow API Admin, IAM Editor, or IAM Owner; or a custom role containing the dialogflow.agents.create permission.",
+          "Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Agent settings Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Dialogflow CX Console overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dialogflow CX console is used to manage Dialogflow CX agents, while the Google Cloud Console is used to manage Google Cloud-specific Dialogflow CX settings (for example, billing) and other Google Cloud resources.",
+          "The agent selector interface is used to: Select existing agents Create new agents Create prebuilt agents Export and restore agents Delete agents Configure location settings Filter agents by location Agent builder Once a project and agent has been selected, the agent builder loads.",
+          "Editing and simulator panels (8) When editing agent content or testing the agent with the simulator , content-specific panels open on the right side of the console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.agents.create",
+      "index.json",
+      "package.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console"
+      ]
+    }
+  ]
+}

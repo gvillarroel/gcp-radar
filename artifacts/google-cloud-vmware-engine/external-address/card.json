@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "External address",
+  "feature_slug": "external-address",
+  "summary": "External addresses are available through Cloud Asset Inventory and Cloud Asset APIs.",
+  "extended_definition": "External addresses are available through Cloud Asset Inventory and Cloud Asset APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.FetchNetworkPolicyExternalAddressesAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.FetchNetworkPolicyExternalAddressesPager",
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListExternalAddressesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class FetchNetworkPolicyExternalAddressesAsyncPager (1.11.0) \\_|\\_ Python\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.FetchNetworkPolicyExternalAddressesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If there are more pages, the aiter method will make additional FetchNetworkPolicyExternalAddresses requests and continue to iterate through the external addresses field on the corresponding responses.",
+          "This class thinly wraps an initial FetchNetworkPolicyExternalAddressesResponse object, and provides an aiter method to iterate through its external addresses field.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through fetch network policy external addresses requests."
+        ]
+      },
+      {
+        "title": "\"Class FetchNetworkPolicyExternalAddressesPager (1.11.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.FetchNetworkPolicyExternalAddressesPager",
+        "source_id": "site-python-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If there are more pages, the iter method will make additional FetchNetworkPolicyExternalAddresses requests and continue to iterate through the external addresses field on the corresponding responses.",
+          "This class thinly wraps an initial FetchNetworkPolicyExternalAddressesResponse object, and provides an iter method to iterate through its external addresses field.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through fetch network policy external addresses requests."
+        ]
+      },
+      {
+        "title": "\"Class ListExternalAddressesAsyncPager (1.11.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListExternalAddressesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "If there are more pages, the aiter method will make additional ListExternalAddresses requests and continue to iterate through the external addresses field on the corresponding responses.",
+          "This class thinly wraps an initial ListExternalAddressesResponse object, and provides an aiter method to iterate through its external addresses field.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through list external addresses requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.FetchNetworkPolicyExternalAddressesAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.FetchNetworkPolicyExternalAddressesPager",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers.ListExternalAddressesAsyncPager"
+      ]
+    }
+  ]
+}

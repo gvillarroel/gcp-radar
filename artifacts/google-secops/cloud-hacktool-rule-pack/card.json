@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Cloud Hacktool rule pack",
+  "feature_slug": "cloud-hacktool-rule-pack",
+  "summary": "Curated Detections added Google Cloud rules for detecting common open source hacktools.",
+  "extended_definition": "Curated Detections added Google Cloud rules for detecting common open source hacktools.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of composite rules category \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following categories outline the most important log sources required for the curated composite content to function effectively: Endpoint composite rule log sources Linux threats MacOS threats Windows threats Google Cloud composite rule log sources Google Cloud AWS Azure Office365 Okta Google Cloud and endpoint rule log sources Applied Threat Intelligence (ATI) Chrome Enterprise Threats Risk Analytics for UEBA For a complete list of the available curated detections, see Use curated detections .",
+          "Understand ATI composite rules ATI composite rules detect multiple unique Applied Threat Intelligence detections from the same campaign, malware variant, or threat actor to provide additional environmental context of any potential threat.",
+          "To ensure these rules produce alerts, you must enable Applied Threat Intelligence rule packs, such as \"Active Breach\", \"High\", or \"Medium\"."
+        ]
+      },
+      {
+        "title": "\"Use the curated detections page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Open the curated detections page and rule sets To open the curated detections page, complete the following steps: Select Rules from the main menu.",
+          "As part of these curated detections, GCTI provides and manages a set of YARA-L rules to help customers identify threats to their enterprise.",
+          "Figure 2: Curated Detections dashboard The Curated Detections dashboard displays each of the rule sets available to your Google SecOps account."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example : rule CheckCuratedDetection with EDR and EG { meta: author = \"noone@cymbal.com\" events: $d.detection.detection.rule name = /SCC: Custom Modules: Configurable Bad Domain/ $d.detection.collection elements.references.event.network.dns.questions.name = $domain $d.detection.collection elements.references.event.principal.asset.hostname = $hostname $e.metadata.log type = \"LIMACHARLIE EDR\" $e.metadata.product event type = \"NETWORK CONNECTIONS\" $domain = re.capture($e.principal.process.command line, \"\\\\s([a-zA-Z0-9.-]+\\\\.[a-zA-Z0-9.-]+)$\") $hostname = re.capture($e.principal.hostname, \"([^.] )\") $prevalence.graph.metadata.entity type = \"DOMAIN NAME\" $prevalence.graph.metadata.source type = \"DERIVED CONTEXT\" $prevalence.graph.entity.hostname = $domain $prevalence.graph.entity.domain.prevalence.day count = 10 $prevalence.graph.entity.domain.prevalence.rolling max <= 5 $prevalence.graph.entity.domain.prevalence.rolling max > 0 match: $hostname over 1h outcome: $risk score = 80 $CL target = array($domain) condition: $e and $d and $prevalence } View composite detection findings You can view composite detection results in the Detections page.",
+          "When to use composite detections Composite detections can be useful for achieving the following goals: Correlate outcomes of two or more rules (for example, linking a Malware Downloaded detection with a subsequent C2 Beaconing alert from the same host).",
+          "Composite detections Supported in: Google secops SIEM This document introduces composite detections and how they can enhance threat detection workflows by correlating outputs from multiple rules."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.principal.hostname",
+      "e.principal.process.command",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "re.capture"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    }
+  ]
+}

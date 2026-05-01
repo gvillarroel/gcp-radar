@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.307Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Terminal output attachment in chat context",
+  "feature_slug": "terminal-output-attachment-in-chat-context",
+  "summary": "You can attach terminal output to chat to ask questions about terminal commands and results.",
+  "extended_definition": "You can attach terminal output to chat to ask questions about terminal commands and results.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 267,
+        "relevance": "",
+        "evidence_snippets": [
+          "Prompt Gemini Code Assist with selected terminal output using chat Gemini Code Assist can perform tasks or answer your questions based on selected terminal output.",
+          "Create multiple chats You can create multiple chats with Gemini Code Assist which contain their own context separate from other chats.",
+          "Gemini Code Assist responds to your prompt based on your selected terminal output in the Context Drawer."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Get more relevant suggestions with remote repository context You can get more contextually aware and relevant code suggestions by directing Gemini Code Assist to focus on specific remote repositories.",
+          "Use a remote repository as context To direct Gemini Code Assist to use one or more repositories as the primary context for your prompts: In your IDE's chat, start your prompt with the @ symbol.",
+          "By using remote repositories as a focused source of context, you can get more accurate and relevant suggestions from Gemini Code Assist, which can help you code faster and more efficiently."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default\\nWHERE\\n JSON VALUE(json payload, '$.chatExposure.originalRequestId') is not NULL\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\n chat exposures date\\nORDER BY\\n chat exposures date\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } } ] } } Replace the following: CENTRALIZED PROJECT ID : The project ID of the centralized logging project that you created.",
+          "Default\\nWHERE\\n JSON VALUE(labels, '$.user id') is not NULL\\n AND (\\n JSON VALUE(json payload, '$.chatExposure.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeExposure.originalRequestId') is not NULL\\n )\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\nevent date\\nORDER BY\\nevent date\\n\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Acceptance Rate by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"acceptance rate\" } ], \"plotType\" : \"LINE\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\nexposures date,\\nacceptances count / exposures count as acceptance rate\\nFROM\\n(\\nSELECT\\nCOUNT (DISTINCT JSON VALUE(json payload, '$.codeAcceptance.originalRequestId')) as acceptances count, CAST(timestamp AS DATE) AS acceptances date\\nFROM\\n CENTRALIZED PROJECT ID .global.",
+          "Default\\n WHERE\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\n GROUP BY\\n request id\\n )\\nGROUP BY\\n line count day\\nORDER BY\\n line count day\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"yPos\" : 32 , \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Chat Exposures by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"chat exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"chat exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"chat exposures count\" } ], \"plotType\" : \"STACKED BAR\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\n COUNT (DISTINCT JSON VALUE(json payload, '$.chatExposure.originalRequestId')) as chat exposures count, CAST(timestamp AS DATE) AS chat exposures date\\nFROM\\n CENTRALIZED PROJECT ID .global."
+        ]
+      },
+      {
+        "title": "\"Gemini Code Assist chat features overview \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can perform the following chat actions with Gemini Code Assist in any of the supported IDEs : Use Gemini Code Assist to explain your code Create multiple chats Select a Gemini model Edit a prior prompt Regenerate a prompt response Delete prompt and response pairs Configure code preview pane Prompt Gemini Code Assist with selected code using chat Add selected code snippets to context Add terminal output to the chat context Specify files and folders in your workspace context Revert to a checkpoint in chat View code diffs Generate a file outline Create custom commands Create rules Exclude files from your context with an .aiexclude or .gitignore file Use the Gemini Code Assist agent mode Configure local codebase awareness What's next Set up Gemini Code Assist Standard or Enterprise , if you haven't already.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Gemini Code Assist chat features overview Stay organized with collections Save and categorize content based on your preferences.",
+          "To begin using Gemini Code Assist chat features in your IDE, see Chat with Gemini Code Assist ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "projects.locations.codeToolsSettings.settingBindings",
+      "resource.labels",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview"
+      ]
+    }
+  ]
+}

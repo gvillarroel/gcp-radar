@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.023Z",
+  "source_step08_card": "data/step-08/current/products/places-insights/card.json",
+  "product_name": "Places Insights",
+  "product_slug": "places-insights",
+  "feature_name": "Brands data coverage in the United States",
+  "feature_slug": "brands-data-coverage-in-the-united-states",
+  "summary": "Brands data is available for the entire United States.",
+  "extended_definition": "Brands data is available for the entire United States.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/placesinsights/brands",
+      "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+      "https://developers.google.com/maps/documentation/placesinsights/overview",
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Historical data overview \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+        "source_id": "site-api-reference",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample data City, Country Subscribe link Table names Sydney, Australia AU places insights historical au sample.places sample historical Sao Paulo, Brazil BR places insights historical br sample.places sample historical Toronto, Canada CA places insights historical ca sample.places sample historical Paris, France FR places insights historical fr sample.places sample historical Berlin, Germany DE places insights historical de sample.places sample historical Mumbai, India IN places insights historical in sample.places sample historical Jakarta, Indonesia ID places insights historical id sample.places sample historical Rome, Italy IT places insights historical it sample.places sample historical Tokyo, Japan JP places insights historical jp sample.places sample historical Mexico City, Mexico MX places insights historical mx sample.places sample historical Madrid, Spain ES places insights historical es sample.places sample historical Zurich, Switzerland CH places insights historical ch sample.places sample historical London, United Kingdom GB places insights historical gb sample.places sample historical New York City, United States US places insights historical us sample.places sample historical Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "SELECT WITH AGGREGATION THRESHOLD snapshot date , COUNT ( ) AS count FROM PROJECT NAME .places insights historical us.places historical WHERE 'restaurant' IN UNNEST ( types ) AND business status = \"OPERATIONAL\" GROUP BY snapshot date ORDER BY snapshot date ASC ; Available listings The following table lists the supported cities and provides links to subscribe.",
+          "Historical Places Insights data is available for the cities listed in the table below ."
+        ]
+      },
+      {
+        "title": "Places Insights overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About brands data Note: Brands data is only available for the United States dataset.",
+          "Prerequisites For this example, you subscribe to the Places Insights dataset for the United States.",
+          "You can use brands to answer questions such as: What is the count of all stores by brand in an area?"
+        ]
+      },
+      {
+        "title": "\"Query the dataset using Places Count functions \\_|\\_ Places Insights \\_\\",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These tables list the available cities, countries, and their corresponding table names.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[]]",
+          "The main difference between querying the data directly and using a function is that functions don't enforce a minimum count threshold but instead enforce a minimum search area : Place datasets queries can only return counts 5 and above, but enforce no limitations on the size of the search area."
+        ]
+      },
+      {
+        "title": "Write a query using brands data \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/brands",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: In the current release, the brands dataset is only available the United States.",
+          "For example, to find the count of the number of McDonald's restaurants within 2000 meters of the Empire State Building in New York City: SELECT WITH AGGREGATION THRESHOLD COUNT ( ) FROM PROJECT NAME . places insights us . places places , UNNEST ( brand ids ) AS brand id LEFT JOIN PROJECT NAME . places insights us . brands ON brand id = brands . id WHERE ST DWITHIN ( ST GEOGPOINT ( - 73.9857 , 40.7484 ), point , 2000 ) AND brands . name = \"McDonald's\" AND business status = \"OPERATIONAL\" The next query returns the count of the number of banks in New York City that belong to a brand, grouped by brand name: SELECT WITH AGGREGATION THRESHOLD brands . name , COUNT ( ) AS store count FROM PROJECT NAME . places insights us . places places , UNNEST ( brand ids ) AS brand id LEFT JOIN PROJECT NAME . places insights us . brands ON brand id = brands . id WHERE brands . category = \"ATMs, Banks and Credit Unions\" AND \"bank\" IN UNNEST ( places . types ) AND business status = \"OPERATIONAL\" GROUP BY brands . name ORDER BY store count DESC ; The following image shows the counts by brand: Category values The category field for a brand can contain the following values: Category type value ATMs, Banks and Credit Unions Automotive and Parts Dealers Automotive Rentals Automotive Services Dental Electric Vehicle Charging Stations Electronics Retailers Fitness Food and Drink Gas Station Grocery and Liquor Health and Personal Care Retailers Hospital Lodging Merchandise Retail Movie Theater Parking Telecommunications Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "A typical use case for querying the brands dataset is to join it with a query on the place data to answer questions such as: What is the count of all stores by brand in an area?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "sample.places",
+      "us.places"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

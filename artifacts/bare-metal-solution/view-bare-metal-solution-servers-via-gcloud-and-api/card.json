@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.851Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "View Bare Metal Solution servers via gcloud and API",
+  "feature_slug": "view-bare-metal-solution-servers-via-gcloud-and-api",
+  "summary": "Allows users to list Bare Metal Solution servers and view full server details using gcloud and API commands.",
+  "extended_definition": "Allows users to list Bare Metal Solution servers and view full server details using gcloud and API commands.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+      "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares\" -d \\ '{ \"name\": \"projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME \", \"labels\": { \"nfsKey1\": \"some value\", \"key2\": \"another value\", }, \"requestedSizeGib\": \" SIZE GIB \", \"storageType\": \" STORAGE TYPE \", \"allowedClients\": [ { \"network\": \"projects/ PROJECT ID /locations/ REGION /networks/ NETWORK NAME \", \"allowedClientsCidr\": \" IP ADDRESS RANGE \", \"mountPermissions\": \" MOUNT PERMISSIONS \", \"allowDev\": ALLOW DEV , \"allowSuid\": ALLOW SUID , \"noRootSquash\": ENABLE ROOT SQUASH , } ], }' Because creating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .",
+          "Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ?updateMask=allowed clients%2Clabels\" -d \\ '{ \"name\": \"projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME \", \"labels\": { \"newKey\": \"newVal\", }, \"allowedClients\": [ { \"network\": \"projects/ PROJECT ID /locations/ REGION /networks/ NFS VOLUME NAME \", \"allowedClientsCidr\": \" IP ADDRESS RANGE \", \"mountPermissions\": \" MOUNT PERMISSIONS \", \"allowDev\": ALLOW DEV , \"allowSuid\": ALLOW SUID , \"noRootSquash\": ENABLE ROOT SQUASH , } ], }' Because updating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .",
+          "Used addresses The IP addresses of the servers connected by the network. gcloud To view all networks in your Bare Metal Solution environment and see their status, enter your project ID and issue the gcloud bms networks list command. gcloud bms networks list --project= PROJECT ID The following output example shows a network name, region, IP address range, network type, and VLAN ID for each network."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-1 \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-2 \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \\ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.",
+          "The following example, adds the 0.0.0.0/0 custom IP to the Cloud Router's advertisements: gcloud compute routers update-bgp-peer router-name \\ --peer-name bgp-session-name \\ --add-advertisement-ranges 0.0.0.0/0 Optionally, set the VPC Network Dynamic Routing Mode to global If you have Bare Metal Solution servers in two different regions, consider enabling global routing mode on the VPC network to have your Bare Metal Solution regions talk to each other directly over the VPC network.",
+          "PROJECT ID : the ID of the project MTU : the maximum transmission unit (MTU), which is the largest packet size of the network Create a subnet. gcloud compute networks subnets create SUBNET NAME -- project = PROJECT ID -- range = RANGE -- stack - type = IPV4 ONLY -- network = NETWORK -- region = REGION Replace the following: SUBNET NAME : the name for the subnet PROJECT ID : the ID of the project RANGE : the IP space allocated to this subnet in CIDR format NETWORK : the VPC network to which the subnet belongs REGION : the region of the subnet Create two Cloud Routers for the redundancy and advertisements. gcloud compute routers create ROUTER NAME -- project = PROJECT ID -- region = REGION -- network = NETWORK -- advertisement - mode = custom -- set - advertisement - ranges = 0.0.0.0 / 0 Replace the following: ROUTER NAME : the name of the router PROJECT ID : the ID of the project REGION : the region of the router NETWORK : the VPC network for this router Create four VLAN attachments, two for each Cloud Router."
+        ]
+      },
+      {
+        "title": "\"Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Log in to Oracle Linux and configure the Oracle environment: TNS ADMIN= TNSNAMES.ORA FILE LOCATION tnsping CLU1 S Review the database user account to ensure a successful connection to the Backup and DR application: sqlplus act rman user/act rman user@act svc dbstd as sysdba In the Application Details and Settings page described in Application Details and Settings for Oracle Databases , enter the service name you created ( CLU1 S ) in the Oracle Service Name field: Error Code 870 says that \"ASM backups with ASM on NFS staging disks is not supported.\" If you receive this error, you do not have the correct setting configured in Details and Settings for the instance that you want to protect.",
+          "If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service.",
+          "Understand the factors that impact performance for the network and your backup servers The following items affect network I/O between Oracle on Bare Metal Solution and your backup servers in Google Cloud: Flash storage Similar to Google Cloud Persistent Disk, the flash storage arrays that provide the storage for Bare Metal Solution systems increase I/O capabilities based on how much storage you assign to the host."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "baremetalsolution.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    }
+  ]
+}

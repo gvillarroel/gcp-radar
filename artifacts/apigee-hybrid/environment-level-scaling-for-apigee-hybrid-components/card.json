@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.092Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "Environment-level scaling for Apigee hybrid components",
+  "feature_slug": "environment-level-scaling-for-apigee-hybrid-components",
+  "summary": "Apigee hybrid added environment-specific scaling controls in overrides.yaml, including replica count settings for Runtime, Synchronizer, and UDCA per environment.",
+  "extended_definition": "Apigee hybrid added environment-specific scaling controls in overrides.yaml, including replica count settings for Runtime, Synchronizer, and UDCA per environment.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configuration property reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, to change the replica count minimum and maximum for the MART service, you could add this stanza to overrides.yaml : mart: replicaCountMin: 3 replicaCountMax: 6 You can also find these config properties and their default settings in HYBRID ROOT INSTALL /1.0.0/values.yaml For more information, see Manage runtime plane components .",
+          "When configured in overrides.yaml , all internet communication for the Apigee Connect, Logger, MART, Metrics, Synchronizer, and UDCA components pass through the proxy server.",
+          "Important: For production environments, reset the value of runtime.resources.requests.memory to at least 1Gi in your overrides.yaml ."
+        ]
+      },
+      {
+        "title": "Manage runtime plane components | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "source_id": "feature-recovery-http",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following chart shows which charts correspond wth which Apigee hybrid components: Scope Components Helm chart Apigee operator Apigee operator apigee-operator Storage Cassandra apigee-datastore In‑memory storage Redis apigee-redis Reporting Logger Metrics apigee-telemetry Ingress Apigee Ingress gateway apigee-ingress-manager Organization Apigee Connect Agent MART UDCA Watcher apigee-org Environment Runtime Synchronizer apigee-env Environment group virtualhost apigee-virtualhost For example, to change the replica count on the Message processor , follow these steps: Open your OVERRIDES .yaml file.",
+          "For example: helm upgrade test-1-env apigee-env/ \\ --namespace APIGEE_NAMESPACE \\ --atomic \\ --set env= test-1-env \\ -f test-1-env-overrides.yaml Note: If you see an error saying Error: UPGRADE FAILED: \"test-1-env\" has no deployed releases , replace upgrade with install and try the command again.",
+          "You can create custom annotations for the following properties listed in Configuration property reference : cassandra connectAgent logger mart metrics runtime synchronizer udca watcher To add a custom annotation, add a stanza to the OVERRIDES .yaml file for the respective component."
+        ]
+      },
+      {
+        "title": "Scale and autoscale runtime services \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can override the default settings by specifying environment-specific scaling in the overrides.yaml file as shown in the following example: envs: Apigee environment name - name: ENV NAME > components: Environment-specific scaling override Otherwise, uses scaling defined at the respective root component runtime: replicaCountMin: 2 replicaCountMax: 20 Metrics-based scaling With metrics-based scaling, the runtime can use CPU and application metrics to scale the apigee-runtime pods.",
+          "The following example from the runtime stanza in the overrides.yaml illustrates the standard parameters (and permitted ranges) for scaling apigee-runtime pods in a hybrid implementation: runtime: the following parameters configure metrics-based scaling hpaMetrics: serverMainTaskWaitTime: 400M # (range: 300M to 450M) serverNioTaskWaitTime: 400M # (range: 300M to 450M) targetCPUUtilizationPercentage: 75 hpaBehavior: scaleDown: percent: periodSeconds: 60 # (range: 30 - 180) value: 20 # (range: 5 - 50) pods: periodSeconds: 60 # (range: 30 - 180) value: 2 # (range: 1 - 15) selectPolicy: Min stabilizationWindowSeconds: 120 # (range: 60 - 300) scaleUp: percent: periodSeconds: 60 # (range: 30 - 120) value: 20 # (range: 5 - 100) pods: periodSeconds: 60 # (range: 30 - 120) value: 4 # (range: 2 - 15) selectPolicy: Max stabilizationWindowSeconds: 30 # (range: 30 - 120) Apply these settings by updating the apigee-runtime chart for each environment.",
+          "For example: helm upgrade telemetry apigee-telemetry/ \\ --namespace APIGEE NAMESPACE \\ --atomic \\ -f overrides .yaml Configure more aggressive scaling Increasing the percent and pods values of the scale-up policy will result in a more aggressive scale-up policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "common.sh",
+      "overrides.yaml",
+      "push.sh",
+      "runtime.resources.requests.memory",
+      "v1.14",
+      "v1.15",
+      "v1.16",
+      "values.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/customize-services",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/scale-and-autoscale"
+      ]
+    }
+  ]
+}

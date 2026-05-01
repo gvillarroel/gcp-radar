@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery data preparation Cloud Storage file loading",
+  "feature_slug": "bigquery-data-preparation-cloud-storage-file-loading",
+  "summary": "BigQuery data preparations can load files from Cloud Storage.",
+  "extended_definition": "BigQuery data preparations can load files from Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following gcloud storage cat command streams the file from Cloud Storage, decompresses the file, identifies the appropriate byte offset, and prints the line with the format error: gcloud storage cat gs://my-bucket/mytable.csv.gz gunzip - tail -c +1406 head -n 1 The output is similar to the following: 16,Abraham Lincoln,\"March 4, 1861\", \"April 15, \"1865 ,Republican Troubleshoot quota errors Use the information in this section to troubleshoot quota or limit errors related to loading CSV files into BigQuery.",
+          "You can set a default value for the location using the .bigqueryrc file . format is CSV . dataset is an existing dataset. table is the name of the table into which you're loading data. path to source is a fully-qualified Cloud Storage URI or a comma-separated list of URIs.",
+          "You can set a default value for the location using the .bigqueryrc file . format is CSV . dataset is an existing dataset. table is the name of the table into which you're loading data. path to source is a fully-qualified Cloud Storage URI or a comma-separated list of URIs."
+        ]
+      },
+      {
+        "title": "Batch loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In general, if bandwidth is limited, compress your CSV and JSON files by using gzip before uploading them to Cloud Storage. gzip is the only supported file compression type for CSV and JSON files when loading data into BigQuery.",
+          "Batch loading data You can load data into BigQuery from Cloud Storage or from a local file as a batch operation.",
+          "To load a local file of another format, set the format parameter of the Table#load job method to the appropriate format. require \"google/cloud/bigquery\" def load from file dataset id = \"your dataset id\" , file path = \"path/to/file.csv\" bigquery = Google :: Cloud :: Bigquery . new dataset = bigquery . dataset dataset id table id = \"new table id\" Infer the config.location based on the location of the referenced dataset. load job = dataset . load job table id , file path do config config . skip leading = 1 config . autodetect = true end load job . wait until done! # Waits for table load to complete. table = dataset . table table id puts \"Loaded #{ table . rows count } rows into #{ table . id } \" end Limitations Loading data from a local data source is subject to the following limitations: Wildcards and comma-separated lists are not supported when you load files from a local data source."
+        ]
+      },
+      {
+        "title": "Introduction to loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also use the following programmatic methods to load the data: Loading method Description Batch load You can load data from Cloud Storage or from a local file by creating a load job.",
+          "For batch or incremental loading of data from Cloud Storage and other supported data sources, we recommend using the BigQuery Data Transfer Service .",
+          "Methods of loading or accessing external data In the BigQuery page, in the Add data dialog , you can view all available methods to load data into BigQuery or access data from BigQuery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.location",
+      "file.csv",
+      "mytable.csv.gz",
+      "states.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data"
+      ]
+    }
+  ]
+}

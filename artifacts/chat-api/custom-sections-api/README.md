@@ -1,0 +1,35 @@
+# Custom sections API
+
+Product: Chat API
+Feature slug: `custom-sections-api`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The Chat API lets developers create, update, delete, list, position, and organize custom sections and section items for personalized conversation views; The Chat API lets developers create, update, delete, list, position, and organize custom sections and section items for personalized conversation views.
+
+## Lifecycle
+
+- Latest feature date: 2026-04-01
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- credential
+- key
+- permission
+- role
+
+## Official Evidence
+
+- [https://developers.google.com/workspace/chat/api/reference/rest/v1/cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards)
+- [https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1](https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1)
+- [https://developers.google.com/workspace/chat/create-messages](https://developers.google.com/workspace/chat/create-messages)

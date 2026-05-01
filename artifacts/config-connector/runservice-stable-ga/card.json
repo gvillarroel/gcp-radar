@@ -1,0 +1,288 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.734Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "RunService stable GA",
+  "feature_slug": "runservice-stable-ga",
+  "summary": "RunService was promoted from alpha to stable in Config Connector.",
+  "extended_definition": "RunService was promoted from alpha to stable in Config Connector.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "RunService | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "source_id": "feature-recovery-http",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample YAML(s) Run Service Basic # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-basic spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - env : - name : \"FOO\" value : \"bar\" image : \"gcr.io/cloudrun/hello\" scaling : maxInstanceCount : 2 traffic : - percent : 100 type : \"TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST\" Run Service Encryptionkey # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-encryptionkey spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" encryptionKeyRef : name : runservice-dep-encryptionkey --- # Replace ${PROJECT_ID?} and ${PROJECT_NUMBER?} below with your desired project # ID and project number. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : runservice-dep-encryptionkey spec : member : serviceAccount:service-${PROJECT_NUMBER?}@serverless-robot-prod.iam.gserviceaccount.com role : roles/cloudkms.cryptoKeyEncrypterDecrypter # required by cloud run service agent to access KMS keys resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : runservice-dep-encryptionkey spec : keyRingRef : name : runservice-dep-encryptionkey purpose : ENCRYPT_DECRYPT --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : runservice-dep-encryptionkey spec : location : us-central1 Run Service Multicontainer # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-multicontainer spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"BETA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - name : \"hello-1\" image : \"gcr.io/cloudrun/hello\" ports : - containerPort : 8080 volumeMounts : - name : \"empty-dir-volume\" mountPath : \"/mnt\" - name : \"hello-2\" image : \"gcr.io/cloudrun/hello\" volumes : - name : \"empty-dir-volume\" emptyDir : medium : \"MEMORY\" sizeLimit : \"256Mi\" Run Service Probes # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-serviceprobes spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" startupProbe : initialDelaySeconds : 0 timeoutSeconds : 1 periodSeconds : 3 failureThreshold : 1 tcpSocket : port : 8080 livenessProbe : httpGet : path : \"/\" Run Service SQL # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-sql spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : volumes : - name : \"cloudsql\" cloudSqlInstance : instances : - name : runservice-dep-sql containers : - image : \"gcr.io/cloudrun/hello\" volumeMounts : - name : \"cloudsql\" mountPath : \"/cloudsql\" --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLInstance metadata : name : runservice-dep-sql spec : region : us-central1 databaseVersion : MYSQL_5_7 settings : tier : db-n1-standard-1 Run Service Secret # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-secret spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" volumeMounts : - name : \"a-volume\" mountPath : \"/secrets\" volumes : - name : \"a-volume\" secret : secretRef : name : runservice-dep-secret defaultMode : 292 # 0444 items : - versionRef : name : runservice-dep-secret path : \"my-secret\" mode : 256 # 0400 --- # Replace ${PROJECT_ID?} and ${PROJECT_NUMBER?} below with your desired project # ID and project number. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : runservice-dep-secret spec : member : serviceAccount:${PROJECT_NUMBER?}-compute@developer.gserviceaccount.com role : roles/secretmanager.secretAccessor # required by default service account to access secrets resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : v1 kind : Secret metadata : name : runservice-dep-secret data : secretData : SSBhbHdheXMgbG92ZWQgc3BhcnJpbmcgd2l0aCBnaWFudCBjYW5keSBzd29yZHMsIGJ1dCBJIGhhZCBubyBpZGVhIHRoYXQgd2FzIG15IHN1cGVyIHNlY3JldCBpbmZvcm1hdGlvbiE= --- apiVersion : secretmanager.cnrm.cloud.google.com/v1beta1 kind : SecretManagerSecret metadata : name : runservice-dep-secret spec : replication : automatic : true --- apiVersion : secretmanager.cnrm.cloud.google.com/v1beta1 kind : SecretManagerSecretVersion metadata : name : runservice-dep-secret spec : enabled : true secretData : valueFrom : secretKeyRef : key : secretData name : runservice-dep-secret secretRef : name : runservice-dep-secret Run Service Serviceaccount apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : name : runservice-dep-serviceaccount --- apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-serviceaccount spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" serviceAccountRef : name : runservice-dep-serviceaccount Run Service VPCAccess # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-vpcaccess spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" vpcAccess : connectorRef : name : runservice-dep-vpcaccess egress : \"ALL_TRAFFIC\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : runservice-dep-vpcaccess spec : autoCreateSubnetworks : false --- apiVersion : vpcaccess.cnrm.cloud.google.com/v1beta1 kind : VPCAccessConnector metadata : name : runservice-dep-vpcaccess spec : location : \"us-central1\" networkRef : name : runservice-dep-vpcaccess ipCidrRange : \"10.132.0.0/28\" projectRef : # Replace ${PROJECT_ID?} with your project ID external : ${PROJECT_ID?} Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "RunService | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "RunService Property Value Google Cloud Service Name Run Google Cloud Service Documentation /run/docs/ Google Cloud REST Resource Name v2.projects.locations.services Google Cloud REST Resource Documentation /run/docs/reference/rest/v2/projects.locations.services Config Connector Resource Short Names gcprunservice gcprunservices runservice Config Connector Service Name run.googleapis.com Config Connector Resource Fully Qualified Name runservices.run.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions No Supports IAM Audit Configs No IAM External Reference Format projects/{{project}}/locations/{{location}}/services/{{name}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string binaryAuthorization : breakglassJustification : string useDefault : boolean client : string clientVersion : string customAudiences : - string description : string ingress : string launchStage : string location : string projectRef : external : string name : string namespace : string resourceID : string template : annotations : string : string containers : - args : - string command : - string dependsOn : - string env : - name : string value : string valueSource : secretKeyRef : secretRef : external : string name : string namespace : string versionRef : external : string name : string namespace : string image : string livenessProbe : failureThreshold : integer grpc : port : integer service : string httpGet : httpHeaders : - name : string value : string path : string port : integer initialDelaySeconds : integer periodSeconds : integer timeoutSeconds : integer name : string ports : - containerPort : integer name : string resources : cpuIdle : boolean limits : string : string startupCpuBoost : boolean startupProbe : failureThreshold : integer grpc : port : integer service : string httpGet : httpHeaders : - name : string value : string path : string port : integer initialDelaySeconds : integer periodSeconds : integer tcpSocket : port : integer timeoutSeconds : integer volumeMounts : - mountPath : string name : string workingDir : string encryptionKeyRef : external : string name : string namespace : string executionEnvironment : string labels : string : string maxInstanceRequestConcurrency : integer revision : string scaling : maxInstanceCount : integer minInstanceCount : integer serviceAccountRef : external : string name : string namespace : string sessionAffinity : boolean timeout : string volumes : - cloudSqlInstance : instances : - external : string name : string namespace : string emptyDir : medium : string sizeLimit : string name : string secret : defaultMode : integer items : - mode : integer path : string versionRef : external : string name : string namespace : string secretRef : external : string name : string namespace : string vpcAccess : connectorRef : external : string name : string namespace : string egress : string networkInterfaces : - networkRef : external : string name : string namespace : string subnetworkRef : external : string name : string namespace : string tags : - string traffic : - percent : integer revision : string tag : string type : string Fields annotations Optional map (key: string, value: string) Unstructured key value map that may be set by external tools to store and arbitrary metadata."
+        ]
+      },
+      {
+        "title": "Installing Config Connector v1alpha1 CRDs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can check the Config Connector version by connecting to the cluster where Config Connector is installed and running the following command: kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' Installing the v1alpha1 CRDs Clone the GitHub repository : git clone https://github.com/GoogleCloudPlatform/k8s-config-connector git checkout to your Config Connector version: cd k8s-config-connector echo 'v' $( kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' ) xargs git checkout Install the v1alpha1 CRDs: cd crds If you want to install a specific v1alpha1 CRD, run the following command: kubectl apply -f CRD FILENAME Replace CRD FILENAME with the filename of the v1alpha1 CRD you want to install.",
+          "Ensure Config Connector version is upgraded before you upgrade the v1alpha1 CRDs. git checkout to your Config Connector version at your local Config Connector repository: echo 'v' $( kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' ) xargs git checkout Upgrade the v1alpha1 CRDs: cd crds If you want to upgrade a specific v1alpha1 CRD, run the following command: kubectl apply -f CRD FILENAME Replace CRD FILENAME with the filename of the v1alpha1 CRD you want to install.",
+          "Check out to your Config Connector version at your local Config Connector repository: echo 'v' $( kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' ) xargs git checkout Uninstall the v1alpha1 CRDs: cd crds kubectl delete $( ls v1alpha1 .yaml awk ' { print \" -f \" $1 } ' ) The v1alpha1 CRDs are successfully uninstalled if the kubectl delete command successfully completes."
+        ]
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.",
+          "Replace ${PROJECT ID?} below with your project ID. workloadPool : ${PROJECT ID?}.svc.id.goog networkingMode : VPC NATIVE networkRef : name : containercluster-dep-vpcnative subnetworkRef : name : containercluster-dep-vpcnative ipAllocationPolicy : servicesSecondaryRangeName : servicesrange clusterSecondaryRangeName : clusterrange clusterAutoscaling : enabled : true autoscalingProfile : BALANCED resourceLimits : - resourceType : cpu maximum : 100 minimum : 10 - resourceType : memory maximum : 1000 minimum : 100 maintenancePolicy : dailyMaintenanceWindow : startTime : 00:00 releaseChannel : channel : STABLE notificationConfig : pubsub : enabled : true topicRef : name : containercluster-dep-vpcnative enableBinaryAuthorization : true enableIntranodeVisibility : true enableShieldedNodes : true addonsConfig : networkPolicyConfig : disabled : false dnsCacheConfig : enabled : true configConnectorConfig : enabled : true networkPolicy : enabled : true podSecurityPolicyConfig : enabled : true verticalPodAutoscaling : enabled : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : containercluster-dep-vpcnative spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : containercluster-dep-vpcnative spec : ipCidrRange : 10.2.0.0/16 region : us-central1 networkRef : name : containercluster-dep-vpcnative secondaryIpRange : - rangeName : servicesrange ipCidrRange : 10.3.0.0/16 - rangeName : clusterrange ipCidrRange : 10.4.0.0/16 --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : containercluster-dep-vpcnative Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "This makes same node pod to pod traffic visible for VPC network. enableK8sBetaApis Optional object Configuration for Kubernetes Beta APIs. enableK8sBetaApis.enabledApis Required list (string) Enabled Kubernetes Beta APIs. enableK8sBetaApis.enabledApis[] Required string enableKubernetesAlpha Optional boolean Immutable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "containerclusters.container.cnrm.cloud.google.com",
+      "developer.gserviceaccount.com",
+      "gcr.io",
+      "github.com",
+      "iam.cnrm.cloud.google.com",
+      "kms.cnrm.cloud.google.com",
+      "metadata.annotations.cnrm",
+      "prod.iam.gserviceaccount.com",
+      "projects.locations.clusters",
+      "projects.locations.services",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "run.cnrm.cloud.google.com",
+      "run.googleapis.com",
+      "runservices.run.cnrm.cloud.google.com",
+      "secretmanager.cnrm.cloud.google.com",
+      "secretmanager.secretAccessor",
+      "sql.cnrm.cloud.google.com",
+      "svc.id.goog",
+      "v1.projects.locations.clusters",
+      "v2.projects.locations.services",
+      "vpcaccess.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/secretmanager.secretAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    }
+  ]
+}

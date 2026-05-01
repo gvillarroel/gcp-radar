@@ -1,0 +1,227 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.636Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "HTTP function security level",
+  "feature_slug": "http-function-security-level",
+  "summary": "HTTP function security level controls whether a function URL allows HTTPS only or both HTTP and HTTPS.",
+  "extended_definition": "HTTP function security level controls whether a function URL allows HTTPS only or both HTTP and HTTPS.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.functions \\_|\\_ Cloud Run functions \\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: CloudFunction JSON representation SourceRepository JSON representation HttpsTrigger JSON representation SecurityLevel EventTrigger JSON representation FailurePolicy JSON representation Retry CloudFunctionStatus VpcConnectorEgressSettings IngressSettings SecretEnvVar JSON representation SecretVolume JSON representation SecretVersion JSON representation DockerRegistry AutomaticUpdatePolicy OnDeployUpdatePolicy JSON representation Methods Resource: CloudFunction Describes a Cloud Function that contains user computation executed in response to an event.",
+          "This controls the methods to enforce security (HTTPS) on a URL.",
+          "JSON representation { \"name\" : string , \"description\" : string , \"status\" : enum ( CloudFunctionStatus ) , \"entryPoint\" : string , \"runtime\" : string , \"timeout\" : string , \"availableMemoryMb\" : integer , \"serviceAccountEmail\" : string , \"updateTime\" : string , \"versionId\" : string , \"labels\" : { string : string , ... } , \"environmentVariables\" : { string : string , ... } , \"buildEnvironmentVariables\" : { string : string , ... } , \"network\" : string , \"maxInstances\" : integer , \"minInstances\" : integer , \"vpcConnector\" : string , \"vpcConnectorEgressSettings\" : enum ( VpcConnectorEgressSettings ) , \"ingressSettings\" : enum ( IngressSettings ) , \"kmsKeyName\" : string , \"buildWorkerPool\" : string , \"buildId\" : string , \"buildName\" : string , \"secretEnvironmentVariables\" : [ { object ( SecretEnvVar ) } ] , \"secretVolumes\" : [ { object ( SecretVolume ) } ] , \"sourceToken\" : string , \"dockerRepository\" : string , \"dockerRegistry\" : enum ( DockerRegistry ) , \"buildServiceAccount\" : string , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , // Union field source code can be only one of the following: \"sourceArchiveUrl\" : string , \"sourceRepository\" : { object ( SourceRepository ) } , \"sourceUploadUrl\" : string // End of list of possible types for union field source code . // Union field trigger can be only one of the following: \"httpsTrigger\" : { object ( HttpsTrigger ) } , \"eventTrigger\" : { object ( EventTrigger ) } // End of list of possible types for union field trigger . // Union field runtime update policy can be only one of the following: \"automaticUpdatePolicy\" : { object ( AutomaticUpdatePolicy ) } , \"onDeployUpdatePolicy\" : { object ( OnDeployUpdatePolicy ) } // End of list of possible types for union field runtime update policy . } Fields name string A user-defined name of the function."
+        ]
+      },
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The error message In Audited Resources logs, an entry like the following: \"protoPayload\": { \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\", \"status\": { \"code\": 7, \"details\": [ { \"@type\": \"type.googleapis.com/google.rpc.PreconditionFailure\", \"violations\": [ { \"type\": \"VPC SERVICE CONTROLS\", ... \"authenticationInfo\": { \"principalEmail\": \" CLOUD FUNCTION RUNTIME SERVICE ACCOUNT \", ... \"metadata\": { \"violationReason\": \"NO MATCHING ACCESS LEVEL\", \"securityPolicyInfo\": { \"organizationId\": \" ORGANIZATION ID \", \"servicePerimeterName\": \"accessPolicies/ NUMBER /servicePerimeters/ SERVICE PERIMETER NAME \" ...",
+          "Serving error due to allow internal traffic only configuration Ingress settings restrict whether an HTTP function can be invoked by resources outside of your Google Cloud project or VPC Service Controls service perimeter.",
+          "Step #2 - \"build\": ERROR: failed to create image cache: accessing cache image \" LOCATION -docker.pkg.dev/ PROJECT /gcf-artifacts/ FUNCTION NAME /cache:latest\": connect to repo store \" LOCATION -docker.pkg.dev/ PROJECT /gcf-artifacts/ FUNCTION NAME /cache:latest\": GET https:// LOCATION -docker.pkg.dev/v2/token?scope=repository%3A PROJECT %2Fgcf-artifacts%2F FUNCTION NAME %2Fcache%3Apull&service=: DENIED: Permission \"artifactregistry.repositories.downloadArtifacts\" denied on resource \"projects/ PROJECT /locations/ LOCATION /repositories/gcf-artifacts\" (or it may not exist) Could not build the function due to a missing permission on the build service account."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: Deploying function ( may take a while - up to 2 minutes ) ...⠹ For Cloud Build Stackdriver Logs , visit: https://console.cloud.google.com/logs/viewer?project = & advancedFilter = resource.type% 3Dbuild%0Aresource.labels.build id%3D38d5b662-2315-45dd-8aa2- 380d50d4f5e8%0AlogName%3Dprojects%2F % 2Flogs%2Fcloudbuild Deploying function ( may take a while - up to 2 minutes ) ...done.",
+          "To use Cloud Run functions with VPC Service Controls, you must configure your Cloud Build service account (whether default or custom ) to have access to your service perimeter.",
+          "VPC Service Controls considerations If you have a VPC Service Controls perimeter protecting both your project and the Cloud Run functions API, and if you're using the Compute Engine default service account as the Cloud Build Service Account role for Cloud Run functions, you must create the following ingress rules: Allow Compute Engine default service account ingress to all methods on both Cloud Storage and Cloud Logging APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.repositories.downloadArtifacts",
+      "cloudfunctions.net",
+      "console.cloud.google.com",
+      "docker.pkg.dev",
+      "labels.build",
+      "projects.locations.functions",
+      "resource.type",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    }
+  ]
+}

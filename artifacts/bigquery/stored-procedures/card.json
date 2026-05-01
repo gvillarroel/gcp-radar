@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Stored procedures",
+  "feature_slug": "stored-procedures",
+  "summary": "BigQuery supports stored procedures for reusable procedural SQL logic; BigQuery stored procedures let users save and run reusable procedural SQL logic.",
+  "extended_definition": "BigQuery supports stored procedures for reusable procedural SQL logic; BigQuery stored procedures let users save and run reusable procedural SQL logic.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+      "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data manipulation language (DML) statements in GoogleSQL \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "On-demand query size calculation If you use on-demand billing, BigQuery charges for data manipulation language (DML) statements based on the number of bytes processed by the statement.",
+          "Data manipulation language (DML) statements in GoogleSQL The BigQuery data manipulation language (DML) enables you to update, insert, and delete data from your BigQuery tables.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Perform semantic search and retrieval-augmented generation \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a dataset named bqml tutorial with the data location set to US . bq mk --dataset \\ --location=US \\ --description \"BigQuery ML tutorial dataset.\" \\ bqml tutorial Confirm that the dataset was created: bq ls API Call the datasets.insert method with a defined dataset resource . { \"datasetReference\" : { \"datasetId\" : \"bqml tutorial\" } } Create the remote model for text embedding generation Create a remote model that represents a hosted Vertex AI text embedding generation model: In the Google Cloud console, go to the BigQuery page.",
+          "Methods for improving security in data... +-----------------------------+--------------------+-------------------------------------------------+-------------------------------------------------+ Create the remote model for text generation Create a remote model that represents a hosted Vertex AI text generation model: In the Google Cloud console, go to the BigQuery page.",
+          "Set service account permissions: resourcemanager.projects.getIamPolicy and resourcemanager.projects.setIamPolicy Create a model and run inference: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData bigquery.models.updateMetadata You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "\"Use custom holidays in an ARIMA_PLUS time-series forecasting model \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: CREATE OR REPLACE MODEL bqml tutorial.forecast googleio with custom holiday OPTIONS ( model type = 'ARIMA PLUS' , holiday region = 'US' , time series timestamp col = 'date' , time series data col = 'views' , data frequency = 'DAILY' , horizon = 365 ) AS ( training data AS ( SELECT FROM bqml tutorial.googleio page views WHERE date '2022-01-01' ), custom holiday AS ( SELECT 'US' AS region , 'GoogleIO' AS holiday name , primary date , 1 AS preholiday days , 2 AS postholiday days FROM UNNEST ( [ DATE ( '2017-05-17' ), DATE ( '2018-05-08' ), DATE ( '2019-05-07' ), -- cancelled in 2020 due to pandemic DATE ( '2021-05-18' ), DATE ( '2022-05-11' ) ] ) AS primary date ) ); Visualize the forecasted results After you create the model using custom holidays, join the original data from the bqml tutorial.googleio page views table with the forecasted value from the ML.EXPLAIN FORECAST function , and then visualize it by using Data Studio : Go to the BigQuery page.",
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: SELECT \"original\" AS model type , FROM ml . evaluate ( MODEL bqml tutorial.forecast googleio , ( SELECT FROM bqml tutorial.googleio page views WHERE date >= '2022-05-08' AND date '2022-05-12' ), STRUCT ( 365 AS horizon , TRUE AS perform aggregation )) UNION ALL SELECT \"with custom holiday\" AS model type , FROM ml . evaluate ( MODEL bqml tutorial.forecast googleio with custom holiday , ( SELECT FROM bqml tutorial.googleio page views WHERE date >= '2022-05-08' AND date '2022-05-12' ), STRUCT ( 365 AS horizon , TRUE AS perform aggregation )); The results show that the second model offers a significant performance improvement: Clean up Caution : Deleting a project has the following effects: Everything in the project is deleted.",
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: CREATE OR REPLACE MODEL bqml tutorial.forecast googleio OPTIONS ( model type = 'ARIMA PLUS' , holiday region = 'US' , time series timestamp col = 'date' , time series data col = 'views' , data frequency = 'DAILY' , horizon = 365 ) AS SELECT FROM bqml tutorial.googleio page views WHERE date '2022-01-01' ; Visualize the forecasted results After you create the model using built-in holidays, join the original data from the bqml tutorial.googleio page views table with the forecasted value from the ML.EXPLAIN FORECAST function , and then visualize it by using Data Studio : Go to the BigQuery page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "bigquery.jobs.create",
+      "bigquery.models.create",
+      "bigquery.models.getData",
+      "bigquery.models.updateData",
+      "bigquery.models.updateMetadata",
+      "data.wikipedia.pageviews",
+      "datasets.insert",
+      "resourcemanager.projects.getIamPolicy",
+      "resourcemanager.projects.setIamPolicy",
+      "tutorial.embedding",
+      "tutorial.forecast",
+      "tutorial.googleio"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    }
+  ]
+}

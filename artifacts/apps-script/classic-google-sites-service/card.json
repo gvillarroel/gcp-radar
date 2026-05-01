@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Classic Google Sites service",
+  "feature_slug": "classic-google-sites-service",
+  "summary": "The classic Google Sites service provides Apps Script integration with classic Sites; deprecated on 2023-09-19.",
+  "extended_definition": "The classic Google Sites service provides Apps Script integration with classic Sites; deprecated on 2023-09-19.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-19",
+    "deprecation_date": "2023-09-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/tables",
+      "https://developers.google.com/apps-script/api/concepts",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "July 08, 2022 Deprecated Apps Script has deprecated the following methods: getChatThreads() getChatThreads(start, max) These methods will become unavailable later this year once Google switches all users from Classic Hangouts to Google Chat.",
+          "September 19, 2023 Deprecated The classic Google Sites service has been deprecated due to the transition from classic Sites to new Sites .",
+          "October 21, 2010 Feature Added integration with Google Sites, so that Apps Script can now be run from within Google Sites."
+        ]
+      },
+      {
+        "title": "Apps Script Sunset Schedule \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/tables",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sites service September 19, 2023 September 24, 2024 Service no longer functions. getChatThreads() , getChatThreads(start, max) July 8, 2022 November 1, 2022 These methods are unavailable and existing scripts fail when using these methods.",
+          "Page Summary outlined flag Apps Script features are marked as deprecated before they are shut down, allowing time for migration to supported alternatives.",
+          "Once a sunset date for an Apps Script feature is announced, the feature is considered deprecated, but is available for use until the sunset date."
+        ]
+      },
+      {
+        "title": "Introduction \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/concepts",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use this resource to monitor script executions initiated using the scripts.run method. scripts — The endpoint that provides methods to remotely execute Apps Script functions.",
+          "You can programmatically create, modify, and deploy Google Apps Script projects, and execute Apps Script functions remotely—actions that otherwise require using the Apps Script editor or its UI.",
+          "Home Google Workspace Apps Script Guides Send feedback Introduction Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "scripts.run"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/tables",
+        "https://developers.google.com/apps-script/api/concepts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/tables",
+        "https://developers.google.com/apps-script/api/concepts"
+      ]
+    }
+  ]
+}

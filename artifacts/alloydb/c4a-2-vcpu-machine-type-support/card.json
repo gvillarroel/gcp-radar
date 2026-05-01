@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "C4A 2 vCPU machine type support",
+  "feature_slug": "c4a-2-vcpu-machine-type-support",
+  "summary": "C4A 2 vCPU machine type support adds the c4a-highmem-2-lssd Axion-based instance option for smaller AlloyDB deployments.",
+  "extended_definition": "C4A 2 vCPU machine type support adds the c4a-highmem-2-lssd Axion-based instance option for smaller AlloyDB deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+      "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Choose an AlloyDB machine type \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+        "source_id": "site-docs-reference-2",
+        "final_score": 216,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Machine type vCPUs Memory (GB) c4-highmem-4-lssd 4 32 GB RAM c4-highmem-8-lssd 8 64 GB RAM c4-highmem-16-lssd 16 128 GB RAM c4-highmem-24-lssd 24 192 GB RAM c4-highmem-32-lssd 32 256 GB RAM c4-highmem-48-lssd 48 384 GB RAM c4-highmem-96-lssd 96 768 GB RAM c4-highmem-144-lssd 144 1152 GB RAM c4-highmem-192-lssd 192 1536 GB RAM c4-highmem-288-lssd 288 2304 GB RAM Z3 standardlssd The following machine types are available for instances for the Z3 machine series.",
+          "Machine type vCPUs Memory (GB) c4a-highmem-1 1 8 GB RAM c4a-highmem-2-lssd 2 16 GB RAM c4a-highmem-4-lssd 4 32 GB RAM c4a-highmem-8-lssd 8 64 GB RAM c4a-highmem-16-lssd 16 128 GB RAM c4a-highmem-32-lssd 32 256 GB RAM c4a-highmem-48-lssd 48 384 GB RAM c4a-highmem-64-lssd 64 512 GB RAM c4a-highmem-72-lssd 72 576 GB RAM C4 The following machine types are available for instances for the C4 machine series.",
+          "Machine type vCPUs Memory (GB) n2-highmem-2 2 16 GB RAM n2-highmem-4 4 32 GB RAM n2-highmem-8 8 64 GB RAM n2-highmem-16 16 128 GB RAM n2-highmem-32 32 256 GB RAM n2-highmem-64 64 512 GB RAM n2-highmem-96 96 768 GB RAM n2-highmem-128 128 864 GB RAM C4A Axion-based The following machine types are available for instances for the C4A Axion-based machine series."
+        ]
+      },
+      {
+        "title": "Scale an instance \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about using the C4A Axion-based machine series, including the 1 vCPU machine type, see Considerations when using the C4A Axion-based machine series .",
+          "MACHINE TYPE : select from a list of supported machine-types such as n2-highmem-4 , c4-highmem-4-lssd , or c4a-highmem-4-lssd .",
+          "MACHINE TYPE : select from a list of supported machine-types such as n2-highmem-4 , c4-highmem-4-lssd , or c4a-highmem-4-lssd ."
+        ]
+      },
+      {
+        "title": "\"Create a cluster and its primary instance \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The preceding example creates an N2 instance with the following specifications: 2: 2 vCPUs, 16 GB RAM 4: 4 vCPUs, 32 GB RAM 8: 8 vCPUs, 64 GB RAM 16: 16 vCPUs, 128 GB RAM 32: 32 vCPUs, 256 GB RAM 64: 64 vCPUs, 512 GB RAM 96: 96 vCPUs, 768 GB RAM 128: 128 vCPUs, 864 GB RAM The following example shows how to create an instance for a machine type: machine config: { machine type : MACHINE TYPE , }, Replace MACHINE TYPE with a supported machine type such as n2-highmem-4 , c4-highmem-4-lssd , or c4a-highmem-4-lssd .",
+          "For more information about using C4A Axion-based machine series, including the 1 vCPU machine type see Considerations when using the C4A Axion-based machine series .",
+          "For a list of other supported machine-types such as n2-highmem-4 , c4-highmem-4-lssd , or c4a-highmem-4-lssd , see Choose an AlloyDB machine type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

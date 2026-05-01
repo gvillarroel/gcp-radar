@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Shared CA server certificate authority mode",
+  "feature_slug": "shared-ca-server-certificate-authority-mode",
+  "summary": "Shared CA mode lets Cloud SQL instances use a Google-managed shared CA hierarchy hosted in Certificate Authority Service for server certificates.",
+  "extended_definition": "Shared CA mode lets Cloud SQL instances use a Google-managed shared CA hierarchy hosted in Certificate Authority Service for server certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-ip",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authorize with SSL/TLS certificates \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To choose per-instance CA, select Google managed internal certificate authority (Google Cloud console) or specify GOOGLE MANAGED INTERNAL CA for the serverCaMode setting (Cloud SQL Admin API) or the --server-ca-mode flag ( gcloud CLI ) when you create the instance .",
+          "You can either leave the serverCaMode configuration setting unspecified using Cloud SQL Admin API or gcloud CLI , or select the Google internal Certificate Authority option in the Google Cloud console.",
+          "For instances that use shared CAs ( serverCaMode is set to GOOGLE MANAGED CAS CA ), the expiration period of the server certificates is 1 year."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security Server certificate authority mode Choose the type of certificate authority (CA) that signs the server certificate for this Cloud SQL instance.",
+          "Server CA mode --server-ca-mode The --server-ca-mode flag configures the type of server certificate authority (CA) for an instance.",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Configure public IP \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-ip",
+        "source_id": "site-iam-reference",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're using either a shared certificate authority (CA) or a customer-managed CA as the serverCaMode for your instance, then your instance requires a restart when you disable public IP for your instance.",
+          "If you're using either a shared certificate authority (CA) or a customer-managed CA as the serverCaMode for your instance, then your instance requires a restart when you enable public IP for your instance.",
+          "For more information about server CA mode configuration, see Certificate authority (CA) authorities ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ip"
+      ]
+    }
+  ]
+}

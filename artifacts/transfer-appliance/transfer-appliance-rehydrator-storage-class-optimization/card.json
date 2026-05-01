@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.544Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance",
+  "feature_name": "Transfer Appliance Rehydrator storage class optimization",
+  "feature_slug": "transfer-appliance-rehydrator-storage-class-optimization",
+  "summary": "The Rehydrator now uses regional or multi-regional storage locations when building component objects for rehydrating files larger than 100 GB to avoid early deletion charges.",
+  "extended_definition": "The Rehydrator now uses regional or multi-regional storage locations when building component objects for rehydrating files larger than 100 GB to avoid early deletion charges.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Known limitations \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported file metadata Transfer Appliance preserves symlinks, numeric MODE and the last modified time ( mtime ) from Transfer Appliance file system to copy into the corresponding Cloud Storage destination object.",
+          "Object Versioning Using Transfer Appliance with a bucket where object versioning is enabled may result in multiple versions of the same object being created and storage costs associated with these versions.",
+          "Transfer Appliance does not create empty directories in Cloud Storage when we transfer from the appliance to your Cloud Storage bucket, because objects don't reside within subdirectories within a bucket."
+        ]
+      },
+      {
+        "title": "\"Enable or disable online transfer \\_|\\_ Transfer Appliance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable online transfer mode, follow the instructions below: Verify your outbound connectivity from the appliance to the HTTPS endpoints listed below: https://gcr.io https://storage.googleapis.com https://oauth2.googleapis.com https://storagetransfer.googleapis.com https://pubsub.googleapis.com Run the following command using each of the HTTPS endpoints: ping URL If the command fails, it may indicate that DNS is misconfigured on the appliance.",
+          "Online transfer : Data copied to the appliance is streamed to your Cloud Storage bucket.",
+          "Home Documentation Storage Transfer Appliance Guides Send feedback Enable or disable online transfer Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Online transfers offer the following benefits: Quickly transfer data to Cloud Storage with low latency : Online transfers are an accelerated method of transferring your data to Cloud Storage, omitting the need to wait for your appliance to be shipped back to Google before the data is copied to your destination bucket.",
+          "Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.",
+          "Data migration Offline data transfer is suited for moving large amounts of existing backup images and archives to Cloud Storage, which can be stored in ultra low-cost, highly-durable, and highly available storage classes such as Archive Storage ."
+        ]
+      },
+      {
+        "title": "Concepts \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Overview Overview Learn about the Transfer Appliance and how it can help you quickly and securely migrate your data to Google Cloud Storage.",
+          "Home Documentation Storage Transfer Appliance Send feedback Concepts Stay organized with collections Save and categorize content based on your preferences.",
+          "Known limitations Known limitations Describes known limitations of Transfer Appliance to consider when performing your transfer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "oauth2.googleapis.com",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/concepts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.686Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "gcloud fetch-for-apply",
+  "feature_slug": "gcloud-fetch-for-apply",
+  "summary": "The gcloud fetch-for-apply command lets users configure a cluster using the same settings as another cluster.",
+  "extended_definition": "The gcloud fetch-for-apply command lets users configure a cluster using the same settings as another cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Install Config Sync manually using kubectl \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If needed, grant these roles with the following commands: gcloud container clusters get-credentials CLUSTER NAME kubectl create clusterrolebinding cluster-admin-binding \\ --clusterrole cluster-admin --user USER ACCOUNT Replace the following: CLUSTER NAME : your cluster name USER ACCOUNT : your Google Cloud account's email address Depending on how you configured the Google Cloud CLI on your local system, you might need to add the --project and --zone fields.",
+          "Enroll a cluster To enroll a cluster in Config Sync, complete the following steps: Deploy Config Sync Grant Config Sync read-only access to one of the following: Git OCI Helm Configure Config Sync Deploy Config Sync After ensuring that you meet all the prerequisites , you can deploy Config Sync by downloading and applying a YAML manifest: Download the latest version of the Config Sync manifests using the following command.",
+          "It must be disabled before migrating.\" echo \"This can be done by unsetting the spec.hierarchyController field on ConfigManagement.\" exit 1 fi kubectl delete deployment -n config-management-system config-management-operator --ignore-not-found --cascade = foreground if kubectl get configmanagement config-management &> /dev/null ; then kubectl patch configmanagement config-management --type = \"merge\" -p '{\"metadata\":{\"finalizers\":[]}}' kubectl delete configmanagement config-management --cascade = orphan --ignore-not-found fi kubectl delete clusterrolebinding config-management-operator --ignore-not-found kubectl delete clusterrole config-management-operator --ignore-not-found kubectl delete serviceaccount -n config-management-system config-management-operator --ignore-not-found kubectl delete customresourcedefinition configmanagements.configmanagement.gke.io --ignore-not-found Install the new Config Sync version To upgrade Config Sync, complete the following steps for each enrolled cluster: Download the Config Sync manifest and nomos commands for the new version."
+        ]
+      },
+      {
+        "title": "gcloud apply spec fields \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This page explains the different fields that you can use to configure Config Sync with the --config flag on the Google Cloud CLI apply command and the --fleet-default-member-config flag on the enable command in the beta release track.",
+          "Example gcloud apply spec applySpecVersion : 1 spec : configSync : enabled : true sourceFormat : unstructured syncRepo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples syncBranch : main secretType : none policyDir : config-sync-quickstart/multirepo/root Example gcloud apply spec with deployment resource overrides If you want to customize Config Sync resource requests and limits, add the deploymentOverrides field in your apply spec.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Reference Send feedback gcloud apply spec fields Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Configure Config Sync with kubectl commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create the file To create and edit a configuration file for root-sync , complete the following steps: To make sure that you're retrieving the configuration information for the correct cluster, configure kubectl command-line access: gcloud container clusters get-credentials CLUSTER NAME \\ --zone ZONE \\ --project PROJECT ID Replace the following: CLUSTER NAME : the name of the cluster that has the Config Sync configuration that you want to change ZONE : the zone that you created your cluster in PROJECT ID : your project ID Copy the configuration information from the RootSync object that Config Sync created into a YAML file: kubectl get rootsync root-sync -n config-management-system -o yaml > FILE NAME .yaml Replace FILE NAME with a name for your configuration file.",
+          "For example, to override the memory limit of the git-sync container, add the following fields in bold: apiVersion : v1 items : - apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : annotations : configmanagement.gke.io/managed-by-hub : \"true\" configmanagement.gke.io/update-time : \"1644945169\" creationTimestamp : \"2022-02-15T17:12:52Z\" generation : 1 name : root-sync namespace : config-management-system resourceVersion : \"211980457\" uid : aa30a94b-2825-4590-ad30-5af848403502 spec : git : auth : none branch : main dir : /quickstart/config-sync period : 15s repo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples revision : HEAD secretRef : {} override : resources : - containerName : \"git-sync\" memoryLimit : \"400Mi\" sourceFormat : unstructured Remainder of RootSync omitted Apply the changes to the YAML file: kubectl apply -f FILE NAME .yaml To verify that Config Sync has applied your changes, view the RootSync object: kubectl describe rootsync root-sync -n config-management-system To verify that your changes haven't introduced any errors, use the nomos status command: nomos status Configure Certificate Authority For servers configured with certificates from a Certificate Authority (CA) that is not already trusted, Config Sync can be configured to use a CA certificate to verify HTTPS connections to the server.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Configure Config Sync with kubectl commands Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "configmanagement.gke.io",
+      "configmanagements.configmanagement.gke.io",
+      "configsync.gke.io",
+      "github.com",
+      "spec.cluster",
+      "spec.hierarchyController",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl"
+      ]
+    }
+  ]
+}

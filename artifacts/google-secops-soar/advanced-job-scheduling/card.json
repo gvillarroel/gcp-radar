@@ -1,0 +1,213 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.565Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar",
+  "feature_name": "Advanced job scheduling",
+  "feature_slug": "advanced-job-scheduling",
+  "summary": "Job scheduling now includes advanced options for more precise, calendar-like control over scripts.",
+  "extended_definition": "Job scheduling now includes advanced options for more precise, calendar-like control over scripts.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "For more information, refer to Migrate endpoints to Chronicle API Migrate Remote Agents You can migrate the Remote Agents to Google Cloud by doing the following: Create a Service Account instead of an API key for the remote agent.",
+          "For SOAR standalone customers, see Collect SOAR logs Further changes post migration: License type The license type is now determined by the user's assigned permissions in IAM."
+        ]
+      },
+      {
+        "title": "\"Forwarder Management \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "source_id": "site-api-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request(\"GET\", url) POST example uses json body = { \"foo\": \"bar\" } response = http session.request(\"POST\", url, json=body) PATCH example uses params and json params = { \"foo\": \"bar\" } response = http session.request(\"PATCH\", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "BLOCK : This state prevents the filtered line from being uploaded. server settings object Optional Settings that configure the forwarder's built-in HTTP server, which can be used to configure load balancing and high availability options for syslog collection on Linux. server settings.state enum Optional Specifies the state of the server functionality."
+        ]
+      },
+      {
+        "title": "\"Map users in the Google SecOps platform \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "source_id": "site-iam-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "Here is how you would set up the IdP groups in the SAML provider and in the Google SecOps platform: In your SAML provider, create the following user groups: Security analysts (containing Sasha and Tal) SOC engineers (containing Quinn and Noam) NOC engineers (containing Kim and Kai) London (containing Sasha, Tal, Kim and Kai) Manchester (containing Quinn and Noam) Go to Settings > SOAR Settings > Advanced > IdP Group Mapping .",
+          "For more information, including how Google SecOps manages this, see Multiple permissions in IdP group mapping ."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon Macie with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"ResponseMetadata\" :{ \"HTTPHeaders\" :{ \"connection\" : \"keep-alive\" , \"content-length\" : \"2741\" , \"content-type\" : \"application/json\" , \"date\" : \"Thu, 22 Oct 2020 11:08:58 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-remapped-content-length\" : \"2741\" , \"x-amzn-remapped-date\" : \"Thu, 22 Oct \"\"2020 11:08:57 \"\"GMT\" , \"x-amzn-remapped-x-amzn-requestid\" : \"eaea00d2-11f8-40d8-adce-f6c9f17e9815\" , \"x-amzn-requestid\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" , \"RetryAttempts\" : 0 }, \"findings\" :[ { \"accountId\" : \" ACCOUNT ID \" , \"archived\" : false , \"category\" : \"CLASSIFICATION\" , \"classificationDetails\" :{ \"detailedResultsLocation\" : \"s3://[export-config-not-set]/AWSLogs/ ACCOUNT ID /Macie/us-east-1/\" , \"jobArn\" : \"arn:aws:macie2:us-east-1\" , \"jobId\" : \"088009521d393eda440a24f3c7ad8fbd\" , \"result\" :{ \"additionalOccurrences\" : false , \"customDataIdentifiers\" :{ \"detections\" :[ ], \"totalCount\" : 0 }, \"mimeType\" : \"application/zip\" , \"sensitiveData\" :[ { \"category\" : \"PERSONAL INFORMATION\" , \"detections\" :[ { \"count\" : 80 , \"type\" : \"PHONE NUMBER\" }, { \"count\" : 5 , \"type\" : \"ADDRESS\" }, { \"count\" : 207 , \"type\" : \"NAME\" } ], \"totalCount\" : 292 }, { \"category\" : \"CREDENTIALS\" , \"detections\" :[ { \"count\" : 5 , \"type\" : \"AWS CREDENTIALS\" } ], \"totalCount\" : 5 } ], \"sizeClassified\" : 44213802 , \"status\" :{ \"code\" : \"PARTIAL\" , \"reason\" : \"ARCHIVE CONTAINS UNPROCESSED FILES\" } } }, \"count\" : 1 , \"createdAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" , \"description\" : \"The object contains more than one type of \"\"sensitive information.\" , \"id\" : \" FINDING ID \" , \"partition\" : \"aws\" , \"region\" : \"us-east-1\" , \"resourcesAffected\" :{ \"s3Bucket\" :{ \"arn\" : \"arn:aws:s3:::testexample\" , \"createdAt\" : da tet ime.da tet ime( 2020 , 9 , 14 , 10 , 31 , 56 , \"tzinfo=tzutc())\" , \"defaultServerSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"name\" : \"testexample\" , \"owner\" :{ \"displayName\" : \"lab aws\" , \"id\" : \" OWNER ID \" }, \"publicAccess\" :{ \"effectivePermission\" : \"PUBLIC\" , \"permissionConfiguration\" :{ \"accountLevelPermissions\" :{ \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false } }, \"bucketLevelPermissions\" :{ \"accessControlList\" :{ \"allowsPublicReadAccess\" : false , \"allowsPublicWriteAccess\" : false }, \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false }, \"bucketPolicy\" :{ \"allowsPublicReadAccess\" : true , \"allowsPublicWriteAccess\" : false } } } }, \"tags\" :[ ] }, \"s3Object\" :{ \"bucketArn\" : \"arn:aws:s3:::testsiemplify\" , \"eTag\" : \"8dfbe2ba101b3ca0a62f8fde823503b4-5\" , \"extension\" : \"zip\" , \"key\" : \"awscliv2.zip\" , \"lastModified\" : da tet ime.da tet ime( 2020 , 9 , 28 , 18 , 47 , 30 , \"tzinfo=tzutc())\" , \"path\" : \"testexample/awscliv2.zip\" , \"publicAccess\" : false , \"serverSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"size\" : 33775890 , \"storageClass\" : \"STANDARD\" , \"tags\" :[ ], \"versionId\" : \"\" } }, \"sample\" : false , \"schemaVersion\" : \"1.0\" , \"severity\" :{ \"description\" : \"High\" , \"score\" : 3 }, \"title\" : \"The S3 object contains multiple types of sensitive \"\"information.\" , \"type\" : \"SensitiveData:S3Object/Multiple\" , \"updatedAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"Amazon Macie findings found\" If is success=False, for example no findings were found: \"No findings were returned.\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the Amazon Macie service!",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON Result { \"ResponseMetadata\" :{ \"HTTPHeaders\" :{ \"connection\" : \"keep-alive\" , \"content-length\" : \"65\" , \"content-type\" : \"application/json\" , \"date\" : \"Mon, 26 Oct 2020 05:15:07 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-remapped-content-length\" : \"65\" , \"x-amzn-remapped-date\" : \"Mon, 26 Oct \"\"2020 05:15:07 \"\"GMT\" , \"x-amzn-remapped-x-amzn-requestid\" : \"61217a30-189e-4573-9f76-257b7065a04d\" , \"x-amzn-requestid\" : \"509e1c12-ab86-459e-9d6d-790a359686b2\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"509e1c12-ab86-459e-9d6d-790a359686b2\" , \"RetryAttempts\" : 0 }, \"customDataIdentifierId\" : \"ff43487b-5643-4de1-b651-9ecbeb3021ed\" } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"New Amazon Macie custom data identifier created: {0}\".format(new identifier id from response) If is success=False, for example no findings were found: \"Failed to create Amazon Macie Identifier.",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON Result { \"Policy\" : { \"Version\" : \"2012-10-17\" , \"Statement\" : [ { \"Sid\" : \"AddPerm\" , \"Effect\" : \"Allow\" , \"Principal\" : \" \" , \"Action\" : \"s3:GetObject\" , \"Resource\" : \"arn:aws:s3:::testexample/ \" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"Amazon Macie findings found\" If is success=False, for example no findings were found: \"No findings were returned.\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the Amazon Macie service!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "awscliv2.zip",
+      "backstory.googleapis.com",
+      "demo.json",
+      "github.com",
+      "ime.da",
+      "requests.AuthorizedSession",
+      "session.request",
+      "settings.state"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    }
+  ]
+}

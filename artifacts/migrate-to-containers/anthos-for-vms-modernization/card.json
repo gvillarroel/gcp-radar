@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.932Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Anthos for VMs modernization",
+  "feature_slug": "anthos-for-vms-modernization",
+  "summary": "Traditional VMs can be modernized to run on Anthos for VMs.",
+  "extended_definition": "Traditional VMs can be modernized to run on Anthos for VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/anthos-migrate-benefits",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for WebSphere traditional workloads \\_|\\_ Migrate\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're new to WebSphere workload modernization, then use the websphere-container plugin with the Migrate to Containers CLI instead.",
+          "Customize migration plan for WebSphere traditional workloads Important: The websphere-traditional plugin is now deprecated."
+        ]
+      },
+      {
+        "title": "\"Benefits of migrating to containers \\_|\\_ Migrate to Containers \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/anthos-migrate-benefits",
+        "source_id": "site-docs-reference",
+        "final_score": 53,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By taking advantage of the GKE and GKE Enterprise ecosystems, Migrate to Containers provides a fast and simple way to move to modernized orchestration and application management.",
+          "Modernization and management can be done without requiring access to source code, rewriting, or rearchitecting applications."
+        ]
+      },
+      {
+        "title": "Create a migration plan \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "To retrieve this value, check the running WebSphere Application Server traditional process: ps aux grep WAS HOME Run the analysis To perform the analysis, run the following command: ./m2c analyze \\ -s PATH TO COPIED FILESYSTEM \\ -p websphere-traditional-container -o ANALYSIS OUTPUT PATH \\ -r was-home= PATH TO WAS HOME \\ --volume PATH TO BINARYAPPSCANNER :/binaryAppScanner.jar Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory.",
+          "What's next Learn how to customize the migration plan for the following: Linux VMs Tomcat WebSphere Liberty WebSphere traditional JBoss Apache WordPress Windows IIS services Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Retrieve WAS HOME The WAS HOME environment variable specifies where WebSphere Application Server traditional is installed, such as /opt/IBM/WebSphere/AppServer/ ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/anthos-migrate-benefits",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    }
+  ]
+}

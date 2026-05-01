@@ -1,0 +1,216 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.721Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Bucket encryption type enforcement",
+  "feature_slug": "bucket-encryption-type-enforcement",
+  "summary": "Cloud Storage lets you allow or prohibit specific encryption types for new objects created in a bucket.",
+  "extended_definition": "Cloud Storage lets you allow or prohibit specific encryption types for new objects created in a bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+      "https://docs.cloud.google.com/storage/docs/creating-buckets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class EncryptionEnforcementConfig (3.10.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "source_id": "site-python-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description EncryptionEnforcementConfig Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.EncryptionEnforcementConfig.items method. keys keys () API documentation for storage.bucket.EncryptionEnforcementConfig.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple.",
+          "When set to NotRestricted , the bucket will allow objects encrypted with any encryption type. effective time datetime.datetime (Output only) The time when the encryption enforcement configuration became effective.",
+          "Return the value for key if key is in the dictionary, else default. update update ([ E , ] F ) If E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k] values values () API documentation for storage.bucket.EncryptionEnforcementConfig.values method."
+        ]
+      },
+      {
+        "title": "\"Class BucketEncryption (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "source_id": "site-python-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description BucketEncryption Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.BucketEncryption.items method. keys keys () API documentation for storage.bucket.BucketEncryption.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple.",
+          "Returns Type Description Bucket the instance's bucket. customer managed encryption enforcement config Retrieve the encryption enforcement configuration for Customer managed encryption.",
+          "Returns Type Description EncryptionEnforcementConfig The configuration instance. default kms key name Retrieve default KMS encryption key for objects in the bucket."
+        ]
+      },
+      {
+        "title": "Create a bucket \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\Storage\\StorageClient; / Create a new bucket with a custom default storage class and location. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') / function create bucket class location(string $bucketName): void { $storage = new StorageClient(); $storageClass = 'COLDLINE'; $location = 'ASIA'; $bucket = $storage->createBucket($bucketName, [ 'storageClass' => $storageClass, 'location' => $location, ]); $objects = $bucket->objects([ 'encryption' => [ 'defaultKmsKeyName' => null, ] ]); printf('Created bucket %s in %s with storage class %s', $bucketName, $storageClass, $location); } Python For more information, see the Cloud Storage Python API reference documentation .",
+          "Create new storage bucket in the US multi-region with coldline storage resource \"random id\" \"bucket prefix\" { byte length = 8 } resource \"google storage bucket\" \"static\" { name = \"${random id.bucket prefix.hex}-new-bucket\" location = \"US\" storage class = \"COLDLINE\" uniform bucket level access = true } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "For example: gcloud storage buckets create gs:// BUCKET NAME --project= PROJECT ID --default-storage-class= STORAGE CLASS --location= BUCKET LOCATION --uniform-bucket-level-access --soft-delete-duration= RETENTION DURATION --encryption-enforcement-file= ENCRYPTION ENFORCEMENT FILE For a complete list of options for bucket creation using the gcloud CLI, see buckets create options ."
+        ]
+      },
+      {
+        "title": "\"Module bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket",
+        "source_id": "site-python-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When set to NotRestricted , the bucket will allow objects encrypted with any encryption type. effective time datetime.datetime (Output only) The time when the encryption enforcement configuration became effective.",
+          "When set to FullyRestricted , the bucket will only allow objects encrypted with the encryption type corresponding to this configuration.",
+          "Parameters Name Description bucket Bucket Bucket for which this instance is the policy. default kms key name str (Optional) Resource name of KMS key used to encrypt bucket's content. google managed encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Google managed encryption. customer managed encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Customer managed encryption. customer supplied encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Customer supplied encryption."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "datetime.datetime",
+      "e.g",
+      "id.bucket",
+      "prefix.hex",
+      "storage.bucket.BucketEncryption.items",
+      "storage.bucket.BucketEncryption.keys",
+      "storage.bucket.EncryptionEnforcementConfig.clear",
+      "storage.bucket.EncryptionEnforcementConfig.copy",
+      "storage.bucket.EncryptionEnforcementConfig.items",
+      "storage.bucket.EncryptionEnforcementConfig.keys",
+      "storage.bucket.EncryptionEnforcementConfig.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.EncryptionEnforcementConfig",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket"
+      ]
+    }
+  ]
+}

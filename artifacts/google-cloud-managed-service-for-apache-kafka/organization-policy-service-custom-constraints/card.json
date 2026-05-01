@@ -1,0 +1,215 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.474Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-managed-service-for-apache-kafka/card.json",
+  "product_name": "Google Cloud Managed Service for Apache Kafka",
+  "product_slug": "google-cloud-managed-service-for-apache-kafka",
+  "feature_name": "Organization Policy Service custom constraints",
+  "feature_slug": "organization-policy-service-custom-constraints",
+  "summary": "Managed Service for Apache Kafka supports Organization Policy Service custom constraints to restrict specific resource operations.",
+  "extended_definition": "Managed Service for Apache Kafka supports Organization Policy Service custom constraints to restrict specific resource operations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authenticate to Managed Service for Apache Kafka \\_|\\_ Google Cloud Managed\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Managed Service for Apache Kafka client libraries provide high-level language support for authenticating to Managed Service for Apache Kafka programmatically.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Authenticate to Managed Service for Apache Kafka Stay organized with collections Save and categorize content based on your preferences.",
+          "Google Cloud CLI When you use the gcloud CLI to access Managed Service for Apache Kafka, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands."
+        ]
+      },
+      {
+        "title": "\"Access control with IAM \\_|\\_ Google Cloud Managed Service for Apache Kafka\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Access control with IAM Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM controls access at the Google Cloud resource level: IAM controls determine who can manage your Managed Service for Apache Kafka resources like clusters, topics, or ACLs using Google Cloud APIs and tools.",
+          "The Managed Service for Apache Kafka service agent requires the Managed Kafka Service Agent ( roles/managedkafka.serviceAgent ) role on the project to manage Managed Service for Apache Kafka resources."
+        ]
+      },
+      {
+        "title": "\"Configure mTLS authentication \\_|\\_ Google Cloud Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "source_id": "site-iam-reference",
+        "final_score": 253,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the gcloud managed-kafka acls add-entry command to grant WRITE permission on the orders-topic . gcloud managed-kafka acls add-entry topic/orders-topic \\ --cluster = CLUSTER ID \\ --location = REGION \\ --principal = User:order-processing-app \\ --operation = WRITE \\ --permission-type = ALLOW \\ --host = \" \" Replace the following: CLUSTER ID : the ID of the Managed Service for Apache Kafka cluster that you are creating.",
+          "For more information about how to set up a client, see Quickstart: Create a Managed Service for Apache Kafka cluster and connect a client . security.protocol = SSL ssl.keystore.location = KEYSTORE LOCATION ssl.keystore.password = KEYSTORE PASSWORD bootstrap.servers = CLUSTER BOOTSTRAP ADDRESS Replace the following: KEYSTORE LOCATION : the path to the .jks file.",
+          "To update your cluster, use the gcloud managed-kafka clusters update command with the --ssl-principal-mapping-rules flag. gcloud managed-kafka clusters update CLUSTER ID \\ --location = REGION \\ --ssl-principal-mapping-rules = ' MAPPING RULE ' Replace the following: CLUSTER ID : the ID of the Managed Service for Apache Kafka cluster that you are creating."
+        ]
+      },
+      {
+        "title": "\"MCP Reference: managedkafka \\_|\\_ Google Cloud Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp",
+        "source_id": "site-docs-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The structure of acl id defines the Resource Pattern (resource type, resource name, pattern type) of the acl. acl id is structured like one of the following: For ACLs on the cluster: cluster For ACLs on a single resource within the cluster: topic/{resource name} , consumerGroup/{resource name} , or transactionalId/{resource name} For ACLs on all resources that match a prefix: topicPrefixed/{resource name} , consumerGroupPrefixed/{resource name} , or transactionalIdPrefixed/{resource name} For ACLs on all resources of a given type (i.e. the wildcard literal \" \"): allTopics (represents topic/ ), allConsumerGroups (represents consumerGroup/ ), or allTransactionalIds (represents transactionalId/ ) get acl Get the details of an existing Google Cloud Managed Service for Apache Kafka ACL.",
+          "Cloud Storage Sink connector Example Configuration: name : \"GCS SINK CONNECTOR ID\" connector.class (required): \"io.aiven.kafka.connect.gcs.GcsSinkConnector\" tasks.max : \"1\" topics (required): \"TOPIC ID\" gcs.bucket.name (required): \"GCS BUCKET NAME\" gcs.credentials.default : \"true\" format.output.type : \"json\" value.converter : \"org.apache.kafka.connect.json.JsonConverter\" value.converter.schemas.enable : \"false\" key.converter : \"org.apache.kafka.connect.storage.StringConverter\" Replace with these: TOPIC ID : The ID of the Managed Service for Apache Kafka topic from which the data flows to the Cloud Storage Sink connector.",
+          "Cloud Storage Sink connector Example Configuration: name : \"GCS SINK CONNECTOR ID\" connector.class (required): \"io.aiven.kafka.connect.gcs.GcsSinkConnector\" tasks.max : \"1\" topics (required): \"TOPIC ID\" gcs.bucket.name (required): \"GCS BUCKET NAME\" gcs.credentials.default : \"true\" format.output.type : \"json\" value.converter : \"org.apache.kafka.connect.json.JsonConverter\" value.converter.schemas.enable : \"false\" key.converter : \"org.apache.kafka.connect.storage.StringConverter\" Replace with these: TOPIC ID : The ID of the Managed Service for Apache Kafka topic from which the data flows to the Cloud Storage Sink connector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bootstrap.servers",
+      "connector.class",
+      "format.output.type",
+      "gcs.bucket.name",
+      "gcs.credentials.default",
+      "i.e",
+      "io.aiven.kafka.connect.gcs.GcsSinkConnector",
+      "key.converter",
+      "managedkafka.serviceAgent",
+      "org.apache.kafka.connect.json.JsonConverter",
+      "org.apache.kafka.connect.storage.StringConverter",
+      "security.protocol",
+      "ssl.keystore.location",
+      "ssl.keystore.password",
+      "tasks.max",
+      "topic.name",
+      "value.converter",
+      "value.converter.schemas.enable"
+    ],
+    "missing_inventory_roles": [
+      "roles/managedkafka.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp"
+      ]
+    }
+  ]
+}

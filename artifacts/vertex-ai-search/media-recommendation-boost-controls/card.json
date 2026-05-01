@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.013Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Media recommendation boost controls",
+  "feature_slug": "media-recommendation-boost-controls",
+  "summary": "Allows tuning recommendation ranking for media content by applying string and boolean schema filters with boost values from -1 to 1 to lower or raise results in API recommendation responses.",
+  "extended_definition": "Allows tuning recommendation ranking for media content by applying string and boolean schema filters with boost values from -1 to 1 to lower or raise results in API recommendation responses.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchRequest JSON representation { \"servingConfig\" : string , \"branch\" : string , \"query\" : string , \"pageCategories\" : [ string ] , \"imageQuery\" : { object ( ImageQuery ) } , \"pageSize\" : integer , \"pageToken\" : string , \"offset\" : integer , \"oneBoxPageSize\" : integer , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"filter\" : string , \"canonicalFilter\" : string , \"orderBy\" : string , \"userInfo\" : { object ( UserInfo ) } , \"languageCode\" : string , \"regionCode\" : string , \"facetSpecs\" : [ { object ( FacetSpec ) } ] , \"boostSpec\" : { object ( BoostSpec ) } , \"params\" : { string : value , ... } , \"queryExpansionSpec\" : { object ( QueryExpansionSpec ) } , \"spellCorrectionSpec\" : { object ( SpellCorrectionSpec ) } , \"userPseudoId\" : string , \"useLatestData\" : boolean , \"contentSearchSpec\" : { object ( ContentSearchSpec ) } , \"embeddingSpec\" : { object ( EmbeddingSpec ) } , \"rankingExpression\" : string , \"rankingExpressionBackend\" : enum ( RankingExpressionBackend ) , \"safeSearch\" : boolean , \"userLabels\" : { string : string , ... } , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , \"searchAsYouTypeSpec\" : { object ( SearchAsYouTypeSpec ) } , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"displaySpec\" : { object ( DisplaySpec ) } , \"crowdingSpecs\" : [ { object ( CrowdingSpec ) } ] , \"session\" : string , \"sessionSpec\" : { object ( SessionSpec ) } , \"relevanceThreshold\" : enum ( RelevanceThreshold ) , \"relevanceFilterSpec\" : { object ( RelevanceFilterSpec ) } , \"personalizationSpec\" : { object ( PersonalizationSpec ) } , \"relevanceScoreSpec\" : { object ( RelevanceScoreSpec ) } , \"searchAddonSpec\" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required.",
+          "If both are set then the global boost is ignored and the more fine-grained boost control spec is applied. boostControlSpec object ( BoostControlSpec ) Complex specification for custom ranking based on customer defined attribute value.",
+          "This field is only returned if SearchRequest.ContentSearchSpec.summary spec is set. appliedControls[] string Controls applied as part of the Control service. geoSearchDebugInfo[] object ( GeoSearchDebugInfo ) queryExpansionInfo object ( QueryExpansionInfo ) Query expansion information for the returned results. naturalLanguageQueryUnderstandingInfo object ( NaturalLanguageQueryUnderstandingInfo ) Output only."
+        ]
+      },
+      {
+        "title": "\"Configure serving controls for search \\_|\\_ Vertex AI Search \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Serving control types The following types of serving controls are available: Control Description Available for Boost control Changes the returned order of results Search apps with data stores that support a schema, such as data stores that contain structured data, websites with structured data (advanced website indexing), unstructured data with metadata, or media data Filter control Removes entries from returned results Search apps with data stores that support a schema, such as data stores that contain structured data, websites (advanced website indexing), unstructured data with metadata, or media data Synonyms control Associates queries with each other Search apps with website (advanced website indexing), structured, unstructured, or media data stores Redirect control Redirects to a specified URI All search apps Promote control Promotes a specified link for a query All search apps About conditions When creating a control, you can optionally define a condition that determines when the control is applied.",
+          "Run the following curl commands to create your controls. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /controls?controlId= CONTROL ID \" \\ -d '{ \"displayName\": \" DISPLAY NAME \", \"solutionType\": \"SOLUTION TYPE SEARCH\", \"useCases\": [ \" USE CASE \" ], \"conditions\": { \"queryTerms\": [ { \"value\": \" VALUE \", \"fullMatch\": FULL MATCH } ], \"activeTimeRange\": [ { \"startTime\": \" START TIMESTAMP \", \"endTime\": \" END TIMESTAMP \" } ] }, \"boostAction\": { \"boost\": BOOST VALUE , \"filter\": \" FILTER \", \"dataStore\": \" DATA STORE RESOURCE PATH \" } }' Replace the following: PROJECT ID : the number or ID of your Google Cloud project.",
+          "For information about using serving controls with media recommendations, see Create and manage media serving configs ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If both are set then the global boost is ignored and the more fine-grained boost control spec is applied. boostControlSpec object ( BoostControlSpec ) Complex specification for custom ranking based on customer defined attribute value.",
+          "SearchParams JSON representation { \"maxReturnResults\" : integer , \"filter\" : string , \"boostSpec\" : { object ( BoostSpec ) } , \"orderBy\" : string , \"searchResultMode\" : enum ( SearchResultMode ) , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } } Fields maxReturnResults integer Number of search results to return.",
+          "BoostControlSpec JSON representation { \"fieldName\" : string , \"attributeType\" : enum ( AttributeType ) , \"interpolationType\" : enum ( InterpolationType ) , \"controlPoints\" : [ { object ( ControlPoint ) } ] } Fields fieldName string The name of the field whose value will be used to determine the boost amount. attributeType enum ( AttributeType ) The attribute type to be used to determine the boost amount."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-serving-controls",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+      ]
+    }
+  ]
+}

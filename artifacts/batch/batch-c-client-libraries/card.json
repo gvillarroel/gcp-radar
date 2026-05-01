@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.903Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "Batch C++ client libraries",
+  "feature_slug": "batch-c-client-libraries",
+  "summary": "Cloud Client Libraries for C++ were made available for the Batch API.",
+  "extended_definition": "Cloud Client Libraries for C++ were made available for the Batch API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient",
+      "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.pagers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Module pagers (0.20.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.pagers",
+        "source_id": "site-python-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Module pagers (0.20.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If multiple requests are made, only the most recent response is retained, and thus used for attribute lookup.",
+          "If multiple requests are made, only the most recent response is retained, and thus used for attribute lookup."
+        ]
+      },
+      {
+        "title": "\"Class BatchServiceAsyncClient (0.20.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class BatchServiceAsyncClient (0.20.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Only if this property is not set and transport was not explicitly provided, the endpoint is determined by the GOOGLE API USE MTLS ENDPOINT environment variable, which have one of the following values: \"always\" (always use the default mTLS endpoint), \"never\" (always use the default regular endpoint) and \"auto\" (auto-switch to the default mTLS endpoint if client certificate is present; this is the default value).",
+          "The API endpoint is determined in the following order: (1) if client options.api endpoint if provided, use the provided one. (2) if GOOGLE API USE CLIENT CERTIFICATE environment variable is \"always\", use the default mTLS endpoint; if the environment variable is \"never\", use the default API endpoint; otherwise if client cert source exists, use the default mTLS endpoint, otherwise use the default API endpoint."
+        ]
+      },
+      {
+        "title": "\"Class BatchServiceClient (0.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class BatchServiceClient (0.20.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Only if this property is not set and transport was not explicitly provided, the endpoint is determined by the GOOGLE API USE MTLS ENDPOINT environment variable, which have one of the following values: \"always\" (always use the default mTLS endpoint), \"never\" (always use the default regular endpoint) and \"auto\" (auto-switch to the default mTLS endpoint if client certificate is present; this is the default value).",
+          "The API endpoint is determined in the following order: (1) if client options.api endpoint if provided, use the provided one. (2) if GOOGLE API USE CLIENT CERTIFICATE environment variable is \"always\", use the default mTLS endpoint; if the environment variable is \"never\", use the default API endpoint; otherwise if client cert source exists, use the default mTLS endpoint, otherwise use the default API endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder",
+      "googleapis.dev",
+      "options.api",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.pagers",
+        "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.pagers",
+        "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/batch/latest/google.cloud.batch_v1.services.batch_service.BatchServiceClient"
+      ]
+    }
+  ]
+}

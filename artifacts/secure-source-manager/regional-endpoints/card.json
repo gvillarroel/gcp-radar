@@ -1,0 +1,233 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.794Z",
+  "source_step08_card": "data/step-08/current/products/secure-source-manager/card.json",
+  "product_name": "Secure Source Manager",
+  "product_slug": "secure-source-manager",
+  "feature_name": "Regional endpoints",
+  "feature_slug": "regional-endpoints",
+  "summary": "Secure Source Manager now supports regional endpoints for data locality.",
+  "extended_definition": "Secure Source Manager now supports regional endpoints for data locality.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+      "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance",
+      "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+      "https://docs.cloud.google.com/secure-source-manager/docs/use-git"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Secure Source Manager locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To access resources, Secure Source Manager provides two types of service endpoints: A global endpoint - The default endpoint for requests: securesourcemanager.googleapis.com Regional endpoints - A regional endpoint only allows requests for resources in the same region.",
+          "Regional endpoints are in the following format: securesourcemanager. region .rep.googleapis.com For more information about these service endpoints, see Configure data locality by using regional endpoints .",
+          "Locations for Secure Source Manager You can create Secure Source Manager resources in different locations in Google Cloud, depending on your availability requirements."
+        ]
+      },
+      {
+        "title": "\"Configure CI/CD to store terraform config-as-code \\_|\\_ Secure Source Manager\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To re-authenticate after the initial credential setup, run the following gcloud CLI command: gcloud auth login Clone the solutions-terraform-cloudbuild-gitops repository to your local shell or working environment: git clone https://github.com/GoogleCloudPlatform/solutions-terraform-cloudbuild-gitops.git Add your Secure Source Manager repository as an upstream. git remote add google HTTPS REPO URL Where HTTPS REP URL is the HTTPS URL for your Secure Source Manager repository.",
+          "Home Documentation Application development Secure Source Manager Guides Send feedback Configure CI/CD to store terraform config-as-code Stay organized with collections Save and categorize content based on your preferences.",
+          "In the Secure Source Manager web interface, navigate to the repository you want to create a webhook for."
+        ]
+      },
+      {
+        "title": "\"Use Git source code management \\_|\\_ Secure Source Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create the VM: gcloud compute instances create VM NAME \\ --project = PROJECT ID \\ --zone = ZONE \\ --scopes = openid,https://www.googleapis.com/auth/userinfo.profile,https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/cloud-platform \\ --service-account = SA NAME @ PROJECT ID .iam.gserviceaccount.com Grant IAM roles to the service account Grant the service account access to the Secure Source Manager instance and repository: Grant instance access: SA EMAIL = $( gcloud compute instances describe VM NAME --project = PROJECT ID --zone = ZONE --format = \"get(serviceAccounts[0].email)\" ) gcloud projects add-iam-policy-binding PROJECT ID \\ --member = \"serviceAccount: $SA EMAIL \" \\ --role = roles/securesourcemanager.instanceAccessor Grant repository read access.",
+          "Required roles To get the permissions that you need to use Git to interact with a Secure Source Manager repository, ask your administrator to grant you the following IAM roles: Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) on the Secure Source Manager instance To clone a repository: Secure Source Manager Repo Reader ( roles/securesourcemanager.repoReader ) on the repository To push to a repository: Secure Source Manager Repo Writer ( roles/securesourcemanager.repoWriter ) on the repository For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "For example, on Linux: git config --global credential. 'https:// . .sourcemanager.dev' .helper gcloud.sh After you configure the credential helper, Git uses the Application Default Credentials from the VM's service account to authenticate to Secure Source Manager."
+        ]
+      },
+      {
+        "title": "\"Create a Private Service Connect instance \\_|\\_ Secure Source Manager \\_\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Private Service Connect Secure Source Manager instance You can assign custom domains to your private instance for the HTML, API, Git HTTP, and Git SSH endpoints.",
+          "The output is similar to the following: Create request issued for [ my-instance ] . done : false metadata: '@type' : type.googleapis.com/google.cloud.securesourcemanager.v1.OperationMetadata apiVersion: v1 createTime: '2023-02-27T20:57:52.315609549Z' requestedCancellation: false target: projects/my-project/locations/us-central1/instances/my-instance verb: create name: projects/my-project/locations/us-central1/operations/operation-1234567894561-5ec69948c0f2b-60dd727f-a9b97a2e where projects/my-project/locations/us-central1/operations/operation-1234567894561-5ec69948c0f2b-60dd727f-a9b97a2e is the OPERATION NAME.",
+          "For example, the following command passes the CA certificate root-cert.pem to the Secure Source Manager API to list repositories in the private instance my-instance in location us-central1 . curl \\ --cacert root-cert.pem \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ https://my-instance-01234567890-api.us-central1.sourcemanager.dev/v1/projects/01234567890/locations/us-central1/repositories What's next Connect Cloud Build to a Private Service Connect Secure Source Manager instance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.us",
+      "central1.sourcemanager.dev",
+      "cert.pem",
+      "gcloud.sh",
+      "github.com",
+      "gitops.git",
+      "iam.gserviceaccount.com",
+      "rep.googleapis.com",
+      "securesourcemanager.googleapis.com",
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.repoReader",
+      "securesourcemanager.repoWriter",
+      "sourcemanager.dev",
+      "type.googleapis.com",
+      "userinfo.email",
+      "userinfo.profile"
+    ],
+    "missing_inventory_roles": [
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.repoReader",
+      "roles/securesourcemanager.repoWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/locations",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/use-git",
+        "https://docs.cloud.google.com/secure-source-manager/docs/create-private-service-connect-instance"
+      ]
+    }
+  ]
+}

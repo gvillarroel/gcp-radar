@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.342Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Diagram mode in Data Transformer task",
+  "feature_slug": "diagram-mode-in-data-transformer-task",
+  "summary": "Diagram mode adds a console-based data transformation editor experience for selecting input/output variables and defining transformations.",
+  "extended_definition": "Diagram mode adds a console-based data transformation editor experience for selecting input/output variables and defining transformations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data Transformer task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 229,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use the Diagram mode The Diagram mode provides a console-based experience to select the input and output variables and perform transformations in the data transformation editor.",
+          "The Diagram mode provides a console-based experience to select the input and output variables and perform transformations in the data transformation editor.",
+          "To add mapping using the Diagram mode, follow these steps: In the Data Transformer task configuration pane, click Open Data Transformer Editor ."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce opportunity to BigQuery order \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following edge condition controls the flow of the integration based on the validation of the account information: Add an edge connection from the Check account task to the Mapping for Account Creation task with the following edge condition: $account exists$ = False Add another edge connection from the Check account task to the Mapping for Order Creation task with the following edge condition: $account exists$ = True Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.",
+          "Create a new ServiceNow account Perform the following steps to configure a Connectors task that adds a new account to your ServiceNow instance: In the integration editor, click Tasks to display a list of available tasks.",
+          "The Google Cloud console fills in the Service account ID field based on this name."
+        ]
+      },
+      {
+        "title": "Data Mapping task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Configure the Data Mapping task To configure a Data Mapping task, perform the following steps: In the Google Cloud console, go to the Application Integration page.",
+          "The completed data mapping is available to view from the Data Mapping task configuration pane, as shown in the following image: Supported data types and mapping functions Application Integration supports the following data types for variables in the Data Mapping task: String and String array Integer and Integer array Double and Double array Boolean and Boolean array JSON The following table lists the data mapping functions available for each of the data types.",
+          "Considerations For JSON variables, based on a JSON schema, Application Integration interprets the child property of the variable as a JSON type in the following cases: If the child property's type specifies null."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

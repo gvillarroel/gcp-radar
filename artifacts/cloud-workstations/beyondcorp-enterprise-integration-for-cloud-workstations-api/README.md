@@ -1,0 +1,38 @@
+# BeyondCorp Enterprise integration for Cloud Workstations API
+
+Product: Cloud Workstations
+Feature slug: `beyondcorp-enterprise-integration-for-cloud-workstations-api`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Cloud Workstations supports BeyondCorp Enterprise integration for the Cloud Workstations API; Cloud Workstations supports BeyondCorp Enterprise integration for the Cloud Workstations API.
+
+## Lifecycle
+
+- Latest feature date: 2023-05-10
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- authorization
+- iam
+- permission
+- role
+- security
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient](https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient)
+- [https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api](https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api)
+- [https://docs.cloud.google.com/workstations/docs/authentication](https://docs.cloud.google.com/workstations/docs/authentication)
+- [https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise](https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise)

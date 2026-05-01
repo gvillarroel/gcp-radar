@@ -1,0 +1,77 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Cloud Spanner Partitioned DML support in Google Cloud CLI",
+  "feature_slug": "cloud-spanner-partitioned-dml-support-in-google-cloud-cli",
+  "summary": "Google Cloud CLI now includes beta support for inserting, updating, and deleting Cloud Spanner table rows using Partitioned DML.",
+  "extended_definition": "Google Cloud CLI now includes beta support for inserting, updating, and deleting Cloud Spanner table rows using Partitioned DML.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest",
+      "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate vector embeddings for textual data in bulk using partitioned DML\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Spanner Guides Send feedback Generate vector embeddings for textual data in bulk using partitioned DML Stay organized with collections Save and categorize content based on your preferences.",
+          "If the Vertex AI API requests are throttled due to Vertex AI API quota limits, then Spanner retries these failures under the partitioned DML transaction mode for a maximum of 20 times.",
+          "Backfill embeddings Finally, execute the following UPDATE statement using partitioned DML to generate embeddings for the textual data column and store the embeddings in your database."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Updating the previous query to use this improved index looks like the following: SELECT PlayerID FROM Player @ { force index = idx attribute } WHERE IndexPartition BETWEEN 1 and 6 AND Attribute = 23 LIMIT 10 Because no beta test was run, the studio didn't realize they were testing by using data with incorrect assumptions.",
+          "Although synthetic load tests are a good way to validate how many queries per second (QPS) your instance can handle, a beta test with real players is necessary to validate your schema and prepare a successful launch.",
+          "Personally identifiable information (PII) In games, information that typically includes email address and payment account information, such as a credit card number and billing address."
+        ]
+      },
+      {
+        "title": "\"Python Client for Cloud Spanner \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest",
+        "source_id": "site-python-reference",
+        "final_score": 52,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

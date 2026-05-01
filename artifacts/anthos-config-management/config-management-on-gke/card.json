@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.686Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Config Management on GKE",
+  "feature_slug": "config-management-on-gke",
+  "summary": "Config Management is available on GKE, including Policy Controller support and Config Sync installation through Cloud Console or gcloud.",
+  "extended_definition": "Config Management is available on GKE, including Policy Controller support and Config Sync installation through Cloud Console or gcloud.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Safe rollouts with Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "The K8sRequiredLabels resource is applied to clusters of type prod , with an enforcementAction parameter set to dryrun : apiVersion : constraints . gatekeeper . sh / v1beta1 kind : K8sRequiredLabels metadata : name : ns - must - have - team annotations : configmanagement . gke . io / cluster - selector : prod Spec : enforcementAction : dryrun match : kinds : - apiGroups : [ \"\" ] kinds : [ \"Namespace\" ] parameters : labels : - key : \"team\" The K8sRequiredLabels resource is applied to clusters of type canary-prod , without the enforcementAction parameter, meaning that the policy is actually enforced: apiVersion : constraints . gatekeeper . sh / v1beta1 kind : K8sRequiredLabels metadata : name : ns - must - have - team annotations : configmanagement . gke . io / cluster - selector : canary - prod spec : match : kinds : - apiGroups : [ \"\" ] kinds : [ \"Namespace\" ] parameters : labels : - key : \"team\" The configmanagement.gke.io/cluster-selector annotation allows the team to enforce the policy only in clusters of type canary-prod , preventing any unintended side-effects from spreading to the whole production fleet.",
+          "Following are two common types of errors: Errors that pose no problem to Config Sync itself, but prevent your workloads from working properly, such as an overly restrictive NetworkPolicy that prevents components of your workload from communicating.",
+          "Errors that make it impossible for Config Sync to apply changes to a cluster, such as an invalid Kubernetes manifest, or an object rejected by an admission controller ."
+        ]
+      },
+      {
+        "title": "\"Monitor RootSync and RepoSync objects \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "To change log verbosity, use the .spec.override.logLevels field as shown in the following example: apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : root-sync namespace : config-management-system spec : override : logLevels : - containerName : \"reconciler\" logLevel : 0 - containerName : \"git-sync\" logLevel : 10 The value in the containerName field must be one of the following: reconciler , git-sync , hydration-controller , oci-sync , or helm-sync .",
+          "To get the ResourceGroup object for a RootSync object: kubectl get resourcegroup ROOT SYNC NAME -n config-management-system -o yaml To get the ResourceGroup object for a RepoSync object: kubectl get resourcegroup REPO SYNC NAME -n REPO SYNC NAMESPACE -o yaml Replace the following: ROOT SYNC NAME : the name of the ResourceGroup object that you want to look up.",
+          "To view the logs for the RootSync or RepoSync reconciler, run the following command: kubectl logs -n config-management-system deployment/ RECONCILER NAME CONTAINER NAME Replace the following: RECONCILER NAME : the reconciler name of the RootSync or RepoSync object."
+        ]
+      },
+      {
+        "title": "Install Config Sync manually using kubectl \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "It must be disabled before migrating.\" echo \"This can be done by unsetting the spec.hierarchyController field on ConfigManagement.\" exit 1 fi kubectl delete deployment -n config-management-system config-management-operator --ignore-not-found --cascade = foreground if kubectl get configmanagement config-management &> /dev/null ; then kubectl patch configmanagement config-management --type = \"merge\" -p '{\"metadata\":{\"finalizers\":[]}}' kubectl delete configmanagement config-management --cascade = orphan --ignore-not-found fi kubectl delete clusterrolebinding config-management-operator --ignore-not-found kubectl delete clusterrole config-management-operator --ignore-not-found kubectl delete serviceaccount -n config-management-system config-management-operator --ignore-not-found kubectl delete customresourcedefinition configmanagements.configmanagement.gke.io --ignore-not-found Install the new Config Sync version To upgrade Config Sync, complete the following steps for each enrolled cluster: Download the Config Sync manifest and nomos commands for the new version.",
+          "This binding lets the Config Sync Kubernetes service account act as the Google service account: gcloud iam service-accounts add-iam-policy-binding \\ GSA NAME @ PROJECT ID .iam.gserviceaccount.com \\ --role = roles/iam.workloadIdentityUser \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" \\ --project = PROJECT ID Replace the following: PROJECT ID : the organization's project ID.",
+          "Grant project-wide permission if the same permissions apply to all repositories in the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/artifactregistry.reader \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" Grant repository-specific permission when you want service accounts to have different levels of access for each repository in your project. gcloud artifacts repositories add-iam-policy-binding REPOSITORY \\ --location = LOCATION \\ --role = roles/artifactregistry.reader \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" \\ --project = PROJECT ID Replace the following: PROJECT ID : the organization's project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "configmanagement.gke.io",
+      "configmanagements.configmanagement.gke.io",
+      "configsync.gke.io",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "resourcegroup.kpt.dev",
+      "spec.hierarchyController",
+      "spec.override.logLevels",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/iam.workloadIdentityUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    }
+  ]
+}

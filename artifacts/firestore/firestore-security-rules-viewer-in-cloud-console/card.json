@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.158Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore Security Rules viewer in Cloud Console",
+  "feature_slug": "firestore-security-rules-viewer-in-cloud-console",
+  "summary": "You can view Firestore Security Rules in the Cloud Console.",
+  "extended_definition": "You can view Firestore Security Rules in the Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/quickstart-mobile-web",
+      "https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library",
+      "https://docs.cloud.google.com/firestore/native/docs/security/get-started"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Getting started with security rules \\_|\\_ Firestore in Native mode \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/security/get-started",
+        "source_id": "site-docs-root-2",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The Firebase console currently supports deployment of Firestore Security Rules to your project's default database.",
+          "All Firestore Security Rules consist of match statements, which identify documents in your database, and allow expressions, which control access to those documents: service cloud . firestore { match /databases/{database } / documents { match /<some path>/ { allow read, write : if < some condition > ; } } } Every database request from a Firestore mobile/web client library is evaluated against your security rules before reading or writing any data.",
+          "Using the CLI allows you to keep your rules under version control with your application code and deploy rules as part of your existing deployment process. // Set up Firestore in your project directory, creates a .rules file firebase init firestore // Edit the generated .rules file to your desired security rules // ... // Deploy rules for all configured databases firebase deploy -- only firestore Next steps Learn how to structure security rules ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Firestore database by using a web or mobile client\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/quickstart-mobile-web",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Log ( \"Added data to the aturing document in the users collection.\" ); }); Read data Use the data viewer in the Firebase console to quickly verify that you've added data to Firestore.",
+          "Web version 9 // Add a second document with a generated ID. import { addDoc , collection } from \"firebase/firestore\" ; try { const docRef = await addDoc ( collection ( db , \"users\" ), { first : \"Alan\" , middle : \"Mathison\" , last : \"Turing\" , born : 1912 }); console . log ( \"Document written with ID: \" , docRef . id ); } catch ( e ) { console . error ( \"Error adding document: \" , e ); } add alan turing . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Add a second document with a generated ID. db . collection ( \"users\" ). add ({ first : \"Alan\" , middle : \"Mathison\" , last : \"Turing\" , born : 1912 }) . then (( docRef ) = > { console . log ( \"Document written with ID: \" , docRef . id ); }) . catch (( error ) = > { console . error ( \"Error adding document: \" , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Add a second document with a generated ID. do { let ref = try await db . collection ( \"users\" ). addDocument ( data : [ \"first\" : \"Alan\" , \"middle\" : \"Mathison\" , \"last\" : \"Turing\" , \"born\" : 1912 ]) print ( \"Document added with ID: \\( ref . documentID ) \" ) } catch { print ( \"Error adding document: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Add a second document with a generated ID. block FIRDocumentReference ref = [[ self . db collectionWithPath : @\"users\" ] addDocumentWithData : @{ @\"first\" : @\"Alan\" , @\"middle\" : @\"Mathison\" , @\"last\" : @\"Turing\" , @\"born\" : @1912 } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error adding document: %@\" , error ); } else { NSLog ( @\"Document added with ID: %@\" , ref . documentID ); } }]; ViewController . m Kotlin Android // Create a new user with a first, middle, and last name val user = hashMapOf ( \"first\" to \"Alan\" , \"middle\" to \"Mathison\" , \"last\" to \"Turing\" , \"born\" to 1912 , ) // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener { documentReference - > Log . d ( TAG , \"DocumentSnapshot added with ID: ${ documentReference . id } \" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error adding document\" , e ) } DocSnippets . kt Java Android // Create a new user with a first, middle, and last name Map<String , Object > user = new HashMap <> (); user . put ( \"first\" , \"Alan\" ); user . put ( \"middle\" , \"Mathison\" ); user . put ( \"last\" , \"Turing\" ); user . put ( \"born\" , 1912 ); // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener ( new OnSuccessListener<DocumentReference> () { @Override public void onSuccess ( DocumentReference documentReference ) { Log . d ( TAG , \"DocumentSnapshot added with ID: \" + documentReference . getId ()); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error adding document\" , e ); } }); DocSnippets . java Dart // Create a new user with a first and last name final user = < String , dynamic > { \"first\" : \"Alan\" , \"middle\" : \"Mathison\" , \"last\" : \"Turing\" , \"born\" : 1912 }; // Add a new document with a generated ID db . collection ( \"users\" ). add ( user ). then (( DocumentReference doc ) = > print ( 'DocumentSnapshot added with ID: ${ doc . id } ' )); firestore . dart C++ db - > Collection ( \"users\" ) .",
+          "Web version 9 import { collection , addDoc } from \"firebase/firestore\" ; try { const docRef = await addDoc ( collection ( db , \"users\" ), { first : \"Ada\" , last : \"Lovelace\" , born : 1815 }); console . log ( \"Document written with ID: \" , docRef . id ); } catch ( e ) { console . error ( \"Error adding document: \" , e ); } add ada lovelace . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. db . collection ( \"users\" ). add ({ first : \"Ada\" , last : \"Lovelace\" , born : 1815 }) . then (( docRef ) = > { console . log ( \"Document written with ID: \" , docRef . id ); }) . catch (( error ) = > { console . error ( \"Error adding document: \" , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Add a new document with a generated ID do { let ref = try await db . collection ( \"users\" ). addDocument ( data : [ \"first\" : \"Ada\" , \"last\" : \"Lovelace\" , \"born\" : 1815 ]) print ( \"Document added with ID: \\( ref . documentID ) \" ) } catch { print ( \"Error adding document: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Add a new document with a generated ID block FIRDocumentReference ref = [[ self . db collectionWithPath : @\"users\" ] addDocumentWithData : @{ @\"first\" : @\"Ada\" , @\"last\" : @\"Lovelace\" , @\"born\" : @1815 } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error adding document: %@\" , error ); } else { NSLog ( @\"Document added with ID: %@\" , ref . documentID ); } }]; ViewController . m Kotlin Android // Create a new user with a first and last name val user = hashMapOf ( \"first\" to \"Ada\" , \"last\" to \"Lovelace\" , \"born\" to 1815 , ) // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener { documentReference - > Log . d ( TAG , \"DocumentSnapshot added with ID: ${ documentReference . id } \" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error adding document\" , e ) } DocSnippets . kt Java Android // Create a new user with a first and last name Map<String , Object > user = new HashMap <> (); user . put ( \"first\" , \"Ada\" ); user . put ( \"last\" , \"Lovelace\" ); user . put ( \"born\" , 1815 ); // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener ( new OnSuccessListener<DocumentReference> () { @Override public void onSuccess ( DocumentReference documentReference ) { Log . d ( TAG , \"DocumentSnapshot added with ID: \" + documentReference . getId ()); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error adding document\" , e ); } }); DocSnippets . java Dart // Create a new user with a first and last name final user = < String , dynamic > { \"first\" : \"Ada\" , \"last\" : \"Lovelace\" , \"born\" : 1815 }; // Add a new document with a generated ID db . collection ( \"users\" ). add ( user ). then (( DocumentReference doc ) = > print ( 'DocumentSnapshot added with ID: ${ doc . id } ' )); firestore . dart C++ // Add a new document with a generated ID Future<DocumentReference> user ref = db - > Collection ( \"users\" )."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Firestore database by using a web or mobile client\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Log ( \"Added data to the aturing document in the users collection.\" ); }); Read data Use the data viewer in the Firebase console to quickly verify that you've added data to Firestore.",
+          "Web version 9 // Add a second document with a generated ID. import { addDoc , collection } from \"firebase/firestore\" ; try { const docRef = await addDoc ( collection ( db , \"users\" ), { first : \"Alan\" , middle : \"Mathison\" , last : \"Turing\" , born : 1912 }); console . log ( \"Document written with ID: \" , docRef . id ); } catch ( e ) { console . error ( \"Error adding document: \" , e ); } add alan turing . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Add a second document with a generated ID. db . collection ( \"users\" ). add ({ first : \"Alan\" , middle : \"Mathison\" , last : \"Turing\" , born : 1912 }) . then (( docRef ) = > { console . log ( \"Document written with ID: \" , docRef . id ); }) . catch (( error ) = > { console . error ( \"Error adding document: \" , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Add a second document with a generated ID. do { let ref = try await db . collection ( \"users\" ). addDocument ( data : [ \"first\" : \"Alan\" , \"middle\" : \"Mathison\" , \"last\" : \"Turing\" , \"born\" : 1912 ]) print ( \"Document added with ID: \\( ref . documentID ) \" ) } catch { print ( \"Error adding document: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Add a second document with a generated ID. block FIRDocumentReference ref = [[ self . db collectionWithPath : @\"users\" ] addDocumentWithData : @{ @\"first\" : @\"Alan\" , @\"middle\" : @\"Mathison\" , @\"last\" : @\"Turing\" , @\"born\" : @1912 } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error adding document: %@\" , error ); } else { NSLog ( @\"Document added with ID: %@\" , ref . documentID ); } }]; ViewController . m Kotlin Android // Create a new user with a first, middle, and last name val user = hashMapOf ( \"first\" to \"Alan\" , \"middle\" to \"Mathison\" , \"last\" to \"Turing\" , \"born\" to 1912 , ) // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener { documentReference - > Log . d ( TAG , \"DocumentSnapshot added with ID: ${ documentReference . id } \" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error adding document\" , e ) } DocSnippets . kt Java Android // Create a new user with a first, middle, and last name Map<String , Object > user = new HashMap <> (); user . put ( \"first\" , \"Alan\" ); user . put ( \"middle\" , \"Mathison\" ); user . put ( \"last\" , \"Turing\" ); user . put ( \"born\" , 1912 ); // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener ( new OnSuccessListener<DocumentReference> () { @Override public void onSuccess ( DocumentReference documentReference ) { Log . d ( TAG , \"DocumentSnapshot added with ID: \" + documentReference . getId ()); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error adding document\" , e ); } }); DocSnippets . java Dart // Create a new user with a first and last name final user = < String , dynamic > { \"first\" : \"Alan\" , \"middle\" : \"Mathison\" , \"last\" : \"Turing\" , \"born\" : 1912 }; // Add a new document with a generated ID db . collection ( \"users\" ). add ( user ). then (( DocumentReference doc ) = > print ( 'DocumentSnapshot added with ID: ${ doc . id } ' )); firestore . dart C++ db - > Collection ( \"users\" ) .",
+          "Web version 9 import { collection , addDoc } from \"firebase/firestore\" ; try { const docRef = await addDoc ( collection ( db , \"users\" ), { first : \"Ada\" , last : \"Lovelace\" , born : 1815 }); console . log ( \"Document written with ID: \" , docRef . id ); } catch ( e ) { console . error ( \"Error adding document: \" , e ); } add ada lovelace . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. db . collection ( \"users\" ). add ({ first : \"Ada\" , last : \"Lovelace\" , born : 1815 }) . then (( docRef ) = > { console . log ( \"Document written with ID: \" , docRef . id ); }) . catch (( error ) = > { console . error ( \"Error adding document: \" , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Add a new document with a generated ID do { let ref = try await db . collection ( \"users\" ). addDocument ( data : [ \"first\" : \"Ada\" , \"last\" : \"Lovelace\" , \"born\" : 1815 ]) print ( \"Document added with ID: \\( ref . documentID ) \" ) } catch { print ( \"Error adding document: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Add a new document with a generated ID block FIRDocumentReference ref = [[ self . db collectionWithPath : @\"users\" ] addDocumentWithData : @{ @\"first\" : @\"Ada\" , @\"last\" : @\"Lovelace\" , @\"born\" : @1815 } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error adding document: %@\" , error ); } else { NSLog ( @\"Document added with ID: %@\" , ref . documentID ); } }]; ViewController . m Kotlin Android // Create a new user with a first and last name val user = hashMapOf ( \"first\" to \"Ada\" , \"last\" to \"Lovelace\" , \"born\" to 1815 , ) // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener { documentReference - > Log . d ( TAG , \"DocumentSnapshot added with ID: ${ documentReference . id } \" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error adding document\" , e ) } DocSnippets . kt Java Android // Create a new user with a first and last name Map<String , Object > user = new HashMap <> (); user . put ( \"first\" , \"Ada\" ); user . put ( \"last\" , \"Lovelace\" ); user . put ( \"born\" , 1815 ); // Add a new document with a generated ID db . collection ( \"users\" ) . add ( user ) . addOnSuccessListener ( new OnSuccessListener<DocumentReference> () { @Override public void onSuccess ( DocumentReference documentReference ) { Log . d ( TAG , \"DocumentSnapshot added with ID: \" + documentReference . getId ()); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error adding document\" , e ); } }); DocSnippets . java Dart // Create a new user with a first and last name final user = < String , dynamic > { \"first\" : \"Ada\" , \"last\" : \"Lovelace\" , \"born\" : 1815 }; // Add a new document with a generated ID db . collection ( \"users\" ). add ( user ). then (( DocumentReference doc ) = > print ( 'DocumentSnapshot added with ID: ${ doc . id } ' )); firestore . dart C++ // Add a new document with a generated ID Future<DocumentReference> user ref = db - > Collection ( \"users\" )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/security/get-started",
+        "https://docs.cloud.google.com/firestore/docs/quickstart-mobile-web",
+        "https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/security/get-started",
+        "https://docs.cloud.google.com/firestore/docs/quickstart-mobile-web",
+        "https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/security/get-started",
+        "https://docs.cloud.google.com/firestore/docs/quickstart-mobile-web",
+        "https://docs.cloud.google.com/firestore/native/docs/create-database-web-mobile-client-library"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.706Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-admin-sdk/card.json",
+  "product_name": "Google Workspace Admin SDK",
+  "product_slug": "google-workspace-admin-sdk",
+  "feature_name": "Directory API push notifications for users and aliases",
+  "feature_slug": "directory-api-push-notifications-for-users-and-aliases",
+  "summary": "The Directory API can send push notifications for changes to users and aliases.",
+  "extended_definition": "The Directory API can send push notifications for changes to users and aliases.",
+  "lifecycle": {
+    "latest_feature_date": "2014-01-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/admin/directory/reference/rest",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/push"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Push notifications \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/push",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Admin console Guides Send feedback Push notifications Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes how to use push notifications that inform your application when a resource changes.",
+          "Overview The Admin SDK API provides push notifications that let you monitor changes in resources."
+        ]
+      },
+      {
+        "title": "Admin SDK: Directory API \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: users.aliases Methods delete DELETE /admin/directory/v1/users/{userKey}/aliases/{alias} Removes an alias. insert POST /admin/directory/v1/users/{userKey}/aliases Adds an alias. list GET /admin/directory/v1/users/{userKey}/aliases Lists all aliases for a user. watch POST /admin/directory/v1/users/{userKey}/aliases/watch Watches for changes in users list.",
+          "REST Resource: users Methods delete DELETE /admin/directory/v1/users/{userKey} Deletes a user. get GET /admin/directory/v1/users/{userKey} Retrieves a user. insert POST /admin/directory/v1/users Creates a user. list GET /admin/directory/v1/users Retrieves a paginated list of either deleted users or all users in a domain. makeAdmin POST /admin/directory/v1/users/{userKey}/makeAdmin Makes a user a super administrator. patch PATCH /admin/directory/v1/users/{userKey} Updates a user using patch semantics. signOut POST /admin/directory/v1/users/{userKey}/signOut Signs a user out of all web and device sessions and reset their sign-in cookies. undelete POST /admin/directory/v1/users/{userKey}/undelete Undeletes a deleted user. update PUT /admin/directory/v1/users/{userKey} Updates a user. watch POST /admin/directory/v1/users/watch Watches for changes in users list.",
+          "REST Resource: customer.devices.chromeos Methods batchChangeStatus POST /admin/directory/v1/customer/{customerId}/devices/chromeos:batchChangeStatus Changes the status of a batch of ChromeOS devices. countChromeOsDevices GET /admin/directory/v1/customer/{customerId}/devices/chromeos:countChromeOsDevices Counts ChromeOS devices matching the request. issueCommand POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}:issueCommand Issues a command for the device to execute."
+        ]
+      },
+      {
+        "title": "Reports API: Users Usage Report \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Google Workspace Admin console Guides Send feedback Reports API: Users Usage Report Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON response for user report { \"kind\" : \"reports#usageReports\" , \"warnings\" : [ { \"code\" : warning machine - readable code , \"message\" : warning human - readable message , \"data\" : [ { \"key\" : key for key - value pair that gives detailed warning information , \"value\" : value for key - value pair giving detailed warning information } ] } ], \"nextPageToken\" : \"N:NNN:NNN:N:C03az79cb\" , \"usageReports\" : [ { \"kind\" : \"usageReport\" , \"date\" : \"2013-03-03\" , \"entity\" : { \"type\" : \"USER\" , \"customerId\" : \"C03az79cb\" , \"userEmail\" : \"liz@example.com\" , \"profileId\" : \" user's unique Google Workspace ID \" }, \"parameters\" : [ { \"name\" : \"accounts:is disabled\" , \"boolValue\" : false }, { \"name\" : \"accounts:disabled reason\" , \"stringValue\" : \" reason description \" }, { \"name\" : \"accounts:first name\" , \"stringValue\" : \"Liz\" }, { \"name\" : \"accounts:is 2sv enforced\" , \"boolValue\" : false }, { \"name\" : \"accounts:is 2sv enrolled\" , \"boolValue\" : false }, { \"name\" : \"accounts:last name\" , \"stringValue\" : \"Smith\" }, { \"name\" : \"accounts:creation time\" , \"datetimeValue\" : \"2010-10-28T10:26:35.000Z\" }, { \"name\" : \"accounts:last login time\" , \"datetimeValue\" : \"1970-01-01T00:00:00.000Z\" }, { \"name\" : \"accounts:last sso time\" , \"datetimeValue\" : \"1970-01-01T00:00:00.000Z\" } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For readability, the following example is formatted with line returns: GET https://admin.googleapis.com/admin/reports/v1/usage/users/ all /dates/ yyyy-mm-dd date ?parameters= application: user usage parameter ,... &filters= application: user usage parameter relational operator usage parameter's value ,... &maxResults= number of events listed on each page of the report The dates value is the date the usage occurred and the timestamp is in the ISO 8601 format , yyyy-mm-dd."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.googleapis.com",
+      "customer.devices.chromeos",
+      "customer.devices.chromeos.commands",
+      "developers.google.com",
+      "example.com",
+      "mydomain.com",
+      "reporting.example.com",
+      "users.aliases"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/push",
+        "https://developers.google.com/workspace/admin/directory/reference/rest",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/push",
+        "https://developers.google.com/workspace/admin/directory/reference/rest",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.970Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api",
+  "feature_name": "Payment options",
+  "feature_slug": "payment-options",
+  "summary": "This field indicates payment options available at a place.",
+  "extended_definition": "This field indicates payment options available at a place.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/data-fields",
+      "https://developers.google.com/maps/documentation/places/web-service/op-overview",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.maps.places.v1 \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "source_id": "site-api-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a payment option data is not available, the payment option field will be unset. parking options ParkingOptions Options of parking provided by the place. sub destinations[] SubDestination A list of sub-destinations related to the place. fuel options FuelOptions The most recent information about fuel options in a gas station.",
+          "X hours and 15 minutes. user rating count int32 The total number of reviews (with or without text) for this place. takeout bool Specifies if the business supports takeout. delivery bool Specifies if the business supports delivery. dine in bool Specifies if the business supports indoor or outdoor seating options. curbside pickup bool Specifies if the business supports curbside pickup. reservable bool Specifies if the place supports reservations. serves breakfast bool Specifies if the place serves breakfast. serves lunch bool Specifies if the place serves lunch. serves dinner bool Specifies if the place serves dinner. serves beer bool Specifies if the place serves beer. serves wine bool Specifies if the place serves wine. serves brunch bool Specifies if the place serves brunch. serves vegetarian food bool Specifies if the place serves vegetarian food. outdoor seating bool Place provides outdoor seating. live music bool Place provides live music. menu for children bool Place has a children's menu. serves cocktails bool Place serves cocktails. serves dessert bool Place serves dessert. serves coffee bool Place serves coffee. good for children bool Place is good for children. allows dogs bool Place allows dogs. restroom bool Place has restroom. good for groups bool Place accommodates groups. good for watching sports bool Place is suitable for watching sports. accessibility options AccessibilityOptions Information about the accessibility options a place offers. pure service area business bool Indicates whether the place is a pure service area business.",
+          "Index Places (interface) AddressDescriptor (message) AddressDescriptor.Area (message) AddressDescriptor.Area.Containment (enum) AddressDescriptor.Landmark (message) AddressDescriptor.Landmark.SpatialRelationship (enum) AuthorAttribution (message) AutocompletePlacesRequest (message) AutocompletePlacesRequest.LocationBias (message) AutocompletePlacesRequest.LocationRestriction (message) AutocompletePlacesResponse (message) AutocompletePlacesResponse.Suggestion (message) AutocompletePlacesResponse.Suggestion.FormattableText (message) AutocompletePlacesResponse.Suggestion.PlacePrediction (message) AutocompletePlacesResponse.Suggestion.QueryPrediction (message) AutocompletePlacesResponse.Suggestion.StringRange (message) AutocompletePlacesResponse.Suggestion.StructuredFormat (message) Circle (message) ContentBlock (message) ContextualContent (message) ContextualContent.Justification (message) ContextualContent.Justification.BusinessAvailabilityAttributesJustification (message) ContextualContent.Justification.ReviewJustification (message) ContextualContent.Justification.ReviewJustification.HighlightedText (message) ContextualContent.Justification.ReviewJustification.HighlightedText.HighlightedTextRange (message) EVChargeOptions (message) EVChargeOptions.ConnectorAggregation (message) EVConnectorType (enum) FuelOptions (message) FuelOptions.FuelPrice (message) FuelOptions.FuelPrice.FuelType (enum) GetPhotoMediaRequest (message) GetPlaceRequest (message) Photo (message) PhotoMedia (message) Place (message) Place.AccessibilityOptions (message) Place.AddressComponent (message) Place.Attribution (message) Place.BusinessStatus (enum) Place.ConsumerAlert (message) Place.ConsumerAlert.Details (message) Place.ConsumerAlert.Details.Link (message) Place.ContainingPlace (message) Place.EvChargeAmenitySummary (message) Place.GenerativeSummary (message) Place.GoogleMapsLinks (message) Place.NeighborhoodSummary (message) Place.OpeningHours (message) Place.OpeningHours.Period (message) Place.OpeningHours.Period.Point (message) Place.OpeningHours.SecondaryHoursType (enum) Place.OpeningHours.SpecialDay (message) Place.ParkingOptions (message) Place.PaymentOptions (message) Place.PlusCode (message) Place.ReviewSummary (message) Place.SubDestination (message) Polyline (message) PriceLevel (enum) PriceRange (message) Review (message) RouteModifiers (message) RoutingParameters (message) RoutingPreference (enum) RoutingSummary (message) RoutingSummary.Leg (message) SearchNearbyRequest (message) SearchNearbyRequest.LocationRestriction (message) SearchNearbyRequest.RankPreference (enum) SearchNearbyResponse (message) SearchTextRequest (message) SearchTextRequest.EVOptions (message) SearchTextRequest.LocationBias (message) SearchTextRequest.LocationRestriction (message) SearchTextRequest.RankPreference (enum) SearchTextRequest.SearchAlongRouteParameters (message) SearchTextResponse (message) TravelMode (enum) Places Service definition for the Places API."
+        ]
+      },
+      {
+        "title": "REST Resource: places \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "source_id": "site-api-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"id\" : string , \"displayName\" : { object ( LocalizedText ) } , \"types\" : [ string ] , \"primaryType\" : string , \"primaryTypeDisplayName\" : { object ( LocalizedText ) } , \"googleMapsTypeLabel\" : { object ( LocalizedText ) } , \"nationalPhoneNumber\" : string , \"internationalPhoneNumber\" : string , \"formattedAddress\" : string , \"shortFormattedAddress\" : string , \"postalAddress\" : { object ( PostalAddress ) } , \"addressComponents\" : [ { object ( AddressComponent ) } ] , \"plusCode\" : { object ( PlusCode ) } , \"location\" : { object ( LatLng ) } , \"viewport\" : { object ( Viewport ) } , \"rating\" : number , \"googleMapsUri\" : string , \"websiteUri\" : string , \"reviews\" : [ { object ( Review ) } ] , \"regularOpeningHours\" : { object ( OpeningHours ) } , \"timeZone\" : { object ( TimeZone ) } , \"photos\" : [ { object ( Photo ) } ] , \"adrFormatAddress\" : string , \"businessStatus\" : enum ( BusinessStatus ) , \"openingDate\" : { object ( Date ) } , \"priceLevel\" : enum ( PriceLevel ) , \"attributions\" : [ { object ( Attribution ) } ] , \"iconMaskBaseUri\" : string , \"iconBackgroundColor\" : string , \"currentOpeningHours\" : { object ( OpeningHours ) } , \"currentSecondaryOpeningHours\" : [ { object ( OpeningHours ) } ] , \"regularSecondaryOpeningHours\" : [ { object ( OpeningHours ) } ] , \"editorialSummary\" : { object ( LocalizedText ) } , \"paymentOptions\" : { object ( PaymentOptions ) } , \"parkingOptions\" : { object ( ParkingOptions ) } , \"subDestinations\" : [ { object ( SubDestination ) } ] , \"fuelOptions\" : { object ( FuelOptions ) } , \"evChargeOptions\" : { object ( EVChargeOptions ) } , \"generativeSummary\" : { object ( GenerativeSummary ) } , \"containingPlaces\" : [ { object ( ContainingPlace ) } ] , \"addressDescriptor\" : { object ( AddressDescriptor ) } , \"googleMapsLinks\" : { object ( GoogleMapsLinks ) } , \"priceRange\" : { object ( PriceRange ) } , \"reviewSummary\" : { object ( ReviewSummary ) } , \"evChargeAmenitySummary\" : { object ( EvChargeAmenitySummary ) } , \"neighborhoodSummary\" : { object ( NeighborhoodSummary ) } , \"consumerAlert\" : { object ( ConsumerAlert ) } , \"movedPlace\" : string , \"movedPlaceId\" : string , \"utcOffsetMinutes\" : integer , \"userRatingCount\" : integer , \"takeout\" : boolean , \"delivery\" : boolean , \"dineIn\" : boolean , \"curbsidePickup\" : boolean , \"reservable\" : boolean , \"servesBreakfast\" : boolean , \"servesLunch\" : boolean , \"servesDinner\" : boolean , \"servesBeer\" : boolean , \"servesWine\" : boolean , \"servesBrunch\" : boolean , \"servesVegetarianFood\" : boolean , \"outdoorSeating\" : boolean , \"liveMusic\" : boolean , \"menuForChildren\" : boolean , \"servesCocktails\" : boolean , \"servesDessert\" : boolean , \"servesCoffee\" : boolean , \"goodForChildren\" : boolean , \"allowsDogs\" : boolean , \"restroom\" : boolean , \"goodForGroups\" : boolean , \"goodForWatchingSports\" : boolean , \"accessibilityOptions\" : { object ( AccessibilityOptions ) } , \"pureServiceAreaBusiness\" : boolean } Fields name string This Place's resource name, in places/{placeId} format.",
+          "If a payment option data is not available, the payment option field will be unset. parkingOptions object ( ParkingOptions ) Options of parking provided by the place. subDestinations[] object ( SubDestination ) A list of sub-destinations related to the place. fuelOptions object ( FuelOptions ) The most recent information about fuel options in a gas station.",
+          "X hours and 15 minutes. userRatingCount integer The total number of reviews (with or without text) for this place. takeout boolean Specifies if the business supports takeout. delivery boolean Specifies if the business supports delivery. dineIn boolean Specifies if the business supports indoor or outdoor seating options. curbsidePickup boolean Specifies if the business supports curbside pickup. reservable boolean Specifies if the place supports reservations. servesBreakfast boolean Specifies if the place serves breakfast. servesLunch boolean Specifies if the place serves lunch. servesDinner boolean Specifies if the place serves dinner. servesBeer boolean Specifies if the place serves beer. servesWine boolean Specifies if the place serves wine. servesBrunch boolean Specifies if the place serves brunch. servesVegetarianFood boolean Specifies if the place serves vegetarian food. outdoorSeating boolean Place provides outdoor seating. liveMusic boolean Place provides live music. menuForChildren boolean Place has a children's menu. servesCocktails boolean Place serves cocktails. servesDessert boolean Place serves dessert. servesCoffee boolean Place serves coffee. goodForChildren boolean Place is good for children. allowsDogs boolean Place allows dogs. restroom boolean Place has restroom. goodForGroups boolean Place accommodates groups. goodForWatchingSports boolean Place is suitable for watching sports. accessibilityOptions object ( AccessibilityOptions ) Information about the accessibility options a place offers. pureServiceAreaBusiness boolean Indicates whether the place is a pure service area business."
+        ]
+      },
+      {
+        "title": "Place Data Fields (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/data-fields",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Field description Property field Place Details SKU Text Search SKU Nearby Search SKU Accessibility options accessibilityOptions Place Details Pro Text Search Pro Nearby Search Pro Address components addressComponents Place Details Essentials Text Search Pro Nearby Search Pro Address descriptor addressDescriptor Place Details Essentials Text Search Pro Nearby Search Pro Address (ADR microformat) adrFormatAddress Place Details Essentials Text Search Pro Nearby Search Pro Allows dogs allowsDogs Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Attributions attributions Place Details Essentials (IDs Only) Text Search Essentials (IDs Only) Nearby Search Pro Business status businessStatus Place Details Pro Text Search Pro Nearby Search Pro Containing places containingPlaces Place Details Pro Text Search Pro Nearby Search Pro Curbside pickup curbsidePickup Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Current opening hours currentOpeningHours Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Current secondary opening hours currentSecondaryOpeningHours Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Delivery delivery Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Dine in dineIn Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Display name displayName Place Details Pro Text Search Pro Nearby Search Pro Editorial summary editorialSummary Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere AI-powered EVCS amenity summary evChargeAmenitySummary Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere EV charging options evChargeOptions Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Formatted address formattedAddress Place Details Essentials Text Search Pro Nearby Search Pro Fuel options fuelOptions Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere AI-powered place summary generativeSummary Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Good for children goodForChildren Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Good for groups goodForGroups Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Good for watching sports goodForWatchingSports Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Google Maps links googleMapsLinks Place Details Pro Text Search Pro Nearby Search Pro Google Maps URI googleMapsUri Place Details Pro Text Search Pro Nearby Search Pro Icon background color iconBackgroundColor Place Details Pro Text Search Pro Nearby Search Pro Icon mask base URI iconMaskBaseUri Place Details Pro Text Search Pro Nearby Search Pro International phone number internationalPhoneNumber Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Live music liveMusic Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Location location Place Details Essentials Text Search Pro Nearby Search Pro Menu for children menuForChildren Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Name name Place Details Essentials (IDs Only) Text Search Essentials (IDs Only) Nearby Search Pro National phone number nationalPhoneNumber Place Details Enterprise Text Search Enterprise Nearby Search Enterprise AI-powered neighborhood summary neighborhoodSummary Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Next page token nextPageToken - Text Search Essentials (IDs Only) - Opening date openingDate Place Details Pro Text Search Pro Nearby Search Pro Outdoor seating outdoorSeating Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Parking options parkingOptions Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Payment options paymentOptions Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Photos photos Place Details Essentials (IDs Only) Text Search Pro Nearby Search Pro Place ID id Place Details Essentials (IDs Only) Text Search Essentials (IDs Only) Nearby Search Pro Plus code plusCode Place Details Essentials Text Search Pro Nearby Search Pro Postal address postalAddress Place Details Essentials Text Search Pro Nearby Search Pro Price level priceLevel Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Price range priceRange Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Primary type primaryType Place Details Pro Text Search Pro Nearby Search Pro Primary type display name primaryTypeDisplayName Place Details Pro Text Search Pro Nearby Search Pro Pure service area business pureServiceAreaBusiness Place Details Pro Text Search Pro Nearby Search Pro Rating rating Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Regular opening hours regularOpeningHours Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Regular secondary opening hours regularSecondaryOpeningHours Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Reservable reservable Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Restroom restroom Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Reviews reviews Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere AI-powered review summary reviewSummary Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Routing summaries routingSummaries Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves beer servesBeer Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves breakfast servesBreakfast Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves brunch servesBrunch Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves cocktails servesCocktails Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves coffee servesCoffee Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves dessert servesDessert Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves dinner servesDinner Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves lunch servesLunch Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves vegetarian food servesVegetarianFood Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Serves wine servesWine Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Short formatted address shortFormattedAddress Place Details Essentials Text Search Pro Nearby Search Pro Sub-destinations subDestinations Place Details Pro Text Search Pro Nearby Search Pro Types types Place Details Essentials Text Search Pro Nearby Search Pro Takeout takeout Place Details Enterprise + Atmosphere Text Search Enterprise + Atmosphere Nearby Search Enterprise + Atmosphere Time zone timeZone Place Details Pro Text Search Pro Nearby Search Pro User rating count userRatingCount Place Details Enterprise Text Search Enterprise Nearby Search Enterprise UTC offset (minutes) utcOffsetMinutes Place Details Pro Text Search Pro Nearby Search Pro Viewport viewport Place Details Essentials Text Search Pro Nearby Search Pro Website URI websiteUri Place Details Enterprise Text Search Enterprise Nearby Search Enterprise Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Page Summary outlined flag This page lists available place data fields and their pricing tiers for use with Place Details, Text Search, and Nearby Search.",
+          "This page lists all the place data fields by pricing tier (SKU)."
+        ]
+      },
+      {
+        "title": "About the Places API (New) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/op-overview",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While some EV chargers have multiple connectors, each charger can only charge one vehicle at a time; as a result, this field reflects the number of available EV chargers at a given time. shortFormattedAddress A short, human-readable address for a place. primaryType The primary type of the given result.",
+          "Accessibility options The Places API (New) includes the following accessibility option fields: Field Description wheelchairAccessibleParking Place offers wheelchair-accessible parking. wheelchairAccessibleEntrance Place has a wheelchair-accessible entrance. wheelchairAccessibleRestroom Place has a wheelchair-accessible restroom. wheelchairAccessibleSeating Place has wheelchair-accessible seating.",
+          "New fields, attributes, and accessibility options The Places API (New) includes new fields, attributes, and accessibility options to provide users with more information about a place."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "places.searchText"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/data-fields",
+        "https://developers.google.com/maps/documentation/places/web-service/op-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/data-fields",
+        "https://developers.google.com/maps/documentation/places/web-service/op-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/data-fields",
+        "https://developers.google.com/maps/documentation/places/web-service/op-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/data-fields",
+        "https://developers.google.com/maps/documentation/places/web-service/op-overview"
+      ]
+    }
+  ]
+}

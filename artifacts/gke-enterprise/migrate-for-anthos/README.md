@@ -1,0 +1,46 @@
+# Migrate for Anthos
+
+Product: GKE Enterprise
+Feature slug: `migrate-for-anthos`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Migrate for Anthos migrates virtual machines and containers into Kubernetes environments.
+
+## Lifecycle
+
+- Latest feature date: 2019-12-20
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- audit
+- auth
+- authorization
+- certificate
+- constraint
+- credential
+- encrypt
+- iam
+- identity
+- key
+- logging
+- policy
+- role
+- secret
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options)
+- [https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access](https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access)

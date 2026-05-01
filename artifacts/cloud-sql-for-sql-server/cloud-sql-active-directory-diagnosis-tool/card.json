@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.596Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Cloud SQL Active Directory Diagnosis tool",
+  "feature_slug": "cloud-sql-active-directory-diagnosis-tool",
+  "summary": "A troubleshooting tool helps diagnose connection issues for AD-enabled Cloud SQL for SQL Server instances using an on-premises Active Directory domain.",
+  "extended_definition": "A troubleshooting tool helps diagnose connection issues for AD-enabled Cloud SQL for SQL Server instances using an on-premises Active Directory domain.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Active Directory Diagnosis tool for Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Active Directory (AD) Diagnosis tool is a utility PowerShell script that helps you to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Active Directory Diagnosis tool for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to use the Active Directory Diagnosis tool for Cloud SQL and explains the checks that the tool performs."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cloning Connectivity Creating instances Flags High availability Import and export Linked servers Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"compute#forwardingRule\", \"id\": \" ENDPOINT ID \", \"creationTimestamp\": \"2024-05-09T12:03:21.383-07:00\", \"name\": \" ENDPOINT NAME \", \"region\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME \", \"IPAddress\": \" IP ADDRESS \", \"target\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /serviceAttachments/ SERVICE ATTACHMENT NAME \", \"selfLink\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/default\", \"serviceDirectoryRegistrations\": [ { \"namespace\": \"goog-psc-default\" } ], \"networkTier\": \"PREMIUM\", \"labelFingerprint\": \" LABEL FINGERPRINT ID \", \"fingerprint\": \" FINGERPRINT ID \", \"pscConnectionId\": \" CONNECTION ID \", \"pscConnectionStatus\": \"ACCEPTED\", \"allowPscGlobalAccess\": true } Verify that the status of the endpoint is ACCEPTED .",
+          "To download the logs as JSON: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" \\ downloaded-log.json To download the logs as TEXT: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" jq -rnc --stream 'fromstream(1 truncate stream(inputs)) \\ .textPayload' \\ --order = asc downloaded-log.txt Manage instances Issue Troubleshooting Temporary storage increased automatic storage."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create an instance that is integrated with Managed Service for Microsoft Active Directory, specify a domain, such as subdomain.mydomain.com , for the domain field.",
+          "Console Note: If you plan to integrate with Managed Service for Microsoft Active Directory, review the prerequisites for integration .",
+          "You only need to do this once per directory. terraform init Optionally, to use the latest Google provider version, include the -upgrade option: terraform init -upgrade Apply the changes Review the configuration and verify that the resources that Terraform is going to create or update match your expectations: terraform plan Make corrections to the configuration as necessary."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.googleapis.com",
+      "compute.googleapis.com",
+      "log.json",
+      "log.txt",
+      "resource.type",
+      "subdomain.mydomain.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    }
+  ]
+}

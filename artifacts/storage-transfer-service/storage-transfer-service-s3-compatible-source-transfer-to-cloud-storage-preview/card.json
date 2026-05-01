@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.249Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Storage Transfer Service S3-compatible source transfer to Cloud Storage (Preview)",
+  "feature_slug": "storage-transfer-service-s3-compatible-source-transfer-to-cloud-storage-preview",
+  "summary": "Storage Transfer Service introduced preview support for transferring data from S3-compatible storage (including AWS S3) to Cloud Storage, including transfer routing controls to reduce egress charges.",
+  "extended_definition": "Storage Transfer Service introduced preview support for transferring data from S3-compatible storage (including AWS S3) to Cloud Storage, including transfer routing controls to reduce egress charges.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types",
+      "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transfer from S3-compatible storage to Cloud Storage \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Obtain source credentials Transferring from S3-compatible storage requires an access key ID and a secret access key .",
+          "Defaults to the default agent // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer service default'; // The S3-compatible bucket name to transfer data from // const sourceBucketName = \"my-bucket-name\"; // The S3-compatible path (object prefix) to transfer data from // const sourcePath = \"path/to/data/\"; // The ID of the GCS bucket to transfer data to // const gcsSinkBucket = \"my-sink-bucket\"; // The GCS path (object prefix) to transfer data to // const gcsPath = \"path/to/data/\"; // The S3 region of the source bucket // const region = 'us-east-1'; // The S3-compatible endpoint // const endpoint = \"us-east-1.example.com\"; // The S3-compatible network protocol // const protocol = NetworkProtocol.NETWORK PROTOCOL HTTPS; // The S3-compatible request model // const requestModel = RequestModel.REQUEST MODEL VIRTUAL HOSTED STYLE; // The S3-compatible auth method // const authMethod = AuthMethod.AUTH METHOD AWS SIGNATURE V4; // Creates a client const client = new storageTransfer .",
+          "StorageTransferServiceClient (); / Creates a transfer from an AWS S3-compatible source to GCS / async function transferFromS3CompatibleSource () { // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , transferSpec : { sourceAgentPoolName , awsS3CompatibleDataSource : { region , s3Metadata : { authMethod , protocol , requestModel , }, endpoint , bucketName : sourceBucketName , path : sourcePath , }, gcsDataSink : { bucketName : gcsSinkBucket , path : gcsPath , }, }, status : ' ENABLED ' , }, }); await client . runTransferJob ({ jobName : transferJob . name , projectId , }); console . log ( Created and ran a transfer job from ' ${ sourceBucketName } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ` ); } transferFromS3CompatibleSource (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries ."
+        ]
+      },
+      {
+        "title": "\"Class AwsS3CompatibleData (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "source_id": "site-python-reference",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This can be left blank if requests should be signed with an empty region. s3 metadata google.cloud.storage transfer v1.types.S3CompatibleMetadata A S3 compatible metadata.",
+          "1.20.0 (latest) 1.19.0 1.18.0 1.17.0 1.16.0 1.15.0 1.14.0 1.13.1 1.12.0 1.11.5 1.10.0 1.9.2 1.8.1 1.7.1 1.6.0 1.5.2 1.4.1 1.3.1 1.2.1 1.1.1 1.0.2 0.1.0 AwsS3CompatibleData ( mapping = None , , ignore unknown fields = False , kwargs ) An AwsS3CompatibleData resource. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields Attributes Name Description bucket name str Required.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class AwsS3CompatibleData (1.20.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Package types (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types",
+        "source_id": "site-python-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Notifications are published to the customer-provided topic using the following PubsubMessage.attributes : \"eventType\" : one of the EventType][google.storagetransfer.v1.NotificationConfig.EventType] values \"payloadFormat\" : one of the PayloadFormat][google.storagetransfer.v1.NotificationConfig.PayloadFormat] values \"projectId\" : the project id][google.storagetransfer.v1.TransferOperation.project id] of the TransferOperation \"transferJobName\" : the transfer job name][google.storagetransfer.v1.TransferOperation.transfer job name] of the TransferOperation \"transferOperationName\" : the name][google.storagetransfer.v1.TransferOperation.name] of the TransferOperation The PubsubMessage.data contains a TransferOperation][google.storagetransfer.v1.TransferOperation] resource formatted according to the specified PayloadFormat .",
+          "Storage Transfer Service obeys robots.txt rules and requires the source HTTP server to support Range requests and to return a Content-Length header in each response.",
+          "For an example of a valid TSV file, see Transferring data from URLs <https://cloud.google.com/storage-transfer/docs/create-url-list> ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "fields.html",
+      "python.readthedocs.io",
+      "robots.txt",
+      "v1.types.S3CompatibleMetadata"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AwsS3CompatibleData",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types"
+      ]
+    }
+  ]
+}

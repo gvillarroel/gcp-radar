@@ -1,0 +1,36 @@
+# DVR sessions
+
+Product: Live Stream API
+Feature slug: `dvr-sessions`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Allows creating DVR sessions for past, current, or future live streams.
+
+## Lifecycle
+
+- Latest feature date: 2024-11-18
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- authorization
+- key
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/livestream/docs/how-to/create-and-manage-dvr-sessions](https://docs.cloud.google.com/livestream/docs/how-to/create-and-manage-dvr-sessions)
+- [https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceClient](https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.LivestreamServiceClient)
+- [https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.pagers.ListDvrSessionsAsyncPager](https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.services.livestream_service.pagers.ListDvrSessionsAsyncPager)

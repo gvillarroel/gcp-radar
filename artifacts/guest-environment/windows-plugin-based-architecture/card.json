@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.741Z",
+  "source_step08_card": "data/step-08/current/products/guest-environment/card.json",
+  "product_name": "Guest Environment",
+  "product_slug": "guest-environment",
+  "feature_name": "Windows plugin-based architecture",
+  "feature_slug": "windows-plugin-based-architecture",
+  "summary": "The guest agent reintroduces the plugin-based architecture for Windows; The guest agent introduces the plugin-based architecture for Windows.",
+  "extended_definition": "The guest agent reintroduces the plugin-based architecture for Windows; The guest agent introduces the plugin-based architecture for Windows.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+      "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+      "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+      "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About the guest agent \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "source_id": "site-docs-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Plugin-based agent binaries This table lists the file paths for the plugin-based guest agent binaries on Linux and Windows instances: Component Path on Linux Path on Windows Guest agent manager /usr/bin/google guest agent manager C:\\ProgramData\\Google\\Compute Engine\\agent\\GCEWindowsAgentManager.exe Core plugin binary /usr/lib/google/guest agent/core plugin C:\\Program Files\\Google\\Compute Engine\\agent\\CorePlugin.exe Metadata script runner /usr/bin/gce metadata script runner C:\\Program Files\\Google\\Compute Engine\\agent\\GCEMetadataScriptRunner.exe Monolithic agent binaries The following table lists the file paths for the monolithic guest agent binaries on Linux and Windows instances: Component Path on Linux Path on Windows Guest agent /usr/bin/google guest agent C:\\Program Files\\Google\\Compute Engine\\agent\\GCEWindowsAgent.exe Metadata script runner /usr/bin/google metadata script runner C:\\Program Files\\Google\\Compute Engine\\metadata scripts\\GCEMetadataScripts.exe Authorized keys Not applicable C:\\Program Files\\Google\\Compute Engine\\agent\\GCEAuthorizedKeys.exe Guest agent daemon services The following tables list the guest agent daemon services installed on Linux and Windows instances.",
+          "These components are not part of the plugin-based architecture and activate only if you manually choose to revert to the monolithic agent by setting the metadata attribute enable-guest-agent-core-plugin to false .",
+          "Guest agent architecture Starting with version 20250901.00 , the guest agent architecture is updated from a monolithic design to a modern, plugin-based system."
+        ]
+      },
+      {
+        "title": "\"Running Windows Server Failover Clustering \\_|\\_ Compute Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace [YOUR ZONE 3] with the name of your zone: gcloud compute instances create wsfc - dc --zone [YOUR ZONE 3] --machine-type n1-standard-2 --image-project windows-cloud --image-family windows-2016 --scopes https://www.googleapis.com/auth/compute --can-ip-forward --private-network-ip 10.0.0.6 --network wsfcnet --subnet wsfcnetsub1 View your instances You can see the details about the instances you created. gcloud compute instances list You will see output similar to the following: NAME ZONE MACHINE TYPE PREEMPTIBLE INTERNAL IP EXTERNAL IP STATUS wsfc-1 us-central1-a n1-standard-2 10.0.0.4 35.203.131.133 RUNNING wsfc-2 us-central1-b n1-standard-2 10.0.0.5 35.203.130.194 RUNNING wsfc-dc us-central1-c n1-standard-2 10.0.0.6 35.197.27.2 RUNNING Connecting to your VMs To connect to a Windows-based VM, you must first generate a password for the VM.",
+          "Putting it together Now that you've reviewed some of the concepts, here are some details to notice about the architecture diagram: The Compute Engine agent for the VM named wsfc-2 is responding to the health check with the value 1, indicating it is the active cluster node.",
+          "Here's how internal load balancing detects the correct node: Each VM instance runs a Compute Engine agent instance that provides support for Windows failover clustering."
+        ]
+      },
+      {
+        "title": "Guest environment \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The guest agent is available for both Linux and Windows operating systems, with the following package names: Linux: google-guest-agent Windows: google-compute-engine-windows For detailed information about the guest agent, including its features, architecture, and how to manage the agent, see Guest agent .",
+          "Reads data from and writes data to the VM metadata Sends logs to the Windows Application Event Log, serial port, and Cloud Logging guest-agent google-compute-engine-sysprep Contains scripts for generalizing a Windows instance in preparation for creating an OS image.",
+          "The Windows guest environment includes the following key packages: Package name Description Key interactions Link to source code on GitHub google-compute-engine-windows This package is the guest agent for the Windows environment."
+        ]
+      },
+      {
+        "title": "\"Deploy an Active Directory forest on Compute Engine \\_|\\_ Cloud Architecture\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about configuring the guest agent, see Enabling and disabling Windows instance features .",
+          "This architecture lets you do the following: Deploy additional Windows workloads in separate projects, and let them use the Shared VPC network and Active Directory forest.",
+          "Configure the guest agent to disable the account manager."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "startup.ps1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    }
+  ]
+}

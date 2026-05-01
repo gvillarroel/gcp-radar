@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.970Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "TensorFlow 2.1 with Keras support",
+  "feature_slug": "tensorflow-2-1-with-keras-support",
+  "summary": "Cloud TPU supports TensorFlow 2.1 including Keras support.",
+  "extended_definition": "Cloud TPU supports TensorFlow 2.1 including Keras support.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities",
+      "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+      "https://docs.cloud.google.com/tpu/docs/tensorflow-ops"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Available TensorFlow Ops \\_|\\_ Cloud TPU \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/tensorflow-ops",
+        "source_id": "site-docs-reference",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Programs containing assertions should run, but the assertions are ignored. tf.check numerics Programs containing check numerics operators should run, but the check numerics operator is currently ignored. tf.confusion matrix tf.count nonzero Uses int64 reduction. tf.count up to tf.create partitioned variables tf.dequantize tf.digamma tf.dynamic partition tf.edit distance tf.fake quant with min max vars per channel tf.fake quant with min max vars per channel gradient tf.histogram fixed width tf.igamma tf.igammac tf.lbeta tf.lgamma tf.matrix determinant tf.matrix inverse tf.matrix solve tf.matrix solve ls tf.polygamma tf.py func tf.qr tf.quantize v2 tf.quantized concat tf.random crop tf.random gamma tf.random poisson tf.random shuffle tf.scatter add tf.scatter div tf.scatter mul tf.scatter nd add tf.scatter nd sub tf.scatter nd update tf.segment mean tf.segment max tf.segment min tf.segment prod tf.segment sum tf.self adjoint eig tf.self adjoint eigvals tf.setdiff1d tf.sparse ... tf.string ... tf.substr tf.svd tf.to double tf.unique tf.unsorted segment max tf.zeta tf.bitwise.bitwise xor tf.contrib.stateless.stateless truncated normal Available graph operators Operator Type Constraint Abs T={bfloat16,float,int32,int64} Acos T={bfloat16,complex64,float,int32,int64} Acosh T={bfloat16,complex64,float} Add T={bfloat16,complex64,float,int32,int64} AddN T={bfloat16,complex64,float,int32,int64,uint32,uint64} AdjustContrastv2 T={float} AdjustHue T={float} AdjustSaturation T={float} All Tidx={int32,int64} AllToAll T={bfloat16,float} Angle Tout={float} T={complex64} Any Tidx={int32,int64} ApproximateEqual T={bfloat16,complex64,float,int32,int64,uint32,uint64} ArgMax Tidx={int32,int64} output type={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} ArgMin Tidx={int32,int64} output type={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} Asin T={bfloat16,complex64,float,int32,int64} Asinh T={bfloat16,complex64,float} Assert T={bfloat16,bool,complex64,float,int32,int64,string,uint32,uint64} AssignAddVariableOp dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} AssignSubVariableOp dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} AssignVariableOp dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Atan T={bfloat16,complex64,float,int32,int64} Atan2 T={bfloat16,float} Atanh T={bfloat16,complex64,float} AvgPool T={bfloat16,float} AvgPool3D T={bfloat16,float} AvgPool3DGrad T={bfloat16,float} AvgPoolGrad T={bfloat16,float} BatchMatMul T={bfloat16,complex64,float,int32,int64} BatchToSpace Tidx={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} BatchToSpaceND Tcrops={int32,int64} Tblock shape={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} BiasAdd T={bfloat16,complex64,float,int32,int64,uint32,uint64} BiasAddGrad T={bfloat16,complex64,float,int32,int64,uint32,uint64} BiasAddV1 T={bfloat16,complex64,float,int32,int64,uint32,uint64} Bitcast type={bfloat16,complex64,float,int32,int64,uint32,uint64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} BitwiseAnd T={int32,int64,uint32,uint64} BitwiseOr T={int32,int64,uint32,uint64} BitwiseXor T={int32,int64,uint32,uint64} BroadcastArgs T={int32,int64} BroadcastGradientArgs T={int32,int64} BroadcastTo Tidx={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Bucketize T={float,int32,int64} Cast DstT={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} SrcT={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Ceil T={bfloat16,float} CheckNumerics T={bfloat16,float} Cholesky T={float} ClipByValue T={bfloat16,complex64,float,int32,int64,uint32,uint64} CollectivePermute T={bfloat16,float} Complex Tout={complex64} T={float} ComplexAbs Tout={float} T={complex64} Concat T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ConcatOffset ConcatV2 Tidx={int32} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Conj T={complex64} ConjugateTranspose Tperm={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Const dtype={bfloat16,bool,complex64,float,int32,int64,string,uint32,uint64} ControlTrigger Conv2D T={bfloat16,float} Conv2DBackpropFilter T={bfloat16,float} Conv2DBackpropInput T={bfloat16,float} Conv3D T={bfloat16,float} Conv3DBackpropFilterV2 T={bfloat16,float} Conv3DBackpropInputV2 Tshape={int32,int64} T={bfloat16,float} Cos T={bfloat16,complex64,float} Cosh T={bfloat16,complex64,float} Cross T={bfloat16,float,int32,int64,uint32,uint64} CrossReplicaSum T={bfloat16,float} Cumprod Tidx={int32,int64} T={bfloat16,float,int32} Cumsum Tidx={int32,int64} T={bfloat16,float,int32} DataFormatVecPermute T={int32,int64} DepthToSpace T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} DepthwiseConv2dNative T={bfloat16,float} DepthwiseConv2dNativeBackpropFilter T={bfloat16,float} DepthwiseConv2dNativeBackpropInput T={bfloat16,float} Diag T={bfloat16,complex64,float,int32,int64} DiagPart T={bfloat16,complex64,float,int32,int64} Digamma T={bfloat16,float} Div T={bfloat16,complex64,float,int32,int64} DivNoNan T={float} DynamicStitch T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Elu T={bfloat16,float} EluGrad T={bfloat16,float} Empty dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} EmptyTensorList shape type={int32,int64} element dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Equal T={bfloat16,bool,complex64,float,int32,int64} Erf T={bfloat16,float} Erfc T={bfloat16,float} Exp T={bfloat16,complex64,float} ExpandDims Tdim={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Expm1 T={bfloat16,complex64,float} ExtractImagePatches T={bfloat16,float,int32,int64,uint32,uint64} FFT Tcomplex={complex64} FFT2D Tcomplex={complex64} FFT3D Tcomplex={complex64} FakeParam dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} FakeQuantWithMinMaxArgs FakeQuantWithMinMaxArgsGradient FakeQuantWithMinMaxVars FakeQuantWithMinMaxVarsGradient Fill index type={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Floor T={bfloat16,float} FloorDiv T={bfloat16,complex64,float,int32,int64} FloorMod T={bfloat16,float,int32,int64} FusedBatchNorm T={float} FusedBatchNormGrad T={float} FusedBatchNormGradV2 U={float} T={bfloat16,float} FusedBatchNormV2 U={float} T={bfloat16,float} Gather Tindices={int32,int64} Tparams={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} GatherNd Tindices={int32,int64} Tparams={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} GatherV2 Taxis={int32,int64} Tindices={int32,int64} Tparams={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} GetItem T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Greater T={bfloat16,float,int32,int64,uint32,uint64} GreaterEqual T={bfloat16,float,int32,int64,uint32,uint64} HSVToRGB T={bfloat16,float} IFFT Tcomplex={complex64} IFFT2D Tcomplex={complex64} IFFT3D Tcomplex={complex64} IRFFT IRFFT2D IRFFT3D Identity T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} IdentityN T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} If Tout={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Tin={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Tcond={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Imag Tout={float} T={complex64} InfeedDequeue dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} InfeedDequeueTuple dtypes={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} InplaceAdd T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} InplaceUpdate T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Inv T={bfloat16,complex64,float,int32,int64} Invert T={int32,int64,uint32,uint64} InvertPermutation T={int32} IsFinite T={bfloat16,float} IsInf T={bfloat16,float} IsNan T={bfloat16,float} L2Loss T={bfloat16,float} LRN T={bfloat16,float} LRNGrad T={bfloat16,float} LeakyRelu T={bfloat16,float} LeakyReluGrad T={bfloat16,float} LeftShift T={int32,int64,uint32,uint64} Less T={bfloat16,float,int32,int64,uint32,uint64} LessEqual T={bfloat16,float,int32,int64,uint32,uint64} Lgamma T={bfloat16,float} LinSpace Tidx={int32,int64} T={bfloat16,float} ListDiff out idx={int32,int64} T={int32,int64} Log T={bfloat16,complex64,float} Log1p T={bfloat16,complex64,float} LogSoftmax T={bfloat16,float} LogicalAnd LogicalNot LogicalOr MatMul T={bfloat16,complex64,float} MatrixBandPart Tindex={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} MatrixDiag T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} MatrixDiagPart T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} MatrixSetDiag T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} MatrixTriangularSolve T={complex64,float} Max Tidx={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} MaxPool T={bfloat16,float,int32,int64} MaxPool3D T={bfloat16,float} MaxPool3DGrad TInput={bfloat16,float} T={bfloat16,float} MaxPool3DGradGrad T={float} MaxPoolGrad T={bfloat16,float,int32,int64,uint32,uint64} MaxPoolGradGrad T={float} MaxPoolGradGradV2 T={float} MaxPoolGradV2 T={bfloat16,float,int32,int64,uint32,uint64} MaxPoolV2 T={bfloat16,float,int32,int64} Maximum T={bfloat16,float,int32,int64} Mean Tidx={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} Min Tidx={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} Minimum T={bfloat16,float,int32,int64} MirrorPad Tpaddings={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Mod T={bfloat16,float,int32,int64} Mul T={bfloat16,complex64,float,int32,int64} Multinomial output dtype={int32,int64} T={bfloat16,float,int32,int64,uint32,uint64} Neg T={bfloat16,complex64,float,int32,int64} NoOp NonMaxSuppressionV4 T={float} NotEqual T={bfloat16,bool,complex64,float,int32,int64} OneHot TI={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} OnesLike T={bfloat16,bool,complex64,float,int32,int64} OutfeedEnqueue dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} OutfeedEnqueueTuple dtypes={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Pack T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Pad Tpaddings={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} PadV2 Tpaddings={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ParallelDynamicStitch T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} PlaceholderWithDefault dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Pow T={bfloat16,complex64,float,int32,int64} PreventGradient T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Prod Tidx={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} Qr T={float} QuantizeAndDequantizeV2 T={bfloat16,float} QuantizeAndDequantizeV3 T={bfloat16,float} RFFT RFFT2D RFFT3D RGBToHSV T={bfloat16,float} RandomShuffle T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} RandomStandardNormal T={int32,int64} dtype={bfloat16,float} RandomUniform T={int32,int64} dtype={bfloat16,float} RandomUniformInt T={int32,int64} Tout={int32,int64} Range Tidx={bfloat16,float,int32,int64} Rank T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ReadVariableOp dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Real Tout={float} T={complex64} RealDiv T={bfloat16,complex64,float,int32,int64} Reciprocal T={bfloat16,complex64,float,int32,int64} ReciprocalGrad T={bfloat16,complex64,float} RecvTPUEmbeddingActivations Relu T={bfloat16,float,int32,int64,uint32,uint64} Relu6 T={bfloat16,float,int32,int64,uint32,uint64} Relu6Grad T={bfloat16,float,int32,int64,uint32,uint64} ReluGrad T={bfloat16,float,int32,int64,uint32,uint64} Reshape Tshape={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ResizeBilinear T={bfloat16,float,int32,int64} ResizeBilinearGrad T={bfloat16,float} ResizeNearestNeighbor T={float,int32,int64} ResourceApplyAdaMax T={bfloat16,float} ResourceApplyAdadelta T={bfloat16,float} ResourceApplyAdagrad T={bfloat16,float} ResourceApplyAdagradDA T={bfloat16,float} ResourceApplyAdam T={bfloat16,float} ResourceApplyAddSign T={bfloat16,float} ResourceApplyCenteredRMSProp T={bfloat16,float} ResourceApplyFtrl T={bfloat16,float} ResourceApplyFtrlV2 T={bfloat16,float} ResourceApplyGradientDescent T={bfloat16,float} ResourceApplyKerasMomentum T={bfloat16,float} ResourceApplyMomentum T={bfloat16,float} ResourceApplyPowerSign T={bfloat16,float} ResourceApplyProximalAdagrad T={bfloat16,float} ResourceApplyProximalGradientDescent T={bfloat16,float} ResourceApplyRMSProp T={bfloat16,float} ResourceGather Tindices={int32,int64} dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ResourceScatterAdd Tindices={int32,int64} dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} ResourceScatterDiv Tindices={int32,int64} dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} ResourceScatterMax Tindices={int32,int64} dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} ResourceScatterMin Tindices={int32,int64} dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} ResourceScatterMul Tindices={int32,int64} dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} ResourceScatterNdAdd Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ResourceScatterNdSub Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ResourceScatterNdUpdate Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ResourceScatterSub Tindices={int32,int64} dtype={bfloat16,complex64,float,int32,int64,uint32,uint64} ResourceScatterUpdate Tindices={int32,int64} dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ResourceStridedSliceAssign Index={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Reverse T={bool,complex64,float,int32,int64} ReverseSequence Tlen={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ReverseV2 T={bfloat16,bool,complex64,float,int32,int64} Tidx={int32,int64} RightShift T={int32,int64,uint32,uint64} Rint T={bfloat16,float} Round T={bfloat16,complex64,float,int32,int64} Rsqrt T={bfloat16,complex64,float} RsqrtGrad T={bfloat16,complex64,float} ScatterNd Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Select T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Selu T={bfloat16,float} SeluGrad T={bfloat16,float} SendTPUEmbeddingGradients Shape out type={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ShapeN out type={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Sigmoid T={bfloat16,complex64,float} SigmoidGrad T={bfloat16,complex64,float} Sign T={bfloat16,complex64,float,int32,int64} Sin T={bfloat16,complex64,float} Sinh T={bfloat16,complex64,float} Size out type={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Slice Index={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Snapshot T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Softmax T={bfloat16,float} SoftmaxCrossEntropyWithLogits T={bfloat16,float} Softplus T={bfloat16,float} SoftplusGrad T={bfloat16,float} Softsign T={bfloat16,float} SoftsignGrad T={bfloat16,float} SpaceToBatch Tpaddings={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} SpaceToBatchND Tblock shape={int32,int64} Tpaddings={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} SpaceToDepth T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} SparseMatMul Tb={bfloat16,float} Ta={bfloat16,float} SparseSoftmaxCrossEntropyWithLogits Tlabels={int32,int64} T={bfloat16,float} SparseToDense Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Split T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} SplitV Tlen={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Sqrt T={bfloat16,complex64,float} SqrtGrad T={bfloat16,complex64,float} Square T={bfloat16,complex64,float,int32,int64} SquaredDifference T={bfloat16,complex64,float,int32,int64} Squeeze T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} StackCloseV2 StackPopV2 elem type={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} StackPushV2 T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} StackV2 elem type={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} StatelessIf Tout={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Tin={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Tcond={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} StatelessMultinomial output dtype={int32,int64} Tseed={int32} T={bfloat16,float} StatelessRandomNormal Tseed={int32} T={int32,int64} dtype={bfloat16,float} StatelessRandomUniform Tseed={int32} T={int32,int64} dtype={bfloat16,float} StatelessRandomUniformInt Tseed={int32} T={int32,int64} dtype={int32,int64} StatelessTruncatedNormal Tseed={int32} T={int32,int64} dtype={bfloat16,float} StatelessWhile T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} StopGradient T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} StridedSlice Index={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} StridedSliceGrad Index={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Sub T={bfloat16,complex64,float,int32,int64} Sum Tidx={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} SymbolicGradient Tout={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Tin={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TPUEmbeddingActivations Tan T={bfloat16,complex64,float,int32,int64} Tanh T={bfloat16,complex64,float} TanhGrad T={bfloat16,complex64,float} TensorArrayCloseV3 TensorArrayConcatV3 dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorArrayGatherV3 dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorArrayGradV3 TensorArrayReadV3 dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorArrayScatterV3 T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorArraySizeV3 TensorArraySplitV3 T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorArrayV3 dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorArrayWriteV3 T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorListElementShape shape type={int32,int64} TensorListPopBack element dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorListPushBack element dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TensorListReserve shape type={int32,int64} element dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Tile Tmultiples={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TopKV2 T={bfloat16,float,int32,uint32} Transpose Tperm={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} TruncateDiv T={bfloat16,complex64,float,int32,int64} TruncateMod T={bfloat16,float,int32,int64} TruncatedNormal T={int32,int64} dtype={float} Unpack T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} UnsortedSegmentMax Tnumsegments={int32,int64} Tindices={int32,int64} T={bfloat16,float,int32,int64,uint32,uint64} UnsortedSegmentMin Tnumsegments={int32,int64} Tindices={int32,int64} T={bfloat16,float,int32,int64,uint32,uint64} UnsortedSegmentProd Tnumsegments={int32,int64} Tindices={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} UnsortedSegmentSum Tnumsegments={int32,int64} Tindices={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} VarIsInitializedOp VariableShape out type={int32,int64} While T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Xdivy T={complex64,float} XlaBroadcastHelper Tindices={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} XlaConv Tindices={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} XlaDequantize XlaDot T={bfloat16,complex64,float,int32,int64,uint32,uint64} XlaDynamicSlice Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaDynamicUpdateSlice Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaHostCompute Toutputs={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Tinputs={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaIf Tout={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Tin={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Tcond={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} XlaKeyValueSort V={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} K={bfloat16,float,int32,int64,uint32,uint64} XlaPad Tindices={int32,int64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaRecv dtype={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaRecvFromHost Toutput={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaReduce T={bfloat16,complex64,float,int32,int64,uint32,uint64} XlaReduceWindow Tindices={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} XlaSelectAndScatter Tindices={int32,int64} T={bfloat16,complex64,float,int32,int64,uint32,uint64} XlaSend T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaSendToHost Tinput={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaSort T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} XlaWhile T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Xlogy T={complex64,float} ZerosLike T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Arg T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} ArrayToList out types={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} ListToArray T={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Tin={bfloat16,bool,complex64,float,int32,int64,uint32,uint64} Retval T={bfloat16,bool,complex64,float,int32,int64,resource,uint32,uint64} Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Available TensorFlow Ops This page lists the TensorFlow Python APIs and graph operators available on Cloud TPU.",
+          "Available Python APIs The list below is a guide to the set of available TensorFlow Python APIs."
+        ]
+      },
+      {
+        "title": "\"Resource types with built-in identities \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities",
+        "source_id": "site-iam-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Class ListTensorFlowVersionsAsyncPager (1.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.tpu v1.types.ListTensorFlowVersionsRequest The initial request object. response google.cloud.tpu v1.types.ListTensorFlowVersionsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "1.26.0 (latest) 1.25.0 1.24.0 1.23.2 1.22.0 1.21.0 1.20.0 1.19.1 1.18.5 1.17.0 1.16.0 1.15.0 1.14.0 1.13.0 1.12.0 1.11.2 1.10.1 1.9.0 1.8.0 1.7.2 1.6.0 1.5.2 1.4.1 1.3.4 1.2.1 1.1.0 1.0.2 0.2.2 0.1.0 ListTensorFlowVersionsAsyncPager ( method : typing .",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListTensorFlowVersionsAsyncPager (1.26.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "tf.bitwise.bitwise",
+      "tf.check",
+      "tf.confusion",
+      "tf.contrib.stateless.stateless",
+      "tf.count",
+      "tf.create",
+      "tf.dequantize",
+      "tf.digamma",
+      "tf.dynamic",
+      "tf.edit",
+      "tf.fake",
+      "tf.histogram",
+      "tf.igamma",
+      "tf.igammac",
+      "tf.lbeta",
+      "tf.lgamma",
+      "tf.matrix",
+      "tf.polygamma",
+      "tf.py",
+      "tf.qr",
+      "tf.quantize",
+      "tf.quantized",
+      "tf.random",
+      "tf.scatter",
+      "tf.segment",
+      "tf.self",
+      "tf.setdiff1d",
+      "tf.sparse",
+      "tf.string",
+      "tf.substr",
+      "tf.svd",
+      "tf.to",
+      "tf.unique",
+      "tf.unsorted",
+      "tf.zeta",
+      "v1.types.ListTensorFlowVersionsRequest",
+      "v1.types.ListTensorFlowVersionsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tensorflow-ops",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tensorflow-ops",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tensorflow-ops",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tensorflow-ops",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tensorflow-ops",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.pagers.ListTensorFlowVersionsAsyncPager",
+        "https://docs.cloud.google.com/iam/docs/resources-with-built-in-identities"
+      ]
+    }
+  ]
+}

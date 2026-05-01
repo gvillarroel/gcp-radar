@@ -1,0 +1,238 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.165Z",
+  "source_step08_card": "data/step-08/current/products/policy-intelligence/card.json",
+  "product_name": "Policy Intelligence",
+  "product_slug": "policy-intelligence",
+  "feature_name": "Policy Troubleshooter for service account principal set bindings",
+  "feature_slug": "policy-troubleshooter-for-service-account-principal-set-bindings",
+  "summary": "Policy Troubleshooter can analyze policies that include bindings for service account principal sets.",
+  "extended_definition": "Policy Troubleshooter can analyze policies that include bindings for service account principal sets.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+      "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+      "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+      "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Policy Analyzer for allow policies \\_|\\_ Policy Intelligence \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "source_id": "site-docs-root",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analysis queries To use Policy Analyzer, you create an analysis query specifying one or more of the following fields: Principals: The identities (for example, users, service accounts, groups, and domains) whose access you want to check Access: The permissions and roles that you want to check for Resources: The resources that you want to check for access to (API only) Condition context: The context—for example, time of day—under which you want to check for access Typically, you specify one or two of these fields in the analysis query, then use the query results to get more information about the fields that you didn't specify.",
+          "These queries analyze who has any of the following permissions on the service account: iam.serviceAccounts.actAs iam.serviceAccounts.getAccessToken iam.serviceAccounts.getOpenIdToken iam.serviceAccounts.implicitDelegation iam.serviceAccounts.signBlob iam.serviceAccounts.signJwt Quotas and limits Cloud Asset Inventory enforces the rate of incoming requests, including policy analysis requests, based on the consumer project.",
+          "Policy Analyzer for allow policies doesn't support the following forms of access control: IAM deny policies IAM principal access boundary policies Google Kubernetes Engine role-based access control Cloud Storage access control lists Cloud Storage public access prevention Policy Analyzer query results don't account for unsupported policy types."
+        ]
+      },
+      {
+        "title": "\"Policy Simulator for principal access boundary policies \\_|\\_ Policy Intelligence\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Policy Simulator calculates access changes using the following information: The result of the most recent access attempt The impact of the current principal access boundary policies and bindings The impact of the proposed principal access boundary policies and bindings For access to be gained , all of the following must be true: The most recent access attempt was blocked Access is blocked by the current principal access boundary policies and bindings Access is not blocked by the proposed principal access boundary policies and bindings For access to be revoked , all of the following must be true: The most recent access attempt was not blocked Access is not blocked by the current principal access boundary policies and bindings Access is blocked by the proposed principal access boundary policies and bindings A set of principal access boundary policies and bindings block a principal's access if all of the following are true: principal access boundary policies do affect the principal's access.",
+          "Supported principal types Policy Simulator for principal access boundary policies only reviews access logs for the following types of principals: Google Accounts Service accounts When simulating principal access boundary policies and bindings, Policy Simulator doesn't review access logs for any other principal types.",
+          "When you run a simulation for a principal access boundary policy or policy binding, Policy Simulator does the following: Reviews access logs from the organization that were generated during the replay period in the context of the current principal access boundary policies and bindings and the simulated principal access boundary policy or binding."
+        ]
+      },
+      {
+        "title": "\"View recent usage for service accounts and keys \\_|\\_ Policy Intelligence\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://policyanalyzer.googleapis.com/v1/projects/ PROJECT ID /locations/global/activityTypes/ ACTIVITY TYPE /activities:query?pageSize= PAGE SIZE &pageToken= PAGE TOKEN \" Select-Object -Expand Content The response is similar to the following, which lists recent usage times for a project's service accounts: { \"activities\": [ { \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-1@my-project.iam.gserviceaccount.com\", \"activityType\": \"serviceAccountLastAuthentication\", \"observationPeriod\": { \"startTime\": \"2020-04-20T07:00:00Z\", \"endTime\": \"2021-05-17T07:00:00Z\" }, \"activity\": { \"lastAuthenticatedTime\": \"2021-04-28T07:00:00Z\", \"serviceAccount\": { \"projectNumber\": \"123456789012\", \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-1@my-project.iam.gserviceaccount.com\", \"serviceAccountId\": \"123456789012345678901\" } } }, { \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-2@my-project.iam.gserviceaccount.com\", \"activityType\": \"serviceAccountLastAuthentication\", \"observationPeriod\": { \"startTime\": \"2020-04-20T07:00:00Z\", \"endTime\": \"2021-05-17T07:00:00Z\" }, \"activity\": { \"lastAuthenticatedTime\": \"2021-04-29T07:00:00Z\", \"serviceAccount\": { \"projectNumber\": \"123456789012\", \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-2@my-project.iam.gserviceaccount.com\", \"serviceAccountId\": \"234567890123456789012\" } } } ], \"nextPageToken\": \"AVgRrQV4b5nISN6cGJvTPFJ2v \" } To learn how to understand these results, see Understand activities on this page.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://policyanalyzer.googleapis.com/v1/projects/ PROJECT ID /locations/global/activityTypes/serviceAccountLastAuthentication/activities:query?filter= FILTER \" Select-Object -Expand Content The response describes the most recent usage for the service accounts: { \"activities\": [ { \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-1@my-project.iam.gserviceaccount.com\", \"activityType\": \"serviceAccountLastAuthentication\", \"observationPeriod\": { \"startTime\": \"2020-04-20T07:00:00Z\", \"endTime\": \"2021-05-17T07:00:00Z\" }, \"activity\": { \"lastAuthenticatedTime\": \"2021-04-28T07:00:00Z\", \"serviceAccount\": { \"projectNumber\": \"123456789012\", \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-1@my-project.iam.gserviceaccount.com\", \"serviceAccountId\": \"123456789012345678901\" } } } ] } View recent usage for specific service account keys To find the last date that specific service account keys were used, identify the service account key that you want to view recent usage for, then create a query using that ID.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://policyanalyzer.googleapis.com/v1/projects/ PROJECT ID /locations/global/activityTypes/serviceAccountKeyLastAuthentication/activities:query?filter= FILTER \" Select-Object -Expand Content The response describes the most recent usage for the service account keys: { \"activities\": [ { \"activity\": { \"lastAuthenticatedTime\": \"2021-06-11T07:00:00Z\", \"serviceAccountKey\": { \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-1@my-project.iam.gserviceaccount.com/keys/1c65fca351d6925e629059743428b7af243a728c\", \"projectNumber\": \"123456789012\", \"serviceAccountId\": \"123456789012345678901\" } }, \"activityType\": \"serviceAccountKeyLastAuthentication\", \"fullResourceName\": \"//iam.googleapis.com/projects/my-project/serviceAccounts/service-account-1t@my-project.iam.gserviceaccount.com/keys/1c65fca351d6925e629059743428b7af243a728c\", \"observationPeriod\": { \"endTime\": \"2021-07-06T07:00:00Z\", \"startTime\": \"2020-04-20T07:00:00Z\" } } ] } To learn how to understand these results, see Understand activities on this page."
+        ]
+      },
+      {
+        "title": "\"Overview of role recommendations \\_|\\_ Policy Intelligence \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Therefore, the IAM recommender generates a role recommendation suggesting that you revoke the Editor role and replace it with a combination of two other roles, which removes thousands of excess permissions: Console gcloud { \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/3d4ef3d6-bdf0-4330-975d-c65cb929c44d\" } ], \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"add\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/iam.serviceAccountUser\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"value\" : \"user:my-user@example.com\" }, { \"action\" : \"add\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/storage.objectAdmin\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"value\" : \"user:my-user@example.com\" }, { \"action\" : \"remove\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/editor\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" } ] } ], \"overview\" : { \"addedRoles\" : [ \"roles/iam.serviceAccountUser\" , \"roles/storage.objectAdmin\" ], \"member\" : \"user:my-user@example.com\" , \"minimumObservationPeriodInDays\" : \"0\" , \"removedRole\" : \"roles/editor\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" } }, \"description\" : \"Replace the current role with smaller predefined roles to cover the permissions needed.\" , \"etag\" : \"\\\"0da9a354c2a83d96\\\"\" , \"lastRefreshTime\" : \"2022-06-22T07:00:00Z\" , \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/4637db3d-dba5-45eb-95ac-b4ee4b4cd14e\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 2998 } } }, \"priority\" : \"P2\" , \"recommenderSubtype\" : \"REPLACE ROLE\" , \"stateInfo\" : { \"state\" : \"ACTIVE\" } } REST { \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/4637db3d-dba5-45eb-95ac-b4ee4b4cd14e\" , \"description\" : \"Replace the current role with smaller predefined roles to cover the permissions needed.\" , \"lastRefreshTime\" : \"2022-06-22T07:00:00Z\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 2998 } } }, \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"add\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"value\" : \"user:my-user@example.com\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/iam.serviceAccountOwner\" } }, { \"action\" : \"add\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"value\" : \"user:my-user@example.com\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/storage.objectAdmin\" } }, { \"action\" : \"remove\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/editor\" } } ] } ], \"overview\" : { \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"member\" : \"user:my-user@example.com\" , \"removedRole\" : \"roles/editor\" , \"addedRoles\" : [ \"roles/iam.serviceAccountUser\" , \"roles/storage.objectAdmin\" ], \"minimumObservationPeriodInDays\" : \"0\" } }, \"stateInfo\" : { \"state\" : \"ACTIVE\" }, \"etag\" : \"\\\"0da9a354c2a83d96\\\"\" , \"recommenderSubtype\" : \"REPLACE ROLE\" , \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/3d4ef3d6-bdf0-4330-975d-c65cb929c44d\" } ], \"priority\" : \"P2\" } Create a custom role The user my-user@example.com was granted the Cloud Trace Admin role ( roles/cloudtrace.admin ) on a project.",
+          "Therefore, the IAM recommender generates a role recommendation suggesting that you revoke the Browser role from my-user@example.com : Console gcloud { \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/86c14538-dcfd-4326-afe5-ee8ac921e06a\" } ], \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"remove\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/browser\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" } ] } ], \"overview\" : { \"member\" : \"user:my-user@example.com\" , \"removedRole\" : \"roles/browser\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" } }, \"description\" : \"This role has not been used during the observation window.\" , \"etag\" : \"\\\"9fc3241da8bfab51\\\"\" , \"lastRefreshTime\" : \"2022-05-20T07:00:00Z\" , \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/fe512038-5455-49g1-8f9c-752e31c8c154\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 6 } } }, \"priority\" : \"P4\" , \"recommenderSubtype\" : \"REMOVE ROLE\" , \"stateInfo\" : { \"state\" : \"ACTIVE\" } } REST { \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/fe512038-5455-49g1-8f9c-752e31c8c154\" , \"description\" : \"This role has not been used during the observation window.\" , \"lastRefreshTime\" : \"2022-05-20T07:00:00Z\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 6 } } }, \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"remove\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/browser\" } } ] } ], \"overview\" : { \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"member\" : \"user:my-user@example.com\" , \"removedRole\" : \"roles/browser\" } }, \"stateInfo\" : { \"state\" : \"ACTIVE\" }, \"etag\" : \"\\\"9fc3241da8bfab51\\\"\" , \"recommenderSubtype\" : \"REMOVE ROLE\" , \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/86c14538-dcfd-4326-afe5-ee8ac921e06a\" } ], \"priority\" : \"P4\" } Replace an existing role A service account was granted the Editor role ( roles/editor ) on a project.",
+          "In this example, the resourcemanager.projects.get permission was recommended based on machine learning: { \"name\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/07841f74-02ce-4de8-bbe6-fc4eabb68568\" , \"description\" : \"4 of the permissions in this role binding were used in the past 90 days.\" , \"content\" : { \"role\" : \"roles/editor\" , \"member\" : \"serviceAccount:my-service-account@my-project.iam.gserviceaccount.com\" , \"condition\" : { \"expression\" : \"\" , \"title\" : \"\" , \"description\" : \"\" , \"location\" : \"\" }, \"exercisedPermissions\" : [ { \"permission\" : \"storage.objects.create\" }, { \"permission\" : \"storage.objects.delete\" }, { \"permission\" : \"storage.objects.get\" }, { \"permission\" : \"storage.objects.list\" } ], \"inferredPermissions\" : [ { \"permission\" : \"resourcemanager.projects.get\" } ], \"currentTotalPermissionsCount\" : \"5069\" }, \"lastRefreshTime\" : \"2020-07-12T07:00:00Z\" , \"observationPeriod\" : \"7776000s\" , \"stateInfo\" : { \"state\" : \"ACTIVE\" }, \"category\" : \"SECURITY\" , \"associatedRecommendations\" : [ { \"recommendation\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/b1932220-867d-43d1-bd74-fb95876ab656\" } ], \"targetResources\" : [ \"//cloudresourcemanager.googleapis.com/projects/123456789012\" ], \"insightSubtype\" : \"PERMISSIONS USAGE\" , \"etag\" : \"\\\"d3cdec23cc712bd0\\\"\" , \"severity\" : \"HIGH\" } To learn how to get a policy insight, see one of the following: Review policy insights for projects, folders, and organizations Review policy insights for Cloud Storage buckets Review policy insights for BigQuery datasets What's next Understand best practices for using role recommendations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "activities.full",
+      "cloudresourcemanager.googleapis.com",
+      "cloudtrace.admin",
+      "example.com",
+      "googleapis.com",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountOwner",
+      "iam.serviceAccounts.actAs",
+      "iam.serviceAccounts.getAccessToken",
+      "iam.serviceAccounts.getOpenIdToken",
+      "iam.serviceAccounts.implicitDelegation",
+      "iam.serviceAccounts.signBlob",
+      "iam.serviceAccounts.signJwt",
+      "iam.serviceAccountUser",
+      "policyanalyzer.googleapis.com",
+      "project.iam.gserviceaccount.com",
+      "storage.objectAdmin",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/browser",
+      "roles/cloudtrace.admin",
+      "roles/editor",
+      "roles/iam.serviceAccountOwner",
+      "roles/iam.serviceAccountUser",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/policy-analyzer-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/pab-simulator-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/activity-analyzer-service-account-authentication",
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+      ]
+    }
+  ]
+}

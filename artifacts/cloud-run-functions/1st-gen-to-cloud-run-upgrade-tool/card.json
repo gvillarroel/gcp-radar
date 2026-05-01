@@ -1,0 +1,196 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.636Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "1st gen to Cloud Run upgrade tool",
+  "feature_slug": "1st-gen-to-cloud-run-upgrade-tool",
+  "summary": "Cloud Run functions provides a tool for upgrading 1st gen functions to Cloud Run.",
+  "extended_definition": "Cloud Run functions provides a tool for upgrading 1st gen functions to Cloud Run.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+      "https://docs.cloud.google.com/functions/docs/reference/rest",
+      "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Functions API \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "source_id": "site-docs-reference-2",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v2alpha.projects.locations.functions Methods abortFunctionUpgrade POST /v2alpha/{name}:abortFunctionUpgrade Aborts generation upgrade process for a function with the given name from the specified project. commitFunctionUpgrade POST /v2alpha/{name}:commitFunctionUpgrade Finalizes the upgrade after which function upgrade can not be rolled back. create POST /v2alpha/{parent}/functions Creates a new function. delete DELETE /v2alpha/{name} Deletes a function with the given name from the specified project. detachFunction POST /v2alpha/{name}:detachFunction Detaches 2nd Gen function to Cloud Run function. generateDownloadUrl POST /v2alpha/{name}:generateDownloadUrl Returns a signed URL for downloading deployed function source code. generateUploadUrl POST /v2alpha/{parent}/functions:generateUploadUrl Returns a signed URL for uploading a function source code. get GET /v2alpha/{name} Returns a function with the given name from the requested project. getIamPolicy GET /v2alpha/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v2alpha/{parent}/functions Returns a list of functions that belong to the requested project. patch PATCH /v2alpha/{function.name} Updates existing function. redirectFunctionUpgradeTraffic POST /v2alpha/{name}:redirectFunctionUpgradeTraffic Changes the traffic target of a function from the original 1st Gen function to the 2nd Gen copy. rollbackFunctionUpgradeTraffic POST /v2alpha/{name}:rollbackFunctionUpgradeTraffic Reverts the traffic target of a function from the 2nd Gen copy to the original 1st Gen function. setIamPolicy POST /v2alpha/{resource}:setIamPolicy Sets the access control policy on the specified resource. setupFunctionUpgradeConfig POST /v2alpha/{name}:setupFunctionUpgradeConfig Creates a 2nd Gen copy of the function configuration based on the 1st Gen function with the given name. testIamPermissions POST /v2alpha/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v2beta.projects.locations.functions Methods abortFunctionUpgrade POST /v2beta/{name}:abortFunctionUpgrade Aborts generation upgrade process for a function with the given name from the specified project. commitFunctionUpgrade POST /v2beta/{name}:commitFunctionUpgrade Finalizes the upgrade after which function upgrade can not be rolled back. create POST /v2beta/{parent}/functions Creates a new function. delete DELETE /v2beta/{name} Deletes a function with the given name from the specified project. detachFunction POST /v2beta/{name}:detachFunction Detaches 2nd Gen function to Cloud Run function. generateDownloadUrl POST /v2beta/{name}:generateDownloadUrl Returns a signed URL for downloading deployed function source code. generateUploadUrl POST /v2beta/{parent}/functions:generateUploadUrl Returns a signed URL for uploading a function source code. get GET /v2beta/{name} Returns a function with the given name from the requested project. getIamPolicy GET /v2beta/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v2beta/{parent}/functions Returns a list of functions that belong to the requested project. patch PATCH /v2beta/{function.name} Updates existing function. redirectFunctionUpgradeTraffic POST /v2beta/{name}:redirectFunctionUpgradeTraffic Changes the traffic target of a function from the original 1st Gen function to the 2nd Gen copy. rollbackFunctionUpgradeTraffic POST /v2beta/{name}:rollbackFunctionUpgradeTraffic Reverts the traffic target of a function from the 2nd Gen copy to the original 1st Gen function. setIamPolicy POST /v2beta/{resource}:setIamPolicy Sets the access control policy on the specified resource. setupFunctionUpgradeConfig POST /v2beta/{name}:setupFunctionUpgradeConfig Creates a 2nd Gen copy of the function configuration based on the 1st Gen function with the given name. testIamPermissions POST /v2beta/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v2.projects.locations.functions Methods abortFunctionUpgrade POST /v2/{name}:abortFunctionUpgrade Aborts generation upgrade process for a function with the given name from the specified project. commitFunctionUpgrade POST /v2/{name}:commitFunctionUpgrade Finalizes the upgrade after which function upgrade can not be rolled back. create POST /v2/{parent}/functions Creates a new function. delete DELETE /v2/{name} Deletes a function with the given name from the specified project. detachFunction POST /v2/{name}:detachFunction Detaches 2nd Gen function to Cloud Run function. generateDownloadUrl POST /v2/{name}:generateDownloadUrl Returns a signed URL for downloading deployed function source code. generateUploadUrl POST /v2/{parent}/functions:generateUploadUrl Returns a signed URL for uploading a function source code. get GET /v2/{name} Returns a function with the given name from the requested project. getIamPolicy GET /v2/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v2/{parent}/functions Returns a list of functions that belong to the requested project. patch PATCH /v2/{function.name} Updates existing function. redirectFunctionUpgradeTraffic POST /v2/{name}:redirectFunctionUpgradeTraffic Changes the traffic target of a function from the original 1st Gen function to the 2nd Gen copy. rollbackFunctionUpgradeTraffic POST /v2/{name}:rollbackFunctionUpgradeTraffic Reverts the traffic target of a function from the 2nd Gen copy to the original 1st Gen function. setIamPolicy POST /v2/{resource}:setIamPolicy Sets the access control policy on the specified resource. setupFunctionUpgradeConfig POST /v2/{name}:setupFunctionUpgradeConfig Creates a 2nd Gen copy of the function configuration based on the 1st Gen function with the given name. testIamPermissions POST /v2/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      },
+      {
+        "title": "Functions audit logging \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.functions.v1.CloudFunctionsService.GenerateDownloadUrl google.cloud.functions.v1.CloudFunctionsService.GetFunction GetIamPolicy google.cloud.functions.v1.CloudFunctionsService.ListFunctions google.cloud.functions.v2.FunctionService.GenerateDownloadUrl google.cloud.functions.v2.FunctionService.GetFunction google.cloud.functions.v2.FunctionService.ListFunctions google.cloud.functions.v2alpha.FunctionService.GenerateDownloadUrl google.cloud.functions.v2alpha.FunctionService.GetFunction google.cloud.functions.v2alpha.FunctionService.ListFunctions google.cloud.functions.v2beta.FunctionService.GenerateDownloadUrl google.cloud.functions.v2beta.FunctionService.GetFunction google.cloud.functions.v2beta.FunctionService.ListFunctions google.cloud.location.Locations.ListLocations GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.cloud.functions.v1.CloudFunctionsService.CreateFunction (LRO) google.cloud.functions.v1.CloudFunctionsService.DeleteFunction (LRO) google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl SetIamPolicy google.cloud.functions.v1.CloudFunctionsService.UpdateFunction (LRO) google.cloud.functions.v2.FunctionService.AbortFunctionUpgrade (LRO) google.cloud.functions.v2.FunctionService.CommitFunctionUpgrade (LRO) google.cloud.functions.v2.FunctionService.CreateFunction (LRO) google.cloud.functions.v2.FunctionService.DeleteFunction (LRO) google.cloud.functions.v2.FunctionService.DetachFunction (LRO) google.cloud.functions.v2.FunctionService.GenerateUploadUrl google.cloud.functions.v2.FunctionService.RedirectFunctionUpgradeTraffic (LRO) google.cloud.functions.v2.FunctionService.RollbackFunctionUpgradeTraffic (LRO) google.cloud.functions.v2.FunctionService.SetupFunctionUpgradeConfig (LRO) google.cloud.functions.v2.FunctionService.UpdateFunction (LRO) google.cloud.functions.v2alpha.FunctionService.AbortFunctionUpgrade (LRO) google.cloud.functions.v2alpha.FunctionService.CommitFunctionUpgrade (LRO) google.cloud.functions.v2alpha.FunctionService.CreateFunction (LRO) google.cloud.functions.v2alpha.FunctionService.DeleteFunction (LRO) google.cloud.functions.v2alpha.FunctionService.DetachFunction (LRO) google.cloud.functions.v2alpha.FunctionService.GenerateUploadUrl google.cloud.functions.v2alpha.FunctionService.RedirectFunctionUpgradeTraffic (LRO) google.cloud.functions.v2alpha.FunctionService.RollbackFunctionUpgradeTraffic (LRO) google.cloud.functions.v2alpha.FunctionService.SetupFunctionUpgradeConfig (LRO) google.cloud.functions.v2alpha.FunctionService.UpdateFunction (LRO) google.cloud.functions.v2beta.FunctionService.AbortFunctionUpgrade (LRO) google.cloud.functions.v2beta.FunctionService.CommitFunctionUpgrade (LRO) google.cloud.functions.v2beta.FunctionService.CreateFunction (LRO) google.cloud.functions.v2beta.FunctionService.DeleteFunction (LRO) google.cloud.functions.v2beta.FunctionService.DetachFunction (LRO) google.cloud.functions.v2beta.FunctionService.GenerateUploadUrl google.cloud.functions.v2beta.FunctionService.RedirectFunctionUpgradeTraffic (LRO) google.cloud.functions.v2beta.FunctionService.RollbackFunctionUpgradeTraffic (LRO) google.cloud.functions.v2beta.FunctionService.SetupFunctionUpgradeConfig (LRO) google.cloud.functions.v2beta.FunctionService.UpdateFunction (LRO) SetIamPolicy DATA READ google.cloud.functions.v1.CloudFunctionsService.CallFunction API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud Run functions. google.cloud.functions.v1.CloudFunctionsService The following audit logs are associated with methods belonging to google.cloud.functions.v1.CloudFunctionsService .",
+          "AbortFunctionUpgrade Method : google.cloud.functions.v2alpha.FunctionService.AbortFunctionUpgrade Audit log type : Admin activity Permissions : cloudfunctions.functions.generationUpgrade - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2alpha.FunctionService.AbortFunctionUpgrade\" CommitFunctionUpgrade Method : google.cloud.functions.v2alpha.FunctionService.CommitFunctionUpgrade Audit log type : Admin activity Permissions : cloudfunctions.functions.generationUpgrade - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2alpha.FunctionService.CommitFunctionUpgrade\" CreateFunction Method : google.cloud.functions.v2alpha.FunctionService.CreateFunction Audit log type : Admin activity Permissions : cloudfunctions.functions.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2alpha.FunctionService.CreateFunction\" DeleteFunction Method : google.cloud.functions.v2alpha.FunctionService.DeleteFunction Audit log type : Admin activity Permissions : cloudfunctions.functions.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2alpha.FunctionService.DeleteFunction\" DetachFunction Method : google.cloud.functions.v2alpha.FunctionService.DetachFunction Audit log type : Admin activity Permissions : cloudfunctions.functions.generationUpgrade - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2alpha.FunctionService.DetachFunction\" GenerateDownloadUrl Method : google.cloud.functions.v2alpha.FunctionService.GenerateDownloadUrl Audit log type : Data access Permissions : cloudfunctions.functions.sourceCodeGet - ADMIN READ Method is a long-running or streaming operation : No.",
+          "AbortFunctionUpgrade Method : google.cloud.functions.v2beta.FunctionService.AbortFunctionUpgrade Audit log type : Admin activity Permissions : cloudfunctions.functions.generationUpgrade - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2beta.FunctionService.AbortFunctionUpgrade\" CommitFunctionUpgrade Method : google.cloud.functions.v2beta.FunctionService.CommitFunctionUpgrade Audit log type : Admin activity Permissions : cloudfunctions.functions.generationUpgrade - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2beta.FunctionService.CommitFunctionUpgrade\" CreateFunction Method : google.cloud.functions.v2beta.FunctionService.CreateFunction Audit log type : Admin activity Permissions : cloudfunctions.functions.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2beta.FunctionService.CreateFunction\" DeleteFunction Method : google.cloud.functions.v2beta.FunctionService.DeleteFunction Audit log type : Admin activity Permissions : cloudfunctions.functions.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2beta.FunctionService.DeleteFunction\" DetachFunction Method : google.cloud.functions.v2beta.FunctionService.DetachFunction Audit log type : Admin activity Permissions : cloudfunctions.functions.generationUpgrade - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.functions.v2beta.FunctionService.DetachFunction\" GenerateDownloadUrl Method : google.cloud.functions.v2beta.FunctionService.GenerateDownloadUrl Audit log type : Data access Permissions : cloudfunctions.functions.sourceCodeGet - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "\"Configure Direct VPC egress for 2nd gen functions \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "source_id": "site-iam-reference",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "BACKEND URL ; if ( ! backendUrl ) { console . error ( 'BACKEND URL environment variable not set.' ); res . status ( 500 ). send ( 'BACKEND URL not configured.' ); return ; } try { const metadataServerURL = 'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity?audience=' ; const tokenUrl = metadataServerURL + backendUrl ; const tokenResponse = await axios . get ( tokenUrl , { headers : { 'Metadata-Flavor' : 'Google' , }, }); const token = tokenResponse . data ; const response = await axios . get ( backendUrl , { headers : { Authorization : bearer ${ token } , }, }); res . status ( 200 ). send ( Response from backend: ${ response . data } ); } catch ( error ) { console . error ( Error calling backend service: ${ error . message } ); res . status ( 500 ). send ( Error calling backend: ${ error . message } ); } }; functions . http ( 'callVPCService' , callVPCService ); Deploy the function with Direct VPC egress configured to route all traffic to your default VPC network: gcloud functions deploy my-2ndgen-function \\ --source . \\ --runtime nodejs20 \\ --trigger-http \\ --entry-point callVPCService \\ --network = default \\ --subnet = default \\ --direct-vpc-egress = all \\ --region = REGION \\ --allow-unauthenticated \\ --set-env-vars BACKEND URL = BACKEND URL Replace the following: REGION : the region where you deployed the backend service.",
+          "Configure Direct VPC egress Configure Direct VPC egress for new or existing 2nd gen functions. gcloud To configure Direct VPC egress when you deploy a function, use the gcloud functions deploy command with flags for your network settings. gcloud functions deploy FUNCTION NAME \\ --source . \\ --runtime RUNTIME \\ --trigger-http \\ --region REGION \\ --network = NETWORK \\ --subnet = SUBNET \\ --network-tags = NETWORK TAG NAMES \\ --direct-vpc-egress = EGRESS SETTING Replace the following: FUNCTION NAME : the name of your function.",
+          "Create and deploy the function Create a new directory for the function and change into it: cd .. mkdir dvpc-function cd dvpc-function Create a package.json file with the following content: { \"name\" : \"sample-http\" , \"version\" : \"0.0.1\" , \"dependencies\" : { \"axios\" : \"0.21.1\" , \"@google-cloud/functions-framework\" : \"^3.0.0\" } } Create an index.js file with the following content."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.functions.create",
+      "cloudfunctions.functions.delete",
+      "cloudfunctions.functions.generationUpgrade",
+      "cloudfunctions.functions.sourceCodeGet",
+      "cloudfunctions.googleapis.com",
+      "config.direct",
+      "function.name",
+      "index.js",
+      "interface.network",
+      "interface.subnetwork",
+      "metadata.google.internal",
+      "package.json",
+      "projects.locations.functions",
+      "projects.locations.functions.generateDownloadUrl",
+      "v2.projects.locations.functions",
+      "v2alpha.projects.locations.functions",
+      "v2beta.projects.locations.functions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest",
+        "https://docs.cloud.google.com/functions/docs/monitoring/audit-logging",
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.431Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Cloud Storage maximum row size",
+  "feature_slug": "cloud-storage-maximum-row-size",
+  "summary": "Datastream supports row sizes up to 100 MB when streaming data to Cloud Storage.",
+  "extended_definition": "Datastream supports row sizes up to 100 MB when streaming data to Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/faq",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+      "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "FAQ \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's the maximum row size that Datastream supports when streaming data into Cloud Storage?",
+          "What's the maximum row size that Datastream supports when streaming data into BigQuery?",
+          "The maximum row size that Datastream supports is 100 MB."
+        ]
+      },
+      {
+        "title": "Using Datastream APIs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "In addition to Avro, Datastream now supports the JSON output format for files written to Cloud Storage.",
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } After a few seconds, retrieve information about the stream to confirm that it's running again. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from PAUSED back to RUNNING . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"RUNNING\" , \"backfillAll\" : {} } Now that you created and managed a stream, confirmed that there are no errors associated with the stream, and that the state of the stream is RUNNING , you're ready to verify that it can transfer data from the source database into a folder in the Cloud Storage destination bucket.",
+          "At the prompt, enter the following command: curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the value of the fileRotationMb parameter for the Cloud Storage connection profile is now 100 . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"CREATED\" , \"backfillAll\" : {} } Start the stream."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "source_id": "site-api-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "GcsDestinationConfig JSON representation { \"path\" : string , \"fileRotationMb\" : integer , \"fileRotationInterval\" : string , // Union field file format can be only one of the following: \"avroFileFormat\" : { object ( AvroFileFormat ) } , \"jsonFileFormat\" : { object ( JsonFileFormat ) } // End of list of possible types for union field file format . } Fields path string Path inside the Cloud Storage bucket to write data to. fileRotationMb integer The maximum file size to be saved in the bucket. fileRotationInterval string ( Duration format) The maximum duration for which new events are added before a file is closed and a new file is created.",
+          "For example: { parent: \"projects/my-project/locations/us-central1\" create time after: 2025-10-02T10:15:33Z create time before: 2025-10-03T00:00:00Z display name: bookstore page size: 100 running: true } will return up to 100 running streams in projects/my-project/locations/us-central1 that were created on or after 2025-10-02T10:15:33 UTC and before 2025-10-03T00:00:00 UTC, and have \"bookstore\" in their display name.",
+          "Stream JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"destinationConfig\" : { object ( DestinationConfig ) } , \"state\" : enum ( State ) , \"errors\" : [ { object ( Error ) } ] , \"lastRecoveryTime\" : string , \"ruleSets\" : [ { object ( RuleSet ) } ] , // Union field backfill strategy can be only one of the following: \"backfillAll\" : { object ( BackfillAllStrategy ) } , \"backfillNone\" : { object ( BackfillNoneStrategy ) } // End of list of possible types for union field backfill strategy . // Union field customer managed encryption key can be only one of the // following: \"customerManagedEncryptionKey\" : string // End of list of possible types for union field // customer managed encryption key . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Datastream only supports the Append-only write mode when streaming to BigLake Iceberg tables.",
+          "Datastream supports the Parquet file format and the Iceberg table format.",
+          "Datastream supports two output formats: Avro and JSON."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "datastream.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    }
+  ]
+}

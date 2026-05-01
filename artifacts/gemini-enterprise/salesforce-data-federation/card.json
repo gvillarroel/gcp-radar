@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.491Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Salesforce data federation",
+  "feature_slug": "salesforce-data-federation",
+  "summary": "Gemini Enterprise can connect Salesforce data stores using data federation.",
+  "extended_definition": "Gemini Enterprise can connect Salesforce data stores using data federation.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About apps and data stores \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: You can't connect website data stores to your Gemini Enterprise search and assistant apps.",
+          "Third-party data Structured data Unstructured data Structured data for third-party data stores The following third-party data source connectors are available in Preview with allowlist: Confluence Jira Salesforce Sharepoint Online Slack Data from these third parties is considered structured data.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback About apps and data stores Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Connect a third-party data source \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "source_id": "site-docs-root-2",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you connect a third-party data source, Gemini Enterprise creates a data store and associates entity data stores with it for each specified entity.",
+          "Connect Box with data ingestion Connect Confluence Data Center On-premises with data ingestion Connect Jira Data Center On-premises with data ingestion Connect Salesforce with data ingestion Connect Slack with data federation Supported actions Expand the data store name in the following list to reveal the available actions for each.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Connect a third-party data source Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Configure identity provider \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if your organization uses both email and principal name as user identifiers across different applications, and the principal name is set as the preferred username in your third-party identity provider, you can map it to Gemini Enterprise using the Workforce Identity Federation attribute mapping (for example, attribute.as user identifier 1=assertion.preferred username ).",
+          "Third-party identity provider When you only connect Gemini Enterprise to third-party data sources, and you are already using a third-party identity provider that supports OIDC or SAML 2.0, such as Microsoft Entra ID, Active Directory Federation Services (AD FS), Okta, and others, you must use Workforce Identity Federation.",
+          "Configure Workforce Identity Federation For details on configuring Workforce Identity Federation with your third-party identity connector, see the following resources: Identity provider Resources Entra ID Note: When using data ingestion to connect to Microsoft data sources like SharePoint, OneDrive, or Outlook, you must use Microsoft Entra ID groups to control document access."
+        ]
+      },
+      {
+        "title": "\"Access Gemini Enterprise connector error logs with Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "To view the error logs of your data stores that connect to Gemini Enterprise using data federation, follow these steps: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "To view the error logs of your data stores that connect to Gemini Enterprise using data ingestion, follow these steps: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Access federated connector error logs Key Term: In Gemini Enterprise, the term app can be used interchangeably with the term engine in the context of APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.altostrat.com",
+      "altostrat.com",
+      "assertion.preferred",
+      "attribute.as",
+      "attributes.as"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cloud-logging"
+      ]
+    }
+  ]
+}

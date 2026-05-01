@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.770Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Datastore empty list properties",
+  "feature_slug": "datastore-empty-list-properties",
+  "summary": "Datastore properties can represent an empty list value.",
+  "extended_definition": "Datastore properties can represent an empty list value.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your application interacts with Datastore or Task Queues operations, set up monitoring to monitor performance and behavior impacts after enabling this feature. <system-properties> <property name=\"appengine.use.httpconnector\" value=\"true\"/> </system-properties> Optional.",
+          "The appengine-web.xml file can define system properties and environment variables that are set when the application is running. <system-properties> <property name=\"myapp.maximum-message-length\" value=\"140\" /> <property name=\"myapp.notify-every-n-signups\" value=\"1000\" /> <property name=\"myapp.notify-url\" value=\"http://www.example.com/signupnotify\" /> </system-properties> <env-variables> <env-var name=\"DEFAULT ENCODING\" value=\"UTF-8\" /> </env-variables> Optional.",
+          "Specify the timeout in seconds: < system - properties > < property name = \"appengine.api.urlfetch.defaultDeadline\" value = \"10\" / > < / system - properties > Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Configure Datastore indexes with index.yaml \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The kind of the entity for the query. properties A list of properties to include as columns of the index, in the order to be sorted: properties used in equality filters first, followed by the property used in inequality filters, then the sort orders and their directions.",
+          "Each element in this list has the following elements: name The datastore name of the property. direction The direction to sort, either asc for ascending or desc for descending.",
+          "Each element in the list represents an index for the application."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "App Engine resets all resource measurements at the beginning of each calendar day (except for Stored Data, which always represents the amount of datastore storage in use).",
+          "Since the datastore is schemaless, the name of each property must be stored with the property value for any given entity.",
+          "The Cloud Quotas system does the following: Monitors your consumption of Google Cloud products and services Restricts your consumption of those resources Provides a way to request changes to the quota value and automate quota adjustments In most cases, when you attempt to consume more of a resource than its quota allows, the system blocks access to the resource, and the task that you're trying to perform fails."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.api.urlfetch.defaultDeadline",
+      "appengine.use.EE11",
+      "appengine.use.httpconnector",
+      "index.yaml",
+      "myapp.maximum",
+      "myapp.notify",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/quotas"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/quotas"
+      ]
+    }
+  ]
+}

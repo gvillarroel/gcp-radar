@@ -1,0 +1,206 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.846Z",
+  "source_step08_card": "data/step-08/current/products/identity-and-access-management/card.json",
+  "product_name": "Identity and Access Management",
+  "product_slug": "identity-and-access-management",
+  "feature_name": "Managed organization policy constraint for default service accounts",
+  "feature_slug": "managed-organization-policy-constraint-for-default-service-accounts",
+  "summary": "The managed organization policy constraint prevents default service accounts from being granted the Editor or Owner roles.",
+  "extended_definition": "The managed organization policy constraint prevents default service accounts from being granted the Editor or Owner roles.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+      "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+      "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+      "https://docs.cloud.google.com/iam/docs/service-account-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using service accounts securely \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "source_id": "site-docs-root-2",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prevent default service accounts from automatically being granted the Editor role, enable the Disable Automatic IAM Grants for Default Service Accounts ( constraints/iam.automaticIamGrantsForDefaultServiceAccounts ) constraint to your organization.",
+          "Manage service accounts as resources Accounts for individual users are typically managed according to an organization's joiner-mover-leaver processes: When an employee joins, a new user account is created for them.",
+          "Note : If your organization was created on or after May 3, 2024, these constraints are enforced by default."
+        ]
+      },
+      {
+        "title": "\"Best practices for managing service account keys \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "source_id": "site-docs-root-2",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prevent unnecessary usage of service account keys, use organization policy constraints : At the root of your organization's resource hierarchy , apply the Disable service account key creation and Disable service account key upload constraints to establish a default where service account keys are disallowed.",
+          "If you need to use the Editor role, disable service account key upload and key creation by using organization policy constraints to help ensure that the Editor role can't be abused for privilege escalation.",
+          "Use organization policy constraints to automatically disable leaked keys Even if you follow all of the best practices for service account keys, it's possible for your service account keys to be leaked."
+        ]
+      },
+      {
+        "title": "\"Attach service accounts to resources \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically, in the project where your service accounts are located, you shouldn't make any of these changes: Don't update the project's organization policies to enforce the iam.disableCrossProjectServiceAccountUsage boolean constraint.",
+          "First, read the allow policy for the user-managed service account: The projects.serviceAccounts.getIamPolicy method returns the allow policy for the service account.",
+          "You should receive a JSON response similar to the following: { \"version\": 1, \"etag\": \"BwWl3KCTUMY=\", \"bindings\": [ { \"role\": \"roles/iam.serviceAccountUser\", \"members\": [ \"serviceAccount:my-service-account@my-project.iam.gserviceaccount.com\" ] } ] } Next, modify the allow policy to grant the Service Account Token Creator role to the service agent. { \"version\" : 1 , \"etag\" : \"BwWl3KCTUMY=\" , \"bindings\" : [ { \"role\" : \"roles/iam.serviceAccountTokenCreator\" , \"members\" : [ \"serviceAccount: SERVICE AGENT EMAIL \" ] }, { \"role\" : \"roles/iam.serviceAccountUser\" , \"members\" : [ \"serviceAccount: SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com\" ] } ] } Replace the following: SERVICE AGENT EMAIL : The email address for the service agent SERVICE ACCOUNT NAME : The name of the user-managed service account."
+        ]
+      },
+      {
+        "title": "\"Service accounts overview \\_|\\_ Identity and Access Management (IAM) \\_\\",
+        "url": "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you enforce this constraint, consider the following limitations: If you enforce this constraint in a project, or in all projects within an organization, then some Google Cloud services cannot create default service accounts .",
+          "You can prevent the creation of service accounts by enforcing the constraints/iam.disableServiceAccountCreation organization policy constraint in an organization, project, or folder.",
+          "This approach puts all of the service accounts for your organization in a small number of projects, which can make the service accounts easier to manage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.disableCrossProjectServiceAccountUsage",
+      "iam.disableServiceAccountCreation",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountTokenCreator",
+      "iam.serviceAccountUser",
+      "project.iam.gserviceaccount.com",
+      "projects.serviceAccounts.getIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "https://docs.cloud.google.com/iam/docs/attach-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview"
+      ]
+    }
+  ]
+}

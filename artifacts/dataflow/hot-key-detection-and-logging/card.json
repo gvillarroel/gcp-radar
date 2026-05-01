@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Hot key detection and logging",
+  "feature_slug": "hot-key-detection-and-logging",
+  "summary": "Hot key detection and logging identifies and records hot keys in streaming pipelines for debugging; deprecated on 2022-03-31.",
+  "extended_definition": "Hot key detection and logging identifies and records hot keys in streaming pipelines for debugging; deprecated on 2022-03-31.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-31",
+    "deprecation_date": "2022-03-31",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A hot key ... was detected Note: Hot key detection and logging is disabled for streaming pipelines as of March 2022.",
+          "For example, for Apache Beam SDK for Java, adjust numStreamingKeys to match the maximum number of workers and consider increasing insertBundleParallelism to configure BigQuery connector to write to BigQuery using more parallel threads.",
+          "If your workflow can't tolerate duplicate records, use the exactly-once streaming mode."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Job metadata includes the following: User-supplied data, such as Job Names, Job Parameter values, and Pipeline Graph System-generated data, such as Job IDs and IP addresses of workers Encryption of pipeline state locations The following storage locations are protected with Cloud KMS keys: Persistent Disks attached to Dataflow workers and used for Persistent Disk-based shuffle and streaming state storage.",
+          "Encryption of pipeline state artifacts Data that a Dataflow pipeline reads from user-specified data sources is encrypted, except for the data keys that you specify for key-based transforms in streaming jobs.",
+          "For streaming jobs created before March 7, 2024, data keys used in key-based operations, such as windowing, grouping, and joining, are not protected by CMEK encryption."
+        ]
+      },
+      {
+        "title": "\"Set the pipeline streaming mode \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Choose at-least-once streaming mode if your workload can tolerate duplicated records and might benefit from reduced cost or latency.",
+          "The streaming mode affects how Streaming Engine processes records, but does not change the semantics of I/O connectors.",
+          "REST Use the additionalExperiments field in the FlexTemplateRuntimeEnvironment (Flex templates) or RuntimeEnvironment (classic templates) object. { addi t io nal Experime nts : [ \"streaming mode at least once\" ] ... } Custom templates If you create a custom template that supports at-least-once processing, add the following top-level fields to the template metadata file: { \"streaming\" : true , \"supportsAtLeastOnce\" : true , \"supportsExactlyOnce\" : true , \"defaultStreamingMode\" : \"AT LEAST ONCE\" } These metadata fields enable users to select the streaming mode when deploying the template in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+      ]
+    }
+  ]
+}

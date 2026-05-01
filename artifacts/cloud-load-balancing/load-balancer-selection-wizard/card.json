@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.883Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Load balancer selection wizard",
+  "feature_slug": "load-balancer-selection-wizard",
+  "summary": "The Google Cloud Console provides a guided wizard to help users choose the appropriate load balancer type for a use case.",
+  "extended_definition": "The Google Cloud Console provides a guided wizard to help users choose the appropriate load balancer type for a use case.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table specifies the type of URL map required by internal Application Load Balancers in each mode: Load balancer mode URL map type Cross-region internal Application Load Balancer urlMaps Regional internal Application Load Balancer regionUrlMaps Backend service A backend service provides configuration information to the load balancer so that it can direct requests to its backends—for example, Compute Engine instance groups or network endpoint groups (NEGs).",
+          "Session affinity Session affinity, configured on the backend service of Application Load Balancers, provides a best-effort attempt to send requests from a particular client to the same backend as long as the number of healthy backend instances or endpoints remains constant, and as long as the previously selected backend instance or endpoint is not at capacity.",
+          "To configure the backend service timeout, use one of the following methods: Console Modify the Timeout field of the load balancer's backend service. gcloud Use the gcloud compute backend-services update command to modify the --timeout parameter of the backend service resource."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load balancer mode SSL policies supported Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Backend services A backend service provides configuration information to the load balancer so that it can direct requests to its backends—for example, Compute Engine instance groups or network endpoint groups (NEGs).",
+          "When you create a regional external Application Load Balancer in Premium Tier using the Google Cloud console, only regions supporting Standard Tier are available in the Google Cloud console.",
+          "Console: HTTPS Note: Setting the HTTP/3 negotiation isn't currently supported on the target proxies page and must be configured by editing the load balancer configuration."
+        ]
+      },
+      {
+        "title": "\"Request routing to a multi-region classic Application Load Balancer \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the dialog, type the PROJECT ID , and then click Shut down to delete the project. gcloud Run the following command, replacing PROJECT ID with your project ID: gcloud projects delete PROJECT ID Deleting individual resources Console Deleting the load balancer In the Google Cloud console, go to the Load balancing page.",
+          "Overview This guide provides instructions for creating a load balancer that directs traffic based on the path in the request URL and balances traffic across multiple regions.",
+          "Record the IPv4 and IPv6 addresses of your load balancer: In the Google Cloud console, go to the External IP addresses page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

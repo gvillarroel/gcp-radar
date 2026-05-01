@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow SQL Java aggregate UDFs",
+  "feature_slug": "dataflow-sql-java-aggregate-udfs",
+  "summary": "Dataflow SQL Java aggregate UDFs let you define aggregate user-defined functions in Java.",
+  "extended_definition": "Dataflow SQL Java aggregate UDFs let you define aggregate user-defined functions in Java.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+      "https://docs.cloud.google.com/dataflow/docs/overview",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.dataflow.v1beta3 (0.92.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3",
+        "source_id": "site-java-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Java Client libraries Send feedback Package com.google.dataflow.v1beta3 (0.92.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Sdk Harness Container Image Defines an SDK harness container for executing Dataflow pipelines. com. google. dataflow. v1beta3.",
+          "Data Sampling Behavior The following enum defines what to sample for a running job. com. google. dataflow. v1beta3."
+        ]
+      },
+      {
+        "title": "\"BigQuery to Elasticsearch template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, gs://my-bucket/my-udfs/my file.js . javascriptTextTransformFunctionName : The name of the JavaScript user-defined function (UDF) to use.",
+          "For sample JavaScript UDFs, see UDF Examples ( https://github.com/GoogleCloudPlatform/DataflowTemplates#udf-examples ).",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.v2.elasticsearch.templates ; import com.google.cloud.teleport.metadata.MultiTemplate ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.elasticsearch.options.BigQueryToElasticsearchOptions ; import com.google.cloud.teleport.v2.elasticsearch.transforms.WriteToElasticsearch ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters.ReadBigQueryTableRows ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters.TableRowToJsonFn ; import com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer ; import com.google.common.base.Strings ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.values.PCollection ; / The {@link BigQueryToElasticsearch} pipeline exports data from a BigQuery table to Elasticsearch. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/googlecloud-to-elasticsearch/README BigQuery to Elasticsearch.md\">README</a> for instructions on how to use or modify this template. / @MultiTemplate ({ @Template ( name = \"BigQuery to Elasticsearch\" , category = TemplateCategory ."
+        ]
+      },
+      {
+        "title": "Dataflow overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Some templates support user-defined functions (UDFs) written in JavaScript.",
+          "During this stage, Dataflow might transform or aggregate the data.",
+          "The following diagram shows a typical ETL and BI solution using Dataflow and other Google Cloud services: This diagram shows the following stages: Pub/Sub ingests data from an external system."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.teleport.metadata.MultiTemplate",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.elasticsearch.options.BigQueryToElasticsearchOptions",
+      "com.google.cloud.teleport.v2.elasticsearch.templates",
+      "com.google.cloud.teleport.v2.elasticsearch.transforms.WriteToElasticsearch",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters.ReadBigQueryTableRows",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters.TableRowToJsonFn",
+      "com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer",
+      "com.google.common.base.Strings",
+      "com.google.dataflow.v1beta3",
+      "file.js",
+      "github.com",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.beam.sdk.values.PCollection"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3",
+        "https://docs.cloud.google.com/dataflow/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3",
+        "https://docs.cloud.google.com/dataflow/docs/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3",
+        "https://docs.cloud.google.com/dataflow/docs/overview"
+      ]
+    }
+  ]
+}

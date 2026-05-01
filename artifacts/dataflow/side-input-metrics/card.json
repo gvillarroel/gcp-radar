@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Side input metrics",
+  "feature_slug": "side-input-metrics",
+  "summary": "The Dataflow monitoring interface shows side input metrics for pipelines.",
+  "extended_definition": "The Dataflow monitoring interface shows side input metrics for pipelines.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring",
+      "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot and debug Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your job fails the validation process, an error message appears in the Dataflow monitoring interface, as well as in your console or terminal window if you are using blocking execution.",
+          "Check your pipeline's status You can detect any errors in your pipeline runs by using the Dataflow monitoring interface .",
+          "Exceptions in user code (for example, your DoFn instances) are reported in the Dataflow monitoring interface ."
+        ]
+      },
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exceptions in user code, for example, your DoFn instances, are reported in the Dataflow monitoring interface .",
+          "To view hot keys in the Dataflow monitoring interface, see Troubleshoot stragglers in batch jobs .",
+          "This issue typically affects pipelines using Pub/Sub as both main and side inputs."
+        ]
+      },
+      {
+        "title": "Dataflow project monitoring dashboard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dataflow web-based monitoring interface includes a dashboard that monitors your Dataflow jobs at the project level.",
+          "For an example of adding a custom metrics chart to the dashboard, see Customize the Dataflow monitoring dashboard .",
+          "The dashboard uses Cloud Monitoring to access Dataflow job metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.dataflow.v1beta3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.372Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Scheduled backups",
+  "feature_slug": "scheduled-backups",
+  "summary": "Scheduled backups automatically create backups on a schedule; Scheduled backups automatically create backups on a schedule.",
+  "extended_definition": "Scheduled backups automatically create backups on a schedule; Scheduled backups automatically create backups on a schedule.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/backups",
+      "https://docs.cloud.google.com/datastore/docs/cmek",
+      "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+      "https://docs.cloud.google.com/datastore/docs/tools/indexconfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Back up and restore data \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/backups",
+        "source_id": "site-iam-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to manage backups and backup schedules, ask your administrator to grant you one or more of the following Identity and Access Management roles: roles/datastore.owner : Full access to the Firestore database roles/datastore.backupsAdmin : Read and write access to backups roles/datastore.backupsViewer : Read access to backups roles/datastore.backupSchedulesAdmin : Read and write access to backup schedules roles/datastore.backupSchedulesViewer : Read access to backup schedules roles/datastore.restoreAdmin : Permissions to initiate restore operations Create and manage backup schedules The following examples demonstrate how to set up a backup schedule.",
+          "Select the Weekly checkbox, select a backup day, set the retention period, and then click Save . gcloud To create a weekly backup schedule, set the --recurrence flag to weekly : gcloud firestore backups schedules create \\ --database=' DATABASE ID ' \\ --recurrence=weekly \\ --retention= RETENTION PERIOD \\ --day-of-week= DAY Replace the following: DATABASE ID : The ID of the database to back up.",
+          "To create a daily backup schedule, set the --recurrence flag to daily : gcloud firestore backups schedules create \\ --database=' DATABASE ID ' \\ --recurrence=daily \\ --retention= RETENTION PERIOD Replace the following: DATABASE ID : The ID of the database to back up."
+        ]
+      },
+      {
+        "title": "Composite Index Configuration \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, a recently completed composite index build shows the following information: { \"operations\": [ { \"name\": \"projects/ project-id /operations/S01vcFVpSmdBQ0lDDCoDIGRiNTdiZDQNmE4YS0yMTVmNWUzZSQadGx1YWZlZAcSMXRzYWVzdS1yZXhlZG5pLW5pbWRhFQpWEg\", \"done\": true, \"metadata\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.IndexOperationMetadata\", \"common\": { \"endTime\": \"2020-06-23T16:55:29.923562Z\", \"operationType\": \"CREATE INDEX\", \"startTime\": \"2020-06-23T16:55:10Z\", \"state\": \"SUCCESSFUL\" }, \"indexId\": \"CICAJiUpoMK\", \"progressEntities\": { \"workCompleted\": \"2193027\", \"workEstimated\": \"2198182\" } }, \"response\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.Index\", \"ancestor\": \"NONE\", \"indexId\": \"CICAJiUpoMK\", \"kind\": \"Task\", \"projectId\": \" project-id \", \"properties\": [ { \"direction\": \"ASCENDING\", \"name\": \"priority\" }, { \"direction\": \"ASCENDING\", \"name\": \"done\" }, { \"direction\": \"DESCENDING\", \"name\": \"created\" } ], \"state\": \"READY\" } }, ] } Describing a single operation Instead of listing all long-running operations, you can list the details of a single operation: gcloud Use the operations describe command to show the status of a composite index build. gcloud datastore operations describe operation-name rest Before using any of the request data, make the following replacements: project-id : your project ID HTTP method and URL: GET https://datastore.googleapis.com/v1/projects/ project-id /operations To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Operations are listed for a few days after completion: gcloud gcloud datastore operations list rest Before using any of the request data, make the following replacements: project-id : your project ID HTTP method and URL: GET https://datastore.googleapis.com/v1/projects/ project-id /operations To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "For example, here is the progress status of a composite index build: { \"operations\": [ { \"name\": \"projects/ project-id /operations/AyAyMDBiM2U5NTgwZDAtZGIyYi0zYjc0LTIzYWEtZjg1ZGdWFmZWQHEjF0c2Flc3UtcmV4ZWRuaS1uaW1kYRUKSBI\", \"metadata\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.IndexOperationMetadata\", \"common\": { \"operationType\": \"CREATE INDEX\", \"startTime\": \"2020-06-23T16:52:25.697539Z\", \"state\": \"PROCESSING\" }, \"progressEntities\": { \"workCompleted\": \"219327\", \"workEstimated\": \"2198182\" } }, }, ..."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can only restore a key during the period when a key version is scheduled for destruction.",
+          "Before being permanently destroyed, a key version is scheduled for destruction.",
+          "In the event of a key being unavailable, to preserve data beyond the seven days limit, we recommend that you enable backups for your Datastore mode CMEK database with the required retention period."
+        ]
+      },
+      {
+        "title": "Datastore Admin \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Restoring data to another application If you back up your data using Google Cloud Storage, you can restore backups to applications other than the application used to create the backup.",
+          "You can optionally specify the bucket name suffixed with a directory structure, such as [BUCKET NAME]/backups/foo ): If those folders don't already exist, they will be created.",
+          "To restore backup data from a source application to a target application: Create an Identity and Access Management (IAM) policy on the source application's storage bucket with the following permission: Principal : [PROJECT ID]@appspot.gserviceaccount.com Roles : Storage Legacy Bucket Reader and Storage Legacy Object Reader where [PROJECT ID] is the project ID of the target application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.googleapis.com",
+      "datastore.owner",
+      "datastore.restoreAdmin",
+      "index.yaml",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.owner",
+      "roles/datastore.restoreAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/tools/indexconfig",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console"
+      ]
+    }
+  ]
+}

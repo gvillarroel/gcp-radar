@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.021Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "Cloud Console guided App Engine walkthrough",
+  "feature_slug": "cloud-console-guided-app-engine-walkthrough",
+  "summary": "A guided App Engine walkthrough was added in Cloud Console to launch language-specific interactive tutorials directly from the console.",
+  "extended_definition": "A guided App Engine walkthrough was added in Cloud Console to launch language-specific interactive tutorials directly from the console.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/developers-console",
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the number of idle instances created by App Engine exceeds the maximum you specify in the Performance Settings tab of the Google Cloud console, the excess instances do not accrue instance hours.",
+          "This limit may be increased to up to 200GB by submitting a request from the Google Cloud console App Engine Search page.",
+          "You create this free default bucket in the Google Cloud console App Engine settings page for your project."
+        ]
+      },
+      {
+        "title": "\"Setting up your Google Cloud project for App Engine \\_|\\_ App Engine standard\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "source_id": "site-docs-reference-4",
+        "final_score": 45,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command to select a region and create an App Engine application: gcloud app create More information about App Engine locations help outline Enable billing in the Billing page of the Google Cloud console, see Enabling billing for details.",
+          "Note: Two locations, which are called europe-west and us-central in App Engine commands and in the Google Cloud console, are called europe-west1 and us-central1 , respectively, elsewhere in Google documentation.",
+          "Open the App Engine Dashboard in the Google Cloud console ."
+        ]
+      },
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains",
+        "source_id": "site-docs-reference-4",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Retrieve the DNS record information for your domain mappings: In the Google Cloud console, go to the Custom Domains tab of the App Engine Settings page.",
+          "In the Google Cloud console, do the following: Go to the Custom Domains tab of the App Engine Settings page.",
+          "In the Google Cloud console, go to the Application settings tab of the App Engine Settings page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+      ]
+    }
+  ]
+}

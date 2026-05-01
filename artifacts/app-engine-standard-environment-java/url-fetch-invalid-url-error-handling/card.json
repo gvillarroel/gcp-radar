@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.770Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "URL Fetch invalid URL error handling",
+  "feature_slug": "url-fetch-invalid-url-error-handling",
+  "summary": "URL Fetch returns INVALID_URL for requests to ports outside the permitted ranges.",
+  "extended_definition": "URL Fetch returns INVALID_URL for requests to ports outside the permitted ranges.",
+  "lifecycle": {
+    "latest_feature_date": "2016-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "All subsequent requests for this URL that contain the Accept-Encoding: gzip header will receive the gzipped data from the cache until the cache becomes invalidated (due to the content changing after the cache expires).",
+          "The Google Cloud console Quota Details page also reports Secure Requests , Secure Incoming Bandwidth , and Secure Outgoing Bandwidth as separate values for informational purposes.",
+          "All subsequent requests for this URL that don't contain the Accept-Encoding header receive uncompressed data from the cache until the cache becomes invalidated."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "source_id": "site-docs-reference-4",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "As is typical for App Engine services, the URLFetchServiceFactory returns a URLFetchService , which is used to actually make requests of the service.",
+          "See Also: com.google.appengine.api.taskqueue.Queue , The Task Queue Java API in the Google App Engine Developer's Guide . com.google.appengine.api.urlfetch Provides a service to make HTTP/S requests of other servers on the internet.",
+          "More explicit error handling can be installed via MemcacheService#setErrorHandler(ErrorHandler) ."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "source_id": "site-docs-reference-4",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "As is typical for App Engine services, the URLFetchServiceFactory returns a URLFetchService , which is used to actually make requests of the service.",
+          "See Also: com.google.appengine.api.taskqueue.Queue , The Task Queue Java API in the Google App Engine Developer's Guide . com.google.appengine.api.urlfetch Provides a service to make HTTP/S requests of other servers on the internet.",
+          "More explicit error handling can be installed via MemcacheService#setErrorHandler(ErrorHandler) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "com.google.appengine.api.taskqueue.Queue",
+      "com.google.appengine.api.urlfetch",
+      "com.google.appengine.api.urlfetch.URLFetchService",
+      "com.google.appengine.api.users",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    }
+  ]
+}

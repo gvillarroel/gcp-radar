@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.672Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry package version fingerprints",
+  "feature_slug": "artifact-registry-package-version-fingerprints",
+  "summary": "Artifact Registry now calculates fingerprints for every pushed package version so users can verify package integrity when moving artifacts between Google Cloud systems.",
+  "extended_definition": "Artifact Registry now calculates fingerprints for every pushed package version so users can verify package integrity when moving artifacts between Google Cloud systems.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/fingerprint",
+      "https://docs.cloud.google.com/artifact-registry/docs/java",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use fingerprints to verify package version identities \\_|\\_ Artifact Registry\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/fingerprint",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following requests will validate provided fingerprints when passed using API libraries, the Google Cloud CLI, and curl : GetVersion UpdateVersion DeleteVersion ListFiles CreateAttachment ExportArtifact The following requests will validate fingerprints when passed using API libraries and curl : ListAttachments Validate that local and repository instances of a package are the same To validate that a package hasn't been modified while moving between Google Cloud systems, manually calculate the fingerprint of an instance of that package outside your repository.",
+          "Retrieve the fingerprint of a package version in your repository Fingerprints have the following structure: VERSION @DIRSUM SHA256: HASH VALUE To retrieve the fingerprint of a package version in an Artifact Registry repository, enter the following in the Google Cloud CLI: gcloud artifacts versions describe VERSION --repository = REPOSITORY --location = LOCATION --package = PACKAGE NAME Where: VERSION is the version of your package, such as 1.0543 .",
+          "The response looks like this: fingerprints: - type: DIRSUM SHA256 value: 7c07b910c6dd6df6984a5591d00ad0074fe24cd81145d2c681cdfda3b3d65a04 name: projects/test-project/locations/us-west1/repositories/test-repo/packages/test-pkg/versions/v1 updateTime: '2025-08-15T00:03:41.809228Z' The full address of the fingerprint is the package version followed by the fingerprint type and then the hash value."
+        ]
+      },
+      {
+        "title": "\"Package com.google.devtools.artifactregistry.v1 (1.87.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1",
+        "source_id": "site-java-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Builder Builder for projects/{project}/locations/{location}/repositories/{repository}/packages/{package}/versions/{version}. com. google. devtools. artifactregistry. v1.",
+          "Builder Files store content that is potentially associated with Packages or Versions. com. google. devtools. artifactregistry. v1.",
+          "File Files store content that is potentially associated with Packages or Versions. com. google. devtools. artifactregistry. v1."
+        ]
+      },
+      {
+        "title": "Manage Java packages \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/java",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Snapshots provide a way for you to iteratively publish updated versions of a pre-release package without incrementing the version number in your Maven project every time that you publish to the repository.",
+          "To list all snapshot dependencies, you can filter the dependency tree with the command: mvn dependency:tree -Dincludes = ::: -SNAPSHOT Artifact Registry version policy When you create a Maven repository in Artifact Registry, you can specify a Maven version policy: None - Stores both snapshot and release packages.",
+          "For example, this setting in the pom.xml file is for a 1.0 version of project that is in development: <version>1.0-SNAPSHOT</version> When you publish a package from this project, Maven 3 automatically appends a timestamp to the snapshot version number so that each snapshot version is unique."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.devtools.artifactregistry.v1",
+      "pom.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/fingerprint",
+        "https://docs.cloud.google.com/artifact-registry/docs/java",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/fingerprint",
+        "https://docs.cloud.google.com/artifact-registry/docs/java",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/fingerprint",
+        "https://docs.cloud.google.com/artifact-registry/docs/java",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    }
+  ]
+}

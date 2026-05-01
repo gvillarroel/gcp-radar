@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.675Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go",
+  "feature_name": "Automatic scaling max_instances default",
+  "feature_slug": "automatic-scaling-max-instances-default",
+  "summary": "New App Engine standard environment projects default automatic scaling max_instances to 20 for deployments unless overridden in app.yaml.",
+  "extended_definition": "New App Engine standard environment projects default automatic scaling max_instances to 20 for deployments unless overridden in app.yaml.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 299,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You must first create the app.yaml file for the default service before you can create and deploy app.yaml files for additional services within your app.",
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "Home Documentation Application hosting App Engine Standard environment Reference Send feedback App Engine app.yaml reference Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Build a Go app on App Engine \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/building-app",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can specify the name of your service in the app.yaml file, but if the name is omitted, it is treated as default .",
+          "The app.yaml file can specify other Go versions, network settings, scaling settings, and more.",
+          "Create a new folder called go-app for your Go service: mkdir go-app In your go-app/ folder, create a file called app.yaml , and add the following contents: runtime : go126 # or another supported version This is the simplest configuration for an App Engine app."
+        ]
+      },
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Scaling types App Engine supports the following scaling types , which controls how and when instances are created: Automatic (default) Basic Manual You specify the scaling type in your app's app.yaml .",
+          "To override the default, specify a new max instances value in your app.yaml file, and deploy a new version or redeploy over an existing version.",
+          "The scaling settings are applied at the App Engine version level as part of the app.yaml file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

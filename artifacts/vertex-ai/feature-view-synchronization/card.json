@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Feature view synchronization",
+  "feature_slug": "feature-view-synchronization",
+  "summary": "Feature view synchronization enables syncing data into a feature view within an online store.",
+  "extended_definition": "Feature view synchronization enables syncing data into a feature view within an online store.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a feature view instance \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featureOnlineStores/ FEATUREONLINESTORE NAME /featureViews?feature view id= FEATUREVIEW NAME Request JSON body: { \"feature registry source\": { \"feature groups\": [ { \"feature group id\": \" FEATUREGROUP NAME A \", \"feature ids\": [ \" FEATURE ID A1 \", \" FEATURE ID A2 \" ] }, { \"feature group id\": \" FEATUREGROUP NAME B \", \"feature ids\": [ \" FEATURE ID B1 \", \" FEATURE ID B2 \" ] } ] }, \"sync config\": { SYNC CONFIG }, \"service agent type\": \" SERVICE AGENT TYPE \", } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featureOnlineStores/ FEATUREONLINESTORE NAME /featureViews?feature view id= FEATUREVIEW NAME Request JSON body: { \"feature registry source\": { \"feature groups\": [ { \"feature group id\": \" FEATUREGROUP NAME A \", \"feature ids\": [ \" FEATURE ID A1 \", \" FEATURE ID A2 \" ] }, { \"feature group id\": \" FEATUREGROUP NAME B \", \"feature ids\": [ \" FEATURE ID B1 \", \" FEATURE ID B2 \" ] } ] }, \"sync config\": { SYNC CONFIG } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "If a feature view is configured to have a dedicated service account, you can view the service account email address in either of the following ways: Retrieve a list of all feature views within the online store instance by using the featureViews.list method."
+        ]
+      },
+      {
+        "title": "Delete feature values \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "source_id": "site-docs-reference-3",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE :deleteFeatureValues Request JSON body: { \"selectTimeRangeAndFeature\": { \"timeRange\": { \"startTime\": \" START TIME \", \"endTime\": \" END TIME \" }, \"featureSelector\": { \"idMatcher\": { \"ids\": [ \" FEATURE ID \", ...] } }, \"skipOnlineStorageDelete\": SKIP ONLINE STORAGE DELETE } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "To learn more, run the \"Example Feature Store workflow with sample data\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub You can delete feature values from an entity type in the following ways: Delete feature values from specified entities Delete feature values from specified features within a time range Delete feature values from specified entities You can delete feature values from multiple entities within an entity type.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE :deleteFeatureValues\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/571445526053/locations/us-central1/operations/7688824614775947264\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.DeleteFeatureValuesOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2022-05-09T16:59:38.128375Z\", \"updateTime\": \"2022-05-09T16:59:38.128375Z\", \"state\": \"RUNNING\", \"worksOn\": [ \"projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE ID \" ] } } } View request status To check the status of the POST request, send the following GET request."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about how to create feature view instances within an online store, see Create a feature view .",
+          "An offline store also contains the latest feature values, which you can serve for online inferences. online store In feature management, an online store is a storage facility for the latest feature values to be served for online inferences. feature view A feature view is a logical collection of features materialized from a BigQuery data source to an online store instance.",
+          "Open in Colab Open in Colab Enterprise View on GitHub Online feature serving and vector retrieval of BigQuery data with Vertex AI Feature Store In this tutorial, you learn how to use Vertex AI Feature Store for online serving and vector retrieval of feature values in BigQuery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/delete-feature-values",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    }
+  ]
+}

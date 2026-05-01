@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.816Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "Instance configurations",
+  "feature_slug": "instance-configurations",
+  "summary": "The service supports instance configurations; Memorystore for Redis Cluster supports instance configurations in Preview.",
+  "extended_definition": "The service supports instance configurations; Memorystore for Redis Cluster supports instance configurations in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/configure-instances",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported instance configurations \\_|\\_ Memorystore for Redis Cluster \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "source_id": "site-docs-root",
+        "final_score": 350,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Supported instance configurations Stay organized with collections Save and categorize content based on your preferences.",
+          "Modifiable configuration parameters You can modify the following parameters when creating or updating a Memorystore for Redis Cluster instance.",
+          "This page describes maxmemory policies and other Redis configurations available for Memorystore for Redis Cluster."
+        ]
+      },
+      {
+        "title": "\"Configure an instance \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/configure-instances",
+        "source_id": "site-docs-root",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Redis Cluster supports a subset of the native Redis configuration parameters that you can modify to customize the behavior of your instance.",
+          "You can't see configuration parameters when running the gcloud redis clusters describe command unless you have changed a configuration parameter from its default value. gcloud redis clusters describe instance-id --region= region-id Example: gcloud redis clusters describe my-instance --region=us-central1 Set a configuration parameter during cluster creation To set a configuration parameter while creating a cluster, run the gcloud redis clusters create command with --redis-config flag replacing variables with appropriate values. gcloud redis clusters create instance-id \\ --region= region-id \\ --project= project-id \\ --node-type= node-type \\ --shard-count= shard-count \\ --redis-config= config-name = config-value \\ Replace the following: instance-id is the ID of the Memorystore for Redis Cluster instance you're creating. region-id is the region where you want the instance placed. project-id is your project ID. node-type is your chosen node type.",
+          "If you restart the instance, then Memorystore for Redis Cluster saves the changes."
+        ]
+      },
+      {
+        "title": "\"Cluster and node specification \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "source_id": "site-docs-root",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Scale an instance As part of creating a Memorystore for Redis Cluster instance, you choose a node type for the instance and specify the number of shards for the instance.",
+          "This page describes the cluster and node specifications for Memorystore for Redis Cluster instances.",
+          "If you run Memorystore for Redis Cluster in a production environment, then we recommend using the redis-standard-small , redis-highmem-medium , or redis-highmem-xlarge node types."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis Cluster overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "source_id": "site-api-reference",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Redis version Memorystore for Redis Cluster is based on open-source Redis version 7.x and supports a subset of the total Redis command library .",
+          "The terms instance and cluster can be used interchangeably when referring to a single Memorystore for Redis Cluster unit of deployment.",
+          "Key concepts and terms Hierarchical resource structure Memorystore for Redis Cluster gathers the various resources used in a Redis deployment into a hierarchical structure that simplifies administration and management."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/configure-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/configure-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.013Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search parsed document JSON retrieval",
+  "feature_slug": "vertex-ai-search-parsed-document-json-retrieval",
+  "summary": "Adds support for getting parsed or chunked documents in JSON format.",
+  "extended_definition": "Adds support for getting parsed or chunked documents in JSON format.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command and result curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions?filter=userPseudoId=test user%20AND%20state=IN PROGRESS\" { \"sessions\": [ { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943\", \"state\": \"IN PROGRESS\", \"userPseudoId\": \"test user\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/741830\", \"text\": \"Compare bigquery with spanner database?\" }, \"answer\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943/answers/4861507376861383072\" } ], \"startTime\": \"2024-09-13T18:47:10.465311Z\", \"endTime\": \"2024-09-13T18:49:41.579151Z\" } ] } Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "Example command curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \"How much longer does it take to train a recommendations model than a search model\"}, \"queryUnderstandingSpec\": { \"queryRephraserSpec\": { \"maxRephraseSteps\": 5 } } }' Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "Example command and result curl -X DELETE -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943\" {} Python For more information, see the Vertex AI Search Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "SearchResponse JSON representation { \"results\" : [ { object ( SearchResult ) } ] , \"facets\" : [ { object ( Facet ) } ] , \"guidedSearchResult\" : { object ( GuidedSearchResult ) } , \"totalSize\" : integer , \"attributionToken\" : string , \"redirectUri\" : string , \"nextPageToken\" : string , \"correctedQuery\" : string , \"suggestedQuery\" : string , \"summary\" : { object ( Summary ) } , \"appliedControls\" : [ string ] , \"geoSearchDebugInfo\" : [ { object ( GeoSearchDebugInfo ) } ] , \"queryExpansionInfo\" : { object ( QueryExpansionInfo ) } , \"naturalLanguageQueryUnderstandingInfo\" : { object ( NaturalLanguageQueryUnderstandingInfo ) } , \"sessionInfo\" : { object ( SessionInfo ) } , \"oneBoxResults\" : [ { object ( OneBoxResult ) } ] , \"searchLinkPromotions\" : [ { object ( SearchLinkPromotion ) } ] , \"semanticState\" : enum ( SemanticState ) } Fields results[] object ( SearchResult ) A list of matched documents.",
+          "SearchResult JSON representation { \"id\" : string , \"document\" : { object ( Document ) } , \"chunk\" : { object ( Chunk ) } , \"modelScores\" : { string : { object ( DoubleList ) } , ... } , \"rankSignals\" : { object ( RankSignals ) } } Fields id string Document.id of the searched Document . document object ( Document ) The document data snippet in the search response.",
+          "It should only be used for testing, but not serving end users. contentSearchSpec object ( ContentSearchSpec ) A specification for configuring the behavior of content search. embeddingSpec object ( EmbeddingSpec ) Uses the provided embedding to do additional semantic document retrieval."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import data from Bigtable. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigtableSource \": { \"projectId\": \" BIGTABLE PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"tableId\": \" TABLE ID \", \"bigtableOptions\": { \"keyFieldName\": \" KEY FIELD NAME \", \"families\": { \"key\": \" KEY \", \"value\": { \"fieldName\": \" FIELD NAME \", \"encoding\": \" ENCODING \", \"type\": \" TYPE \", \"columns\": [ { \"qualifier\": \" QUALIFIER \", \"fieldName\": \" FIELD NAME \", \"encoding\": \" COLUMN ENCODING \", \"type\": \" COLUMN VALUES TYPE \" } ] } } ... } }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "Import data from Spanner. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"cloudSpannerSource\": { \"projectId\": \" SPANNER PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", \"enableDataBoost\": \" DATA BOOST BOOLEAN \" }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "Import data from AlloyDB for PostgreSQL. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"alloydbSource\": { \"projectId\": \" ALLOYDB PROJECT ID \", \"locationId\": \" LOCATION ID \", \"clusterId\": \" CLUSTER ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "columns.Hereby",
+      "columns.To",
+      "connected.If",
+      "criteria.The",
+      "data.After",
+      "database.When",
+      "database.With",
+      "database.You",
+      "databases.Each",
+      "databases.Is",
+      "developed.It",
+      "discoveryengine.googleapis.com",
+      "distros.SQL",
+      "firstname.Next",
+      "firstname.When",
+      "hash.Login",
+      "information.The",
+      "job.There",
+      "language.SQL",
+      "language.SQLite",
+      "manner.This",
+      "method.For",
+      "no.Yes",
+      "others.For",
+      "people.Then",
+      "predicates.WHERE",
+      "premium.SQL",
+      "products.They",
+      "products.This",
+      "program.SQLite3",
+      "queries.When",
+      "recordset.A",
+      "server.This",
+      "servers.Structured",
+      "sheet.Description",
+      "shown.A",
+      "tables.Although",
+      "tool.It",
+      "unfamiliar.Bypass",
+      "vendor.Every"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    }
+  ]
+}

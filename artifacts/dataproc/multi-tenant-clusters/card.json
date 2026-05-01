@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Multi-tenant clusters",
+  "feature_slug": "multi-tenant-clusters",
+  "summary": "Dataproc supports multi-tenant clusters that let multiple users run isolated workloads on a shared cluster.",
+  "extended_definition": "Dataproc supports multi-tenant clusters that let multiple users run isolated workloads on a shared cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Delete a GKE virtual cluster \\_|\\_ Managed Service for Apache Spark \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.operations.delete \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "HTTP request DELETE https://dataproc.googleapis.com/v1/{name=projects/ /locations/ /operations/ } The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "Delete a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "source_id": "site-docs-root-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disable deletion-protection To disable deletion-protection on a Dataproc Metastore service, run following gcloud metastore services update command with the --no=deletion-protection option. gcloud metastore services update SERVICE \\ --location= LOCATION \\ --no-deletion-protection What's next Cloud audit logging Dataproc Metastore IAM and access control Service access Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Required roles To get the permission that you need to delete a Dataproc Metastore service, ask your administrator to grant you the following IAM roles on your project, based on the principle of least privilege: Grant full control of Dataproc Metastore resources ( roles/metastore.editor ) Grant full access to all Dataproc Metastore resources, including IAM policy administration ( roles/metastore.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Click Submit . gcloud CLI To enable deletion-protection on a new Dataproc Metastore service, run the following gcloud metastore services create command. gcloud metastore services update SERVICE \\ --location= LOCATION \\ --instance-size INSTANCE SIZE \\ --deletion-protection Replace the following: SERVICE : The name of the Dataproc Metastore service you're deleting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.googleapis.com",
+      "metastore.admin",
+      "metastore.editor",
+      "projects.locations.operations",
+      "projects.locations.operations.delete"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.admin",
+      "roles/metastore.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-delete-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/delete-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.operations/delete"
+      ]
+    }
+  ]
+}

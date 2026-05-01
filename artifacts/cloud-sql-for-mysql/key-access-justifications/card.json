@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Key Access Justifications",
+  "feature_slug": "key-access-justifications",
+  "summary": "Cloud SQL supports Key Access Justifications for Cloud EKM so you can view and act on the reason for each key access request.",
+  "extended_definition": "Cloud SQL supports Key Access Justifications for Cloud EKM so you can view and act on the reason for each key access request.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek",
+      "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "source_id": "site-docs-reference-3",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Thus, Key Access Justifications provides extra control over your data by providing a justification for each attempt to decrypt the data.",
+          "Key Access Justifications You can use Key Access Justifications as part of Cloud EKM.",
+          "Key Access Justifications enable you to view the reason for each Cloud EKM request."
+        ]
+      },
+      {
+        "title": "Data residency overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each time one of your keys is requested to encrypt or decrypt data, Key Access Justifications provides a detailed justification, along with a mechanism for you to approve or deny key access using an automated policy that you set.",
+          "Using Access Approval, Access Transparency, and Key Access Justifications with Cloud KMS and Cloud EKM, you can deny Google the ability to decrypt your data.",
+          "Key Access Justifications integrate with Cloud KMS and Cloud EKM."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek",
+        "source_id": "site-docs-reference-3",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use Key Access Justifications (KAJ) as part of Cloud EKM.",
+          "Learn how to add key access justifications to your keys.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /reencrypt\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2023-06-28T21:19:09.503Z\", \"operationType\": \"REENCRYPT\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } REST v1beta4 To re-encrypt your instance or replica with your new key, run the following command: POST https://sqladmin.googleapis.com/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /reencrypt Before using any of the request data, make the following replacements: PROJECT ID : The project ID INSTANCE ID : The instance ID HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /reencrypt To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/cmek",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-cmek"
+      ]
+    }
+  ]
+}

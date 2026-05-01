@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.104Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Custom Document Extractor progressive data import",
+  "feature_slug": "custom-document-extractor-progressive-data-import",
+  "summary": "Custom Document Extractor supports progressive data import for training or test datasets.",
+  "extended_definition": "Custom Document Extractor supports progressive data import for training or test datasets.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+      "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+      "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the launch stage descriptions . (Public preview) Custom extractor supports signature detection.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process\" Select-Object -Expand Content Custom extractor with signature detection Preview This product is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "There are three ways to train a generative AI model: Training method Zero-shot Few-shot Fine-tuning Accuracy Medium Medium-high High Effort Low Low Medium Recommended number of training documents 0 5 to 10 10 to 50+ Note: You can expect reasonably good results with 10 to 50+ training examples, and performance can be further optimized by increasing the number of examples to hundreds or thousands, depending on the complexity and variation of the documents and extraction tasks."
+        ]
+      },
+      {
+        "title": "Custom extractor overview \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Overview The goal of the custom extractor is to enable Document AI users to build custom entity extraction solutions for new document types for which no pre-trained processors are available.",
+          "For more information on evaluation concepts and metrics, see Evaluate Performance Previous arrow back Form Parser Next Custom extractor mechanisms arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Training method Document examples Document layout variation Free form text or paragraphs Number of training documents for production-ready quality, depending on variability Fine tune and foundation model (generative AI)."
+        ]
+      },
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is because the default custom extractor model type is a foundation model, which can perform zero-shot prediction, that is, without training.",
+          "In the Create processor menu, enter a name for your processor, such as my-custom-document-extractor .",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Custom splitter \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "",
+        "evidence_snippets": [
+          "Repeat the previous steps with the following paths and document labels: Bucket path Document label cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/1040 form 1040 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w2 form w2 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w9 form w9 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/paystub paystub The console should look like this when complete: Select Import .",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom splitter, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "What's next Previous arrow back Custom classifier Next Document splitters behavior arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.admin",
+      "documentai.googleapis.com",
+      "request.json",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/documentai.admin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+      ]
+    }
+  ]
+}

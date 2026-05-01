@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.636Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": ".NET 8 runtime",
+  "feature_slug": "net-8-runtime",
+  "summary": "Cloud Run functions supports the .NET 8 runtime for 2nd gen functions; Cloud Run functions supports the .NET 8 runtime.",
+  "extended_definition": "Cloud Run functions supports the .NET 8 runtime for 2nd gen functions; Cloud Run functions supports the .NET 8 runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+      "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.functions.generateDownloadUrl \\_|\\_ Cloud Run\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls HTTP request POST https://cloudfunctions.googleapis.com/v1/{name}:generateDownloadUrl Path parameters Parameters name string The name of function for which source code Google Cloud Storage signed URL should be generated.",
+          "Authorization requires the following IAM permission on the specified resource name : cloudfunctions.functions.sourceCodeGet Request body The request body contains data with the following structure: JSON representation { \"versionId\" : string } Fields versionId string The optional version of function.",
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback Method: projects.locations.functions.generateDownloadUrl Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.functions.generateUploadUrl \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When making a HTTP PUT request, these two headers need to be specified: content-type: application/zip x-goog-content-length-range: 0,104857600 And this header SHOULD NOT be specified: Authorization: Bearer YOUR TOKEN HTTP request POST https://cloudfunctions.googleapis.com/v1/{parent}/functions:generateUploadUrl Path parameters Parameters parent string The project and location in which the Google Cloud Storage signed URL should be generated, specified in the format projects/ /locations/ .",
+          "Authorization requires the following IAM permission on the specified resource parent : cloudfunctions.functions.sourceCodeSet Request body The request body contains data with the following structure: JSON representation { \"kmsKeyName\" : string } Fields kmsKeyName string Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function source code objects in intermediate Cloud Storage buckets.",
+          "The Google Cloud Functions service account (service-{project number}@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the Key/KeyRing/Project/Organization (least access preferred)."
+        ]
+      },
+      {
+        "title": "\"Restrict new deployments by product version \\_|\\_ Cloud Run functions \\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy",
+        "source_id": "site-iam-reference",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a policy that restricts new Cloud Run functions, run the following command: gcloud resource-manager org-policies \\ allow cloudfunctions.restrictAllowedGenerations \\ --organization = ORGANIZATION NUMBER VERSION where ORGANIZATION NUMBER is the number of the organization to which you want to apply the policy, and VERSION is the Cloud Run functions version that must be used for new deployments.",
+          "If your organization wants to enforce a restriction specifying that only one of the versions can be used to deploy new functions, you can define a new organization policy with the constraint constraints/cloudfunctions.restrictAllowedGenerations .",
+          "Use a policy to set and enforce restrictions You can use Google Cloud CLI to create a policy restricting new Cloud Run functions from being deployed for the first time within a given organization to the specified environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.functions.sourceCodeGet",
+      "cloudfunctions.functions.sourceCodeSet",
+      "cloudfunctions.googleapis.com",
+      "cloudfunctions.restrictAllowedGenerations",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "projects.locations.functions",
+      "projects.locations.functions.generateDownloadUrl",
+      "projects.locations.functions.generateUploadUrl",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/securing/gen-org-policy"
+      ]
+    }
+  ]
+}

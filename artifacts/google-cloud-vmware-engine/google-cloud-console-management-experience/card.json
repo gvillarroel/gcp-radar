@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Google Cloud console management experience",
+  "feature_slug": "google-cloud-console-management-experience",
+  "summary": "VMware Engine environments can be managed in the Google Cloud console without opening another tab.",
+  "extended_definition": "VMware Engine environments can be managed in the Google Cloud console without opening another tab.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+      "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mount backup images of Compute Engine instances in the appliance management\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Storage Backup and DR Guides Send feedback Mount backup images of Compute Engine instances in the appliance management console Stay organized with collections Save and categorize content based on your preferences.",
+          "Use these instructions to mount a Compute Engine instance backup image to an existing instance: From the Backup and DR Service appliance management console, click App Manager and select Applications from the drop-down menu.",
+          "Use these instructions to mount a Compute Engine instance backup to a new instance: From the Backup and DR Service appliance management console, click App Manager and select Applications from the drop-down menu."
+        ]
+      },
+      {
+        "title": "\"Accessing management appliances \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reset access credentials If you misplace the credentials to vCenter Server or NSX Manager, you can reset the password to your management appliances for your private cloud using the Google Cloud CLI or Google Cloud VMware Engine by doing the following: Important: If you change the password that VMware Engine generates for either vCenter Server or NSX Manager, those changes won't be reflected in the Google Cloud console.",
+          "API To show management appliance connection details using the VMware Engine API, make a GET request: GET \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /privateCloud/ PRIVATE CLOUD ID \" Replace the following: PROJECT ID : the project name for this request.",
+          "Before you can connect to management appliances, you need network connectivity from your client machine to the VMware Engine network."
+        ]
+      },
+      {
+        "title": "\"Backup vault for immutable and indelible backups \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workload Managed by Compute Engine instance Google Cloud console Compute Engine disk Google Cloud console Filestore instance (invitation only) Google Cloud console Cloud SQL instance Google Cloud console AlloyDB cluster Google Cloud console Google Cloud VMware Engine, Oracle database, and SQL Server database appliance management console Note: AlloyDB clusters and Filestore instances in backup vaults are not supported for multi-regions.",
+          "Resources managed through the appliance management console (for example, Google Cloud VMware Engine VMs) are also supported, but backup and restore operations for those resources are not restricted to your current organization.",
+          "This selection makes the backup vault compatible with resources managed through Google Cloud console (for example, Compute Engine VMs), but not with resources managed through the appliance management console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault"
+      ]
+    }
+  ]
+}

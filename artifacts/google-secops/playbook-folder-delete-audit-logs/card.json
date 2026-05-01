@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Playbook folder delete audit logs",
+  "feature_slug": "playbook-folder-delete-audit-logs",
+  "summary": "The platform now records audit logs when a playbook folder is deleted.",
+  "extended_definition": "The platform now records audit logs when a playbook folder is deleted.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google SecOps audit logs \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Actions in Google SecOps that generate this type of log include creating a Google Cloud Association and updating Google Cloud log filters. chronicleservicemanager.googleapis.com/gcpAssociations.create chronicleservicemanager.googleapis.com/gcpAssociations.delete chronicleservicemanager.googleapis.com/gcpSettings.delete Data Access audit logs Includes admin read operations that read metadata or configuration information.",
+          "If you don't see these options, no audit logs of that type are available in the Google Cloud project, folder, or organization.",
+          "Listing actions taken by a specific user To find the actions taken by a given user, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.authenticationInfo.principalSubject=USER Identifying users who took a specific action To find the users who updated an access control subject, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.methodName=\"malachite.frontend.v1.MalachiteFrontendService.UpdateSubject\" To find the users who updated an access control role, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.methodName=\"malachite.frontend.v1.MalachiteFrontendService.UpdateRole\" To find the users who updated a detection rule, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.methodName=\"malachite.frontend.v1.MalachiteFrontendService.UpdateRule\" What's next Cloud Audit Logs overview Understand audit logs Available audit logs Google Cloud Observability pricing: Cloud Logging Need more help?"
+        ]
+      },
+      {
+        "title": "\"Explore the Playbooks page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Menu : Click edit Edit and select the required playbooks or blocks before using Menu to perform bulk actions: New Folder : Add a new playbooks folder; the playbook automatically inherits any changes made to its associated environment groups.",
+          "Duplicate : Create a duplicate playbook with these options: Keep or change priority Keep in same folder or move to a different folder Single , multiple , or all environments, where all indicates all defined environments, present or future.",
+          "Move to : Move playbooks and blocks to a different folder, or create a new folder."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Delete source files The source deletion option lets you delete feed source objects (files and folders) from storage, after a successful transfer.",
+          "For example, to create a feed for Google Kubernetes Engine audit logs, select Google Kubernetes Engine audit logs as the Log Type .",
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chronicle.googleapis.com",
+      "chronicleservicemanager.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "malachite.frontend.v1.MalachiteFrontendService.UpdateRole",
+      "malachite.frontend.v1.MalachiteFrontendService.UpdateRule",
+      "malachite.frontend.v1.MalachiteFrontendService.UpdateSubject",
+      "pa.googleapis.com",
+      "partnercontent.gserviceaccount.com",
+      "resource.labels.service",
+      "resource.type",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    }
+  ]
+}

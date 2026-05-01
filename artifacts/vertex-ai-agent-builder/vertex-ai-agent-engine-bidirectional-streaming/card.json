@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.967Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "Vertex AI Agent Engine bidirectional streaming",
+  "feature_slug": "vertex-ai-agent-engine-bidirectional-streaming",
+  "summary": "Agent Engine supports bidirectional streaming for agent interactions.",
+  "extended_definition": "Agent Engine supports bidirectional streaming for agent interactions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bidirectional streaming with Vertex AI Agent Engine Runtime \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming",
+        "source_id": "site-docs-root",
+        "final_score": 338,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note that the EXPERIMENTAL agent server mode is required for an agent that supports bidirectional streaming: remote live agent = client . agent engines . create ( agent = live agent , config = { \"staging bucket\" : STAGING BUCKET , \"requirements\" : [ \"google-cloud-aiplatform[agent engines,adk]==1.88.0\" , \"cloudpickle==3.0\" , \"websockets\" ], \"agent server mode\" : vertexai types .",
+          "Bidirectional streaming with Vertex AI Agent Engine Runtime supports interactive, real-time agent use cases and data exchange for multimodal live APIs.",
+          "To see an example of using bidirectional streaming with Agent Engine, run the \"Getting Started with Live API on Agent Engine\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Overview Bidirectional streaming provides a persistent, two-way communication channel between your application and the agent, letting you move beyond turn-based, request-response patterns."
+        ]
+      },
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .",
+          "Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = \"gemini-2.5-flash\" , name = \"minimal agent\" , instruction = \"You are a helpful assistant.\" , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai .",
+          "Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag."
+        ]
+      },
+      {
+        "title": "\"Quickstart with Vertex AI Agent Engine SDK \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "source_id": "site-docs-root",
+        "final_score": 256,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see an example of using Memory Bank with the Agent Engine SDK, run the \"Get started with Memory Bank\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the \"Get started with Memory Bank - LangGraph\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .",
+          "Otherwise, you can delete the individual resources you created in this tutorial, as follows: Use the following code sample to delete the Vertex AI Agent Engine instance, which also deletes any sessions or memories associated with the Vertex AI Agent Engine instance. agent engine . delete ( force = True ) Delete any locally created files.",
+          "This tutorial uses the following steps: Create memories using the following options: Generate memories using Vertex AI Agent Engine Memory Bank : Write sessions and events to Vertex AI Agent Engine Sessions as sources for Vertex AI Agent Engine Memory Bank to generate memories."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Agent Engine Code Execution \\_|\\_ Vertex AI Agent Builder \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Vertex AI Agent Engine Code Execution Stay organized with collections Save and categorize content based on your preferences.",
+          "However, you don't need to deploy your agent to Vertex AI Agent Engine to use Code Execution.",
+          "Code Execution is part of the Vertex AI Agent Engine suite."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "system.id.goog",
+      "vertexai.agent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview"
+      ]
+    }
+  ]
+}

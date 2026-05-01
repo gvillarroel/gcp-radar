@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.583Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Schemas",
+  "feature_slug": "schemas",
+  "summary": "Deployment Manager supports schemas to define rules for using templates.",
+  "extended_definition": "Deployment Manager supports schemas to define rules for using templates.",
+  "lifecycle": {
+    "latest_feature_date": "2015-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Schemas \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deployment Manager accepts schemas written according to draft 4 of the JSON schema specifications . < mongodb . py . schema > info : title : MongoDB Template author : Jane description : Creates a MongoDB cluster version : 1.0 imports : - path : helper . py name : mongodb helper . py required : - name properties : name : type : string description : Name of your Mongo Cluster size : type : integer default : 2 description : Number of Mongo Slaves zone : type : string default : us - central1 - a description : Zone to run metadata : gce - zone A valid schema file is a JSON schema file with the addition of two top level fields, info and imports .",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Using Schemas Stay organized with collections Save and categorize content based on your preferences.",
+          "In addition to defining the rules of a template, schemas also allow your users to interface with the templates you write, without needing to review and learn about each layer of templates."
+        ]
+      },
+      {
+        "title": "Best practices for using Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Not a valid instance configuration, used solely for demonstration resources : - name : example-resource type : gcp-types/compute-v1:instances properties : zone : us-central1-a disks : - autoDelete : true boot : true Will not be redacted password : hunter2 Building templates ❑ To speed up defining your templates, consider starting with the production-ready sample templates from the Cloud Foundation Toolkit Project . ❑ If you have complex infrastructure requirements, such as the need to create multiple environments, read the tutorial and samples for using Deployment Manager at scale . ❑ Use Python to build your templates .",
+          "There are a number of predefined IAM roles you can use to determine how much access a user has to call Deployment Manager. ❑ Use IAM roles to restrict what permissions are granted to users to use Deployment Manager. ❑ If you want users to be able to access resources created by Deployment Manager, grant users the roles they require to use resources, but do not grant them permissions to deploy resources directly. ❑ Granting the owner role to a principal will allow them to modify the IAM policy.",
+          "Schemas define a set of rules that a configuration file must follow to use a particular template."
+        ]
+      },
+      {
+        "title": "\"Storing Templates on an External Host \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+        "source_id": "site-docs-root-2",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Hosting templates externally has certain advantages over storing your templates locally: Easily share templates with others Ensure that configurations are always using the most up-to-date template Automatically manage relevant imports and schemas Deployment Manager always fetches the latest version of external templates each time you redeploy your configuration.",
+          "For example: resources : - name : my - salt - cluster type : gs : //v2/saltstack/salt cluster.jinja For a GitHub URL: resources : - name : my - salt - cluster type : https : //raw.githubusercontent.com/GoogleCloudPlatform/deploymentmanager-samples/master/examples/v2/single vm/vm template.jinja If an external template imports other templates or if there is an accompanying schema, you can store the related files in the same directory or relative subdirectory and include these other templates with a relative URL.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Storing Templates on an External Host Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.jinja",
+      "compute.v1.disk",
+      "compute.v1.instance",
+      "disk.selfLink",
+      "raw.githubusercontent.com",
+      "ref.example",
+      "template.jinja"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally"
+      ]
+    }
+  ]
+}

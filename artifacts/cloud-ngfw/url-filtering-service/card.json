@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.409Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "URL filtering service",
+  "feature_slug": "url-filtering-service",
+  "summary": "URL filtering service filters egress HTTP(S) workload traffic using domain and Server Name Indication (SNI) information; URL filtering service filters egress HTTP(S) workload traffic using domain and Server Name Indication (SNI) information.",
+  "extended_definition": "URL filtering service filters egress HTTP(S) workload traffic using domain and Server Name Indication (SNI) information; URL filtering service filters egress HTTP(S) workload traffic using domain and Server Name Indication (SNI) information.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+      "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+      "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"URL filtering service overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 313,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It lets you filter your workload traffic by using domain and Server Name Indication (SNI) information that is available in the egress HTTP(S) messages.",
+          "How the URL filtering service works The URL filtering service processes the HTTP(S) traffic in the following sequence: The URL filtering service applies firewall policy rules to the traffic to and from the VM instances or Google Kubernetes Engine (GKE) clusters in the network.",
+          "For the URL filtering service, the firewall endpoint matches the domain from the message's host header, or the SNI obtained during TLS negotiation for encrypted traffic without TLS inspection, against the URL filters in the URL filtering security profile."
+        ]
+      },
+      {
+        "title": "\"Set up URL filtering service in your network \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 297,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "URL filtering service lets you filter your Google Cloud workload traffic by using the domain and Server Name Indication (SNI) information that is available in the egress HTTP or HTTPS messages.",
+          "Note: The implicit deny URL filter that has the lowest priority, denies all traffic by default. gcloud Create a YAML file with the following content for the security profile: name: sec-profile-urlf type: url-filtering urlFilteringProfile: urlFilters: - filteringAction: ALLOW priority: 1000 urls: URL Note: The implicit deny URL filter that has the lowest priority, denies all traffic by default.",
+          "The endpoint inspects the domain and SNI information available in the egress HTTP or HTTPS messages for a match against the URL listed in the URL filtering security profile sec-profile-urlf ."
+        ]
+      },
+      {
+        "title": "\"Configure the URL filtering service \\_|\\_ Cloud Next Generation Firewall\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Firewall endpoint Firewall endpoint 2 performs URL filtering with TLS inspection enabled for workloads running on VPC 1 and VPC 2 in zone us-west1-b .",
+          "A firewall endpoint is a zonal resource that you must create in the same zone as the workload you want to protect with the URL filtering service.",
+          "A firewall endpoint is a zonal resource that you must create in the same zone as the workload you want to protect with the URL filtering service."
+        ]
+      },
+      {
+        "title": "\"Create and manage URL filtering security profiles \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This can happen with unencrypted HTTP traffic, or when TLS inspection is disabled for encrypted message headers. urlFilteringProfile: urlFilters: user-specified filters - filteringAction: DENY priority: 1000 urls: ['www.example.com','www.examplepetstore.com'] explicit allow URL filter that you can add - filteringAction: ALLOW priority: 2000 urls: [' '] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] Limitations Matcher strings represent either domains or subdomains.",
+          "The following code snippet demonstrates how to allow all domains (and their subdomains) that end in .com but deny the remaining traffic. urlFilteringProfile: urlFilters: Allow all domains (and their subdomains) that end in '.com' - filteringAction: ALLOW priority: 2000 urls: [' .com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] The following code snippet demonstrates how to deny all subdomains of example.com and examplepetstore.com but allow these domains and all other domains (and their subdomains) that end in .com . urlFilteringProfile: urlFilters: Deny all subdomains of example.com - filteringAction: DENY priority: 1000 urls: [' .example.com'] Deny all subdomains of examplepetstore.com - filteringAction: DENY priority: 1500 urls: [' .examplepetstore.com'] Allow all domains (and their subdomains) that end in '.com' - filteringAction: ALLOW priority: 2000 urls: [' .com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] Cloud NGFW doesn't interpret the asterisk ( ) as a regular expression wildcard.",
+          "For example, the matcher string example.com matches with a.example.com , a.b.c.example.com , as well as example.com . urlFilteringProfile: urlFilters: user-specified filters - filteringAction: ALLOW priority: 1000 urls: [' example.com'] implicit deny URL filter that will be processed last - filteringAction: DENY priority: 2147483647 urls: [' '] In the preceding example, Cloud NGFW allows traffic towards example.com as well as the subdomains of example.com but denies the rest of the outbound traffic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.b.c.example.com",
+      "a.example.com",
+      "example.com",
+      "examplepetstore.com",
+      "networksecurity.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-urlf-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/configure-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    }
+  ]
+}

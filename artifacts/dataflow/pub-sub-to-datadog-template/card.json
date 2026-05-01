@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Pub/Sub to Datadog template",
+  "feature_slug": "pub-sub-to-datadog-template",
+  "summary": "The Pub/Sub to Datadog Dataflow template is generally available.",
+  "extended_definition": "The Pub/Sub to Datadog Dataflow template is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-batch",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google-provided templates \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Streaming templates Templates for processing data continuously: Apache Kafka to Apache Kafka Apache Kafka to BigQuery Apache Kafka to Cloud Storage Change Data Capture from MySQL to BigQuery (Stream) Bigtable change streams to BigQuery Bigtable change streams to Pub/Sub Spanner change streams to BigQuery Spanner change streams to Cloud Storage Spanner change streams to any source database Spanner change streams to Pub/Sub Datastream to BigQuery (Stream) Datastream to Spanner Datastream to MySQL or PostgreSQL (Stream) Data Masking/Tokenization from Cloud Storage to BigQuery (using Cloud DLP) JMS to Pub/Sub MongoDB to BigQuery (Stream) MQTT to Pub/Sub Pub/Sub to BigQuery Pub/Sub to BigQuery with Python UDF Pub/Sub Avro to BigQuery Pub/Sub Proto to BigQuery Pub/Sub Proto to BigQuery with Python UDF Pub/Sub Subscription to BigQuery Pub/Sub to Avro Files on Cloud Storage Pub/Sub to Datadog Pub/Sub to Elasticsearch Pub/Sub to Java Database Connectivity (JDBC) Pub/Sub to MongoDB Pub/Sub to MongoDB with Python UDF Pub/Sub to Pub/Sub Pub/Sub to Redis Pub/Sub to Splunk Pub/Sub Topic or Subscription to Text Files on Cloud Storage Pub/Sub Topic to Text Files on Cloud Storage Text Files on Cloud Storage to BigQuery (Stream) Cloud Storage text files to BigQuery with Python UDF Text files on Cloud Storage to Pub/Sub (Stream) Batch templates Templates for processing data in bulk: Any Source DB to Spanner Apache Cassandra to Bigtable AstraDB to BigQuery BigQuery to Bigtable BigQuery to Clickhouse BigQuery export to Parquet (via Storage API) BigQuery to Cloud Storage TFRecords BigQuery to Elasticsearch BigQuery to MongoDB Bigtable to Cloud Storage Avro Bigtable to Cloud Storage JSON Bigtable to Cloud Storage Parquet Bigtable to Cloud Storage SequenceFile Bigtable change streams to Vertex AI Vector Search Bigtable to Vertex AI Vector Search files on Cloud Storage Spanner to BigQuery Spanner to Cloud Storage Avro Spanner to Cloud Storage Text Spanner to Vertex AI Vector Search files on Cloud Storage Cloud Storage Avro to Bigtable Cloud Storage Parquet to Bigtable Cloud Storage SequenceFile to Bigtable Cloud Storage Avro to Spanner Cloud Storage CSV files to BigQuery Cloud Storage Text to BigQuery Cloud Storage text files to BigQuery with Python UDF Cloud Storage Text to Spanner Cloud Storage Text to Datastore [Deprecated] Cloud Storage Text to Firestore (Datastore mode) Cloud Storage Text to Pub/Sub (Batch) Cloud Storage to Elasticsearch Datastore to Cloud Storage Text [Deprecated] Firestore (Datastore mode) to Cloud Storage Text Google Ads to BigQuery Google Cloud to Neo4j JDBC to BigQuery JDBC to Pub/Sub MongoDB to BigQuery MySQL to BigQuery Oracle to BigQuery PostgreSQL to BigQuery SQL Server to BigQuery Utility templates Bulk Compress Cloud Storage Files Bulk Decompress Cloud Storage Files Datastore Bulk Delete [Deprecated] File Format Conversion Firestore (Datastore mode) Bulk Delete Streaming Data Generator to Pub/Sub, BigQuery, and Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Google-provided templates Stay organized with collections Save and categorize content based on your preferences.",
+          "To disable Dataflow Prime for Google-managed template jobs, set the enable prime Dataflow service option to false ( enable prime=false ) when you run the template."
+        ]
+      },
+      {
+        "title": "AstraDB to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launchParameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"astraToken\" : \" ASTRA TOKEN \" , \"astraDatabaseId\" : \" ASTRA DATABASE ID \" , \"astraKeyspace\" : \" ASTRA KEYSPACE \" , \"astraTable\" : \" ASTRA TABLE \" , }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/AstraDB To BigQuery\" , \"environment\" : { \"maxWorkers\" : \"10\" } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/AstraDB To BigQuery \\ --project = PROJECT ID \\ --region = REGION NAME \\ --parameters \\ astraToken = ASTRA TOKEN , \\ astraDatabaseId = ASTRA DATABASE ID , \\ astraKeyspace = ASTRA KEYSPACE , \\ astraTable = ASTRA TABLE , \\ Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "DatasetInfo ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.v2.astradb.options.AstraDbToBigQueryOptions ; import com.google.cloud.teleport.v2.astradb.transforms.AstraDbToBigQueryMappingFn ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.utils.SecretManagerUtils ; import java.util.AbstractMap ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.coders.SerializableCoder ; import org.apache.beam.sdk.io.astra.db.AstraDbIO ; import org.apache.beam.sdk.io.astra.db.CqlSessionHolder ; import org.apache.beam.sdk.io.astra.db.mapping.AstraDbMapper ; import org.apache.beam.sdk.io.astra.db.mapping.BeamRowDbMapperFactoryFn ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryUtils ; import org.apache.beam.sdk.options.PipelineOptions ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.transforms.SerializableFunction ; import org.apache.beam.sdk.values.Row ; import org.apache.commons.lang3.StringUtils ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; / The {@link AstraDbToBigQuery} pipeline is a batch pipeline which ingests data from AstraDB and outputs the resulting records to BigQuery. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/astradb-to-bigquery/README AstraDB to BigQuery.md\">README</a> for instructions on how to use or modify this template. / @Template ( name = \"AstraDB To BigQuery\" , category = TemplateCategory ."
+        ]
+      },
+      {
+        "title": "Google-provided templates \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-batch",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streaming templates Templates for processing data continuously: Apache Kafka to Apache Kafka Apache Kafka to BigQuery Apache Kafka to Cloud Storage Change Data Capture from MySQL to BigQuery (Stream) Bigtable change streams to BigQuery Bigtable change streams to Pub/Sub Spanner change streams to BigQuery Spanner change streams to Cloud Storage Spanner change streams to any source database Spanner change streams to Pub/Sub Datastream to BigQuery (Stream) Datastream to Spanner Datastream to MySQL or PostgreSQL (Stream) Data Masking/Tokenization from Cloud Storage to BigQuery (using Cloud DLP) JMS to Pub/Sub MongoDB to BigQuery (Stream) MQTT to Pub/Sub Pub/Sub to BigQuery Pub/Sub to BigQuery with Python UDF Pub/Sub Avro to BigQuery Pub/Sub Proto to BigQuery Pub/Sub Proto to BigQuery with Python UDF Pub/Sub Subscription to BigQuery Pub/Sub to Avro Files on Cloud Storage Pub/Sub to Datadog Pub/Sub to Elasticsearch Pub/Sub to Java Database Connectivity (JDBC) Pub/Sub to MongoDB Pub/Sub to MongoDB with Python UDF Pub/Sub to Pub/Sub Pub/Sub to Redis Pub/Sub to Splunk Pub/Sub Topic or Subscription to Text Files on Cloud Storage Pub/Sub Topic to Text Files on Cloud Storage Text Files on Cloud Storage to BigQuery (Stream) Cloud Storage text files to BigQuery with Python UDF Text files on Cloud Storage to Pub/Sub (Stream) Batch templates Templates for processing data in bulk: Any Source DB to Spanner Apache Cassandra to Bigtable AstraDB to BigQuery BigQuery to Bigtable BigQuery to Clickhouse BigQuery export to Parquet (via Storage API) BigQuery to Cloud Storage TFRecords BigQuery to Elasticsearch BigQuery to MongoDB Bigtable to Cloud Storage Avro Bigtable to Cloud Storage JSON Bigtable to Cloud Storage Parquet Bigtable to Cloud Storage SequenceFile Bigtable change streams to Vertex AI Vector Search Bigtable to Vertex AI Vector Search files on Cloud Storage Spanner to BigQuery Spanner to Cloud Storage Avro Spanner to Cloud Storage Text Spanner to Vertex AI Vector Search files on Cloud Storage Cloud Storage Avro to Bigtable Cloud Storage Parquet to Bigtable Cloud Storage SequenceFile to Bigtable Cloud Storage Avro to Spanner Cloud Storage CSV files to BigQuery Cloud Storage Text to BigQuery Cloud Storage text files to BigQuery with Python UDF Cloud Storage Text to Spanner Cloud Storage Text to Datastore [Deprecated] Cloud Storage Text to Firestore (Datastore mode) Cloud Storage Text to Pub/Sub (Batch) Cloud Storage to Elasticsearch Datastore to Cloud Storage Text [Deprecated] Firestore (Datastore mode) to Cloud Storage Text Google Ads to BigQuery Google Cloud to Neo4j JDBC to BigQuery JDBC to Pub/Sub MongoDB to BigQuery MySQL to BigQuery Oracle to BigQuery PostgreSQL to BigQuery SQL Server to BigQuery Utility templates Bulk Compress Cloud Storage Files Bulk Decompress Cloud Storage Files Datastore Bulk Delete [Deprecated] File Format Conversion Firestore (Datastore mode) Bulk Delete Streaming Data Generator to Pub/Sub, BigQuery, and Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Google-provided templates Stay organized with collections Save and categorize content based on your preferences.",
+          "To disable Dataflow Prime for Google-managed template jobs, set the enable prime Dataflow service option to false ( enable prime=false ) when you run the template."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.v2.astradb.options.AstraDbToBigQueryOptions",
+      "com.google.cloud.teleport.v2.astradb.transforms.AstraDbToBigQueryMappingFn",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.utils.SecretManagerUtils",
+      "dataflow.googleapis.com",
+      "github.com",
+      "java.util.AbstractMap",
+      "org.apache.beam.sdk.coders.SerializableCoder",
+      "org.apache.beam.sdk.io.astra.db.AstraDbIO",
+      "org.apache.beam.sdk.io.astra.db.CqlSessionHolder",
+      "org.apache.beam.sdk.io.astra.db.mapping.AstraDbMapper",
+      "org.apache.beam.sdk.io.astra.db.mapping.BeamRowDbMapperFactoryFn",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryUtils",
+      "org.apache.beam.sdk.options.PipelineOptions",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.transforms.SerializableFunction",
+      "org.apache.beam.sdk.values.Row",
+      "org.apache.commons.lang3.StringUtils",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-batch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-batch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-batch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-batch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    }
+  ]
+}

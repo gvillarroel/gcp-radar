@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Skip IVR menu readout",
+  "feature_slug": "skip-ivr-menu-readout",
+  "summary": "Call flows can skip the IVR menu readout and route callers directly to the default queue.",
+  "extended_definition": "Call flows can skip the IVR menu readout and route callers directly to the default queue.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "IVR - End User Dial '0' Behavior Choose routing when 0 is dialed: Dialing '0' moves user back up one level in IVR : If there are multiple menu levels, the caller will be routed to the queue one level back.",
+          "Select a specific menu : The caller will be routed to the menu of your choosing.",
+          "Overcapacity deflection message (if enabled) Estimated wait time announcement (if enabled) Connecting Message Record a Call Message (if enabled) Pre-Call Notification of CSAT survey (if enabled) Any other messages (if applicable) Wait Time SMS consent voice readout (if enabled and \"keep waiting\" is selected) Configure call settings This section explains configuration options in CCAI Platform."
+        ]
+      },
+      {
+        "title": "\"Customizing languages, recordings, & messages \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "source_id": "site-docs-reference-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "To skip the IVR queue menu readout, do the following.",
+          "In the text field, enter the IVR queue menu readout message—for example, Press one for product issues, press two for order status, press three for billing information. .",
+          "In the Settings pane, for IVR Queue Menu Readout , do one of the following: To configure a text-to-speech message, do the following: Select Text-to-speech ."
+        ]
+      },
+      {
+        "title": "\"Multicast and deltacast \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "It applies to all chat types and the following chat flows: Transfers Chats routed through Direct Access Points (DAPs) Queues with cascade groups enabled Queues with percent allocation groups enabled Eligible agents To receive a deltacast call, an agent must fulfill one of following requirements: Status is set to Available.",
+          "Optional: Skip cascade group timer The skip cascade group timer capabilities let you bypass the cascade timer settings and route a call or chat to the next available agent, regardless of your cascade group.",
+          "If the deltacast attempt count has run out, the call is routed using multicast to the rest of the agents assigned to that queue menu option."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_Routing"
+      ]
+    }
+  ]
+}

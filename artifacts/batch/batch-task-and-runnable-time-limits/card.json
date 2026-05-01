@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.903Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "Batch task and runnable time limits",
+  "feature_slug": "batch-task-and-runnable-time-limits",
+  "summary": "You can set maximum time limits (timeouts) for Batch tasks and runnables.",
+  "extended_definition": "You can set maximum time limits (timeouts) for Batch tasks and runnables.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/create-run-job",
+      "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+      "https://docs.cloud.google.com/batch/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Job creation and execution overview \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Limit run times using timeouts explains how to limit the amount of time that a task or runnable is permitted to run.",
+          "This value is also limited by the concurrent VMs per job limits . \\({taskCount}\\): the total number of tasks for the job, which you define using the task count ( taskCount ) field . \\({parallelTasksPerVM}\\): the maximum number of tasks that can run on a VM simultaneously.",
+          "A task finishes in one of the following states: Succeeded ( SUCCEEDED ): the task succeeded because each of its runnables met one of the following conditions: The runnable succeeded (returned an exit code of zero)."
+        ]
+      },
+      {
+        "title": "REST Resource: projects.locations.jobs \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "source_id": "site-api-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the maxRunDuration has expired then no further Runnables will execute, not even alwaysRun Runnables. environment object ( Environment ) Environment variables for this Runnable (overrides variables set for the whole Task or TaskGroup). timeout string ( Duration format) Timeout for this Runnable.",
+          "Resource: Job JSON representation TaskGroup JSON representation TaskSpec JSON representation Runnable JSON representation Container JSON representation Script JSON representation Barrier JSON representation Environment JSON representation KMSEnvMap JSON representation ComputeResource JSON representation LifecyclePolicy JSON representation Action ActionCondition JSON representation Volume JSON representation NFS JSON representation GCS JSON representation SchedulingPolicy AllocationPolicy JSON representation LocationPolicy JSON representation InstancePolicyOrTemplate JSON representation InstancePolicy JSON representation ProvisioningModel Accelerator JSON representation Disk JSON representation AttachedDisk JSON representation ServiceAccount JSON representation NetworkPolicy JSON representation NetworkInterface JSON representation PlacementPolicy JSON representation JobStatus JSON representation State TaskGroupStatus JSON representation InstanceStatus JSON representation LogsPolicy JSON representation Destination CloudLoggingOption JSON representation JobNotification JSON representation Message JSON representation Type Methods Resource: Job The Cloud Batch Job description.",
+          "TaskSpec Spec of a task JSON representation { \"runnables\" : [ { object ( Runnable ) } ] , \"computeResource\" : { object ( ComputeResource ) } , \"maxRunDuration\" : string , \"maxRetryCount\" : integer , \"lifecyclePolicies\" : [ { object ( LifecyclePolicy ) } ] , \"environments\" : { string : string , ... } , \"volumes\" : [ { object ( Volume ) } ] , \"environment\" : { object ( Environment ) } } Fields runnables[] object ( Runnable ) Required."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This issue occurs in the following cases: A task's run time exceeds the time limit specified in the maxRunDuration field A runnable's run time exceeds the time limit specified in the timeout field To identify specifically which time limit was exceeded, view logs for the job and find a log that mentions the 50005 exit code.",
+          "Then, do one of the following: If you only occasionally expect this error, such as for a task or runnable with an inconsistent run time, you can try to recreate the job and configure it to automate task retries to try to increase the success rate.",
+          "Important: Due to a known issue, the logs generated by Batch for exceeded timeout don't indicate whether the task's timeout or the runnable's timeout was exceeded."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.jobs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs",
+        "https://docs.cloud.google.com/batch/docs/troubleshooting"
+      ]
+    }
+  ]
+}

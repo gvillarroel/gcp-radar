@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Key Access Justifications",
+  "feature_slug": "key-access-justifications",
+  "summary": "Key Access Justifications lets you view the reason for each Cloud EKM request and automate approval or denial based on that justification.",
+  "extended_definition": "Key Access Justifications lets you view the reason for each Cloud EKM request and automate approval or denial based on that justification.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek",
+      "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key Access Justifications enable you to view the reason for each Cloud EKM request.",
+          "Thus, Key Access Justifications provides extra control over your data by providing a justification for each attempt to decrypt the data.",
+          "To learn more, see the Key Access Justifications overview ."
+        ]
+      },
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each time one of your keys is requested to encrypt or decrypt data, Key Access Justifications provides a detailed justification, along with a mechanism for you to approve or deny key access using an automated policy that you set.",
+          "Access Approval lets you require Google employees to get your explicit approval before they access your data or configurations on Google Cloud (for exclusions, see Access Approval exclusions ).",
+          "Using IAM permissions, Access Approval, Access Transparency, and Key Access Justifications with Cloud KMS and Cloud EKM, you can deny Google the ability to decrypt your data."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "KAJ enables you to view the reason for each Cloud EKM request.",
+          "Common reasons for failure include a missing Cloud KMS key version, a disabled or destroyed Cloud KMS key version, insufficient IAM permissions to access the Cloud KMS key version, or the Cloud KMS key version is in a different region than the Cloud SQL instance.",
+          "You can use Key Access Justifications (KAJ) as part of Cloud EKM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    }
+  ]
+}

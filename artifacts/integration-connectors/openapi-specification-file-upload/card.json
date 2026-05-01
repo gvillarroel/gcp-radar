@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.098Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "OpenAPI specification file upload",
+  "feature_slug": "openapi-specification-file-upload",
+  "summary": "Custom connectors now support uploading an OpenAPI specification file.",
+  "extended_definition": "Custom connectors now support uploading an OpenAPI specification file.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Azure Data Lake Storage \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Path\" : \"testdirectory1/test1.pdf\" , \"HasBytes\" : true } If the action is successful, the DownloadFile task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Success\" : \"True\" , \"ContentBytes\" : \"UEsDBBQABgAIAAAAIQCj77sdZQEAAFIFAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooA\" }] Example - Upload a file This example uploads content as a blob.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Path\" : \"testblob4\" , \"HasBytes\" : true , \"Content\" : \"abcdef\\nabcdef\" } If the action is successful, the UploadFile task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Success\" : \"true\" }] Example - Create a file This example creates a file in the specified directory.",
+          "Chunk Size : The size of chunks (in Mb) to use when uploading large files."
+        ]
+      },
+      {
+        "title": "Cloud Storage \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples This examples in this section describe the following operations: List all objects List all objects in a bucket List objects using the LIKE filter for name List all buckets Download an object Download a binary object Upload a binary object to a bucket Upload an object to a bucket Upload an object to a folder Copy an object Move an object Delete an object Create a signed URL for an object The following table lists the sample scenarios and the corresponding configuration in the Connectors task: Task Configuration List all objects In the Configure connector task dialog, click Entities .",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter the following in the Default Value field: { \"BucketSource\" : \"bucket 01\" , \"ObjectSource\" : \"folderA/logfile.txt\" , \"BucketDestination\" : \"bucket 02\" , \"ObjectDestination\" : \"folderB/logfile.txt\" } This example copies the folderA/logfile.txt file from bucket 01 to folderB/logfile.txt in bucket 02 .",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter the following in the Default Value field: { \"BucketSource\" : \"bucket 01\" , \"ObjectSource\" : \"folderA/logfile.txt\" , \"BucketDestination\" : \"bucket 02\" , \"ObjectDestination\" : \"folderB/logfile.txt\" } This example moves the folderA/logfile.txt file from bucket 01 to folderB/logfile.txt in bucket 02 ."
+        ]
+      },
+      {
+        "title": "Amazon S3 \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Bucket\" : \"aws-s3-bucket-source\" , \"HasBytes\" : true } If the action is successful, the DownloadObjects task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Success\" : \"True\" , \"RemoteFile\" : \"prefix1%2Faws-s3-bucket-source%2Finventory-test-1%2F2023-09-10T01-00Z%2Fmanifest.json\" , \"ContentBytes\" : \"ewogICJzb3VyY2VCdWNrZXQiIDogImF3cy1zMy1idWNrZXQtYmNvbmUiLAogICJnOK\" }, { \"Success\" : \"True\" , \"RemoteFile\" : \"upload1.txt\" , \"ContentBytes\" : \"VGhpcyBpcyBhIHRlc3RpbmcgZmlsZQ==\" }] Example - Upload an object This example uploads an object to the specified bucket.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Bucket\" : \"aws-s3-bucket-source\" , \"FileName\" : \"upload 1.txt\" , \"Content\" : \"This is a testing file\" , \"AccessPolicy\" : \"PUBLIC\" } If the action is successful, the UploadObject task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Status\" : \"success\" , \"bucket\" : \"aws-s3-bucket-source\" , \"rss:title\" : \"Object 'upload 1.txt' was created in the bucket: aws-s3-bucket-source\" , \"object\" : \"upload 1.txt\" }] Example - Delete an object This example deletes an object from the specified bucket.",
+          "ContentBytes String No The byte content to upload as a file."
+        ]
+      },
+      {
+        "title": "Azure AD (Entra ID) \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Annotations\" : \"[{\" displayName \": \" A ttr ibu tes \"}]\" , \"DirectoryPropertyName\" : \"CustomAttribute15\" } If the action is successful, the AddProfileCardProperty task's connectorOutputPayload response parameter has a value similar to the following: [{ \"Status\" : \"True\" }] Example - RemoveProfileCardProperty In the Configure connector task dialog, click Actions .",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"DirectoryPropertyName\" : \"CustomAttribute12\" } If the action is successful, the RemoveProfileCardProperty task's connectorOutputPayload response parameter has a value similar to the following: [{ \"Status\" : \"True\" }] Entity operation examples This section shows how to perform some of the entity operations in this connector.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"UserId\" : \"9630c9d7-cf15-4406-8d21-598e41a058cc\" } If the action is successful, the FetchAdditionalUserFields task's connectorOutputPayload response parameter has a value similar to the following: [{ \"id\" : \"9630c9d7-cf15-4406-8d21-598e41a058cc\" , \"deleteddatetime\" : null , \"accountenabled\" : \"true\" , \"agegroup\" : null , \"businessphones\" : \"\" , \"city\" : null , \"companyname\" : null , \"consentprovidedforminor\" : null , \"country\" : null , \"createddatetime\" : \"2024-04-12T10:24:42Z\" , \"creationtype\" : null , \"department\" : null , \"displayname\" : \"Azure AD Test\" , \"employeehiredate\" : null , \"employeeid\" : null , \"employeeleavedatetime\" : null , \"employeetype\" : null , \"externaluserstate\" : null , \"externaluserstatechangedatetime\" : null , \"faxnumber\" : null , \"givenname\" : null , \"imaddresses\" : \"\" , \"isresourceaccount\" : null , \"jobtitle\" : null , \"lastpasswordchangedatetime\" : \"2024-05-14T05:07:15Z\" , \"legalagegroupclassification\" : null , \"mail\" : null , \"mailnickname\" : \"Azure AD Test\" , \"mobilephone\" : null , \"officelocation\" : null , \"onpremisesdistinguishedname\" : null , \"onpremisesdomainname\" : null , \"onpremisesimmutableid\" : null , \"onpremiseslastsyncdatetime\" : null , \"onpremisessamaccountname\" : null , \"onpremisessecurityidentifier\" : null , \"onpremisessyncenabled\" : null , \"onpremisesuserprincipalname\" : null , \"othermails\" : \"\" , \"passwordpolicies\" : null , \"postalcode\" : null , \"preferreddatalocation\" : null , \"preferredlanguage\" : null , \"proxyaddresses\" : \"\" , \"securityidentifier\" : \"S-1-12-1-2519779799-1141296917-2388205965-3428360257\" , \"showinaddresslist\" : null , \"signinsessionsvalidfromdatetime\" : \"2024-05-14T05:07:15Z\" , \"state\" : null , \"streetaddress\" : null , \"surname\" : null , \"usagelocation\" : \"IN\" , \"userprincipalname\" : \"Azure AD Test@z8474.onmicrosoft.com\" , \"usertype\" : \"Member\" , \"aboutme\" : null , \"birthday\" : \"0001-01-01T08:00:00Z\" , \"hiredate\" : \"0001-01-01T08:00:00Z\" , \"interests\" : \"\" , \"mysite\" : null , \"pastprojects\" : \"\" , \"preferredname\" : \"\" , \"responsibilities\" : \"\" , \"schools\" : \"\" , \"skills\" : \"\" , \"assignedlicenses\" : \"\" , \"assignedplans\" : \"[\\r\\n {\\r\\n \\\"assignedDateTime\\\": \\\"2024-05-16T10:17:45Z\\\",\\r\\n \\\"capabilityStatus\\\": \\\"Deleted\\\",\\r\\n \\\"service\\\": \\\"DynamicsNAV\\\",\\r\\n \\\"servicePlanId\\\": \\\"3f2afeed-6fb5-4bf9-998f-f2912133aead\\\"\\r\\n }\\r\\n]\" , \"authorizationinfo certificateuserids\" : \"\" , \"identities\" : \"[\\r\\n {\\r\\n \\\"signInType\\\": \\\"userPrincipalName\\\",\\r\\n \\\"issuer\\\": \\\"z8474.onmicrosoft.com\\\",\\r\\n \\\"issuerAssignedId\\\": \\\"Azure AD Test@z8474.onmicrosoft.com\\\"\\r\\n }\\r\\n]\" , \"licenseassignmentstates\" : \"\" , \"onpremisesextensionattributes extensionattribute1\" : null , \"onpremisesextensionattributes extensionattribute2\" : null , \"onpremisesextensionattributes extensionattribute3\" : null , \"onpremisesextensionattributes extensionattribute4\" : null , \"onpremisesextensionattributes extensionattribute5\" : null , \"onpremisesextensionattributes extensionattribute6\" : null , \"onpremisesextensionattributes extensionattribute7\" : null , \"onpremisesextensionattributes extensionattribute8\" : null , \"onpremisesextensionattributes extensionattribute9\" : null , \"onpremisesextensionattributes extensionattribute10\" : null , \"onpremisesextensionattributes extensionattribute11\" : null , \"onpremisesextensionattributes extensionattribute12\" : null , \"onpremisesextensionattributes extensionattribute13\" : null , \"onpremisesextensionattributes extensionattribute14\" : null , \"onpremisesextensionattributes extensionattribute15\" : null , \"onpremisesprovisioningerrors\" : \"\" , \"provisionedplans\" : \"\" , \"serviceprovisioningerrors\" : \"\" , \"customsecurityattributes\" : \"{\\r\\n \\\"ConnectorTesting\\\": {\\r\\n \\\"@odata.type\\\": \\\"#microsoft.graph.customSecurityAttributeValue\\\",\\r\\n \\\"FavouriteSport\\\": \\\"cricket\\\",\\r\\n \\\"FavouriteMovie\\\": \\\"3 idiots\\\"\\r\\n }\\r\\n}\" , \"signinactivity lastsignindatetime\" : \"2024-05-14T07:04:51Z\" , \"signinactivity lastsigninrequestid\" : \"ed35b322-d0d9-4fcb-8e71-f9ee7e065e00\" , \"signinactivity lastnoninteractivesignindatetime\" : \"2024-05-15T09:00:02Z\" , \"signinactivity lastnoninteractivesigninrequestid\" : \"0d4ce88b-710a-440f-a612-f590954d6800\" , \"signinactivity lastsuccessfulsignindatetime\" : \"2024-05-15T06:45:42Z\" , \"signinactivity lastsuccessfulsigninrequestid\" : \"64643e9d-3468-4e4d-b7c3-8bd316956600\" } Note: By default, the entity retrieves the mandatory attributes coming from the Azure AD OData endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logfile.txt",
+      "microsoft.graph.customSecurityAttributeValue",
+      "odata.type",
+      "project.iam.gserviceaccount.com",
+      "test1.pdf",
+      "upload1.txt",
+      "z8474.onmicrosoft.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure"
+      ]
+    }
+  ]
+}

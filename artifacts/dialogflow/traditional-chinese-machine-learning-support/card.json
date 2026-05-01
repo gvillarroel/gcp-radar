@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Traditional Chinese Machine Learning Support",
+  "feature_slug": "traditional-chinese-machine-learning-support",
+  "summary": "Machine learning support enables Dialogflow ML features for zh-TW.",
+  "extended_definition": "Machine learning support enables Dialogflow ML features for zh-TW.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "ML settings Dialogflow CX uses machine learning (ML) algorithms to understand end-user inputs, match them to intents, and extract structured data.",
+          "Classification threshold link To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold.",
+          "Classification threshold To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+        "source_id": "site-iam-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: I am 7 years old (semantic meaning of annotated text is a person's age) The contract is valid for 7 years (semantic meaning of annotated text is a time duration) Dialogflow's machine learning models consider semantic meaning when matching system entities.",
+          "Different intents shouldn't contain similar training phrases, because this will prevent Dialogflow from learning how to recognize those phrases.",
+          "Machine learning and training Best Practice Details Intents should have at least 10-20 (depending on complexity of intent) training phrases."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default, Dialogflow updates your agent's machine learning model every time you make changes to intents and entities, import or restore an agent, or train your agent.",
+          "Dialogflow agents use machine learning algorithms to understand end-user expressions, match them to intents, and extract structured data.",
+          "The following settings are available: ML Classification Threshold : To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+      ]
+    }
+  ]
+}

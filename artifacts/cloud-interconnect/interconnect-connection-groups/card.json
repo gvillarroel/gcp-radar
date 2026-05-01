@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.758Z",
+  "source_step08_card": "data/step-08/current/products/cloud-interconnect/card.json",
+  "product_name": "Cloud Interconnect",
+  "product_slug": "cloud-interconnect",
+  "feature_name": "Interconnect connection groups",
+  "feature_slug": "interconnect-connection-groups",
+  "summary": "Interconnect connection groups let you define intended reliability levels for Cloud Interconnect resources and receive resiliency feedback.",
+  "extended_definition": "Interconnect connection groups let you define intended reliability levels for Cloud Interconnect resources and receive resiliency feedback.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cross-site-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/production-level-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dedicated Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Interconnect groups You can use connection groups to communicate your intended level of reliability, and to receive feedback on how your Cloud Interconnect resources meet that intended level of reliability.",
+          "You can use Cloud Interconnect connection groups without configuring VLAN attachment groups, and you can use VLAN attachment groups without configuring Cloud Interconnect connection groups.",
+          "Then, you order a Dedicated Interconnect connection so that Google can allocate the necessary resources and send you a Letter of Authorization and Connecting Facility Assignment (LOA-CFA)."
+        ]
+      },
+      {
+        "title": "\"Topology for production-level applications overview \\_|\\_ Cloud Interconnect\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/production-level-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can achieve a 99.99% availability configuration with Dedicated Interconnect or Partner Interconnect by using the following documents: Establish 99.99% availability for Dedicated Interconnect Establish 99.99% availability for Partner Interconnect To help you achieve a 99.99% availability configuration, we recommend that you use interconnect connection groups.",
+          "These groups provide you with information about whether your configuration meets the requirements for your intended level of availability.",
+          "For more information about interconnect connection groups, see Resiliency and SLA options ."
+        ]
+      },
+      {
+        "title": "Cross-Site Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cross-site-overview",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Encryption options The following encryption options are available depending on the wire group mode: For wire groups in VLAN mode, you can use MACsec for Cloud Interconnect to help you secure traffic on Cross-Site Interconnect connections, specifically between your on-premises router and Google's edge routers.",
+          "Then, you order Cross-Site Interconnect connections for each site that you want to connect so that Google can allocate the necessary resources and send you a Letter of Authorization and Connecting Facility Assignment (LOA-CFA).",
+          "If you configure wire groups in VLAN mode, you can use the same Cross-Site Interconnect connections to create multiple wire groups."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Interconnect \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Wire groups per Interconnect Quota The number of wire groups that you can configure on a single Interconnect connection.",
+          "VLAN attachments per Interconnect Quota The number of VLAN attachments that you can configure on a single interconnect connection.",
+          "If a pairing key is no longer valid, you delete and create a new pairing key for the Partner Interconnect service provider to use."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/production-level-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cross-site-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/production-level-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cross-site-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/production-level-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cross-site-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/production-level-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/cross-site-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas"
+      ]
+    }
+  ]
+}

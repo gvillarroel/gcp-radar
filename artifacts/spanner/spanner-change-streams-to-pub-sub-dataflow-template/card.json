@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner change streams to Pub/Sub Dataflow template",
+  "feature_slug": "spanner-change-streams-to-pub-sub-dataflow-template",
+  "summary": "Spanner adds a Dataflow template that streams change stream records from Spanner and writes them to Pub/Sub topics.",
+  "extended_definition": "Spanner adds a Dataflow template that streams change stream records from Spanner and writes them to Pub/Sub topics.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For Spanner change streams, we provide three Dataflow flex templates: Spanner change streams to BigQuery Spanner change streams to Google Cloud Storage Spanner change streams to Pub/Sub The following restrictions apply when you use the Spanner change streams to Pub/Sub template: Pub/Sub has a 10 MB message size limitation.",
+          "We also provide a Dataflow template for this use case: see Connect change streams to Cloud Storage .",
+          "We also provide a Dataflow template for this use case; see Connect change streams to BigQuery ."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Google provides templates that let you rapidly build Dataflow pipelines for common change stream use cases, including sending all of a stream's data changes to a BigQuery dataset, or copying them to a Cloud Storage bucket .",
+          "Reading change streams Spanner offers multiple ways to read a change stream's data: Through Dataflow, using the Apache Beam SpannerIO connector.",
+          "For a more detailed overview of how change streams and Dataflow work together, see Build change streams connections with Dataflow ."
+        ]
+      },
+      {
+        "title": "Create and manage change streams \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Build change streams pipelines with Dataflow .",
+          "TransactionOptions { ExcludeTxnFromChangeStreams : true }) if err != nil { return err } return nil } Java static void readWriteTxnExcludedFromChangeStreams ( DatabaseClient client ) { // Exclude the transaction from allowed tracking change streams with alloww txn exclusion=true. // This exclusion will be applied to all the individual operations inside this transaction. client . readWriteTransaction ( Options . excludeTxnFromChangeStreams ()) . run ( transaction - > { transaction . executeUpdate ( Statement . of ( \"INSERT Singers (SingerId, FirstName, LastName)\\n\" + \"VALUES (1341, 'Virginia', 'Watson')\" )); System . out . println ( \"New singer inserted.\" ); transaction . executeUpdate ( Statement . of ( \"UPDATE Singers SET FirstName = 'Hi' WHERE SingerId = 111\" )); System . out . println ( \"Singer first name updated.\" ); return null ; }); } Modify a change stream To modify a change stream's configuration, use an ALTER CHANGE STREAM DDL statement.",
+          "Modify what a change stream watches This example adds the entire Songs table to the NamesAndAlbums change stream configured earlier: ALTER CHANGE STREAM NamesAndAlbums SET FOR Singers ( FirstName , LastName ), Albums , Songs ; Spanner replaces the named change stream's behavior with the new configuration upon the completion of the long-running operation that updates the change stream's definition within the database's schema."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "schema.change",
+      "spanner.databases.beginOrRollbackReadWriteTransaction",
+      "spanner.databases.beginReadOnlyTransaction",
+      "spanner.databases.read",
+      "spanner.databases.select",
+      "spanner.databases.updateDdl",
+      "spanner.databases.write",
+      "spanner.sessions.create",
+      "spanner.sessions.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage"
+      ]
+    }
+  ]
+}

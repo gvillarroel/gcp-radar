@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.883Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Failover for external Application Load Balancers",
+  "feature_slug": "failover-for-external-application-load-balancers",
+  "summary": "Cloud Load Balancing supports failover for global, classic, and regional external Application Load Balancers by using regional external Application Load Balancers as backups; Cloud Load Balancing supports failover for global, classic, and regional external Application Load Balancers by using regional external Application Load Balancers as backups.",
+  "extended_definition": "Cloud Load Balancing supports failover for global, classic, and regional external Application Load Balancers by using regional external Application Load Balancers as backups; Cloud Load Balancing supports failover for global, classic, and regional external Application Load Balancers by using regional external Application Load Balancers as backups.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Guidelines for load testing backend services with Application Load Balancers\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Load Balancing Guides Send feedback Guidelines for load testing backend services with Application Load Balancers Stay organized with collections Save and categorize content based on your preferences.",
+          "The ab command produces response latency histograms similar to those as Nighthawk, but its resolution is limited to milliseconds, instead of microseconds: Percentage of the requests served within a certain time (ms) 50% 7 66% 7 75% 7 80% 7 90% 92 95% 121 98% 123 99% 127 100% 156 (longest request) What's next Capacity management with load balancing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "While integrating a backend service with Application Load Balancer, it's important to measure the performance of a backend service on its own, in the absence of a load balancer."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backend service scope The following table indicates which backend service resource and scope is used by external Application Load Balancers: Load balancer mode Backend service resource Global external Application Load Balancer backendServices (global) Classic Application Load Balancer backendServices (global) Regional external Application Load Balancer regionBackendServices (regional) Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP.",
+          "Load balancer mode Supported backends on a backend service 1 Supports backend buckets Supports Cloud Armor Supports Cloud CDN 2 Supports IAP 2 Supports Service Extensions Instance groups 3 Zonal NEGs 4 Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs Global external Application Load Balancer Classic Application Load Balancer Premium Tier Regional external Application Load Balancer 1 Backends on a backend service must be the same type: all instance groups or all the same type of NEG.",
+          "Load balancer mode Health check type Global external Application Load Balancer Global Classic Application Load Balancer Global Regional external Application Load Balancer Regional For more information about health checks, see the following: Health checks overview Creating health checks Firewall rules The load balancer requires the following firewall rules: For the global external Application Load Balancers, an ingress allow rule to permit traffic from Google Front Ends (GFEs) to reach your backends."
+        ]
+      },
+      {
+        "title": "\"Custom metrics for Application Load Balancers \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported load balancers and backends Custom metrics are supported for the following Application Load Balancers: Global external Application Load Balancer Regional external Application Load Balancer Cross-region internal Application Load Balancer Regional internal Application Load Balancer Custom metrics are supported with the following backend types: Managed instance groups Zonal NEGs (with GCE VM IP PORT endpoints) Hybrid connectivity NEGs How custom metrics work To enable your load balancer to make traffic distribution decisions based on custom metrics, you must first determine what the most relevant metrics are for your specific application.",
+          "You use the --custom-metrics flag to specify your custom metric and the threshold to be used for load balancing decisions. gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics='name=\" BACKEND METRIC NAME 1 \",maxUtilization= MAX UTILIZATION FOR METRIC 1 ' \\ --custom-metrics='name=\" BACKEND METRIC NAME 2 \",maxUtilization= MAX UTILIZATION FOR METRIC 2 ' Replace the following: BACKEND SERVICE NAME : the name of the backend service NEG NAME : the name of the zonal or hybrid NEG NEG ZONE : the zone where the NEG was created REGION : for regional load balancers, the region where the load balancer was created BACKEND METRIC NAME : the custom metric names used here must match the custom metric names being reported by the backend's ORCA report MAX UTILIZATION FOR METRIC : the maximum utilization that the load balancing algorithms must target for each metric For example, if your backends are reporting two custom metrics, customUtilA and customUtilB (as demonstrated in the Configure backends to report metrics to the load balancer section), you use the following command to configure your load balancer to use these metrics: gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics='name=\"customUtilA\",maxUtilization=0.8' \\ --custom-metrics='name=\"customUtilB\",maxUtilization=0.9' Alternatively, you can provide a list of custom metrics in a structured JSON file: { \"name\" : \" METRIC NAME 1 \" , \"maxUtilization\" : MAX UTILIZATION FOR METRIC 1 , \"dryRun\" : true } { \"name\" : \" METRIC NAME 2 \" , \"maxUtilization\" : MAX UTILIZATION FOR METRIC 2 , \"dryRun\" : false } Then attach the metrics file in JSON format to the backend as follows: gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics-file=' BACKEND METRIC FILE NAME ' If you want to test whether the metrics are being reported without actually affecting the load balancer, you can set the dryRun flag to true when configuring the metric as follows: gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics 'name=\" BACKEND METRIC NAME \",maxUtilization= MAX UTILIZATION FOR METRIC , dryRun=true ' When a metric is configured with dryRun set to true , the metric is reported to Monitoring but isn't actually used by the load balancer.",
+          "What's next Troubleshoot issues with external Application Load Balancers Troubleshoot issues with internal Application Load Balancers Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service-load-testing"
+      ]
+    }
+  ]
+}

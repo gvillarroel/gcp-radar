@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Cloud Spanner to BigQuery batch template",
+  "feature_slug": "cloud-spanner-to-bigquery-batch-template",
+  "summary": "The Cloud Spanner to BigQuery Dataflow template for batch pipelines is available in preview.",
+  "extended_definition": "The Cloud Spanner to BigQuery Dataflow template for batch pipelines is available in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically:\\n\" + \" - For Cloud Spanner JSON type, the order of the members of an object is\" + \" lexicographically ordered, but there is no such guarantee for BigQuery JSON type.\\n\" + \" - Cloud Spanner supports nanoseconds TIMESTAMP type, BigQuery only supports\" + \" microseconds TIMESTAMP type.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change\" + \" streams</a>, <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to\" + \" build change streams Dataflow pipelines</a>, and <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best\" + \" practices</a>.\" }, optionsClass = SpannerChangeStreamsToBigQueryOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The BigQuery dataset must exist prior to running the pipeline.\" }, streaming = true , supportsExactlyOnce = true , supportsAtLeastOnce = true ) public final class SpannerChangeStreamsToBigQuery { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToBigQuery . class ); // Max number of deadletter queue retries. private static final int DLQ MAX RETRIES = 5 ; private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting to replicate change records from Spanner change streams to BigQuery\" ); SpannerChangeStreamsToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( SpannerChangeStreamsToBigQueryOptions . class ); run ( options ); } private static void validateOptions ( SpannerChangeStreamsToBigQueryOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getBigQueryChangelogTableNameTemplate () . equals ( BigQueryUtils .",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"spannerInstanceId\" : \" SPANNER INSTANCE ID \" , \"spannerDatabase\" : \" SPANNER DATABASE \" , \"spannerMetadataInstanceId\" : \" SPANNER METADATA INSTANCE ID \" , \"spannerMetadataDatabase\" : \" SPANNER METADATA DATABASE \" , \"spannerChangeStreamName\" : \" SPANNER CHANGE STREAM \" , \"bigQueryDataset\" : \" BIGQUERY DATASET \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/Spanner Change Streams to BigQuery\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Spanner Change Streams to BigQuery \\ --region REGION NAME \\ --parameters \\ spannerInstanceId = SPANNER INSTANCE ID , \\ spannerDatabase = SPANNER DATABASE , \\ spannerMetadataInstanceId = SPANNER METADATA INSTANCE ID , \\ spannerMetadataDatabase = SPANNER METADATA DATABASE , \\ spannerChangeStreamName = SPANNER CHANGE STREAM , \\ bigQueryDataset = BIGQUERY DATASET Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      },
+      {
+        "title": "Spanner to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Spanner to BigQuery\" , description = \"The Spanner to BigQuery template is a batch pipeline that reads data from a Spanner table, and writes them to a BigQuery table.\" , optionsClass = SpannerToBigQueryOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/spanner-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" ) public final class SpannerToBigQuery { public static void main ( String [] args ) { UncaughtExceptionLogger . register (); PipelineOptionsFactory . register ( SpannerToBigQueryOptions . class ); SpannerToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( SpannerToBigQueryOptions . class ); BigQueryIOUtils . validateBQStorageApiOptionsBatch ( options ); Pipeline pipeline = Pipeline . create ( options ); SpannerConfig spannerConfig = SpannerConfig . create () . withProjectId ( options . getSpannerProjectId (). isEmpty () ? options . getProject () : options . getSpannerProjectId ()) . withDatabaseId ( options . getSpannerDatabaseId ()) . withInstanceId ( options . getSpannerInstanceId ()) . withRpcPriority ( options . getSpannerRpcPriority ()); SpannerIO .",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launchParameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"spannerInstanceId\" : \" SPANNER INSTANCE ID \" , \"spannerDatabaseId\" : \" SPANNER DATABASE ID \" , \"spannerTableId\" : \" SPANNER TABLE ID \" , \"sqlQuery\" : \" SQL QUERY \" , \"outputTableSpec\" : \" OUTPUT TABLE SPEC \" , }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/Cloud Spanner to BigQuery Flex\" , \"environment\" : { \"maxWorkers\" : \"10\" } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Cloud Spanner to BigQuery Flex \\ --project = PROJECT ID \\ --region = REGION NAME \\ --parameters \\ spannerInstanceId = SPANNER INSTANCE ID , \\ spannerDatabaseId = SPANNER DATABASE ID , \\ spannerTableId = SPANNER TABLE ID , \\ sqlQuery = SQL QUERY , \\ outputTableSpec = OUTPUT TABLE SPEC , \\ Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Avro to Spanner template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Avro Files on Cloud Storage to Cloud Spanner\" , description = \"The Cloud Storage Avro files to Cloud Spanner template is a batch pipeline that reads Avro files exported from \" + \"Cloud Spanner stored in Cloud Storage and imports them to a Cloud Spanner database.\" , optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The target Cloud Spanner database must exist and must be empty.\" , \"You must have read permissions for the Cloud Storage bucket and write permissions for the target Cloud Spanner database.\" , \"The input Cloud Storage path must exist, and it must include a <a href=\\\"https://cloud.google.com/spanner/docs/import-non-spanner#create-export-json\\\">spanner-export.json</a> file that contains a JSON description of files to import.\" }) public class ImportPipeline { / Options for {@link ImportPipeline}. / public interface Options extends PipelineOptions { @TemplateParameter.Text ( order = 1 , groupName = \"Target\" , regexes = { \"^[a-z0-9\\\\-]+$\" }, description = \"Cloud Spanner instance ID\" , helpText = \"The instance ID of the Spanner database.\" ) ValueProvider<String> getInstanceId (); void setInstanceId ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 2 , groupName = \"Target\" , regexes = { \"^[a-z 0-9\\\\-]+$\" }, description = \"Cloud Spanner database ID\" , helpText = \"The database ID of the Spanner database.\" ) ValueProvider<String> getDatabaseId (); void setDatabaseId ( ValueProvider<String> value ); @TemplateParameter.GcsReadFolder ( order = 3 , groupName = \"Source\" , description = \"Cloud storage input directory\" , helpText = \"The Cloud Storage path where the Avro files are imported from.\" ) ValueProvider<String> getInputDir (); void setInputDir ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 4 , groupName = \"Target\" , optional = true , description = \"Cloud Spanner Endpoint to call\" , helpText = \"The Cloud Spanner endpoint to call in the template.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /templates:launch?gcsPath=gs://dataflow-templates- LOCATION / VERSION /GCS Avro to Cloud Spanner { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"instanceId\" : \" INSTANCE ID \" , \"databaseId\" : \" DATABASE ID \" , \"inputDir\" : \"gs:// GCS DIRECTORY \" }, \"environment\" : { \"machineType\" : \"n1-standard-2\" } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow jobs run JOB NAME \\ --gcs-location gs://dataflow-templates- REGION NAME / VERSION /GCS Avro to Cloud Spanner \\ --region REGION NAME \\ --staging-location GCS STAGING LOCATION \\ --parameters \\ instanceId = INSTANCE ID , \\ databaseId = DATABASE ID , \\ inputDir = GCS DIRECTORY Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.v2",
+      "com.google.cloud.teleport.v2.cdc.dlq.DeadLetterQueueManager",
+      "com.google.cloud.teleport.v2.cdc.dlq.StringDeadLetterQueueSanitizer",
+      "com.google.cloud.teleport.v2.coders.FailsafeElementCoder",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery",
+      "com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery.schemautils.BigQueryUtils",
+      "com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery.schemautils.OptionsUtils",
+      "com.google.cloud.teleport.v2.transforms.DLQWriteTransform",
+      "com.google.cloud.teleport.v2.utils.BigQueryIOUtils",
+      "com.google.cloud.teleport.v2.values.FailsafeElement",
+      "com.google.common.base.Strings",
+      "com.google.common.collect.ImmutableSet",
+      "dataflow.googleapis.com",
+      "export.json",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.List",
+      "java.util.Set",
+      "java.util.stream.Collectors",
+      "org.apache.beam.runners.dataflow",
+      "org.apache.beam.sdk"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    }
+  ]
+}

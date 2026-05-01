@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Data clean room analysis rule list overlap",
+  "feature_slug": "data-clean-room-analysis-rule-list-overlap",
+  "summary": "BigQuery data clean rooms can enforce list overlap controls through analysis rules.",
+  "extended_definition": "BigQuery data clean rooms can enforce list overlap controls through analysis rules.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Restrict data access using analysis rules \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "source_id": "site-docs-reference-2",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ExamTable ); Update a list overlap analysis rule for a view You can change the list overlap analysis rule for a view with a data clean room or with the ALTER VIEW statement: ALTER VIEW VIEW NAME SET OPTIONS ( privacy policy = ' '' { \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) For more information about the values you can set for the privacy policy in the preceding syntax, see Define a list overlap analysis rule for a view .",
+          "Define a list overlap analysis rule for a view You can define a list overlap analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: join restriction policy : The join restriction policy for the list overlap analysis rule.",
+          "With BigQuery, you can enforce an analysis rule on a view, using a data clean room or by applying the analysis rule directly to the view."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Filters section, you can filter data clean room exchanges based on the following fields: Listings : select the Clean rooms checkbox to view the data clean rooms shared with you.",
+          "Subscribe to data exchanges : BigQuery User ( roles/bigquery.user ) To subscribe to data exchanges in the context of data clean room exchanges, you must also ask the BigQuery sharing exchange publisher to grant you the Analytics Hub Subscriber role ( roles/analyticshub.subscriber ) on the specific data clean room.",
+          "To subscribe to a data clean room exchange, follow these steps: Console To view a list of data clean room exchanges that you have access to, follow the steps in Discover data exchanges ."
+        ]
+      },
+      {
+        "title": "\"Manage Sharing data exchanges and listings using custom constraints \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Existing listings published to data clean rooms aren't checked during the dry run of existing resources.",
+          "Resource Field analyticshub.googleapis.com/DataExchange resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact analyticshub.googleapis.com/Listing resource.allowOnlyMetadataSharing resource.bigqueryDataset.dataset resource.bigqueryDataset.replicaLocations resource.bigqueryDataset.restrictedExportPolicy.enabled resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult resource.bigqueryDataset.selectedResources.routine resource.bigqueryDataset.selectedResources.table resource.categories resource.dataProvider.name resource.dataProvider.primaryContact resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact resource.publisher.name resource.publisher.primaryContact resource.pubsubTopic.dataAffinityRegions resource.pubsubTopic.topic resource.requestAccess resource.restrictedExportConfig.enabled resource.restrictedExportConfig.restrictQueryResult What's next Learn more about custom constraints .",
+          "The Listing resource must have the restrictedExportPolicy object enabled. name : organizations/ ORGANIZATION ID /customConstraints/custom.listingWithRestrictedExportPolicy resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : has(resource.bigqueryDataset) && has(resource.bigqueryDataset.restrictedExportPolicy) && resource.bigqueryDataset.restrictedExportPolicy.enabled == true action type : DENY display name : The Listing must have restricted export policy. description : The Listing resource must have restrictedExportPolicy enabled to allow egress controls."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "analyticshub.subscriber",
+      "bigquery.user",
+      "custom.listingWithBQDataset",
+      "custom.listingWithRestrictedExportPolicy",
+      "resource.allowOnlyMetadataSharing",
+      "resource.bigqueryDataset",
+      "resource.bigqueryDataset.dataset",
+      "resource.bigqueryDataset.dataset.contains",
+      "resource.bigqueryDataset.replicaLocations",
+      "resource.bigqueryDataset.restrictedExportPolicy",
+      "resource.bigqueryDataset.restrictedExportPolicy.enabled",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult",
+      "resource.bigqueryDataset.selectedResources.routine",
+      "resource.bigqueryDataset.selectedResources.table",
+      "resource.categories",
+      "resource.dataProvider.name",
+      "resource.dataProvider.primaryContact",
+      "resource.description",
+      "resource.discoveryType",
+      "resource.displayName",
+      "resource.documentation",
+      "resource.icon",
+      "resource.logLinkedDatasetQueryUserEmail",
+      "resource.primaryContact",
+      "resource.publisher.name",
+      "resource.publisher.primaryContact",
+      "resource.pubsubTopic.dataAffinityRegions",
+      "resource.pubsubTopic.topic",
+      "resource.requestAccess",
+      "resource.restrictedExportConfig.enabled",
+      "resource.restrictedExportConfig.restrictQueryResult"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.subscriber",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    }
+  ]
+}

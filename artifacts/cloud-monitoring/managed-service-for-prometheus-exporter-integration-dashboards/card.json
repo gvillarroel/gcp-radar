@@ -1,0 +1,91 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.165Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Managed Service for Prometheus exporter integration dashboards",
+  "feature_slug": "managed-service-for-prometheus-exporter-integration-dashboards",
+  "summary": "Managed Service for Prometheus provides dashboards for exporter integrations and can show static previews before configuration.",
+  "extended_definition": "Managed Service for Prometheus provides dashboards for exporter integrations and can show static previews before configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/integrations",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage integrations \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "source_id": "site-iam-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following screenshot shows an example of the Monitoring Integrations page: The Integrations page displays the following: A listing of how many Compute Engine VMs have the Ops Agent installed and how many GKE clusters have Managed Service for Prometheus enabled.",
+          "To limit the list of integrations by the type of application, click one of the following options: 3rd party services : shows all third-party services that have integrations with the Ops Agent or Managed Service for Prometheus.",
+          "The following screenshot shows an example of a Logs tab: Configure third-party integrations If you open the details pane for a third-party integration you haven't installed, then the panel indicates that you have no dashboards or configured resources for the integration."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Existing integrations The Ops Agent provides integrations for a number of third-party applications .",
+          "Setting up the example requires the following resources, which you might have to install: git curl make python3 Go language, version 1.19 or higher Create or configure your application To obtain and run the JSON Exporter, use the following procedure: Clone the json exporter repository and check out the exporter by running the following commands: git clone https://github.com/prometheus-community/json exporter.git cd json exporter git checkout v0.5.0 Build the exporter by running the following command: make build Start the Python HTTP server by running the following command: python3 -m http.server 8000 & Start the JSON Exporter by running the following command: ./json exporter --config.file examples/config.yml & Query the JSON Exporter to verify that it is running and exposing metrics on port 7979: curl \"http://localhost:7979/probe?module=default&target=http://localhost:8000/examples/data.json\" If the query was successful, then you see output that resembles the following: HELP example global value Example of a top-level global value scrape in the json TYPE example global value untyped example global value{environment=\"beta\",location=\"planet-mars\"} 1234 HELP example value active Example of sub-level value scrapes from a json TYPE example value active untyped example value active{environment=\"beta\",id=\"id-A\"} 1 example value active{environment=\"beta\",id=\"id-C\"} 1 HELP example value boolean Example of sub-level value scrapes from a json TYPE example value boolean untyped example value boolean{environment=\"beta\",id=\"id-A\"} 1 example value boolean{environment=\"beta\",id=\"id-C\"} 0 HELP example value count Example of sub-level value scrapes from a json TYPE example value count untyped example value count{environment=\"beta\",id=\"id-A\"} 1 example value count{environment=\"beta\",id=\"id-C\"} 3 In this output, the strings like example value active are the metric names, with labels and values in braces.",
+          "Add the staticLabel label with the value \"A static value\" to all ingested metrics. metrics: receivers: prometheus: type: prometheus config: scrape configs: - job name: 'json exporter' scrape interval: 10s metrics path: /probe params: module: [default] target: [http://localhost:8000/examples/data.json] static configs: - targets: ['localhost:7979'] relabel configs: - source labels: [ meta gce zone] regex: '(.+)' replacement: '${1}' target label: zone metric relabel configs: - source labels: [ name ] regex: 'example global value' action: drop - source labels: [ address ] action: replace replacement: 'A static value' target label: staticLabel Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For each metric, the table displays that metric's contribution to billable volume and provides links to to the alerting policies and custom dashboards associated with the metric, as shown in the following screenshot.",
+          "Prometheus prometheus.googleapis.com Samples Metrics collected by using Google Cloud Managed Service for Prometheus , or by using the Ops Agent and the Prometheus receiver or the OTLP receiver ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.file",
+      "config.yaml",
+      "config.yml",
+      "data.json",
+      "exporter.git",
+      "github.com",
+      "http.server",
+      "prometheus.googleapis.com",
+      "v0.5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

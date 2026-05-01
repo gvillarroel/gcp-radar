@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.606Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "cos-gpu-installer ARM64 prepare-build-tools metadata preload",
+  "feature_slug": "cos-gpu-installer-arm64-prepare-build-tools-metadata-preload",
+  "summary": "Cos-gpu-installer can use the --prepare-build-tools flag to preload GPU driver metadata on ARM64; cos-gpu-installer can use the --prepare-build-tools flag to preload GPU driver metadata on ARM64.",
+  "extended_definition": "Cos-gpu-installer can use the --prepare-build-tools flag to preload GPU driver metadata on ARM64; cos-gpu-installer can use the --prepare-build-tools flag to preload GPU driver metadata on ARM64.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Building Container-Optimized OS from source \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Running in hypervisor To boot your image in hypervisor, run the following command: x86 image kvm -m 1024 -nographic -net nic,model = virtio -net user,hostfwd = tcp:127.0.0.1:9222-:22 -hda src/build/images/lakitu/latest/chromiumos test image.bin Arm image sudo apt-get install qemu-system-arm qemu-efi dd if = /dev/zero of = /tmp/flash0.img bs = 1M count = 64 dd if = /usr/share/qemu-efi/QEMU EFI.fd of = /tmp/flash0.img conv = notrunc sudo qemu-system-aarch64 -m 1024 -cpu cortex-a57 -M virt -nographic \\ -pflash /tmp/flash0.img \\ -device virtio-scsi-pci,id = scsi \\ -drive if = none,file = src/build/images/lakitu-arm64/latest/chromiumos test image.bin,id = hd0 \\ -device scsi-hd,drive = hd0,bootindex = 0 \\ -net nic \\ -net user,hostfwd = tcp::9222-:22 Booting in this manner leaves the VM's serial port connected to your console, letting you log in without using SSH.",
+          "To build Container-Optimized OS, specify lakitu (x86 image) or lakitu-arm64 (Arm image) for the board name as follows: x86 image build packages --board = lakitu build image --board = lakitu test Arm image build packages --board = lakitu-arm64 build image --board = lakitu-arm64 test In addition to test , you can build either a base , or dev image by passing the appropriate parameter to the ./build image script command.",
+          "To SSH into the image, use the key generated for that image, as follows: x86 image ssh root@localhost -p 9222 -i src/build/images/lakitu/latest/id rsa Arm image ssh root@localhost -p 9222 -i src/build/images/lakitu-arm64/latest/id rsa Running on Compute Engine To import your image to a Compute Engine instance, you must compress the image into a .tar file."
+        ]
+      },
+      {
+        "title": "Using Arm-based Container-Optimized OS images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also see all available releases on command line by running the following command: gcloud compute images list --project cos-cloud --no-standard-images --filter = \"name 'cos-arm64- '\" The output is similar to the following: NAME PROJECT FAMILY DEPRECATED STATUS cos-arm64-101-17162-40-5 cos-cloud cos-arm64-101-lts READY cos-arm64-beta-101-17162-40-5 cos-cloud cos-arm64-beta READY cos-arm64-dev-105-17228-0-0 cos-cloud cos-arm64-dev READY cos-arm64-stable-101-17162-40-5 cos-cloud cos-arm64-stable READY Arm-based Container-Optimized OS images share the same versioning scheme and LTS milestone lifecycle with x86-based images.",
+          "The following table describes which containers are compatible with Arm-based images: Container images Compatible with Arm-based images gcr.io/cos-cloud/toolbox Yes gcr.io/cos-cloud/cos-gpu-installer No gcr.io/stackdriver-agents/stackdriver-logging-agent No gcr.io/gce-containers/konlet No Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Differences between Arm and x86 images The Arm-based and x86-based Container-Optimized OS images share the same source code , but the build and compile configurations are different."
+        ]
+      },
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following flags apply: -no-verify : Downloads and prepares the driver files but skips kernel module loading and installation verification. -target-gpu : Specifies the GPU device to ensure the correct driver is preloaded, preventing compatibility issues when the GPU device is later attached.",
+          "To preload the GPU driver, run the following command: sudo cos-extensions install gpu -- -no-verify -target-gpu= GPU DEVICE This command is supported starting from cos-gpu-installer:v2.3.0 .",
+          "For earlier Container-Optimized OS release milestones, use the cos-gpu-installer open source tool to manually install GPU drivers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "flash0.img",
+      "gcr.io",
+      "image.bin",
+      "v2.3.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.056Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Event payload content type selection",
+  "feature_slug": "event-payload-content-type-selection",
+  "summary": "Eventarc supports specifying event payload encoding with the eventDataContentType field.",
+  "extended_definition": "Eventarc supports specifying event payload encoding with the eventDataContentType field.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/cloudevents-json",
+      "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google event types supported by Eventarc \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "source_id": "site-iam-reference",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "Advanced Standard Eventarc Advanced Eventarc Advanced supports Google event types sent directly from a Google source with the exception of the following: Cloud Firestore Cloud Pub/Sub Cloud Storage Firebase Alerts Firebase Realtime Database Firebase Remote Config Firebase Test Lab Note that to publish events from Google sources, you must first enable support for Google event types.",
+          "Eventarc Standard Eventarc Standard supports the following Google event types: Directly from a Google source Using Cloud Audit Logs Note: Google Cloud IoT Core was retired on August 16, 2023, and Cloud IoT events were deprecated at that time.",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Google event types supported by Eventarc Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class EventarcAsyncClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.eventarc v1.types.Trigger A representation of the trigger resource. google api source path google api source path ( project : str , location : str , google api source : str ) - > str Returns a fully-qualified google api source string. google channel config path google channel config path ( project : str , location : str ) - > str Returns a fully-qualified google channel config string. list channel connections list channel connections ( request : typing .",
+          "CreateChannelConnectionRequest ( parent=\"parent value\", channel connection=channel connection, channel connection id=\"channel connection id value\", ) Make the request operation = client. create channel connection (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.eventarc v1.types.CreateChannelConnectionRequest , dict]] The request object.",
+          "CreateGoogleApiSourceRequest ( parent=\"parent value\", google api source=google api source, google api source id=\"google api source id value\", ) Make the request operation = client. create google api source (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.eventarc v1.types.CreateGoogleApiSourceRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class EventarcClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "source_id": "site-python-reference",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.eventarc v1.types.Trigger A representation of the trigger resource. google api source path google api source path ( project : str , location : str , google api source : str ) - > str Returns a fully-qualified google api source string. google channel config path google channel config path ( project : str , location : str ) - > str Returns a fully-qualified google channel config string. list channel connections list channel connections ( request : typing .",
+          "CreateChannelConnectionRequest ( parent=\"parent value\", channel connection=channel connection, channel connection id=\"channel connection id value\", ) Make the request operation = client. create channel connection (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.eventarc v1.types.CreateChannelConnectionRequest , dict] The request object.",
+          "CreateGoogleApiSourceRequest ( parent=\"parent value\", google api source=google api source, google api source id=\"google api source id value\", ) Make the request operation = client. create google api source (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.eventarc v1.types.CreateGoogleApiSourceRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "CloudEvents - JSON event format \\_|\\_ Eventarc \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/docs/cloudevents-json",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON payload format The destination service receives events from event routers and formats the events to the JSON Event Format for CloudEvents version 1.0.1 with the following CloudEvents attributes: Attribute Description Example data The payload of the event data. { \"subscription\" : \"projects/my-project/subscriptions/my-sub\" , \"message\" : { \"attributes\" : { \"attr1\" : \"attr1-value\" }, \"data\" : \"aGVsbG8gd29ybGQ=\" , \"messageId\" : \"2070443601311540\" , \"publishTime\" : \"2021-02-26T19:13:55.749Z\" } } datacontenttype The type of data that has been passed application/json id The unique identifier for the event 2070443601311540 source The source of the event //pubsub.googleapis.com/projects/my-project/topics/my-topic specversion The CloudEvents specification version used for this event 1.0 type The type of event data google.cloud.pubsub.topic.v1.messagePublished time Event generation time, in RFC 3339 format (optional) 2020-12-20T13:37:33.647Z Depending on the event type, the payload format is as follows: Cloud Audit Logs The runtime argument is a JSON object detailing the Cloud Audit Logs event.",
+          "Examples Simple Complex More information Create an Eventarc trigger for a Firestore event Create event-driven architectures with Eventarc and Firestore Extend with Cloud Run functions to handle events triggered by changes in Firestore Pub/Sub Proto files google/events/cloud/pubsub/v1/events.proto google/events/cloud/pubsub/v1/data.proto Envelope message google.events.cloud.pubsub.v1.MessagePublishedEvent Data message google.events.cloud.pubsub.v1.MessagePublishedData Resource PubsubMessage Event type (when a Pub/Sub message is published) google.cloud.pubsub.topic.v1.messagePublished Example Text More information Receive events in a Cloud Run service using Pub/Sub messages Trigger a workflow using Pub/Sub messages Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Events of type google.cloud.audit.log.v1.written have the following format: { \"data\" :{ EVENT DATA }, \"datacontenttype\" : \"application/json; charset=utf-8\" , \"id\" : \" MESSAGE ID \" , \"source\" : \"//cloudaudit.googleapis.com/projects/ PROJECT ID /logs/data access\" , \"specversion\" : \"1.0\" , \"type\" : \"google.cloud.audit.log.v1.written\" , \"time\" : \" EVENT GENERATION TIME \" , \"dataschema\" : \"https://googleapis.github.io/google-cloudevents/jsonschema/google/events/cloud/audit/v1/LogEntryData.json\" , \"methodName\" : \"jobservice.jobcompleted\" , \"resourceName\" : \"projects/my-project/jobs/bqjob r3ac45813612fa2d6 0000017d591922c9 1\" , \"serviceName\" : \"bigquery.googleapis.com\" , \"subject\" : \"bigquery.googleapis.com/projects/my-project/jobs/bqjob r3ac45813612fa2d6 0000017d591922c9 1\" } EVENT DATA : the decoded message content in JSON format."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "cloudaudit.googleapis.com",
+      "data.proto",
+      "events.proto",
+      "googleapis.github.io",
+      "jobservice.jobcompleted",
+      "operation.result",
+      "pubsub.googleapis.com",
+      "v1.types.CreateChannelConnectionRequest",
+      "v1.types.CreateEnrollmentRequest",
+      "v1.types.CreateGoogleApiSourceRequest",
+      "v1.types.Trigger"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/event-types",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/cloudevents-json"
+      ]
+    }
+  ]
+}

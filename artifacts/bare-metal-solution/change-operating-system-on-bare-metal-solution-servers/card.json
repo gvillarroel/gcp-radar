@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.851Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Change operating system on Bare Metal Solution servers",
+  "feature_slug": "change-operating-system-on-bare-metal-solution-servers",
+  "summary": "Allows customers to change the operating system of an existing Bare Metal Solution server.",
+  "extended_definition": "Allows customers to change the operating system of an existing Bare Metal Solution server.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+      "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "For the OS image code, see Operating systems . curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME ?updateMask=os image\" -d \"{ 'osImage' : ' OS IMAGE ' }\" Because this change takes awhile to complete, you can check the status by following the steps in View the status of a long-running operation .",
+          "Retrieve the initial password for a server When you first receive your Bare Metal Solution server or change the operating system , the server begins in a default state and has an initial password.",
+          "ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = \"projects/\" + project + \"/locations/global\" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f \" - { volume . name } \" ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f \"Unable to list bms resources for project { project } : { e } \" ) except PermissionDenied as e : errors . append ( f \"Unable to access folder or project: { e } \" ) return \" \\n \" . join ( output ), \" \\n \" . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( \"Only one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( \"Either one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is not None : parent = f \"organizations/ { ORGANIZATION ID . value } \" else : parent = f \"folders/ { FOLDER ID . value } \" volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( \"=================== Flat list of volumes in the folder or organization\" \" ===================\" ) print ( volumes ) print ( \"=================== List of folders or projects with errors\" \" ===================\" ) print ( errors ) if name == \" main \" : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To create a jump host VM instance, choose the instructions below based on the operating system you are using in your Bare Metal Solution environment.",
+          "The Linux commands that are shown in the following instructions are for the Debian operating system.",
+          "If you use a different operating system, the commands you need to use might also be different."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Oracle Database on Bare Metal Solution servers with operating systems that Bare Metal Solution supports for Oracle.",
+          "For more information about the minimum support requirements for SAP on Google Cloud, see: Getting support for SAP on Google Cloud SAP Note 2456406 - SAP on Google Cloud Platform: Support Prerequisites (An SAP user account is required) What's next To complete the tasks necessary for deployment, see the NetWeaver Deployment Guide for your operating system: SAP NetWeaver on Linux Deployment Guide SAP NetWeaver on Windows Deployment Guide For an overview of high-availability SAP NetWeaver systems on Google Cloud, see High-availability planning guide for SAP NetWeaver on Google Cloud .",
+          "For details and instructions about how to connect to Compute Engine VMs in your SAP NetWeaver deployment, see the deployment guide for your operating system: SAP NetWeaver on Linux Deployment Guide SAP NetWeaver on Windows Deployment Guide Databases You can use the following database management systems with SAP NetWeaver on Google Cloud: SAP HANA on Linux."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    }
+  ]
+}

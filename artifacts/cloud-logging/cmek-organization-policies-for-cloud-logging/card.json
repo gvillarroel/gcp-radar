@@ -1,0 +1,216 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "CMEK Organization Policies for Cloud Logging",
+  "feature_slug": "cmek-organization-policies-for-cloud-logging",
+  "summary": "Cloud Logging supports organization policies that enforce customer-managed encryption key protection.",
+  "extended_definition": "Cloud Logging supports organization policies that enforce customer-managed encryption key protection.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Logging API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GetCmekSettings Gets the Logging CMEK settings for the given resource.",
+          "UpdateLogMetric Creates or updates a logs-based metric. google.logging.v2.RoutingConfigService Methods google.longrunning.Operations Methods CancelOperation Starts asynchronous cancellation on a long-running operation.",
+          "TestIamPermissions Returns permissions that a caller has on the specified resource. google.logging.v2.ConfigServiceV2 Methods CopyLogEntries Copies a set of log entries from a log bucket to a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "Settings \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See Configure CMEK for Cloud Logging for more information. kmsServiceAccountId string Output only.",
+          "See Configure CMEK for Cloud Logging for more information. storageLocation string Optional.",
+          "KMS key name format: \"projects/[PROJECT ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]\" For example: \"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key\" To enable CMEK, set this field to a valid kmsKeyName for which the associated service account has the required roles/cloudkms.cryptoKeyEncrypterDecrypter role assigned for the key."
+        ]
+      },
+      {
+        "title": "Cloud Logging API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v2.organizations Methods getCmekSettings GET /v2/{name=organizations/ }/cmekSettings Gets the Logging CMEK settings for the given resource. getSettings GET /v2/{name=organizations/ }/settings Gets the settings for the given resource. updateCmekSettings PATCH /v2/{name=organizations/ }/cmekSettings Updates the Log Router CMEK settings for the given resource. updateSettings PATCH /v2/{name=organizations/ }/settings Updates the settings for the given resource.",
+          "REST Resource: v2 REST Resource: v2.billingAccounts REST Resource: v2.billingAccounts.exclusions REST Resource: v2.billingAccounts.locations.buckets REST Resource: v2.billingAccounts.locations.buckets.links REST Resource: v2.billingAccounts.locations.buckets.views REST Resource: v2.billingAccounts.locations.buckets.views.logs REST Resource: v2.billingAccounts.locations.operations REST Resource: v2.billingAccounts.locations.recentQueries REST Resource: v2.billingAccounts.locations.savedQueries REST Resource: v2.billingAccounts.logs REST Resource: v2.billingAccounts.sinks REST Resource: v2.entries REST Resource: v2.exclusions REST Resource: v2.folders REST Resource: v2.folders.exclusions REST Resource: v2.folders.locations.buckets REST Resource: v2.folders.locations.buckets.links REST Resource: v2.folders.locations.buckets.views REST Resource: v2.folders.locations.buckets.views.logs REST Resource: v2.folders.locations.logScopes REST Resource: v2.folders.locations.operations REST Resource: v2.folders.locations.recentQueries REST Resource: v2.folders.locations.savedQueries REST Resource: v2.folders.logs REST Resource: v2.folders.sinks REST Resource: v2.locations.buckets REST Resource: v2.locations.buckets.links REST Resource: v2.locations.buckets.views REST Resource: v2.locations.operations REST Resource: v2.logs REST Resource: v2.monitoredResourceDescriptors REST Resource: v2.organizations REST Resource: v2.organizations.exclusions REST Resource: v2.organizations.locations.buckets REST Resource: v2.organizations.locations.buckets.links REST Resource: v2.organizations.locations.buckets.views REST Resource: v2.organizations.locations.buckets.views.logs REST Resource: v2.organizations.locations.logScopes REST Resource: v2.organizations.locations.operations REST Resource: v2.organizations.locations.recentQueries REST Resource: v2.organizations.locations.savedQueries REST Resource: v2.organizations.logs REST Resource: v2.organizations.sinks REST Resource: v2.projects REST Resource: v2.projects.exclusions REST Resource: v2.projects.locations.buckets REST Resource: v2.projects.locations.buckets.links REST Resource: v2.projects.locations.buckets.views REST Resource: v2.projects.locations.buckets.views.logs REST Resource: v2.projects.locations.logScopes REST Resource: v2.projects.locations.operations REST Resource: v2.projects.locations.recentQueries REST Resource: v2.projects.locations.savedQueries REST Resource: v2.projects.logs REST Resource: v2.projects.metrics REST Resource: v2.projects.sinks REST Resource: v2.sinks Service: logging.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://logging.googleapis.com REST Resource: v2 Methods getCmekSettings GET /v2/{name= / }/cmekSettings Gets the Logging CMEK settings for the given resource. getSettings GET /v2/{name= / }/settings Gets the settings for the given resource. updateCmekSettings PATCH /v2/{name= / }/cmekSettings Updates the Log Router CMEK settings for the given resource. updateSettings PATCH /v2/{name= / }/settings Updates the settings for the given resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "logging.googleapis.com",
+      "v2.billingAccounts",
+      "v2.billingAccounts.exclusions",
+      "v2.billingAccounts.locations.buckets",
+      "v2.billingAccounts.locations.buckets.links",
+      "v2.billingAccounts.locations.buckets.views",
+      "v2.billingAccounts.locations.buckets.views.logs",
+      "v2.billingAccounts.locations.operations",
+      "v2.billingAccounts.locations.recentQueries",
+      "v2.billingAccounts.locations.savedQueries",
+      "v2.billingAccounts.logs",
+      "v2.billingAccounts.sinks",
+      "v2.entries",
+      "v2.exclusions",
+      "v2.folders",
+      "v2.folders.exclusions",
+      "v2.folders.locations.buckets",
+      "v2.folders.locations.buckets.links",
+      "v2.folders.locations.buckets.views",
+      "v2.folders.locations.buckets.views.logs",
+      "v2.folders.locations.logScopes",
+      "v2.folders.locations.operations",
+      "v2.folders.locations.recentQueries",
+      "v2.folders.locations.savedQueries",
+      "v2.folders.logs",
+      "v2.folders.sinks",
+      "v2.locations.buckets",
+      "v2.locations.buckets.links",
+      "v2.locations.buckets.views",
+      "v2.locations.operations",
+      "v2.logs",
+      "v2.monitoredResourceDescriptors",
+      "v2.organizations",
+      "v2.organizations.exclusions",
+      "v2.organizations.locations.buckets",
+      "v2.organizations.locations.buckets.links",
+      "v2.organizations.locations.buckets.views",
+      "v2.organizations.locations.buckets.views.logs",
+      "v2.organizations.locations.logScopes",
+      "v2.organizations.locations.operations",
+      "v2.organizations.locations.recentQueries",
+      "v2.organizations.locations.savedQueries",
+      "v2.organizations.logs",
+      "v2.organizations.sinks",
+      "v2.projects",
+      "v2.projects.exclusions",
+      "v2.projects.locations.buckets",
+      "v2.projects.locations.buckets.links",
+      "v2.projects.locations.buckets.views",
+      "v2.projects.locations.buckets.views.logs",
+      "v2.projects.locations.logScopes",
+      "v2.projects.locations.operations",
+      "v2.projects.locations.recentQueries",
+      "v2.projects.locations.savedQueries",
+      "v2.projects.logs",
+      "v2.projects.metrics",
+      "v2.projects.sinks",
+      "v2.sinks"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rpc",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    }
+  ]
+}

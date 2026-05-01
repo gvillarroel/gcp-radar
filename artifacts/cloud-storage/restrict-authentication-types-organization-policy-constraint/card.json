@@ -1,0 +1,235 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.721Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Restrict authentication types organization policy constraint",
+  "feature_slug": "restrict-authentication-types-organization-policy-constraint",
+  "summary": "This organization policy constraint limits which authentication types can be used in requests to Cloud Storage resources.",
+  "extended_definition": "This organization policy constraint limits which authentication types can be used in requests to Cloud Storage resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/iam",
+      "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+      "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the Domain Restricted Sharing constraint ( constraints/iam.allowedPolicyMemberDomains ) restricts resource sharing based on the organization's domain.",
+          "Solution : Check with your security administrator team to see if the bucket to which you're sending requests is being affected by an organization policy that uses a custom constraint.",
+          "If you continue to see this error after overriding the organization policy, then you might need to wait a few minutes for the change to take effect."
+        ]
+      },
+      {
+        "title": "\"Manage HMAC keys for service accounts \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "source_id": "site-iam-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure the following organization policy constraints are disabled: constraints/storage.restrictAuthTypes (must be disabled for HMAC key authentication) constraints/iam.disableServiceAccountKeyCreation See Creating and managing organization policies for instructions on how to check and disable constraints.",
+          "Overview This page shows you how to create, disable, and delete Hash-based Message Authentication Code (HMAC) keys associated with service accounts in your project.",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The service account email for which the new HMAC key will be created // const serviceAccountEmail = 'service-account@iam.gserviceaccount.com'; // The ID of the project to which the service account belongs // const projectId = 'project-id'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); // Create HMAC SA Key async function createHmacKey () { const [ hmacKey , secret ] = await storage . createHmacKey ( serviceAccountEmail , { projectId , }); console . log ( The base64 encoded secret is: ${ secret } ); console . log ( 'Do not miss that secret, there is no API to recover it.' ); console . log ( 'The HMAC key metadata is:' ); for ( const [ key , value ] of Object . entries ( hmacKey . metadata )) { console . log ( ${ key } : ${ value } ); } } PHP For more information, see the Cloud Storage PHP API reference documentation ."
+        ]
+      },
+      {
+        "title": "HMAC keys \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "source_id": "site-iam-reference",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you enable the restrictAuthTypes constraint on a resource, you can no longer create or activate HMAC keys for the specified account type in that resource.",
+          "You can optionally enable the restrictAuthTypes constraint on a resource, which restricts access for requests signed by HMAC keys.",
+          "You can optionally enable the restrictAuthTypes constraint on user account HMAC keys for an extra layer of security."
+        ]
+      },
+      {
+        "title": "Identity and Access Management \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "To achieve this, you can give the user the Storage Object Viewer ( roles/storage.objectViewer ) role for the project, which allows the user to read any object stored in any bucket within your project, and the Storage Object Creator ( roles/storage.objectCreator ) role for bucket A, which allows the user to create objects only in that bucket.",
+          "If you view the IAM policy for an individual bucket using the Google Cloud console , you do see project-level permissions that apply to that bucket; however, other Cloud Storage tools, such as gcloud storage and the Client Libraries only return the policy of the bucket and don't include information inherited from the project-level policy.",
+          "This permission is found in roles such as Storage Object Creator ( roles/storage.objectCreator ), which grants the permissions useful for creating objects in a bucket, and Storage Object Admin ( roles/storage.objectAdmin ), which grants a wide range of permissions for working with objects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "iam.allowedPolicyMemberDomains",
+      "iam.disableServiceAccountKeyCreation",
+      "iam.gserviceaccount.com",
+      "storage.objectAdmin",
+      "storage.objectCreator",
+      "storage.objects.get",
+      "storage.objectViewer",
+      "storage.restrictAuthTypes"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectAdmin",
+      "roles/storage.objectCreator",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam"
+      ]
+    }
+  ]
+}

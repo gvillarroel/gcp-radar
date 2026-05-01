@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.672Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry Pub/Sub notifications for repository changes",
+  "feature_slug": "artifact-registry-pub-sub-notifications-for-repository-changes",
+  "summary": "Artifact Registry adds Pub/Sub-based notifications for changes in Docker repositories.",
+  "extended_definition": "Artifact Registry adds Pub/Sub-based notifications for changes in Docker repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+      "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configuring Pub/Sub notifications \\_|\\_ Artifact Registry \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "source_id": "site-docs-root-2",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Applications that subscribe to Pub/Sub topics receive these messages and receive notifications when a repository's state changes.",
+          "You can receive notifications from Pub/Sub for the changes to a Docker repository.",
+          "Artifact Registry publishes messages for the following changes: Image uploads New tags added to images Image deletion Additionally, you can configure roles and permissions for publishing or subscribing to notifications."
+        ]
+      },
+      {
+        "title": "\"Configure monitoring notifications for repository growth \\_|\\_ Artifact\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "source_id": "site-docs-root-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application development Artifact Registry Guides Send feedback Configure monitoring notifications for repository growth Stay organized with collections Save and categorize content based on your preferences.",
+          "The alerting policy monitors the size of your repository and when that size exceeds the threshold you specify, notifications are sent to all notification channels attached to the alerting policy.",
+          "Rolling window function max Configure alert trigger Field Value Condition type Threshold Alert trigger Any time series violates Threshold position Above threshold Threshold value Set to the size of the repository in bytes that triggers the alert."
+        ]
+      },
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Pub/Sub notifications Publishes changes to the gcr topic.",
+          "Operation Container Registry Artifact Registry Create a repository Not applicable. gcloud artifacts repositories create Delete a repository Not applicable. gcloud artifacts repositories delete List images gcloud container images list gcloud artifacts docker images list List tags gcloud container images list-tags gcloud artifacts docker tags list Add a tag gcloud container images add-tag gcloud artifacts docker tags add Delete a tag gcloud container images untag gcloud artifacts docker tags delete Describe images gcloud container images describe gcloud artifacts docker images list --include-tags Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, you can separately control access to images in us-docker.pkg.dev/my-project/team1 and us-docker.pkg.dev/my-project/team2 Grant conditional access with IAM and repository tags Authentication Provides several authentication methods for pushing and pulling images with a third-party client."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "projects.locations.repositories.dockerImages",
+      "projects.locations.repositories.dockerImages.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/configure-monitoring-notifications",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Connectors initialization action",
+  "feature_slug": "connectors-initialization-action",
+  "summary": "The Connectors initialization action lets users update the installed Cloud Storage and BigQuery connectors in Dataproc clusters.",
+  "extended_definition": "The Connectors initialization action lets users update the installed Cloud Storage and BigQuery connectors in Dataproc clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices",
+      "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable Hive data lineage \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "source_id": "site-iam-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Managed Service for Apache Spark cluster Run the following command in a local terminal window or in Cloud Shell to create a Managed Service for Apache Spark cluster . gcloud dataproc clusters create CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --image-version IMAGE VERSION \\ --initialization-actions gs://goog-dataproc-initialization-actions- REGION /connectors/connectors.sh, gs://goog-dataproc-initialization-actions- REGION /hive-lineage/hive-lineage.sh \\ --metadata hive-bigquery-connector-version= HIVE BQ VERSION Notes: CLUSTER NAME : The name of the cluster.",
+          "IMAGE VERSION The intended image version for the cluster. --initialization-actions : These installation actions, located in Cloud Storage, install the Hive-BigQuery connector and enable Hive data lineage .",
+          "IMAGE VERSION The intended image version for the cluster. --initialization-actions : Specifies an installation action located in a Cloud Storage regional location, that enables Hive data lineage ."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you use a different Managed Service for Apache Spark image base, modify the repository setup and package names. #!/bin/bash Initialization action for installing MS SQL ODBC driver on the cluster. set -e -x Install dependencies for the driver. apt-get update apt-get install -y --no-install-recommends curl gnupg unixodbc-dev Add Microsoft's official repository. curl https://packages.microsoft.com/keys/microsoft.asc apt-key add - curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list Install the driver. apt-get update ACCEPT EULA = Y apt-get install -y msodbcsql18 Install the pyodbc library for Python. pip install pyodbc shell gsutil cp install-odbc-mssql.sh gs:// YOUR BUCKET NAME /init-actions/ ``` Create a Managed Service for Apache Spark cluster that runs the initialization action.",
+          "When you create your cluster, point to the initialization action script in Cloud Storage. gcloud dataproc clusters create my-odbc-cluster \\ --region = REGION \\ --image-version = 2 .2-debian11 \\ --initialization-actions = gs:// BUCKET NAME /init-actions/install-odbc-mssql.sh Connect and query using PySpark After the cluster is running, the ODBC driver and pyodbc library are available.",
+          "Cluster-wide If all jobs on a cluster require a specific driver, use an initialization action when you create the cluster to copy the driver JAR from Cloud Storage into the Spark jars directory on every node."
+        ]
+      },
+      {
+        "title": "\"Managed Service for Apache Spark best practices for production \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Failed action ... see output in: gs://dataproc-<BUCKETID>-us-central1/google-cloud-dataproc-metainfo/CLUSTERID/<CLUSTER ID>\\dataproc-initialization-script-0 output Use the gcloud CLI to view staging bucket contents: gcloud storage cat gs:// STAGING BUCKET Sample output: + readonly RANGER VERSION=1.2.0 ...",
+          "Typically, the staging bucket Cloud Storage location is shown in error messages, as shown in the bold text in the following sample error message: ERROR: (gcloud.dataproc.clusters.create) Operation ... failed: ... - Initialization action failed.",
+          "When using cluster initialization actions in a production environment, copy initialization scripts to Cloud Storage rather than sourcing them from a public repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.sh",
+      "gcloud.dataproc.clusters.create",
+      "lineage.sh",
+      "microsoft.asc",
+      "mssql.sh",
+      "packages.microsoft.com",
+      "prod.list",
+      "release.list",
+      "sources.list.d"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/connect-to-data-sources",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-best-practices"
+      ]
+    }
+  ]
+}

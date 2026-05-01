@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.277Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Web Risk integration",
+  "feature_slug": "web-risk-integration",
+  "summary": "Adds a new integration with Web Risk.",
+  "extended_definition": "Adds a new integration with Web Risk.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate APIVoid with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") > threshold Enrichment field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain blacklist\" : { \"detections\" : 0 , \"engines\" : [{ \"detected\" : false , \"name\" : \"SpamhausDBL\" , \"reference\" : \"https://www.spamhaus.org/lookup/\" }, { \"detected\" : false , \"name\" : \"ThreatLog\" , \"reference\" : \"http://www.threatlog.com/\" }, { \"detected\" : false , \"name\" : \"OpenPhish\" , \"reference\" : \"http://www.openphish.com/\" }, { \"detected\" : false , \"name\" : \"PhishTank\" , \"reference\" : \"http://www.phishtank.com/\" }, { \"detected\" : false , \"name\" : \"Phishing.Database\" , \"reference\" : \"https://github.com/mitchellkrogza/Phishing.Database\" }, { \"detected\" : false , \"name\" : \"PhishStats\" , \"reference\" : \"https://phishstats.info/\" }, { \"detected\" : false , \"name\" : \"URLVir\" , \"reference\" : \"http://www.urlvir.com/\" }, { \"detected\" : false , \"name\" : \"URLhaus\" , \"reference\" : \"https://urlhaus.abuse.ch/\" }, { \"detected\" : false , \"name\" : \"RPiList Not Serious\" , \"reference\" : \"https://github.com/RPiList/specials\" }, { \"detected\" : false , \"name\" : \"precisionsec\" , \"reference\" : \"https://precisionsec.com/\" }, { \"detected\" : false , \"name\" : \"AntiSocial Blacklist\" , \"reference\" : \"https://theantisocialengineer.com/\" }, { \"detected\" : false , \"name\" : \"PhishFeed\" , \"reference\" : \"https://phishfeed.com/\" }, { \"detected\" : false , \"name\" : \"Spam404\" , \"reference\" : \"https://www.spam404.com/\" }]}, \"html forms\" : { \"number of total input fields\" : 0 , \"email field present\" : false , \"number of total forms\" : 0 , \"password field present\" : false , \"two text inputs in a form\" : false , \"credit card field present\" : false }, \"server details\" : { \"continent name\" : \"Asia\" , \"hostname\" : \"example.com\" , \"region name\" : \"Seoul-teukbyeolsi\" , \"ip\" : \"192.0.2.141\" , \"isp\" : \"Example Corporation\" , \"continent code\" : \"AS\" , \"country name\" : \"Korea (Republic of)\" , \"city name\" : \"Seoul\" , \"longitude\" : 126.97782897949219 , \"country code\" : \"KR\" , \"latitude\" : 37.568260192871094 }, \"response headers\" : { \"status\" : \"HTTP/1.1 404 Not Found\" , \"content-length\" : \"177\" , \"code\" : 404 , \"server\" : \"nginx/1.4.6 (Ubuntu)\" , \"connection\" : \"keep-alive\" , \"date\" : \"Wed, 15 Jul 2020 08:21:54 GMT\" , \"content-type\" : \"text/html\" }, \"redirection\" : { \"url\" : null , \"found\" : false , \"external\" : false }, \"file type\" : { \"headers\" : \"HTML\" , \"extension\" : \"HTML\" , \"signature\" : \" \" }, \"risk score\" : { \"result\" : 10 }, \"security checks\" : { \"is suspended page\" : false , \"is defaced heuristic\" : false , \"is windows exe file\" : false , \"is credit card field\" : false , \"is windows exe file on free hosting\" : false , \"is masked linux elf file\" : false , \"is exe on directory listing\" : false , \"is php on directory listing\" : false , \"is masked windows exe file\" : false , \"is sinkholed domain\" : false , \"is robots noindex\" : false , \"is windows exe file on free dynamic dns\" : false , \"is doc on directory listing\" : false , \"is non standard port\" : false , \"is linux elf file on free dynamic dns\" : false , \"is suspicious domain\" : false , \"is suspicious url pattern\" : false , \"is china country\" : false , \"is risky geo location\" : false , \"is pdf on directory listing\" : false , \"is valid https\" : false , \"is external redirect\" : false , \"is windows exe file on ipv4\" : false , \"is phishing heuristic\" : false , \"is linux elf file on ipv4\" : false , \"is email address on url query\" : false , \"is uncommon clickable url\" : false , \"is most abused tld\" : false , \"is domain blacklisted\" : false , \"is host an ipv4\" : false , \"is linux elf file on free hosting\" : false , \"is zip on directory listing\" : false , \"is password field\" : false , \"is linux elf file\" : false , \"is empty page title\" : false , \"is directory listing\" : false , \"is masked file\" : false , \"is suspicious file extension\" : false , \"is suspicious content\" : false }, \"geo location\" : { \"countries\" : [ \"KR\" ] }, \"url parts\" : { \"host nowww\" : \"example.com\" , \"host\" : \"www.example.com\" , \"path\" : \"/dynamic/example.html\" , \"query\" : null , \"scheme\" : \"http\" , \"port\" : 80 }, \"site category\" : { \"is vpn provider\" : false , \"is url shortener\" : false , \"is anonymizer\" : false , \"is torrent\" : false , \"is free dynamic dns\" : false , \"is free hosting\" : false }, \"web page\" : { \"keywords\" : \"\" , \"description\" : \"\" , \"title\" : \"404 Not Found\" }, \"dns records\" : { \"ns\" : { \"records\" : [{ \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.95\" , \"isp\" : \"Example Corporation\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }, { \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.26\" , \"isp\" : \"LX\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }]}, \"mx\" : { \"records\" : [] }}}, \"Entity\" : \"www.example.com:80/dynamic/example.html\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Fetched reputation for the following entities: <entities identifer list> Failed entities: \"An error occurred on the following entities: <entities identifer list>\" Missing entities (no data): 'Can not found reputation for the following entities: <entities identifer list>\" Alert without URL entities: \"APIVoid: No URLs found.\" General CSV Case wall If data available create new entity csv table: domain blocklist report: data.get(\"report\",{}).get(\"domain blacklist\",{}).get(\"engines\", []) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix \"APIVoid\") geo location: data.get(\"report\",{}).get(\"geo location\",{}).get(\"countries\", []) is suspicious domain: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is suspicious domain\") is domain blacklisted: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is domain blacklisted\") is risky geo location: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is risky geo location\") risk score: data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") is external redirect: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is external redirect\") Entity Get Screenshot Capture a high-quality screenshot of any website or URL.",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain\" : \"example.com\" , \"valid tld\" : true , \"email\" : \"user@example.co\" , \"role address\" : false , \"should block\" : false , \"risky tld\" : false , \"dirty words username\" : false , \"suspicious domain\" : false , \"score\" : 100 , \"educational domain\" : false , \"dirty words domain\" : false , \"did you mean\" : \" \" , \"username\" : \"user\" , \"valid format\" : true , \"is spoofable \" : false , \"disposable\" : false , \"government domain\" : false , \"has spf records\" : true , \"domain popular\" : false , \"has mx records\" : true , \"china free email\" : false , \"free email\" : false , \"russian free email\" : false , \"police domain\" : false , \"dmarc enforced\" : false , \"suspicious username\" : false }, \"Entity\" : \"USER@EXAMPLE.COM\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Added screenshots for the following entities: <entities identifier list>\" Failed entities: \"An error occurred on the following entities: <entities identifier list>\" Missing entities (no data): 'No screenshots found for the following entities: <entities identifier list>\" Alert without URL entities: \"APIVoid: No URL entities found for capturing screenshots.\" To big entities (attachment file size > 3MB): \"Failed to add screenshots as attachments on the following entities: <<entities identifier list>>\" General Attachments If data is available, create a new file object: attachment title: 'Screenshot - {0}'.format(entity.identifier) filename should be the URL without the suffix (https/http) + ' capture.<file format>' screenshot is returned in base64 encoded string --> file content should be b64decode(data.get('base64 file')) Don't forget to add try, except - we have 3MB limitation from the platform.",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain\" : \"example.com\" , \"valid tld\" : true , \"email\" : \"user@example.com\" , \"role address\" : false , \"should block\" : false , \"risky tld\" : false , \"dirty words username\" : false , \"suspicious domain\" : false , \"score\" : 100 , \"educational domain\" : false , \"dirty words domain\" : false , \"did you mean\" : \" \" , \"username\" : \"user\" , \"valid format\" : true , \"is spoofable \" : false , \"disposable\" : false , \"government domain\" : false , \"has spf records\" : true , \"domain popular\" : false , \"has mx records\" : true , \"china free email\" : false , \"free email\" : false , \"russian free email\" : false , \"police domain\" : false , \"dmarc enforced\" : false , \"suspicious username\" : false }, \"Entity\" : \"USER@EXAMPLE.COm\" } ] Case wall Result type Description Type Output message successful entities: \"APIVoid: Fetched information for the following entities: <entities identifer list> Failed entities: \"An error occurred on the following entities: <entities identifer list>\" Missing entities (no data): 'Can not found information for the following entities: <entities identifer list>\" Alert without URL entities: \"APIVoid: No emails found.\" General CSV Case wall CSV content: entity data(example below) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix \"APIVoid\") suspicious domain: data.get(\"suspicious domain\") should block: data.get(\"should block\") score: data.get(\"score\") disposable: data.get(\"disposable\") has mx records: data.get(\"has mx records\") has spf records: data.get(\"has spf records\") Entity Need more help?"
+        ]
+      },
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") > threshold Enrichment Field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2.",
+          "Api Key Password N/A Yes Api Key to use with integration.",
+          "Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: Successfully connected to the ANY.RUN service with the provided connection parameters!\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the ANY.RUN service!"
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget.",
+          "Response integration metadata Name The Name should correspond to the product name with which the integration is going to be integrated and shouldn't contain any special characters.",
+          "All submitted integrations undergo a vetting process by the official Google SecOps team, with a focus on the highlighted requirements within this document."
+        ]
+      },
+      {
+        "title": "\"Integrate Alexa with Google SecOps \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Integration version: 7.0 Important: Alexa Web Information Service (AWIS) was terminated in December 2022.",
+          "Action results Script result Script name Value options Example is risky True or False is risky:False JSON result [ { \"EntityResult\" : { \"TrafficData\" : [ { \"text\" : \" \" , \"DataUrl\" : [ { \"text\" : \"domain.com\" , \"type\" : \"canonical\" }], \"Rank\" : [ { \"text\" : \"5\" } ] } ], \"text\" : \" \" , \"Request\" : [ { \"text\" : \" \" , \"Arguments\" : [ { \"text\" : \" \" , \"Argument\" : [ { \"text\" : \" \" , \"Name\" : [ { \"text\" : \"url\" } ], \"Value\" : [ { \"text\" : \"domain.com\" }]}, { \"text\" : \" \" , \"Name\" : [ { \"text\" : \"responsegroup\" } ], \"Value\" : [ { \"text\" : \"Rank\" }]}]}]}]}, \"Entity\" : \"domain.com\" } ] Entity enrichment Entities are marked as suspicious (True) if they exceed the threshold.",
+          "Network Function Default port Direction Protocol API Multivalues Outbound apikey Integration parameters Use the following parameters to configure the integration: Parameter name Type Default value Is mandatory Description Instance Name String N/A No Name of the instance you intend to configure integration for."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bl.plonkatronix.com",
+      "data.get",
+      "domain.com",
+      "entity.identifier",
+      "example.co",
+      "example.com",
+      "example.html",
+      "github.com",
+      "home.nuug.no",
+      "index.php",
+      "malc0de.com",
+      "phishfeed.com",
+      "phishstats.info",
+      "precisionsec.com",
+      "theantisocialengineer.com",
+      "urlhaus.abuse.ch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alexa"
+      ]
+    }
+  ]
+}

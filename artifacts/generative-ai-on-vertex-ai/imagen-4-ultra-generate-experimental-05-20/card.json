@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Imagen 4 Ultra Generate Experimental 05-20",
+  "feature_slug": "imagen-4-ultra-generate-experimental-05-20",
+  "summary": "Imagen 4 Ultra Generate Experimental 05-20 became available in the API and Vertex AI Studio.",
+  "extended_definition": "Imagen 4 Ultra Generate Experimental 05-20 became available in the API and Vertex AI Studio.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and edit images on Vertex AI \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client () TODO(developer): Update and un-comment below line output file = \"output-image.png\" image = client . models . generate images ( model = \"imagen-4.0-generate-001\" , prompt = \"A dog reading a newspaper\" , config = GenerateImagesConfig ( image size = \"2K\" , ), ) image . generated images [ 0 ] . image . save ( output file ) print ( f \"Created output image using { len ( image . generated images [ 0 ] . image . image bytes ) } bytes\" ) Example response: Created output image using 1234567 bytes REST Set environment variables: export GOOGLE CLOUD PROJECT = GOOGLE CLOUD PROJECT # Replace with your Google Cloud project export GOOGLE CLOUD LOCATION = us-central1 # Replace with the appropriate location for your project Run the following: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https:// ${ GOOGLE CLOUD LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ GOOGLE CLOUD PROJECT } /locations/ ${ GOOGLE CLOUD LOCATION } /publishers/google/models/imagen-4.0-generate-preview-05-20:predict\" -d \\ $'{ \"instances\": [ { \"prompt\": \"a cat reading a book\" } ], \"parameters\": { \"sampleCount\": 1 } }' The model returns a base64 image bytes object.",
+          "Try image generation (Vertex AI Studio) Try Imagen in a Colab With Gemini and Imagen, you can do the following: Generate novel images using only a text prompt (text-to-image AI generation).",
+          "Prompts for preceding images These images are generated using the general Imagen 3 image generation model ( imagen-3.0-generate-002 ) and the following prompts: Claymation scene."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "128 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ 0.0279239565, [...128 dimension vector...] 0.00403284049 ], \"textEmbedding\": [ 0.202921599, [...128 dimension vector...] -0.0365431122 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } 256 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ 0.248620048, [...256 dimension vector...] -0.0646447465 ], \"textEmbedding\": [ 0.0757875815, [...256 dimension vector...] -0.02749932 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } 512 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ -0.0523675755, [...512 dimension vector...] -0.0444030389 ], \"textEmbedding\": [ -0.0592851527, [...512 dimension vector...] 0.0350437127 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Python import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) TODO(developer): Try different dimenions: 128, 256, 512, 1408 embedding dimension = 128 model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) embeddings = model . get embeddings ( image = image , contextual text = \"Colosseum\" , dimension = embedding dimension , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [0.0622573346, -0.0406507477, 0.0260440577, ...] Text Embedding: [0.27469793, -0.146258667, 0.0222803634, ...] Go import ( \"context\" \"encoding/json\" \"fmt\" \"io\" aiplatform \"cloud.google.com/go/aiplatform/apiv1beta1\" aiplatformpb \"cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb\" \"google.golang.org/api/option\" \"google.golang.org/protobuf/encoding/protojson\" \"google.golang.org/protobuf/types/known/structpb\" ) // generateWithLowerDimension shows how to generate lower-dimensional embeddings for text and image inputs. func generateWithLowerDimension ( w io .",
+          "For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel , Video from vertexai.vision models import VideoSegmentConfig TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) video = Video . load from file ( \"gs://cloud-samples-data/vertex-ai-vision/highway vehicles.mp4\" ) embeddings = model . get embeddings ( image = image , video = video , video segment config = VideoSegmentConfig ( end offset sec = 1 ), contextual text = \"Cars on Highway\" , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) Video Embeddings are segmented based on the video segment config. print ( \"Video Embeddings:\" ) for video embedding in embeddings . video embeddings : print ( f \"Video Segment: { video embedding . start offset sec } - { video embedding . end offset sec } \" ) print ( f \"Embedding: { video embedding . embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [-0.0123144267, 0.0727186054, 0.000201397663, ...] Video Embeddings: Video Segment: 0.0 - 1.0 Embedding: [-0.0206376351, 0.0345234685, ...] Text Embedding: [-0.0207006838, -0.00251058186, ...] Go Before trying this sample, follow the Go setup instructions in the Vertex AI quickstart using client libraries .",
+          "Response (7 second video, no videoSegmentConfig specified): { \"predictions\": [ { \"videoEmbeddings\": [ { \"endOffsetSec\": 7, \"embedding\": [ -0.0045467657, 0.0258095954, 0.0146885719, 0.00945400633, [...] -0.0023291884, -0.00493789, 0.00975185353, 0.0168156829 ], \"startOffsetSec\": 0 } ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Response (59 second video, with the following video segment config: \"videoSegmentConfig\": { \"startOffsetSec\": 0, \"endOffsetSec\": 60, \"intervalSec\": 10 } ): { \"predictions\": [ { \"videoEmbeddings\": [ { \"endOffsetSec\": 10, \"startOffsetSec\": 0, \"embedding\": [ -0.00683252793, 0.0390476175, [...] 0.00657121744, 0.013023301 ] }, { \"startOffsetSec\": 10, \"endOffsetSec\": 20, \"embedding\": [ -0.0104404651, 0.0357737206, [...] 0.00509833824, 0.0131902946 ] }, { \"startOffsetSec\": 20, \"embedding\": [ -0.0113538112, 0.0305239167, [...] -0.00195809244, 0.00941874553 ], \"endOffsetSec\": 30 }, { \"embedding\": [ -0.00299320649, 0.0322436653, [...] -0.00993082579, 0.00968887936 ], \"startOffsetSec\": 30, \"endOffsetSec\": 40 }, { \"endOffsetSec\": 50, \"startOffsetSec\": 40, \"embedding\": [ -0.00591270532, 0.0368893594, [...] -0.00219071587, 0.0042470959 ] }, { \"embedding\": [ -0.00458270218, 0.0368121453, [...] -0.00317760976, 0.00595594104 ], \"endOffsetSec\": 59, \"startOffsetSec\": 50 } ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Python To learn how to install or update the Vertex AI SDK for Python, see Install the Vertex AI SDK for Python ."
+        ]
+      },
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Imagen Imagen is a text-to-image generative AI service available through the Vertex AI platform.",
+          "Applications can utilize embeddings to process and generate language, recognizing complex meanings and semantic relationships specific to the content. embedding vector A dense, often low-dimensional, vector representation of an item such that, if two items are semantically similar, their respective embeddings are located near each other in the embedding vector space. encoder In general, any ML system that converts from a raw, sparse, or external representation into a more processed, denser, or more internal representation.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Prompt and image attribute guide \\_|\\_ Generative AI on Vertex AI \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use case Lens type Focal lengths Additional details People (portraits) Prime, zoom 24-35mm black and white film, Film noir, Depth of field, duotone (mention two colors) Food, insects, plants (objects, still life) Macro 60-105mm High detail, precise focusing, controlled lighting Sports, wildlife (motion) Telephoto zoom 100-400mm Fast shutter speed, Action or movement tracking Astronomical, landscape (wide-angle) Wide-angle 10-24mm Long exposure times, sharp focus, long exposure, smooth water or clouds Portraits Use case Lens type Focal lengths Additional details People (portraits) Prime, zoom 24-35mm black and white film, Film noir, Depth of field, duotone (mention two colors) Using several keywords from the table, Imagen can generate the following portraits.",
+          "Prompt: A woman, 35mm portrait, blue and grey duotones Model: Imagen 3 ( imagen-3.0-generate-002 ) Prompt: A woman, 35mm portrait, film noir Model: Imagen 3 ( imagen-3.0-generate-002 ) Objects Use case Lens type Focal lengths Additional details Food, insects, plants (objects, still life) Macro 60-105mm High detail, precise focusing, controlled lighting Using several keywords from the table, Imagen can generate the following object images.",
+          "Camera Proximity - Close up, taken from far away Prompt: A close-up photo of coffee beans Prompt: A zoomed out photo of a small bag of coffee beans in a messy kitchen Camera Position - aerial, from below Prompt: aerial photo of urban city with skyscrapers Prompt: A photo of a forest canopy with blue skies from below Lighting - natural, dramatic, warm, cold Prompt: studio photo of a modern arm chair, natural lighting Prompt: studio photo of a modern arm chair, dramatic lighting Camera Settings - motion blur, soft focus, bokeh, portrait Prompt: photo of a city with skyscrapers from the inside of a car with motion blur Prompt: soft focus photograph of a bridge in an urban city at night Lens types - 35mm, 50mm, fisheye, wide angle, macro Prompt: photo of a leaf, macro lens Prompt: street photography, new york city, fisheye lens Film types - black and white, polaroid Prompt: a polaroid portrait of a dog wearing sunglasses Prompt: black and white photo of a dog wearing sunglasses Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "image.png",
+      "landmark1.png",
+      "request.json",
+      "request1.json",
+      "request2.json",
+      "vehicles.mp4",
+      "vertexai.vision"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide"
+      ]
+    }
+  ]
+}

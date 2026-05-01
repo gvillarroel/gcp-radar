@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.675Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go",
+  "feature_name": "App Engine resource labels for billing analysis",
+  "feature_slug": "app-engine-resource-labels-for-billing-analysis",
+  "summary": "App Engine services can be labeled so billing exports to BigQuery can be analyzed at a finer resource level.",
+  "extended_definition": "App Engine services can be labeled so billing exports to BigQuery can be analyzed at a finer resource level.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+      "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/labeling-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Labeling App Engine resources \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/labeling-resources",
+        "source_id": "site-docs-reference-4",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "TABLEID ], labels )) WHERE cost > 0.0 and labels . key is not null and resource type = ' Out Bandwidth ' LIMIT 100 BigQuery returns your data with a flattened output: product resource type start time end time labels key labels value cost App Engine Out Bandwidth 2017-10-07 22:00:00 2017-10-07 23:00:00 service default 0.020033 App Engine Out Bandwidth 2017-10-07 13:00:00 2017-10-07 14:00:00 service frontend 0.016042 App Engine Out Bandwidth 2017-10-07 06:00:00 2017-10-07 07:00:00 service backend task 0.013125 App Engine Out Bandwidth 2017-10-07 21:00:00 2017-10-07 22:00:00 service default 0.020722 App Engine Out Bandwidth 2017-10-07 19:00:00 2017-10-07 20:00:00 service frontend 0.020725 App Engine Out Bandwidth 2017-10-08 04:00:00 2017-10-08 05:00:00 service backend task 0.02072 App Engine Out Bandwidth 2017-10-08 02:00:00 2017-10-08 03:00:00 service default 0.020723 App Engine Out Bandwidth 2017-10-07 14:00:00 2017-10-07 15:00:00 service frontend 0.020724 App Engine Out Bandwidth 2017-10-07 23:00:00 2017-10-08 00:00:00 service backend task 0.021417 Time periods in billing reports To ensure that each day in the report covers a full 24 hour period, the billing data that you export only contains data up to the most recent midnight, Pacific Time.",
+          "Refer to the Admin API reference documentation: REST API RPC API Viewing billing data associated with your labeled services You can add granularity to billing data for your application using labels.",
+          "For example, the following query pulls cost data, the label key, and the label value for outgoing bandwidth where a label exists: SELECT product , resource type , start time , end time , labels . key , labels . value , cost FROM ( FLATTEN ([ YOUR DATASET ."
+        ]
+      },
+      {
+        "title": "An overview of App Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.",
+          "When you create your App Engine app, all your resources are created in the region that you choose, including your app code along with a collection of settings, credentials, and your app's metadata.",
+          "Some of the resources used by instances in the App Engine flexible environment, such as disk, CPU, and memory, count towards the Compute Engine API quotas of your project."
+        ]
+      },
+      {
+        "title": "An overview of App Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, an app that handles your customer requests might include separate services that each handle different tasks, such as: API requests from mobile devices Internal, administration-type requests Backend processing such as billing pipelines and data analysis Each service in App Engine consists of the source code from your app and the corresponding App Engine configuration files.",
+          "When you create your App Engine app, all your resources are created in the region that you choose, including your app code along with a collection of settings, credentials, and your app's metadata.",
+          "Some of the resources used by instances in the App Engine flexible environment, such as disk, CPU, and memory, count towards the Compute Engine API quotas of your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/labeling-resources",
+        "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/labeling-resources",
+        "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/labeling-resources",
+        "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/labeling-resources",
+        "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+      ]
+    }
+  ]
+}

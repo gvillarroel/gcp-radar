@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.409Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Silent Host Monitoring dashboard widget",
+  "feature_slug": "silent-host-monitoring-dashboard-widget",
+  "summary": "A dashboard widget shows hosts that were active in the last seven days but have not reported recently.",
+  "extended_definition": "A dashboard widget shows hosts that were active in the last seven days but have not reported recently.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "A dashboard widget then shows which users are approaching a daily egress limit (for example, 10,000 bytes).",
+          "By setting a rule to detect only and then plotting its detections in a dashboard widget, you can track trends, identify outliers, and gain a high-level audit view of the activity without being overwhelmed by individual alerts.",
+          "Example : rule CheckCuratedDetection with EDR and EG { meta: author = \"noone@cymbal.com\" events: $d.detection.detection.rule name = /SCC: Custom Modules: Configurable Bad Domain/ $d.detection.collection elements.references.event.network.dns.questions.name = $domain $d.detection.collection elements.references.event.principal.asset.hostname = $hostname $e.metadata.log type = \"LIMACHARLIE EDR\" $e.metadata.product event type = \"NETWORK CONNECTIONS\" $domain = re.capture($e.principal.process.command line, \"\\\\s([a-zA-Z0-9.-]+\\\\.[a-zA-Z0-9.-]+)$\") $hostname = re.capture($e.principal.hostname, \"([^.] )\") $prevalence.graph.metadata.entity type = \"DOMAIN NAME\" $prevalence.graph.metadata.source type = \"DERIVED CONTEXT\" $prevalence.graph.entity.hostname = $domain $prevalence.graph.entity.domain.prevalence.day count = 10 $prevalence.graph.entity.domain.prevalence.rolling max <= 5 $prevalence.graph.entity.domain.prevalence.rolling max > 0 match: $hostname over 1h outcome: $risk score = 80 $CL target = array($domain) condition: $e and $d and $prevalence } View composite detection findings You can view composite detection results in the Detections page."
+        ]
+      },
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "AWS CloudTrail ( AWS CLOUDTRAIL ) AWS GuardDuty ( GUARDDUTY ) AWS EC2 HOSTS ( AWS EC2 HOSTS ) AWS EC2 INSTANCES ( AWS EC2 INSTANCES ) AWS EC2 VPCS ( AWS EC2 VPCS ) AWS IAM (IAM) ( AWS IAM ) See Configure the ingestion of AWS data for information about setting up ingestion of AWS data.",
+          "In the list of detections, check that the following rules were triggered: tst azure activity tst azure defender for cloud alerts Execute a GET API request in Microsoft Graph Explorer to trigger the test rules Perform the following steps to verify that generating sample security alerts in Azure triggers the test rules.",
+          "In the list of detections, check that the following rules were triggered: tst azure ad user creation tst azure ad user login After you confirm that data is sent and that these rules are triggered, deactivate or deprovision the user account."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types STRING Return type STRING Code samples Example 1 This example shows an empty string strings.extract domain(\"\") = \"\" Example 2 random string, not a URL strings.extract domain(\"1234\") = \"\" Example 3 multiple backslaches strings.extract domain(\"\\\\\\\\\") = \"\" Example 4 non-alphabet characters handled gracefully strings.extract domain(\"http://例子.卷筒纸.中国\") = \"卷筒纸.中国\" Example 5 handling URIs strings.extract domain(\"mailto:?to=&subject=&body=\") = \"\" Example 6 multiple characters before actual URL strings.extract domain(\" \\t !$5 ^)&dahgsdfs;http://www.google.com\") = \"google.com\" Example 7 special characters in URI # strings.extract domain(\"test#@google.com\") = \"\" Example 8 special characters in URL # strings.extract domain(\"https://test#@google.com\") = \"\" Example 9 positive test case strings.extract domain(\"https://google.co.in\") = \"google.co.in\" strings.extract hostname Supported in: Rules Search strings.extract hostname(string) Description Extracts the hostname from a string.",
+          "Both principal.hostname and $e.principal.hostname are supported in Search and Dashboards.",
+          "Param data types INT FLOAT , BOOL Return type FLOAT Code samples Example 1 This example returns the median when the input values aren't zero. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 2 if the file sizes in the match window are [1, 2, 3] condition: $e } Example 2 This example returns the median when the input includes some zero values that shouldn't be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 3 This example returns the median when the input includes some zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size, true) // returns 2 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 4 This example returns the median when the input includes all zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 0 if the file sizes in the match window are [0,0] condition: $e } Example 5 This example shows that, when there are multiple medians, only one median is returned. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [1, 2, 3, 4] condition: $e } window.mode Supported in: Rules window.mode(values) Description Return the mode of the input values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.file.size",
+      "e.metadata.event",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.principal.file.size",
+      "e.principal.hostname",
+      "e.principal.process.command",
+      "e.principal.user.userid",
+      "e.user.userid",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "principal.hostname",
+      "re.capture",
+      "strings.extract",
+      "window.avg",
+      "window.first",
+      "window.median",
+      "window.mode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ]
+}

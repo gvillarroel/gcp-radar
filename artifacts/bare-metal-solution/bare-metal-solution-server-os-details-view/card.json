@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.851Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Bare Metal Solution server OS details view",
+  "feature_slug": "bare-metal-solution-server-os-details-view",
+  "summary": "You can now view the operating-system details of a Bare Metal Solution server.",
+  "extended_definition": "You can now view the operating-system details of a Bare Metal Solution server.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+      "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View Bare Metal Solution metrics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "All servers have the following basic metrics available: Network traffic totals Network traffic logical interface The following additional insights are available upon installing the Ops Agent: CPU utilization Memory utilization Disk space utilization Disk throughput To view metrics for your server, follow these steps: In the Google Cloud console, go to the Compute Engine > Bare Metal Solution > Servers page.",
+          "View storage volume and LUN metrics The metrics for a storage volume and its LUNs are collected only when the storage volume is attached to a server.",
+          "View server metrics Bare Metal Solution collects server metrics at the network switch level."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-1 \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-2 \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \\ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.",
+          "Installing http server sudo yum install httpd sudo systemctl restart httpd Testing curl http://127.0.0.1:80 Create an instance group. gcloud compute instance-groups unmanaged create INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group Add the VM to the instance group. gcloud compute instance-groups unmanaged add-instances INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE --instances= VM NAME Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group VM NAME : the name of the VM Create an internal passthrough Network Load Balancer: Start your configuration In the Google Cloud console, go to the Load balancing page.",
+          "The following example, adds the 0.0.0.0/0 custom IP to the Cloud Router's advertisements: gcloud compute routers update-bgp-peer router-name \\ --peer-name bgp-session-name \\ --add-advertisement-ranges 0.0.0.0/0 Optionally, set the VPC Network Dynamic Routing Mode to global If you have Bare Metal Solution servers in two different regions, consider enabling global routing mode on the VPC network to have your Bare Metal Solution regions talk to each other directly over the VPC network."
+        ]
+      },
+      {
+        "title": "\"Set up encryption keys for a server \\_|\\_ Bare Metal Solution \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "On the Server details page, view the encryption key in Password encryption key field.",
+          "To assign these roles, use the gcloud projects add-iam-policy-binding command. gcloud projects add-iam-policy-binding KMS PROJECT ID \\ --member serviceAccount:service- PROJECT NUMBER @gcp-sa-bms.iam.gserviceaccount.com \\ --role roles/cloudkms.publicKeyViewer gcloud projects add-iam-policy-binding KMS PROJECT ID \\ --member serviceAccount:service- PROJECT NUMBER @gcp-sa-bms.iam.gserviceaccount.com \\ --role roles/cloudkms.viewer Replace the following: KMS PROJECT ID : the project that contains your Cloud KMS key PROJECT NUMBER : the project that contains your Bare Metal Solution server Create an asymmetric decryption key .",
+          "To view user accounts and their corresponding encrypted passwords, go to the User Accounts section. gcloud Use the gcloud alpha bms instances auth-info command: gcloud alpha bms instances auth-info SERVER NAME --project= PROJECT ID --region= REGION Replace the following: SERVER NAME : the name of the Bare Metal Solution server PROJECT ID : the ID of the project REGION : the region of the Bare Metal Solution server Decrypt a password To obtain the raw password, follow these steps: Obtain the ciphertext."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bms.iam.gserviceaccount.com",
+      "cloudkms.publicKeyViewer",
+      "cloudkms.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.publicKeyViewer",
+      "roles/cloudkms.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/view-infrastructure-metrics",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-encryption-keys"
+      ]
+    }
+  ]
+}

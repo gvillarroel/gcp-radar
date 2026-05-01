@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.249Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Transfer from S3-compatible sources to Cloud Storage",
+  "feature_slug": "transfer-from-s3-compatible-sources-to-cloud-storage",
+  "summary": "Transfers from S3-compatible storage to Cloud Storage became generally available, including support for copying from AWS S3 and optionally controlling network routes to reduce egress charges.",
+  "extended_definition": "Transfers from S3-compatible storage to Cloud Storage became generally available, including support for copying from AWS S3 and optionally controlling network routes to reduce egress charges.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+      "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transfer from S3-compatible storage to Cloud Storage \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "StorageTransferServiceClient (); / Creates a transfer from an AWS S3-compatible source to GCS / async function transferFromS3CompatibleSource () { // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , transferSpec : { sourceAgentPoolName , awsS3CompatibleDataSource : { region , s3Metadata : { authMethod , protocol , requestModel , }, endpoint , bucketName : sourceBucketName , path : sourcePath , }, gcsDataSink : { bucketName : gcsSinkBucket , path : gcsPath , }, }, status : ' ENABLED ' , }, }); await client . runTransferJob ({ jobName : transferJob . name , projectId , }); console . log ( Created and ran a transfer job from ' ${ sourceBucketName } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ` ); } transferFromS3CompatibleSource (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "POST https: //storagetransfer.googleapis.com/v1/transferJobs { ... \"transferSpec\" : { \"source agent pool name\" : \" POOL NAME \" , \"awsS3CompatibleData\" : { \"region\" : \"us-east-1\" , \"s3Metadata\" : { \"protocol\" : \"NETWORK PROTOCOL HTTPS\" , \"requestModel\" : \"REQUEST MODEL VIRTUAL HOSTED STYLE\" , \"authMethod\" : \"AUTH METHOD AWS SIGNATURE V4\" }, \"endpoint\" : \"example.com\" , \"bucketName\" : \" BUCKET NAME \" , \"path\" : \" PATH \" , }, \"gcsDataSink\" : { \"bucketName\" : \" SINK NAME \" , \"path\" : \" SINK PATH \" }, \"transferOptions\" : { \"deleteObjectsFromSourceAfterTransfer\" : false } } } See the AwsS3CompatibleData API reference for field descriptions.",
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const storageTransfer = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // Useful enums for AWS S3-Compatible Transfers // const {AuthMethod, NetworkProtocol, RequestModel} = storageTransfer.protos.google.storagetransfer.v1.S3CompatibleMetadata; // Your project id // const projectId = 'my-project'; // The agent pool associated with the S3-compatible data source."
+        ]
+      },
+      {
+        "title": "TransferSpec \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "source_id": "site-api-reference",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"objectConditions\" : { object ( ObjectConditions ) } , \"transferOptions\" : { object ( TransferOptions ) } , \"transferManifest\" : { object ( TransferManifest ) } , \"sourceAgentPoolName\" : string , \"sinkAgentPoolName\" : string , // Union field data sink can be only one of the following: \"gcsDataSink\" : { object ( GcsData ) } , \"posixDataSink\" : { object ( PosixFilesystem ) } // End of list of possible types for union field data sink . // Union field data source can be only one of the following: \"gcsDataSource\" : { object ( GcsData ) } , \"awsS3DataSource\" : { object ( AwsS3Data ) } , \"httpDataSource\" : { object ( HttpData ) } , \"posixDataSource\" : { object ( PosixFilesystem ) } , \"azureBlobStorageDataSource\" : { object ( AzureBlobStorageData ) } , \"awsS3CompatibleDataSource\" : { object ( AwsS3CompatibleData ) } , \"hdfsDataSource\" : { object ( HdfsData ) } // End of list of possible types for union field data source . // Union field intermediate data location can be only one of the following: \"gcsIntermediateDataLocation\" : { object ( GcsData ) } // End of list of possible types for union field intermediate data location . } Fields objectConditions object ( ObjectConditions ) Only objects that satisfy these object conditions are included in the set of data source and data sink objects.",
+          "Union field intermediate data location . intermediate data location can be only one of the following: gcsIntermediateDataLocation object ( GcsData ) For transfers between file systems, specifies a Cloud Storage bucket to be used as an intermediate location through which to transfer data.",
+          "This network is shared between other users of Storage Transfer Service. privateNetworkService string Service Directory Service to be used as the endpoint for transfers from a customer-managed private network."
+        ]
+      },
+      {
+        "title": "Create transfers \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Transfers from S3-compatible sources also use the following options: --source-endpoint (required) specifies your storage system's endpoint.",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources, // or use \"try-with-close\" statement to do this automatically. try ( StorageTransferServiceClient storageTransfer = StorageTransferServiceClient . create ()) { // Create the transfer job TransferJob response = storageTransfer . createTransferJob ( TransferProto .",
+          "Cloud Logging : Enable Cloud Logging for agentless transfers, or transfers from S3-compatible sources, with --log-actions and --log-action-states ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "protos.google.storagetransfer.v1.S3CompatibleMetadata",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers"
+      ]
+    }
+  ]
+}

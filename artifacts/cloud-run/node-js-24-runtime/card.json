@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.544Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Node.js 24 runtime",
+  "feature_slug": "node-js-24-runtime",
+  "summary": "Cloud Run supports the Node.js 24 runtime for services; Cloud Run supports the Node.js 24 runtime for deployed workloads.",
+  "extended_definition": "Cloud Run supports the Node.js 24 runtime for services; Cloud Run supports the Node.js 24 runtime for deployed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service",
+      "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-nodejs",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Quickstart: build and create a Node.js job in Cloud Run \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-nodejs",
+        "source_id": "site-docs-reference-2",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Success: You created and executed a job using the Node.js runtime in Cloud Run.",
+          "Writing the sample job To write a job in Node.js: Create a new directory named jobs and change directory into it: mkdir jobs cd jobs Create a package.json file with the following contents: { \"name\" : \"jobs\" , \"version\" : \"1.0.0\" , \"description\" : \"Node.js sample for Cloud Run jobs\" , \"main\" : \"index.js\" , \"scripts\" : { \"start\" : \"node index.js\" }, \"engines\" : { \"node\" : \">=16.0.0\" }, \"author\" : \"Google LLC\" , \"license\" : \"Apache-2.0\" } In the same directory, create a index.js file for the actual job code.",
+          "Create a Procfile with the following contents: Define the application ' s entrypoint to override default , npm start https : //github.com/GoogleCloudPlatform/buildpacks/issues/160 web : node index . js Your code is complete and ready to be packaged in a container."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Build and deploy a Node.js web app to Google Cloud with Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Success: You deployed a Node.js web app to Cloud Run.",
+          "Write the sample application To create and deploy a Node.js service, follow these steps: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a package.json file with the following contents: { \"name\" : \"helloworld\" , \"description\" : \"Simple hello world sample in Node\" , \"version\" : \"1.0.0\" , \"private\" : true , \"main\" : \"index.js\" , \"type\" : \"module\" , \"scripts\" : { \"start\" : \"node index.js\" }, \"engines\" : { \"node\" : \">=16.0.0\" }, \"author\" : \"Google LLC\" , \"license\" : \"Apache-2.0\" , \"dependencies\" : { \"express\" : \"^5.2.1\" } } In the same directory, create a index.js file, and copy the following lines into it: import express from 'express' ; const app = express (); app . get ( '/' , ( req , res ) = > { const name = process . env .",
+          "If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "index.js",
+      "package.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-nodejs",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-nodejs",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-nodejs",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-nodejs",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    }
+  ]
+}

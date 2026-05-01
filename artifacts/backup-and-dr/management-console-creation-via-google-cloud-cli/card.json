@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.762Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Management console creation via Google Cloud CLI",
+  "feature_slug": "management-console-creation-via-google-cloud-cli",
+  "summary": "Backup and DR now supports creating the management console using the Google Cloud CLI.",
+  "extended_definition": "Backup and DR now supports creating the management console using the Google Cloud CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run an on-demand backup job from the appliance management console To run an on-demand capture of a managed application from the Manage Backup Plan page: Click the App Manager tab and select the Applications option from the drop-down list.",
+          "Home Documentation Storage Backup and DR Guides Send feedback Monitor jobs in the appliance management console Stay organized with collections Save and categorize content based on your preferences.",
+          "From the Monitor tab, you can view and manage jobs (cancel active jobs or change the job priority of a queued job) from backup/recovery appliances managed by the appliance management console."
+        ]
+      },
+      {
+        "title": "\"Mount backup images of Compute Engine instances in the appliance management\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The appliance management console lets you restore a local solid-state drive (SSD) VM only if the source VM was configured with local SSD during VM creation.",
+          "Home Documentation Storage Backup and DR Guides Send feedback Mount backup images of Compute Engine instances in the appliance management console Stay organized with collections Save and categorize content based on your preferences.",
+          "Use these instructions to mount a Compute Engine instance backup image to an existing instance: From the Backup and DR Service appliance management console, click App Manager and select Applications from the drop-down menu."
+        ]
+      },
+      {
+        "title": "\"Backup plans in the appliance management console overview \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Backup plans are the rules that the appliance management console uses to define how often to back up application data, how long to retain the application data backups, and where and how to replicate the application's data backups.",
+          "Home Documentation Storage Backup and DR Guides Send feedback Backup plans in the appliance management console overview Stay organized with collections Save and categorize content based on your preferences.",
+          "You define a resource profile for any backup/recovery appliance that has been added to the appliance management console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-plan"
+      ]
+    }
+  ]
+}

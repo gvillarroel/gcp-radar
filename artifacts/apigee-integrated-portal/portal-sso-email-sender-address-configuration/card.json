@@ -1,0 +1,251 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.141Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integrated-portal/card.json",
+  "product_name": "Apigee Integrated Portal",
+  "product_slug": "apigee-integrated-portal",
+  "feature_name": "Portal SSO email sender address configuration",
+  "feature_slug": "portal-sso-email-sender-address-configuration",
+  "summary": "Updates Portal SSO email sender behavior to use the custom SMTP sender address when configured or fall back to no-reply@google.com.",
+  "extended_definition": "Updates Portal SSO email sender behavior to use the custom SMTP sender address when configured or fall back to no-reply@google.com.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Publishing your APIs | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Response payload: { \" status \":\" success \" , \" message \":\" Api documentation updated \" , \" requestId \":\"645138278\" , \" data \": { \" graphqlDocumentation \": { \" schema \": { \" displayName \": \" Hello World 2\" }, \" endpointUri \": \" https : // demo . google . com / graphql \" } } } AsyncAPI curl -X PATCH \"https://apigee.googleapis.com/v1/organizations/ ORG_NAME /sites/ SITE_ID /apidocs/ API_DOC /documentation\" \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"asyncApiDocumentation\": { \"spec\":{ \"displayName\":\" DISPLAY_NAME \", \"contents\":\" CONTENTS \"} } }' Replace the following: ORG_NAME with the name of the organization.",
+          "For example, https://demo.google.com/graphql .",
+          "Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?"
+        ]
+      },
+      {
+        "title": "Creating a custom search page | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "source_id": "feature-recovery-http",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "The custom search configuration returns something like the following: <script async src=\"https://cse.google.com/cse.js?cx=e13bcb52d46f04dfd\"></script> <div class=\"gcse-search\"></div> Where cx=e13bcb52d46f04dfd is the Google search engine ID.",
+          "Set the cx variable to your Google search engine ID, for example e13bcb52d46f04dfd , and the path value to your search page URL, for example, /search . < script > window . portal = { pageEventListeners : { onLoad : ( path ) = > { // Update with your search page URL if ( path === '/your-search-page-URL' ) { // Add your Google search engine ID var cx = 'your-search-engine-id' ; var gcse = document . createElement ( 'script' ); gcse . type = 'text/javascript' ; gcse . async = true ; gcse . src = 'https://cse.google.com/cse.js?cx=' + cx ; var s = document . getElementsByTagName ( 'script' )[ 0 ]; s . parentNode . insertBefore ( gcse , s ); gcse . onload = function () { var search = document . createElement ( 'gcse:search' ); // Note the element ID name var searchBox = document . getElementById ( 'search-box' ); searchBox . appendChild ( search ); }; } } } }; < / script > Create a new search page in your portal and customize it as described in Manage pages in your portal .",
+          "Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?"
+        ]
+      },
+      {
+        "title": "Developer portal solutions | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Managing API products Managing client applications Organizing client app ownership Controlling developer access to your apps App access overview Registering app developers Importing existing consumer keys and secrets Developer portal solutions API design overview Building your integrated portal Introduction How portal users interact with your portal Getting started Tutorial: Building your first portal Overview Step 1: Create a portal Step 2: Customize the color palette Step 3: Customize the logo Step 4: Edit page content Step 5: Set up navigation Step 6: Publish an API Quick tips for customizing the sample portal Best practices for building your portal Building and publishing your portal Steps to build your portal Managing your portals Managing the pages in your portal Developing portal content Customizing your theme Setting up navigation Publishing your APIs Managing access to your APIs using API keys Managing the default visibility Managing your assets Customizing your domain Configuring email Configure a content security policy Configuring analytics tracking Adding custom scripts Publishing your portal content Viewing your live portal Creating a custom search page Managing user account creation and sign-in experience Configuring the user account creation and sign-in experience Configuring identity providers Managing user accounts Managing developer teams Managing audiences Reference Cookies Markdown syntax Building your portal using Drupal Introduction Drupal-based developer portal in Cloud Marketplace Overview Get started Customize your portal Support resources Choosing a hosting provider Support process for Apigee Drupal modules MONETIZE Overview of Apigee monetization Steps to use Apigee monetization Enabling Apigee monetization Enforcing monetization limits in API proxies Enforcing monetization quotas in API products Managing prepaid account balances Managing rate plans for API products Integrating monetization in Drupal portal Purchasing API product subscriptions using API Debugging monetization using the Debug tool Capturing monetization data Generating monetization reports ADMINISTER Users, roles, and access Users and roles Apigee roles Managing users, roles, and permissions using APIs Managing users in the UI Managing access in Google Cloud Access Apigee using Workforce Identity Federation Adding IAM Conditions to policies Apigee Spaces Apigee Spaces overview Apigee Spaces roles and permissions Create and manage Apigee Spaces Manage API resources with Apigee Spaces Move API resources in Apigee Spaces IAM permission hierarchy in Apigee Spaces Network Configuration Peering ranges Using multiple regions Managing instances Changing instance IPs Recreating an Apigee instance with zero downtime Using shared VPC networks Southbound networking patterns Northbound networking with Private Service Connect Migrate northbound routing to Private Service Connect Configure active health check for regional failover with Private Service Connect Client IP resolution Security administration TLS Options for configuring TLS Accessing TLS connection information in an API proxy Working with references SAML Using VPC Service Controls About the encryption keys Provisioning NAT IPs Performance considerations for Apigee Cloud NAT Calculating static NAT IP requirements Preventing DoS attacks Integrate Apigee with your SIEM solution Integrate Apigee with Google SecOps Managing data collectors Backups Switching between organizations Manage maintenance updates Overview Manage instance maintenance windows View maintenance logs ANALYZE Analytics overview Using the analytics dashboards API metrics API proxy performance Error code analysis Latency analysis Cache performance Target performance Developer analysis Developer engagement Traffic composition End user analysis Devices Geomap Custom reports Creating and managing custom reports Analytics metrics, dimensions, and filters reference Operations anomalies Operations anomalies overview View and investigate anomalies Create anomaly alerts Collecting custom data with the DataCapture policy Exporting data from analytics Obfuscate user data for analytics Data Studio integration Using the API Using the asynchronous custom reports API Using the metrics API Metrics API examples Troubleshooting Troubleshooting with analytics What does an analytics entity named 'not set' mean?",
+          "Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback Developer portal solutions Stay organized with collections Save and categorize content based on your preferences.",
+          "Obfuscating user data for analytics Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collectin overview Configuring metrics collection Viewing metrics Other data collection Runtime services Runtime service configuration overview Managing runtime plane components Cassandra Configuring Cassandra for production StorageClass configuration Expanding Cassandra persistent volumes Backup and recovery TLS configuration Scale down Environments About environments Managing environments Creating environments Deleting environments Configuring virtual hosts Configuring proxy forwarding Generating self-signed TLS certificates MART MART configuration Adding the MART IP to your org Synchronizer Apigee connect Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster management Cluster requirements Cluster overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configuring ports and setting up firewalls Securing the runtime installation Data encryption Storing data in a Kubernetes secret Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configuring static IP addresses Scale and autoscale services Configuring dedicated node pools Downloading signed runtime images Apigee deployment services GCP URLs to allow for hybrid Rolling updates Upgrading hybrid Tools apigeectl create-service-account Configuration property reference v1.1 What is Apigee hybrid?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "common.sh",
+      "cse.google.com",
+      "cse.js",
+      "demo.google.com",
+      "push.sh",
+      "v1.1",
+      "v1.15"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals"
+      ]
+    }
+  ]
+}

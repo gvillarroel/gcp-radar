@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Custom output schema field descriptions",
+  "feature_slug": "custom-output-schema-field-descriptions",
+  "summary": "AI.GENERATE and AI.GENERATE_TABLE support descriptions for fields in custom output schemas.",
+  "extended_definition": "AI.GENERATE and AI.GENERATE_TABLE support descriptions for fields in custom output schemas.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+      "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . result = bbq . ai . generate table ( gemini model , df manuals agg [ \"prompt\" ], output schema = { \"page1 summary\" : \"STRING\" , \"page2 summary\" : \"STRING\" , \"page3 summary\" : \"STRING\" , }, )[[ \"page1 summary\" , \"page2 summary\" , \"page3 summary\" ]] result The results look similar to the following: +-----------------------------------------------+-------------------------------------------+----------------------------------------------------+ page1 summary page2 summary page3 summary +-----------------------------------------------+-------------------------------------------+----------------------------------------------------+ This manual provides an overview of the This section explains how to program This page covers connecting the feeder to Wi-Fi CritterCuisine Pro 5000 automatic pet feeder, the feeder's clock, set feeding using the CritterCuisine Connect app, remote including its features, safety precautions, schedules, copy and delete meal settings, feeding, managing feeding schedules, viewing assembly instructions, and initial setup. manually feed your pet, record feeding logs, receiving low food alerts, a voice message, and understand updating firmware, creating multiple pet profiles, the low food level indicator. sharing access with other users, and cleaning and maintaining the feeder. +-----------------------------------------------+-------------------------------------------+----------------------------------------------------+ Clean up Caution : Deleting a project has the following effects: Everything in the project is deleted.",
+          "Return the description only. \" df agg [ \"prompt\" ] = bbq . struct ( df prompt [[ \"prompt0\" , \"image\" , \"description\" , \"category\" , \"subcategory\" ]] ) df agg = df agg . reset index () df agg = bbq . ai . generate table ( gemini model , df agg , output schema = { \"brand description\" : \"STRING\" } ) df agg [[ \"brand\" , \"brand description\" , \"cnt\" ]] The results look similar to the following: +--------------+-------------------------------------+-----+ brand brand.description cnt +--------------+-------------------------------------+-----+ AquaClear AquaClear is a brand of aquarium 33 and pond care products that offer a wide range of solutions for... +--------------+-------------------------------------+-----+ Ocean Ocean Bites is a brand of cat food 28 Bites that offers a variety of recipes and formulas to meet the specific.. +--------------+-------------------------------------+-----+ ... ... ... +--------------+-------------------------------------+-----+ Create a Python UDF to transform product images Create a Python UDF to convert product images to grayscale.",
+          "For more information, see Set up ADC for a local development environment . df products mm [ \"url\" ] = bbq . obj . get access url ( df products mm [ \"image\" ], \"R\" ) . to frame () df products mm [ \"prompt0\" ] = \"Can you describe the following image?\" df products mm [ \"prompt\" ] = bbq . struct ( df products mm [[ \"prompt0\" , \"url\" ]]) df products mm = bbq . ai . generate table ( gemini model , df products mm , output schema = { \"image description\" : \"STRING\" } ) df products mm = df products mm [ [ \"product id\" , \"product name\" , \"brand\" , \"category\" , \"subcategory\" , \"animal type\" , \"search keywords\" , \"price\" , \"description\" , \"inventory level\" , \"supplier id\" , \"average rating\" , \"image\" , \"image description\" , ] ] Run the following to update the animal type , search keywords , and subcategory columns with generated data: SQL UPDATE cymbal pets . products mm p SET p . animal type = s . animal type , p . search keywords = s . search keywords , p . subcategory = s . subcategory FROM ( SELECT animal type , search keywords , subcategory , uri FROM AI ."
+        ]
+      },
+      {
+        "title": "\"Generate text by using a Gemini model and the AI.GENERATE_TEXT function\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generic Cinematography and boring, there's really nothing... ... ... ... +--------------+------------------+----------------------------------------+ Perform sentiment analysis Perform sentiment analysis on IMDB movie reviews by using the remote model and the AI.GENERATE TEXT function: In the Google Cloud console, go to the BigQuery page.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Generate text by using a Gemini model and the AI.GENERATE TEXT function Stay organized with collections Save and categorize content based on your preferences.",
+          "This tutorial shows you how to create a remote model that's based on the gemini-2.5-flash model , and how to use that model with the AI.GENERATE TEXT function to extract keywords and perform sentiment analysis."
+        ]
+      },
+      {
+        "title": "\"Generate text by using a Gemma open model and the AI.GENERATE_TEXT function\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma",
+        "source_id": "site-docs-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generate text by using a Gemma open model and the AI.GENERATE TEXT function This tutorial shows you how to create a remote model that's based on the Gemma model , and then how to use that model with the AI.GENERATE TEXT function to extract keywords and perform sentiment analysis on movie reviews from the bigquery-public-data.imdb.reviews public table.",
+          "Perform keyword extraction Perform keyword extraction on IMDB movie reviews by using the remote model and the AI.GENERATE TEXT function: In the Google Cloud console, go to the BigQuery page.",
+          "Perform sentiment analysis Perform sentiment analysis on IMDB movie reviews by using the remote model and the AI.GENERATE TEXT function: In the Google Cloud console, go to the BigQuery page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "brand.description",
+      "data.imdb.reviews"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma"
+      ]
+    }
+  ]
+}

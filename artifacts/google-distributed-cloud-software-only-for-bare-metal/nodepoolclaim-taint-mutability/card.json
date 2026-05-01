@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.588Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "NodePoolClaim taint mutability",
+  "feature_slug": "nodepoolclaim-taint-mutability",
+  "summary": "The spec.taints field in NodePoolClaim is mutable, so you can add or remove taints on existing node pools without recreating the claim.",
+  "extended_definition": "The spec.taints field in NodePoolClaim is mutable, so you can add or remove taints on existing node pools without recreating the claim.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage node pools in a cluster | Google Distributed Cloud (software only) for bare metal | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "source_id": "feature-recovery-http",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "The new node pool consists of two nodes with IP addresses 10.200.0.7 and 10.200.0.8 : apiVersion : baremetal.cluster.gke.io/v1 kind : NodePool metadata : name : machine-learning-pool namespace : cluster-abm-cluster spec : clusterName : abm-cluster nodes : - address : 10.200.0.7 - address : 10.200.0.8 taints : - key : TAINT_KEY value : TAINT_VALUE effect : NoSchedule labels : key1 : LABEL_1 key2 : LABEL_2 Store the configuration in a file named machine-learning-pool.yaml and apply the configuration to the cluster with the following command: kubectl apply -f machine-learning-pool.yaml The following facts should be considered when adding a node pool to a cluster: NodePool.spec.taints and NodePool.spec.labels configurations are reconciled to nodes.",
+          "For example: nodeConfigs : - nodeIP : 10.200.0.10 labels : key1 : value1 key2 : value2 - nodeIP : 10.200.0.11 labels : key3 : value3 key4 : value4 Optionally, you can specify the following: --node-labels= KEY = VALUE ,... : A comma-separated list of Kubernetes labels (key-value pairs) applied to each node in the pool. --node-taints= KEY = VALUE : EFFECT ,...",
+          "For example: nodeConfigs : - nodeIP : 10.200.0.10 labels : key1 : value1 - nodeIP : 10.200.0.11 Optionally, you can specify the following: --node-labels= KEY = VALUE ,... : A comma-separated list of Kubernetes labels (key-value pairs) applied to each node in the pool. --node-taints= KEY = VALUE : EFFECT ,..."
+        ]
+      },
+      {
+        "title": "File konfigurasi cluster yang dibuat | Google Distributed Cloud (software only) for bare metal | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config",
+        "source_id": "feature-recovery-http",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kolom spec.taints dan spec.labels dalam spesifikasi NodePool digunakan untuk penjadwalan Pod.",
+          "Untuk mengetahui informasi selengkapnya tentang kolom ini, lihat Menambahkan node pool baru . ... # Taints and labels are reconciled to the nodes of the node pool unless the node has # “baremetal.cluster.gke.io/label-taint-no-sync” annotated. taints : - key : < key1 > value : < value1 > # The effect can be either 'NoSchedule', 'PreferNoSchedule', or 'NoExecute'. # 'NoSchedule' means no pod will be able to schedule onto the node unless it has a matching toleration. # 'PreferNoSchedule' means the system avoids placing a pod that does not tolerate the taint on the node, but it is # not required. # `NoExecute` means pods that do not tolerate the taint will be evicted immediately, and pods that do tolerate the # taint will never be evicted. effect : NoSchedule labels : key1 : < value1 > key2 : < value2 > Kirim masukan Kecuali dinyatakan lain, konten di halaman ini dilisensikan berdasarkan Lisensi Creative Commons Attribution 4.0 , sedangkan contoh kode dilisensikan berdasarkan Lisensi Apache 2.0 .",
+          "If left blank, this field defaults to false. # deployCloudConsoleProxy: <Whether to deploy a reverse proxy for Google Cloud console authentication; optional> # # certificateAuthorityData specifies a Base64 PEM-encoded certificate authority certificate of your identity # # provider."
+        ]
+      },
+      {
+        "title": "\"Configure bundled load balancing with MetalLB \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb",
+        "source_id": "site-iam-reference",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This field is mutable. addresses A list of one or more nonoverlapping IP address ranges. ip-range can be specified in either CIDR notation (like 198.51.100.0/24 ) or range notation (like 198.51.100.0-198.51.100.10 , with no spaces around the dash).",
+          "Configuration fields Edit the cluster.spec.loadBalancer section of the cluster configuration file to configure bundled load balancing.",
+          "Load balancer nodes can run regular workloads by default; there is no special taint on those nodes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "cluster.spec.loadBalancer",
+      "config.yaml",
+      "pool.yaml",
+      "spec.labels",
+      "spec.taints"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config"
+      ]
+    }
+  ]
+}

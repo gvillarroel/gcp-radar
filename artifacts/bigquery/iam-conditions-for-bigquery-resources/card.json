@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "IAM conditions for BigQuery resources",
+  "feature_slug": "iam-conditions-for-bigquery-resources",
+  "summary": "BigQuery supports IAM conditions to control access to BigQuery resources; BigQuery supports IAM conditions to control access to BigQuery resources.",
+  "extended_definition": "BigQuery supports IAM conditions to control access to BigQuery resources; BigQuery supports IAM conditions to control access to BigQuery resources.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+      "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+      "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deny policy attributes The following attributes can be used in your Identity and Access Management deny policies: tool.isReadOnly : a resource attribute that indicates whether the invoked tool only reads data. request.auth.oauth.client id : the OAuth client ID. resource.service : the name of service—for example, bigquery.googleapis.com .",
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Control MCP use with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "Example IAM policies The following sections give examples of Identity and Access Management deny policies that can be used to control MCP use."
+        ]
+      },
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deny policy attributes The following attributes can be used in your Identity and Access Management deny policies: tool.isReadOnly : a resource attribute that indicates whether the invoked tool only reads data. request.auth.oauth.client id : the OAuth client ID. resource.service : the name of service—for example, bigquery.googleapis.com .",
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Control MCP use with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "Example IAM policies The following sections give examples of Identity and Access Management deny policies that can be used to control MCP use."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the BigQuery client library documentation for more details on update dataset: https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.client.Client#google cloud bigquery client Client update dataset try : Update just the access entries property of the dataset. dataset = client . update dataset ( dataset , [ \"access entries\" ], ) Notify user that the API call was successful. full dataset id = f \" { dataset . project } . { dataset . dataset id } \" print ( f \"Revoked dataset access for ' { entity id } ' to ' dataset ' { full dataset id } .'\" ) except PreconditionFailed : # A read-modify-write error. print ( f \"Dataset ' { dataset . dataset id } ' was modified remotely before this update. \" \"Fetch the latest version and retry.\" ) Work with table and view access controls Views are treated as table resources in BigQuery.",
+          "This permission also requires bigquery.jobs.create to run a query job that references the routine, and you also need permission to access any resources that the routine references, such as tables or views. bigquery.routines.list Dataset List routines in the dataset and show metadata for routines. bigquery.routines.update Routine Update routine definitions and metadata. bigquery.routines.getIamPolicy Routine Get access controls for the routine. bigquery.routines.setIamPolicy Routine Set access controls for the routine.",
+          "Caution: When you apply the JSON file that contains the access controls, the existing access controls are overwritten. bq update --source PATH TO FILE PROJECT ID : DATASET To verify your access control changes, use the bq show command again without writing the information to a file: bq show --format = prettyjson PROJECT ID : DATASET Terraform Use the google bigquery dataset iam resources to update access to a dataset."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.getAttribute",
+      "bigquery.googleapis.com",
+      "bigquery.jobs.create",
+      "bigquery.routines.getIamPolicy",
+      "bigquery.routines.list",
+      "bigquery.routines.setIamPolicy",
+      "bigquery.routines.update",
+      "mcp.googleapis.com",
+      "request.auth.oauth.client",
+      "resource.service",
+      "tool.isReadOnly",
+      "tools.call"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    }
+  ]
+}

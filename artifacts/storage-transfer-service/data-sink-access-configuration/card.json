@@ -1,0 +1,279 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.249Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Data sink access configuration",
+  "feature_slug": "data-sink-access-configuration",
+  "summary": "Configuration of access to Storage Transfer Service data sinks was updated in the documentation.",
+  "extended_definition": "Configuration of access to Storage Transfer Service data sinks was updated in the documentation.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+      "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access Context Manager roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "source_id": "site-iam-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create, edit, and change access levels, access zones and authorized orgs descs. accesscontextmanager. accessLevels. accesscontextmanager. accessLevels. create accesscontextmanager. accessLevels. delete accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. accessLevels. replaceAll accesscontextmanager. accessLevels. update accesscontextmanager. authorizedOrgsDescs. accesscontextmanager. authorizedOrgsDescs. create accesscontextmanager. authorizedOrgsDescs. delete accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. authorizedOrgsDescs. update accesscontextmanager. policies. create accesscontextmanager. policies. delete accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. policies. update accesscontextmanager. servicePerimeters. accesscontextmanager. servicePerimeters. commit accesscontextmanager. servicePerimeters. create accesscontextmanager. servicePerimeters. delete accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list accesscontextmanager. servicePerimeters. replaceAll accesscontextmanager. servicePerimeters. update cloudasset. assets. searchAllResources resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) Read access to policies, access levels, access zones and authorized orgs descs. accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list logging.exclusions.get logging.exclusions.list logging.logEntries.list logging.logMetrics.get logging.logMetrics.list logging.logServiceIndexes.list logging.logServices.list logging.logs.list logging.sinks.get logging.sinks.list logging.usage.get resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Access Context Manager permissions Permission Included in roles accesscontextmanager. accessLevels. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) accesscontextmanager. authorizedOrgsDescs. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. authorizedOrgsDescs. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. authorizedOrgsDescs. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. authorizedOrgsDescs. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. authorizedOrgsDescs. update Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. gcpUserAccessBindings. create Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. gcpUserAccessBindings. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. gcpUserAccessBindings. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) Cloud Access Binding Reader ( roles/ accesscontextmanager.gcpAccessReader ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) accesscontextmanager. gcpUserAccessBindings. update Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. policies. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. policies. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. policies. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. policies. getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. policies. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "\"Access Approval roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "source_id": "site-iam-reference",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access Approval roles Role Permissions Accessapproval Admin ( roles/ accessapproval.admin ) Admin role for accessapproval accessapproval. accessapproval. requests. approve accessapproval. requests. dismiss accessapproval.requests.get accessapproval. requests. invalidate accessapproval.requests.list accessapproval. serviceAccounts. get accessapproval.settings.delete accessapproval.settings.get accessapproval.settings.update resourcemanager.projects.get resourcemanager.projects.list Accessapproval Editor ( roles/ accessapproval.editor ) Editor role for accessapproval accessapproval.requests.get accessapproval.requests.list accessapproval. serviceAccounts. get accessapproval.settings.get resourcemanager.projects.get resourcemanager.projects.list Access Approval Viewer ( roles/ accessapproval.viewer ) Ability to view access approval requests and configuration accessapproval.requests.get accessapproval.requests.list accessapproval. serviceAccounts. get accessapproval.settings.get resourcemanager.projects.get resourcemanager.projects.list Access Approval Approver ( roles/ accessapproval.approver ) Ability to view or act on access approval requests and view configuration. accessapproval.requests. accessapproval. requests. approve accessapproval. requests. dismiss accessapproval.requests.get accessapproval. requests. invalidate accessapproval.requests.list accessapproval. serviceAccounts. get accessapproval.settings.get resourcemanager.projects.get resourcemanager.projects.list Access Approval Config Editor ( roles/ accessapproval.configEditor ) Ability to update the Access Approval configuration accessapproval. serviceAccounts. get accessapproval.settings. accessapproval.settings.delete accessapproval.settings.get accessapproval.settings.update resourcemanager.projects.get resourcemanager.projects.list Access Approval Invalidator ( roles/ accessapproval.invalidator ) Ability to invalidate existing approved approval requests accessapproval. requests. invalidate accessapproval. serviceAccounts. get accessapproval.settings.get resourcemanager.projects.get resourcemanager.projects.list Access Approval permissions Permission Included in roles accessapproval. requests. approve Owner ( roles/ owner ) Accessapproval Admin ( roles/ accessapproval.admin ) Access Approval Approver ( roles/ accessapproval.approver ) accessapproval. requests. dismiss Owner ( roles/ owner ) Accessapproval Admin ( roles/ accessapproval.admin ) Access Approval Approver ( roles/ accessapproval.approver ) accessapproval.requests.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Accessapproval Admin ( roles/ accessapproval.admin ) Accessapproval Editor ( roles/ accessapproval.editor ) Access Approval Viewer ( roles/ accessapproval.viewer ) Access Approval Approver ( roles/ accessapproval.approver ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Cloud Controls Partner Access Approval Service Agent ( roles/ cloudcontrolspartner.accessApprovalServiceAgent ) accessapproval. serviceAccounts. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Accessapproval Admin ( roles/ accessapproval.admin ) Accessapproval Editor ( roles/ accessapproval.editor ) Access Approval Viewer ( roles/ accessapproval.viewer ) Access Approval Approver ( roles/ accessapproval.approver ) Access Approval Config Editor ( roles/ accessapproval.configEditor ) Access Approval Invalidator ( roles/ accessapproval.invalidator ) Support User ( roles/ iam.supportUser ) accessapproval.settings.delete Owner ( roles/ owner ) Accessapproval Admin ( roles/ accessapproval.admin ) Access Approval Config Editor ( roles/ accessapproval.configEditor ) accessapproval.settings.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Accessapproval Admin ( roles/ accessapproval.admin ) Accessapproval Editor ( roles/ accessapproval.editor ) Access Approval Viewer ( roles/ accessapproval.viewer ) Access Approval Approver ( roles/ accessapproval.approver ) Access Approval Config Editor ( roles/ accessapproval.configEditor ) Access Approval Invalidator ( roles/ accessapproval.invalidator ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Cloud Controls Partner Access Approval Service Agent ( roles/ cloudcontrolspartner.accessApprovalServiceAgent ) accessapproval. requests. invalidate Owner ( roles/ owner ) Accessapproval Admin ( roles/ accessapproval.admin ) Access Approval Approver ( roles/ accessapproval.approver ) Access Approval Invalidator ( roles/ accessapproval.invalidator ) accessapproval.requests.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Accessapproval Admin ( roles/ accessapproval.admin ) Accessapproval Editor ( roles/ accessapproval.editor ) Access Approval Viewer ( roles/ accessapproval.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Approval Approver ( roles/ accessapproval.approver ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "\"Use cross-bucket replication \\_|\\_ Storage Transfer Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use cURL to call the Storage Transfer Service REST API with a transferJobs.list request: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storagetransfer.googleapis.com/v1/transferJobs\" View a replication job Console For Google Cloud console instructions on how to view a replication job, refer to View a replication job using the Google Cloud console .",
+          "Use cURL to call the Storage Transfer Service REST API with a transferJobs.create request: curl -X POST --data-binary @ JSON FILE NAME \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storagetransfer.googleapis.com/v1/transferJobs\" Replace the following: JSON FILE NAME is the name of the JSON file you created in Step 2.",
+          "Use cURL to call the Storage Transfer Service REST API with a transferJobs.delete request: curl -X DELETE \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storagetransfer.googleapis.com/v1/transferJobs/ JOB NAME \" Replace: JOB NAME with the unique ID of the replication job."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "accessapproval.requests.get",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ]
+      },
+      {
+        "permission": "accessapproval.requests.list",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ]
+      },
+      {
+        "permission": "accessapproval.settings.delete",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "accessapproval.settings.get",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "accessapproval.settings.update",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accessapproval.admin",
+      "accessapproval.approver",
+      "accessapproval.configEditor",
+      "accessapproval.editor",
+      "accessapproval.invalidator",
+      "accessapproval.requests",
+      "accessapproval.settings",
+      "accessapproval.viewer",
+      "accesscontextmanager.gcpAccessAdmin",
+      "accesscontextmanager.gcpAccessReader",
+      "accesscontextmanager.policyAdmin",
+      "accesscontextmanager.policyEditor",
+      "accesscontextmanager.policyReader",
+      "accesscontextmanager.vpcScTroubleshooterViewer",
+      "auditmanager.serviceAgent",
+      "cloudcontrolspartner.accessApprovalServiceAgent",
+      "clouddeploymentmanager.serviceAgent",
+      "cloudsecuritycompliance.serviceAgent",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.logEntries.list",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logs.list",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.usage.get",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.serviceAgent",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    }
+  ]
+}

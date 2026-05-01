@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Authorized table functions",
+  "feature_slug": "authorized-table-functions",
+  "summary": "Authorized table functions let BigQuery table functions run with delegated access to referenced data.",
+  "extended_definition": "Authorized table functions let BigQuery table functions run with delegated access to referenced data.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+      "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+      "https://docs.cloud.google.com/bigquery/docs/user-defined-functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authorized routines \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "source_id": "site-docs-reference-5",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following types of routines can be authorized: Table functions User-defined functions (UDFs) Stored procedures Caution: Stored procedures authorized as routines have DDL and DML access.",
+          "Authorized routines Authorized routines let you share query results with specific users or groups without giving them access to the underlying tables that generated the results.",
+          "CREATE OR REPLACE FUNCTION public dataset . count key ( input key STRING ) RETURNS INT64 AS (( SELECT COUNT ( 1 ) FROM private dataset . private table t WHERE t . key = input key )); Grant the bigquery.dataViewer role to a user on the public dataset dataset."
+        ]
+      },
+      {
+        "title": "User-defined functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Allow access to community-contributed functions within a VPC Service Controls perimeter For projects where VPC Service Controls is enabled and BigQuery is a protected service, you must define an egress rule to the bigquery-public-data project (Project ID: 1057666841514).",
+          "Authorized routines let you share query results with specific users or groups without giving them access to the underlying tables that generated the results.",
+          "Custom masking routines support the following functions: AEAD.DECRYPT BYTES AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) AEAD.DECRYPT STRING, AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) AEAD.ENCRYPT AEAD encryption function with keyset chain (raw key usage not supported) CAST conversion function CONCAT string function CURRENT DATETIME datetime function CURRENT DATE date function CURRENT TIMESTAMP timestamp function CURRENT TIME time function DETERMINISTIC DECRYPT BYTES AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) DETERMINISTIC DECRYPT STRING AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) DETERMINISTIC ENCRYPT AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) FARM FINGERPRINT hash function FROM BASE32 string function FROM BASE64 string function FROM HEX string function GENERATE UUID utility function KEYS.KEYSET CHAIN AEAD encryption function LENGTH string function LOWER string function LPAD string function LTRIM string function MD5 hash function REGEXP REPLACE string function REGEX EXTRACT string function REPLACE string function RPAD string function RTRIM string function SAFE CAST conversion function SHA1 hash function SHA256 hash function SHA512 hash function STARTS WITH string function SUBSTRING string function SUBSTR string function TO BASE32 string function TO BASE64 string function TO HEX string function TRIM string function UPPER string function Custom masking routines can accept either no inputs or one input within BigQuery data types , with the exception of GEOGRAPHY and STRUCT ."
+        ]
+      },
+      {
+        "title": "Authorized views \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "source_id": "site-docs-reference-5",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a dataset to contain the view. resource \"google bigquery dataset\" \"view dataset\" { dataset id = \"view dataset\" description = \"Dataset that contains the view\" location = \"us-west1\" } Create the view to authorize. resource \"google bigquery table\" \"movie view\" { project = google bigquery dataset.view dataset.project dataset id = google bigquery dataset.view dataset.dataset id table id = \"movie view\" description = \"View to authorize\" view { query = \"SELECT item id, avg(rating) FROM movie project.movie dataset.movie ratings GROUP BY item id ORDER BY item id;\" use legacy sql = false } } Authorize the view to access the dataset that the query data originates from. resource \"google bigquery dataset access\" \"view authorization\" { project = \"movie project\" dataset id = \"movie dataset\" view { project id = google bigquery table.movie view.project dataset id = google bigquery table.movie view.dataset id table id = google bigquery table.movie view.table id } } Specify the IAM policy for principals that can access the authorized view.",
+          "These users should already have the roles/bigqueryUser role at the project level. data \"google iam policy\" \"principals policy\" { binding { role = \"roles/bigquery.dataViewer\" members = [ \"group:example-group@example.com\", ] } } Set the IAM policy on the authorized view. resource \"google bigquery table iam policy\" \"authorized view policy\" { project = google bigquery table.movie view.project dataset id = google bigquery table.movie view.dataset id table id = google bigquery table.movie view.table id policy data = data.google iam policy.principals policy.policy data } To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "To compare these methods in detail, see the following resources: Comparison of authorized views, row-level security, and separate tables Introduction to row-level security Example use cases for row-level security Introduction to column-level access control Share all views in a dataset If you want to give a collection of views access to a dataset without having to authorize each individual view, you can group the views together into a dataset, and then give the dataset that contains the views access to the dataset that contains the data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "data.google",
+      "dataset.dataset",
+      "dataset.movie",
+      "dataset.private",
+      "dataset.project",
+      "dataset.view",
+      "example.com",
+      "policy.policy",
+      "policy.principals",
+      "project.movie",
+      "table.movie",
+      "view.dataset",
+      "view.project",
+      "view.table"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/bigqueryUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable-BigQuery federation",
+  "feature_slug": "cloud-bigtable-bigquery-federation",
+  "summary": "Cloud Bigtable now supports federation with BigQuery, allowing BigQuery to query Bigtable data and combine it with other sources.",
+  "extended_definition": "Cloud Bigtable now supports federation with BigQuery, allowing BigQuery to query Bigtable data and combine it with other sources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "When querying Bigtable using SQL, column families are treated like Cassandra's maps . map key : key that uniquely identifies a key-value entry in a Cassandra map column qualifier : a label for a value stored in a table that's indexed by the unique row key.",
+          "When querying Bigtable using SQL, columns are treated like keys of a map . column : the label for a value stored in a table that's indexed by the unique primary key. column : the label for a value stored in a table that's indexed by the unique row key.",
+          "When the source table changes, Cassandra updates the materialized view automatically. continuous materialized view : a fully-managed, pre-computed result of a SQL query that is incrementally and automatically updated from a source table."
+        ]
+      },
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Query language also supports many complex types like scalars, JSON objects and HLL bins.",
+          "Distributes records based on hashes, so scanning many consecutive keys requires querying multiple nodes and aggregating results, which can be slower.",
+          "Bigtable provides fully consistent single-row writes within a cluster and supports single-row transactions through mutate-row requests."
+        ]
+      },
+      {
+        "title": "Query and analyze Bigtable data with BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis",
+        "source_id": "site-docs-root-2",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Examples in GoogleSQL syntax of limiting the query include the following: WHERE rowkey = \"abc123\" WHERE rowkey BETWEEN \"abc123\" PRECEDING AND \"abc999\" FOLLOWING WHERE rowkey > 999999 (if you read the row key as a string) Joins If you plan to use a join to analyze your Bigtable table data in conjunction with data from another source, you should create a subquery that extracts the relevant fields from Bigtable for the planned join.",
+          "Query data in the external table After you have an external table for your Bigtable table, you can send SQL queries to it using one of the following methods: At the command line using bq , the BigQuery CLI Calls to the BigQuery API Any of the BigQuery client libraries To learn how to compose and run a query, see Run a query .",
+          "Build a real-time analytics database with Bigtable and BigQuery Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/bigquery-analysis"
+      ]
+    }
+  ]
+}

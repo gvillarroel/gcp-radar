@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.212Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "SFTP content delivery algorithms",
+  "feature_slug": "sftp-content-delivery-algorithms",
+  "summary": "SFTP content delivery now supports additional key exchange and host key algorithms.",
+  "extended_definition": "SFTP content delivery now supports additional key exchange and host key algorithms.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/action-hub",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Sharing data through an action hub \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/action-hub",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Looker recommends that you also add the following: A README to explain the purpose and means of authentication for your action A PNG icon to display in the Looker Action Hub (or private action hub on your Looker instance) and in the Looker data delivery windows Any files for tests you want to run on your action code — this is different from testing your action Writing an action A design requirement for the Looker Action Hub server is that it remain completely stateless, so storing any information in the action application or service is not allowed.",
+          "On the action settings/enablement page, a Looker admin must configure the action's form fields to pull information from the user attribute by clicking the user attribute icon to the right of the appropriate field and selecting the desired user attribute. requiredField parameters in cell-level actions For cell-level actions, you can configure your model's LookML fields to deliver data to that action destination by specifying which tags your action supports in the requiredFields parameter of your action file.",
+          "Parameter Required Description Data Type tag No If present, matches a field that has this tag. string any tag No If present, supersedes tag and matches a field that has any of the provided tags. string all tags No If present, supersedes tag and matches a field that has all the provided tags. string Supported data formats The DataActionRequest class defines what data delivery format is available for the action to work with."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "LookML dashboard user access data , clear cache refresh , mobile app access , see lookml dashboards User access data , can create forecast , clear cache refresh , create custom fields , create table calculations , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see drill overlay , see lookml , see lookml dashboards , see looks , see sql , see user dashboards , send to integration , schedule without limit User who can't view LookML access data , can create forecast , clear cache refresh , create custom fields , create table calculations , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see lookml dashboards , see looks , see user dashboards , send to integration , schedule without limit Viewer access data , clear cache refresh , download without limit , mobile app access , schedule look emails , see drill overlay , see lookml dashboards , see looks , see user dashboards , schedule without limit You'll see these permission sets appear as options when you create a new role.",
+          "Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "They can also view and edit that data source's configuration in Looker Studio. create table calculations explore Instance Wide NN Users can view, edit, or add table calculations create custom fields explore Instance Wide NN Users can view, edit, or add custom fields ; users who have only the explore permission can only view custom fields. can create forecast explore Instance Wide NN Users can create and edit forecasts in visualizations; users who don't have this permission can only view existing forecasts in the content to which they have access. can override vis config explore Instance Wide NN Users can access the Chart Config Editor , which lets them modify the Highchart API JSON values of a visualization and customize the visualization appearance and format. save content see looks Instance Wide NN This permission is a parent permission of save dashboards , save looks , and create public looks ."
+        ]
+      },
+      {
+        "title": "Admin settings - Scheduled Emails \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "Send Links and Data With the Send Links and Data option selected, when you are setting up deliveries of Looks and dashboards to email, the Scheduler will contain fields to name your delivery, list email recipients, elect a format for the data, define the delivery's trigger or frequency, and specify additional advanced scheduling options, including selecting whether to include links back to Looker content in the body of the email.",
+          "Send Data Only With the Send Data Only option selected, when you are setting up deliveries of Looks and dashboards to email, the Scheduler will contain fields to name your delivery, list email recipients, elect a format for the data, define the delivery's trigger or frequency, and specify additional advanced scheduling options.",
+          "Send Link Only With the Send Link Only option selected, when you are setting up deliveries of Looks and dashboards to email, the Scheduler will contain fields to name your delivery, list email recipients, define the delivery's trigger or frequency, and specify additional advanced scheduling options."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails"
+      ]
+    }
+  ]
+}

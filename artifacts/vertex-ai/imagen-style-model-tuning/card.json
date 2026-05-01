@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Imagen style model tuning",
+  "feature_slug": "imagen-style-model-tuning",
+  "summary": "Imagen on Vertex AI added generally available support for style model tuning.",
+  "extended_definition": "Imagen on Vertex AI added generally available support for style model tuning.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines",
+      "https://docs.cloud.google.com/vertex-ai/docs/vizier/vizier-notebook-tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Training, tuning and deploying a PyTorch text sentiment classification model on Vertex AI .",
+          "Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Hyperparameter Tuning Run hyperparameter tuning for a TensorFlow model .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Tune text models by using RLHF tuning Vertex AI LLM Reinforcement Learning from Human Feedback ."
+        ]
+      },
+      {
+        "title": "\"Responsible AI and usage guidelines for Imagen \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines",
+        "source_id": "site-docs-reference-3",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "View Imagen for Generation model card View Imagen for Editing and Customization model card Imagen usage guidelines Read the following general product attributes and legal considerations before you use Imagen on Vertex AI.",
+          "When Imagen on Vertex AI is integrated into a customer's unique use case and context, additional responsible AI considerations and model limitations may need to be considered.",
+          "These code to category mappings are as follows: Error code Safety category Description Content filtered: prompt input or image output 58061214 17301594 Child Detects child content where it isn't allowed due to the API request settings or allowlisting. input (prompt): 58061214 output (image): 17301594 29310472 15236754 Celebrity Detects a photorealistic representation of a celebrity in the request. input (prompt): 29310472 output (image): 15236754 62263041 Dangerous content Detects content that's potentially dangerous in nature. input (prompt) 57734940 22137204 Hate Detects hate-related topics or content. input (prompt): 57734940 output (image): 22137204 74803281 29578790 42876398 Other Detects other miscellaneous safety issues with the request. input (prompt): 42876398 output (image): 29578790, 74803281 39322892 People/Face Detects a person or face when it isn't allowed due to the request safety settings. output (image) 92201652 Personal information Detects Personally Identifiable Information (PII) in the text, such as the mentioning a credit card number, home addresses, or other such information. input (prompt) 89371032 49114662 72817394 Prohibited content Detects the request of prohibited content in the request. input (prompt): 89371032 output (image): 49114662, 72817394 90789179 63429089 43188360 Sexual Detects content that's sexual in nature. input (prompt): 90789179 output (image): 63429089, 43188360 35561574 35561575 Third-party content Guardrails related to third-party content. input (prompt) output (image) 78610348 Toxic Detects toxic topics or content in the text. input (prompt) 61493863 56562880 Violence Detects violence-related content from the image or text. input (prompt): 61493863 output (image): 56562880 32635315 Vulgar Detects vulgar topics or content from the text. input (prompt) 64151117 Celebrity or child Detects photorealistic respresentation of a celebrity or of a child that violates Google's safety policies. input (prompt) output (image) Limitations The following limits apply to different tasks: Image generation and editing limitations Bias amplification : While Imagen on Vertex AI can generate high-quality images, there may be potential biases in the generated content."
+        ]
+      },
+      {
+        "title": "Vertex AI Vizier notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/vizier/vizier-notebook-tutorials",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Training, tuning and deploying a PyTorch text sentiment classification model on Vertex AI .",
+          "Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Hyperparameter Tuning Run hyperparameter tuning for a TensorFlow model .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Tune text models by using RLHF tuning Vertex AI LLM Reinforcement Learning from Human Feedback ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/image/usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/docs/vizier/vizier-notebook-tutorials"
+      ]
+    }
+  ]
+}

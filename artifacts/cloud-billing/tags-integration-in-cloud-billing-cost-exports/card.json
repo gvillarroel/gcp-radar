@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.299Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Tags integration in Cloud Billing cost exports",
+  "feature_slug": "tags-integration-in-cloud-billing-cost-exports",
+  "summary": "Cloud Billing now includes resource Tags in standard and detailed usage cost exports, enabling cost queries for chargeback, audits, and allocations.",
+  "extended_definition": "Cloud Billing now includes resource Tags in standard and detailed usage cost exports, enabling cost queries for chargeback, audits, and allocations.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/bq-examples",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Structure of Detailed data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE cluster costs before credits SELECT SUM ( cost ) AS cost before credits , labels . value AS cluster name FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX LEFT JOIN UNNEST ( labels ) as labels ON labels . key = \"goog-k8s-cluster-name\" GROUP BY labels . value ; GKE costs after credits by namespace SELECT labels . value as namespace , SUM ( cost ) + SUM ( IFNULL (( SELECT SUM ( c . amount ) FROM UNNEST ( credits ) c ), 0 )) AS cost after credits , FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX LEFT JOIN UNNEST ( labels ) as labels ON labels . key = \"k8s-namespace\" GROUP BY namespace ; GKE costs by SKU SELECT project . id AS project id , labels . value AS cluster name , sku . id AS sku id , sku . description AS sku description , SUM ( cost ) AS cost FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX JOIN UNNEST ( labels ) AS labels ON labels . key = \"goog-k8s-cluster-name\" GROUP BY cluster name , project id , sku description , sku id ; Query examples with tags The following examples illustrate ways to query your data with tags.",
+          "SELECT invoice . month AS invoice month , tag . value AS cost center , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX , UNNEST ( tags ) AS tag WHERE tag . key = \"cost center\" AND tag . namespace = \"821092389413\" GROUP BY invoice . month , tag . value ORDER BY invoice . month , tag . value ; For example, the result of the preceding query might be: Row invoice month cost center net cost 1 202208 android mobile apps 9.93 2 202208 ios mobile apps 9.93 3 202209 android mobile apps 25.42 4 202209 ios mobile apps 25.4 5 202209 personalization 16.08 View costs of untagged resources This query shows the invoice total for untagged resources, grouped by invoice month.",
+          "Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports."
+        ]
+      },
+      {
+        "title": "\"Structure of Standard data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT invoice . month AS invoice month , tag . value AS cost center , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX , UNNEST ( tags ) AS tag WHERE tag . key = \"cost center\" AND tag . namespace = \"821092389413\" GROUP BY invoice . month , tag . value ORDER BY invoice . month , tag . value ; For example, the result of the preceding query might be: Row invoice month cost center net cost 1 202208 android mobile apps 9.93 2 202208 ios mobile apps 9.93 3 202209 android mobile apps 25.42 4 202209 ios mobile apps 25.4 5 202209 personalization 16.08 View costs of untagged resources This query shows the invoice total for untagged resources, grouped by invoice month.",
+          "Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports.",
+          "Available tags The Standard costs and Detailed costs exports for Resources, Projects, Folders, and Organizations include these fields for tags data: Tags Key, Tags Value, Tags Inherited, and Tags Namespace."
+        ]
+      },
+      {
+        "title": "Example queries for Cloud Billing data export \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/bq-examples",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use your detailed usage cost table name to pull the Exports data: gcp billing export resource v1 <BILLING ACCOUNT ID> Use your pricing table name for the Prices data: project-ID.dataset.cloud pricing export WITH Exports AS ( SELECT FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX ), Prices AS ( SELECT FROM project - ID . dataset . cloud pricing export ) SELECT Exports . sku . description AS sku description , Exports . cost , Exports . usage , FlattenedPrices . pricing unit description , FlattenedPrices . account currency amount , FlattenedPrices . account currency code , FROM Exports JOIN ( SELECT FROM Prices CROSS JOIN UNNEST ( Prices . list price . tiered rates )) AS FlattenedPrices ON Exports . sku . id = FlattenedPrices . sku . id AND Exports . price . tier start amount = FlattenedPrices . start usage amount WHERE DATE ( Exports . export time ) = '2023-06-30' AND DATE ( FlattenedPrices . export time ) = '2023-06-30' AND cost > 0 LIMIT 1000 For example, the result of the preceding query might be: sku description cost usage pricing unit description account currency amount account currency code Balanced PD Capacity 0.001345 { \"usage\": { \"amount\": \"38654705664000.0\", \"unit\": \"byte-seconds\", \"amount in pricing units\": \"0.01345895\", \"pricing unit\": \"gibibyte month\" } } gibibyte month 0.1 USD Balanced PD Capacity 0.001344 { \"usage\": { \"amount\": \"38654705664000.0\", \"unit\": \"byte-seconds\", \"amount in pricing units\": \"0.01345895\", \"pricing unit\": \"gibibyte month\" } } gibibyte month 0.1 USD Balanced PD Capacity 0.001346 { \"usage\": { \"amount\": \"38654705664000.0\", \"unit\": \"byte-seconds\", \"amount in pricing units\": \"0.01345895\", \"pricing unit\": \"gibibyte month\" } } gibibyte month 0.1 USD Query using system labels System labels for Google Cloud reservations provide enhanced visibility into your reservation usage.",
+          "Standard usage cost data Detailed usage cost data Pricing data Standard usage cost query examples Return the total costs on an invoice Example 1: Sum of all costs, per invoice Example 2: Return details by cost type, per invoice month Query examples with labels Query every row without grouping Group by label map as a JSON string Group by label value for a specific key Group by key/value pairs Committed use discount queries Viewing commitment fees Viewing commitment credits Use resource hierarchy filters to review ancestry Example 1: Filter by resource name Example 2: Filter by display name Query examples with tags Calculate costs by invoice month with tags View costs of untagged resources Additional query examples Query costs and credits by project for a specified invoice month Query costs to view corrections or late-monetized usage for a specified invoice month Query cost details to view corrections or late-monetized usage by service for a specified invoice month Detailed usage cost query examples Return the resource-level costs on an invoice Sum costs for each resource, per invoice Return details by cost type for each resource, per invoice month Get breakdown of Google Kubernetes Engine (GKE) cluster costs Filter GKE cost breakdown Pricing data query examples Get list prices for a specific SKU Get list prices for a specific SKU, and include service description Example 1: Returns nested data Example 2: Returns unnested data joined with the same table Use product taxonomy and geo taxonomy to query SKUs Get the product taxonomy of a SKU Get all SKUs for a specific product taxonomy Get all SKUs for a specific geo taxonomy and product taxonomy Join pricing data with detailed usage cost data Standard usage cost query examples This section provides examples of how to query the Cloud Billing standard usage cost data exported to BigQuery.",
+          "SELECT invoice . month AS invoice month , tag . value AS cost center , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export resource v1 XXXXXX - XXXXXX - XXXXXX , UNNEST ( tags ) AS tag WHERE tag . key = \"cost center\" AND tag . namespace = \"821092389413\" GROUP BY invoice . month , tag . value ORDER BY invoice . month , tag . value ; For example, the result of the preceding query might be: Row invoice month cost center net cost 1 202208 android mobile apps 9.93 2 202208 ios mobile apps 9.93 3 202209 android mobile apps 25.42 4 202209 ios mobile apps 25.4 5 202209 personalization 16.08 View costs of untagged resources This query shows the invoice total for untagged resources, grouped by invoice month."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "dataset.cloud"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/bq-examples"
+      ]
+    }
+  ]
+}

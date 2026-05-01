@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Streaming Engine",
+  "feature_slug": "streaming-engine",
+  "summary": "Streaming Engine is a service that offloads streaming execution state and processing from worker VMs; Streaming Engine is a service that offloads streaming execution state and processing from worker VMs.",
+  "extended_definition": "Streaming Engine is a service that offloads streaming execution state and processing from worker VMs; Streaming Engine is a service that offloads streaming execution state and processing from worker VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you run a Dataflow job that doesn't use Dataflow Shuffle or Streaming Engine, workers need to communicate with each other using TCP ports 12345 and 12346 within the VPC network.",
+          "Full status: generic::invalid argument: Http(400) Bad Request Bad request warnings occur if worker state information is stale or out of sync due to processing delays.",
+          "Worker VMs are fully managed Compute Engine instances that execute your data processing pipeline tasks."
+        ]
+      },
+      {
+        "title": "\"Performance characteristics of Kafka to BigQuery pipelines \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "source_id": "site-docs-root-2",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Result Exactly-once At-least-once Input throughput per worker Mean: 15 MBps, n=3 Mean: 18 MBps, n=3 Average CPU utilization across all workers Mean: 70%, n=3 Mean: 75%, n=3 Number of worker nodes Mean: 63, n=3 Mean: 53, n=3 Streaming Engine Compute Units per hour Mean: 58, n=3 Mean: 0, n=3 The autoscaling algorithm can affect the target CPU utilization level.",
+          "Based on the benchmark results for a 1 GiB/s pipeline, you can estimate the resource requirements as follows: Scaling Factor: (100 MiB/s) / (1 GiB/s) = 0.1 Projected worker nodes: 63 workers × 0.1 = 6.3 workers Projected number of Streaming Engine Compute Units per hour: 58 × 0.1 = 5.8 units per hour This value should only be used as an initial estimate.",
+          "Setting Value Worker machine type e2-standard-2 Worker machine vCPUs 2 Worker machine RAM 8 GB Worker machine Persistent Disk Standard Persistent Disk (HDD), 30 GB Maximum workers 120 Streaming Engine Yes Horizontal autoscaling Yes Billing model Resource-based billing Storage Write API enabled?"
+        ]
+      },
+      {
+        "title": "\"Package com.google.dataflow.v1beta3 (0.92.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3",
+        "source_id": "site-java-reference",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streaming Mode Specifies the Streaming Engine message processing guarantees.",
+          "Job Type Specifies the processing model used by a [google.dataflow.v1beta3.Job], which determines the way the Job is managed by the Cloud Dataflow service (how workers are scheduled, how com. google. dataflow. v1beta3.",
+          "Execution Stage State A message describing the state of a particular execution stage. com. google. dataflow. v1beta3."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.dataflow.v1beta3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

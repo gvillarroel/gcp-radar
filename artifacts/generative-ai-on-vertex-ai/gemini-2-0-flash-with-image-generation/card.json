@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Gemini 2.0 Flash with image generation",
+  "feature_slug": "gemini-2-0-flash-with-image-generation",
+  "summary": "Gemini 2.0 Flash with image generation became available as a public preview offering.",
+  "extended_definition": "Gemini 2.0 Flash with image generation became available as a public preview offering.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Frequently asked questions \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While the experimental version of Gemini 2.0 Flash supports image generation, Gemini 2 does not currently support image generation in our generally available models.",
+          "The following table shows the comparison between our Gemini 2 models: Model name Description Upgrade path for Gemini 2.5 Pro Strongest model quality (especially for code and world knowledge), with a 1M token-long context window Gemini 1.5 Pro users who want better quality, or who are particularly invested in long context and code Gemini 2.0 Flash Workhorse model for all daily tasks and features enhanced performance and supports real-time Live API Gemini 1.5 Flash users who want a model with significantly better quality that's slightly slower Gemini 1.5 Pro users who want slightly better quality and real-time latency Gemini 2.0 Flash-Lite Our most cost effective offering to support high throughput Gemini 1.5 Flash users who want better quality for the same price and speed Customers looking for the fastest model in the Gemini 2 family To see all benchmark capabilities for Gemini 2, visit the Google DeepMind documentation .",
+          "The Gemini 2 models feature the following upgrades over our 1.5 models: Improved multilingual capabilities: Gemini 2 models show strong advancements in multilingual understanding, with increased scores in the Global MMLU (Lite) benchmark."
+        ]
+      },
+      {
+        "title": "\"Generate and edit images on Vertex AI \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "Try more examples To learn more, run the following notebooks in the environment of your choice: \"Gemini 3 Pro Image Generation in Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Gemini 2.5 Flash Image Generation in Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Imagen 4 Image Generation\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Imagen 3 Image Editing\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub For a full list of Jupyter notebook tutorials using Imagen, see the Generative AI on Vertex AI cookbook .",
+          "With Gemini and Imagen on Vertex AI on Vertex AI, application developers can build next-generation AI products that transform their user's imagination into high-quality visual assets using AI generation, in seconds.",
+          "Try image generation (Vertex AI Studio) Try Imagen in a Colab With Gemini and Imagen, you can do the following: Generate novel images using only a text prompt (text-to-image AI generation)."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grounding with Google Image Search is available in Preview only for the Gemini 3.1 Flash Image model .",
+          "There is a slight chance of rain on both days.\\n\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"webSearchQueries\": [ \"weather in Chicago this weekend\" ], \"searchEntryPoint\": { \"renderedContent\": \"...\" }, \"groundingChunks\": [ { \"web\": { \"uri\": \"https://www.google.com/search?q=weather+in+Chicago,+IL\", \"title\": \"Weather information for locality: Chicago, administrative area: IL\", \"domain\": \"google.com\" } }, { \"web\": { \"uri\": \"...\", \"title\": \"weatherbug.com\", \"domain\": \"weatherbug.com\" } } ], \"groundingSupports\": [ { \"segment\": { \"startIndex\": 85, \"endIndex\": 214, \"text\": \"The temperature will be between 49°F (9°C) and 55°F (13°C) on Saturday and between 51°F (11°C) and 56°F (13°C) on Sunday.\" }, \"groundingChunkIndices\": [ 0 ], \"confidenceScores\": [ 0.8662828 ] }, { \"segment\": { \"startIndex\": 215, \"endIndex\": 261, \"text\": \"There is a slight chance of rain on both days.\" }, \"groundingChunkIndices\": [ 1, 0 ], \"confidenceScores\": [ 0.62836814, 0.6488607 ] } ], \"retrievalMetadata\": {} } } ], \"usageMetadata\": { \"promptTokenCount\": 10, \"candidatesTokenCount\": 98, \"totalTokenCount\": 108, \"trafficType\": \"ON DEMAND\", \"promptTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 10 } ], \"candidatesTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 98 } ] }, \"modelVersion\": \"gemini-2.0-flash\", \"createTime\": \"2025-05-19T14:42:55.000643Z\", \"responseId\": \"b0MraIMFoqnf-Q-D66G4BQ\" } Grounding with Google Image Search Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "String modelId = \"gemini-2.5-flash\" ; generateContent ( modelId ); } // Generates content with Google Search tool public static String generateContent ( String modelId ) { // Initialize client that will be used to send requests ."
+        ]
+      },
+      {
+        "title": "\"Grounding with Elasticsearch \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client ( http options = HttpOptions ( api version = \"v1\" )) Replace with your Elasticsearch details ELASTIC SEARCH ENDPOINT = \"YOUR ELASTICSEARCH ENDPOINT\" ELASTIC SEARCH API KEY = \"YOUR ELASTICSEARCH API KEY\" INDEX NAME = \"YOUR INDEX NAME\" SEARCH TEMPLATE NAME = \"YOUR SEARCH TEMPLATE NAME\" NUM HITS = 5 tool = Tool ( retrieval = Retrieval ( external api = Elasticsearch ( api spec = \"ELASTIC SEARCH\" , endpoint = ELASTIC SEARCH ENDPOINT , api auth = { \"apiKeyConfig\" : { \"apiKeyString\" : f \"ApiKey { ELASTIC SEARCH API KEY } \" } }, elastic search params = { \"index\" : INDEX NAME , \"searchTemplate\" : SEARCH TEMPLATE NAME , \"numHits\" : NUM HITS , }, ) ) ) response = client . models . generate content ( model = \"gemini-2.5-flash\" , # Or another supported model contents = \"What are the main features of product X?\" , # Your query config = GenerateContentConfig ( tools = [ tool ], ), ) print ( response . text ) REST To send a text prompt and ground it with Elasticsearch, send a POST request to the Vertex AI API.",
+          "Not available for Gemini 2.5 Pro and Gemini 2.5 Flash and later.",
+          "PUT scrip ts /google - te mpla te - k nn - mul t iou t pu t { \"script\" : { \"lang\" : \"mustache\" , \"source\" : { \" source\" : { \"excludes\" : [ \"title embedding\" , \"description embedding\" , \"images\" ] }, \"size\" : \"num hits\" , \"knn\" : [ { \"field\" : \"description embedding\" , \"k\" : 5 , \"num candidates\" : 10 , \"query vector builder\" : { \"text embedding\" : { \"model id\" : \"googlevertexai embeddings 004\" , \"model text\" : \"query\" } }, \"boost\" : 0.4 }, { \"field\" : \"title embedding\" , \"k\" : 5 , \"num candidates\" : 10 , \"query vector builder\" : { \"text embedding\" : { \"model id\" : \"googlevertexai embeddings 004\" , \"model text\" : \"query\" } }, \"boost\" : 0.6 } ] } } } Generate grounded responses with Elasticsearch This section explains how you use the Vertex AI API to ground your LLM responses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "image.png",
+      "weatherbug.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/faq",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch"
+      ]
+    }
+  ]
+}

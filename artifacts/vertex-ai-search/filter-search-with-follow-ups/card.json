@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.013Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Filter search with follow-ups",
+  "feature_slug": "filter-search-with-follow-ups",
+  "summary": "Vertex AI Search adds follow-up query filtering, allowing search results to be filtered during follow-up interactions for website and structured data.",
+  "extended_definition": "Vertex AI Search adds follow-up query filtering, allowing search results to be filtered during follow-up interactions for website and structured data.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command and result curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions?filter=userPseudoId=test user%20AND%20state=IN PROGRESS\" { \"sessions\": [ { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943\", \"state\": \"IN PROGRESS\", \"userPseudoId\": \"test user\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/741830\", \"text\": \"Compare bigquery with spanner database?\" }, \"answer\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/16002628354770206943/answers/4861507376861383072\" } ], \"startTime\": \"2024-09-13T18:47:10.465311Z\", \"endTime\": \"2024-09-13T18:49:41.579151Z\" } ] } Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "The following command shows how to call the answer method and specify various options for how the search result is returned. (The search results are independent of the answer.) REST To set various options related to which and how search results are returned, do the following: Run the following curl command: curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \" QUERY \"}, \"searchSpec\": { \"searchParams\": { \"maxReturnResults\": MAX RETURN RESULTS , \"filter\": \" FILTER \", \"boostSpec\": BOOST SPEC , \"orderBy\": \" ORDER BY \", \"searchResultMode\": SEARCH RESULT MODE } } }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "Example command and partial result curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \"what kinds of data can I import into Vertex AI Search?\"}, \"session\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10291252835232308789\", \"searchSpec\":{ \"searchParams\": {\"filter\": \"\"} }, \"relatedQuestionsSpec\": { \"enable\": true } }' { \"answer\": { \"state\": \"SUCCEEDED\", \"answerText\": \"You can import various kinds of data into Vertex AI Search, depending on the type of data store you create."
+        ]
+      },
+      {
+        "title": "\"Get personalized browse results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Call the engines.servingConfigs.search method with an empty query or no query as follows: REST Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search\" \\ -d '{ \"servingConfig\": \"projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search\", \"orderBy\": \" ORDER BY \", \"params\": { \"searchType\": \"0\" }, \"filter\": \" FILTER \", \"boostSpec\": \" BOOST SPEC \", }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "All user events must include the following: eventType such as search for search and browse, view-item , and conversion . userPseudoId , which is a consistent pseudonymized user identifier. eventTime , which is an ISO 8601 timestamp (UTC) for when the event was recorded. documents.id shown in the order they appear to the user that matches document IDs. searchInfo.searchQuery to register the user's search query. pageInfo.pageCategory that adds a context, such as \"HomepageCarousel\", \"Properties > VIC > Richmond\". filter that describes the filter logic used to generate the impression list.",
+          "Some important features are as follows: Ranking: The model ranks items based on predicted performance against your defined objective that's subject to the configured search parameters, such as filters, custom ranking, and serving controls (like boost, promote, or synonyms)."
+        ]
+      },
+      {
+        "title": "Boost search results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To specify a boost specification using custom numerical attributes, do the following: Specify the boost specification in the boostSpec field when you send a servingConfigs.search request. { \"boostSpec\": { \"conditionBoostSpecs\": { \"condition\": \" BOOST CONDITION \", \"boostControlSpec\": { \"attributeType\": \"NUMERICAL\", \"interpolationType\": \"LINEAR\", \"fieldName\": \" CUSTOM ATTRIBUTE FIELD NAME \", \"controlPoints\": [ { \"attributeValue\": \" CUSTOM ATTRIBUTE VALUE 1 \", \"boostAmount\": BOOST AMOUNT 1 }, { \"attributeValue\": \" CUSTOM ATTRIBUTE VALUE 2 \", \"boostAmount\": BOOST AMOUNT 2 } ] } } } } The specification contains the following parameters: BOOST CONDITION : a text filter expression to select the documents to which boost is applied.",
+          "To specify a boost specification using custom datetime attributes, do the following: Specify the boost specification in the boostSpec field when you send a servingConfigs.search request. { \"boostSpec\": { \"conditionBoostSpecs\": { \"condition\": \" BOOST CONDITION \", \"boostControlSpec\": { \"fieldName\": \" DATETIME FIELD NAME \", \"attributeType\": \"FRESHNESS\", \"interpolationType\": \"LINEAR\", \"controlPoints\": [ { \"attributeValue\": \" DURATION VALUE 1 \", \"boostAmount\": BOOST AMOUNT 1 }, { \"attributeValue\": \" DURATION VALUE 2 \", \"boostAmount\": BOOST AMOUNT 2 } ] } } } } The specification contains the following parameters: BOOST CONDITION : a text filter expression to select the documents to which boost is applied.",
+          "Boost with a fixed condition To boost results by a fixed amount based on whether they satisfy a condition, do the following: Specify the boost specification in the boostSpec field when you send a servingConfigs.search request. { \"boostSpec\": { \"conditionBoostSpecs\": { \"condition\": \" BOOST CONDITION \", \"boost\": BOOST VALUE } } } The specification contains the following parameters: BOOST CONDITION : a text filter expression to select the documents to which boost is applied."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "documents.id",
+      "engines.servingConfigs.search"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/browse-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/boost-search-results"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.614Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Buy It Again model",
+  "feature_slug": "buy-it-again-model",
+  "summary": "A personalized recommendations model that suggests items a customer has previously bought on a recurring cadence.",
+  "extended_definition": "A personalized recommendations model that suggests items a customer has previously bought on a recurring cadence.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+      "https://docs.cloud.google.com/retail/docs/audit-logging",
+      "https://docs.cloud.google.com/retail/docs/create-models",
+      "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create recommendation models \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/retail/docs/create-models",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you make a prediction call to the Page-Level Optimization model, it chooses which type of recommendations you should display in that panel based on the end user's event history.",
+          "N/A Buy it Again N/A purchase-complete 10 occurrences per catalog item on average (with a 90 days window of purchase-complete events) OR 60 days of purchase-complete events in the last 90 days 100 unique catalog items for the purchase-complete event in the last 90 days 1,000 purchase-complete events in the last 90 days 100 product SKUs must be in some branch N/A We recommend uploading events at least daily to maintain good data quality.",
+          "If you chose the Frequently Bought Together model type, select the Context products type : Multiple context products : Use one or multiple items as context for recommendations from this model."
+        ]
+      },
+      {
+        "title": "\"Identity federation: products and limitations \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "source_id": "site-iam-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud API: No known limitations Other: The following features don't support Workforce Identity Federation with BigQuery: Connected Sheets Google Drive Recommendations Slot estimator The following operations don't support Workforce Identity Federation: Loading data from Amazon S3 , Apache Spark , or Azure Blob Storage through the Connection API Loading data from Google Drive Bigtable GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Binary Authorization GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Blockchain Analytics GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Blockchain Node Engine GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Carbon Footprint GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Certificate Authority Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Certificate Manager GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Channel Services GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Cloud Asset Inventory GA Console (federated): In the IAM policy tab, the Analyze Full Access button is unavailable for Workforce Identity Federation users.",
+          "Google Cloud API: No known limitations Other: No known limitations Network Service Tiers GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Organization Policy Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Parallelstore GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Personalized Service Health GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Policy Intelligence GA Console (federated): The following Policy Intelligence features have limitations for Workforce Identity Federation users who use the Google Cloud Workforce Identity Federation console: Policy Troubleshooter : Workforce Identity Federation users can't troubleshoot access in the console (federated).",
+          "Google Cloud API: The following methods don't support identity federtation: UpdateCatalog ImportCompletionData TuneModel ImportProducts PurgeProducts ImportUserEvents ImportUserEvents PurgeUserEvents RejoinUserEvents Other: No known limitations Secret Manager GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Secure Source Manager GA Console (federated): No known limitations Google Cloud API: Identity federation users must sign in through the Secure Source Manager instance web interface before running any of the following commands: Git CLI commands API calls to data plane endpoints Identity federation users must sign in through the Secure Source Manager instance web interface after every session expiry to continue using Git SSH CLI commands with user SSH keys."
+        ]
+      },
+      {
+        "title": "\"Create personalized movie recommendations \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Industry solutions Vertex AI Search for commerce Guides Send feedback Create personalized movie recommendations Stay organized with collections Save and categorize content based on your preferences.",
+          "We will train a recommendation model of type Others You May Like that will make movie recommendations based on any user or a seed movie in our dataset.",
+          "Import the dataset Using the Cloud Shell, download and unpack the source dataset: wget https://files.grouplens.org/datasets/movielens/ml-latest.zip unzip ml-latest.zip Create a Cloud Storage bucket and upload the data into it: gcloud storage buckets create gs:// PROJECT ID -movielens-data gcloud storage cp ml-latest/movies.csv ml-latest/ratings.csv \\ gs:// PROJECT ID -movielens-data Create a BigQuery dataset: bq mk movielens Load movies.csv into a new movies BigQuery table: bq load --skip leading rows = 1 movielens.movies \\ gs:// PROJECT ID -movielens-data/movies.csv \\ movieId:integer,title,genres Load ratings.csv into a new ratings BigQuery table: bq load --skip leading rows = 1 movielens.ratings \\ gs:// PROJECT ID -movielens-data/ratings.csv \\ userId:integer,movieId:integer,rating:float,time:timestamp Create BigQuery views Create a view that converts the movies table into the retail product catalog schema : bq mk --project id = PROJECT ID \\ --use legacy sql = false \\ --view ' SELECT CAST(movieId AS string) AS id, SUBSTR(title, 0, 128) AS title, SPLIT(genres, \" \") AS categories FROM PROJECT ID .movielens.movies' \\ movielens.products Now the new view has the schema that Vertex AI Search for commerce expects."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Search audit logging \\_|\\_ Vertex AI Search for commerce \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/retail/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods that don't produce audit logs: The google.longrunning.Operations.GetOperation and google.longrunning.Operations.ListOperations methods, which are used to check the status of long-running operations like model training don't produce audit logs.",
+          "The audit logs generated vary depending on the Vertex AI Search product (including Recommendations AI ) and product component, such user events and models.",
+          "Recommendations AI audit logging There are key Recommendations AI methods that generate various types of audit logs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "files.grouplens.org",
+      "latest.zip",
+      "movielens.movies",
+      "movielens.products",
+      "movielens.ratings",
+      "movielens.user",
+      "movies.csv",
+      "ratings.csv",
+      "t.new",
+      "t.old"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/create-models",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/retail/docs/movie-rec-tutorial",
+        "https://docs.cloud.google.com/retail/docs/audit-logging"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.528Z",
+  "source_step08_card": "data/step-08/current/products/cloud-router/card.json",
+  "product_name": "Cloud Router",
+  "product_slug": "cloud-router",
+  "feature_name": "BGP route policies",
+  "feature_slug": "bgp-route-policies",
+  "summary": "BGP route policies let you define policy-based routing behavior for Cloud Router BGP sessions; BGP route policies let you define policy-based routing behavior for Cloud Router BGP sessions.",
+  "extended_definition": "BGP route policies let you define policy-based routing behavior for Cloud Router BGP sessions; BGP route policies let you define policy-based routing behavior for Cloud Router BGP sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "10 action elements The following action operations accept lists: asPath.prependSequence communities.add communities.remove communities.replaceAll There isn't a limit on the number of actions in a term, number of terms in a single BGP route policy, or the number of BGP route policies.",
+          "There isn't a limit on the number of actions in a term, number of terms in a single BGP route policy, or the number of BGP route policies.",
+          "35kB (35,000 bytes) Maximum number of terms of all applied BGP route policies within a single BGP peer or direction 1,000 This limit isn't split across resources, but combined."
+        ]
+      },
+      {
+        "title": "Advertised routes \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you need finer-grained control, you can apply BGP route policies .",
+          "HA VPNs with active-active tunnels In this example, suppose that you have a VPC network with the following configuration: A subnet in each of the following regions: us-central1 , europe-west1 , and us-west-1 One Cloud Router that manages two BGP sessions for two HA VPN tunnels in us-central1 One Cloud Router that manages two BGP sessions for two HA VPN tunnels in us-west1 The following diagram shows this example, including sample values for region-to-region costs: HA VPNs with active-active tunnels (click to enlarge).",
+          "For example, see the following resources: Cisco: BGP Path Selection Fortinet: BGP Handbook Juniper: BGP Path Selection Route metric examples This section provides examples that show how region-to-region costs influence advertised MEDs when you use global dynamic routing."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot BGP routes and route selection \\_|\\_ Cloud Router \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command: gcloud compute routers describe ROUTER-NAME In the output, check the following values: bgpPeers.enableIpv4 is true bgpPeers.ipv4NexthopAddress and bgpPeers.peerIpv4NexthopAddress are present Some on-premises IPv4 or IPv6 prefixes aren't reachable If you are experiencing traffic loss, ping errors, or other problems when attempting to reach on-premises IPv4 or IPv6 destinations that are within prefixes learned by Cloud Router, there are a variety of possible causes.",
+          "Check for inactive custom learned routes If you are unable to reach an on-premises destination using a configured custom learned route, do the following: Check that the route is configured properly on the BGP session.",
+          "Home Documentation Networking Network Connectivity Cloud Router Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Establish BGP sessions \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported BGP sessions Cloud Router supports two types of BGP sessions: IPv4 BGP sessions IPv6 BGP sessions IPv4 BGP sessions By default, when you create a BGP session in Cloud Router, you create an IPv4 BGP session.",
+          "If you are using a Partner Interconnect connection where a Layer 3 service provider handles BGP for you, Cloud Router can't learn MED values from your on-premises router or send MED values to that router.",
+          "Home Documentation Networking Network Connectivity Cloud Router Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "communities.add",
+      "communities.remove",
+      "communities.replaceAll"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/quotas",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp"
+      ]
+    }
+  ]
+}

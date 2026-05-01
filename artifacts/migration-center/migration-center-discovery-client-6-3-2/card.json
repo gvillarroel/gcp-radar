@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.213Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Migration Center discovery client 6.3.2",
+  "feature_slug": "migration-center-discovery-client-6-3-2",
+  "summary": "Migration Center discovery client version 6.3.2 is available with new features and bug fixes.",
+  "extended_definition": "Migration Center discovery client version 6.3.2 is available with new features and bug fixes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+      "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Discovery client data collection and security \\_|\\_ Migration Center \\_\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "source_id": "site-docs-root",
+        "final_score": 320,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Resources Send feedback Discovery client data collection and security Stay organized with collections Save and categorize content based on your preferences.",
+          "Communication with Google Cloud Registered discovery clients communicate with Google Cloud Migration Center during their normal operation.",
+          "The communication happens through a service account with the roles/migrationcenter.discoveryClient role binding."
+        ]
+      },
+      {
+        "title": "Start an asset discovery \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn how data collection works with the mcdc CLI, see Migration Center discovery client CLI overview .",
+          "Collected environment Collection method Automated (one-time) Automated (continuous) Manual collection and import Virtual machines on vCenter mcdc CLI Discovery client Upload RVTools data Virtual machines on other hypervisors mcdc CLI 1 Discovery client Manually create and upload data tables Physical servers mcdc CLI 1 Discovery client Manually create and upload data tables AWS EC2s mcdc CLI Discovery client 2 Not available AWS assets mcdc CLI Not available Not available Azure virtual machines ( Preview) mcdc CLI Discovery client 2 Not available Databases mcdc CLI Not available Discover and import databases 1 Use the mcdc CLI for Windows if you need to collect data directly from Windows hosts.",
+          "Home Documentation Migration Migration Center Guides Send feedback Start an asset discovery Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.discoveryClients \\_|\\_ Migration Center\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "source_id": "site-api-reference",
+        "final_score": 300,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Reference Send feedback REST Resource: projects.locations.discoveryClients Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: DiscoveryClient JSON representation State Methods Resource: DiscoveryClient Represents an installed Migration Center Discovery Client instance.",
+          "Full name of the source object associated with this discovery client. service Account string Required."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample remove assets from group(): Create a client client = migrationcenter v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample aggregate assets values(): Create a client client = migrationcenter v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample create import data file(): Create a client client = migrationcenter v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "migrationcenter.discoveryClient",
+      "options.html",
+      "projects.locations.discoveryClients",
+      "projects.locations.discoveryClients.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/migrationcenter.discoveryClient"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    }
+  ]
+}

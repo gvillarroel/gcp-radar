@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.213Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "MongoDB workload identification in Use Case Navigator",
+  "feature_slug": "mongodb-workload-identification-in-use-case-navigator",
+  "summary": "Migration Center's Use Case Navigator can identify MongoDB workloads and provide transformation guidance and footprint reports.",
+  "extended_definition": "Migration Center's Use Case Navigator can identify MongoDB workloads and provide transformation guidance and footprint reports.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+      "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+      "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detected software workloads \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OS not supported by the vendor SharePoint Server 2019 Standard for Windows Server 2019 SharePoint Server 2019 Enterprise for Windows Server 2022 AI-powered software suggestions The following table lists AI-powered suggestions for software workloads detected by Migration Center in your infrastructure: Product Vendor Workload type Acronis Cyber Protect Acronis Cybersecurity and Backup Apache Kafka Apache Software Foundation Stream-processing and message broker Apache Solr Apache Software Foundation Search platform Apache ZooKeeper Apache Software Foundation Distributed coordination service ArcGIS Server Esri GIS server Avamar Backup Dell EMC Backup and recovery Avaya IP Office Avaya Unified communications Azure DevOps Server Microsoft DevOps BIND Internet Systems Consortium (ISC) DNS server Bacula Bacula Systems Backup and recovery Check Point Software Technologies Gaia Check Point Security OS and firewall Checkmk Tribe29 Monitoring Citrix Citrix Systems Virtualization Cloud Foundry Cloud Foundry Foundation Platform as a Service (PaaS) CodeMeter Runtime Server Wibu-Systems License management CommVault Backup Commvault Backup and recovery CompleteFTP Server Enterprise DT FTP server Docker Docker, Inc.",
+          "MongoDB 6.0.x Community for CentOS 7 MongoDB 6.0.x Community for CentOS 8 MongoDB 7.0.x Community for CentOS 7 MongoDB 7.0.x Community for CentOS 8 MongoDB 7.2.x Community for Windows Server 2016 MongoDB 7.2.x Community for Windows Server 2019 MongoDB 7.2.x Community for Windows Server 2022 MongoDB 7.2.x Community for Windows Server 2022-core SUSE Pacemaker SUSE Cluster Resource Manager Advanced, scalable high-availability cluster resource manager.",
+          "Workloads detected by predefined rules The following table lists software workloads in your infrastructure detected by Migration Center using predefined rules: Product Vendor Workload type Summary text Versions tested on Linux Versions tested on Windows MS SQL Server Microsoft Database Management System Relational database management system known for scalability and Windows integration."
+        ]
+      },
+      {
+        "title": "Execute your migration \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Item Description 0 Migration tools architecture Architecture of tools constituting a migration factory (tools for ongoing assessment, wave plan refinement, workload-specific migration, build, testing, deployment, and monitoring) 1 Migration checklist Checklist for use before and during the migration sprint 2 Inventory List of workloads that will be migrated to Google Cloud 3 Sprint runbook Execution guidelines for migrating each workload 4 Migration plan Step-by-step migration plan (process) to be followed during the migration sprint 5 Network and security rules List of all of the firewall rules for ingress and egress on Google Cloud DNS changes during migration to Google Cloud 6 Risks and mitigation Possible risks during the migration sprint and mitigation steps 7 Testing and validation Test plan to validate functional and non-functional requirements 8 Rollback plan Rollback steps by workload 9 Team composition Team composition and roster with contact details 10 Governance RACI matrix of migration execution team, cadence and reporting, escalation resolution mechanisms Migration execution After you have completed the migration planning and preparation phase, this section describes how to perform repeatable migrations and validations to Google Cloud.",
+          "You must continue to perform discovery and assessment throughout your cloud migration project to recalibrate and enrich data relating to the following aspects: Application and database mapping to infrastructure mapping (to identify all of the infrastructure and platform components for a business workload) Mapping between infrastructure to applications, databases, and services (to identify all of the business workloads attached to an infrastructure or platform component) Dependencies across business workloads Resource consumption by workloads Identification of any workloads that were not discovered in the initial wave of assessment Identification of new or changed landing zone requirements that have not been identified in the initial wave of assessment Identification of blocking issues that potentially prevent the migration An ongoing assessment is critical to continuously calibrate and refine move group, identify and mitigate risks, and refine and optimize migration wave plans.",
+          "During the execution phase of your migration, you need to create an architecture of automation tools based on a number of factors, such as the type of workloads to be migrated, geographical distribution and rollout strategy, and security requirements."
+        ]
+      },
+      {
+        "title": "About migration planning \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must tailor your migration landing zones to meet your specific use cases and application requirements.",
+          "Before you begin Before you start your migration planning, complete a workload discovery and assessment , and create an overall migration strategy with the following tasks: Create a catalog of workloads, such as applications, services, and databases, that you want to migrate.",
+          "After you complete the discovery and assessment phase, and set up your foundation design, you can start planning your migration by categorizing your workloads into migration waves ."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment. transport Optional[Union[str,MigrationCenterTransport,Callable[..., MigrationCenterTransport]]] The transport to use, or a Callable that constructs and returns a new transport to use.",
+          "Returns Type Description MigrationCenterTransport The transport used by the client instance. universe domain Return the universe domain used by the client instance.",
+          "If a Callable is given, it will be called with the same set of initialization arguments as used in the MigrationCenterTransport constructor."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/software-workloads-insights",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    }
+  ]
+}

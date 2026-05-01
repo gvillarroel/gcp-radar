@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.816Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "Deletion protection",
+  "feature_slug": "deletion-protection",
+  "summary": "Memorystore for Redis Cluster supports deletion protection.",
+  "extended_definition": "Memorystore for Redis Cluster supports deletion protection.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"pscConfigs\" : [ { object ( PscConfig ) } ] , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"pscConnections\" : [ { object ( PscConnection ) } ] , \"stateInfo\" : { object ( StateInfo ) } , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( ClusterPersistenceConfig ) } , \"redisConfigs\" : { string : string , ... } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"crossClusterReplicationConfig\" : { object ( CrossClusterReplicationConfig ) } , \"pscServiceAttachments\" : [ { object ( PscServiceAttachment ) } ] , \"clusterEndpoints\" : [ { object ( ClusterEndpoint ) } ] , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"labels\" : { string : string , ... } , \"aclPolicy\" : string , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: \"sizeGb\" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: \"shardCount\" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: \"preciseSizeGb\" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: \"maintenancePolicy\" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: \"maintenanceSchedule\" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: \"asyncClusterEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: create cluster Create a cluster in Memorystore for Redis Cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"pscConfigs\" : [ { object ( PscConfig ) } ] , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"pscConnections\" : [ { object ( PscConnection ) } ] , \"stateInfo\" : { object ( StateInfo ) } , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( ClusterPersistenceConfig ) } , \"redisConfigs\" : { string : string , ... } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"crossClusterReplicationConfig\" : { object ( CrossClusterReplicationConfig ) } , \"pscServiceAttachments\" : [ { object ( PscServiceAttachment ) } ] , \"clusterEndpoints\" : [ { object ( ClusterEndpoint ) } ] , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"labels\" : { string : string , ... } , \"aclPolicy\" : string , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: \"sizeGb\" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: \"shardCount\" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: \"preciseSizeGb\" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: \"maintenancePolicy\" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: \"maintenanceSchedule\" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: \"asyncClusterEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: get cluster Get detailed information about a cluster in Memorystore for Redis Cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"pscConfigs\" : [ { object ( PscConfig ) } ] , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"pscConnections\" : [ { object ( PscConnection ) } ] , \"stateInfo\" : { object ( StateInfo ) } , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( ClusterPersistenceConfig ) } , \"redisConfigs\" : { string : string , ... } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"crossClusterReplicationConfig\" : { object ( CrossClusterReplicationConfig ) } , \"pscServiceAttachments\" : [ { object ( PscServiceAttachment ) } ] , \"clusterEndpoints\" : [ { object ( ClusterEndpoint ) } ] , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"labels\" : { string : string , ... } , \"aclPolicy\" : string , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: \"sizeGb\" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: \"shardCount\" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: \"preciseSizeGb\" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: \"maintenancePolicy\" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: \"maintenanceSchedule\" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: \"asyncClusterEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: list clusters List all clusters in Memorystore for Redis Cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"pscConfigs\" : [ { object ( PscConfig ) } ] , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"pscConnections\" : [ { object ( PscConnection ) } ] , \"stateInfo\" : { object ( StateInfo ) } , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( ClusterPersistenceConfig ) } , \"redisConfigs\" : { string : string , ... } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"crossClusterReplicationConfig\" : { object ( CrossClusterReplicationConfig ) } , \"pscServiceAttachments\" : [ { object ( PscServiceAttachment ) } ] , \"clusterEndpoints\" : [ { object ( ClusterEndpoint ) } ] , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"labels\" : { string : string , ... } , \"aclPolicy\" : string , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: \"sizeGb\" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: \"shardCount\" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: \"preciseSizeGb\" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: \"maintenancePolicy\" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: \"maintenanceSchedule\" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: \"asyncClusterEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: update cluster Update a cluster in Memorystore for Redis Cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/update_cluster"
+      ]
+    }
+  ]
+}

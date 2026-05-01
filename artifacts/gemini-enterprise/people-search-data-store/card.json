@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.491Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "People search data store",
+  "feature_slug": "people-search-data-store",
+  "summary": "You can connect a data store for people search data ingestion.",
+  "extended_definition": "You can connect a data store for people search data ingestion.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a Confluence Cloud data store \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Actions section: If you selected Federated search : From Select Confluence Cloud actions to enable , select the actions from the category to enable them for the data store.",
+          "What's next To provide a user interface for querying your Confluence Cloud data, create an app and connect it to the Confluence Cloud data store .",
+          "To make API calls, use the same administrator account used for setting up authentication and permissions in Confluence to create the data store. curl -X POST \\ INSTANCE URL /wiki/rest/webhooks/1.0/webhook \\ -H \"Content-Type: application/json\" \\ -u \" USERNAME : API TOKEN \" \\ -d '{ \"name\": \" SUBSCRIPTION NAME \", \"url\": \" LISTENER URL \", \"events\": [ \" EVENT TYPE 1 \", \" EVENT TYPE 2 \" ], \"active\": true }' INSTANCE URL : The base web address for your Atlassian Cloud site."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you selected the Private destination type and configured your Private Service Connect producer service to Accept connections for selected projects (explicit approval), do the following: In the Google Cloud console, search for Private Service Connect and go to the Private Service Connect page.",
+          "If you are using the data ingestion connection mode, you must meet these additional requirements: Verify that you have the Confluence Administrator permission to fetch the Access Control List (ACL) information.",
+          "If you selected Federated search , in the Actions section, for Select Confluence Data Center actions to enable , choose the actions from the category to enable for the data store."
+        ]
+      },
+      {
+        "title": "Set up a Box data store \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Actions section: If you selected Federated search , in the Select Box actions to enable section, select the actions to enable for the data store.",
+          "What's next To provide a user interface for querying your data, create an app and connect it to the Box federated data store .",
+          "If you selected Data ingestion : In the Authentication settings section, provide the following authentication details: Client ID : The public identifier for your Box application."
+        ]
+      },
+      {
+        "title": "\"Connect to data from AlloyDB for PostgreSQL (Preview) \\_|\\_ Gemini Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ \"https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION /collections/default collection/dataStores?dataStoreId= DATA STORE ID \" -d '{ \"displayName\": \" DATA STORE NAME \", \"federatedSearchConfig\": { \"alloyDbConfig\": { \"alloydbConnectionConfig\": { \"instance\": \" INSTANCE PATH \", \"database\": \" DATABASE NAME \", \"user\": \" DATABASE USER NAME \", \"password\": \" DATABASE USER PASSWORD \", \"authMode\": \"AUTH MODE SERVICE ACCOUNT\" }, \"alloydb ai nl config\": { \"nlConfigId\": \" NL CONFIG ID \" } } }, \"industryVertical\": \"GENERIC\", \"solutionTypes\": [\"SOLUTION TYPE SEARCH\"] }' Replace the following: PROJECT ID : the ID of your project where you use Gemini Enterprise.",
+          "Link Gemini Enterprise with AlloyDB To connect your AlloyDB instance, follow these steps: Create a data store in Gemini Enterprise with your AlloyDB connection details using the API, including federatedSearchConfig.alloyDbConfig .",
+          "To use this feature, sign up with the following form: Opt-in/Opt-out to use Gemini Enterprise and connect to data from AlloyDB After signing up, wait until you receive the enablement confirmation before following the instructions on this page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.editor",
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/discoveryengine.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.299Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Dark theme in Cloud Billing console",
+  "feature_slug": "dark-theme-in-cloud-billing-console",
+  "summary": "The Cloud Billing section of Google Cloud Console now supports a preview dark theme preference for user interface customization.",
+  "extended_definition": "The Cloud Billing section of Google Cloud Console now supports a preview dark theme preference for user interface customization.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up Cloud Billing data export to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "source_id": "site-docs-root-2",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "You enable Cloud Billing data export in the Cloud Billing section of the Google Cloud console.",
+          "Resource-level tags are available for the following resources: Compute Engine instances Spanner instances Cloud Run services Artifact Registry repositories Related topics Topics related to exported Cloud Billing data Understanding the Cloud Billing data tables in BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Overview of billing data export to BigQuery Next Understand the billing data tables in BigQuery arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Committed use discounts (CUD) metadata (Preview) - Contains Cloud Billing CUD metadata information, such as billing account ID, CUD product ID, CUD product type, consumption model ID and description, subscription instance ID, subscription entitlement scope, commitment amount, and term."
+        ]
+      },
+      {
+        "title": "\"Set up programmatic notifications \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Budget notifications To connect a Pub/Sub topic to a Cloud Billing budget, complete the following steps: Users with Cloud Billing account permissions Users with project-level permissions only ( Preview ) Sign in to the Budgets & alerts page in the Google Cloud console.",
+          "Anomaly notifications To connect a Pub/Sub topic to a cost anomaly, complete the following steps: Users with Cloud Billing account permissions ( Preview ) Sign in to the Anomalies page in the Google Cloud console.",
+          "Navigate to the Billing section: Open the Google Cloud console Navigation menu menu and select Billing ."
+        ]
+      },
+      {
+        "title": "\"Customize budget alert email recipients \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Link your budget to email notification channels After you create an email notification channel, follow these steps to link your budget to it: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only ( Preview ) If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access.",
+          "If you only have project permissions, but don't have any permissions on your project's Cloud Billing account, you need to select your project before you navigate to the Billing section.",
+          "The people you specify to receive alert emails using email notification channels might not have the correct permissions to view the Cloud Billing budgets in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.budgets.create",
+      "billing.budgets.get",
+      "billing.budgets.list",
+      "billing.budgets.update",
+      "pubsub.topics.list",
+      "pubsub.topics.setIamPolicy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    }
+  ]
+}

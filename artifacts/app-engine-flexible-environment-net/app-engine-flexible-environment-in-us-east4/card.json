@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.545Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-net/card.json",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net",
+  "feature_name": "App Engine flexible environment in us-east4",
+  "feature_slug": "app-engine-flexible-environment-in-us-east4",
+  "summary": "App Engine is now available in the us-east4 (North Virginia) region.",
+  "extended_definition": "App Engine is now available in the us-east4 (North Virginia) region.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime",
+      "https://docs.cloud.google.com/appengine/docs/flexible/php",
+      "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas for the App Engine flexible environment When you deploy an application to the App Engine flexible environment, some Google Cloud resources are consumed.",
+          "In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota."
+        ]
+      },
+      {
+        "title": "\"The PHP runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "An empty string front controller file Default PHP file name for the directory access. index.php nginx conf http include Filename of a partial nginx config, which will be included in the http section in the main nginx config file. nginx-http.conf nginx conf include Filename of a partial nginx config which will be included in the server section in the main nginx config file. nginx-app.conf nginx conf override Filename of a user supplied nginx configuration file, which will be used as the nginx main configuration file. nginx.conf php fpm conf override Filename of a user supplied php-fpm configuration file, which will be included at the bottom of the [app] section so that it will override the existing configurations. php-fpm.conf php ini override Filename of a user supplied PHP configuration file. php.ini supervisord conf addition Filename of a user supplied supervisord config file, which will be included in the main supervisord config file. additional-supervisord.conf supervisord conf override Filename of a user supplied supervisord config file, which will override the main supervisord config file. supervisord.conf You can control whether Nginx serves static files for matching URIs by setting the NGINX SERVES STATIC FILES environment variable in the build env variables section of your app.yaml file: runtime : php env : flex runtime config : document root : \"web\" operating system : \"ubuntu24\" build env variables : NGINX SERVES STATIC FILES : true Configuring supervisord in the PHP runtime The App Engine flexible environment uses supervisord to manage processes.",
+          "The following is an example configuration file content for this case: [supervisord] nodaemon = true logfile = /dev/null logfile maxbytes = 0 pidfile = /var/run/supervisord.pid [program:react-server] command = php %(ENV APP DIR)s/index.php stdout logfile = /dev/stdout stdout logfile maxbytes=0 stderr logfile = /dev/stderr stderr logfile maxbytes=0 user = www-data autostart = true autorestart = true priority = 5 stopwaitsecs = 20 Extending the runtime The App Engine flexible environment PHP runtime can be used to create a custom runtime.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The PHP runtime Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Customizing the .NET Runtime \\_|\\_ App Engine flexible environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Customizing the .NET Runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "Health checking By default, all programs running in the flexible environment receive health check requests , and you don't need to write any additional code."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.conf",
+      "app.yaml",
+      "appengine.IsOverQuota",
+      "fpm.conf",
+      "http.conf",
+      "index.php",
+      "nginx.conf",
+      "php.ini",
+      "supervisord.conf",
+      "supervisord.pid",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime"
+      ]
+    }
+  ]
+}

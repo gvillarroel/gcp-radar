@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "HubSpot mobile phone number lookup",
+  "feature_slug": "hubspot-mobile-phone-number-lookup",
+  "summary": "Adds HubSpot integration support for matching contacts by mobile phone number during incoming voice or chat sessions.",
+  "extended_definition": "Adds HubSpot integration support for matching contacts by mobile phone number during incoming voice or chat sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sync button behavior Sync button works on the following types of Salesforce objects: Case page CCAI Platform finds the current lookup object - Contact, Account, Person Account, or Lead The phone number field is populated based on the default phone setting Contact or Account or PersonAccount or Lead page If the current object is the same object type as lookup object, the object is populated and the object's phone number field.",
+          "Call and chat routing User segment DAP : CCAI Platform will search for a contact using phone number (IVR) or email address (Mobile) or custom field (Mobile) from Salesforce to match settings in the queue and directly route call or chat to the queue.",
+          "Add phone numbers as lookup numbers in CCAI Platform portal All phone number types across every CRM object (Contact, Account, Lead, and so on) are available selections in the CCAI Platform portal."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Agent UI CCAI Platform uses the caller's phone number or UID to lookup the matching Account and Record, presenting the Agent with any matching options.",
+          "Requesting new phone numbers Contact Support and include the following information about your preferences: Number type: Toll-free, National, Mobile, Local Location of number Number preference details about number structure or patterns Set up emergency and special services calling (US and Canada only) With CCAI Platform, agents in the US and Canada can make calls to emergency and special services using phone numbers that you dedicate to these types of calls.",
+          "In the case that you don't have phone numbers stored in your CRM, or prefer to use a Unique ID (UID) for this contact lookup instead, CCAI Platform can deliver the same seamless experience."
+        ]
+      },
+      {
+        "title": "\"iOS SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "And the object of custom data is value of custom data key. { \"iat\" : 1537399656 , \"exp\" : 1537400256 , \"custom data\" : { \"location\" : { \"label\" : \"Location\" , \"value\" : \"1000 Stockton St, San Francisco, CA, United States\" , \"type\" : \"string\" }, \"dashboard url\" : { \"label\" : \"Dashboard URL\" , \"value\" : \"http://(company name)/dashboard/device user ID\" , \"type\" : \"url\" }, \"contact date\" : { \"label\" : \"Contact Date\" , \"value\" : 1537399655992 , \"type\" : \"date\" }, \"membership number\" : { \"label\" : \"Membership Number\" , \"value\" : 62303 , \"type\" : \"number\" }, \"model\" : { \"label\" : \"Model\" , \"value\" : \"iPhone\" , \"type\" : \"string\" }, \"os version\" : { \"label\" : \"OS Version\" , \"value\" : \"12.0\" , \"type\" : \"string\" }, \"last transaction id\" : { \"label\" : \"Last Transaction ID\" , \"value\" : \"243324DE-01A1-4F71-BABC-3572B77AC487\" , \"type\" : \"string\" }, \"battery\" : { \"label\" : \"Battery\" , \"value\" : \"-100%\" , \"type\" : \"string\" }, \"bluetooth\" : { \"label\" : \"Bluetooth\" , \"value\" : \"Bluetooth not supported\" , \"type\" : \"string\" }, \"wifi\" : { \"label\" : \"Wi-Fi\" , \"value\" : \"Wi-Fi not connected\" , \"type\" : \"string\" }, \"ssn\" : { \"invisible to agent\" : true , \"label\" : \"Social Security Number\" , \"value\" : \"102-186-1837\" , \"type\" : \"string\" } } } Each data is similar to JSON object format and should contain the key, value, type, and label.",
+          "UJETGlobalOptions options = [ UJETGlobalOptions new ] ; options.fallbackPhoneNumber = @ \"+18001112222\" ; options.preferredLanguage = @ \"en\" ; [ UJET setGlobalOptions:options ] ; Show or hide the download transcript button You can configure the SDK to show or hide the download transcript button in the chat options menu and in the post-chat screen.",
+          "The recommended format is + followed by country code and phone number. eg. +18001112222."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "options.fallbackPhoneNumber",
+      "options.preferredLanguage"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
+      ]
+    }
+  ]
+}

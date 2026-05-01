@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Auto mode VPC network subnet allocation",
+  "feature_slug": "auto-mode-vpc-network-subnet-allocation",
+  "summary": "Auto mode VPC networks now include a new 10.216.0.0/20 subnet for the me-central2 (Dammam) region.",
+  "extended_definition": "Auto mode VPC networks now include a new 10.216.0.0/20 subnet for the me-central2 (Dammam) region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/subnets",
+      "https://docs.cloud.google.com/vpc/docs/vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 253,
+        "relevance": "",
+        "evidence_snippets": [
+          "To specify the dynamic routing mode of the VPC network, include the routingConfig field: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks { \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" }, \"autoCreateSubnetworks\": true, \"name\": \" NETWORK \", \"mtu\": MTU } Replace the following: PROJECT ID : the ID of the project where the VPC network is created.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks { \"autoCreateSubnetworks\": false, \"name\": \" NETWORK \", \"mtu\": MTU , \"enableUlaInternalIpv6\": true, \"internalIpv6Range\": \" ULA IPV6 RANGE \", \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" } } Replace the following: PROJECT ID : the ID of the project where the VPC network is created.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks { \"autoCreateSubnetworks\": false, \"name\": \" NETWORK \", \"mtu\": MTU , \"enableUlaInternalIpv6\": true, \"internalIpv6Range\": \" ULA IPV6 RANGE \", \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" } } Replace the following: PROJECT ID : the ID of the project where the VPC network is created."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode .",
+          "You plan to connect your VPC network to another network: Because the subnets of every auto mode VPC network use the same predefined range of IP addresses, you can't connect auto mode VPC networks to one another by using VPC Network Peering or Cloud VPN.",
+          "Subnet creation mode Google Cloud offers two types of VPC networks, determined by their subnet creation mode : When an auto mode VPC network is created , one subnet from each region is automatically created within it."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is because peered VPC networks always exchange subnet routes that use private internal IPv4 addresses, and each subnet in an auto mode VPC network uses a subnet IP address range that fits within the 10.128.0.0/9 CIDR block.",
+          "You can connect a custom mode VPC network to an auto mode VPC network as long as the custom mode VPC network doesn't have any subnet IP address ranges that fit within 10.128.0.0/9 .",
+          "You can't connect two auto mode VPC networks by using VPC Network Peering."
+        ]
+      },
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "Auto mode VPC networks are built with one subnet per region at creation time and automatically receive new subnets in new regions.",
+          "Regular subnets are created by users or automatically created in auto mode VPC networks to be used with VM instances.",
+          "For example, auto mode VPC networks do create subnets that fit within a predefined auto mode IP range."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/subnets"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/subnets"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.433Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Disable creation of global self-managed SSL certificates",
+  "feature_slug": "disable-creation-of-global-self-managed-ssl-certificates",
+  "summary": "This organization policy constraint blocks the creation of global self-managed SSL certificates.",
+  "extended_definition": "This organization policy constraint blocks the creation of global self-managed SSL certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Google Cloud security baseline constraints \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Organization policy name Organization policy constraint Description Impact of enforcement Disable service account key creation constraints/iam.managed.disableServiceAccountKeyCreation Prevent users from creating persistent keys for service accounts.",
+          "Disable organization policies To disable or delete an organization policy, run the following command: gcloud org-policies delete CONSTRAINT NAME --organization = ORGANIZATION ID Replace the following: CONSTRAINT NAME : the name of the organization policy constraint that you want to delete—for example, iam.allowedPolicyMemberDomains ORGANIZATION ID : the unique identifier of your organization What's next For more information about creating and managing organization policies, see Using constraints .",
+          "Restrict protocol forwarding based on type of IP address constraints/compute.managed.restrictProtocolForwardingCreationForTypes Restrict the configuration of protocol forwarding for internal IP addresses only."
+        ]
+      },
+      {
+        "title": "\"Manage resources with custom constraints \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disable creation of a folder within another folder to control the depth of the resource hierarchy tree. name : organizations/ ORGANIZATION ID /customConstraints/custom.disableFolderCreation resourceTypes : - cloudresourcemanager.googleapis.com/Folder methodTypes : - CREATE condition : \"resource.parent.startsWith(\" folders\")\" actionType : DENY displayName : Disable creation of a folder inside another folder description : Do not allow creation of a folder within another folder when the resource hierarchy is set to a maximum value of 1.",
+          "Description Constraint syntax Deny creation of new projects in folder 1234 (secure admin folder). name : organizations/ ORGANIZATION ID /customConstraints/custom.disableNewProjectInSecureAdminFolder resourceTypes : - cloudresourcemanager.googleapis.com/Project methodTypes : - CREATE condition : \"resource.parent == \" organizations/1234\"\" actionType : DENY displayName : Disable new project creation in the secure admin folder description : Do not allow creation of new projects in the secure folders.",
+          "Organization Policy provides built-in managed constraints for various Google Cloud services."
+        ]
+      },
+      {
+        "title": "\"Managing applications in a folder \\_|\\_ Resource Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "source_id": "site-iam-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permissions that you need to configure an app-enabled folder, ask your administrator to grant you the following IAM roles: Enable application management: Folder Admin ( roles/resourcemanager.folderAdmin ) on the parent resource for the folder Enable APIs: Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) on the target folder (to enable required and recommended APIs) Link a billing account to the management project: Project Billing Manager ( roles/billing.projectManager ) on the management project Billing Account User ( roles/billing.user ) on the target billing account Grant application-centric roles to users: Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) on the management project Configure the observability scope: Observability Editor ( roles/observability.editor ) on the management project Logs Configuration Writer ( roles/logging.configWriter ) on the management project Monitoring Admin ( roles/monitoring.admin ) on the management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on the management project App Hub Viewer ( roles/apphub.viewer ) on the management project View application-level and project-level data in Cloud Hub: Cloud Hub Operator ( roles/cloudhub.operator ) on the app-enabled folder For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Terraform To enable application management on a folder using Terraform, use the google resource manager capability resource , for example: resource \"google folder\" \"folder\" { display name = \"my-folder\" parent = \"organizations/123456789\" deletion protection = false } resource \"time sleep\" \"wait 60s\" { depends on = [ google folder.folder ] create duration = \"60s\" } resource \"google resource manager capability\" \"capability\" { value = true parent = \"${google folder.folder.name}\" capability name = \"app-management\" depends on = [ time sleep.wait 60s ] } This command enables the application management capability on the specified folder and automatically provisions a new Google Cloud project within that folder to serve as the management project.",
+          "If you no longer want a Google Cloud folder to be an app-enabled folder, follow these steps to disable application management: If a lien is protecting the management project in the app-enabled folder against project deletion, you must remove the lien."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.viewer",
+      "billing.projectManager",
+      "billing.user",
+      "cloudhub.operator",
+      "cloudresourcemanager.googleapis.com",
+      "cloudtrace.user",
+      "compute.managed.restrictProtocolForwardingCreationForTypes",
+      "compute.restrictProtocolForwardingCreationForTypes",
+      "custom.disableFolderCreation",
+      "custom.disableNewProjectInSecureAdminFolder",
+      "folder.folder",
+      "folder.folder.name",
+      "iam.allowedPolicyMemberDomains",
+      "iam.managed.disableServiceAccountKeyCreation",
+      "logging.configWriter",
+      "monitoring.admin",
+      "observability.editor",
+      "resource.parent",
+      "resource.parent.startsWith",
+      "resourcemanager.folderAdmin",
+      "resourcemanager.projectIamAdmin",
+      "serviceusage.serviceUsageAdmin",
+      "sleep.wait"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.viewer",
+      "roles/billing.projectManager",
+      "roles/billing.user",
+      "roles/cloudhub.operator",
+      "roles/cloudtrace.user",
+      "roles/logging.configWriter",
+      "roles/monitoring.admin",
+      "roles/observability.editor",
+      "roles/resourcemanager.folderAdmin",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications"
+      ]
+    }
+  ]
+}

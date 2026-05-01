@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "SSL mode configuration",
+  "feature_slug": "ssl-mode-configuration",
+  "summary": "Cloud SQL for MySQL lets you configure the SSL mode for an instance.",
+  "extended_definition": "Cloud SQL for MySQL lets you configure the SSL mode for an instance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+      "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure SSL/TLS certificates \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 Before using any of the request data, make the following replacements: PROJECT ID : The project ID SSL ENFORCEMENT MODE : Use one of the following options: ALLOW UNENCRYPTED AND ENCRYPTED : allows non-SSL/non-TLS and SSL/TLS connections.",
+          "Please check the API reference for other SSL enforcement options: https://cloud.google.com/sql/docs/postgres/admin-api/rest/v1beta4/instances#ipconfiguration ssl mode = \"TRUSTED CLIENT CERTIFICATE REQUIRED\" } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "INSTANCE ID : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"ipConfiguration\": {\"sslMode\": \" SSL ENFORCEMENT MODE \"} } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Configure public IP \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To remove all authorized networks, use the following command: gcloud sql instances patch INSTANCE NAME --clear-authorized-networks Terraform To enable public IP and add an authorized address or address range, use a Terraform resource . resource \"google sql database instance\" \"mysql public ip instance name\" { database version = \"MYSQL 5 7\" name = \"mysql-public-ip-instance-name\" region = \"asia-southeast2\" settings { availability type = \"ZONAL\" disk size = 100 disk type = \"PD SSD\" ip configuration { Add optional authorized networks Update to match the customer's networks authorized networks { name = \"test-net-3\" value = \"203.0.113.0/24\" } Enable public IP ipv4 enabled = true } tier = \"db-custom-4-26624\" } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure public IP Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server This page describes how to configure public IP connectivity for a Cloud SQL instance."
+        ]
+      },
+      {
+        "title": "\"Set up a custom DNS name for a Cloud SQL instance \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name",
+        "source_id": "site-docs-reference-3",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sample also creates prerequisite resources for the new instance. resource \"google project service identity\" \"default\" { provider = google-beta service = \"sqladmin.googleapis.com\" } resource \"random string\" \"default\" { length = 10 special = false upper = false } resource \"google privateca ca pool\" \"default\" { name = \"customer-ca-pool-${random string.default.result}\" location = \"asia-northeast1\" tier = \"DEVOPS\" publishing options { publish ca cert = false publish crl = false } } This is required for setting up customer managed CAS (Certificate Authority Service) instances. resource \"google privateca certificate authority\" \"default\" { pool = google privateca ca pool.default.name certificate authority id = \"my-certificate-authority\" location = \"asia-northeast1\" lifetime = \"86400s\" type = \"SELF SIGNED\" deletion protection = false # set to \"true\" in production skip grace period = true ignore active certificates on deletion = true config { subject config { subject { organization = \"my organization\" common name = \"my certificate authority name\" } } x509 config { ca options { is ca = true } key usage { base key usage { cert sign = true crl sign = true } extended key usage { server auth = false } } } } key spec { algorithm = \"RSA PKCS1 4096 SHA256\" } } resource \"google privateca ca pool iam member\" \"default\" { ca pool = google privateca ca pool.default.id role = \"roles/privateca.certificateRequester\" member = \"serviceAccount:${google project service identity.default.email}\" } resource \"google sql database instance\" \"default\" { name = \"mysql-instance\" region = \"asia-northeast1\" database version = \"MYSQL 8 4\" settings { edition = \"ENTERPRISE\" tier = \"db-f1-micro\" ip configuration { The following server CA mode lets the instance use customer-managed CAS CA to issue server certificates. https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances#ipconfiguration server ca mode = \"CUSTOMER MANAGED CAS CA\" server ca pool = google privateca ca pool.default.id custom subject alternative names = [\"customSan.test.com\"] } } } Add or update custom SAN values for an instance To add or update custom SAN values for an existing instance, do the following: gcloud gcloud sql instances patch INSTANCE NAME \\ --custom-subject-alternative-names = CUSTOM DNS NAME Caution : If you're updating an instance that already has custom SAN values, then specify the existing custom SAN values or the existing values will be replaced.",
+          "Terraform To update an instance that already has custom SAN values, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"mysql-instance\" region = \"asia-northeast1\" database version = \"MYSQL 8 4\" settings { edition = \"ENTERPRISE\" tier = \"db-f1-micro\" ip configuration { The following server CA mode lets the instance use customer-managed CAS CA to issue server certificates. https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances#ipconfiguration server ca mode = \"CUSTOMER MANAGED CAS CA\" server ca pool = google privateca ca pool.default.id custom subject alternative names = [\"customSan.test.com\"] } } } Caution : If you're updating an instance that already has custom SAN values, then specify the existing custom SAN values or the existing values will be replaced.",
+          "For security reasons, you can use a custom SAN configuration only for instances that you configure with CUSTOMER MANAGED CAS CA as the server CA mode."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "db.mycompany.example.com",
+      "identity.default.email",
+      "pool.default.id",
+      "pool.default.name",
+      "privateca.certificateRequester",
+      "sqladmin.googleapis.com",
+      "string.default.result",
+      "test.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/privateca.certificateRequester"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/custom-dns-name"
+      ]
+    }
+  ]
+}

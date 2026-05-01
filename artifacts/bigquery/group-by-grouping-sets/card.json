@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "GROUP BY GROUPING SETS",
+  "feature_slug": "group-by-grouping-sets",
+  "summary": "BigQuery supports the GROUP BY GROUPING SETS clause for producing aggregated data over one or more grouping sets; BigQuery queries support the GROUP BY GROUPING SETS clause for aggregating over one or more grouping sets.",
+  "extended_definition": "BigQuery supports the GROUP BY GROUPING SETS clause for producing aggregated data over one or more grouping sets; BigQuery queries support the GROUP BY GROUPING SETS clause for aggregating over one or more grouping sets.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-performance",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Extracting metadata from Apache Hive for migration \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "source_id": "site-api-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: To get support or provide feedback for this feature, contact bigquery-permission-migration-support@google.com ."
+        ]
+      },
+      {
+        "title": "API performance tips \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-performance",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "However, the same concepts are applicable to the BigQuery API."
+        ]
+      },
+      {
+        "title": "Introduction to continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can't use the following SQL capabilities in a continuous query, unless they are listed as a supported stateful operation : The following query operators: PIVOT UNPIVOT TABLESAMPLE Query set operators The SELECT DISTINCT statement EXISTS or NOT EXISTS subqueries Recursive CTEs User-defined functions Window function calls BigQuery ML functions other than those listed in Supported functionality Data definition language (DDL) statements Data manipulation language (DML) statements except for INSERT .",
+          "Writes from the results of a batch query to a permanent table Writes from the results of a BigQuery continuous query to a permanent table A Pub/Sub BigQuery subscription Writes from Dataflow to BigQuery Writes from Datastream to BigQuery using append-only write mode You can use continuous queries to perform time-sensitive tasks, such as creating and immediately acting on insights, applying real-time machine learning (ML) inference, and replicating data into other platforms.",
+          "Continuous queries can process data that has been written to standard BigQuery tables by using one of the following methods: The BigQuery Storage Write API The tabledata.insertAll method Batch load The INSERT DML statement Mutating data manipulation language (DML) statements such as DELETE , UPDATE , and MERGE when exporting data to Pub/Sub ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tabledata.insertAll"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/api-performance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.431Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Oracle binary log reader CDC method",
+  "feature_slug": "oracle-binary-log-reader-cdc-method",
+  "summary": "Datastream supports the binary log reader change data capture method for Oracle sources.",
+  "extended_definition": "Datastream supports the binary log reader change data capture method for Oracle sources.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle",
+      "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+      "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure a pluggable Oracle database for CDC \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To configure your pluggable Oracle database for use with the binary log reader CDC method, perform the following steps: Select one of the following methods to access your log files: Automatic Storage Management (ASM) : if you select this option, you need to create a dedicated ASM connection, and provide its details when you create your connection profile.",
+          "You can configure your pluggable Oracle database for use with the following CDC methods: Binary log reader ( Preview ) LogMiner API For more information about the binary log reader and the LogMiner API, see Work with Oracle database redo log files .",
+          "Configure your pluggable Oracle database for binary log reader Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "\"Configure a self-managed Oracle database for CDC \\_|\\_ Datastream \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure your self-managed Oracle database to work with the following CDC methods: Binary log reader ( Preview ) LogMiner API These methods specify how Datastream accesses your log files.",
+          "To configure your self-managed Oracle database for use with the binary log reader CDC method, perform the following steps: Select one of the following methods to access your log files: Automatic Storage Management (ASM) : if you select this option, you need to create a dedicated ASM connection, and provide its details when you create your connection profile.",
+          "V $PARAMETER TO USER NAME ; GRANT EXECUTE ON DBMS LOGMNR TO USER NAME ; GRANT EXECUTE ON DBMS LOGMNR D TO USER NAME ; GRANT SELECT ANY TRANSACTION TO USER NAME ; GRANT SELECT ANY TABLE TO USER NAME ; If your database uses Transparent Data Encryption (TDE), grant the following permissions: GRANT SELECT ON DBA TABLESPACES TO USER NAME ; GRANT SELECT ON DBA ENCRYPTED COLUMNS TO USER NAME ; If your organization doesn't permit granting the GRANT SELECT ANY TABLE permission, use the solution described in the Oracle change data capture (CDC) section of the Datastream FAQ page."
+        ]
+      },
+      {
+        "title": "\"Configure an Amazon RDS Oracle database for CDC \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure your source Oracle database for use with the following CDC methods: Binary log reader ( Preview ) LogMiner API For more information about the binary log reader and the LogMiner API, see Work with Oracle database redo log files .",
+          "For Amazon RDS sources, Datastream supports only database directory objects as the log access method for the binary log reader.",
+          "To do so, run the following commands: GRANT EXECUTE CATALOG ROLE TO USER NAME ; GRANT CONNECT TO USER NAME ; GRANT CREATE SESSION TO USER NAME ; exec rdsadmin . rdsadmin util . grant sys object ( 'V $DATABASE' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $ARCHIVED LOG' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOG' , ' USER NAME ' , 'SELECT' ); -- for primary databases exec rdsadmin . rdsadmin util . grant sys object ( 'V $STANDBY LOG' , ' USER NAME ' , 'SELECT' ); -- for standby databases exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOGFILE' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOGMNR LOGS' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $LOGMNR CONTENTS' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'V $PARAMETER' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'DBMS LOGMNR' , ' USER NAME ' , 'EXECUTE' ); exec rdsadmin . rdsadmin util . grant sys object ( 'DBMS LOGMNR D' , ' USER NAME ' , 'EXECUTE' ); GRANT SELECT ANY TRANSACTION TO USER NAME ; GRANT SELECT ANY TABLE TO USER NAME ; If your database uses Transparent Data Encryption (TDE), grant the following permissions: exec rdsadmin . rdsadmin util . grant sys object ( 'DBA TABLESPACES' , ' USER NAME ' , 'SELECT' ); exec rdsadmin . rdsadmin util . grant sys object ( 'DBA ENCRYPTED COLUMNS' , ' USER NAME ' , 'SELECT' ); If your organization doesn't permit granting the GRANT SELECT ANY TABLE permission, use the solution described in the Oracle change data capture (CDC) section of the Datastream FAQ page."
+        ]
+      },
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Binary reader ( Preview ): select this method to extract changes directly from Oracle logs.",
+          "Oracle CDC configuration Datastream verifies that the CDC method that you selected complies with your database configuration.",
+          "Specify the CDC method for your stream: GTID (Global Transaction IDs)-based replication : select this method if you want Datastream to support failovers and provide seamless replication irrespective of the changes in your database cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-amazon-rds-oracle",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    }
+  ]
+}

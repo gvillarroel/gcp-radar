@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Packet Mirroring protocol filtering",
+  "feature_slug": "packet-mirroring-protocol-filtering",
+  "summary": "Introduced General Availability for Packet Mirroring with full control over which protocols are included in mirrored traffic.",
+  "extended_definition": "Introduced General Availability for Packet Mirroring with full control over which protocols are included in mirrored traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+      "https://docs.cloud.google.com/vpc/docs/quota"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reasons for dropped test packets \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "source_id": "site-iam-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "For DHCP protocol, including UDP IPv4 packets to destination port 68 (DHCPv4 responses) and UDP IPv6 packets to destination port 546 (DHCPv6 responses), DHCP traffic is only allowed from the metadata server (169.254.169.254).",
+          "Probable cause The packet is sent using a protocol that isn't supported by the forwarding rule, or the packet is sent to a destination port that doesn't match the ports supported by the forwarding rule.",
+          "Forwarding rule mismatch The forwarding rule's protocol and ports don't match the packet header."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource availability Each quota represents a maximum number for a particular type of resource that you can create, if that resource is available.",
+          "Packet Mirrorings The number of Packet Mirroring policies that you can create in your project, in any network and region.",
+          "Load balancer and protocol forwarding rules See Forwarding rules in the load balancing quotas documentation."
+        ]
+      },
+      {
+        "title": "\"About VPC Flow Logs records \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can filter on any subset of fields listed in Record format , except for the following fields: rtt msec bytes sent packets sent start time end time VPC Flow Logs filtering uses CEL, an embedded expression language for attribute-based logic expressions.",
+          "Metadata load balancing LoadBalancingDetails If the flow passes through a load balancer in one of the following configurations, this field is populated with Cloud Load Balancing details: The reporter of the flow is the client of the load balancer, and the load balancer type is APPLICATION LOAD BALANCER , PROXY NETWORK LOAD BALANCER , PASSTHROUGH NETWORK LOAD BALANCER , or PROTOCOL FORWARDING .",
+          "If the backend group type is TARGET POOL , this field isn't populated. vpc VpcDetails VPC network details of the load balancer NetworkServiceDetails field format Field Type Description dscp int32 If the Differentiated Services field is present in packet headers, this field is populated with the DSCP value."
+        ]
+      },
+      {
+        "title": "\"Performance Dashboard overview \\_|\\_ Network Intelligence Center - Performance\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The dashboard lets you see and understand the following: Packet loss summary Packet loss average between region pairs of the regions selected Packet loss average between zone pairs of selected regions Latency summary Latency median between region pairs of the regions selected Latency median between zone pairs of the regions selected Traffic between VM instances Performance Dashboard shows packet loss and latency metrics (in summary charts and heatmap views) for zones where you have Compute Engine virtual machine (VM) instances.",
+          "What's next Project performance use cases View project-specific packet loss dashboard View Google Cloud packet loss dashboard Troubleshoot Performance Dashboard Learn more about packet sampling Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Project performance view In the project performance view, Performance Dashboard shows packet loss or latency metrics only for zones where you have project virtual machine (VM) instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/concepts/overview"
+      ]
+    }
+  ]
+}

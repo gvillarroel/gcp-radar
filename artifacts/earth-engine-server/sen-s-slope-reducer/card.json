@@ -1,0 +1,87 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.832Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Sen's slope reducer",
+  "feature_slug": "sen-s-slope-reducer",
+  "summary": "Estimates a Sen's slope trend.",
+  "extended_definition": "Estimates a Sen's slope trend.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/charts_array",
+      "https://developers.google.com/earth-engine/guides/charts_style",
+      "https://developers.google.com/earth-engine/guides/exporting_tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chart Styling \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_style",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "See this page for full details. { trendlines : { 0 : { // add a trend line to the 1st series type : 'linear' , // or 'polynomial', 'exponential' color : 'green' , lineWidth : 5 , opacity : 0.2 , visibleInLegend : true , } } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Reducer . mean (), startDay : 1 , endDay : 365 }) . setSeriesNames ([ 'EVI' , 'NDVI' ]); // Apply custom style properties to the chart. chart . setOptions ( chartStyle ); // Print the chart to the console. print ( chart ); Note: setting individual series properties overrides top-level properties.",
+          "Additional features include applying log scales, smoothing functions, enabling chart zooming/panning, altering opacity, rotating axes, setting text styles, changing background/grid line colors, formatting axis labels, interpolating null values, and adding trend lines.\\n\"]]"
+        ]
+      },
+      {
+        "title": "\"Exporting Table and Vector Data \\_|\\_ Google Earth Engine \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_tables",
+        "source_id": "site-docs-root-2",
+        "final_score": 37,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reducer . mean (), geometry : region , crs : projection . crs , crsTransform : projection . transform , }); // Make a feature without geometry and set the properties to the dictionary of means. var feature = ee .",
+          "Reducer . mean (), geometry = region , crs = projection [ 'crs' ], crsTransform = projection [ 'transform' ], ) Make a feature without geometry and set the properties to the dictionary of means. feature = ee .",
+          "Rectangle ( - 122.2806 , 37.1209 , - 122.0554 , 37.2413 ); // Get a dictionary of means in the region. var means = image . reduceRegion ({ reducer : ee ."
+        ]
+      },
+      {
+        "title": "Array and List Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_array",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Chart . array . values ({ array : elevSort , axis : 0 , xLabels : lonSort }) . setOptions ({ title : 'Elevation Profile Across Longitude' , hAxis : { title : 'Longitude' , viewWindow : { min : - 124.50 , max : - 122.8 }, titleTextStyle : { italic : false , bold : true } }, vAxis : { title : 'Elevation (m)' , titleTextStyle : { italic : false , bold : true } }, colors : [ '1d6b99' ], lineSize : 5 , pointSize : 0 , legend : { position : 'none' } }); print ( chart ); Apply .setChartType('AreaChart') to add shading under the line: print ( chart . setChartType ( 'AreaChart' )); ee.List metadata scatter plot Collection property reduction by ee.Reducer.toList() produces a dictionary of property value lists, one for each selected property.",
+          "Chart . array . values ({ array : y , axis : 0 , xLabels : x }). setOptions ({ title : 'Relationship Among Spectral Bands for Forest Pixels' , colors : [ 'cf513e' ], hAxis : { title : 'Red reflectance (x1e4)' , titleTextStyle : { italic : false , bold : true } }, vAxis : { title : 'SWIR reflectance (x1e4)' , titleTextStyle : { italic : false , bold : true } }, pointSize : 4 , dataOpacity : 0.4 , legend : { position : 'none' }, }); print ( chart ); ee.List transect line plot Image region reduction by ee.Reducer.toList() produces a dictionary of pixel value lists, one for each image band.",
+          "Reducer . toList (), geometry : forest . geometry (), scale : 2000 }); // Convert NIR and SWIR value lists to an array to be plotted along the y-axis. var yValues = pixelVals . toArray ([ 'sur refl b02' , 'sur refl b06' ]); // Get the red band value list; to be plotted along the x-axis. var xValues = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Array",
+      "ee.List",
+      "ee.Reducer.toList",
+      "ui.Chart.array.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

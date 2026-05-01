@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "EmbeddingGemma model availability in Model Garden",
+  "feature_slug": "embeddinggemma-model-availability-in-model-garden",
+  "summary": "The EmbeddingGemma model is now available through Vertex AI Model Garden.",
+  "extended_definition": "The EmbeddingGemma model is now available through Vertex AI Model Garden.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this tutorial, you train a scikit-learn RandomForest model, save the model in Vertex AI Model Registry and learn how to evaluate the model through a Vertex AI pipeline job using Google Cloud Pipeline Components Python SDK.",
+          "Learn how to train a Vertex AI AutoML Tabular classification model and learn how to evaluate it through a Vertex AI pipeline job using google cloud pipeline components : Learn more about Vertex AI Model Evaluation .",
+          "In this tutorial, you train a scikit-learn tabular classification model and create a batch prediction job for it through a Vertex AI pipeline using google cloud pipeline components."
+        ]
+      },
+      {
+        "title": "Train a model using Vertex AI and the Python SDK \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What you accomplish This tutorial walks you through how to use the Vertex AI SDK for Python to do the following: Create a Cloud Storage bucket to store a dataset Preprocess data for training Use the processed data to create a dataset in BigQuery Use the BigQuery dataset to create a Vertex AI tabular dataset Create and train a custom-trained model Deploy the custom-trained model to an endpoint Generate a prediction Undeploy the model Delete all resources created in the tutorial so you don't incur further charges Billable resources used This tutorial uses billable resources associated with the Vertex AI, BigQuery, and Cloud Storage Google Cloud services.",
+          "For more information, see the following: Vertex AI pricing and Free cloud features and trial offer BigQuery pricing and BigQuery free tier usage Cloud Storage pricing and Cloud Storage free tier usage Google Cloud pricing calculator To prevent further charges, the final step of this tutorial walks you through removing all billable Google Cloud resources you created.",
+          "Home Documentation AI and ML Vertex AI Send feedback Train a model using Vertex AI and the Python SDK Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "RolloutOptions JSON representation { \"previousDeployedModel\" : string , \"revisionNumber\" : integer , // Union field max unavailable can be only one of the following: \"maxUnavailableReplicas\" : integer , \"maxUnavailablePercentage\" : integer // End of list of possible types for union field max unavailable . // Union field max surge can be only one of the following: \"maxSurgeReplicas\" : integer , \"maxSurgePercentage\" : integer // End of list of possible types for union field max surge . } Fields previousDeployedModel string ID of the DeployedModel that this deployment should replace. revisionNumber integer Output only.",
+          "Required except for Large Model Deploy use cases. prediction resources can be only one of the following: dedicatedResources object ( DedicatedResources ) A description of resources that are dedicated to the DeployedModel, and that need a higher degree of manual configuration. automaticResources object ( AutomaticResources ) A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration. sharedResources string The resource name of the shared DeploymentResourcePool to deploy on.",
+          "Format: projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model deployment monitoring job} predictRequestResponseLoggingConfig object ( PredictRequestResponseLoggingConfig ) Configures the request-response logging for online prediction. dedicatedEndpointEnabled boolean If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated endpoint dns]."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction"
+      ]
+    }
+  ]
+}

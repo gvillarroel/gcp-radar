@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.884Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud",
+  "feature_name": "Maintenance-mode triggered VM eviction and migration during cluster upgrades",
+  "feature_slug": "maintenance-mode-triggered-vm-eviction-and-migration-during-cluster-upgrades",
+  "summary": "VM Runtime now triggers VM eviction and live migration during cluster upgrades only after a node enters maintenance mode, using Anthos-on-Bare-Metal's entering maintenance window timeout and best-effort migration to already-upgraded nodes.",
+  "extended_definition": "VM Runtime now triggers VM eviction and live migration during cluster upgrades only after a node enters maintenance mode, using Anthos-on-Bare-Metal's entering maintenance window timeout and best-effort migration to already-upgraded nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/use-gpu"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure the eviction policies for VMs in Google Distributed Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The cluster can retry the live migration up to 3 times, with a 30-second timeout on the process each time to start: apiVersion : vm.cluster.gke.io/v1 kind : VMRuntime metadata : name : vmruntime spec : disableCDIUploadProxyVIP : false enabled : true evictionPolicy : evictionStrategy : LiveMigrate maxMigrationAttemptsPerVM : 3 migrationTargetInitializationTimeout : 30s useEmulation : false Restart The following example eviction policy makes no attempt at migration for any VMs during eviction.",
+          "VMs are stopped on their current host, and start again when the host finishes its maintenance event: apiVersion : vm.cluster.gke.io/v1 kind : VMRuntime metadata : name : vmruntime spec : disableCDIUploadProxyVIP : false enabled : true evictionPolicy : evictionStrategy : Restart useEmulation : false Save and close the VMRuntime custom resource in your editor.",
+          "The following example manifests show how to enable live migration of VMs, or restart the VMs on the same host after maintenance is complete: Live migrate The following example eviction policy enables live migration of VMs."
+        ]
+      },
+      {
+        "title": "\"Enable and use NVIDIA GPUS in VMs with VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/use-gpu",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see how to configure the eviction policy for VMs during maintenance events .",
+          "The following example output shows that the allocatable GPU name on this node is NVIDIA A100 SXM4 40GB : Name: bm-node1 Roles: worker [ ... ] Allocatable: cpu: 47810m [ ... ] memory: 336929400Ki nvidia.com/gpu-vm-NVIDIA A100 SXM4 40GB: 1 [ ... ] Create a VirtualMachine manifest, such as my-gpu-vm.yaml , in the editor of your choice: nano my-gpu-vm.yaml Copy and paste the following YAML manifest: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachine metadata : name : VM NAME spec : interfaces : - name : eth0 networkName : pod-network default : true disks : - virtualMachineDiskName : VM NAME -boot-dv boot : true gpu : model : nvidia.com/gpu-vm- GPU NAME quantity : 1 In this YAML file, define the following settings: VM NAME : the name for your VM.",
+          "You allocate them to VMs in the next section: NAME ALLOCATED DEVICEMODEL bm-node1 true Tesla A100 SXM4 40GB bm-node2 true Tesla A100 SXM4 40GB Allocate GPUs for use with VMs With GPU support configured in your bare metal cluster nodes and in VM Runtime on GDC, allocate the GPUs for use with VMs."
+        ]
+      },
+      {
+        "title": "\"Create and use storage classes in VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To use a specific, already-defined StorageClass when you create a VirtualMachineDisk , complete the following steps: Create a VirtualMachineDisk manifest, such as my-disk.yaml , in the editor of your choice: nano my-disk.yaml Copy and paste the following YAML manifest: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachineDisk metadata : name : DISK NAME spec : size : 10Gi storageClassName : STORAGE CLASS NAME Replace the following values: DISK NAME : the name for your disk.",
+          "The following example output shows that the cluster has four storage classes and associated profiles: $ kubectl get storageprofiles NAME AGE anthos-system 11d node-disk 11d standard 11d nfs 11d To edit a storage profile and change the access mode or volume mode, complete the following steps: Edit the StorageProfile custom resource for editing: kubectl edit storageprofile STORAGE PROFILE NAME Replace STORAGE PROFILE NAME with the StorageProfile you want to edit.",
+          "Add a single entry to the spec.claimPropertySets list of the StorageProfile : apiVersion : cdi.kubevirt.io/v1beta1 kind : StorageProfile metadata : name : nfs spec : claimPropertySets : - accessModes : - ACCESS MODE volumeMode : VOLUME MODE The accessMode and volumeMode use the underlying Kubernetes components."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Create and manage a Linux VM in VM Runtime on GDC \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "All the nodes in your cluster can then connect to and use this NFS storage: apiVersion : storage.k8s.io/v1 kind : StorageClass metadata : name : example-nfs provisioner : nfs.csi.k8s.io parameters : server : nfs-server.example.com path : /vm-share reclaimPolicy : Delete volumeBindingMode : Immediate mountOptions : - nconnect=8 - nfsvers=4.1 In this tutorial, use the name of a StorageClass in your own cluster.",
+          "After you successfully connect to the console of the VM, exit the VM session and console: Ctrl + ] Edit the VM During the lifecycle of your VM, you might want to edit your VM.",
+          "Create a manifest that defines a VirtualMachine , such as my-vm.yaml , in the editor of your choice: nano my-vm.yaml Copy and paste the following YAML definition: apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachine metadata : name : VM NAME spec : osType : linux compute : cpu : vcpus : VCPU NUMBER memory : capacity : MEMORY SIZE interfaces : - name : eth0 networkName : NETWORK NAME default : true disks : - boot : true virtualMachineDiskName : DISK NAME Replace the following values: VM NAME : the name for your VM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amd64.img",
+      "cdi.kubevirt.io",
+      "disk.yaml",
+      "images.ubuntu.com",
+      "nfs.csi.k8s.io",
+      "nvidia.com",
+      "server.example.com",
+      "spec.claimPropertySets",
+      "storage.k8s.io",
+      "vm.cluster.gke.io",
+      "vm.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/use-gpu",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/use-gpu",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/use-gpu",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm"
+      ]
+    }
+  ]
+}

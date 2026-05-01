@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.630Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby",
+  "feature_name": "Debian 8 Jessie OS support",
+  "feature_slug": "debian-8-jessie-os-support",
+  "summary": "App Engine flexible environment applications could run on the Debian 8 Jessie operating system; deprecated on 2018-05-30.",
+  "extended_definition": "App Engine flexible environment applications could run on the Debian 8 Jessie operating system; deprecated on 2018-05-30.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-04",
+    "deprecation_date": "2018-05-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customizing the .NET Runtime \\_|\\_ App Engine flexible environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Customizing the .NET Runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "Health checking By default, all programs running in the flexible environment receive health check requests , and you don't need to write any additional code."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "The app.yaml file must reside in the same directory as the Dockerfile file. runtime : custom env : flex The runtime: custom entry tells App Engine to look for a Dockerfile that will define your runtime's image and env: flex specifies that you are deploying to the flexible environment.",
+          "Create a custom runtime app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.",
+          "By using a Dockerfile, you can use languages and packages that are not part of the Google Cloud and use the same resources and tooling that are used in the App Engine flexible environment."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn about the App Engine flexible environment Here are some topics to help continue your learning about App Engine: An overview of App Engine Request routing Request handling Managing instances Hello World code review Hello World is the simplest possible App Engine app, as it contains only one service, has only one version, and all of the code is located within the app's root directory.",
+          "Specifies the runtime used by the app. runtime : aspnetcore env : flex runtime config : operating system : ubuntu22 This sample incurs costs to run on the App Engine flexible environment.",
+          "Create a .NET app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    }
+  ]
+}

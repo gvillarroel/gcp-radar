@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.555Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Automatic skaffold.yaml generation",
+  "feature_slug": "automatic-skaffold-yaml-generation",
+  "summary": "Cloud Deploy can generate a skaffold.yaml file from a single Kubernetes manifest when creating a release.",
+  "extended_definition": "Cloud Deploy can generate a skaffold.yaml file from a single Kubernetes manifest when creating a release.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/config-files",
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis",
+      "https://docs.cloud.google.com/deploy/docs/deploying-application"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy your application \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploying-application",
+        "source_id": "site-docs-reference-2",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also include one of the following flags to have Cloud Deploy generate a skaffold.yaml file for you: --from-k8s-manifest= K8S MANIFEST The generated Skaffold config is based on the Kubernetes manifest you pass this flag.",
+          "Note that the skaffold.yaml file must reference the apiVersion that is supported by Skaffold in the first line, as in this example: apiVersion : skaffold/v4beta7 Have it generated for you.",
+          "Cloud Deploy uses the generated manifest or Cloud Run service definition, and the generated skaffold.yaml , to create the release."
+        ]
+      },
+      {
+        "title": "Configuration schema reference \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/config-files",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If no deployment strategy is specified, the standard deployment strategy is used, with verification set to false . profiles Takes a list of zero or more Skaffold profile names, from skaffold.yaml .",
+          "Using actions (and Skaffold) serialPipeline : stages : - targetId : strategy : standard : predeploy : actions : [ ACTION NAME ] postdeploy : actions : [ ACTION NAME ] Where ACTION NAME is the name configured in skaffold.yaml for customActions.name .",
+          "This value is the customAction.name defined in skaffold.yaml . [DEPLOY ACTION NAME] Is the name of the custom deploy action."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Run analysis on your application after deploying it \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a new directory and navigate into it. mkdir deploy-analysis-run-quickstart cd deploy-analysis-run-quickstart Create a file named skaffold.yaml with the following contents: apiVersion : skaffold/v4beta7 kind : Config manifests : rawYaml : - service.yaml deploy : cloudrun : {} See the skaffold.yaml reference for more information about this configuration file.",
+          "Prepare your Skaffold configuration and service definition In this quickstart, you create a skaffold.yaml file, which identifies the manifest to be used to deploy the sample Cloud Run service, and you also define the service.yaml file that defines the Cloud Run itself.",
+          "In the deploy-analysis-run-quickstart directory, create a new file, clouddeploy.yaml , with the following contents: apiVersion : deploy.cloud.google.com/v1 kind : DeliveryPipeline metadata : name : deploy-analysis-demo-app-run description : main application pipeline serialPipeline : stages : - targetId : analysis-staging profiles : [] strategy : standard : analysis : duration : 300s googleCloud : alertPolicyChecks : - id : check-1 alertPolicies : - ALERT POLICY ID --- apiVersion : deploy.cloud.google.com/v1 kind : Target metadata : name : analysis-staging description : staging Run service run : location : projects/ PROJECT ID /locations/us-central1 In this YAML, replace ALERT POLICY ID with the output from the gcloud monitoring policies list command you ran previously , and replace PROJECT ID with the ID of the project you're using."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.yaml",
+      "deploy.cloud.google.com",
+      "metric.label.check",
+      "metric.type",
+      "monitoring.googleapis.com",
+      "policy.yaml",
+      "resource.label",
+      "resource.type",
+      "service.yaml",
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploying-application",
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-analysis"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.431Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Spanner source support",
+  "feature_slug": "spanner-source-support",
+  "summary": "Datastream can use Spanner databases as a source for streaming data.",
+  "extended_definition": "Datastream can use Spanner databases as a source for streaming data.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DatastreamAsyncClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 316,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.Route The route resource is the child of the private connection resource, used for defining a route for a private connection. get stream get stream ( request : typing .",
+          "The result type for the operation will be PrivateConnection The PrivateConnection resource is used to establish private connectivity between Datastream and a customer's network. create route create route ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream. get location get location ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "source_id": "site-python-reference",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.Route The route resource is the child of the private connection resource, used for defining a route for a private connection. get stream get stream ( request : typing .",
+          "The result type for the operation will be PrivateConnection The PrivateConnection resource is used to establish private connectivity between Datastream and a customer's network. create route create route ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream. get location get location ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Configure a source Spanner database \\_|\\_ Datastream \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "source_id": "site-docs-root-2",
+        "final_score": 291,
+        "relevance": "",
+        "evidence_snippets": [
+          "To use this role, Datastream needs the following IAM permissions at minimum: spanner.databases.useRoleBasedAccess spanner.databaseRoles.list spanner.databases.useDataBoost (if you choose to use Spanner Data Boost) In addition, the Spanner database role must have the following permissions: SELECT permissions for the tables being streamed.",
+          "Before you begin If your Spanner instance exists in a Google Cloud project other than the one where Datastream is running, you need to provide the Datastream service agent the spanner.databaseReader IAM role, and if you plan to use Data Boost, the spanner.databaseReaderWithDataBoost role.",
+          "To configure your Spanner source for replication in Datastream, you need to create and configure a Spanner change stream."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "source_id": "site-api-reference",
+        "final_score": 291,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "List of objects to exclude. excluded objects can be only one of the following: oracleExcludedObjects object ( OracleRdbms ) Oracle data source objects to avoid backfilling. mysqlExcludedObjects object ( MysqlRdbms ) MySQL data source objects to avoid backfilling. postgresqlExcludedObjects object ( PostgresqlRdbms ) PostgreSQL data source objects to avoid backfilling. sqlServerExcludedObjects object ( SqlServerRdbms ) SQLServer data source objects to avoid backfilling salesforceExcludedObjects object ( SalesforceOrg ) Salesforce data source objects to avoid backfilling mongodbExcludedObjects object ( MongodbCluster ) MongoDB data source objects to avoid backfilling spannerExcludedObjects object ( SpannerDatabase ) Spanner data source objects to avoid backfilling.",
+          "SourceHierarchyDatasets JSON representation { \"datasetTemplate\" : { object ( DatasetTemplate ) } , // Union field project id can be only one of the following: \"projectId\" : string // End of list of possible types for union field project id . } Fields datasetTemplate object ( DatasetTemplate ) The dataset template to use for dynamic dataset creation.",
+          "Stream JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"destinationConfig\" : { object ( DestinationConfig ) } , \"state\" : enum ( State ) , \"errors\" : [ { object ( Error ) } ] , \"lastRecoveryTime\" : string , \"ruleSets\" : [ { object ( RuleSet ) } ] , // Union field backfill strategy can be only one of the following: \"backfillAll\" : { object ( BackfillAllStrategy ) } , \"backfillNone\" : { object ( BackfillNoneStrategy ) } // End of list of possible types for union field backfill strategy . // Union field customer managed encryption key can be only one of the // following: \"customerManagedEncryptionKey\" : string // End of list of possible types for union field // customer managed encryption key . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.connectionProfiles",
+      "spanner.databaseReader",
+      "spanner.databaseReaderWithDataBoost",
+      "spanner.databaseRoles.list",
+      "spanner.databases.useDataBoost",
+      "spanner.databases.useRoleBasedAccess",
+      "v1.types.ConnectionProfile",
+      "v1.types.PrivateConnection",
+      "v1.types.Route"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-spanner",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream"
+      ]
+    }
+  ]
+}

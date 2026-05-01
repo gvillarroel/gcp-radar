@@ -1,0 +1,206 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.410Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api",
+  "feature_name": "IAM-based deployment role documentation for App Engine",
+  "feature_slug": "iam-based-deployment-role-documentation-for-app-engine",
+  "summary": "Access control documentation for deploying apps with IAM roles and service accounts was improved, including predefined App Engine deploy roles and required permissions.",
+  "extended_definition": "Access control documentation for deploying apps with IAM roles and service accounts was improved, including predefined App Engine deploy roles and required permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Errors Service account needs Service Agent role error If you use the Restrict Resource Service Usage organization policy constraint to block Cloud Deployment Manager ( deploymentmanager.googleapis.com ), you might see the following error message: Serverless VPC Access service account (service-<PROJECT NUMBER>@gcp-sa-vpcaccess.iam.gserviceaccount.com) needs Serverless VPC Access Service Agent role in the project.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Connecting to a VPC network Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: To deploy a service with a connector, the user or service account doing the deployment needs the Serverless VPC Access User and Compute Viewer IAM roles."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Setting up access control Stay organized with collections Save and categorize content based on your preferences.",
+          "Select roles that grant access to App Engine features .",
+          "Select roles that grant access to App Engine features ."
+        ]
+      },
+      {
+        "title": "\"App Engine audit logging information \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine audit logging information Stay organized with collections Save and categorize content based on your preferences.",
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in App Engine: Audit logs category App Engine operations Admin Activity audit logs apps.create apps.patch apps.repair apps.authorizedCertificates.create apps.authorizedCertificates.delete apps.authorizedCertificates.patch apps.domainMappings.create apps.domainMappings.delete apps.domainMappings.patch apps.firewall.ingressRules.batchUpdate apps.firewall.ingressRules.create apps.firewall.ingressRules.delete apps.firewall.ingressRules.patch apps.services.delete apps.services.patch apps.services.versions.create apps.services.versions.delete apps.services.versions.patch apps.services.versions.instances.debug apps.services.versions.instances.delete Data Access audit logs GetMemcacheItem SetMemcacheItem DeleteMemcacheItem FlushAllMemcacheItems Memcache audit logs only apply to operations made through Cloud Console.",
+          "When deciding which Logging-specific permissions and roles apply to your use case, consider the following: The Logs Viewer role ( roles/logging.viewer ) gives you read-only access to Admin Activity, Policy Denied, and System Event audit logs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.authorizedCertificates.create",
+      "apps.authorizedCertificates.delete",
+      "apps.authorizedCertificates.patch",
+      "apps.create",
+      "apps.domainMappings.create",
+      "apps.domainMappings.delete",
+      "apps.domainMappings.patch",
+      "apps.firewall.ingressRules.batchUpdate",
+      "apps.firewall.ingressRules.create",
+      "apps.firewall.ingressRules.delete",
+      "apps.firewall.ingressRules.patch",
+      "apps.patch",
+      "apps.repair",
+      "apps.services.delete",
+      "apps.services.patch",
+      "apps.services.versions.create",
+      "apps.services.versions.delete",
+      "apps.services.versions.instances.debug",
+      "apps.services.versions.instances.delete",
+      "apps.services.versions.patch",
+      "deploymentmanager.googleapis.com",
+      "logging.privateLogViewer",
+      "logging.viewer",
+      "vpcaccess.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.privateLogViewer",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging"
+      ]
+    }
+  ]
+}

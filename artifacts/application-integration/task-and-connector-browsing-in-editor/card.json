@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.342Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Task and connector browsing in editor",
+  "feature_slug": "task-and-connector-browsing-in-editor",
+  "summary": "The Application Integration editor now lets users search, browse, and select tasks and connectors from the Tasks list.",
+  "extended_definition": "The Application Integration editor now lets users search, browse, and select tasks and connectors from the Tasks list.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+      "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connectors task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Connectors task The Connectors task lets you quickly and securely connect to the various Google Cloud services and other business applications from your integration using the out-of-the-box connectors available in Integration Connectors .",
+          "In the integration editor navigation bar, click Tasks to view the list of available tasks and connectors.",
+          "To configure an existing connection, complete the following steps in the Connectors Task Editor page."
+        ]
+      },
+      {
+        "title": "\"Insert data into BigQuery using a For Each Parallel task \\_|\\_ Application\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Do the following in your Google Cloud project: Grant the following roles to the service account that you want to use to create the connection: roles/bigquery.dataEditor roles/bigquery.readSessionUser roles/secretmanager.viewer roles/secretmanager.secretAccessor Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) If these services have not been enabled for your project previously, you are prompted to enable them when creating the connection in the Create Connection page.",
+          "Add a For Each Parallel task To add a For Each Parallel task in the integration, complete the following steps: Select +Add a task/trigger > Tasks in the integration editor to display the list of available tasks.",
+          "Configure the For Each Parallel task To configure the For Each Parallel task, complete the following steps: In the integration editor, click the For Each Parallel task to view the task configuration pane."
+        ]
+      },
+      {
+        "title": "Apps Script task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task",
+        "source_id": "site-docs-root-2",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the integration editor navigation bar, click Tasks to view the list of available tasks and connectors.",
+          "Syntax: getTaskParameter(value) Example: // Read an integration variable AppsScriptTask . getTaskParameter ( ' EmployeeIDKey ' ); To view all the functions available in the AppsScriptTask library, hover over the AppsScriptTask menu item in your Apps Script editor, click More more vert > Open in a new tab .",
+          "To view all the functions available in the AppsScriptTaskTest library, hover over the AppsScriptTaskTest menu item in your Apps Script editor, click More more vert > Open in a new tab ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.readSessionUser",
+      "connectors.googleapis.com",
+      "secretmanager.googleapis.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.readSessionUser",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task"
+      ]
+    }
+  ]
+}

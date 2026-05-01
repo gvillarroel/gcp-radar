@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ML data preprocessing",
+  "feature_slug": "bigquery-ml-data-preprocessing",
+  "summary": "BigQuery ML includes data preprocessing functions and the TRANSFORM clause for feature engineering; BigQuery ML includes data preprocessing functions and the TRANSFORM clause for feature engineering.",
+  "extended_definition": "BigQuery ML includes data preprocessing functions and the TRANSFORM clause for feature engineering; BigQuery ML includes data preprocessing functions and the TRANSFORM clause for feature engineering.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-preprocess-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Feature preprocessing overview \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-preprocess-overview",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use the TRANSFORM clause in the CREATE MODEL statement to define custom preprocessing using manual preprocessing functions .",
+          "For more information about supported SQL statements and functions for models that support feature preprocessing, see the following documents: End-to-end user journeys for ML models End-to-end user journeys for time series forecasting models Contribution analysis user journey Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can also use these functions outside of the TRANSFORM clause to process training data before creating the model."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "To try using the TRANSFORM clause, try the Use the BigQuery ML TRANSFORM clause for feature engineering tutorial or the Create Model With Inline Transpose notebook. select list You can pass columns from query statement through to model training without transformation by either using , EXCEPT() , or by listing the column names directly.",
+          "To learn more about feature preprocessing, see Feature preprocessing overview , or try the Feature Engineering Functions notebook.",
+          "For more information about supported functions, see Manual feature preprocessing ."
+        ]
+      },
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following configuration YAML changes the star projection, GROUP BY , and ORDER BY clauses in SELECT statements. starProjection supports the following configurations: ALLOW PRESERVE (default) EXPAND groupBy and orderBy support the following configurations: EXPRESSION ALIAS INDEX In the following example, the configuration YAML configures the star projection to EXPAND . type : experimental statement rewriter select : starProjection : EXPAND A SQL translation with this configuration YAML file might look like the following: teradata-input.sql create table x ( a int , b TIMESTAMP ); select from x ; bq-output.sql CREATE TABLE x ( a INT64 , b DATETIME ) ; SELECT x . a x . b FROM x ; UDF specification The following configuration YAML specifies the signature of user-defined functions (UDFs) that are used in the source scripts.",
+          "BigQuery supports the following data type conversions: DATETIME to TIMESTAMP TIMESTAMP to DATETIME (accepts optional time zone) TIMESTAMP WITH TIME ZONE to DATETIME (accepts optional time zone) CHAR to VARCHAR In the following example, the configuration YAML converts a TIMESTAMP data type to DATETIME . type : experimental object rewriter global : typeConvert : timestamp : DATETIME Setting default time zone Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "The configuration accepts a list of optimizations and, for optimizations which accept parameters, a section with optional parameter values. type : optimizer transformations : - name : PRECOMPUTE INDEPENDENT SUBSELECTS - name : REWRITE CTE TO TEMP TABLE parameters : threshold : 1 Optimization Optional parameter Description PRECOMPUTE INDEPENDENT SUBSELECTS scope: [PREDICATE, PROJECTION] Rewrites the query by adding a DECLARE statement to replace an expression in either PREDICATE clauses or PROJECTION with a precomputed variable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "input.sql",
+      "output.sql"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-preprocess-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-preprocess-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-preprocess-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-preprocess-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+      ]
+    }
+  ]
+}

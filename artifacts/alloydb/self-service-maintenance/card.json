@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Self-service maintenance",
+  "feature_slug": "self-service-maintenance",
+  "summary": "Self-service maintenance lets you apply the latest AlloyDB updates to clusters on demand and set deny periods.",
+  "extended_definition": "Self-service maintenance lets you apply the latest AlloyDB updates to clusters on demand and set deny periods.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/maintenance",
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintenance overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "source_id": "site-docs-reference-2",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Self-service maintenance If you need to apply maintenance and update your clusters to the latest version immediately, you can perform self-service maintenance.",
+          "Reasons for maintenance Periodic maintenance updates can happen for the following reasons: New AlloyDB features and bug fixes: to launch new features, Google must update the AlloyDB software that runs on the nodes within your cluster.",
+          "For more information, see View and set maintenance times and Manage AlloyDB maintenance updates using a staging cluster ."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maintenance and updates Over the life of an AlloyDB cluster, two kinds of updates can occur: System updates: Google periodically performs system updates to ensure that the underlying hardware and software are reliable, secure, and performing optimally.",
+          "Automatic and adaptive database features The fully PostgreSQL-compatible database engine that powers every AlloyDB node has several features that continuously analyze the structure and frequency of the queries that your instances handle, using this information to suggest schema improvements or automatically apply optimizations: An index advisor helps you find opportunities to optimize your database schema using new indexes based on your usage patterns.",
+          "You can use the following tools to connect to and manage your databases: AlloyDB Studio: a web-based tool built directly into the Google Google Cloud console that lets you explore and manage your data using an interactive SQL interface."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "AlloyDB regularly performs maintenance and upgrades on customer clusters.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback REST Resource: projects.locations.clusters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    }
+  ]
+}

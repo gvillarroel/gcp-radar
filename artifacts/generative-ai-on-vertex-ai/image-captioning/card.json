@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Image captioning",
+  "feature_slug": "image-captioning",
+  "summary": "Image captioning generates text descriptions for images; deprecated on 2025-06-24.",
+  "extended_definition": "Image captioning generates text descriptions for images; deprecated on 2025-06-24.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-24",
+    "deprecation_date": "2025-06-24",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and edit images on Vertex AI \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client () TODO(developer): Update and un-comment below line output file = \"output-image.png\" image = client . models . generate images ( model = \"imagen-4.0-generate-001\" , prompt = \"A dog reading a newspaper\" , config = GenerateImagesConfig ( image size = \"2K\" , ), ) image . generated images [ 0 ] . image . save ( output file ) print ( f \"Created output image using { len ( image . generated images [ 0 ] . image . image bytes ) } bytes\" ) Example response: Created output image using 1234567 bytes REST Set environment variables: export GOOGLE CLOUD PROJECT = GOOGLE CLOUD PROJECT # Replace with your Google Cloud project export GOOGLE CLOUD LOCATION = us-central1 # Replace with the appropriate location for your project Run the following: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https:// ${ GOOGLE CLOUD LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ GOOGLE CLOUD PROJECT } /locations/ ${ GOOGLE CLOUD LOCATION } /publishers/google/models/imagen-4.0-generate-preview-05-20:predict\" -d \\ $'{ \"instances\": [ { \"prompt\": \"a cat reading a book\" } ], \"parameters\": { \"sampleCount\": 1 } }' The model returns a base64 image bytes object.",
+          "Try image generation (Vertex AI Studio) Try Imagen in a Colab With Gemini and Imagen, you can do the following: Generate novel images using only a text prompt (text-to-image AI generation).",
+          "Prompts for preceding images These images are generated using the general Imagen 3 image generation model ( imagen-3.0-generate-002 ) and the following prompts: Claymation scene."
+        ]
+      },
+      {
+        "title": "\"Prompt and image attribute guide \\_|\\_ Generative AI on Vertex AI \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Content filtering - input text, uploaded images, and generated images Generated images are filtered for undesirable or harmful content.",
+          "Camera Proximity - Close up, taken from far away Prompt: A close-up photo of coffee beans Prompt: A zoomed out photo of a small bag of coffee beans in a messy kitchen Camera Position - aerial, from below Prompt: aerial photo of urban city with skyscrapers Prompt: A photo of a forest canopy with blue skies from below Lighting - natural, dramatic, warm, cold Prompt: studio photo of a modern arm chair, natural lighting Prompt: studio photo of a modern arm chair, dramatic lighting Camera Settings - motion blur, soft focus, bokeh, portrait Prompt: photo of a city with skyscrapers from the inside of a car with motion blur Prompt: soft focus photograph of a bridge in an urban city at night Lens types - 35mm, 50mm, fisheye, wide angle, macro Prompt: photo of a leaf, macro lens Prompt: street photography, new york city, fisheye lens Film types - black and white, polaroid Prompt: a polaroid portrait of a dog wearing sunglasses Prompt: black and white photo of a dog wearing sunglasses Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.",
+          "Prompt: an expansive mountain range, landscape wide angle 10mm Model: Imagen 3 ( imagen-3.0-generate-002 ) Prompt: a photo of the moon, astro photography, wide angle 10mm Model: Imagen 3 ( imagen-3.0-generate-002 ) What's next Read articles about Imagen and other Generative AI on Vertex AI products: A developer's guide to getting started with Imagen 3 on Vertex AI New generative media models and tools, built with and for creators New in Gemini: Custom Gems and improved image generation with Imagen 3 Google DeepMind: Imagen 3 - Our highest quality text-to-image model Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Generative AI on Vertex AI Cookbook \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "View on GitHub Agent engine Gemini Langchain Deploying a RAG Application with AlloyDB to Agent Engine View on GitHub Agent engine Agents Gemini Rag Search Building a Conversational Search Agent with Agent Engine and RAG on Vertex AI Search View on GitHub Agent engine Agents Gemini Langgraph Rag Building a Multi-Agent RAG Application with LangGraph and Agent Engine View on GitHub Agent engine Gemini Langgraph Rag Deploying a RAG Application with Cloud SQL for PostgreSQL to Agent Engine View on GitHub Agent engine Agents Gemini Building and Deploying a Google Maps API Agent with Agent Engine View on GitHub Agent engine Gemini Langgraph Building and Deploying a LangGraph Application with Agent Engine in Vertex AI View on GitHub Gemini Multimodal YouTube Video Analysis with Gemini View on GitHub Gemini Multimodal Vector search Building a Multimodal Chatbot for Warranty Claims using Gemini and Vector Search in Vertex AI View on GitHub Gemini Multimodal Rag Multimodal Retrieval Augmented Generation (RAG) using Gemini API in Vertex AI View on GitHub Gemini Llamaindex Rag LlamaIndex with Vertex AI Vector Search to perform question answering RAG View on GitHub Gemini Langchain Multimodal Rag Multimodal Retrieval Augmented Generation (RAG) with Gemini, Vertex AI Vector Search, and LangChain View on GitHub Gemini Rag Small-to-big Retrieval-Augmented Generation View on GitHub Gemini Prompting ReAct (Reasoning + Acting) + Custom tool for Healthcare NL API + Gemini + LangChain View on GitHub Gemini Prompting Using Gemini in Education View on GitHub Gemini Prompting AI Quick Build Experience View on GitHub Gemini Multimodal Rag Code Retrieval Augmented Generation (RAG) with Gemini API View on GitHub Gemini Multimodal Product listing generation with Gemini View on GitHub Gemini Multimodal Multimodal retail recommendation: using Gemini to recommend items based on images and image reasoning View on GitHub Gemini Multimodal Prompting Sheet Music Analysis with Gemini View on GitHub Gemini Multimodal Analyzing movie posters in BigQuery with Gemini View on GitHub Gemini Langchain Getting Started with LangChain 🦜️🔗 + Gemini API in Vertex AI View on GitHub Agents Gemini Building a Weather Agent with AutoGen and Gemini View on GitHub Gemini Prompting Vertex AI Prompt Optimizer Notebook UI View on GitHub Gemini Prompting Vertex AI Prompt Optimizer - Tool usage View on GitHub Gemini Prompting Vertex AI Prompt Optimizer - Custom metric View on GitHub Gemini Prompting Intro to Vertex AI Prompt Optimizer View on GitHub Gemini Prompting Text Summarization with Generative Models on Vertex AI View on GitHub Gemini Prompting Ideation with Generative Models on Vertex AI View on GitHub Gemini Prompting Chain of Thought & ReAct View on GitHub Gemini Prompting Question Answering with Generative Models on Vertex AI View on GitHub Gemini Prompting Text Classification with Generative Models on Vertex AI View on GitHub Gemini Prompting Text Extraction with Generative Models on Vertex AI View on GitHub Gemini Tuning Supervised Fine Tuning with Gemini 2.0 Flash for Change Detection View on GitHub Gemini Tuning Supervised Fine-Tuning with Gemini 2.0 Flash for Q & A View on GitHub Gemini Tuning Supervised Fine Tuning with Gemini 2.0 Flash for Image Captioning View on GitHub Evaluation Gemini Model garden Use Gen AI Evaluation SDK to Evaluate Models in Vertex AI Studio, Model Garden, and Model Registry View on GitHub Evaluation Gemini Rag Evaluate Generated Answers from RAG using Rapid Evaluation and Dataflow ML with Vertex AI Pipelines View on GitHub Evaluation Gemini Enhancing Quality and Explainability with Vertex AI Evaluation View on GitHub Evaluation Gemini Evaluate and Compare Gen AI Model Settings View on GitHub Evaluation Gemini Bring-Your-Own-Autorater using Custom Metrics View on GitHub Evaluation Gemini Evaluate a Translation Model View on GitHub Evaluation Gemini Compare and Migrate from PaLM to Gemini Model View on GitHub Evaluation Gemini Multimodal Evaluating Multimodal Tasks View on GitHub Evaluation Gemini Langchain Evaluate LangChain View on GitHub Evaluation Gemini Compare Generative AI Models View on GitHub Evaluation Gemini Rag Evaluate Generated Answers from RAG for QA with Gen AI Evaluation Service SDK View on GitHub Evaluation Gemini Customize Model-based Metrics to Evaluate a Gen AI Model View on GitHub Evaluation Gemini Rag Evaluate Generative Model Tool Use View on GitHub Gemini Prompting Rag Security Gen AI and LLM Security - ReAct and RAG Attacks & Mitigations View on GitHub Gemini Security Responsible AI with Gemini API in Vertex AI: Safety Ratings and Thresholds View on GitHub Batch prediction Gemini Monitor Batch Prediction with Gemini API View on GitHub Imagen Multimodal Imagen 3 Customized Images View on GitHub Gemini Imagen Multimodal Create High Quality Visual Assets with Imagen and Gemini View on GitHub Imagen Multimodal Create a Photoshop Document with Image Segmentation on Vertex AI View on GitHub Gemini Imagen Multimodal Enhance Imagen Prompts with Gemini View on GitHub Imagen Multimodal Image Segmentation on Vertex AI View on GitHub Search Vertex AI Search with Filters & Metadata View on GitHub Gemini Search Vertex AI Search - Querying Blended Data Apps and Summarization with Gemini View on GitHub Search Create a Vertex AI Search Datastore and Search Engine View on GitHub Search Building Search Applications with Vertex AI Search View on GitHub Gemini Langchain Rag Search Question Answering Over Documents View on GitHub Gemini Rag Search Bulk Question Answering with Vertex AI Search View on GitHub Embeddings Search Custom Embeddings with Vertex AI Search View on GitHub Chirp Speech Get Started with Chirp 2 - Advanced Features View on GitHub Claude Function calling Model garden Multimodal Function Calling with Claude Models View on GitHub Agents Search Vertex AI Search and Conversation Data Store Status Checker View on GitHub Agents Gemini Building a Research Multi Agent System - a Design Pattern Overview with Gemini 2.0 View on GitHub Code execution Gemini Intro to Generating and Executing Python Code with Gemini 2.0 View on GitHub Agents Evaluation Gemini Evaluating Agents - Evaluate a CrewAI agent with Vertex AI Gen AI Evaluation View on GitHub Agents Evaluation Gemini Langgraph Evaluating Agents - Evaluate a LangGraph agent with Vertex AI Gen AI Evaluation View on GitHub Gemini Live api Multimodal Rag Interactive Loan Application Assistant (Financial Services) View on GitHub Rag Rag engine Search Vertex AI RAG Engine with Vertex AI Search View on GitHub Agent engine Agents Evaluation Evaluate a CrewAI agent on Vertex AI Agent Engine (Customized template) View on GitHub Agent engine Agents Evaluation Langchain Evaluating a LangChain Agent on Vertex AI Agent Engine (Prebuilt template) View on GitHub Agent engine Agents Evaluation Langgraph Evaluate a LangGraph agent on Vertex AI Agent Engine (Customized template) View on GitHub Gemini Search Q&A Chatbot with Vertex AI Search for summarized website results View on GitHub Gemini Getting started with Gemini using Vertex AI in Express Mode View on GitHub Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "View on GitHub Gemini Multimodal Prompting Gemini: An Overview of Multimodal Use Cases How to prompt Gemini with multimodal data (text, documents, images, video, and audio).",
+          "View on GitHub Gemma Hugging face Hugging Face DLCs: Serving Gemma with Text Generation Inference (TGI) on Vertex AI Learn how to deploy Google Gemma from the Hugging Face Hub on Vertex AI using the Hugging Face Deep Learning Container (DLC) for Text Generation Inference (TGI)."
+        ]
+      },
+      {
+        "title": "\"Get information about a context cache \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "GOOGLE CLOUD LOCATION 'global' ; async function listContentCaches ( projectId = GOOGLE CLOUD PROJECT , location = GOOGLE CLOUD LOCATION ) { const client = new GoogleGenAI ({ vertexai : true , project : projectId , location : location , httpOptions : { apiVersion : 'v1' , }, }); const contentCacheList = await client . caches . list (); // Access individual properties of a ContentCache object ( s ) const contentCacheNames = []; for ( const contentCache of contentCacheList . pageInternal ) { console . log ( Cache \\ $ { contentCache . name } \\ for model \\ $ { contentCache . model } \\ ` ); console . log ( Last updated at : $ { contentCache . updateTime } ); console . log ( Expires at : $ { contentCache . expireTime } ); contentCacheNames . push ( contentCache . name ); } console . log ( contentCacheNames ); // Example response : // Cache projects / 111111111111 / locations / us - central1 / cachedContents / 1111111111111111111 for // model projects / 111111111111 / locations / us - central1 / publishers / google / models / gemini - XXX - pro - XXX // Last updated at : 2025 - 02 - 13 14 : 46 : 42.620490 + 00 : 00 // CachedContentUsageMetadata ( audio duration seconds = None , image count = 167 , text count = 153 , total token count = 43130 , video duration seconds = None ) // ... return contentCacheNames ; } REST The following shows how to use REST to list the context caches associated with a Google Cloud project by sending a GET request to the publisher model endpoint.",
+          "Client ( http options = HttpOptions ( api version = \"v1\" )) content cache list = client . caches . list () Access individual properties of a ContentCache object(s) for content cache in content cache list : print ( f \"Cache { content cache . name } for model { content cache . model } \" ) print ( f \"Last updated at: { content cache . update time } \" ) print ( f \"Expires at: { content cache . expire time } \" ) Example response: Cache projects/111111111111/locations/.../cachedContents/1111111111111111111 for model projects/111111111111/locations/.../publishers/google/models/gemini-XXX-pro-XXX Last updated at: 2025-02-13 14:46:42.620490+00:00 CachedContentUsageMetadata(audio duration seconds=None, image count=167, text count=153, total token count=43130, video duration seconds=None) ...",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"cachedContents\": [ { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID 1 \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-05-31T19:04:35.380412Z\", \"updateTime\": \"2024-05-31T19:04:35.380412Z\", \"expireTime\": \"2024-05-31T20:04:35.349680Z\" }, { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID 2 \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-05-30T21:14:39.880235Z\", \"updateTime\": \"2024-05-31T00:21:15.350969Z\", \"expireTime\": \"2024-05-31T01:21:15.348014Z\" }, { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID N \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-05-30T21:14:39.880235Z\", \"updateTime\": \"2024-05-31T00:21:15.350969Z\", \"expireTime\": \"2024-05-31T01:21:15.348014Z\" } ] } Example curl command LOCATION = \"us-central1\" PROJECT ID = \" PROJECT ID \" curl \\ -X GET \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents Get information about a context cache To get information about one context cache, you need its cache ID, the Google Cloud project ID with which the context cache is associated, and the region where the request to create the context cache was processed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "image.png"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo"
+      ]
+    }
+  ]
+}

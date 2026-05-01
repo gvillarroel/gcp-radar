@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub customer-managed encryption keys (CMEK)",
+  "feature_slug": "pub-sub-customer-managed-encryption-keys-cmek",
+  "summary": "Pub/Sub supports customer-managed encryption keys for encrypting data with Cloud KMS keys; Pub/Sub supports customer-managed encryption keys for encrypting data with Cloud KMS keys.",
+  "extended_definition": "Pub/Sub supports customer-managed encryption keys for encrypting data with Cloud KMS keys; Pub/Sub supports customer-managed encryption keys for encrypting data with Cloud KMS keys.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+      "https://docs.cloud.google.com/pubsub/docs/create-topic",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/topic-properties"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a topic \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-topic",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pub/Sub encrypts messages with Google-owned and Google-managed encryption keys by default, so choosing this option maintains the default behavior.",
+          "Pub/Sub encrypts messages with Google-owned and Google-managed encryption keys by default.",
+          "Cloud KMS key Specifies if the topic is encrypted with a customer-managed encryption key (CMEK)."
+        ]
+      },
+      {
+        "title": "\"Choose Pub/Sub or Cloud Managed Service for Apache Kafka \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "source_id": "site-docs-root-2",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Pub/Sub Managed Service for Apache Kafka Ease of use Easier to set up and maintain Requires more operational effort Cost model Pay-for-use Pay-for-capacity for compute Pay-for-use for networking and storage.",
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Choose Pub/Sub or Cloud Managed Service for Apache Kafka Stay organized with collections Save and categorize content based on your preferences.",
+          "Integration with Cloud products Both Google Managed Service for Apache Kafka and Pub/Sub integrates with various Google Cloud services like Dataflow, BigQuery, Cloud Storage, and more."
+        ]
+      },
+      {
+        "title": "Topic properties \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/topic-properties",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pub/Sub encrypts messages with Google-owned and Google-managed encryption keys by default.",
+          "Default = Not enabled Minimum value = 10 minutes Maximum value = 31 days Use a customer-managed encryption key (CMEK) Specifies if the topic is encrypted with a CMEK.",
+          "Instead, Cloud KMS encrypts the Data Encryption Keys (DEKs) that Pub/Sub creates for each topic."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "To transform a message return a map with the following keys: - (required) 'data' : {string} - (optional) 'attributes' : {Object<string, string>} Returning empty attributes will remove all attributes from the message. @param {(Object<string, (string Object<string, string>)>} Pub/Sub message.",
+          "To transform a message return a map with the following keys: - (required) 'data' : {string} - (optional) 'attributes' : {Object<string, string>} Returning empty attributes will remove all attributes from the message. @param {(Object<string, (string Object<string, string>)>} Pub/Sub message.",
+          "Keys: - (required) 'data' : {string} - (required) 'attributes' : {Object<string, string>} @param {Object<string, any>} metadata - Pub/Sub message metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-topic",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/topic-properties",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-topic",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/topic-properties",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-topic",
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/topic-properties",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    }
+  ]
+}

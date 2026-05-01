@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.342Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Task-level conditional and default failure policies",
+  "feature_slug": "task-level-conditional-and-default-failure-policies",
+  "summary": "Tasks can now be configured with multiple ordered conditional failure policies and a fallback default policy based on error codes or execution variables.",
+  "extended_definition": "Tasks can now be configured with multiple ordered conditional failure policies and a fallback default policy based on error codes or execution variables.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connectors task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "These variables are configurable and are accessible as inputs to the current task, as outputs to subsequent tasks, or as conditionals in the current integration.",
+          "To configure the Task Input or Task Output variables, click the respective variable to open the Configure Variable pane and perform the following steps: Enter the variable value in the Default Value field. (Optional) Select Use as an input to integration or Use as an output to integration .",
+          "To view the updated schema in your existing connector tasks, follow these steps: In Integration Connectors, open the Connection details page of the connection, and then click Refresh connection schema ."
+        ]
+      },
+      {
+        "title": "Cloud Function task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "source_id": "site-docs-root-2",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Because this dependency is external to Application Integration, all executions of active integrations that fail because of the failure in the Cloud Function task are excluded from the Application Integration Service Level Agreement (SLA) terms and conditions.",
+          "If neither OIDC ID profile nor user-managed service account is configured, then the default service account ( service- PROJECT NUMBER @gcp-sa-integrations.iam.gserviceaccount.com ) is used to call the Cloud Function task.",
+          "Before you begin Ensure that you perform the following tasks in your Google Cloud project before configuring the Cloud Function task."
+        ]
+      },
+      {
+        "title": "Data Transformer task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In addition, you can also use the supported transformations to transform your data into meaningful variables and formats to make them accessible to other tasks or triggers in your integration.",
+          "Unlike variables, constants are not accessible to other tasks or triggers in your integration and are only limited to be used in the Data Transformation task where these are created.",
+          "In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+      ]
+    }
+  ]
+}

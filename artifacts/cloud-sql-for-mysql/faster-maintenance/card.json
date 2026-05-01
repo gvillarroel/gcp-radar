@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Faster maintenance",
+  "feature_slug": "faster-maintenance",
+  "summary": "Cloud SQL maintenance now typically causes connectivity drops of less than 60 seconds on average.",
+  "extended_definition": "Cloud SQL maintenance now typically causes connectivity drops of less than 60 seconds on average.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/error-messages",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+      "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Orphan tables Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances External primary External replica Flags High availability Import and export Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.",
+          "Network connectivity issues with private IP instances You might experience some of the following issues during integration setup: Slow operations to create Microsoft Entra ID logins Unable to create Microsoft Entra ID logins Unable to connect to the instance using Microsoft Entra ID authentication For more information on how to help address these issues, see Troubleshooting Microsoft Entra ID integration .",
+          "Authorized Networks are configured for public IP addresses in the Connectivity section of the Google Cloud console, and cloning is not permitted due to security considerations ."
+        ]
+      },
+      {
+        "title": "Cloud SQL error messages \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/error-messages",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After expanding an existing IP range, update the vpc peering with following command: gcloud services vpc-peerings update \\ --service = servicenetworking.googleapis.com --ranges = RESERVED RANGE NAME \\ --network = VPC NETWORK \\ --project = PROJECT ID \\ --force Error message Troubleshooting (gcloud.sql.connect) It seems your client does not have ipv6 connectivity and the database instance does not have an ipv4 address.",
+          "There can be many causes because authorization occurs at many levels: At the database level, the database user must exist and its password match At the project level, the user might not have the correct IAM permissions, including the serviceusage.services.use or cloudsql.instances.connect permissions.",
+          "Authorized Networks are configured for public IP addresses in the Connectivity section of the Google Cloud console, and cloning isn't permitted due to security considerations ."
+        ]
+      },
+      {
+        "title": "Configure public IP \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ?fields=settings\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type 4\", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [ { \"value\": \" ip-address1 \", \"name\": \" ip-address-name1 \", \"kind\": \"sql#aclEntry\" }, { \"value\": \" ip-address2 \", \"name\": \" ip-address-name2 \", \"kind\": \"sql#aclEntry\" } ], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } Update the instance, by including all the addresses you want to keep and dropping off any addresses you want to remove: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 The authorized IP address or network range to remove HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { \"settings\": { \"ipConfiguration\": { \"authorizedNetworks\": [{\"value\": \" network range 1 \"}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ?fields=settings\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type 4\", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [ { \"value\": \" ip-address1 \", \"name\": \" ip-address-name1 \", \"kind\": \"sql#aclEntry\" }, { \"value\": \" ip-address2 \", \"name\": \" ip-address-name2 \", \"kind\": \"sql#aclEntry\" } ], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } Update the instance, by including all the addresses you want to keep and dropping off any addresses you want to remove: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 The authorized IP address or network range to remove HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id Request JSON body: { \"settings\": { \"ipConfiguration\": { \"authorizedNetworks\": [{\"value\": \" network range 1 \"}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ?fields=settings\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [ { \"value\": \" ip-address \", \"name\": \" ip-address-name \", \"kind\": \"sql#aclEntry\" } ], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } REST v1beta4 Show all existing authorized addresses by describing the instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID ip-address1 : The CIDR form of the first IP address ip-address-name1 : The name of the first IP address ip-address2 : The CIDR form of the second IP address ip-address-name2 : The name of the second IP address machine-type The instance machine type zone The instance zone HTTP method and URL: GET https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ?fields=settings To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.instances.connect",
+      "gcloud.sql.connect",
+      "servicenetworking.googleapis.com",
+      "serviceusage.services.use",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip"
+      ]
+    }
+  ]
+}

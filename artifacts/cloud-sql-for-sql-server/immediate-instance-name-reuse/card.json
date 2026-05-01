@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.596Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Immediate instance name reuse",
+  "feature_slug": "immediate-instance-name-reuse",
+  "summary": "Cloud SQL allows an instance name to be reused immediately after the instance is deleted.",
+  "extended_definition": "Cloud SQL allows an instance name to be reused immediately after the instance is deleted.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage backups for deleted instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Since the name of a deleted instance can be reused after its been deleted, we recommend using the instance deletion time field to differentiate which instance a particular backup belongs to.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"status\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"final backup\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } Update a retained or final backup after instance deletion After you delete an instance, you can update the settings for any retained or final backups associated with that instance that are stored at the project level.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /backups/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"status\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"final backup\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } REST v1beta4 Get a list of all retained backs Use this example to get a list of all retained and final backups associated Google Cloud project."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } To see how the underlying REST API request is constructed for this task, see the APIs Explorer on the instances:insert page .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } REST v1beta4 1.",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"backupConfiguration\": { \"enabled\": true }, \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" } }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL Admin API \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "At the command line, provide the path to the file, preceded by the @ character, as the --data parameter: --data @<path-to-file>/<filename> For example, to create a database user, you could create a file named data.json with the following content: {\"host\": \"%\", \"name\": \"user1\", \"password\": \"abc123\"} Then you would use the following cURL command at the command line: curl --header \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ --header 'Content-Type: application/json' \\ --data @./data.json \\ -X POST \\ https://www.googleapis.com/sql/v1beta4/projects/myProject/instances/myInstance/users Work with long-running API calls Some API calls, such as object creation, can take some time to complete.",
+          "Because the API is asynchronous, the call returns immediately, even if the operation is still in progress.",
+          "You are also using the Cloud SQL Admin API, indirectly, when you use any of the following ways of administering instances: gcloud CLI , which contains a command-line interface you can use to work with your instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.json",
+      "example.com",
+      "request.json",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+      ]
+    }
+  ]
+}

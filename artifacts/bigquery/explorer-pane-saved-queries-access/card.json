@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Explorer pane saved queries access",
+  "feature_slug": "explorer-pane-saved-queries-access",
+  "summary": "Saved queries can be accessed directly from the Explorer pane under a project.",
+  "extended_definition": "Saved queries can be accessed directly from the Explorer pane under a project.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+      "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Files tab of the left pane ( Preview ): use the Files tab to organize code assets such as saved queries and notebooks by using folders.",
+          "The Studio page has the following components: Explorer tab of the left pane : use the Explorer tab to work with tables, views, routines, and other BigQuery resources, and view your job history .",
+          "Go to Studio Alternatively, enter the following URL in your browser: https://console.cloud.google.com/bigquery The Studio page opens in your most recently accessed project."
+        ]
+      },
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Interpret the results In the Logs Explorer result pane, expand the entry you're interested in, and then click Expand nested fields to show the whole message.",
+          "Go to the BigQuery page In the left pane, click explore Explorer : If you don't see the left pane, click last page Expand left pane to open the pane.",
+          "In the Explorer pane, expand your project, click Datasets , and then select a dataset."
+        ]
+      },
+      {
+        "title": "Using Connected Sheets \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "source_id": "site-docs-reference-5",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to BigQuery In the left pane, click explore Explorer : In the Explorer pane, expand your project and click Queries .",
+          "If you have the required allow permissions and meet the VPC Service Controls access restrictions, you can configure the VPC Service Controls perimeter to allow queries issued through Connected Sheets.",
+          "In the Explorer pane, expand your project, click Datasets , and then click the dataset that contains the table that you want to open in Google Sheets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/connected-sheets",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.714Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "Export file format validation and normalization",
+  "feature_slug": "export-file-format-validation-and-normalization",
+  "summary": "Ee.batch.Export methods validate and normalize file formats, including support for synonyms such as JPG and JPEG.",
+  "extended_definition": "Ee.batch.Export methods validate and normalize file formats, including support for synonyms such as JPG and JPEG.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides",
+      "https://developers.google.com/earth-engine/guides/command_line"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following settings can be configured: max concurrent exports , to control the project's maximum batch task parallelism requires the correct permissions For example, to configure a project to only ever allow 10 tasks to run in parallel for the given project: earthengine alpha project config set --max concurrent exports=10 The output displays the updated project configuration, identical to what get returns.",
+          "Before using this command, be sure to set a project using set project . get To view a project configuration, use the get sub-command: earthengine alpha project config get If you have permission to view the project's batch task settings , the output contains: maxConcurrentExports : a number indicating the maximum number of batch tasks that can run in parallel across all users for the given project.",
+          "Additionally, if you have permission to view the plan configuration , the output contains: planMaxConcurrentExports , a number indicating the maximum number of batch tasks that can run in parallel across all users and projects that use the billing account. set To update the project's configuration, use the set sub-command."
+        ]
+      },
+      {
+        "title": "About Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When ready, users can export raster and vector results to Google Cloud Storage, BigQuery, or Google Drive, as well as download data locally in formats compatible with pandas, NumPy, and Xarray.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-11-20 UTC.\"],[],[\"Google Earth Engine enables scalable geospatial analysis by combining a vast data catalog with planetary-scale computation.",
+          "Earth Engine offers both interactive and batch processing modes, as well as Python and JavaScript development environments to support different analytical and development needs."
+        ]
+      },
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-21 UTC.\"],[],[\"This document details how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs).",
+          "The following gdal translate command will convert a raster into a band-interleaved, zstd-compressed, Cloud Optimized GeoTIFF that will perform well in Earth Engine: gdal translate in .tif out.tif \\ -co COPY SRC OVERVIEWS = YES \\ -co TILED = YES \\ -co BLOCKXSIZE = 512 \\ -co BLOCKYSIZE = 512 \\ -co COMPRESS = ZSTD \\ -co ZSTD LEVEL = 22 \\ -co INTERLEAVE = BAND \\ -co NUM THREADS = ALL CPUS It may be possible to reduce the output file size further by specifying a predictor ( -co PREDICTOR=2 for integer data types and -co PREDICTOR=3 for floating point data types).",
+          "For users with GDAL >= 3.11, the COG driver can produce files without having to worry about creating and preserving overviews. gdal translate in .tif out.tif \\ -of COG \\ -co OVERVIEWS = IGNORE EXISTING \\ -co COMPRESS = ZSTD \\ -co LEVEL = 22 \\ -co PREDICTOR = 2 \\ -co INTERLEAVE = BAND \\ -co NUM THREADS = ALL CPUS \\ Creating Cloud GeoTiff-Backed Assets using the REST API Note: The REST API contains new and advanced features that may not be suitable for all users."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "batch.Export",
+      "developers.google.com",
+      "ee.Image.loadGeoTIFF",
+      "out.tif"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    }
+  ]
+}

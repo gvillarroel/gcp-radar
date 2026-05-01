@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.471Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN Signed URLs",
+  "feature_slug": "cloud-cdn-signed-urls",
+  "summary": "Cloud CDN Signed URLs support is generally available for authorization of cached responses; Cloud CDN Signed URLs support is available in beta for authorized access to cached content.",
+  "extended_definition": "Cloud CDN Signed URLs support is generally available for authorization of cached responses; Cloud CDN Signed URLs support is available in beta for authorized access to cached content.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+      "https://docs.cloud.google.com/cdn/docs/using-signed-urls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use signed URLs \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ComputeHash ( buffer ); } } Java / Samples to create a signed URL for a Cloud CDN endpoint / public class SignedUrls { / Creates a signed URL for a Cloud CDN endpoint with the given key URL must start with http:// or https://, and must contain a forward slash (/) after the hostname. @param url the Cloud CDN endpoint to sign @param key url signing key uploaded to the backend service/bucket, as a 16-byte array @param keyName the name of the signing key added to the back end bucket or service @param expirationTime the date that the signed URL expires @return a properly formatted signed URL @throws InvalidKeyException when there is an error generating the signature for the input key @throws NoSuchAlgorithmException when HmacSHA1 algorithm is not available in the environment / public static String signUrl ( String url , byte [] key , String keyName , Date expirationTime ) throws InvalidKeyException , NoSuchAlgorithmException { final long unixTime = expirationTime . getTime () / 1000 ; String urlToSign = url + ( url . contains ( \"?\" ) ? \"&\" : \"?\" ) + \"Expires=\" + unixTime + \"&KeyName=\" + keyName ; String encoded = SignedUrls . getSignature ( key , urlToSign ); return urlToSign + \"&Signature=\" + encoded ; } public static String getSignature ( byte [] privateKey , String input ) throws InvalidKeyException , NoSuchAlgorithmException { final String algorithm = \"HmacSHA1\" ; final int offset = 0 ; Key key = new SecretKeySpec ( privateKey , offset , privateKey . length , algorithm ); Mac mac = Mac . getInstance ( algorithm ); mac . init ( key ); return Base64 . getUrlEncoder (). encodeToString ( mac . doFinal ( input . getBytes ())); } Python import argparse import base64 from datetime import datetime , timezone import hashlib import hmac from urllib.parse import parse qs , urlsplit def sign url ( url : str , key name : str , base64 key : str , expiration time : datetime , ) - > str : \"\"\"Gets the Signed URL string for the specified URL and configuration.",
+          "The maximum time that responses can be cached without revalidation is set by the signed-url-cache-max-age flag, which defaults to one hour and can be modified as shown here.",
+          "Responses to signed and unsigned requests are cached separately, so a successful response to a valid signed request is never used to serve an unsigned request."
+        ]
+      },
+      {
+        "title": "Use signed cookies \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "source_id": "site-docs-root-2",
+        "final_score": 174,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The maximum time that responses can be cached without revalidation is set by the signed-url-cache-max-age flag, which defaults to one hour and can be modified as shown here.",
+          "Responses to signed and unsigned requests are cached separately, so a successful response to a valid signed request is never used to serve an unsigned request.",
+          "To set the maximum cache time for a backend service or backend bucket, run one of the following commands: gcloud compute backend-services update BACKEND NAME \\ --signed-url-cache-max-age MAX AGE gcloud compute backend-buckets update BACKEND NAME \\ --signed-url-cache-max-age MAX AGE List signed request key names To list the keys on a backend service or backend bucket, run one of the following commands: gcloud compute backend-services describe BACKEND NAME gcloud compute backend-buckets describe BACKEND NAME Delete signed request keys When URLs signed by a particular key should no longer be honored, run one of the following commands to delete that key from the backend service or backend bucket: gcloud compute backend-services \\ delete-signed-url-key BACKEND NAME --key-name KEY NAME gcloud compute backend-buckets \\ delete-signed-url-key BACKEND NAME --key-name KEY NAME Creating a policy Signed cookie policies are a series of key-value pairs (delimited by the : character), similar to the query parameters used in a signed URL."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Feature GKE ingress through backend configuration GKE gateway using GCPHTTPFilter Basic Caching (Modes/TTLs) Cache Key Customization Negative Caching Serve While Stale Dynamic Compression Signed URLs & Cookies Request Coalescing Cacheable content Cloud CDN caches responses that meet all of the requirements in this section.",
+          "Before you set the cache mode to FORCE CACHE ALL , consider the following behaviors: For signed URLs or signed cookies , FORCE CACHE ALL overrides the maximum age specified through the Cache entry maximum age setting in the Google Cloud console or the gcloud --signed-url-cache-max-age option.",
+          "As a result, all successful Cloud Storage responses are cached according to Cloud Storage default values, unless you explicitly adjust the cache control metadata for objects in Cloud Storage or use FORCE CACHE ALL mode to override the values sent by Cloud Storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "example.com",
+      "urllib.parse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    }
+  ]
+}

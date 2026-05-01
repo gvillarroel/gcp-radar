@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logs Dashboard",
+  "feature_slug": "logs-dashboard",
+  "summary": "Logs Dashboard provides a high-level overview of the health of systems running within a project.",
+  "extended_definition": "Logs Dashboard provides a high-level overview of the health of systems running within a project.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch",
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Fields pane The Fields pane offers a high-level summary of logs data and provides an efficient way to refine a query.",
+          "This document provides you with an overview of the Logs Explorer in the Google Cloud console, which you can use to retrieve, view, and analyze log entries that are stored in log buckets .",
+          "Highlight search terms, monitor and download your logs There are various options to analyze your logs data by selecting the Actions menu of the Query results toolbar: ink highlighter Highlight in results : Enter text to be highlighted in your query results. add chart Create metric : Set up a log-based metric . call merge Create sink : Create a log sink that auto-populates the sink's inclusion filter with the current query expression. add alert Create log alert : Set up a log-based alerting policy . edit Manage alerts : View and manage alerting policies. download Download : Download your logs in CSV or JSON format."
+        ]
+      },
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "This document provides a conceptual overview of Cloud Audit Logs.",
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "Types of audit logs Cloud Audit Logs provides the following audit logs for each Google Cloud project, folder, and organization: Admin Activity audit logs Data Access audit logs System Event audit logs Policy Denied audit logs Note: Log entries written by Cloud Audit Logs are immutable."
+        ]
+      },
+      {
+        "title": "Elasticsearch 7.9+ \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch",
+        "source_id": "site-docs-root-2",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The elasticsearch json logs contain the following fields in the LogEntry : Field Type Description jsonPayload.cluster string The cluster emitting the log record jsonPayload.cluster.name string The name of the cluster emitting the log record jsonPayload.cluster.uuid string The UUID of the cluster emitting the log record jsonPayload.component string The component of Elasticsearch that emitted the log jsonPayload.level string Log entry level jsonPayload.message string Log message jsonPayload.node string The node emitting the log record jsonPayload.node.name string The name of the node emitting the log record jsonPayload.node.uuid string The UUID of the node emitting the log record jsonPayload.type string The type of log, indicating which log the record came from (e.g. server indicates this LogEntry came from the server log) severity string ( LogSeverity ) Log entry level (translated).",
+          "The elasticsearch gc logs contain the following fields in the LogEntry : Field Type Description jsonPayload.gc run number The run of the garbage collector jsonPayload.message string Log message jsonPayload.type string The type of the log record severity string ( LogSeverity ) Log entry level (translated).",
+          "For logs, install version 2.9.0 or higher."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avg.15m",
+      "avg.1m",
+      "avg.5m",
+      "cloudaudit.googleapis.com",
+      "cluster.name",
+      "cluster.uuid",
+      "e.g",
+      "elasticsearch.breaker.memory.estimated",
+      "elasticsearch.breaker.memory.limit",
+      "elasticsearch.breaker.tripped",
+      "elasticsearch.cluster.data",
+      "elasticsearch.cluster.health",
+      "elasticsearch.cluster.in",
+      "elasticsearch.cluster.nodes",
+      "elasticsearch.cluster.pending",
+      "elasticsearch.cluster.published",
+      "elasticsearch.cluster.shards",
+      "elasticsearch.cluster.state",
+      "elasticsearch.indexing",
+      "elasticsearch.memory.indexing",
+      "elasticsearch.node.cache.count",
+      "elasticsearch.node.cache.evictions",
+      "elasticsearch.node.cache.memory.usage",
+      "elasticsearch.node.cluster.connections",
+      "elasticsearch.node.cluster.io",
+      "elasticsearch.node.disk.io.read",
+      "elasticsearch.node.disk.io.write",
+      "elasticsearch.node.documents",
+      "elasticsearch.node.fs.disk.available",
+      "elasticsearch.node.fs.disk.free",
+      "elasticsearch.node.fs.disk.total",
+      "elasticsearch.node.http.connections",
+      "elasticsearch.node.ingest.documents",
+      "elasticsearch.node.ingest.documents.current",
+      "elasticsearch.node.ingest.operations.failed",
+      "elasticsearch.node.open",
+      "elasticsearch.node.operations.completed",
+      "elasticsearch.node.operations.time",
+      "elasticsearch.node.pipeline.ingest.documents.current",
+      "elasticsearch.node.pipeline.ingest.documents.preprocessed",
+      "elasticsearch.node.pipeline.ingest.operations.failed",
+      "elasticsearch.node.script.cache",
+      "elasticsearch.node.script.compilation",
+      "elasticsearch.node.script.compilations",
+      "elasticsearch.node.shards.data",
+      "elasticsearch.node.shards.reserved.size",
+      "elasticsearch.node.shards.size",
+      "elasticsearch.node.thread",
+      "elasticsearch.node.translog.operations",
+      "elasticsearch.node.translog.size",
+      "elasticsearch.node.translog.uncommitted.size",
+      "elasticsearch.os.cpu.load",
+      "elasticsearch.os.cpu.usage",
+      "elasticsearch.os.memory",
+      "node.name",
+      "node.uuid",
+      "pool.tasks.finished",
+      "pool.tasks.queued",
+      "pool.threads",
+      "pressure.memory.limit",
+      "pressure.memory.total.primary",
+      "pressure.memory.total.replica",
+      "set.size",
+      "states.differences",
+      "states.full",
+      "update.count",
+      "update.time",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch"
+      ]
+    }
+  ]
+}

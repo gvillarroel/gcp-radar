@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI regional expansion",
+  "feature_slug": "vertex-ai-regional-expansion",
+  "summary": "Vertex AI added support for additional regions, including us-west3 (Salt Lake City), europe-central2 (Warsaw), asia-southeast2 (Jakarta), and me-west1 (Tel Aviv).",
+  "extended_definition": "Vertex AI added support for additional regions, including us-west3 (Salt Lake City), europe-central2 (Warsaw), asia-southeast2 (Jakarta), and me-west1 (Tel Aviv).",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/general/locations",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required except for Large Model Deploy use cases. prediction resources can be only one of the following: dedicatedResources object ( DedicatedResources ) A description of resources that are dedicated to the DeployedModel, and that need a higher degree of manual configuration. automaticResources object ( AutomaticResources ) A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration. sharedResources string The resource name of the shared DeploymentResourcePool to deploy on.",
+          "All type URL strings must be legal URI references with the additional restriction (for the text format) that the content of the reference must consist only of alphanumeric characters, percent-encoded escapes, and characters in the following set (not including the outer backticks): /-. !$&() +,;= .",
+          "Supported metrics: For Online Prediction: aiplatform.googleapis.com/prediction/online/accelerator/duty cycle aiplatform.googleapis.com/prediction/online/cpu/utilization aiplatform.googleapis.com/prediction/online/request count pubsub.googleapis.com/subscription/num undelivered messages prometheus.googleapis.com/vertex dcgm fi dev gpu util prometheus.googleapis.com/vertex vllm gpu cache usage perc prometheus.googleapis.com/vertex vllm num requests waiting target integer The target resource utilization in percentage (1% - 100%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change."
+        ]
+      },
+      {
+        "title": "Vertex AI locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/general/locations",
+        "source_id": "site-api-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud also provides additional regions for products other than Vertex AI.",
+          "Ghislain, Belgium, Europe AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Neural Architecture Search Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata europe-west2 Low CO 2 London, England, Europe AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Data labeling Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata europe-west3 Frankfurt, Germany, Europe AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Data labeling Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata europe-west4 Low CO 2 Eemshaven, Netherlands, Europe AutoML for image data AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Data labeling Model Monitoring Model Registry Neural Architecture Search Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata europe-west6 Low CO 2 Zürich, Switzerland, Europe AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata europe-west8 Milan, Italy, Europe AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Model Registry Vector Search Vertex AI Feature Store Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex ML Metadata europe-west9 Low CO 2 Paris, France, Europe AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Vector Search Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata europe-west12 Turin, Italy, Europe AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Model Registry Ray on Vertex AI Vertex AI Feature Store Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata me-central1 Doha, Qatar, Middle East Custom model batch inference Custom model online inference Custom model training Model Registry Ray on Vertex AI Vertex AI Feature Store Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata me-central2 Damman, Saudi Arabia, Middle East Custom model batch inference Custom model online inference Custom model training Model Registry Ray on Vertex AI Vertex AI Feature Store Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata me-west1 Tel Aviv, Israel, Middle East AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata northamerica-northeast1 Low CO 2 Montréal, Québec, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata northamerica-northeast2 Low CO 2 Toronto, Ontario, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata southamerica-east1 Low CO 2 Osasco, São Paulo, Brazil, South America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata southamerica-west1 Low CO 2 Santiago, Chile, South America AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Model Registry Vector Search Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex ML Metadata us-central1 Low CO 2 Council Bluffs, Iowa, North America AutoML for image data AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Data labeling Model Monitoring Model Registry Neural Architecture Search Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-east1 Moncks Corner, South Carolina, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Neural Architecture Search Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-east4 Ashburn, Virginia, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Neural Architecture Search Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-east5 Columbus, Ohio, North America Custom model batch inference Custom model online inference Custom model training Model Registry Ray on Vertex AI Vertex AI Feature Store Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-south1 Low CO 2 Dallas, Texas, North America AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-west1 Low CO 2 The Dalles, Oregon, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Neural Architecture Search Ray on Vertex AI Vector Search Vertex AI Agent Engine Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-west2 Los Angeles, California, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-west3 Salt Lake City, Utah, North America AutoML for tabular data AutoML Forecasting Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata us-west4 Las Vegas, Nevada, North America AutoML for tabular data Custom model batch inference Custom model online inference Custom model training Model Monitoring Model Registry Ray on Vertex AI Vector Search Vertex AI Experiments Vertex AI Feature Store (Legacy) Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex Explainable AI Vertex ML Metadata Cells marked with asterisks represent regions where the service is available through the Vertex AI API but not in the Google Cloud console.",
+          "Ghislain, Belgium, Europe europe-west1-b europe-west1-c europe-west1-d europe-west2 Low CO 2 London, England, Europe europe-west2-a europe-west2-b europe-west2-c europe-west3 Frankfurt, Germany, Europe europe-west3-a europe-west3-b europe-west3-c europe-west4 † Low CO 2 Eemshaven, Netherlands, Europe europe-west4-a europe-west4-b europe-west4-c europe-west6 Low CO 2 Zürich, Switzerland, Europe europe-west6-a europe-west6-b europe-west6-c europe-west12 Turin, Italy, Europe europe-west12-a europe-west12-b europe-west12-c me-central1 Doha, Qatar, Middle East me-central1-a me-central1-b me-central1-c me-central2 Dammam, Saudi Arabia, Middle East me-central2-a me-central2-b me-central2-c me-west1 Tel Aviv, Israel, Middle East me-west1-a me-west1-b me-west1-c northamerica-northeast1 Low CO 2 Montréal, Québec, North America northamerica-northeast1-a northamerica-northeast1-b northamerica-northeast1-c northamerica-northeast2 Low CO 2 Toronto, Ontario, North America northamerica-northeast2-a northamerica-northeast2-b northamerica-northeast2-c southamerica-east1 Low CO 2 Osasco, São Paulo, Brazil, South America southamerica-east1-a southamerica-east1-b southamerica-east1-c us-central1 Low CO 2 Council Bluffs, Iowa, North America us-central1-a us-central1-b us-central1-c us-east1 Moncks Corner, South Carolina, North America us-east1-b us-east1-c us-east1-d us-east4 Ashburn, Virginia, North America us-east4-a us-east4-b us-east4-c us-east5 Columbus, Ohio, North America us-east5-a us-east5-b us-east5-c us-south1 Low CO 2 Dallas, Texas, North America us-south1-a us-south1-b us-south1-c us-west1 Low CO 2 The Dalles, Oregon, North America us-west1-a us-west1-b us-west1-c us-west2 Los Angeles, California, North America us-west2-a us-west2-b us-west2-c us-west3 Salt Lake City, Utah, North America us-west3-a us-west3-b us-west3-c us-west4 Las Vegas, Nevada, North America us-west4-a us-west4-b us-west4-c Regions marked with asterisks don't support running or scheduling notebooks by using the Vertex AI Workbench executor . † Regions marked with daggers don't support the ability to schedule a notebook run, but all other abilities of the Vertex AI Workbench executor are supported."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "All type URL strings must be legal URI references with the additional restriction (for the text format) that the content of the reference must consist only of alphanumeric characters, percent-encoded escapes, and characters in the following set (not including the outer backticks): /-. !$&() +,;= .",
+          "All type URL strings must be legal URI references with the additional restriction (for the text format) that the content of the reference must consist only of alphanumeric characters, percent-encoded escapes, and characters in the following set (not including the outer backticks): /-. !$&() +,;= .",
+          "The prefix is arbitrary and Protobuf implementations are expected to simply strip off everything up to and including the last / to identify the type. type.googleapis.com/ is a common default prefix that some legacy implementations require."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "prometheus.googleapis.com",
+      "pubsub.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/locations",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/locations",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/locations",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/locations",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule"
+      ]
+    }
+  ]
+}

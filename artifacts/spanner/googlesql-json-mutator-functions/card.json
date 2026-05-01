@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "GoogleSQL JSON mutator functions",
+  "feature_slug": "googlesql-json-mutator-functions",
+  "summary": "Spanner now supports GoogleSQL JSON mutator functions, including JSON_ARRAY_APPEND, JSON_ARRAY_INSERT, JSON_REMOVE, JSON_SET, and JSON_STRIP_NULLS.",
+  "extended_definition": "Spanner now supports GoogleSQL JSON mutator functions, including JSON_ARRAY_APPEND, JSON_ARRAY_INSERT, JSON_REMOVE, JSON_SET, and JSON_STRIP_NULLS.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+      "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+      "https://docs.cloud.google.com/spanner/docs/information-schema"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "All other principals can see only privileges granted on change stream read functions to the current database role and to roles of which the current database role is a member, not including public .",
+          "ROUTINE PRIVILEGES This row-filtered table lists all fine-grained access control privileges granted on all change stream read functions to any database role, including public .",
+          "ROLE ROUTINE GRANTS This row-filtered table lists the EXECUTE privileges granted on all change stream read functions to any database role, including public ."
+        ]
+      },
+      {
+        "title": "\"Change stream partitions, records, and queries \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "GoogleSQL SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:00:01Z\" , end timestamp = > NULL , partition token = > \"child token 1\" , heartbeat milliseconds = > 10000 ); SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:00:01Z\" , end timestamp = > NULL , partition token = > \"child token 2\" , heartbeat milliseconds = > 10000 ); SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:00:01Z\" , end timestamp = > NULL , partition token = > \"child token 3\" , heartbeat milliseconds = > 10000 ); PostgreSQL SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:00:01Z' , NULL , 'child token 1' , 10000 , NULL ); SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:00:01Z' , NULL , 'child token 2' , 10000 , NULL ); SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:00:01Z' , NULL , 'child token 3' , 10000 , NULL ); The query on child token 2 finishes after returning another child partition record.",
+          "The query workflow design should appoint one parent to wait and schedule the query on child token 4 . child par t i t io ns record : { \"record type\" : \"child partitions\" , \"start timestamp\" : \"2022-05-01T09:30:15Z\" , \"record sequence\" : \"1000012389\" , \"child partitions\" : [ { \"token\" : \"child token 4\" , \"parent partition tokens\" : [ \"child token 2\" , \"child token 3\" ], } ], } GoogleSQL SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:30:15Z\" , end timestamp = > NULL , partition token = > \"child token 4\" , heartbeat milliseconds = > 10000 ); PostgreSQL SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:30:15Z' , NULL , 'child token 4' , 10000 , NULL ); Find examples of handling and parsing change stream records in the Apache Beam SpannerIO Dataflow connector on GitHub .",
+          "Java private static final String SINGERS NAME STREAM QUERY TEMPLATE = \"SELECT FROM \\\"spanner\\\".\\\"read json SingersNameStream\\\"\" + \"($1, $2, $3, $4, null)\" ; // Helper method to conveniently create change stream query texts and // bind parameters. public static Statement getChangeStreamQuery ( String partitionToken , Timestamp startTimestamp , Timestamp endTimestamp , long heartbeatMillis ) { return Statement . newBuilder ( SINGERS NAME STREAM QUERY TEMPLATE ) . bind ( \"p1\" ) . to ( startTimestamp ) . bind ( \"p2\" ) . to ( endTimestamp ) . bind ( \"p3\" ) . to ( partitionToken ) . bind ( \"p4\" ) . to ( heartbeatMillis ) . build (); } Change streams record format GoogleSQL The change streams read function returns a single ChangeRecord column of type ARRAY<STRUCT<...>> ."
+        ]
+      },
+      {
+        "title": "Spanner remote functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function",
+        "source_id": "site-docs-root",
+        "final_score": 85,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "MAX LOSSLESS = 9007199254740992 @functions framework . http def batch add ( request ): try : return value = [] request json = request . get json () calls = request json [ 'calls' ] for call in calls : return value . append ( sum ([ int ( x ) if isinstance ( x , str ) else x for x in call if x is not None ])) replies = [ str ( x ) if x > MAX LOSSLESS or x < - MAX LOSSLESS else x for x in return value ] return json = jsonify ( { \"replies\" : replies } ) return return json except Exception as e : return jsonify ( { \"errorMessage\" : str ( e ) } ), 400 Assuming that the function is deployed in the project PROJECT ID in region us-east1 as the function name remote add , it can be accessed using the endpoint https://us-east1- PROJECT ID .cloudfunctions.net/remote add .",
+          "Supported types Remote functions support the following data types as argument or return types: ARRAY (of any of the following supported types) BOOLEAN BYTES DATE JSON INTEGER NUMERIC STRING TIMESTAMP Limitations You cannot create table-valued remote functions.",
+          "In case of overflow, it returns the error as part of the response. \"\"\" import functions framework from flask import jsonify Max INT64 value encoded as a number in JSON by TO JSON STRING."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.net"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "https://docs.cloud.google.com/spanner/docs/cloud-run-remote-function"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.312Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "FAQ Assist",
+  "feature_slug": "faq-assist",
+  "summary": "Deprecates FAQ Assist, stops new conversation profile creation, and schedules permanent removal; deprecated on April 1, 2026.",
+  "extended_definition": "Deprecates FAQ Assist, stops new conversation profile creation, and schedules permanent removal; deprecated on April 1, 2026.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "April 1, 2026",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+      "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+      "https://docs.cloud.google.com/agent-assist/docs/faq"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Optional: Depending on which feature you're using, follow the steps in one of the following pages: Summarization with custom sections Generative knowledge assist Verify the conversation profile in the Agent Assist simulator .",
+          "Create a conversation profile Use the following resources to create a conversation profile: Agent Assist console Application programming interface (API) We recommend that you use the console tutorials first, as follows.",
+          "Home Documentation AI and ML Agent Assist Guides Send feedback Create a conversation profile Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT ID : your GCP project ID KNOWLEDGE BASE ID : your knowledge base ID HTTP method and URL: POST https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /conversationProfiles Request JSON body: { \"displayName\": \"my-conversation-profile-display-name\", \"humanAgentAssistantConfig\": { \"humanAgentSuggestionConfig\": { \"featureConfigs\": [ { \"suggestionFeature\": { \"type\": \"FAQ\" }, \"queryConfig\": { \"knowledgeBaseQuerySource\": { \"knowledgeBases\": [\"projects/ PROJECT ID /knowledgeBases/ KNOWLEDGE BASE ID \"] } }, \"enableEventBasedSuggestion\": false, \"enableInlineSuggestion\": true, \"SuggestionTriggerSettings\": { \"noSmallTalk\": true, \"onlyEndUser\": true, } } ] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "KnowledgeBasesClient . knowledge base path ( project id , faq knowledge base id ) feature config = { \"suggestion feature\" : { \"type \" : \"FAQ\" }, \"suggestion trigger settings\" : { \"no small talk\" : True , \"only end user\" : True , }, \"query config\" : { \"knowledge base query source\" : { \"knowledge bases\" : [ faq kb path ]}, \"max results\" : 3 , }, } conversation profile [ \"human agent assistant config\" ][ \"human agent suggestion config\" ][ \"feature configs\" ] . append ( feature config ) response = client . create conversation profile ( parent = project path , conversation profile = conversation profile ) print ( \"Conversation Profile created:\" ) print ( \"Display Name: {} \" . format ( response . display name )) Put Name is the last to make it easier to retrieve. print ( \"Name: {} \" . format ( response . name )) return response (Optional) Set security settings You have the option of setting security parameters to help address issues such as data redaction and data retention.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION ID /conversations\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /conversations/ CONVERSATION ID \", \"lifecycleState\": \"IN PROGRESS\", \"conversationProfile\": \"projects/ PROJECT ID /locations/ LOCATION ID /conversationProfiles/ CONVERSATION PROFILE ID \", \"startTime\": \"2018-11-05T21:05:45.622Z\" } The path segment after conversations contains your new conversation ID."
+        ]
+      },
+      {
+        "title": "Article Suggestion \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT ID : your GCP project ID KNOWLEDGE BASE ID : your knowledge base ID HTTP method and URL: POST https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /conversationProfiles Request JSON body: { \"name\": \"projects/ PROJECT ID /conversationProfiles/ CONVERSATION PROFILE ID \", \"displayName\": \"my-conversation-profile-display-name\", \"humanAgentAssistantConfig\": { \"notificationConfig\": {}, \"humanAgentSuggestionConfig\": { \"featureConfigs\": [ { \"enableInlineSuggestion\": true, \"SuggestionTriggerSettings\": { \"noSmallTalk\": true, \"onlyEndUser\": true, }, \"suggestionFeature\": { \"type\": \"ARTICLE SUGGESTION\" }, \"queryConfig\": { \"knowledgeBaseQuerySource\": { \"knowledgeBases\": [ \"projects/ PROJECT ID /knowledgeBases/ KNOWLEDGE BASE ID \" ] } } } ] } }, \"sttConfig\": {}, \"languageCode\": \"en-US\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "KnowledgeBasesClient . knowledge base path ( project id , faq knowledge base id ) feature config = { \"suggestion feature\" : { \"type \" : \"FAQ\" }, \"suggestion trigger settings\" : { \"no small talk\" : True , \"only end user\" : True , }, \"query config\" : { \"knowledge base query source\" : { \"knowledge bases\" : [ faq kb path ]}, \"max results\" : 3 , }, } conversation profile [ \"human agent assistant config\" ][ \"human agent suggestion config\" ][ \"feature configs\" ] . append ( feature config ) response = client . create conversation profile ( parent = project path , conversation profile = conversation profile ) print ( \"Conversation Profile created:\" ) print ( \"Display Name: {} \" . format ( response . display name )) Put Name is the last to make it easier to retrieve. print ( \"Name: {} \" . format ( response . name )) return response (Optional) Set security settings You have the option of setting security parameters to address issues such as data redaction and data retention.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION ID /conversations\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /conversations/ CONVERSATION ID \", \"lifecycleState\": \"IN PROGRESS\", \"conversationProfile\": \"projects/ PROJECT ID /locations/ LOCATION ID /conversationProfiles/ CONVERSATION PROFILE ID \", \"startTime\": \"2018-11-05T21:05:45.622Z\" } The path segment after conversations contains your new conversation ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/faq",
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion"
+      ]
+    }
+  ]
+}

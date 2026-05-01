@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.233Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Notebook sharing and collaboration",
+  "feature_slug": "notebook-sharing-and-collaboration",
+  "summary": "Colab Enterprise supports notebook sharing and collaboration with IAM-based access control; Colab Enterprise supports notebook sharing and collaboration with IAM-based access control.",
+  "extended_definition": "Colab Enterprise supports notebook sharing and collaboration with IAM-based access control; Colab Enterprise supports notebook sharing and collaboration with IAM-based access control.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/chat",
+      "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+      "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+      "https://docs.cloud.google.com/colab/docs/runtimes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Runtimes and runtime templates \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workflow You can create a Colab Enterprise notebook and run code in it without needing to understand runtimes.",
+          "Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates/ NOTEBOOK RUNTIME TEMPLATE ID ?updateMask=software config.colab image.release name\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "HTTP method and URL: PATCH https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates/ NOTEBOOK RUNTIME TEMPLATE ID ?updateMask=software config.colab image.release name Request JSON body: { softwareConfig: { colabImage: { releaseName: \" RELEASE NAME \" } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Manage access to a Colab Enterprise notebook \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you turn off output saving for a selected notebook, Colab Enterprise deletes all output saved in the notebook file and doesn't save the output of subsequent runs.",
+          "Home Documentation AI and ML Colab Enterprise Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Manage access to a notebook This page describes how you can grant and revoke access to a Colab Enterprise notebook (IPYNB file)."
+        ]
+      },
+      {
+        "title": "\"Enable default runtimes with GPUs \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "source_id": "site-iam-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Overview To enable users to switch to a default runtime with GPUs, an administrator ( roles/aiplatform.colabEnterpriseAdmin ) or a user account with the aiplatform.notebookRuntimeTemplates.create permission must first create a default runtime with GPUs.",
+          "Accelerator availability Colab Enterprise supports default runtimes with the following accelerator types: L4 T4 To learn about the regional availability of these accelerators, see Using accelerators .",
+          "After Colab Enterprise connects to the default runtime, in the top right corner of your notebook, click the button to switch to a default runtime with GPUs."
+        ]
+      },
+      {
+        "title": "\"Chat about your notebook with Gemini \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/chat",
+        "source_id": "site-iam-reference",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Colab Enterprise Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Use chat To chat about your notebook with Gemini, do the following: In the Google Cloud console, go to the Colab Enterprise My notebooks page.",
+          "This document is intended for data analysts, data scientists, and data developers who work with Colab Enterprise."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.colabEnterpriseUser",
+      "aiplatform.googleapis.com",
+      "aiplatform.notebookRuntimeTemplates.create",
+      "cloudaicompanion.user",
+      "config.colab",
+      "example.com",
+      "gmail.com",
+      "googlegroups.com",
+      "image.release",
+      "request.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/cloudaicompanion.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "https://docs.cloud.google.com/colab/docs/default-runtimes-with-gpus",
+        "https://docs.cloud.google.com/colab/docs/chat"
+      ]
+    }
+  ]
+}

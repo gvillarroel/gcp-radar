@@ -1,0 +1,38 @@
+# Network dependency visualization
+
+Product: Migration Center
+Feature slug: `network-dependency-visualization`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Migration Center can visualize network dependencies and filter the graph by tags, groups, network, and asset details; Migration Center can visualize network dependencies between discovered server assets.
+
+## Lifecycle
+
+- Latest feature date: 2026-02-26
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- firewall
+- iam
+- identity
+- logging
+- permission
+- role
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/migration-center/docs/migration-execution](https://docs.cloud.google.com/migration-center/docs/migration-execution)
+- [https://docs.cloud.google.com/migration-center/docs/migration-planning-overview](https://docs.cloud.google.com/migration-center/docs/migration-planning-overview)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient](https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient)

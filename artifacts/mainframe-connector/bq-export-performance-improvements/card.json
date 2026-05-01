@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.510Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "bq export performance improvements",
+  "feature_slug": "bq-export-performance-improvements",
+  "summary": "The bq export command has performance improvements for local and remote modes.",
+  "extended_definition": "The bq export command has performance improvements for local and remote modes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "The bq export command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --batch (Optional) Run the query in batch mode. --bucket = BUCKET (Optional) Specify a location within Cloud Storage to write the command's output.",
+          "If not specified will use job default. --update-env-vars = ENVVARS (Optional) List of key-value pairs to set as environment variables overrides for an execution of a job. --wait (Optional) Specify this flag if you want the command to wait until the execution has completed running before exiting. cloud run job log Display cloud run logs Synopsis cloud run job log [-h] [--tail] [--log-filter= FILTER ] [--polling-interval= POLLINGINTERVAL ] --project= PROJECT --region= REGION [--timeout= TIMEOUT ] EXECUTION-ID Flags and arguments The cloud run job log command uses the following flags and arguments: EXECUTION-ID The name of the Cloud Run job execution id. --help or -h (Optional) Display this help message. --log-filter = FILTER (Optional) Filter expression that specifies the log entries to return. --polling-interval = POLLINGINTERVAL (Optional) Sets the polling interval for displaying logs when --tail logs is enabled.",
+          "The bq query command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --append table (Optional) Append the loaded data to the existing data in the destination table. --batch (Optional) Run the query in batch mode. --clustering fields = FIELDS (Optional) Specify a comma-separated list of up to four column names that specify the fields to use for table clustering."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Performance improvements for the bq export command .",
+          "Performance tuning configuration for the bq export command Mainframe Connector supports the following performance tuning configuration for the bq export command: exporter thread count : (Optional) Set the number of worker threads.",
+          "The bq export command supports some performance tuning capabilities."
+        ]
+      },
+      {
+        "title": "\"Move data transcoded locally on the mainframe to Google Cloud \\_|\\_ Mainframe\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your input dataset is a Queued Sequential Access Method (QSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME qsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / If your input dataset is a Virtual Storage Access Method (VSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME vsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / Replace BUCKET NAME with the name of the Cloud Storage bucket to which you want to copy mainframe data.",
+          "You can modify the default behavior of the Mainframe Connector transcoding process by providing a transcoder configuration file using the --transcode-configuration argument. //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT=PROJECT NAME qsam encode \\ dd:QUERY dd:OUTFILE --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG --input-format=BIGQUERY \\ --input-parameter project id= PROJECT NAME \\ --input-parameter location= LOCATION / / Replace the following: PROJECT NAME : the name of the project in which you want to execute the query.",
+          "Example JCL //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME DATASET ID= DATASET ID DESTINATION TABLE= DESTINATION TABLE bq export --project id=$PROJECT \\ --dataset id=$DATASET ID \\ --destination table=$DESTINATION TABLE \\ --location=\"US\" \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query."
+        ]
+      },
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example YAML file: environmentVariables: - name: \"QUERY\" value: \"gs://my bucket/my/input.sql\" - name: \"OUTFILE\" value: \"gs://my bucket/my/output.orc\" - name: \"COPYBOOK\" value: \"gs://my bucket/my/copybook.cpy\" - name: \"TRANSCODE CONFIGURATION\" value: \"gs://my bucket/my/transcode-configuration-file.json\" - name: \"PROJECT ID\" value: \"my-project\" - name: \"LOCATION\" value: \"US\" - name: \"LOG PROJECT\" value: \"my-log-project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Use bq export command environmentVariables: - name: \"COPYBOOK\" value: \" COPYBOOK FILEPATH \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: bq export --project id=\" PROJECT NAME \" --location=\" LOCATION \" --sql=\"select from project.dataset.table\" --bucket=\" BUCKET \" Replace the following: COPYBOOK FILEPATH : The path to the copybook DD.",
+          "Mainframe Connector provides two ways in which you can export BigQuery table: Using qsam commands (release 5.16.0 and later) Using the bq export command Use qsam commands environmentVariables: - name: \"QUERY\" value: \" QUERY PATH \" - name: \"OUTFILE\" value: \" OUTFILE \" - name: \"COPYBOOK\" value: \" COPYBOOK PATH \" - name: \"TRANSCODE CONFIGURATION\" value: \" TRANSCODE CONFIGURATION PATH \" - name: \"PROJECT ID\" value: \" PROJECT ID \" - name: \"LOCATION\" value: \" LOCATION \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Replace the following: QUERY PATH : The SQL query to execute.",
+          "The following is an example YAML file: environmentVariables: - name: \"COPYBOOK\" value: \"gs://inputbucket/copybook.cpy\" - name: \"LOG PROJECT\" value: \"my-log-project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: bq export --project id=\"my-project\" --run mode=\"gcsoutput\" --location=US --sql=\"select from project.dataset.table\" --bucket=\"gs://outputbucket/data.dat\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.run.app",
+      "copybook.cpy",
+      "data.dat",
+      "file.json",
+      "input.dat",
+      "input.sql",
+      "output.orc",
+      "project.dataset.table"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+      ]
+    }
+  ]
+}

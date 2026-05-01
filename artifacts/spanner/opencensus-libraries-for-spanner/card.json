@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "OpenCensus libraries for Spanner",
+  "feature_slug": "opencensus-libraries-for-spanner",
+  "summary": "Spanner-related OpenCensus libraries have been archived, and users are advised to migrate to OpenTelemetry; deprecated on 2024-02-21.",
+  "extended_definition": "Spanner-related OpenCensus libraries have been archived, and users are advised to migrate to OpenTelemetry; deprecated on 2024-02-21.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-21",
+    "deprecation_date": "2024-02-21",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+      "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "View principals with database access To view a list of principals who have been granted access to a particular database, run the following commands.",
+          "Exception: To interact with Spanner resources in the Google Cloud console, all users must have the roles/spanner.viewer IAM role.",
+          "To run these commands, you must have the Cloud Asset API enabled on your project, and you must have the cloudasset.assets.searchAllIamPolicies IAM permission. gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles=roles/spanner.databaseRoleUser AND policy:\"resource.name\" AND policy:/ ROLE NAME AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' \\ --flatten = policy.bindings [] .members [] \\ --format = 'table(policy.bindings.members)' Output is similar to the following: MEMBERS 222larabrown@gmail.com View the IAM conditions for a principal To view a list of IAM conditions that were specified when granting the role Cloud Spanner Database Role User to a principal, run the following command: gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles=roles/spanner.databaseRoleUser AND policy:resource.name AND policy:\" PRINCIPAL IDENTIFIER \" AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' \\ --flatten = policy.bindings [] \\ --format = 'table(policy.bindings.condition.expression)' where PRINCIPAL IDENTIFIER is: { user: user-account-name serviceAccount: service-account-name } PRINCIPAL IDENTIFIER examples: user:222larabrown@gmail.com serviceAccount:cs-fgac-sa-1@cloud-spanner-demo.google.com.iam.gserviceaccount.com The following sample output shows two condition expressions."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.spanner (6.111.1) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+        "source_id": "site-java-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Java Client libraries Send feedback Package com.google.cloud.spanner (6.111.1) Stay organized with collections Save and categorize content based on your preferences.",
+          "Missing Default Sequence Kind Exception Exception thrown by Spanner when a DDL statement failed because no default sequence kind has been configured for a database. com. google. cloud. spanner.",
+          "Users of the Cloud Spanner client library never create a ValueBinder directly; instead this interface is returned from other parts of the library involved in Value construction."
+        ]
+      },
+      {
+        "title": "Manage backups \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner backups update-metadata BACKUP ID \\ --instance = INSTANCE ID \\ --expiration-date = EXPIRATION DATE Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner backups update-metadata BACKUP ID --instance = INSTANCE ID --expiration-date = EXPIRATION DATE Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner backups update-metadata BACKUP ID ^ --instance = INSTANCE ID ^ --expiration-date = EXPIRATION DATE You should receive a response similar to the following: createTime: '2020-02-04T02:05:43.920377Z' database: projects/ PROJECT ID /instances/ INSTANCE ID /databases/ DATABASE ID expireTime: '2020-05-05T00:00:00Z' name: projects/ PROJECT ID /instances/ INSTANCE ID /backups/ BACKUP ID sizeBytes: '1000000000' state: READY Client libraries The following code sample retrieves the expiry time of a backup and extends it.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner backups describe BACKUP NAME --instance = INSTANCE ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner backups describe BACKUP NAME --instance = INSTANCE ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner backups describe BACKUP NAME --instance = INSTANCE ID You should receive a response similar to the following: createTime: '2020-02-04T02:05:43.920377Z' database: projects/ PROJECT ID /instances/ INSTANCE ID /databases/ DATABASE ID expireTime: '2021-02-04T02:05:43.268327Z' name: projects/ PROJECT ID /instances/ INSTANCE ID /backups/ BACKUP NAME sizeBytes: '1000000000' state: READY Client libraries Client libraries don't support getting backup information for a single backup.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner operations cancel OPERATION ID --instance = INSTANCE NAME \\ --database = DATABASE NAME --backup = BACKUP NAME Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner operations cancel OPERATION ID --instance = INSTANCE NAME --database = DATABASE NAME --backup = BACKUP NAME Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud spanner operations cancel OPERATION ID --instance = INSTANCE NAME ^ --database = DATABASE NAME --backup = BACKUP NAME Client libraries The following code sample creates a backup, cancels the backup operation, and then waits until the backup operation is done ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudasset.assets.searchAllIamPolicies",
+      "cmd.exe",
+      "com.google.cloud.spanner",
+      "demo.google.com.iam.gserviceaccount.com",
+      "gmail.com",
+      "policy.bindings",
+      "policy.bindings.condition.expression",
+      "policy.bindings.members",
+      "resource.name",
+      "resource.name.endsWith",
+      "spanner.databaseRoleUser",
+      "spanner.fineGrainedAccessUser",
+      "spanner.googleapis.com",
+      "spanner.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/spanner.databaseRoleUser",
+      "roles/spanner.fineGrainedAccessUser",
+      "roles/spanner.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    }
+  ]
+}

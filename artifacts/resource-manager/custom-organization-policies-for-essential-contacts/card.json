@@ -1,0 +1,195 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.433Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Custom organization policies for Essential Contacts",
+  "feature_slug": "custom-organization-policies-for-essential-contacts",
+  "summary": "Essential Contacts supports custom organization policies for more granular control over the service.",
+  "extended_definition": "Essential Contacts supports custom organization policies for more granular control over the service.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts",
+      "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create custom constraints for Essential Contacts \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: essentialcontacts.googleapis.com/Contact To learn more about Organization Policy, see Custom organization policies .",
+          "Apply the constraint: gcloud org-policies set-custom-constraint constraint-technical-notification.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.onlyTechnicalNotificationsAllowed ALLOW CREATE,UPDATE essentialcontacts.googleapis.com/Contact TechnicalNotifications ...",
+          "However, if you want more granular, customizable control over the specific fields that are restricted in your organization policies, you can also create custom constraints and use those custom constraints in an organization policy."
+        ]
+      },
+      {
+        "title": "Essential Contacts overview \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Security bulletins Vulnerability alerts, including details on detected critical vulnerabilities affecting your resources Data breach incidents Information on detected malicious attacks originating from or targeting your resources Advisories on widespread threats that might require user attention Abuse and security incident notifications Terms of Service violations Notifications related to project deletion IT security teams Security Operations Center (SOC) Operations security personnel Incident response teams Chief Information Security Officer (CISO) Organization Administrator ( roles/resourcemanager.organizationAdmin ) Security is a highly specialized area; direct alerts to security experts that you set as custom contacts help with rapid response and mitigation.",
+          "Enforcement actions related to your services Regulatory compliance updates Government notices or legal requests concerning your account Changes to Terms of Service or other legal agreements Legal counsel Compliance officers Government relations specialists Other relevant legal team members from your organization Billing Account Administrator ( roles/billing.admin ) Legal matters often require specialized legal team review; direct routing to custom contacts is crucial.",
+          "N/A (It is recommended for broad oversight if specific categories aren't granularly assigned.) N/A Best practices for Essential Contacts Follow these best practices to configure and manage your Essential Contacts effectively: Use group aliases, mailing lists, or shared email addresses : Configure distribution lists or group email addresses like security-team@yourcompany.com or gcp-billing@yourcompany.com instead of individual email addresses to receive notifications."
+        ]
+      },
+      {
+        "title": "Manage Essential Contacts \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts",
+        "source_id": "site-iam-reference",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set advanced configurations and automation This section covers options for further management of your Essential Contacts, including restricting contact domains, using Infrastructure as Code (IaC) with Terraform for automation, and creating custom organization policies.",
+          "Enable the API Required roles To get the permissions that you need to manage contacts, ask your administrator to grant you the following IAM roles on the project, folder, or organization where the contact is assigned: To view contacts: Essential Contacts Viewer ( roles/essentialcontacts.viewer ) To view, edit, delete, and create contacts: Essential Contacts Admin ( roles/essentialcontacts.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Then, make the request: $cred = gcloud auth application-default print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://essentialcontacts.googleapis.com/v1/ RESOURCE TYPE / RESOURCE ID /contacts:compute?notificationCategories= NOTIFICATION CATEGORY &pageSize= PAGE SIZE &pageToken= NEXT PAGE TOKEN \" Select-Object -Expand Content After sending the request, you receive a JSON response similar to the following example: { \"contacts\": [ { \"name\": \"projects/my-projects/contacts/1\", \"email\": \"my-project-contact-1@example.com\", \"notificationCategorySubscriptions\": [ \"ALL\" ], \"languageTag\": \"en-US\" }, { \"name\": \"projects/my-projects/contacts/2\", \"email\": \"my-project-contact-2@example.com\", \"notificationCategorySubscriptions\": [ \"BILLING\" ], \"languageTag\": \"en-US\" }, { \"name\": \"organizations/my-organization/contacts/1\", \"email\": \"my-organization-contact@example.com\", \"notificationCategorySubscriptions\": [ \"ALL\" ], \"languageTag\": \"en-US\" } ] } Add a contact Important: Some Google Cloud services capture the list of recipients for a notification campaign, such as a Mandatory Service Announcement (MSA), in advance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.admin",
+      "custom.onlyTechnicalNotificationsAllowed",
+      "essentialcontacts.admin",
+      "essentialcontacts.googleapis.com",
+      "essentialcontacts.viewer",
+      "example.com",
+      "notification.yaml",
+      "resource.notificationCategorySubscriptions",
+      "resource.notificationCategorySubscriptions.size",
+      "resourcemanager.organizationAdmin",
+      "yourcompany.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/billing.admin",
+      "roles/essentialcontacts.admin",
+      "roles/essentialcontacts.viewer",
+      "roles/resourcemanager.organizationAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-essential-contacts"
+      ]
+    }
+  ]
+}

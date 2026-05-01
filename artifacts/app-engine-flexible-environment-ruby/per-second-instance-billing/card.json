@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.630Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby",
+  "feature_name": "Per-second instance billing",
+  "feature_slug": "per-second-instance-billing",
+  "summary": "App Engine flexible environment bills instances in per-second increments with a one-minute minimum usage cost.",
+  "extended_definition": "App Engine flexible environment bills instances in per-second increments with a one-minute minimum usage cost.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Maximum worker connections in Nginx per instance: 4,096 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas for the App Engine flexible environment When you deploy an application to the App Engine flexible environment, some Google Cloud resources are consumed."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are handled Stay organized with collections Save and categorize content based on your preferences.",
+          "Unsupported HTTP requests The following features are not supported by App Engine flexible environment: HTTP/2 traffic to the backend service.",
+          "However, this is bound by the following restrictions: App Engine reserves automatic scaling capacity for applications with low latency, where the application responds to requests in less than one second."
+        ]
+      },
+      {
+        "title": "\"Debugging an instance \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Debugging an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "In order to debug an instance, your role must contain the appengine.instances.enableDebug permission.",
+          "Note: This guide is applicable to all runtimes in the flexible environment except for .NET."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.instances.enableDebug"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    }
+  ]
+}

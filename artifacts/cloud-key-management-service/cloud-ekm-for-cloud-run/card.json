@@ -1,0 +1,196 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.779Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud EKM for Cloud Run",
+  "feature_slug": "cloud-ekm-for-cloud-run",
+  "summary": "Cloud EKM supports Cloud Run.",
+  "extended_definition": "Cloud EKM supports Cloud Run.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+      "https://docs.cloud.google.com/kms/docs/ekm",
+      "https://docs.cloud.google.com/kms/docs/key-management-service",
+      "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an EKM connection \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "source_id": "site-iam-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create an EKM connection for coordinated external keys, run the following command: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /ekmConnections\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --header \"x-goog-user-project: PROJECT ID \" \\ --data '{ \"name\": \" EKM CONNECTION \", \"serviceResolvers\": [ { \"serviceDirectoryService\": \" SERVICE DIRECTORY SERVICE \", \"hostname\": \" HOSTNAME \", \"serverCertificates\": [ { SERVER CERTIFICATES } ] } ] \"keyManagementMode\": \"CLOUD KMS\", \"cryptoSpacePath\": \" CRYPTO SPACE PATH \" }' Replace the following: PROJECT ID : the ID of the project where you want to create the EKM connection.",
+          "To create an EKM connection for manually managed external keys, run the following command: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /ekmConnections\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --header \"x-goog-user-project: PROJECT ID \" \\ --data '{ \"name\": \" EKM CONNECTION \", \"serviceResolvers\": [ { \"serviceDirectoryService\": \" SERVICE DIRECTORY SERVICE \", \"hostname\": \" HOSTNAME \", \"serverCertificates\": [ { SERVER CERTIFICATES } ] } ] }' Replace the following: PROJECT ID : the ID of the project where you want to create the EKM connection.",
+          "To create an EKM connection for coordinated external keys, run the following command: gcloud beta kms ekm-connections create EKM CONNECTION \\ --location LOCATION \\ --service-directory-service SERVICE DIRECTORY SERVICE \\ --hostname HOSTNAME \\ --server-certificates-files SERVER CERTIFICATE FILES \\ --key-management-mode cloud-kms \\ --crypto-space-path CRYPTO SPACE PATH Replace the following: EKM CONNECTION : a name for the EKM connection."
+        ]
+      },
+      {
+        "title": "\"Cloud EKM error reference \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "It contains two violation structures. violation[0] contains information about the state of the Cloud EKM key. violation[1] contains information about the attempt to contact the external key management partner system.",
+          "EKM ELEMENT can be one of these value: key , crypto space , or EKM host . google.rpc.Status.message violation[1].type (Error domain) Could not validate the TLS server certificate for the EKM ELEMENT .",
+          "If you observe frequent timeouts or network errors, ensure that the geographic location of your Cloud EKM keys as near as possible to the region you use for the external keys."
+        ]
+      },
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK.",
+          "If your EKM supports the Cloud EKM control plane, then you can enable EKM key management from Cloud KMS for your EKM connections to create coordinated external keys.",
+          "To learn more, choose a Cloud EKM partner that supports single-tenant HSMs and review the requirements for Bare Metal Rack HSMs ."
+        ]
+      },
+      {
+        "title": "Cloud Key Management Service overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Agent Assist AlloyDB for PostgreSQL Anti Money Laundering AI Apigee Apigee API hub Application Integration Artifact Registry Backup and DR Service Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud TPU Cloud Workstations Colab Enterprise Compute Engine Conversational Analytics API Customer Experience Insights Database Migration Service Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced Eventarc Standard Filestore Firestore Gemini Code Assist Gemini Enterprise - NotebookLM Enterprise Gemini Enterprise Enterprise Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Service Extensions Spanner Speech-to-Text Vertex AI Vertex AI Search Vertex AI Workbench Vertex AI Workbench instances Workflows Workload Manager Any Level 1 Level 2 Level 3 Clear all Encryption type Cost Compatible services Features Google-owned and Google-managed encryption keys (Google Cloud default encryption) Included All Google Cloud services that store customer data No configuration required.",
+          "For more information about the service level agreement (SLA) that applies when using Cloud KMS, Cloud HSM, and Cloud EKM keys, see Service Level Agreement .",
+          "Supports symmetric and asymmetric keys for encryption, decryption, signing, and signature validation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service"
+      ]
+    }
+  ]
+}

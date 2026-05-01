@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.299Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Budget alert programmatic notifications",
+  "feature_slug": "budget-alert-programmatic-notifications",
+  "summary": "Cloud Billing budget alerts can now emit Cloud Pub/Sub messages about budget status via programmatic notifications in GA; Cloud Billing budget alerts became available in beta with programmatic notifications through Cloud Pub/Sub for budget status updates.",
+  "extended_definition": "Cloud Billing budget alerts can now emit Cloud Pub/Sub messages about budget status via programmatic notifications in GA; Cloud Billing budget alerts became available in beta with programmatic notifications through Cloud Pub/Sub for budget status updates.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create, edit, or delete budgets and budget alerts \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In this document, you can learn how to: Create a budget View a list of budgets and their status Modify or delete a budget Create and manage budgets using an API Customize budget alert email recipients Automate cost control responses using programmatic notifications Permissions required to manage budgets Budgets can be configured for a Cloud Billing account (which can include multiple linked projects), or for individual projects.",
+          "To view a list of budgets for your Cloud Billing account, do the following: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access.",
+          "To modify or delete a budget, do the following: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access."
+        ]
+      },
+      {
+        "title": "\"Set up programmatic notifications \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Budget notifications To connect a Pub/Sub topic to a Cloud Billing budget, complete the following steps: Users with Cloud Billing account permissions Users with project-level permissions only ( Preview ) Sign in to the Budgets & alerts page in the Google Cloud console.",
+          "Users with Cloud Billing account permissions ( Preview ) To gain the necessary permissions using predefined roles, ask your administrator to grant you one of the following predefined Cloud Billing IAM roles on your Cloud Billing account: Billing Account Costs Manager Billing Account Administrator And ask your administrator to grant you the following role on the target project that contains the Pub/Sub topics: Pub/Sub Admin Create a Pub/Sub topic To set up programmatic budget or anomaly notifications, you must first create a Pub/Sub topic .",
+          "Interactive tutorials: Set up automated responses to Cloud Billing budget notifications (30 minutes) In this interactive tutorial, you'll learn how to do the following: Set up a Pub/Sub topic Create a budget on a billing account that's connected to the Pub/Sub topic Create a Cloud Run function that listens for updates from the Pub/Sub topic Test your Cloud Run function Launch the tutorial This document explains how to set up programmatic budget and cost anomaly ( Preview ) notifications using Pub/Sub ."
+        ]
+      },
+      {
+        "title": "\"Customize budget alert email recipients \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+        "source_id": "site-docs-root-2",
+        "final_score": 166,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To manage budgets for a project and customize the email recipients of budget alerts, you need a role that includes these specific permissions: resourcemanager.projects.get on your project, to view the projects associations (such as the linked billing account) for your project. billing.resourceCosts.get on your project (optional), to view costs and usage for your project. billing.resourcebudgets.read on your project, to view a billing account's single-project budgets that are scoped to your project. billing.resourcebudgets.write on your project, to create or modify single-project budgets that are scoped to your project. roles/monitoring.editor on the project where you want to create notification channels, or roles/monitoring.viewer on the project that stores the notification channels.",
+          "About Google Cloud permissions For more information about Cloud Billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined Identity and Access Management roles for Cloud Billing For more information about Google Cloud project permissions, see: Access control for projects with IAM IAM basic and predefined roles reference Set up and enable Cloud Monitoring email notifications To customize the email addresses that will receive budget alert notifications, link notification channels to your budget.",
+          "Link your budget to email notification channels After you create an email notification channel, follow these steps to link your budget to it: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only ( Preview ) If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.resourcebudgets.read",
+      "billing.resourcebudgets.write",
+      "billing.resourceCosts.get",
+      "com.google.cloud.billing.budgets.v1.Budget",
+      "com.google.cloud.billing.budgets.v1.Budget.Builder",
+      "com.google.cloud.billing.budgets.v1.BudgetOrBuilder",
+      "monitoring.editor",
+      "monitoring.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/monitoring.editor",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients"
+      ]
+    }
+  ]
+}

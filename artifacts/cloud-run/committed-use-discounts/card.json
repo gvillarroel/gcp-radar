@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.544Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Committed use discounts",
+  "feature_slug": "committed-use-discounts",
+  "summary": "Committed use discounts let Cloud Run workloads receive discounted pricing through committed usage.",
+  "extended_definition": "Committed use discounts let Cloud Run workloads receive discounted pricing through committed usage.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/resources",
+      "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+      "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Eventarc to receive events from Cloud Storage \\_|\\_ Cloud Run \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the Eventarc Event Receiver role ( roles/eventarc.eventReceiver ) on the project to the Compute Engine default service account so that the Eventarc trigger can receive events from event providers. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/eventarc.eventReceiver Optional role for the Pub/Sub service agent If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.",
+          "Home Documentation Application hosting Cloud Run Guides Send feedback Use Eventarc to receive events from Cloud Storage Stay organized with collections Save and categorize content based on your preferences.",
+          "This tutorial shows you how to deploy a containerized application using an authenticated Cloud Run service that receives events through Eventarc."
+        ]
+      },
+      {
+        "title": "Resources \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/resources",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute flexible committed use discounts Flexible CUD details for Cloud Run."
+        ]
+      },
+      {
+        "title": "Use Pub/Sub with Cloud Run tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/pubsub",
+        "source_id": "site-docs-root",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Buffer . from ( pubSubMessage . data , 'base64' ). toString (). trim () : 'World' ; console . log ( Hello ${ name } ! ); res . status ( 204 ). send (); }); Python @app . route ( \"/\" , methods = [ \"POST\" ]) def index (): \"\"\"Receive and parse Pub/Sub messages.\"\"\" envelope = request . get json () if not envelope : msg = \"no Pub/Sub message received\" print ( f \"error: { msg } \" ) return f \"Bad Request: { msg } \" , 400 if not isinstance ( envelope , dict ) or \"message\" not in envelope : msg = \"invalid Pub/Sub message format\" print ( f \"error: { msg } \" ) return f \"Bad Request: { msg } \" , 400 pubsub message = envelope [ \"message\" ] name = \"World\" if isinstance ( pubsub message , dict ) and \"data\" in pubsub message : name = base64 . b64decode ( pubsub message [ \"data\" ]) . decode ( \"utf-8\" ) . strip () print ( f \"Hello { name } !\" ) return ( \"\" , 204 ) Go // WrappedMessage is the payload of a Pub/Sub event. // // For more information about receiving messages from a Pub/Sub event // see: https://cloud.google.com/pubsub/docs/push#receive push type WrappedMessage struct { Message struct { Data [] byte json:\"data,omitempty\" ID string json:\"id\" } json:\"message\" Subscription string json:\"subscription\" } // HelloPubSub receives and processes a Pub/Sub push message. func HelloPubSub ( w http .",
+          "Node.js app . post ( '/' , ( req , res ) = > { if ( ! req . body ) { const msg = 'no Pub/Sub message received' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } if ( ! req . body . message ) { const msg = 'invalid Pub/Sub message format' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } const pubSubMessage = req . body . message ; const name = pubSubMessage . data ?",
+          "POST ) public ResponseEntity<String> receiveMessage ( @RequestBody Body body ) { // Get PubSub message from request body."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.gserviceaccount.com",
+      "eventarc.eventReceiver",
+      "iam.serviceAccountTokenCreator"
+    ],
+    "missing_inventory_roles": [
+      "roles/eventarc.eventReceiver",
+      "roles/iam.serviceAccountTokenCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/tutorials/pubsub"
+      ]
+    }
+  ]
+}

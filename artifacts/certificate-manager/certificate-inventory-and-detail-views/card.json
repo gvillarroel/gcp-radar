@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.200Z",
+  "source_step08_card": "data/step-08/current/products/certificate-manager/card.json",
+  "product_name": "Certificate Manager",
+  "product_slug": "certificate-manager",
+  "feature_name": "Certificate inventory and detail views",
+  "feature_slug": "certificate-inventory-and-detail-views",
+  "summary": "Certificate Manager enables listing certificates in a project and viewing detailed information for each certificate in the Cloud Console.",
+  "extended_definition": "Certificate Manager’s Cloud Console workflow includes a **Certificates** tab where you can view certificates in a list and click a certificate name to open its **Certificate details** page. The API also exposes `projects.locations.certificates.list` for inventory retrieval (scoped by project/location, with paginated responses) and `projects.locations.certificates.get` for fetching a single certificate’s details.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "HIGH",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateIssuanceConfigs/list",
+      "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateMaps.certificateMapEntries",
+      "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers.ListCertificatesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ListCertificatesAsyncPager (1.12.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers.ListCertificatesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Method: projects.locations.certificateIssuanceConfigs.list \\_|\\_ Certificate\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateIssuanceConfigs/list",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"REST Resource: projects.locations.certificateMaps.certificateMapEntries\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateMaps.certificateMapEntries",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "These pages jointly show a Console-based certificate list-to-details workflow and REST API support for certificate inventory and per-certificate detail retrieval."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.certificateIssuanceConfigs",
+      "projects.locations.certificateIssuanceConfigs.list",
+      "projects.locations.certificateMaps.certificateMapEntries",
+      "projects.locations.certificates.get",
+      "projects.locations.certificates.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers.ListCertificatesAsyncPager",
+        "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateIssuanceConfigs/list",
+        "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateMaps.certificateMapEntries"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers.ListCertificatesAsyncPager",
+        "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateIssuanceConfigs/list",
+        "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateMaps.certificateMapEntries"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers.ListCertificatesAsyncPager",
+        "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateIssuanceConfigs/list",
+        "https://docs.cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.certificateMaps.certificateMapEntries"
+      ]
+    }
+  ]
+}

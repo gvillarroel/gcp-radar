@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Ops Agent pending status refinement in VM Instances dashboard",
+  "feature_slug": "ops-agent-pending-status-refinement-in-vm-instances-dashboard",
+  "summary": "The VM Instances dashboard reports the Ops Agent pending status with additional states.",
+  "extended_definition": "The VM Instances dashboard reports the Ops Agent pending status with additional states.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Installing the Ops Agent on individual VMs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "source_id": "site-docs-root-2",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, the status might be inaccurate if the VM lacks necessary access scopes or if the associated service account has insufficient IAM roles. gcpdiag : gcpdiag provides more reliable and robust information about agent status than the VM Instances dashboard, verifying both agent installation and transmission of telemetry from the VM.",
+          "Verify that the Ops Agent is running To verify that the Ops Agent is running, you can use either of the following: VM Instances dashboard : This dashboard lets you view the agent installation status across your VM fleet.",
+          "The List view on the Inventory tab on the dashboard lists all VMs and includes a status column for your agent, as shown in the following screenshot: The Agent column reports the following values: Not detected : Either you don't have an agent installed or it is not running."
+        ]
+      },
+      {
+        "title": "\"Installing the Cloud Logging agent on individual VMs \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Viewing agent information by using the Google Cloud console You can find status information about the agent on the pre-configured Monitoring VM Instances dashboard.",
+          "The List view on the Inventory tab on the dashboard lists all VMs and includes a status column for your agent, as shown in the following screenshot: The Agent column reports the following values: Not detected : Either you don't have an agent installed or it is not running.",
+          "This sets the http proxy and https proxy environment variables so that the agent can send data using outbound HTTPS: setx http proxy http:// proxy-ip : proxy-port /m setx https proxy http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Logging agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured WINDOWS Connect to your instance using RDP or a similar tool and login to Windows."
+        ]
+      },
+      {
+        "title": "Configure the Ops Agent \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Common Linux log files The following table lists common log files for frequently used Linux applications: Application Common log files apache For information about Apache log files, see Monitoring third-party applications: Apache Web Server . cassandra For information about Cassandra log files, see Monitoring third-party applications: Cassandra . chef /var/log/chef-server/bookshelf/current /var/log/chef-server/chef-expander/current /var/log/chef-server/chef-pedant/http-traffic.log /var/log/chef-server/chef-server-webui/current /var/log/chef-server/chef-solr/current /var/log/chef-server/erchef/current /var/log/chef-server/erchef/erchef.log.1 /var/log/chef-server/nginx/access.log /var/log/chef-server/nginx/error.log /var/log/chef-server/nginx/rewrite-port-80.log /var/log/chef-server/postgresql/current gitlab /home/git/gitlab/log/application.log /home/git/gitlab/log/githost.log /home/git/gitlab/log/production.log /home/git/gitlab/log/satellites.log /home/git/gitlab/log/sidekiq.log /home/git/gitlab/log/unicorn.stderr.log /home/git/gitlab/log/unicorn.stdout.log /home/git/gitlab-shell/gitlab-shell.log jenkins /var/log/jenkins/jenkins.log jetty /var/log/jetty/out.log /var/log/jetty/ .request.log /var/log/jetty/ .stderrout.log joomla /var/www/joomla/logs/ .log magento /var/www/magento/var/log/exception.log /var/www/magento/var/log/system.log /var/www/magento/var/report/ mediawiki /var/log/mediawiki/ .log memcached For information about Memcached log files, see Monitoring third-party applications: Memcached . mongodb For information about MongoDB log files, see Monitoring third-party applications: MongoDB . mysql For information about MySQL log files, see Monitoring third-party applications: MySQL . nginx For information about nginx log files, see Monitoring third-party applications: nginx . postgres For information about PostgreSQL log files, see Monitoring third-party applications: PostgreSQL . puppet /var/log/puppet/http.log /var/log/puppet/masterhttp.log puppet-enterprise /var/log/pe-activemq/activemq.log /var/log/pe-activemq/wrapper.log /var/log/pe-console-auth/auth.log /var/log/pe-console-auth/cas client.log /var/log/pe-console-auth/cas.log /var/log/pe-httpd/access.log /var/log/pe-httpd/error.log /var/log/pe-httpd/other vhosts access.log /var/log/pe-httpd/puppetdashboard.access.log /var/log/pe-httpd/puppetdashboard.error.log /var/log/pe-httpd/puppetmasteraccess.log /var/log/pe-mcollective/mcollective audit.log /var/log/pe-mcollective/mcollective.log /var/log/pe-puppet-dashboard/certificate manager.log /var/log/pe-puppet-dashboard/event-inspector.log /var/log/pe-puppet-dashboard/failed reports.log /var/log/pe-puppet-dashboard/live-management.log /var/log/pe-puppet-dashboard/mcollective client.log /var/log/pe-puppet-dashboard/production.log /var/log/pe-puppetdb/pe-puppetdb.log /var/log/pe-puppet/masterhttp.log /var/log/pe-puppet/rails.log rabbitmq For information about RabbitMQ log files, see Monitoring third-party applications: RabbitMQ . redis For information about Redis log files, see Monitoring third-party applications: Redis . redmine /var/log/redmine/ .log salt /var/log/salt/key /var/log/salt/master /var/log/salt/minion /var/log/salt/syndic.loc solr For information about Apache Solr log files, see Monitoring third-party applications: Apache Solr . sugarcrm /var/www/ /sugarcrm.log syslog /var/log/syslog /var/log/messages tomcat For information about Apache Tomcat log files, see Monitoring third-party applications: Apache Tomcat . zookeeper For information about Apache ZooKeeper log files, see Monitoring third-party applications: Apache ZooKeeper .",
+          "This can be used to remove placeholder values, such as: httpRequest.referer : move from : jsonPayload.referer omit if : httpRequest.referer = \"-\" Sample Configurations The parse json processor would transform a JSON file containing { \"http status\" : \"400\" , \"path\" : \"/index.html\" , \"referer\" : \"-\" } into a LogEntry structure that looks like this: { \"jsonPayload\" : { \"http status\" : \"400\" , \"path\" : \"/index.html\" , \"referer\" : \"-\" } } This could then be transformed with modify fields into this LogEntry : { \"httpRequest\" : { \"status\" : 400 , \"requestUrl\" : \"/index.html\" , } } by using this Ops Agent configuration: logging : receivers : in : type : files include paths : - /var/log/http.json processors : parse json : type : parse json set http request : type : modify fields fields : httpRequest.status : move from : jsonPayload.http status type : integer httpRequest.requestUrl : move from : jsonPayload.path httpRequest.referer : move from : jsonPayload.referer omit if : jsonPayload.referer = \"-\" service : pipelines : pipeline : receivers : [ in ] processors : [ parse json , set http request ] This configuration reads JSON-formatted logs from /var/log/http.json and populates part of the httpRequest structure from fields in the logs.",
+          "Current number of GPU memory bytes used, by state Maximum amount of GPU memory, in bytes, that has been allocated by the process Percentage of time in the process lifetime that one or more kernels has been running on the GPU Percentage of time, since last sample, the GPU has been active interface Linux only Total count of network errors Total count of packets sent over the network Total number of bytes sent over the network memory Memory usage, with label for state (buffered, cached, free, slab, used) Memory usage percent, with label for state (buffered, cached, free, slab, used) network TCP connection count, with labels for port and TCP state swap Swap I/O operations, with label for direction Swap bytes used, with labels for device and state Swap percent used, with labels for device and state pagefile Windows only Current percentage of pagefile used by state processes Processes count, with label for state Processes forked count Per-process disk read I/O, with labels for process name + others Per-process disk write I/O, with labels for process name + others Per-process RSS usage, with labels for process name + others Per-process VM usage, with labels for process name + others About the gpu metrics: The hostmetrics receiver collects metrics reported by the NVIDIA Management Library (NVML) as agent.googleapis.com/gpu metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "access.log",
+      "activemq.log",
+      "agent.googleapis.com",
+      "application.log",
+      "audit.log",
+      "auth.log",
+      "cas.log",
+      "client.log",
+      "com.example.myproject.ExceptionHandlerFilter.doFilter",
+      "com.example.myproject.MyProjectServletException",
+      "com.example.myproject.MyServlet.doPost",
+      "com.example.myproject.OpenSessionInViewFilter.doFilter",
+      "com.example.myproject.OutputBufferFilter.doFilter",
+      "erchef.log.1",
+      "error.log",
+      "exception.log",
+      "githost.log",
+      "http.json",
+      "http.log",
+      "index.html",
+      "inspector.log",
+      "javax.servlet.http.HttpServlet.service",
+      "javax.servlet.ServletException",
+      "jenkins.log",
+      "management.log",
+      "manager.log",
+      "masterhttp.log",
+      "mcollective.log",
+      "org.mortbay.jetty.servlet.ServletHandler",
+      "org.mortbay.jetty.servlet.ServletHolder.handle",
+      "out.log",
+      "production.log",
+      "puppetdashboard.access.log",
+      "puppetdashboard.error.log",
+      "puppetdb.log",
+      "puppetmasteraccess.log",
+      "rails.log",
+      "reports.log",
+      "request.log",
+      "satellites.log",
+      "shell.log",
+      "sidekiq.log",
+      "stderrout.log",
+      "sugarcrm.log",
+      "syndic.loc",
+      "system.log",
+      "traffic.log",
+      "unicorn.stderr.log",
+      "unicorn.stdout.log",
+      "wrapper.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    }
+  ]
+}

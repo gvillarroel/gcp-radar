@@ -1,0 +1,80 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.432Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "COBOL dynamic call parsing",
+  "feature_slug": "cobol-dynamic-call-parsing",
+  "summary": "Improves COBOL parsing to better support dynamic calls.",
+  "extended_definition": "Improves COBOL parsing to better support dynamic calls.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "The assessment results provide you with details such as the lines of code and number of calls found in the application, which help you plan your migration.",
+          "Modules called from COBOL programs: number of modules that are called directly from within the COBOL source code.",
+          "Module Types Categorizes modules based on their call relationships, specifically for COBOL and JCL."
+        ]
+      },
+      {
+        "title": "Mainframe Assessment Tool overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": [
+          "Languages Mainframe Assessment Tool supports the analysis of the following languages: COBOL programs and copybooks JCL jobs, procedures, includes, and card data HLASM programs PL/I programs ( Preview ) RPG/RPGLE programs and include files Easytrieve programs Natural for z/OS ( Preview ) Fortran ( Preview ) Database schemas Mainframe Assessment Tool supports the following database schemas: DB2: through Embedded SQL IMS DB: through EXEC DLI and CBLTDLI calls Transaction monitors Mainframe Assessment Tool supports the following transaction monitors: CICS: through EXEC CICS statements IMS DC: through CBLTDLI calls Scheduler configurations Mainframe Assessment Tool supports the following scheduler configurations: BMC Control-M Mainframe migration journey The following diagram illustrates the overall migration journey of mainframe applications: The migration journey has the following phases: Discover and assess your existing codebase: Mainframe Assessment Tool helps you perform an assessment of the mainframe application footprint, technology stack, and dependencies.",
+          "To help you plan, Mainframe Assessment Tool automatically groups mainframe assets into sequenced migratable units based on call and data dependencies, and user configuration."
+        ]
+      },
+      {
+        "title": "\"Extract business rules \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you select a primary module, Mainframe Assessment Tool automatically identifies and includes all dependencies, such as copybooks and called programs.",
+          "These agents perform the extraction in several steps, such as parsing code, identifying decision logic, and generating natural language output.",
+          "Tags: displays the tags that Mainframe Assessment Tool automatically assigns to the rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

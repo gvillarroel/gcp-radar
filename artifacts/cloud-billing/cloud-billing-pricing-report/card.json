@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.299Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing pricing report",
+  "feature_slug": "cloud-billing-pricing-report",
+  "summary": "A Cloud Billing Pricing report was added to provide a tabular SKU price view with history and contract discount information.",
+  "extended_definition": "A Cloud Billing Pricing report was added to provide a tabular SKU price view with history and contract discount information.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data",
+      "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're viewing your Cloud Billing report using a date range that ends in a future date, your Cloud Billing report chart displays both actual costs and forecasted costs: The report header above the chart provides a split view of cost: actual cost-to-date calculated from the starting date, and the total forecasted cost for the entire date range.",
+          "As of May 2021, the following data is available in the Cloud Billing reports: Negotiated savings : Viewable for Cloud Billing accounts that are associated with a custom pricing contract, Negotiated savings shows the difference in cost between your contract price compared to the current list price.",
+          "Promotional credits for custom pricing contracts : If you have a custom pricing contract with Google Cloud, and received promotional credits that apply to costs at list prices , your report includes a service called Invoice , with a SKU called Contract billing adjustment ."
+        ]
+      },
+      {
+        "title": "\"View and download prices for Google's cloud services \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you have sufficient permissions to access the full features of the report, the Pricing page opens and displays a tabular view of the prices for the SKUs with historical usage , along with any custom contract prices if applicable to your Cloud Billing account.",
+          "Here's how the SKU's pricing tiers are listed in the pricing table: SKU ID SKU description Unit description Tiered usage start List price 6F81-5844-456A Network Internet Data Transfer from Americas to Australia gibibyte 0 0.19 6F81-5844-456A Network Internet Data Transfer from Americas to Australia gibibyte 1,024 0.18 6F81-5844-456A Network Internet Data Transfer from Americas to Australia gibibyte 10,240 0.15 Related topics Export Cloud Billing cost and pricing data to BigQuery View and download the cost details of your invoice or statement Get an invoice, statement, or receipt View your Cloud Billing reports and cost trends View your cost and payment history Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Learn more about permissions needed to access Cloud Billing accounts Unlimited access to the Pricing data and report features To view the full-featured Pricing report for your Cloud Billing account, you need a role that includes the following permission on your Cloud Billing account: billing.accounts.getPricing to view custom contract prices for a billing account."
+        ]
+      },
+      {
+        "title": "\"Structure of pricing data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "FROM my - billing - admin - project . my billing dataset . cloud pricing export as sku pricing , UNNEST ( sku pricing . list price . tiered rates ) as tier WHERE DATE ( PARTITIONTIME ) = \"2020-07-20\" AND sku . id = \"2DA5-55D3-E679\" ; Query results: Row sku id sku description service id service description pricing unit quantity start usage amount usd amount account currency amount 1 2DA5-55D3-E679 Requests 152E-C115-5142 Cloud Run 1000000.0 0.0 0.0 0.0 2 2DA5-55D3-E679 Requests 152E-C115-5142 Cloud Run 1000000.0 2000000.0 0.4 0.4 Related topics Topics related to exported Cloud Billing data Set up Cloud Billing data export to BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Structure of Detailed data export Next Structure of CUD metadata export arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Get list prices for a specific SKU Get list prices for a specific SKU, and include service description Example 1: Returns nested data Example 2: Returns unnested data joined with the same table Use product taxonomy and geo taxonomy to query SKUs Get the product taxonomy of a SKU Get all SKUs for a specific product taxonomy Get all SKUs for a specific geo taxonomy and product taxonomy This section provides different examples of how to query the Cloud Billing pricing data exported to BigQuery.",
+          "Note: You can use the sku.id column to map each of your line items to the list prices published on the Google Cloud pricing pages , in the Pricing Table report , and through the Cloud Billing Catalog API . sku.description String A human-readable description of the resource SKU used by the service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.getPricing",
+      "sku.description",
+      "sku.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data"
+      ]
+    }
+  ]
+}

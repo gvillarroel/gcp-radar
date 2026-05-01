@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.927Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "CustomInfoTypes support in Cloud DLP UI",
+  "feature_slug": "custominfotypes-support-in-cloud-dlp-ui",
+  "summary": "The Cloud DLP beta UI supports CustomInfoTypes.",
+  "extended_definition": "The Cloud DLP beta UI supports CustomInfoTypes.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security Command Center release notes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "September 20, 2023 Feature Attack path simulations support additional resources The attack path simulation feature that generates attack exposure scores and attack paths for your high-value resources now supports the following additional Google Cloud resources: aiplatform.googleapis.com/Dataset aiplatform.googleapis.com/Featurestore aiplatform.googleapis.com/MetadataStore aiplatform.googleapis.com/Model aiplatform.googleapis.com/TrainingPipeline container.googleapis.com/Cluster For more information, see Resource types supported in high-value resource sets .",
+          "The following are examples of the new names: Ext FE Hunting Linux CYCLOPSBLINK FEBeta M APT Controller REDFLARE 1 M Backdoor REDSONJA 4 M Cryptomine XMRIG 1 September 18, 2024 Feature Assign high-value resources based on Sensitive Data Protection insights for Amazon S3 buckets The attack path simulations feature can now automatically set the resource value of an Amazon S3 bucket based on the sensitivity of the data that the bucket contains.",
+          "Change Security Command Center now supports two versions of CIS Benchmarks for Google Cloud Platform Foundation : CIS Google Cloud Computing Foundations Benchmark v1.1.0 (CIS Google Cloud Foundation 1.1) CIS Google Cloud Computing Foundations Benchmark v1.0.0 (CIS Google Cloud Foundation 1.0) For more information about supported compliance standards, see Detectors and compliance ."
+        ]
+      },
+      {
+        "title": "\"Authenticating to the DLP API \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Inspect sensitive text by using the DLP API \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json",
+        "source_id": "site-docs-reference-3",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "container.googleapis.com",
+      "projects.locations.dlpJobs",
+      "projects.locations.dlpJobs.delete",
+      "v1.0.0",
+      "v1.1.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    }
+  ]
+}

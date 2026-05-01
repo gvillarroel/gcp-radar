@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.433Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Tags",
+  "feature_slug": "tags",
+  "summary": "Tags let you conditionally allow or deny policies based on whether a resource has a specific tag; Tags let you conditionally allow or deny policies based on whether a resource has a specific tag.",
+  "extended_definition": "Tags let you conditionally allow or deny policies based on whether a resource has a specific tag; Tags let you conditionally allow or deny policies based on whether a resource has a specific tag.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use tags to conditionally allow or deny policies based on whether a supported resource has a specific tag.",
+          "Policies and tags You can use tags with policies that support them to conditionally enforce those policies.",
+          "When you grant roles to users on the project, the roles should always be conditionally granted to require the attachment of the costCenter tag. resource.hasTagKey('123456789012/costCenter') Important: Ensure that any roles you grant to your developers don't include any setIamPolicy permissions, as these allow your developers to modify the project's allow policy, where they could remove any conditional restrictions you may have put into place."
+        ]
+      },
+      {
+        "title": "Tags overview \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tags provide a way to create annotations for resources, and in some cases conditionally allow or deny policies based on whether a resource has a specific tag.",
+          "The following table lists some of the differences between tags and labels: Tags Labels Resource structure Tag keys, tag values, and tag bindings are all discrete resources Not a resource in itself, but metadata for resources Definition Defined at the organization or project level Defined by each resource Access control Management and attachment of tags requires Identity and Access Management (IAM) roles Attachment of labels requires IAM roles , which vary based on the service resource Prerequisite for attachment The tag key and tag value must be defined before a tag can be attached to a resource No prerequisites for attachment Inheritance Tag bindings are inherited by children of the resource in the Google Cloud hierarchy Not inherited by children of the resource Deletion requirements Tags can't be deleted unless no tag bindings for that tag exist Can be removed from a resource at any time Naming requirements Requirements for tag values and tag keys Requirements for labels Key-value name length 256 characters maximum 63 characters maximum Allow and deny policy support Tags can be referenced by allow policy conditions and deny policy conditions No allow and deny policy support Organization policy support Tags on some resources can be referenced by organization policy conditional constraints No organization policy support Cloud Billing integration Perform chargebacks, audits, and other cost allocation analysis, export Cloud Billing cost data to BigQuery Filter resources by label in Cloud Billing, export Cloud Billing data to BigQuery For more information about labels, see Creating and managing labels .",
+          "Policies and tags You can use tags and IAM conditions together to: Conditionally grant IAM roles Conditionally deny IAM permissions After you create a tag value, you can bind the tag value to resources."
+        ]
+      },
+      {
+        "title": "Services that support tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "source_id": "site-docs-reference-2",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tags let you create annotations for resources, and in some cases conditionally allow or deny policies based on whether a resource has a specific tag.",
+          "Google Cloud service Resource types Identity and Access Management (IAM) Allow and deny policies Organization Policy Service Organization policies Resources that support tags Virtual Private Cloud (VPC) Network firewall policies VM instances Secure Web Proxy instances The following sections describe how you can use tags with policy engine services.",
+          "Identity and Access Management You can conditionally grant IAM roles or conditionally deny IAM permissions based on whether a resource has a specific tag."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "resource.hasTagKey"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.596Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "customer-managed encryption keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Cloud SQL supports customer-managed encryption keys for instance encryption.",
+  "extended_definition": "Cloud SQL supports customer-managed encryption keys for instance encryption.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About transparent data encryption (TDE) \\_|\\_ Cloud SQL for SQL Server \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TDE is used in scenarios where another layer of encryption is required in addition to Google's default offering of encryption for data at rest and Google's optional offering of Customer-managed encryption keys (CMEK) .",
+          "If the instance has replicas, then all TDE certificates, including those managed by Cloud SQL and those you imported manually, are automatically distributed across all replicas.",
+          "Cloud SQL for SQL Server supports using TDE to encrypt data stored in your Cloud SQL for SQL Server instances."
+        ]
+      },
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL also lets you add another layer of encryption to data using customer-managed encryption keys (CMEK) .",
+          "Encrypt data Google Cloud services, including Cloud SQL, encrypt customer content at rest and in transit using various encryption methods.",
+          "CMEK are intended for organizations that have sensitive or regulated data that requires them to manage their own encryption keys."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backups are also encrypted by default using Google-managed or Customer-Managed Encryption keys (CMEK).",
+          "Backup options Cloud SQL offers two backup service options to manage your instance's backups: Enhanced backups : backups are managed and stored in a centralized backup management project that leverages the Backup and DR Service, and provides enforced retention, granular scheduling, and monitoring.",
+          "Backups versus exports Backups are managed by Cloud SQL according to retention policies, and are stored separately from the Cloud SQL instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    }
+  ]
+}

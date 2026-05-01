@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "High availability configuration",
+  "feature_slug": "high-availability-configuration",
+  "summary": "Cloud SQL for MySQL Second Generation supports an optional high availability configuration for production instances.",
+  "extended_definition": "Cloud SQL for MySQL Second Generation supports an optional high availability configuration for production instances.",
+  "lifecycle": {
+    "latest_feature_date": "2016-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+      "https://docs.cloud.google.com/sql/docs/mysql/high-availability"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About high availability \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server This page is an overview of the high availability (HA) configuration for Cloud SQL instances.",
+          "Starting on May 1, 2025, Cloud SQL will begin updating any instances that use the legacy high availability configuration to use the current regional persistent disk-based high availability configuration automatically.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback About high availability Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Legacy configuration for high availability \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "source_id": "site-docs-reference-3",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Legacy configuration for high availability Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server Important: As of January 13, 2025, the legacy configuration for high availability (HA) is deprecated for all instances.",
+          "In a legacy HA configuration, a Cloud SQL for MySQL instance uses a failover replica to add high availability to the instance."
+        ]
+      },
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ha",
+        "source_id": "site-docs-reference-3",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure the root user: gcloud sql users set-password root --host = % \\ --instance = PRIMARY INSTANCE NAME \\ --password = PASSWORD Terraform To create an instance with high availability, use a Terraform resource . resource \"google sql database instance\" \"mysql instance ha\" { name = \"mysql-instance-ha\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" availability type = \"REGIONAL\" backup configuration { enabled = true binary log enabled = true start time = \"20:55\" } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "To see the current primary and secondary zones that the high availability instance is running in, see Verify an instance's high availability configuration .",
+          "If you have an existing MySQL instance that uses the legacy high availability configuration, you can update your configuration to use the current version."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/high-availability",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ha"
+      ]
+    }
+  ]
+}

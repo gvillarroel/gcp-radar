@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.587Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_name": "Running-cluster proxy settings modification",
+  "feature_slug": "running-cluster-proxy-settings-modification",
+  "summary": "Anthos clusters on AWS now allow modifying proxy settings on a running cluster.",
+  "extended_definition": "Anthos clusters on AWS now allow modifying proxy settings on a running cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "source_id": "site-api-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For clusters with older versions, node pool updates use the traditional rolling update mechanism of updating one node at a time in a \"terminate before create\" fashion and updateSettings is not applicable.",
+          "The manager will automatically create security groups with minimum rules needed for a functioning cluster. proxyConfig object ( AwsProxyConfig ) Optional.",
+          "For clusters with minor version 1.27 and later, a default surgeSettings configuration with maxSurge = 1 and maxUnavailable = 0 is used."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.attachedClusters \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "source_id": "site-api-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: AttachedCluster JSON representation AttachedOidcConfig JSON representation State AttachedClusterError JSON representation AttachedClustersAuthorization JSON representation AttachedClusterUser JSON representation AttachedClusterGroup JSON representation AttachedProxyConfig JSON representation KubernetesSecret JSON representation SecurityPostureConfig JSON representation VulnerabilityMode SystemComponentsConfig JSON representation Toleration JSON representation KeyOperator Effect Label JSON representation Methods Resource: AttachedCluster An Anthos cluster running on customer own infrastructure.",
+          "JSON representation { \"name\" : string , \"description\" : string , \"oidcConfig\" : { object ( AttachedOidcConfig ) } , \"platformVersion\" : string , \"distribution\" : string , \"clusterRegion\" : string , \"fleet\" : { object ( Fleet ) } , \"state\" : enum ( State ) , \"uid\" : string , \"reconciling\" : boolean , \"createTime\" : string , \"updateTime\" : string , \"etag\" : string , \"kubernetesVersion\" : string , \"annotations\" : { string : string , ... } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"loggingConfig\" : { object ( LoggingConfig ) } , \"errors\" : [ { object ( AttachedClusterError ) } ] , \"authorization\" : { object ( AttachedClustersAuthorization ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"proxyConfig\" : { object ( AttachedProxyConfig ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"tags\" : { string : string , ... } , \"systemComponentsConfig\" : { object ( SystemComponentsConfig ) } } Fields name string The name of this resource.",
+          "The secret must be a JSON encoded proxy configuration as described in https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support for EKS clusters and https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support for AKS clusters."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters \\_|\\_ GKE Multi-Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "source_id": "site-api-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuration related to the cluster RBAC settings. state enum ( State ) Output only.",
+          "RUNNING The RUNNING state indicates the cluster has been created and is fully usable.",
+          "Workload Identity settings. clusterCaCertificate string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.attachedClusters",
+      "projects.locations.awsClusters",
+      "projects.locations.awsClusters.awsNodePools",
+      "projects.locations.awsClusters.awsNodePools.patch",
+      "v1.21"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Region-qualified INFORMATION_SCHEMA views",
+  "feature_slug": "region-qualified-information-schema-views",
+  "summary": "BigQuery supports region-qualified INFORMATION_SCHEMA views.",
+  "extended_definition": "BigQuery supports region-qualified INFORMATION_SCHEMA views.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-insights",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SCHEMATA view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "source_id": "site-docs-reference-3",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: You must use a region qualifier to query INFORMATION SCHEMA views.",
+          "The INFORMATION SCHEMA.SCHEMATA view has the following schema: Column name Data type Value catalog name STRING The name of the project that contains the dataset schema name STRING The dataset's name also referred to as the datasetId schema owner STRING The value is always NULL creation time TIMESTAMP The dataset's creation time last modified time TIMESTAMP The dataset's last modified time location STRING The dataset's geographic location ddl STRING The CREATE SCHEMA DDL statement that can be used to create the dataset default collation name STRING The name of the default collation specification if it exists; otherwise, NULL . sync status JSON The status of the sync between the primary and secondary replicas for cross-region replication and disaster recovery datasets.",
+          "The following table explains the region scope for this view: View Name Resource scope Region scope [ PROJECT ID .]INFORMATION SCHEMA.SCHEMATA Project level US region [ PROJECT ID .]region- REGION .INFORMATION SCHEMA.SCHEMATA Project level REGION Replace the following: Optional: PROJECT ID : the ID of your Google Cloud project."
+        ]
+      },
+      {
+        "title": "Introduction to INFORMATION_SCHEMA \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-intro",
+        "source_id": "site-docs-reference-3",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Queries against a region-qualified INFORMATION SCHEMA view run in the region that you specify, which means that you can't write a single query to join data from views in different regions.",
+          "SCHEMATA ; The following INFORMATION SCHEMA views don't support region qualifiers: INFORMATION SCHEMA.PARTITIONS INFORMATION SCHEMA.SEARCH INDEXES INFORMATION SCHEMA.SEARCH INDEX COLUMNS INFORMATION SCHEMA.SEARCH INDEX OPTIONS If neither a region qualifier nor a dataset qualifier is specified, you will receive an error.",
+          "TABLES ; The following INFORMATION SCHEMA views support dataset qualifiers: COLUMNS COLUMN FIELD PATHS MATERIALIZED VIEWS PARAMETERS PARTITIONS ROUTINES ROUTINE OPTIONS TABLES TABLE OPTIONS VIEWS Region qualifier Region qualifiers are represented using a region- REGION syntax."
+        ]
+      },
+      {
+        "title": "INFORMATION_SCHEMA.INSIGHTS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-insights",
+        "source_id": "site-docs-reference-3",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "The INFORMATION SCHEMA.INSIGHTS view supports the following recommendations: Partition and cluster recommendations Materialized view recommendations Role recommendations for BigQuery datasets Required permission To view insights with the INFORMATION SCHEMA.INSIGHTS view, you must have the required permissions for the corresponding recommender.",
+          "Note: You must use a region qualifier to query INFORMATION SCHEMA views.",
+          "Example To run the query against a project other than your default project, add the project ID in the following format: PROJECT ID .region- REGION NAME .INFORMATION SCHEMA.INSIGHTS Replace the following: PROJECT ID : the ID of the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-intro",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-intro",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-intro",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-intro",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-intro",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    }
+  ]
+}

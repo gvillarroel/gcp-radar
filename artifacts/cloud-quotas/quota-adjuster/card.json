@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.490Z",
+  "source_step08_card": "data/step-08/current/products/cloud-quotas/card.json",
+  "product_name": "Cloud Quotas",
+  "product_slug": "cloud-quotas",
+  "feature_name": "Quota adjuster",
+  "feature_slug": "quota-adjuster",
+  "summary": "Quota adjuster automatically manages quota settings through the API, gcloud CLI, and client libraries; Quota adjuster automatically manages quota settings in Cloud Quotas.",
+  "extended_definition": "Quota adjuster automatically manages quota settings through the API, gcloud CLI, and client libraries; Quota adjuster automatically manages quota settings in Cloud Quotas.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/quotas/api-overview",
+      "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+      "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+      "https://docs.cloud.google.com/docs/quotas/terminology"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the quota adjuster \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "source_id": "site-docs-reference",
+        "final_score": 316,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Make an HTTP request to update quota adjuster settings: PATCH https://cloudquotas.googleapis.com/v1beta/ RESOURCE CONTAINER / ID /locations/global/quotaAdjusterSettings In the request body, specify the quota adjuster settings resource container and set the enablement field to DISABLED .",
+          "REST Make an HTTP request to update quota adjuster settings: PATCH https://cloudquotas.googleapis.com/v1beta/ RESOURCE CONTAINER / ID /locations/global/quotaAdjusterSettings In the request body, specify the quota adjuster settings resource container and set the enablement field to ENABLED .",
+          "To access quota adjuster settings at the folder or organization level, use the Cloud Quotas API ( Preview ) or the Google Cloud CLI Cloud Quotas commands (available at the beta release level )."
+        ]
+      },
+      {
+        "title": "Cloud Quotas API overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud Quotas API service has the following endpoint and all URIs are relative to it: https://cloudquotas.googleapis.com Required roles To get the permissions that you need to access the cloudquotas quotaPreferences , cloudquotas quotaInfos , and cloudquotas quotaAdjusterSettings resources, ask your administrator to grant you the Cloud Quotas Admin ( cloudquotas.admin ) IAM role on the project.",
+          "They use a demo quota preference with the ID compute googleapis com-gpus-us-central1 . gcloud If you view your quota preference using the gcloud CLI, the output looks similar to the following: createTime: '2023-01-15T01:30:15.01Z' dimensions: region: us-central1 name: projects/ PROJECT NUMBER /locations/global/quotaPreferences/compute googleapis com-gpus-us-central1 quotaConfig: grantedValue: '100' preferredValue: '100' traceId: 123acd-345df23 requestOrigin: ORIGIN UNSPECIFIED service: compute.googleapis.com quotaId: GPUS-PER-GPU-FAMILY-per-project-region updateTime: '2023-01-16T02:35:16.01Z' REST If you view your quota preference using the Cloud Quotas API, the output looks similar to the following: { \"name\" : \"projects/ PROJECT NUMBER /locations/global/quotaPreferences/compute googleapis com-gpus-us-central1\" , \"service\" : \"compute.googleapis.com\" , \"quotaId\" : \"GPUS-PER-GPU-FAMILY-per-project-region\" , \"quotaConfig\" : { \"preferredValue\" : 100 , \"grantedValue\" : 100 , \"traceId\" : \"123acd-345df23\" , \"requestOrigin\" : \"ORIGIN UNSPECIFIED\" }, \"dimensions\" : { \"region\" : \"us-central1\" }, \"createTime\" : \"2023-01-15T01:30:15.01Z\" , \"updateTime\" : \"2023-01-16T02:35:16.01Z\" } This output includes the following values: PROJECT NUMBER : an automatically generated unique identifier for your project.",
+          "Set different quota values by region The following QuotaInfo resource example shows that the CPU quota for the project is 200 for region us-central1 and 100 for all other regions. { \"name\" : \"projects/ PROJECT NUMBER /locations/global/services/compute.googleapis.com/quotaInfos/CPUS-per-project-region\" , \"quotaId\" : \"CPUS-per-project-region\" , \"metric\" : \"compute.googleapis.com/cpus\" , \"containerType\" : \"PROJECT\" , \"dimensions\" : [ \"region\" ], \"isPrecise\" : true , \"quotaDisplayName\" : \"CPUs per project per region\" , \"metricDisplayName\" : \"CPUs\" , \"dimensionsInfo\" : [ { \"dimensions\" : { \"region\" : \"us-central1\" }, \"details\" : { \"quotaValue\" : 200 , \"resetValue\" : 200 }, \"applicableLocations\" : [ \"us-central1\" , ] }, { \"details\" : { \"quotaValue\" : 100 , \"resetValue\" : 100 }, \"applicableLocations\" : [ \"us-central2\" , \"us-west1\" , \"us-east1\" ] } ] } This output includes the following values: PROJECT NUMBER : an automatically generated unique identifier for your project."
+        ]
+      },
+      {
+        "title": "\"Manage quotas using the gcloud beta CLI \\_|\\_ Cloud Quotas \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "source_id": "site-docs-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output would contain data specific to your configuration and look similar to the following example output: createTime : ' CREATE TIME ' dimensions : gpu family : NVIDIA H100 region : us-east4 etag : ETAG VALUE name : projects/12345/locations/global/quotaPreferences/ PREFERENCE ID quotaConfig : grantedValue : '0' preferredValue : '128' traceId : TRACE ID quotaId : GPUS-PER-GPU-FAMILY-per-project-region reconciling : true service : compute.googleapis.com updateTime : ' UPDATE TIME ' Enable quota adjuster through a client project A client project refers to the project used by an application or user to access and interact with Google Cloud resources, while a resource project is the underlying project where those resources are stored and managed.",
+          "Optional: To view the current quota adjuster settings, run the following command: gcloud beta quotas adjuster settings describe --project= RESOURCE PROJECT ID The output is similar to the following example: enablement: ENABLED etag: 8izmJp6EI mOfLyhkQU9 name: projects/ RESOURCE PROJECT ID /locations/global/quotaAdjusterSettings updateTime: '2025-01-10T17:22:37.883221181Z' To enable quota adjuster for multiple client projects, follow the previous steps 5 to 8.",
+          "Activate the service account using the service account key that you created earlier: gcloud auth activate-service-account --key-file= KEY FILE Enable quota adjuster on your resource project by specifying the project and the enablement setting: gcloud beta quotas adjuster settings update --project= RESOURCE PROJECT ID \\ --enablement= enabled The enablement setting is required when using the gcloud CLI and must be set to enabled or disabled ."
+        ]
+      },
+      {
+        "title": "\"Quota and system limit terminology \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/docs/quotas/terminology",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Cloud Quotas API represents dimensions as key-value pairs, where the key is the dimension name, and the value is the value of the named dimension—for example, {\" key\" : \"region\", \"value\" : \"us-central1 \"}.",
+          "Until you express a preferred state through quotaPreference.create or quotaPreference.update , QuotaInfo relies on the default quota information available to determine what quota value to enforce.",
+          "When enabled, the quota adjuster monitors your usage for the specified resources and issues quota adjustment requests when resource usage approaches its quota value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudquotas.admin",
+      "cloudquotas.googleapis.com",
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/terminology"
+      ]
+    }
+  ]
+}

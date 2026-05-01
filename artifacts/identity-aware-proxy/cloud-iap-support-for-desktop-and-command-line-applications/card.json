@@ -1,0 +1,198 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.052Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Cloud IAP support for desktop and command-line applications",
+  "feature_slug": "cloud-iap-support-for-desktop-and-command-line-applications",
+  "summary": "Cloud IAP supports authenticating desktop and command-line applications.",
+  "extended_definition": "Cloud IAP supports authenticating desktop and command-line applications.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+      "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+      "https://docs.cloud.google.com/iap/docs/enabling-app-engine"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example using Netcat (http://netcat.sourceforge.net/) nc -k -l 4444 Go to the following URI, where DESKTOP CLIENT ID is the Desktop app client ID: https://accounts.google.com/o/oauth2/v2/auth?client id= DESKTOP CLIENT ID &response type=code&scope=openid%20email&access type=offline&redirect uri=http://localhost:4444&cred ref=true In the local server output, look for the request parameters: GET /?code= CODE &scope=email%20openid%20https://www.googleapis.com/auth/userinfo.email&hd=google.com&prompt=consent HTTP/1.1 Copy the CODE value to replace CODE in the following command, along with the Desktop app client ID and secret: curl --verbose \\ --data client id = DESKTOP CLIENT ID \\ --data client secret = DESKTOP CLIENT SECRET \\ --data code = CODE \\ --data redirect uri = http://localhost:4444 \\ --data grant type = authorization code \\ https://oauth2.googleapis.com/token This command returns a JSON object with an id token field that you can use to access the application.",
+          "Authenticate with a service account JWT IAP supports service account JWT authentication for Google identities, Identity Platform, and Workforce Identity Federation configured applications.",
+          "Programmatic access refers to calling IAP-secured applications from non-browser clients, such as command-line tools, service-to-service calls, and mobile applications."
+        ]
+      },
+      {
+        "title": "IAP reauthentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, mobile and desktop applications cannot reauthenticate users because the resources that require reauthentication are inaccessible to these applications.",
+          "IAP reauthentication (or, reauth) is designed to enforce reauthentication policies for IAP-protected services and applications (or, apps).",
+          "Run the following command: gcloud iap settings set SETTING FILE [--organization= ORGANIZATION --folder= FOLDER --project=/ PROJECT --resource-type= RESOURCE TYPE --service= SERVICE --version= VERSION To set a reauthentication policy on the resources within an organization, run the following command: gcloud iap settings set SETTING FILE --organization= ORGANIZATION To set a reauthentication policy on the resources within a folder, run the following command: gcloud iap settings set SETTING FILE --folder= FOLDER To set a reauthentication policy on all web type resources within a project, run the following command: gcloud iap settings set SETTING FILE --project= PROJECT --resource-type=iap web To set a reauthentication policy on an App Engine service within a project, run the following command: gcloud iap settings set SETTING FILE --project= PROJECT --resource-type=app-engine --service= SERVICE Where SETTING FILE is: accessSettings : reauthSettings : method : \"LOGIN\" maxAge : \"3600s\" policyType : \"MINIMUM\" Replace the following: FOLDER : The folder ID."
+        ]
+      },
+      {
+        "title": "\"Enabling IAP for App Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command to specify the project that contains the applications that you want to protect with IAP. gcloud config set project PROJECT ID To enable IAP, run the following command. gcloud iap web enable --resource-type=app-engine --versions= version Add principals who should have the IAP-secured Web App user role to the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --member= PRINCIPAL IDENTIFIER \\ --role=roles/iap.httpsResourceAccessor Replace PROJECT ID with your project ID.",
+          "API Run the following command to prepare a settings.json file. cat << EOF > settings.json { \"iap\": { \"enabled\":true } } EOF Run the following command to enable IAP. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @settings.json \\ \"https://appengine.googleapis.com/v1/apps/ PROJECT ID ?updateMask=iap\" After you enable IAP, you can use the Google Cloud CLI to modify the IAP access policy using the IAM role roles/iap.httpsResourceAccessor .",
+          "Only principals with the IAP-Secured Web App User ( roles/iap.httpsResourceAccessor ) role on the project will be given access. gcloud Before you set up your project and IAP, you need an up-to-date version of the gcloud CLI."
+        ]
+      },
+      {
+        "title": "\"Use custom OAuth clients with IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command to specify the project that contains the resource that you want to protect with IAP. gcloud config set project PROJECT ID Follow the instructions in Creating OAuth clients for IAP. to configure the OAuth consent screen and create the OAuth client.",
+          "Run the following command to specify the project that contains the resource that you want to protect with IAP. gcloud config set project PROJECT ID Follow the instructions in Creating OAuth clients for IAP to configure the OAuth consent screen and create the OAuth client.",
+          "Run the following command to prepare a settings.json file. cat << EOF > settings.json { \"iap\": { \"enabled\": true, \"oauth2ClientId\": \" CLIENT ID \", \"oauth2ClientSecret\": \" CLIENT SECRET \" } } EOF Run the following command to enable IAP. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth application-default print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @settings.json \\ \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID / REGION /backendServices/ BACKEND SERVICE NAME \" After you enable IAP, you can use the gcloud CLI to modify the IAP access policy using the IAM role roles/iap.httpsResourceAccessor ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "appengine.googleapis.com",
+      "claim.json",
+      "compute.googleapis.com",
+      "iap.httpsResourceAccessor",
+      "netcat.sourceforge.net",
+      "oauth2.googleapis.com",
+      "output.jwt",
+      "settings.json",
+      "userinfo.email"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration"
+      ]
+    }
+  ]
+}

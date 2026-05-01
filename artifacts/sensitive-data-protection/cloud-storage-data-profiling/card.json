@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.927Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Cloud Storage data profiling",
+  "feature_slug": "cloud-storage-data-profiling",
+  "summary": "Sensitive Data Protection discovery can profile Cloud Storage buckets at the organization, folder, or project level.",
+  "extended_definition": "Sensitive Data Protection discovery can profile Cloud Storage buckets at the organization, folder, or project level.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Profile Cloud Storage data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specify whether the discovery service should profile the buckets that you selected or exclude them from profiling.",
+          "Within those buckets, Sensitive Data Protection profiles only the objects that are in the Standard and Nearline storage classes.",
+          "PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . file store profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery ."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud Storage data in an organization or folder \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specify whether the discovery service should profile the buckets that you selected or exclude them from profiling.",
+          "Within those buckets, Sensitive Data Protection profiles only the objects that are in the Standard and Nearline storage classes.",
+          "PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . file store profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery ."
+        ]
+      },
+      {
+        "title": "\"Profile Azure Blob Storage data \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For each Blob Storage container, a file store data profile includes the following information: The types of files that you're storing in the container, categorized into file clusters The sensitivity level of the data in the container A summary about each detected file cluster, including the types of sensitive information found For a full list of insights and metadata in each file store data profile, see File store data profiles .",
+          "PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . file store profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery .",
+          "Example query: Show sample findings related to file store data profiles This example requires both Save data profile copies to BigQuery and Save sample discovery findings to BigQuery to be enabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Predefined CMEK organization policy",
+  "feature_slug": "predefined-cmek-organization-policy",
+  "summary": "AlloyDB supports a predefined organization policy to require customer-managed encryption keys for clusters and backups.",
+  "extended_definition": "AlloyDB supports a predefined organization policy to require customer-managed encryption keys for clusters and backups.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+      "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+      "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Database performance snapshot report reference \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Database performance snapshot report reference Stay organized with collections Save and categorize content based on your preferences.",
+          "UltraFastCachePWrite I/O Latency of a write to the AlloyDB UltraFast Cache WalBatchWrite I/O Wait time for a minimal batch size to write WAL.",
+          "Wait events in snapshot reports The following table describes wait events that are supported by AlloyDB performance snapshot reports."
+        ]
+      },
+      {
+        "title": "\"Perform time-series forecasting \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To construct the model request url for the SQL model creation call, replace the project and endpoint identifiers with the endpoint details from the preceding step as follows: CALL google ml . create model ( model id => 'timesfm v2' , model qualified name => 'timesfm v2' , model type => 'ts forecasting' , model provider => 'google' , model request url => 'https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /endpoints/ ENDPOINT ID :predict' ); You need this model request url in the google ml.create model call when you register the TimesFM model in AlloyDB, as described in the following section.",
+          "Note: If your AlloyDB instance is in a different Google Cloud project than the Vertex AI model endpoint, make sure that the AlloyDB Service Account is granted the Vertex AI User role, which is roles/aiplatform.user , in the project where the Vertex AI model is hosted.",
+          "80 ); Register the TimesFM model in AlloyDB To register the TimesFM model in AlloyDB, follow these steps: Verify that the google ml integration extension is installed in the AlloyDB database that contains the data that you want to run predictions on."
+        ]
+      },
+      {
+        "title": "Configure backup plans \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must have one of these IAM roles in the Google Cloud project you are using: roles/alloydb.admin (the AlloyDB Admin predefined IAM role) roles/owner (the Owner basic IAM role) roles/editor (the Editor basic IAM role) If you don't have any of these roles, contact your Organization Administrator to request access.",
+          "This example sets a cluster to take an automated backup at midnight UTC on every Monday and Thursday: gcloud alloydb clusters update my - cluster \\ -- automated - backup - days - of - week = MONDAY , THURSDAY \\ -- automated - backup - start - times = 00 : 00 \\ -- region = us - central1 \\ -- project = my - project To encrypt scheduled backups using a CMEK key instead of the default Google-managed encryption, provide these additional arguments: --automated-backup-encryption-key= KEY ID : the ID of the CMEK key to use. --automated-backup-encryption-key-keyring= KEYRING ID : the ID of the key's keyring. --automated-backup-encryption-key-location= LOCATION ID : the ID of that keyring's region.",
+          "If you want to encrypt this cluster's continuous backups and data-change logs using a specific customer-managed encryption key (CMEK) instead of the cluster's encryption configuration, provide these additional arguments: --continuous-backup-encryption-key= KEY ID : the ID of the CMEK key to use. --continuous-backup-encryption-key-keyring= KEYRING ID : the ID of the key's keyring. --continuous-backup-encryption-key-location= LOCATION ID : the ID of the keyring's region."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "alloydb.admin",
+      "ml.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/alloydb.admin",
+      "roles/editor",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/backup/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-time-series-forecasting",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    }
+  ]
+}

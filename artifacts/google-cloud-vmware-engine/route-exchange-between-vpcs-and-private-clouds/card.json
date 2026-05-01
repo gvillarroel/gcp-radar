@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Route exchange between VPCs and private clouds",
+  "feature_slug": "route-exchange-between-vpcs-and-private-clouds",
+  "summary": "VMware Engine advertises routes between VPCs and private cloud networks to enable communication between Google Cloud and private cloud resources.",
+  "extended_definition": "VMware Engine advertises routes between VPCs and private cloud networks to enable communication between Google Cloud and private cloud resources.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class VmwareEngineAsyncClient (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListPrivateCloudsAsyncPager Response message for VmwareEngine.ListPrivateClouds Iterating over this object will yield results and resolve additional pages automatically. list private connection peering routes list private connection peering routes ( request : typing .",
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListPeeringRoutesAsyncPager Response message for VmwareEngine.ListPeeringRoutes Iterating over this object will yield results and resolve additional pages automatically. list private clouds list private clouds ( request : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vmwareengine v1 async def sample list private connection peering routes(): Create a client client = vmwareengine v1 ."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineClient (1.11.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "source_id": "site-python-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListPrivateCloudsPager Response message for VmwareEngine.ListPrivateClouds Iterating over this object will yield results and resolve additional pages automatically. list private connection peering routes list private connection peering routes ( request : typing .",
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListPeeringRoutesPager Response message for VmwareEngine.ListPeeringRoutes Iterating over this object will yield results and resolve additional pages automatically. list private clouds list private clouds ( request : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vmwareengine v1 def sample list private connection peering routes(): Create a client client = vmwareengine v1 ."
+        ]
+      },
+      {
+        "title": "Peer a VPC network \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Peer a VPC network Virtual Private Cloud network peerings define network connectivity between Google Cloud VMware Engine networks, Google VPCs, and other services.",
+          "In a given region, you can advertise at most 250 unique routes from VMware Engine to your VPC network using private services access.",
+          "Otherwise, you might see unexpected behaviors, including the inability to connect to your VMware Engine private clouds."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "engine.pagers.ListPeeringRoutesAsyncPager",
+      "engine.pagers.ListPeeringRoutesPager",
+      "engine.pagers.ListPrivateCloudsAsyncPager",
+      "engine.pagers.ListPrivateCloudsPager",
+      "googleapis.dev",
+      "options.html",
+      "v1.services.vmware"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    }
+  ]
+}

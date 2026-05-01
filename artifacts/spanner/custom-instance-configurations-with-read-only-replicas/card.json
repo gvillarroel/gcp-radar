@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Custom instance configurations with read-only replicas",
+  "feature_slug": "custom-instance-configurations-with-read-only-replicas",
+  "summary": "Spanner allows you to create custom instance configurations and add optional read-only replicas to improve read scalability and support low-latency stale reads.",
+  "extended_definition": "Spanner allows you to create custom instance configurations and add optional read-only replicas to improve read scalability and support low-latency stale reads.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.BatchReadOnlyTransaction",
+      "https://docs.cloud.google.com/spanner/docs/cmek",
+      "https://docs.cloud.google.com/spanner/docs/compute-capacity"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you're using multiple regional keys to protect a Spanner database, only those replicas that are protected by a key residing in the unavailable regional Cloud KMS are affected by the unavailability.",
+          "Multiple regional keys support: you can create multiple regional (single-region) Cloud KMS keys to protect a database in a Spanner custom, dual-region, or multi-region instance configuration .",
+          "If you're using multiple Cloud EKM keys to protect your Spanner database, only those replicas that are protected by the unavailable key are affected by the unavailability."
+        ]
+      },
+      {
+        "title": "\"Interface BatchReadOnlyTransaction (6.111.1) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.BatchReadOnlyTransaction",
+        "source_id": "site-java-reference",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Regardless of ordering in keys , rows are returned in their natural key order. columns Iterable < String > the columns to read options ReadOption [] the options to configure the read, supported values are Options#prefetchChunks() final BatchReadOnlyTransaction txn = batchClient . batchReadOnlyTransaction ( TimestampBound . strong ()); List<Partition> partitions = txn . partitionRead ( PartitionOptions . getDefaultInstance (), \"Singers\" , KeySet . all (), Arrays . asList ( \"SingerId\" , \"FirstName\" , \"LastName\" )); for ( final Partition p : partitions ) { try ( ResultSet results = txn . execute ( p )) { while ( results . next ()) { long singerId = results . getLong ( 0 ); String firstName = results . getString ( 1 ); String lastName = results . getString ( 2 ); System . out . println ( \"[\" + singerId + \"] \" + firstName + \" \" + lastName ); } } } <!--SNIPPET partition read--> Returns Type Description List < Partition > Exceptions Type Description SpannerException partitionReadUsingIndex(PartitionOptions partitionOptions, String table, String index, KeySet keys, Iterable<String> columns, Options.ReadOption[] options) public abstract List<Partition> partitionReadUsingIndex ( PartitionOptions partitionOptions , String table , String index , KeySet keys , Iterable<String> columns , Options .",
+          "Parameters Name Description partitionOptions PartitionOptions configuration for size and count of partitions returned statement Statement the query statement to execute options QueryOption [] the options to configure the query final BatchReadOnlyTransaction txn = batchClient . batchReadOnlyTransaction ( TimestampBound . strong ()); List<Partition> partitions = txn . partitionQuery ( PartitionOptions . getDefaultInstance (), Statement . of ( \"SELECT SingerId, FirstName, LastName FROM Singers\" )); for ( final Partition p : partitions ) { try ( ResultSet results = txn . execute ( p )) { while ( results . next ()) { long singerId = results . getLong ( 0 ); String firstName = results . getString ( 1 ); String lastName = results . getString ( 2 ); System . out . println ( \"[\" + singerId + \"] \" + firstName + \" \" + lastName ); } } } <!--SNIPPET partition query--> Returns Type Description List < Partition > Exceptions Type Description SpannerException partitionRead(PartitionOptions partitionOptions, String table, KeySet keys, Iterable<String> columns, Options.ReadOption[] options) public abstract List<Partition> partitionRead ( PartitionOptions partitionOptions , String table , KeySet keys , Iterable<String> columns , Options .",
+          "Regardless of ordering in keys , rows are returned in the natural key order of the index. columns Iterable < String > the columns to read options ReadOption [] the options to configure the read final BatchReadOnlyTransaction txn = batchClient . batchReadOnlyTransaction ( TimestampBound . strong ()); List<Partition> partitions = txn . partitionReadUsingIndex ( PartitionOptions . getDefaultInstance (), \"Singers\" , \"SingerId\" , KeySet . all (), Arrays . asList ( \"SingerId\" , \"FirstName\" , \"LastName\" )); for ( Partition p : partitions ) { try ( ResultSet results = txn . execute ( p )) { while ( results . next ()) { long singerId = results . getLong ( 0 ); String firstName = results . getString ( 1 ); String lastName = results . getString ( 2 ); System . out . println ( \"[\" + singerId + \"] \" + firstName + \" \" + lastName ); } } } <!--SNIPPET partition read using index--> Returns Type Description List < Partition > Exceptions Type Description SpannerException Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Compute capacity, nodes and processing units \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When autoscaling is enabled on an instance, you can configure and autoscale your read-only replicas independently to set different compute capacities for each replica.",
+          "For information about data replicas in instance configurations, see Regional, dual-region, and multi-region configurations .",
+          "Compute capacity and instance configurations As described in Regional, dual-region, and multi-region configurations , Spanner distributes an instance across zones of one or more regions to provide high performance and high availability."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner.BatchReadOnlyTransaction"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.BatchReadOnlyTransaction"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.BatchReadOnlyTransaction"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.BatchReadOnlyTransaction"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.BatchReadOnlyTransaction"
+      ]
+    }
+  ]
+}

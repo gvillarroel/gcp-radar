@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cloud Storage external queries for ORC and Parquet",
+  "feature_slug": "cloud-storage-external-queries-for-orc-and-parquet",
+  "summary": "BigQuery supports querying Cloud Storage data stored in ORC and Parquet formats; BigQuery can query Cloud Storage data stored in ORC and Parquet formats.",
+  "extended_definition": "BigQuery supports querying Cloud Storage data stored in ORC and Parquet formats; BigQuery can query Cloud Storage data stored in ORC and Parquet formats.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-performance",
+      "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a dataset and grant access to it \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\" , pii = \"sensitive\" } } Update the user, group, or service account provided by the members argument with the appropriate principals for your organization. data \"google iam policy\" \"default\" { binding { role = \"roles/bigquery.dataOwner\" members = [ \"user:raha@altostrat.com\" , ] } binding { role = \"roles/bigquery.admin\" members = [ \"user:raha@altostrat.com\" , ] } binding { role = \"roles/bigquery.user\" members = [ \"group:analysts@altostrat.com\" , ] } binding { role = \"roles/bigquery.dataViewer\" members = [ \"serviceAccount:bqcx-1234567891011-abcd@gcp-sa-bigquery-condel.iam.gserviceaccount.com\" , ] } } resource \"google bigquery dataset iam policy\" \"default\" { dataset id = google bigquery dataset.default.dataset id policy data = data.google iam policy.default.policy data } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a dataset and grant access to it Stay organized with collections Save and categorize content based on your preferences.",
+          "The following example creates a dataset named mydataset, then uses the google bigquery dataset iam policy resource to grant access to it."
+        ]
+      },
+      {
+        "title": "\"Display & Video 360 data transformation \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "source_id": "site-api-reference",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Display & Video 360 resource BigQuery table BigQuery view Data Transfer files Impression p Impression displayvideo id Impression displayvideo id Click p Click displayvideo id Click displayvideo id Activity p Activity displayvideo id Activity displayvideo id DV360 API Resource (v3) Partner p Partner displayvideo id Partner displayvideo id Advertiser p Advertiser displayvideo id Advertiser displayvideo id LineItem p LineItem displayvideo id LineItem displayvideo id LineItemTargeting p LineItemTargeting displayvideo id LineItemTargeting displayvideo id Campaign p Campaign displayvideo id Campaign displayvideo id CampaignTargeting p CampaignTargeting displayvideo id CampaignTargeting displayvideo id InsertionOrder p InsertionOrder displayvideo id InsertionOrder displayvideo id InsertionOrderTargeting p InsertionOrderTargeting displayvideo id InsertionOrderTargeting displayvideo id AdGroup p AdGroup displayvideo id AdGroup displayvideo id AdGroupTargeting p AdGroupTargeting displayvideo id AdGroupTargeting displayvideo id AdGroupAd p AdGroupAd displayvideo id AdGroupAd displayvideo id Creative p Creative displayvideo id Creative displayvideo id Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Display & Video 360 data transformation When your Display & Video 360 data are transferred to BigQuery, they are transformed into the following BigQuery tables and views.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "API performance tips \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-performance",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "However, the same concepts are applicable to the BigQuery API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "bigquery.admin",
+      "bigquery.dataOwner",
+      "bigquery.dataViewer",
+      "bigquery.user",
+      "condel.iam.gserviceaccount.com",
+      "data.google",
+      "dataset.default.dataset",
+      "policy.default.policy"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/api-performance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/api-performance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/api-performance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/display-video-transformation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/api-performance"
+      ]
+    }
+  ]
+}

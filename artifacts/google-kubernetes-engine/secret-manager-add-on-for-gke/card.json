@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Secret Manager add-on for GKE",
+  "feature_slug": "secret-manager-add-on-for-gke",
+  "summary": "The Secret Manager add-on mounts secrets from Secret Manager into Kubernetes Pods.",
+  "extended_definition": "The Secret Manager add-on mounts secrets from Secret Manager into Kubernetes Pods.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access secrets stored outside GKE clusters using client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 185,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a readonly-ns namespace and an admin-ns namespace: kubectl create namespace readonly-ns kubectl create namespace admin-ns Create a readonly-sa Kubernetes service account and an admin-sa Kubernetes service account: kubectl create serviceaccount readonly-sa --namespace = readonly-ns kubectl create serviceaccount admin-sa --namespace = admin-ns Create IAM allow policies Grant the readonly-sa service account read-only access to the secret: gcloud secrets add-iam-policy-binding bq-readonly-key \\ --member = principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/subject/ns/readonly-ns/sa/readonly-sa \\ --role = 'roles/secretmanager.secretAccessor' \\ --condition = None Replace the following: PROJECT NUMBER : your numerical Google Cloud project number.",
+          "Prepare the environment Clone the GitHub repository that contains the sample files for this tutorial: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples cd /kubernetes-engine-samples/security/wi-secrets Create a secret in Secret Manager The following example shows the data you'll use to create a secret: key=my-api-key Create a secret to store the sample data: gcloud secrets create bq-readonly-key \\ --data-file = manifests/bq-readonly-key \\ --ttl = 3600s This command does the following: Creates a new Secret Manager secret with the sample key in the us-central1 Google Cloud region.",
+          "Grant the admin-sa service account read-write access to the secret: gcloud secrets add-iam-policy-binding bq-readonly-key \\ --member = principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/subject/ns/admin-ns/sa/admin-sa \\ --role = 'roles/secretmanager.secretAccessor' \\ --condition = None gcloud secrets add-iam-policy-binding bq-readonly-key \\ --member = principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/subject/ns/admin-ns/sa/admin-sa \\ --role = 'roles/secretmanager.secretVersionAdder' \\ --condition = None Verify secret access Deploy test Pods in each namespace to verify the read-only and read-write access."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "The issues are: CVE-2020-8563: Secret leaks in logs for vSphere Provider kube-controller-manager CVE-2020-8564: Docker config secrets leaked when file is malformed and loglevel >= 4 CVE-2020-8565: Incomplete fix for CVE-2019-11250 in Kubernetes allows for token leak in logs when logLevel >= 9.",
+          "The issues are: CVE-2020-8563: Secret leaks in logs for vSphere Provider kube-controller-manager CVE-2020-8564: Docker config secrets leaked when file is malformed and loglevel >= 4 CVE-2020-8565: Incomplete fix for CVE-2019-11250 in Kubernetes allows for token leak in logs when logLevel >= 9.",
+          "The issues are: CVE-2020-8563: Secret leaks in logs for vSphere Provider kube-controller-manager CVE-2020-8564: Docker config secrets leaked when file is malformed and loglevel >= 4 CVE-2020-8565: Incomplete fix for CVE-2019-11250 in Kubernetes allows for token leak in logs when logLevel >= 9."
+        ]
+      },
+      {
+        "title": "Harden your cluster's security \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "source_id": "site-docs-reference-2",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend the following methods, in order of preference, to store and access your sensitive data: Secret Manager client libraries : programmatically access secrets from your application code by using the Secret Manager API with Workload Identity Federation for GKE.",
+          "Store secrets outside of your cluster Recommended : use an external secret manager like Secret Manager to store sensitive data, such as API keys, outside of your cluster.",
+          "Kubernetes Pods use the identity provided by a ServiceAccount to perform various actions, such as accessing resources in other namespaces or reading data in Secrets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcloud.secrets.versions.add",
+      "github.com",
+      "iam.googleapis.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.secretVersionAdder",
+      "secretmanager.versions.add",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.secretVersionAdder"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+      ]
+    }
+  ]
+}

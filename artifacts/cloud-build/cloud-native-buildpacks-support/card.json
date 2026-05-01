@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.394Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Native Buildpacks support",
+  "feature_slug": "cloud-native-buildpacks-support",
+  "summary": "Cloud Build can build containers without requiring a Dockerfile or Cloud Build configuration file by using Cloud Native Buildpacks.",
+  "extended_definition": "Cloud Build can build containers without requiring a Dockerfile or Cloud Build configuration file by using Cloud Native Buildpacks.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/building/build-containers",
+      "https://docs.cloud.google.com/docs/buildpacks/overview",
+      "https://docs.cloud.google.com/docs/buildpacks/python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build container images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-containers",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Build with Google Cloud's buildpacks Cloud Build lets you build an image without a Dockerfile or a build config file.",
+          "Here are some example commands: Running a build using the default gcr.io/buildpacks/builder to create the image us-docker.pkg.dev/gcb-docs-project/containers/gke/hello-app : gcloud builds submit --pack image=us-docker.pkg.dev/gcb-docs-project/containers/gke/hello-app Passing multiple environment variables to your build using ^--^ as a separator.",
+          "If your Dockerfile and source code are in different directories, add -f and the path to the Dockerfile to the list of arguments in the args field: YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE NAME ' , '-f' , ' DOCKERFILE PATH ' , '.' ] JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \" LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE NAME \" , ' - f ' , ' DOCKERFILE PATH ' , \".\" ] } ] } Where: LOCATION : the regional or multi-regional location for your repository."
+        ]
+      },
+      {
+        "title": "Google Cloud's buildpacks \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The buildpacks published by Google Cloud implement the Cloud Native Buildpack specification and are designed to help you build and configure containers that you can deploy to Google Cloud.",
+          "What's next Builders Build an application Build a function Learn about Cloud Native Buildpacks Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Use buildpacks to containerize your code Buildpacks can be used locally or remotely to: Build an application or service Build a function For programming languages that exclude a standard ways to start an application, you can use a Procfile to define the process to invoke when a container starts."
+        ]
+      },
+      {
+        "title": "Build a Python application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/python",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported buildpacks configurations Python buildpacks supports the following configurations: pip buildpack : Installs dependencies directly from pyproject.toml if it detects all the following conditions: A pyproject.toml file is present in the root directory and you don't configure high-precedence tools such as a poetry.lock file, a [tool.poetry] section, or a uv.lock file.",
+          "Configure pip It is possible to configure the behavior of pip using environment variables : pack build sample-python --builder=gcr.io/buildpacks/builder \\ --env PIP DEFAULT TIMEOUT='60' Private dependencies from Artifact Registry An Artifact Registry Python repository can host private dependencies for your Python function.",
+          "To configure the buildpack to use a supported Python version when deploying your app: pack build sample-python --builder=gcr.io/buildpacks/builder \\ --env GOOGLE PYTHON VERSION=\"3.14.x\" You can also use a project.toml project descriptor to encode the environment variable alongside your project files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "gcr.io",
+      "myjar.jar",
+      "poetry.lock",
+      "project.toml",
+      "pyproject.toml",
+      "tool.poetry",
+      "uv.lock"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/building/build-containers",
+        "https://docs.cloud.google.com/docs/buildpacks/overview",
+        "https://docs.cloud.google.com/docs/buildpacks/python"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/building/build-containers",
+        "https://docs.cloud.google.com/docs/buildpacks/overview",
+        "https://docs.cloud.google.com/docs/buildpacks/python"
+      ]
+    }
+  ]
+}

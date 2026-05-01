@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery remote MCP server",
+  "feature_slug": "bigquery-remote-mcp-server",
+  "summary": "The BigQuery remote MCP server enables LLM agents to perform data-related tasks in BigQuery.",
+  "extended_definition": "The BigQuery remote MCP server enables LLM agents to perform data-related tasks in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+      "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+      "https://docs.cloud.google.com/mcp/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the BigQuery MCP server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "source_id": "site-docs-reference-required-12",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use the BigQuery remote MCP server to perform tasks such as running queries, getting metadata, and listing resources..",
+          "This document shows you how to use the BigQuery remote Model Context Protocol (MCP) server to connect with AI applications including Gemini CLI, ChatGPT, Claude, and custom applications you are developing.",
+          "The BigQuery remote MCP server is enabled when you enable the BigQuery API."
+        ]
+      },
+      {
+        "title": "Manage MCP servers \\_|\\_ Google Cloud MCP servers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can send an HTTP request to list tools directly to a Google remote MCP server with the following command: curl -X POST \\ -H \"Content-Type: application/json\" \\ -d '{\"jsonrpc\": \"2.0\", \"id\":0, \"method\": \"tools/list\"}' \\ \"https:// SERVICE NAME /mcp\" The response resembles the following: { \"jsonrpc\" : \"2.0\" , \"id\" : 1 , \"result\" : { \"tools\" : [ { \"name\" : \"list topics\" , \"title\" : \"List Topics\" , \"description\" : \"Get list of available topics.\" , \"input schema\" : { ... } \"output schema\" : { ... } }, { \"name\" : \"get topic\" , \"title\" : \"Get Topic\" , \"description\" : \"Get messages in a Topic.\" , \"input schema\" : { ... } \"output schema\" : { ... } }, ... ] } } Authenticate your AI application Once you have enabled an MCP server in your project, you can use your Google credentials to authenticate and use its tools through your AI application.",
+          "List enabled MCP servers To list enabled MCP servers for your project, run the following command: gcloud beta services mcp list --enabled The response resembles the following: NAME: services/bigquery.googleapis.com MCP ENDPOINT: bigquery.googleapis.com/mcp NAME: services/mapstools.googleapis.com MCP ENDPOINT: mapstools.googleapis.com/mcp List available tools To get a list of available tools and their descriptions, MCP clients use the MCP tools/list method in an HTTP request to the MCP server endpoint.",
+          "Use MCP servers To use Google and Google Cloud remote MCP server tools, AI applications must have the MCP Tool User role ( roles/mcp.toolUser ) and the necessary service permissions for the tool's Google Cloud service."
+        ]
+      },
+      {
+        "title": "Google Cloud MCP servers overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mcp/overview",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google and Google Cloud remote MCP servers Google and Google Cloud remote MCP servers have the following features and benefits: MCP discovery : Once a server is enabled in your project, AI applications can discover the server's tools by using the MCP tools/list method .",
+          "Local versus remote MCP servers Local MCP servers typically run on your local machine and use the standard input and output streams (stdio) for communication between services on the same device.",
+          "Google and Google Cloud services can be used in your AI applications with enterprise-ready governance, security, and access control through our remote Model Context Protocol (MCP) servers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "bigquery.googleapis.com",
+      "bigquery.jobUser",
+      "mapstools.googleapis.com",
+      "mcp.toolUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/mcp.toolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp",
+        "https://docs.cloud.google.com/mcp/manage-mcp-servers",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    }
+  ]
+}

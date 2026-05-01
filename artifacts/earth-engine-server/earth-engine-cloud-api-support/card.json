@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.832Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Earth Engine Cloud API support",
+  "feature_slug": "earth-engine-cloud-api-support",
+  "summary": "Adds Cloud API support to the JavaScript client library and enables it by default for the Python client library.",
+  "extended_definition": "Adds Cloud API support to the JavaScript client library and enables it by default for the Python client library.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/auth",
+      "https://developers.google.com/earth-engine/guides/client_server",
+      "https://developers.google.com/earth-engine/guides/python_install"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Client vs. Server \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/client_server",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag Earth Engine client libraries for Python and JavaScript translate complex geospatial analyses to Earth Engine requests, allowing code to contain a mix of client-side and server-side objects.",
+          "Earth Engine client libraries for Python and JavaScript translate complex geospatial analyses to Earth Engine requests.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-07-01 UTC.\"],[],[\"Earth Engine uses client libraries to send geospatial analyses to its servers."
+        ]
+      },
+      {
+        "title": "\"Authentication and Initialization \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/auth",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python and Command Line Prior to using the Earth Engine Python client library, you need to authenticate (verify your identity) and use the resultant credentials to initialize the Python client.",
+          "Before you can make requests to Earth Engine through a client library , you must authenticate and use the resultant credentials to initialize the Earth Engine client.",
+          "Page Summary outlined flag Authentication and initialization are required to make requests to Earth Engine through a client library."
+        ]
+      },
+      {
+        "title": "Python Installation \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/python_install",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Keep your client library up to date by running the command for the package manager you used to install earthengine-api : Conda Package Manager : conda update -c conda-forge earthengine-api Python Package Installer : pip install earthengine-api --upgrade Python support The Earth Engine Python client library is compatible with Python versions supported by Google Cloud .",
+          "Try the following notebook to get started with Earth Engine and Colab: Run in Google Colab View source on GitHub If you don't use Colab, the Earth Engine client library can be manually installed and updated on your system using conda (recommended) or pip : Install with conda Install with pip expand more Install the API to an arbitrary Python environment using pip .",
+          "It must be imported and initialized for each new Python session and script: import ee Authentication and Initialization Prior to using the Earth Engine Python client library, you need to authenticate and use the resultant credentials to initialize the Python client."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Authenticate",
+      "ee.Initialize"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/client_server",
+        "https://developers.google.com/earth-engine/guides/auth",
+        "https://developers.google.com/earth-engine/guides/python_install"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/client_server",
+        "https://developers.google.com/earth-engine/guides/auth",
+        "https://developers.google.com/earth-engine/guides/python_install"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/client_server",
+        "https://developers.google.com/earth-engine/guides/auth",
+        "https://developers.google.com/earth-engine/guides/python_install"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/client_server",
+        "https://developers.google.com/earth-engine/guides/auth",
+        "https://developers.google.com/earth-engine/guides/python_install"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/client_server",
+        "https://developers.google.com/earth-engine/guides/auth",
+        "https://developers.google.com/earth-engine/guides/python_install"
+      ]
+    }
+  ]
+}

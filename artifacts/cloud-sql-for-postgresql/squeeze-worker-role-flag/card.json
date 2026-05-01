@@ -1,0 +1,229 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "squeeze.worker_role flag",
+  "feature_slug": "squeeze-worker-role-flag",
+  "summary": "The squeeze.worker_role flag specifies the role used by the pg_squeeze background worker.",
+  "extended_definition": "The squeeze.worker_role flag specifies the role used by the pg_squeeze background worker.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/flags",
+      "https://docs.cloud.google.com/sql/docs/postgres/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure database flags | Cloud SQL for PostgreSQL | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 332,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "2147483647 No squeeze.worker_autostart string Yes squeeze.worker_role string Yes ssl_max_protocol_version enumeration Postgres 14: Sets the maximum SSL/TLS protocol version to use.",
+          "For more information about the background writer , see the PostgreSQL documentation. session_replication_role PostgreSQL has the session_replication_role flag, which is designed to be used for logical replication and lets you disable constraint triggers in individual sessions.",
+          "Two flags associated with the bgwriter flag are bgwriter_delay and bgwriter_lru_maxpages . bgwriter_delay specifies the delay between activity rounds for the background writer in milliseconds (ms), and bgwriter_lru_maxpages specifies how many buffers will be written by the background writer."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "This request header specifies a user project to be used for quota accounting on the request.",
+          "Permissions to check and increase your quotas To check and increase your quotas, you need the following permissions: serviceusage.quotas.get : check your quotas serviceusage.quotas.update : increase your quotas By default, these permissions are included in the basic IAM roles of Editor and Owner and in the predefined Quota Administrator role.",
+          "You can find the connection limits for your instance by connecting to your database and running this command: SELECT FROM pg settings WHERE name = 'max connections'; Note: To determine the maximum value that you can set for this flag, you must first calculate the number of backend connections that are already in use."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "When setting INSTANCE UNIX SOCKET, the connector will // call an external package that will enable Unix socket connections. // Note: For Java users, the Cloud SQL Java Connector can provide authenticated connections // which is usually preferable to using the Cloud SQL Proxy with Unix sockets. // See https://github.com/GoogleCloudPlatform/cloud-sql-jdbc-socket-factory for details. if ( INSTANCE UNIX SOCKET != null ) { config . addDataSourceProperty ( \"unixSocketPath\" , INSTANCE UNIX SOCKET ); } // cloudSqlRefreshStrategy set to \"lazy\" is used to perform a // refresh when needed, rather than on a scheduled interval. // This is recommended for serverless environments to // avoid background refreshes from throttling CPU. config . addDataSourceProperty ( \"cloudSqlRefreshStrategy\" , \"lazy\" ); // ...",
+          "URL . create ( drivername = \"mysql+pymysql\" , username = db user , password = db pass , database = db name , query = { \"unix socket\" : unix socket path }, ), ... ) return pool Java To see this snippet in the context of a web application, view the README on GitHub . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class ConnectorConnectionPoolFactory extends ConnectionPoolFactory { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. private static final String INSTANCE CONNECTION NAME = System . getenv ( \"INSTANCE CONNECTION NAME\" ); private static final String INSTANCE UNIX SOCKET = System . getenv ( \"INSTANCE UNIX SOCKET\" ); private static final String DB USER = System . getenv ( \"DB USER\" ); private static final String DB PASS = System . getenv ( \"DB PASS\" ); private static final String DB NAME = System . getenv ( \"DB NAME\" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool.",
+          "Note: INSTANCE CONNECTION NAME should be represented as <MY-PROJECT>:<INSTANCE-REGION>:<INSTANCE-NAME> Using the argument ipTypes=PRIVATE will force the SocketFactory to connect with an instance's associated private IP See the JDBC socket factory version requirements for the pom.xml file . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class TcpConnectionPoolFactory extends ConnectionPoolFactory { // Saving credentials in environment variables is convenient, but not secure - consider a more // secure solution such as https://cloud.google.com/secret-manager/ to help keep secrets safe. private static final String DB USER = System . getenv ( \"DB USER\" ); private static final String DB PASS = System . getenv ( \"DB PASS\" ); private static final String DB NAME = System . getenv ( \"DB NAME\" ); private static final String INSTANCE HOST = System . getenv ( \"INSTANCE HOST\" ); private static final String DB PORT = System . getenv ( \"DB PORT\" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "github.com",
+      "javax.sql.DataSource",
+      "pom.xml",
+      "resourcemanager.projects.setIamPolicy",
+      "serviceusage.quotas.get",
+      "serviceusage.quotas.update",
+      "squeeze.worker_autostart",
+      "squeeze.worker_role"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+      ]
+    }
+  ]
+}

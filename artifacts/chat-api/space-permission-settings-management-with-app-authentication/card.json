@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.226Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Space permission settings management with app authentication",
+  "feature_slug": "space-permission-settings-management-with-app-authentication",
+  "summary": "Chat apps can create, update, and retrieve Chat space permission settings, including announcement spaces, using app authentication; Chat apps can create, update, and retrieve Chat space permission settings, including announcement spaces, using app authentication.",
+  "extended_definition": "Chat apps can create, update, and retrieve Chat space permission settings, including announcement spaces, using app authentication; Chat apps can create, update, and retrieve Chat space permission settings, including announcement spaces, using app authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+      "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions",
+      "https://developers.google.com/workspace/chat/create-spaces"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "source_id": "site-api-reference",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Setting predefined permission settings supports: App authentication with administrator approval with the chat.app.spaces or chat.app.spaces.create scopes.",
+          "Reading and updating permission settings supports: App authentication with administrator approval with the chat.app.spaces scope.",
+          "Resource: Space JSON representation Type SpaceType SpaceThreadingState SpaceDetails JSON representation HistoryState MembershipCount JSON representation AccessSettings JSON representation AccessState PredefinedPermissionSettings PermissionSettings JSON representation PermissionSetting JSON representation Methods Resource: Space A space in Google Chat."
+        ]
+      },
+      {
+        "title": "Create a named space in Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-spaces",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To allow only space managers to remove the Chat app, set permissionSettings.manageApps to managersAllowed .",
+          "Here's how to create a named space: Node.js chat/client-libraries/cloud/create-space-user-cred.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.spaces.create' , ]; // This sample shows how to create a named space with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { space : { spaceType : 'SPACE' , // Replace DISPLAY NAME here. displayName : 'DISPLAY NAME' , }, }; // Make the request const response = await chatClient . createSpace ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create space user cred.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.spaces.create\" ] def create space with user cred (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat .",
+          "CreateSpaceRequest ( space = { \"space type\" : 'SPACE' , Replace DISPLAY NAME here. \"display name\" : 'DISPLAY NAME' } ) Make the request response = client . create space ( request ) Handle the response print ( response ) create space with user cred () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateSpaceUserCred.java View on GitHub import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateSpaceRequest ; import com.google.chat.v1.Space ; // This sample shows how to create space with user credential. public class CreateSpaceUserCred { private static final String SCOPE = \"https://www.googleapis.com/auth/chat.spaces.create\" ; public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithUserCredentials ( ImmutableList . of ( SCOPE ))) { CreateSpaceRequest ."
+        ]
+      },
+      {
+        "title": "\"Manage granular OAuth permissions for Google Chat apps \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Handling granular OAuth permissions depends on how you build your Chat app: Apps Script Google Workspace add-ons that extend Chat Standalone Apps Script Chat apps HTTP Google Workspace add-ons that extend Chat Standalone HTTP Chat apps Apps Script If you build your Chat app using Apps Script , Apps Script handles granular OAuth permissions automatically.",
+          "Google Workspace add-ons that extend Chat If you build your Chat app as a Google Workspace add-on that extends Google Chat using Apps Script , follow the instructions in Handle granular OAuth permissions in Apps Script .",
+          "Home Google Workspace Google Chat Guides Send feedback Manage granular OAuth permissions for Google Chat apps Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "chat.app.spaces",
+      "chat.app.spaces.create",
+      "chat.spaces.create",
+      "com.google.chat.v1.ChatServiceClient",
+      "com.google.chat.v1.CreateSpaceRequest",
+      "com.google.chat.v1.Space",
+      "cred.js",
+      "cred.py",
+      "developers.google.com",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-granular-oauth-permissions"
+      ]
+    }
+  ]
+}

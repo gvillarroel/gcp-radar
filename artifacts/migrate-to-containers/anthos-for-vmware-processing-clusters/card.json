@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.932Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Anthos for VMware processing clusters",
+  "feature_slug": "anthos-for-vmware-processing-clusters",
+  "summary": "Processing clusters on Anthos for VMware used for containerizing VMware sources are deprecated; deprecated on 2023-03-20.",
+  "extended_definition": "Processing clusters on Anthos for VMware used for containerizing VMware sources are deprecated; deprecated on 2023-03-20.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-20",
+    "deprecation_date": "2023-03-20",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+      "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+      "https://docs.cloud.google.com/migrate/containers/docs/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pricing and quotas Pricing Migrate to Containers pricing is based on the Google Cloud resources used.",
+          "Release notes Migrate to Containers release notes Production updates to Migrate to Containers, including new or updated features, bug fixes, known issues, and deprecated functionality.",
+          "Migrate to Containers CLI release notes Production updates to Migrate to Containers CLI, including new or updated features, bug fixes, known issues, and deprecated functionality."
+        ]
+      },
+      {
+        "title": "Migrate a Linux VM using Migrate to Containers CLI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, follow these steps.",
+          "It appears similar to the following: apiVersion: v1 kind: Service metadata: labels: anthos-migrate.cloud.google.com/type: linux-container migrate-for-anthos-optimization: \"true\" migrate-for-anthos-version: m2c-cli-1.2.2 name: linux-system spec: clusterIP: None selector: app: linux-system type: ClusterIP Add another Service object called hello-service right after linux-system : apiVersion: v1 kind: Service metadata: labels: anthos-migrate.cloud.google.com/type: linux-container migrate-for-anthos-optimization: \"true\" migrate-for-anthos-version: m2c-cli-1.2.2 name: linux-system spec: clusterIP: None selector: app: linux-system type: ClusterIP --- Add the hello-service object apiVersion: v1 kind: Service metadata: name: hello-service spec: selector: app: linux-system ports: - protocol: TCP port: 80 targetPort: 80 type: LoadBalancer To save the file and exit the text editor, press Esc and then enter :wq .",
+          "On the quickstart-local-vm command tab, install the Google Cloud CLI: Import the Google Cloud public key. curl https://packages.cloud.google.com/apt/doc/apt-key.gpg sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg Add the gcloud CLI distribution URI as a package source echo \"deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main\" sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list Update and install gcloud sudo apt-get update && sudo apt-get install google-cloud-cli Get started gcloud init To complete the gcloud CLI setup, follow the instructions that appear on the quickstart-local-vm command tab: To select the account to use to perform various operations, enter 1 ."
+        ]
+      },
+      {
+        "title": "\"Upgrade container workloads for enhanced runtime \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: vi deployment spec.yaml Locate the following three sections in the file and delete the indicated lines: apiVersion : apps/v1 kind : StatefulSet ... spec : containers : - image : gcr.io/ PROJECT NAME / IMAGE NAME : LABEL name : IMAGE NAME Delete the following lines: readinessProbe : exec : command : - /code/ready.sh resources : {} securityContext : privileged : true Stop the delete here. volumeMounts : Delete the following lines: - mountPath : /sys/fs/cgroup name : cgroups Stop the delete here. - mountPath : /opt/suitecrm-7.10.5-0/mysql/data name : data-pvc-0-1b12-d0af-48b3-9f5e-6c25fa5 subPath : opt/suitecrm-7.10.5-0/mysql/data volumes : Delete the following lines: - hostPath : path : /sys/fs/cgroup type : Directory name : cgroups Stop the delete here. - name : data-pvc-2-d0af-48b3-9f5e09c25fa5 persistentVolumeClaim : claimName : data-pvc-0-1a2-d0af-48b3-9f5e-605fa5 Notice that you only remove the volumeMounts and volumes definitions for cgroups and leave the remaining definitions.",
+          "For example: vi deployment spec.yaml Locate the following section in the file and delete the indicated lines: apiVersion : apps/v1 kind : Deployment metadata : creationTimestamp : null name : IMAGE NAME … spec : containers : - image : gcr.io/ PROJECT NAME / IMAGE NAME : LABEL name : IMAGE NAME Delete the following lines: readinessProbe : exec : command : - /code/ready.sh resources : {} securityContext : privileged : true volumeMounts : - mountPath : /sys/fs/cgroup name : cgroups - mountPath : /code/config/logs name : logs-config volumes : - hostPath : path : /sys/fs/cgroup type : Directory name : cgroups - configMap : name : suitecrm-crddefault-logs name : logs-config Stop the delete here.",
+          "Note: loading the nodes and pulling the image might take a few minutes. kubectl get pods Post conversion tasks After you convert an existing migration to use the simplified Linux service manager, you might want to modify it to: Update the services used by the migrated workload."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "key.gpg",
+      "migrate.cloud.google.com",
+      "migrate.gcr.io",
+      "packages.cloud.google.com",
+      "ready.sh",
+      "sdk.list",
+      "sources.list.d",
+      "spec.yaml",
+      "v1.15.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Container-bound scripts for Docs and Forms",
+  "feature_slug": "container-bound-scripts-for-docs-and-forms",
+  "summary": "Google Docs and Google Forms can now host bound scripts directly from their editors.",
+  "extended_definition": "Google Docs and Google Forms can now host bound scripts directly from their editors.",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/bound",
+      "https://developers.google.com/apps-script/guides/docs",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Container-bound Scripts \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/bound",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom menus, dialogs, and sidebars Bound scripts can customize Sheets, Docs, and Forms by adding custom menus and dialog boxes or sidebars .",
+          "Page Summary outlined flag A bound script is attached to a specific Google Sheets, Docs, Slides, or Forms file, called its container.",
+          "Bound scripts can be created from within the Google Docs, Sheets, Slides, or Forms file they will be bound to."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the client-side HTML-service method google.script.host.editor.focus() , which allows scripts to switch browser focus from the dialog or sidebar to the Google Docs, Sheets, or Forms editor.",
+          "May 13, 2013 Feature The script editor is now available within Google Docs and the Google Forms editor, and both Docs and Forms can now be containers for scripts.",
+          "For container-bound scripts : If someone outside the container owner's organization creates or edits a container-bound script project, the container owner receives an email notification."
+        ]
+      },
+      {
+        "title": "Extend Google Docs \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/docs",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Triggers Scripts that are bound to a Google Doc can use a simple trigger to respond to the document's onOpen event , which occurs whenever a user who has edit access to the document opens it in Docs.",
+          "For scripts created inside a document (container-bound), use DocumentApp.getActiveDocument and Document.getActiveTab .",
+          "To create a container-bound script from within Docs, click Extensions Apps Script ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/bound",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/bound",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/bound",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs"
+      ]
+    }
+  ]
+}

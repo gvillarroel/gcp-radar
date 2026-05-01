@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Cloud Dataflow SDK for Python 0.4.0 support",
+  "feature_slug": "cloud-dataflow-sdk-for-python-0-4-0-support",
+  "summary": "Dataflow supports running pipelines remotely with the Cloud Dataflow SDK for Python 0.4.0.",
+  "extended_definition": "Dataflow supports running pipelines remotely with the Cloud Dataflow SDK for Python 0.4.0.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-save-load-yaml",
+      "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+      "https://docs.cloud.google.com/python/docs/reference/dataflow/latest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Save and load YAML job definitions with the job builder \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-save-load-yaml",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Save and load YAML job definitions with the job builder Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Python Client for Dataflow \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataflow/latest",
+        "source_id": "site-python-reference",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Mac/Linux python3 -m venv <your-env> source <your-env>/bin/activate pip install google-cloud-dataflow-client Windows py -m venv <your-env> .\\<your-env>\\Scripts\\activate pip install google-cloud-dataflow-client Next Steps Read the Client Library Documentation for Dataflow to see other available methods on the client.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Python Client for Dataflow Stay organized with collections Save and categorize content based on your preferences.",
+          "Environment-Based Examples Enabling the default handler for all Google-based loggers export GOOGLE SDK PYTHON LOGGING SCOPE=google Enabling the default handler for a specific Google module (for a client library called library v1 ): export GOOGLE SDK PYTHON LOGGING SCOPE=google.cloud.library v1 Advanced, code-based configuration You can also configure a valid logging scope using Python’s standard logging mechanism."
+        ]
+      },
+      {
+        "title": "\"Monitoring pipeline performance using Cloud Profiler \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable Cloud Profiler for Dataflow pipelines Cloud Profiler is available for Dataflow pipelines written in Apache Beam SDK for Java and Python, version 2.33.0 or later.",
+          "For troubleshooting tips and debugging strategies for building or running your Dataflow pipeline, see Troubleshooting and debugging pipelines .",
+          "Python pipelines must use Dataflow Runner v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+        "https://docs.cloud.google.com/python/docs/reference/dataflow/latest",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-save-load-yaml"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+        "https://docs.cloud.google.com/python/docs/reference/dataflow/latest",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-save-load-yaml"
+      ]
+    }
+  ]
+}

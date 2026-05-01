@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Historical report access for assigned queues only",
+  "feature_slug": "historical-report-access-for-assigned-queues-only",
+  "summary": "Historical reports can now be limited so that only data for assigned queues is downloaded.",
+  "extended_definition": "Historical reports can now be limited so that only data for assigned queues is downloaded.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Standard reports \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports",
+        "source_id": "site-docs-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By selecting Assigned Teams Only , only the assigned team has access to the session data report.",
+          "Here are the available call types: Voice Inbound (IVR) : standard PSTN calls Voice Inbound (IVR via Mobile) : fallback PSTN calls made using the mobile SDKs Voice Inbound (Mobile) : calls placed by end-users using the mobile SDKs Voice Callback (Web) : calls initiated from the web SDK Voice Inbound (API) : calls initiated using an API Voice Scheduled (Mobile) : calls scheduled using the mobile SDKs Voice Scheduled (Web) : calls scheduled using the web SDK Voice Outbound : calls placed by agents dialing a number Voice Outbound (API) : calls initiated using an API Voice Scheduled (API) : calls initiated by an outbound dialer campaign Voice Internal : agent-to-agent calls Voice Inbound (Direct) : calls initiated by end-users using agents' direct numbers Voice Outbound (Direct) calls initiated by agents using their direct numbers Voice Outbound (UCaaS) : outbound, unified communications as a service (UCaaS) calls Voice Inbound (Extension) : inbound end-user to agent calls Here are the available chat types: Messaging Inbound (Mobile Chat) : chats initiated by end-users using the mobile SDKs Messaging Inbound (Web Chat) : chats initiated by end-users using the web SDK Messaging Inbound (SMS) : SMS chats initiated by end-users Messaging Outbound (SMS) : SMS chats initiated by agents Messaging Outbound (SMS via API) : SMS chats initiated by an API Messaging Inbound (SMS Direct) : SMS chats initiated by end-users using agents' direct numbers Messaging Outbound (SMS Direct) : SMS chats initiated by agents using their direct numbers Messaging Outbound (SMS Direct via API) : SMS chats initiated by an API using agents' direct numbers Messaging (WhatsApp) : chats initiated using WhatsApp Queues From the CCAI Platform portal, go to Reports > Queues .",
+          "2,300,000 lines will be broken up into 3 files, two that are 1 million in length and one 300k in length Sample Reports There are different report types available, depending on the data set you are accessing."
+        ]
+      },
+      {
+        "title": "\"Standard Reports: Virtual Agent Data Sets \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information on accessing and building reports see the Accessing Reports section of Historical Reports: Interaction-based Data Model .",
+          "For more information on accessing and building reports see the Accessing Reports section of Historical Reports: Interaction-based Data Model.",
+          "The Virtual Agent Escalation/Deflection Report can be found at Reports > Queues ."
+        ]
+      },
+      {
+        "title": "\"Standard Reports Agent and Teams Data Sets \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+        "source_id": "site-docs-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Standard Reports Agent and Teams Data Sets Stay organized with collections Save and categorize content based on your preferences.",
+          "Queue Priority by Language: List of assigned queues including the language and specific queue priority for each queue assigned.",
+          "Performance Metrics Report Overview From the Reports tab, one of the report options is the Performance Metrics report ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Virtual_Agent_Data_Sets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+      ]
+    }
+  ]
+}

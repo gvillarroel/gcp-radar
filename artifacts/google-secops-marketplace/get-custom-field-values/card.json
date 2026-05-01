@@ -1,0 +1,225 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.277Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Get Custom Field Values",
+  "feature_slug": "get-custom-field-values",
+  "summary": "Adds an action that retrieves custom field values.",
+  "extended_definition": "Adds an action that retrieves custom field values.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Based on the Cloud Storage configuration that you created, specify values for the following fields: Storage bucket URI Note: Use a wildcard to match an entire directory name.",
+          "Enable authentication by specifying the API key and secret key as part of the custom header in the following format: X-goog-api-key = API KEY X-Webhook-Access-Key = SECRET We recommend that you specify the API key as a header instead of specifying it in the URL.",
+          "Note: When you configure the SOURCE DELETION OPTION field, if you select an option to delete source objects, you must enable the required deletion permissions for that feed type."
+        ]
+      },
+      {
+        "title": "\"Forwarder Management \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request(\"GET\", url) POST example uses json body = { \"foo\": \"bar\" } response = http session.request(\"POST\", url, json=body) PATCH example uses params and json params = { \"foo\": \"bar\" } response = http session.request(\"PATCH\", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.",
+          "For any fields that aren't provided, default values are applied during collector creation.",
+          "Note: This is a global setting that applies to the forwarder and the forwarder's collectors, unless it is overridden at the collector level. metadata.labels.key string Optional The key for a field in the metadata labels list. metadata.labels.value string Optional The value for a field in the metadata labels list. regex filters.description string Optional Describes what is being filtered and why. regex filters.regexp string Optional The regular expression used to match against each incoming line. regex filters.behavior enum Optional Specifies the state of the server functionality."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Please note, there are additional policies that match the provided filter.\" If no data: Print \"No Policies were found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, max>1000): print \"Error executing action 'List Policies.",
+          "Reason: {exception.stacktrace} General List Policies Description List all the managed policies that are available in your AWS account, including your own customer-defined managed policies and all AWS managed policies.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"PolicyName\" : \"S3-read-only-bucket\" , \"PolicyId\" : \"ANPAYPE7MW7AFKUDK3HD7\" , \"Arn\" : \"arn:aws:iam::582302349248:policy/S3-read-only-bucket\" , \"Path\" : \"/\" , \"DefaultVersionId\" : \"v1\" , \"AttachmentCount\" : 0 , \"PermissionsBoundaryUsageCount\" : 0 , \"IsAttachable\" : true , \"CreateDate\" : \"2020-12-6T17:16:45\" , \"UpdateDate\" : \"2020-12-6T17:16:45\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"<Policy name> policy was successfully created\" The action should fail and stop a playbook execution: If error - Policy already exists: Print \"Could not create <policy name> policy."
+        ]
+      },
+      {
+        "title": "\"Integrate AWS Security Hub with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To configure permissions that are required for the AWS Security Hub integration, and set the custom policy, use the following code: { \"Sid\" : \"SecurityHubServiceRolePermissions\" , \"Effect\" : \"Allow\" , \"Action\" : [ \"securityhub:GetMasterAccount\" , \"securityhub:GetInsightResults\" , \"securityhub:CreateInsight\" , \"securityhub:UpdateInsight\" , \"securityhub:BatchUpdateFindings\" , \"securityhub:GetFindings\" , \"securityhub:GetInsight\" , \"securityhub:DescribeHub\" , ], \"Resource\" : \" \" } For more information about configuring permissions, see AWS managed policy: AWSSecurityHubServiceRolePolicy in AWS documentation.",
+          "The structure of the filter with all possible configurations is as follows: { \"ProductArn\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"AwsAccountId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"Id\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"GeneratorId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"Type\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"FirstObservedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"LastObservedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"CreatedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"UpdatedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"SeverityProduct\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"SeverityNormalized\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"SeverityLabel\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"Confidence\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"Criticality\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"Title\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"Description\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"RecommendationText\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"SourceUrl\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ProductFields\" : [ { \"Key\" : \"string\" , \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"NOT EQUALS\" } ], \"ProductName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"CompanyName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"UserDefinedFields\" : [ { \"Key\" : \"string\" , \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"NOT EQUALS\" } ], \"MalwareName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"MalwareType\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"MalwarePath\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"MalwareState\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NetworkDirection\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NetworkProtocol\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NetworkSourceIpV4\" : [ { \"Cidr\" : \"string\" } ], \"NetworkSourceIpV6\" : [ { \"Cidr\" : \"string\" } ], \"NetworkSourcePort\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"NetworkSourceDomain\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NetworkSourceMac\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NetworkDestinationIpV4\" : [ { \"Cidr\" : \"string\" } ], \"NetworkDestinationIpV6\" : [ { \"Cidr\" : \"string\" } ], \"NetworkDestinationPort\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"NetworkDestinationDomain\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ProcessName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ProcessPath\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ProcessPid\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"ProcessParentPid\" : [ { \"Gte\" : 123.0 , \"Lte\" : 123.0 , \"Eq\" : 123.0 } ], \"ProcessLaunchedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"ProcessTerminatedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"ThreatIntelIndicatorType\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ThreatIntelIndicatorValue\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ThreatIntelIndicatorCategory\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ThreatIntelIndicatorLastObservedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"ThreatIntelIndicatorSource\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ThreatIntelIndicatorSourceUrl\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceType\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourcePartition\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceRegion\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceTags\" : [ { \"Key\" : \"string\" , \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"NOT EQUALS\" } ], \"ResourceAwsEc2InstanceType\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsEc2InstanceImageId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsEc2InstanceIpV4Addresses\" : [ { \"Cidr\" : \"string\" } ], \"ResourceAwsEc2InstanceIpV6Addresses\" : [ { \"Cidr\" : \"string\" } ], \"ResourceAwsEc2InstanceKeyName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsEc2InstanceIamInstanceProfileArn\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsEc2InstanceVpcId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsEc2InstanceSubnetId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsEc2InstanceLaunchedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"ResourceAwsS3BucketOwnerId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsS3BucketOwnerName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsIamAccessKeyUserName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsIamAccessKeyStatus\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceAwsIamAccessKeyCreatedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"ResourceContainerName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceContainerImageId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceContainerImageName\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"ResourceContainerLaunchedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"ResourceDetailsOther\" : [ { \"Key\" : \"string\" , \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"NOT EQUALS\" } ], \"ComplianceStatus\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"VerificationState\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"WorkflowState\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"WorkflowStatus\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"RecordState\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"RelatedFindingsProductArn\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"RelatedFindingsId\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NoteText\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"NoteUpdatedAt\" : [ { \"Start\" : \"string\" , \"End\" : \"string\" , \"DateRange\" : { \"Value\" : 123 , \"Unit\" : \"DAYS\" } } ], \"NoteUpdatedBy\" : [ { \"Value\" : \"string\" , \"Comparison\" : \"EQUALS\" \"PREFIX\" \"NOT EQUALS\" \"PREFIX NOT EQUALS\" } ], \"Keyword\" : [ { \"Value\" : \"string\" } ] } An example of a filter that returns only findings with the critical severity is as follows: { \"SeverityLabel\" : [ { \"Value\" : \"CRITICAL\" , \"Comparison\" : \"EQUALS\" } ] } Actions To function properly, the AWS Security Hub actions require you to configure specific permissions.",
+          "Action outputs The Get Insight Details action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Available Enrichment table Not available JSON result Available Output messages Available Script result Available Case wall table The Get Insight Details action can return the following table in Google SecOps: Table name: ' NUMBER OF OBJECTS ' Bucket Objects Columns: Name (mapped as GroupByAttributeValue ) Count (mapped as Count ) JSON result The following example shows the JSON result output received when using the Get Insight Details action: \"InsightResults\" : { \"InsightArn\" : \"arn:aws:securityhub: ID \" , \"GroupByAttribute\" : \"ResourceId\" , \"ResultValues\" : [ { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-arcsight-v-27-0-getreportstatus\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-arcsight-v-27-0-searchactionbug\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-arcsight-v-27-0-unicodeandlogs\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-automation-v-1-0\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-awss3-v-1-0\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-azureactivedirectory-v-4-0\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-bootcamp-v-1-0\" , \"Count\" : 5 }, { \"GroupByAttributeValue\" : \"arn:aws:s3:::int-categories\" , \"Count\" : 5 } ] } Output messages The Get Insight Details action can return the following output messages: Output message Message description Successfully returned details about Insight with ARN ' ARN ' in AWS Security Hub."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "backstory.googleapis.com",
+      "demo.json",
+      "exception.stacktrace",
+      "filters.behavior",
+      "filters.description",
+      "filters.regexp",
+      "github.com",
+      "metadata.labels.key",
+      "metadata.labels.value",
+      "requests.AuthorizedSession",
+      "session.request"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-security-hub"
+      ]
+    }
+  ]
+}

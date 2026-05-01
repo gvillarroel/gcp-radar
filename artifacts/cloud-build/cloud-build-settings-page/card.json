@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.394Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build settings page",
+  "feature_slug": "cloud-build-settings-page",
+  "summary": "Cloud Build added a Settings page in the Google Cloud Console for managing service account permissions.",
+  "extended_definition": "Cloud Build added a Settings page in the Google Cloud Console for managing service account permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/developers-console",
+      "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For modifying permissions, deleting, and restoring your service accounts, see Creating and managing service accounts .",
+          "For example, if a version requires permissions that differ from the app-level default service account, you can assign a service account that is specific to that version.",
+          "If you deploy an existing application in a new project created after this date, the service account might not have the required permissions to deploy the app."
+        ]
+      },
+      {
+        "title": "\"Setting up your Google Cloud project for App Engine \\_|\\_ App Engine standard\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managing billing Use the Billing page to manage your billing accounts: Go to the Billing page in the Google Cloud console: Go to Billing Select the account that you want to manage and then navigate to the corresponding page to perform the following management tasks: See an overview of your billing account, make payments, and add billing account administrators from the Overview page.",
+          "To create a budget and set alerts in a Google Cloud project: In the Google Cloud console, go to the Billing page: Go to Billing Click the billing account for which you want to create a budget.",
+          "Configure your payment account and contacts on the Payment settings page."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference-2",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To delete a connector, use the Google Cloud console or the Google Cloud CLI: Console Go to the Serverless VPC Access overview page in the Google Cloud console: Go to Serverless VPC Access Select the connector you want to delete.",
+          "To display charts for the connector's throughput, number of instances, and CPU utilization metrics over time by using the Google Cloud console: Go to the Serverless VPC Access overview page.",
+          "Troubleshooting Service account permissions To perform operations in your Google Cloud project, Serverless VPC Access uses the Serverless VPC Access Service Agent service account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/developers-console",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ]
+}

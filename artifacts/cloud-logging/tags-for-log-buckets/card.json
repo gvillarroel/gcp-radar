@@ -1,0 +1,269 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Tags for log buckets",
+  "feature_slug": "tags-for-log-buckets",
+  "summary": "Log buckets can be annotated with tags and those tags can be used for access management.",
+  "extended_definition": "Log buckets can be annotated with tags and those tags can be used for access management.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/buckets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: View logging.buckets.copyLogEntries logging.buckets.create logging. buckets. createTagBinding logging.buckets.delete logging. buckets. deleteTagBinding logging.buckets.get logging.buckets.list logging. buckets. listEffectiveTags logging. buckets. listTagBindings logging.buckets.undelete logging.buckets.update logging.exclusions. logging.exclusions.create logging.exclusions.delete logging.exclusions.get logging.exclusions.list logging.exclusions.update logging.fields.access logging.links. logging.links.create logging.links.delete logging.links.get logging.links.list logging.locations. logging.locations.get logging.locations.list logging.logEntries. logging.logEntries.create logging.logEntries.download logging.logEntries.list logging.logEntries.route logging.logMetrics. logging.logMetrics.create logging.logMetrics.delete logging.logMetrics.get logging.logMetrics.list logging.logMetrics.update logging.logScopes. logging.logScopes.create logging.logScopes.delete logging.logScopes.get logging.logScopes.list logging.logScopes.update logging.logServiceIndexes.list logging.logServices.list logging.logs. logging.logs.delete logging.logs.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update logging.operations. logging.operations.cancel logging.operations.get logging.operations.list logging.privateLogEntries.list logging.queries. logging.queries.deleteShared logging.queries.getShared logging.queries.listShared logging.queries.share logging.queries.updateShared logging.queries.usePrivate logging.settings. logging.settings.get logging.settings.update logging.sinks. logging.sinks.create logging.sinks.delete logging.sinks.get logging.sinks.list logging.sinks.update logging.sqlAlerts. logging.sqlAlerts.create logging.sqlAlerts.update logging.usage.get logging.views. logging.views.access logging.views.create logging.views.delete logging.views.get logging.views.getIamPolicy logging.views.list logging.views.listLogs logging.views.listResourceKeys logging. views. listResourceValues logging.views.setIamPolicy logging.views.update observability.scopes.get resourcemanager.projects.get resourcemanager.projects.list Logs Bucket Writer ( roles/ logging.bucketWriter ) Ability to write logs to a log bucket.",
+          "Lowest-level resources where you can grant this role: View logging.buckets.create logging. buckets. createTagBinding logging.buckets.delete logging. buckets. deleteTagBinding logging.buckets.get logging.buckets.list logging. buckets. listEffectiveTags logging. buckets. listTagBindings logging.buckets.undelete logging.buckets.update logging.exclusions. logging.exclusions.create logging.exclusions.delete logging.exclusions.get logging.exclusions.list logging.exclusions.update logging.links. logging.links.create logging.links.delete logging.links.get logging.links.list logging.locations. logging.locations.get logging.locations.list logging.logMetrics. logging.logMetrics.create logging.logMetrics.delete logging.logMetrics.get logging.logMetrics.list logging.logMetrics.update logging.logScopes. logging.logScopes.create logging.logScopes.delete logging.logScopes.get logging.logScopes.list logging.logScopes.update logging.logServiceIndexes.list logging.logServices.list logging.logs.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update logging.operations. logging.operations.cancel logging.operations.get logging.operations.list logging.settings. logging.settings.get logging.settings.update logging.sinks. logging.sinks.create logging.sinks.delete logging.sinks.get logging.sinks.list logging.sinks.update logging.sqlAlerts. logging.sqlAlerts.create logging.sqlAlerts.update logging.views.create logging.views.delete logging.views.get logging.views.getIamPolicy logging.views.list logging.views.update observability.scopes.get resourcemanager.projects.get resourcemanager.projects.list Log Field Accessor ( roles/ logging.fieldAccessor ) Ability to read restricted fields in a log bucket.",
+          "To learn more, see Use tags to manage access to log buckets ."
+        ]
+      },
+      {
+        "title": "Configure log buckets \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/buckets",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a bucket is pending deletion by Cloud Logging, then its table entry is annotated with a warning warning symbol. gcloud Run the gcloud logging buckets list command: gcloud logging buckets list You see the following attributes for the log buckets: LOCATION : The region in which the bucket's data is stored.",
+          "You can't query or view those expired logs but, in those 7 days, you can restore full access by extending the bucket's retention.",
+          "For example, if you want to create a bucket with the BUCKET ID my-bucket in the global region, your command would look like the following: gcloud logging buckets create my-bucket --location global --description \"My first bucket\" For example, to create a bucket with the BUCKET ID my-upgraded-bucket in the global location, and then upgrade the log bucket to use Observability Analytics, your command would look like the following: gcloud logging buckets create my-upgraded-bucket --location global \\ --description \"My first upgraded bucket\" \\ --enable-analytics --retention-days=45 Note: After you create your log bucket, you can't change your bucket's region."
+        ]
+      },
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get the permissions that you need to get access to all logs in the Required and Default buckets, including Data Access logs, ask your administrator to grant you the Private Logs Viewer ( roles/logging.privateLogViewer ) IAM role on your project.",
+          "The Private Logs Viewer role (roles/logging.privateLogViewer) includes the permissions contained in the Logs Viewer role ( roles/logging.viewer ), and those necessary to read Data Access audit logs in the Default bucket.",
+          "For a list of services that write Data Access audit logs and detailed information about which activities generate those logs, see Google Cloud services with audit logs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.buckets.copyLogEntries",
+      "logging.buckets.create",
+      "logging.buckets.delete",
+      "logging.buckets.get",
+      "logging.buckets.list",
+      "logging.buckets.undelete",
+      "logging.buckets.update",
+      "logging.bucketWriter",
+      "logging.exclusions",
+      "logging.exclusions.create",
+      "logging.exclusions.delete",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.exclusions.update",
+      "logging.fieldAccessor",
+      "logging.fields.access",
+      "logging.links",
+      "logging.links.create",
+      "logging.links.delete",
+      "logging.links.get",
+      "logging.links.list",
+      "logging.locations",
+      "logging.locations.get",
+      "logging.locations.list",
+      "logging.logEntries",
+      "logging.logEntries.create",
+      "logging.logEntries.download",
+      "logging.logEntries.list",
+      "logging.logEntries.route",
+      "logging.logMetrics",
+      "logging.logMetrics.create",
+      "logging.logMetrics.delete",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logMetrics.update",
+      "logging.logs",
+      "logging.logs.delete",
+      "logging.logs.list",
+      "logging.logScopes",
+      "logging.logScopes.create",
+      "logging.logScopes.delete",
+      "logging.logScopes.get",
+      "logging.logScopes.list",
+      "logging.logScopes.update",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.notificationRules",
+      "logging.notificationRules.get",
+      "logging.notificationRules.list",
+      "logging.operations",
+      "logging.operations.cancel",
+      "logging.operations.get",
+      "logging.operations.list",
+      "logging.privateLogEntries.list",
+      "logging.privateLogViewer",
+      "logging.queries",
+      "logging.queries.deleteShared",
+      "logging.queries.getShared",
+      "logging.queries.listShared",
+      "logging.queries.share",
+      "logging.queries.updateShared",
+      "logging.queries.usePrivate",
+      "logging.settings",
+      "logging.settings.get",
+      "logging.settings.update",
+      "logging.sinks",
+      "logging.sinks.create",
+      "logging.sinks.delete",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.sinks.update",
+      "logging.sqlAlerts",
+      "logging.sqlAlerts.create",
+      "logging.sqlAlerts.update",
+      "logging.usage.get",
+      "logging.viewer",
+      "logging.views",
+      "logging.views.access",
+      "logging.views.create",
+      "logging.views.delete",
+      "logging.views.get",
+      "logging.views.getIamPolicy",
+      "logging.views.list",
+      "logging.views.listLogs",
+      "logging.views.listResourceKeys",
+      "logging.views.setIamPolicy",
+      "logging.views.update",
+      "observability.scopes.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.privateLogViewer",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    }
+  ]
+}

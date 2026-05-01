@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.672Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry automatic SBOM generation",
+  "feature_slug": "artifact-registry-automatic-sbom-generation",
+  "summary": "Artifact Registry automatic container scanning now generates software bill of materials (SBOM) dependency metadata when images are pushed and the Container Scanning API is enabled.",
+  "extended_definition": "Artifact Registry automatic container scanning now generates software bill of materials (SBOM) dependency metadata when images are pushed and the Container Scanning API is enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automatic scanning The Google Cloud CLI command gcloud container images includes flags for viewing scan results, including vulnerabilities and other metadata.",
+          "The initial setup includes automatic creation of Artifact Registry repositories for each Container Registry host in your project and redirection of gcr.io to the corresponding Artifact Registry repositories.",
+          "Automatic scanning The Google Cloud CLI command gcloud artifacts docker images includes flags for viewing scan results, including vulnerabilities and other metadata."
+        ]
+      },
+      {
+        "title": "\"Artifact analysis and vulnerability scanning \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "source_id": "site-docs-root-2",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE workload vulnerability scanning - standard tier Caution: Starting on July 23, 2024, standard tier/container OS vulnerability scanning is deprecated and is scheduled for shutdown on July 31, 2025.",
+          "In addition to basic container OS scanning, GKE users can upgrade to advanced vulnerability insights to take advantage of continual language package vulnerability detection.",
+          "Automatic scanning in Artifact Registry The scanning process is triggered automatically every time you push a new image to Artifact Registry."
+        ]
+      },
+      {
+        "title": "Work with container images \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Metadata can be any relevant information you want to store that is related to a container image, including files you can scan or generate with Artifact Analysis : Software bill of materials (SBOM) Vulnerability scan results Other metadata such as build provenance Set up Pub/Sub notifications for changes to your repository.",
+          "The Cloud Build default service account has permissions to push to and pull from Artifact Registry repositories in the same Google Cloud project unless you have disabled automatic role granting to default service accounts.",
+          "The default service account for Compute Engine has permissions to pull from Artifact Registry repositories in the same Google Cloud project unless you have disabled automatic role granting to default service accounts ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker"
+      ]
+    }
+  ]
+}

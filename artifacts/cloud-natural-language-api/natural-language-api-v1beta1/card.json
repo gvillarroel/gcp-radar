@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.395Z",
+  "source_step08_card": "data/step-08/current/products/cloud-natural-language-api/card.json",
+  "product_name": "Cloud Natural Language API",
+  "product_slug": "cloud-natural-language-api",
+  "feature_name": "Natural Language API v1beta1",
+  "feature_slug": "natural-language-api-v1beta1",
+  "summary": "Natural Language API v1beta1 is the beta release of the API; deprecated on 2017-05-02.",
+  "extended_definition": "Natural Language API v1beta1 is the beta release of the API; deprecated on 2017-05-02.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-02",
+    "deprecation_date": "2017-05-02",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/natural-language/docs/apis",
+      "https://docs.cloud.google.com/natural-language/docs/audit-logging",
+      "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+      "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Service APIs Overview \\_|\\_ Cloud Natural Language API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend this approach only if your language or other needs are not met by our provided client libraries. gRPC API You can generate your own gRPC client libraries in any gRPC-supported language for the Cloud Natural Language API API from its .proto service definition using these resources: Cloud Natural Language API service definition gRPC documentation : Everything you need to generate and use your own gRPC client code RPC API Reference : Language-independent overview of the RPC surface REST/HTTP API There are a number of possible options for interacting with a service's REST interface.",
+          "Home Documentation AI and ML Cloud Natural Language API Reference Send feedback Service APIs Overview Stay organized with collections Save and categorize content based on your preferences.",
+          "If you don't want to use our client libraries to access the Cloud Natural Language API, you have the option of writing your own client libraries that use its REST/HTTP or gRPC API surface."
+        ]
+      },
+      {
+        "title": "APIs and Reference \\_|\\_ Cloud Natural Language API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/natural-language/docs/apis",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "",
+        "evidence_snippets": [
+          "Libraries and APIs Cloud Natural Language Client Libraries Start using the Cloud Natural Language API in your language of choice.",
+          "The easiest and recommended way for most users to use the Cloud Natural Language API is with our provided client libraries .",
+          "Home Documentation AI and ML Cloud Natural Language API Reference Send feedback APIs and Reference Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Natural Language client libraries \\_|\\_ Cloud Natural Language API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page shows how to get started with the Cloud Client Libraries for the Cloud Natural Language API.",
+          "DebugString () << \" \\n \" ; } return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << \"google::cloud::Status thrown: \" << status << \" \\n \" ; return 1 ; } Go // Sample language-quickstart uses the Google Cloud Natural API to analyze the // sentiment of \"Hello, world!\". package main import ( \"context\" \"fmt\" \"log\" language \"cloud.google.com/go/language/apiv1\" \"cloud.google.com/go/language/apiv1/languagepb\" ) func main () { ctx := context .",
+          "PLAIN TEXT ) Detects the sentiment of the text. sentiment = client . analyze sentiment ( request = { \"document\" : document } ) . document sentiment print ( f \"Text: { text } \" ) print ( f \"Sentiment: { sentiment . score } , { sentiment . magnitude } \" ) Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-nl on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Natural Language audit logging \\_|\\_ Cloud Natural Language API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in Natural Language: Audit logs category Natural Language methods Data Access (DATA READ) audit logs LanguageService.AnalyzeSentiment LanguageService.AnalyzeEntitySentiment LanguageService.AnalyzeEntities LanguageService.AnalyzeSyntax LanguageService.ClassifyText LanguageService.ModerateText LanguageService.AnnotateText Audit log format Audit log entries include the following objects: The log entry itself, which is an object of type LogEntry .",
+          "Service name Natural Language audit logs use the service name language.googleapis.com .",
+          "This document describes the audit logs created by Cloud Natural Language as part of Cloud Audit Logs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "com.google.cloud",
+      "language.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/natural-language/docs/apis",
+        "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+        "https://docs.cloud.google.com/natural-language/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/natural-language/docs/apis",
+        "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+        "https://docs.cloud.google.com/natural-language/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/natural-language/docs/apis",
+        "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+        "https://docs.cloud.google.com/natural-language/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/natural-language/docs/apis",
+        "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+        "https://docs.cloud.google.com/natural-language/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/natural-language/docs/apis",
+        "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+        "https://docs.cloud.google.com/natural-language/docs/audit-logging"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench Cloud Storage browser in left-side pane",
+  "feature_slug": "vertex-ai-workbench-cloud-storage-browser-in-left-side-pane",
+  "summary": "The Cloud Storage browser in the Vertex AI Workbench left-side pane was removed in favor of the existing Mount shared storage button; deprecated on 2024-02-28.",
+  "extended_definition": "The Cloud Storage browser in the Vertex AI Workbench left-side pane was removed in favor of the existing Mount shared storage button; deprecated on 2024-02-28.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "2024-02-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a notebook \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This code doesn't generate output. from google.cloud import storage client = storage.Client ( project = project id ) Create a bucket bucket = client.create bucket ( bucket name, location = region ) To verify your bucket created successfully, run the following: print ( \"Bucket {} created.\" .format ( bucket.name )) Initialize the Vertex AI SDK for Python To initialize the Vertex AI SDK for Python, you first import its library, aiplatform .",
+          "If you don't specify a location, the Vertex AI SDK for Python uses us-central1 . staging bucket - The staging bucket specifies which Cloud Storage bucket is used to stage artifacts when you use the Vertex AI SDK for Python.",
+          "For more information, see Choose your location . region = \"us-central1\" # @param {type: \"string\"} Create a Cloud Storage bucket This tutorial requires a Cloud Storage bucket that's used by Vertex AI to stage artifacts."
+        ]
+      },
+      {
+        "title": "\"Build a pipeline for continuous model training \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant roles to your Google Account: ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/bigquery.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/aiplatform.user ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/storage.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/pubsub.editor ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/cloudfunctions.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/logging.viewer ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/logging.configWriter ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/iam.serviceAccountUser ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/eventarc.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/aiplatform.colabEnterpriseUser ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/artifactregistry.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/serviceusage.serviceUsageAdmin Enable the following APIs Artifact Registry API BigQuery API Cloud Build API Cloud Functions API Cloud Logging API Pub/Sub API Cloud Run Admin API Cloud Storage API Eventarc API Service Usage API Vertex AI API ! gcloud services enable artifactregistry.googleapis.com bigquery.googleapis.com cloudbuild.googleapis.com cloudfunctions.googleapis.com logging.googleapis.com pubsub.googleapis.com run.googleapis.com storage-component.googleapis.com eventarc.googleapis.com serviceusage.googleapis.com aiplatform.googleapis.com Grant roles to your project's service accounts: See the names of your service accounts ! gcloud iam service-accounts list Note the name of your Compute service agent.",
+          "In the Files panel, create a file called setup.py in the training package folder with the following contents. from setuptools import find packages from setuptools import setup REQUIRED PACKAGES = [ \"google-cloud-bigquery[pandas]\" , \"google-cloud-bigquery-storage\" ] setup ( name = 'trainer' , version = '0.1' , install requires = REQUIRED PACKAGES , packages = find packages (), include package data = True , description = 'Training application package for chicago taxi trip fare prediction.' ) In your notebook, run setup.py to create the source distribution for your training application: ! cd training package && python setup.py sdist --formats=gztar && cd ..",
+          "At the end of this section, your Files panel should contain the following files and folders under training-package . dist trainer-0.1.tar.gz trainer init .py task.py trainer.egg-info init .py setup.py Upload the custom training package to Cloud Storage Create a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "\"Hello custom training: Serve predictions from a custom image classification\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Edit the app to provide it with the trigger URL of your Cloud Run function: echo \"export const CLOUD FUNCTION URL = 'https://us-central1- ${ PROJECT ID } .cloudfunctions.net/classify flower';\" \\ webapp/function-url.js Upload the webapp directory to your Cloud Storage bucket: gcloud storage cp webapp gs:// ${ BUCKET NAME } / --recursive Make the web app files that you just uploaded publicly readable : gcloud storage objects update gs:// ${ BUCKET NAME } /webapp/ --add-acl-grant = entity = allUsers,role = READER Note: Shells (like bash, zsh) sometimes attempt to expand wildcards in ways that can be surprising.",
+          "Run the following command in your Cloud Shell session to deploy the Cloud Run function: gcloud functions deploy classify flower \\ --region = us-central1 \\ --source = function \\ --runtime = python37 \\ --memory = 2048MB \\ --trigger-http \\ --allow-unauthenticated \\ --set-env-vars = ENDPOINT ID = ${ ENDPOINT ID } Deploy a web app to send prediction requests Finally, host a static web app on Cloud Storage to get predictions from your trained ML model.",
+          "Activate Cloud Shell In the Cloud Shell session, run the following command: cd hello-custom-sample Create an endpoint To get online predictions from the ML model that you trained when following the previous page of this tutorial, create a Vertex AI endpoint ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseUser",
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "artifactregistry.admin",
+      "artifactregistry.googleapis.com",
+      "bigquery.admin",
+      "bigquery.googleapis.com",
+      "bucket.name",
+      "client.create",
+      "cloudbuild.googleapis.com",
+      "cloudfunctions.admin",
+      "cloudfunctions.googleapis.com",
+      "cloudfunctions.net",
+      "component.googleapis.com",
+      "eventarc.admin",
+      "eventarc.googleapis.com",
+      "iam.serviceAccountUser",
+      "index.html",
+      "logging.configWriter",
+      "logging.googleapis.com",
+      "logging.viewer",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "run.googleapis.com",
+      "serviceusage.googleapis.com",
+      "serviceusage.serviceUsageAdmin",
+      "setup.py",
+      "storage.admin",
+      "storage.Client",
+      "storage.googleapis.com",
+      "tar.gz",
+      "task.py",
+      "trainer.egg",
+      "url.js"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/aiplatform.user",
+      "roles/artifactregistry.admin",
+      "roles/bigquery.admin",
+      "roles/cloudfunctions.admin",
+      "roles/eventarc.admin",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.configWriter",
+      "roles/logging.viewer",
+      "roles/pubsub.editor",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-notebook",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+      ]
+    }
+  ]
+}

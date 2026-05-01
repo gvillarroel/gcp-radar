@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.249Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Storage Transfer Service Azure Blob Storage transfer source support",
+  "feature_slug": "storage-transfer-service-azure-blob-storage-transfer-source-support",
+  "summary": "Storage Transfer Service supports transfers from Microsoft Azure Blob Storage.",
+  "extended_definition": "Storage Transfer Service supports transfers from Microsoft Azure Blob Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+      "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+      "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class AzureBlobStorageData (1.20.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "source_id": "site-python-reference",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See [Configure access to a source: Microsoft Azure Blob Storage] (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret manager) for more information.",
+          "In an AzureBlobStorageData resource, a blobs's name is the Azure Blob Storage blob's key name <https://docs.microsoft.com/en-us/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#blob-names> .",
+          "To configure federated identity, see Configure access to Microsoft Azure Storage <https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#option 3 authenticate using federated identity> ."
+        ]
+      },
+      {
+        "title": "\"Agentless transfer permissions \\_|\\_ Storage Transfer Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Agentless transfers include transfers within Cloud Storage, or from Amazon S3, Azure Blob Storage or Data Lake Storage Gen2, or URL lists of public objects.",
+          "On the source bucket, grant the following roles at the bucket level to the service agent: Storage Legacy Bucket Reader ( roles/storage.legacyBucketReader ) Storage Object Viewer ( roles/storage.objectViewer ) On the destination bucket, grant the following role at the bucket level to the same service agent: Storage Legacy Bucket Writer ( roles/storage.legacyBucketWriter ) In addition, for transfers configured to overwrite objects in the sink when different, or never: Storage Object Viewer ( roles/storage.objectViewer ) For instructions on granting roles at the bucket level, refer to the following pages: Configure access to a source: Cloud Storage Configure access to a sink: Cloud Storage Cloud Storage Legacy roles cannot be granted at the project level.",
+          "Cross-project Cloud Storage transfers To transfer objects between Cloud Storage buckets in different projects, you must grant permission to a single service agent on both the source bucket and the destination bucket."
+        ]
+      },
+      {
+        "title": "\"Event-driven transfers \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn how Set up event-driven transfers from Cloud Storage Set up event-driven transfers from AWS S3 Set up event-driven transfers from Azure Blob Storage or Data Lake Storage Gen2 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Storage Transfer Service can listen to event notifications in AWS, Azure, or Google Cloud to automatically transfer data that has been added or updated in the source location.",
+          "Event-driven transfers are supported from AWS S3, Azure, or Cloud Storage, and always use a Cloud Storage bucket as the destination."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.legacyBucketReader",
+      "storage.legacyBucketWriter",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.legacyBucketReader",
+      "roles/storage.legacyBucketWriter",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "https://docs.cloud.google.com/storage-transfer/docs/iam-cloud",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    }
+  ]
+}

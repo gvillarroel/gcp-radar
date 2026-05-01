@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX intent suggestions",
+  "feature_slug": "dialogflow-cx-intent-suggestions",
+  "summary": "Dialogflow CX provides intent suggestions.",
+  "extended_definition": "Dialogflow CX provides intent suggestions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/docs/intents-overview",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Entity Type Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted. com. google. cloud. dialogflow. v2.",
+          "Builder Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted. com. google. cloud. dialogflow. v2.",
+          "Original Detect Intent Request Represents the contents of the original request that was passed to the [Streaming]DetectIntent call. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "ML settings Dialogflow CX uses machine learning (ML) algorithms to understand end-user inputs, match them to intents, and extract structured data.",
+          "Intent Suggestions link You can enable intent suggestions .",
+          "Intent Suggestions You can enable intent suggestions ."
+        ]
+      },
+      {
+        "title": "Intents \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/intents-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "When an intent is matched, Dialogflow provides the action to your system, and you can use the action to trigger certain actions defined in your system.",
+          "Parameters : When an intent is matched at runtime, Dialogflow provides the extracted values from the end-user expression as parameters .",
+          "The following diagram shows the basic flow for intent matching and responding to the end-user: A more complex intent may also contain the following: Contexts : Dialogflow contexts are similar to natural language context."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/docs/intents-overview"
+      ]
+    }
+  ]
+}

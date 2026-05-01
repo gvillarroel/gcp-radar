@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Raw log search trend chart toggle",
+  "feature_slug": "raw-log-search-trend-chart-toggle",
+  "summary": "The Trend over time graph in Raw log Search can be expanded or collapsed to change the results layout.",
+  "extended_definition": "The Trend over time graph in Raw log Search can be expanded or collapsed to change the results layout.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.",
+          "For example: Optimized results view Timelines chart Aggregations window Optimized results view To maximize the space available for viewing search results, Google SecOps provides an event-focused view.",
+          "Timelines chart The Timelines chart provides a graphical representation of the number of events and alerts occurring each day that are being surfaced by the current search."
+        ]
+      },
+      {
+        "title": "Search \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample Request https://backstory.googleapis.com/v1/events:udmSearch?query=metadata.event type+%3D+%22NETWORK CONNECTION%22+and+principal.hostname%3D%22jdx%22&time range.start time=2022-08-04T00%3A00%3A00Z&time range.end time=2022-08-04T01%3A00%3A00Z&limit=100 Sample Response { \"events\": [ { \"name\": \"00000000c5fd1146ce52d833659247f68b82009d000000000500000000000000\", \"udm\": { \"metadata\": { \"eventTimestamp\": \"2022-09-14T00:59:59.567051Z\", \"eventType\": \"NETWORK CONNECTION\", \"ingestedTimestamp\": \"2022-09-14T01:00:20.783486Z\", \"id\": \"AAAAAMX9EUbOUtgzZZJH9ouCAJ0AAAAABQAAAAAAAAA=\" }, \"principal\": { \"ip\": [ \"10.9.8.7\" ], }, \"target\": { \"ip\": [ \"74.125.197.190\" ], \"port\": 443 } } }, { \"name\": \"000000000f8e8dc25f873448a3b51ed3e81af0d900000000050000001c000000\", \"udm\": { \"metadata\": { \"eventTimestamp\": \"2022-09-14T00:59:59.567051Z\", \"eventType\": \"NETWORK CONNECTION\", \"ingestedTimestamp\": \"2022-09-14T01:00:20.071428Z\", \"id\": \"AAAAAA+OjcJfhzRIo7Ue0+ga8NkAAAAABQAAABwAAAA=\" }, \"principal\": { \"ip\": [ \"10.9.8.7\" ] }, \"target\": { \"ip\": [ \"74.125.135.103\" ], \"port\": 443 } } } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "SERVICE ACCOUNT FILE = os.path.join(os.environ['HOME'], 'bk credentials.json') Create a credential using Google Developer Service Account Credential and Backstory API scope. credentials = service account.Credentials.from service account file( SERVICE ACCOUNT FILE, scopes=SCOPES) Build an HTTP client that can make authorized OAuth requests. http client = auth.authorized http(credentials) Construct the URL BACKSTORY API V1 URL = 'https://backstory.googleapis.com/v1' LIST EVENTS URL = '{}/asset/listevents?start time=2019-11-17T20:37:00Z&page size=10&end time= 2019-11-18T20:37:00Z&reference time=2019-11-17T20:37:00Z&asset.hostname= enterprise.service.altostrat.com'.format(BACKSTORY API V1 URL) Make a request response = http client.request(LIST EVENTS URL, 'GET') Parse the response if response[0].status == 200: asset events = response[1] List of events returned for further processing print(asset events) else: An error occurred, please see the response detail err = response[1] print(err) ListIoCs Lists all the IoCs discovered within your enterprise within the specified time range.",
+          "Request GET https://backstory.googleapis.com/v1/events:udmSearch?query=<query>&time range.start time=<start time>&time range.end time=<end time>&limit=<limit> Parameters Parameter Name Type Description query string UDM search query. time range.start time ISO 8601 format Inclusive start time. time range.end time ISO 8601 format Exclusive end time. limit integer (Optional) The maximum number of matched events to return."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Copy the following content into that file. #!/bin/bash #Declare the variables: uid= SCRIPTING USER UID gid= SCRIPTING USER GID arcsight ip= ARCSIGHT IP #Install nfs-utils yum install nfs-utils -y #Create the directory that will be shared mkdir /opt/Correlations #Change the permissions chmod -R 755 /opt/Correlations/ chown -R scripting:scripting /opt/Correlations/ #Start the services and enable them to be started at boot time systemctl enable rpcbind systemctl enable nfs-server systemctl enable nfs-lock systemctl enable nfs-idmap systemctl start rpcbind systemctl start nfs-server systemctl start nfs-lock systemctl start nfs-idmap #Edit the exports file as follows echo \"/opt/Correlations/ $arcsight ip(rw,sync,all squash,anonuid=$uid,anongid=$gid)\">>/etc/exports #Restart the NFS service and export the path systemctl restart nfs-server exportfs -a #If FirewallD is running add the next rules: firewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --permanent --zone=public --add-service=mountd firewall-cmd --permanent --zone=public --add-service=rpc-bind firewall-cmd --reload setsebool -P nfs export all rw 1 Declare the uid , gid , and arcisght ip variables according to your environment.",
+          "Copy the following content into that file. #!/bin/bash #Declare the variables: siemplify ip= SIEMPLIFY IP #Install nfs-utils yum install nfs-utils -y #Start the services and enable them to be started at boot time systemctl enable rpcbind systemctl enable nfs-server systemctl enable nfs-lock systemctl enable nfs-idmap systemctl start rpcbind systemctl start nfs-server systemctl start nfs-lock systemctl start nfs-idmap #If FirewallD is running add the next rules: firewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --permanent --zone=public --add-service=mountd firewall-cmd --permanent --zone=public --add-service=rpc-bind firewall-cmd --reload #Create the NFS directory mount point mkdir -p /mnt/nfs/var/SiemShare #Add the values: echo \"$siemplify ip:/opt/Correlations /mnt/nfs/var/SiemShare nfs defaults 0 0\">>/etc/fstab mount -a Declare the siemplify ip variable according to your environment.",
+          "Google Security Operations uses the following main methods when using ArcSight ESM API: Core Service: Login , GetSession Manager Service: GetSecurityEvents Network access with ArcSight ESM To access from Google SecOps to ArcSight ESM, allow traffic over ports 443 (HTTPS) and 8443 (API over SSL), or as configured in your environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "asset.hostname",
+      "auth.authorized",
+      "backstory.googleapis.com",
+      "client.request",
+      "credentials.json",
+      "enterprise.service.altostrat.com",
+      "metadata.event",
+      "os.environ",
+      "os.path.join",
+      "principal.hostname",
+      "range.end",
+      "range.start"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    }
+  ]
+}

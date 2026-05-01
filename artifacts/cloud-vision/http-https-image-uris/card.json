@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.076Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision",
+  "feature_name": "HTTP/HTTPS image URIs",
+  "feature_slug": "http-https-image-uris",
+  "summary": "Cloud Vision can process images directly from publicly accessible HTTP and HTTPS URLs.",
+  "extended_definition": "Cloud Vision can process images directly from publicly accessible HTTP and HTTPS URLs.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient",
+      "https://docs.cloud.google.com/vision/docs/handwriting",
+      "https://docs.cloud.google.com/vision/docs/ocr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Detect and extract text from images \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/ocr",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to store and process your data in the European Union only, use the URI eu-vision.googleapis.com in place of vision.googleapis.com for your REST API calls: https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /images:annotate https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /images:asyncBatchAnnotate https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /files:annotate https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /files:asyncBatchAnnotate To store and process your data in the United States only, use the US endpoint ( us-vision.googleapis.com ) with the preceding methods.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// REGION ID -vision.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION ID /images:annotate\" Select-Object -Expand Content If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.",
+          "HTTP method and URL: POST https:// REGION ID -vision.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION ID /images:annotate Request JSON body: { \"requests\": [ { \"image\": { \"source\": { \"imageUri\": \" CLOUD STORAGE IMAGE URI \" } }, \"features\": [ { \"type\": \"TEXT DETECTION\" } ] } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Detect handwriting in images \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/handwriting",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to store and process your data in the European Union only, use the URI eu-vision.googleapis.com in place of vision.googleapis.com for your REST API calls: https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /images:annotate https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /images:asyncBatchAnnotate https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /files:annotate https:// eu- vision.googleapis.com/v1/projects/ PROJECT ID /locations/ eu /files:asyncBatchAnnotate To store and process your data in the United States only, use the US endpoint ( us-vision.googleapis.com ) with the preceding methods.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// REGION ID -vision.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION ID /images:annotate\" Select-Object -Expand Content If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.",
+          "HTTP method and URL: POST https:// REGION ID -vision.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION ID /images:annotate Request JSON body: { \"requests\": [ { \"image\": { \"source\": { \"imageUri\": \" CLOUD STORAGE IMAGE URI \" } }, \"features\": [ { \"type\": \"DOCUMENT TEXT DETECTION\" } ] } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Class ImageAnnotatorAsyncClient (3.13.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vision v1 async def sample async batch annotate images(): Create a client client = vision v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vision v1 async def sample batch annotate images(): Create a client client = vision v1 .",
+          "Returns Type Description google.cloud.vision v1.types.BatchAnnotateImagesResponse Response to a batch image annotation request. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file."
+        ]
+      },
+      {
+        "title": "\"Class ImageAnnotatorClient (3.13.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient",
+        "source_id": "site-python-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vision v1 def sample async batch annotate images(): Create a client client = vision v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import vision v1 def sample batch annotate images(): Create a client client = vision v1 .",
+          "Returns Type Description google.cloud.vision v1.types.BatchAnnotateImagesResponse Response to a batch image annotation request. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "request.json",
+      "v0.25.1",
+      "v1.types.BatchAnnotateImagesResponse",
+      "vision.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.image_annotator.ImageAnnotatorClient"
+      ]
+    }
+  ]
+}

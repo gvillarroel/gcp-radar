@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Start Screen Share button customization",
+  "feature_slug": "start-screen-share-button-customization",
+  "summary": "Administrators can customize the Start Screen Share button color to match brand palettes.",
+  "extended_definition": "Administrators can customize the Start Screen Share button color to match brand palettes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/cobrowse-agent-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"iOS SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For reference, see the example app and uncomment the customizeChatTheme method. func customizeChatTheme () throws { guard let file = Bundle . main . path ( forResource : \"chat-theme-custom\" , ofType : \"json\" ) else { return } let json = try String . init ( contentsOfFile : file , encoding : . utf8 ) let chatTheme = UJETChatTheme . init ( jsonString : json ) let quickReplyTheme = UJETChatQuickReplyButtonTheme () quickReplyTheme . style = . individual quickReplyTheme . alignment = . right quickReplyTheme . backgroundColor = UJETColorRef ( assetName : \"white color\" ) quickReplyTheme . backgroundColorForHighlightedState = UJETColorRef ( assetName : \"quick reply color\" ) quickReplyTheme . textColor = UJETColorRef ( assetName : \"quick reply color\" ) quickReplyTheme . textColorForHighlightedState = UJETColorRef ( assetName : \"white color\" ) let fontTheme = UJETFontTheme () fontTheme . family = \"Arial Rounded MT Bold\" fontTheme . size = 14 quickReplyTheme . font = fontTheme chatTheme ? . quickReplyButtonTheme = quickReplyTheme let globalTheme = UJETGlobalTheme () globalTheme . chatTheme = chatTheme globalTheme . defaultAgentImage = UIImage ( named : \"agent avatar image\" ) globalTheme . font = UIFont ( name : \"Arial Rounded MT Bold\" , size : 14 ) UJET . setGlobalTheme ( globalTheme ) } Content cards theme You can add customization for content cards together with chat customization.",
+          "Customize the Screen Share consent dialog To customize the Screen Share consent dialog, you need to implement the UJETCobrowseAlertProvider protocol in your provider class.",
+          "You can do this either using the json file (see content card property) or by using the UJETChatContentCardTheme class. func customizeChatTheme () throws { guard let file = Bundle . main . path ( forResource : \"chat-theme-custom\" , ofType : \"json\" ) else { return } let json = try String . init ( contentsOfFile : file , encoding : . utf8 ) let chatTheme = UJETChatTheme . init ( jsonString : json ) let contentCardTheme = UJETChatContentCardTheme () contentCardTheme . backgroundColor = UJETColorRef ( assetName : \"agent message background color\" ) contentCardTheme . cornerRadius = 16 let contentCardFontTheme = UJETFontTheme () contentCardFontTheme . family = \"Arial Rounded MT Bold\" contentCardFontTheme . size = 18 contentCardTheme . font = contentCardFontTheme let contentCardBorder = UJETBorderTheme () contentCardBorder . width = 1 contentCardBorder . color = UJETColorRef ( assetName : \"agent message border color\" ) contentCardTheme . border = contentCardBorder let contentCardFontTheme = UJETFontTheme () contentCardFontTheme . family = \"Arial Rounded MT Bold\" contentCardFontTheme . size = 18 contentCardTheme . font = contentCardFontTheme // The font family is inherited from the contentCardFontTheme let subtitle = UJETFontTheme () subtitle . size = 12 contentCardTheme . subtitle = subtitle // The font family is inherited from the contentCardFontTheme let bodyFont = UJETFontTheme () bodyFont . size = 10 contentCardTheme . body = bodyFont theme . chatTheme ? . contentCard = contentCardTheme let globalTheme = UJETGlobalTheme () globalTheme . chatTheme = chatTheme globalTheme . defaultAgentImage = UIImage ( named : \"agent avatar image\" ) globalTheme . font = UIFont ( name : \"Arial Rounded MT Bold\" , size : 14 ) UJET . setGlobalTheme ( globalTheme ) } Form card theme You can add customization for form cards together with chat customization."
+        ]
+      },
+      {
+        "title": "\"Use Screen Share \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/cobrowse-agent-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enter remote control mode from Screen Share mode, follow these steps: Start with an active Screen Share session in Screen Share mode.",
+          "To enter full device mode from Screen Share mode or remote control mode, follow these steps: Start with an active Screen Share session.",
+          "Mobile The agent or consumer can end the session by clicking the End Screen Share button."
+        ]
+      },
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can customize the chat header title text by using the following options: <item name = \"ujet chatCustomHeaderTextColor\" >@color/chatHeaderTextLightMode</item> <item name = \"ujet chatCustomHeaderTextColowDark\" >@color/chatHeaderTextDarkMode</item> <item name = \"ujet chatCustomHeaderTextSize\" >16sp</item> <item name = \"ujet chatCustomHeaderTextStyle\" >bold</item> You can customize Virtual Agent quick replies in the chat UI by using the following options: <item name = \"ujet colorChatQuickReplyButtonBackground\" >@color/chatQuickReplyButtonBackgroundLightMode</item> <item name = \"ujet colorChatQuickReplyButtonBackgroundDark\" >@color/chatQuickReplyButtonBackgroundDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedBackground\" >@color/chatQuickReplyButtonPressedBackgroundLightMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedBackgroundDark\" >@color/chatQuickReplyButtonPressedBackgroundDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonText\" >@color/chatQuickReplyButtonTextLightMode</item> <item name = \"ujet colorChatQuickReplyButtonTextDark\" >@color/chatQuickReplyButtonTextDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedText\" >@color/chatQuickReplyButtonPressedTextLightMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedTextDark\" >@color/chatQuickReplyButtonPressedTextDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonStroke\" >@color/chatQuickReplyButtonStrokeLightMode</item> <item name = \"ujet colorChatQuickReplyButtonStrokeDark\" >@color/chatQuickReplyButtonStrokeDarkMode</item> <item name = \"ujet chatQuickReplyButtonTypeFace\" >Kreon-Regular.ttf</item> <item name = \"ujet chatQuickReplyButtonStrokeWidth\" >3dp</item> <item name = \"ujet chatQuickReplyButtonCornerRadius\" >3dp</item> <item name = \"ujet chatQuickReplyButtonVerticalMargin\" >0dp</item> <item name = \"ujet chatQuickReplyButtonHorizontalPadding\" >10dp</item> <item name = \"ujet chatQuickReplyButtonVerticalPadding\" >1dp</item> <item name = \"ujet chatQuickReplyButtonAlignment\" >right</item> Content cards You can add customization for content cards along with chat customization.",
+          "0 = Show everywhere, 1 = Hide from the options menu, 2 = Hide from the post chat screen, 3 = Hide from both the options menu and the post chat screen. .setPushNotificationsAllowed ( true ) .build () ; //The following customizes various attributes in chat UI ChatStyles chatStyles = new ChatStyles () ; chatStyles.setBackButton ( new BackButtonStyle ( false, \"ujet agent sample\" )) ; //customizes back button styles chatStyles.setHeader ( ... ) ; //customizes chat header styles chatStyles.setAgentMessageBubbles ( ... ) ; //customizes agent messages styles chatStyles.setConsumerMessageBubbles ( ... ) ; //customizes consumer messages styles chatStyles.setSystemMessages ( ... ) ; //customizes system messages styles chatStyles.setEndChatButton ( ... ) ; //customizes end chat button styles chatStyles.setTimeStamps ( ... ) ; //customizes timestamp styles chatStyles.setUserInputBar ( ... ) ; //customizes user input bar styles UjetOption ujetOption = new UjetOption.Builder () .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatStyles ( chatStyles ) .build () ) //The following customizes various attributes in chat UI using json file.",
+          "Strings You can customize strings used in the application by overriding keys for each string in strings.xml. <resources> <!--Greeting title and message in splash screen--> <string name = \"ujet greeting title\" >Customer Support</string> <string name = \"ujet greeting description\" >runs on UJET</string> </resources> Text size customization Customize title, description and picker text size used in the application by overriding following keys in dimens.xml."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dimens.xml",
+      "main.path",
+      "strings.xml",
+      "style.xml",
+      "theme.backgroundColor",
+      "theme.backgroundColorForDarkMode",
+      "theme.staticFontSizeInSupportPickerView",
+      "theme.supportDescriptionLabelFontSize",
+      "theme.supportPickerViewFontSize",
+      "theme.supportTitleLabelFontSize"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/cobrowse-agent-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/cobrowse-agent-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide"
+      ]
+    }
+  ]
+}

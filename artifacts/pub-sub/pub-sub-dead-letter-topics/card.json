@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub dead-letter topics",
+  "feature_slug": "pub-sub-dead-letter-topics",
+  "summary": "Dead-letter topics route undeliverable messages from subscriptions to a separate topic.",
+  "extended_definition": "Dead-letter topics route undeliverable messages from subscriptions to a separate topic.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "A policy that specifies the conditions for dead lettering messages in this subscription."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "A policy that specifies the conditions for dead lettering messages in this subscription.",
+          "The name of the topic to which dead letter messages should be published."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "A policy that specifies the conditions for dead lettering messages in this subscription.",
+          "The name of the topic to which dead letter messages should be published."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "A policy that specifies the conditions for dead lettering messages in this subscription."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "i.e",
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

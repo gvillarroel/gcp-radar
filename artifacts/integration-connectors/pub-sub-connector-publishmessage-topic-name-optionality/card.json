@@ -1,0 +1,256 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.098Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Pub/Sub connector PublishMessage topic name optionality",
+  "feature_slug": "pub-sub-connector-publishmessage-topic-name-optionality",
+  "summary": "The Pub/Sub connector PublishMessage action allows the topic name input parameter to be optional.",
+  "extended_definition": "The Pub/Sub connector PublishMessage action allows the topic name input parameter to be optional.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apache Kafka \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For connectors that support event subscription , the connection names cannot begin with the \"goog\" prefix. (Optional) Description: Enter a description for the connection. (Optional) Enable Cloud Logging: Select this checkbox to store all log data of the connection.",
+          "Input parameters Parameter name Required Data type Description Topic Yes String Name of the topic to which you want to publish the message.",
+          "Enter the following details: Dead-letter project ID: The Google Cloud project ID where you have configured the dead-letter Pub/Sub topic."
+        ]
+      },
+      {
+        "title": "Azure AD (Entra ID) \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "OAuth 2.0 Client Credentials connection type Field name Details Location us-central1 Connector Azure AD (Entra ID) Connector version 1 Connection Name azure-ad-client-credentials Enable Cloud Logging Yes Service Account XXXX@serviceaccount Azure Tenant 9b25e811-f983-4982-82e4-263c1ca48112 Minimum number of nodes 2 Maximum number of nodes 50 Authentication Yes OAuth 2.0 - Client credentials with client secret Yes Client Id XXXX Client Secret XXXX Secret version 1 OAuth 2.0 Client credentials with JWT bearer connection type Field name Details Location europe-west1 Connector Azure AD (Entra ID) Connector version 1 Connection Name azure-jwt Enable Cloud Logging Yes Service Account XXXX@serviceaccount Azure Tenant 9b25e811-f983-4982-82e4-263c1ca48112 Minimum number of nodes 2 Maximum number of nodes 50 Authentication Yes OAuth 2.0 - Client credentials with JWT bearer Yes Private Key XXXX Secret version 1 Client Id XXXX When you use the OAuth 2.0 Client credentials with JWT bearer connection type, complete the following tasks: Create a self signed certificate and download both the private key certificate and public key.",
+          "Enter the following details: Dead-letter project ID: The Google Cloud project ID where you have configured the dead-letter Pub/Sub topic.",
+          "If you configure dead-letter, the connection writes the unprocessed events to the specified Pub/Sub topic ."
+        ]
+      },
+      {
+        "title": "AlloyDB \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Username and password Username : Username for connector Password : Secret Manager Secret containing the password associated with the connector.",
+          "When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description database STRING True The name of the AlloyDB database. browse partitions BOOLEAN False By default, the provider exposes the super table and its partitions by metadata.",
+          "The following diagram shows a sample setup of AlloyDB for public connectivity: Note: If you want to establish the public connection with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses."
+        ]
+      },
+      {
+        "title": "Connectors API \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.customConnectors.customConnectorVersions Methods delete DELETE /v1/{name=projects/ /locations/ /customConnectors/ /customConnectorVersions/ } Deletes a single CustomConnectorVersion. deprecate POST /v1/{name=projects/ /locations/ /customConnectors/ /customConnectorVersions/ }:deprecate Deprecates a single CustomConnectorVersion. publish POST /v1/{name=projects/ /locations/ /customConnectors/ /customConnectorVersions/ }:publish Publish request for the CustomConnectorVersion. withdraw POST /v1/{name=projects/ /locations/ /customConnectors/ /customConnectorVersions/ }:withdraw Withdraw the publish request for the CustomConnectorVersion.",
+          "REST Resource: v1.projects.locations.connections Methods create POST /v1/{parent=projects/ /locations/ }/connections Creates a new Connection in a given project and location. delete DELETE /v1/{name=projects/ /locations/ /connections/ } Deletes a single Connection. get GET /v1/{name=projects/ /locations/ /connections/ } Gets details of a single Connection. getConnectionSchemaMetadata GET /v1/{name=projects/ /locations/ /connections/ /connectionSchemaMetadata} Gets schema metadata of a connection. getIamPolicy GET /v1/{resource=projects/ /locations/ /connections/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/connections Lists Connections in a given project and location. patch PATCH /v1/{connection.name=projects/ /locations/ /connections/ } Updates the parameters of a single Connection. repairEventing POST /v1/{name=projects/ /locations/ /connections/ }:repairEventing RepaiEventing tries to repair eventing related event subscriptions. search GET /v1/{name=projects/ /locations/ /connections}:search Returns Top matching Connections for a given query. setIamPolicy POST /v1/{resource=projects/ /locations/ /connections/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /connections/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.connections REST Resource: v1.projects.locations.connections.connectionSchemaMetadata REST Resource: v1.projects.locations.connections.eventSubscriptions REST Resource: v1.projects.locations.connections.runtimeActionSchemas REST Resource: v1.projects.locations.connections.runtimeEntitySchemas REST Resource: v1.projects.locations.customConnectors REST Resource: v1.projects.locations.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.endpointAttachments REST Resource: v1.projects.locations.global REST Resource: v1.projects.locations.global.customConnectors REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.global.managedZones REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.providers REST Resource: v1.projects.locations.providers.connectors REST Resource: v1.projects.locations.providers.connectors.versions REST Resource: v1.projects.locations.providers.connectors.versions.eventtypes Service: connectors.googleapis.com To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connection.name",
+      "connectors.googleapis.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer",
+      "v1.projects.locations",
+      "v1.projects.locations.connections",
+      "v1.projects.locations.connections.connectionSchemaMetadata",
+      "v1.projects.locations.connections.eventSubscriptions",
+      "v1.projects.locations.connections.runtimeActionSchemas",
+      "v1.projects.locations.connections.runtimeEntitySchemas",
+      "v1.projects.locations.customConnectors",
+      "v1.projects.locations.customConnectors.customConnectorVersions",
+      "v1.projects.locations.endpointAttachments",
+      "v1.projects.locations.global",
+      "v1.projects.locations.global.customConnectors",
+      "v1.projects.locations.global.customConnectors.customConnectorVersions",
+      "v1.projects.locations.global.managedZones",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.providers",
+      "v1.projects.locations.providers.connectors",
+      "v1.projects.locations.providers.connectors.versions",
+      "v1.projects.locations.providers.connectors.versions.eventtypes"
+    ],
+    "missing_inventory_roles": [
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuread/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    }
+  ]
+}

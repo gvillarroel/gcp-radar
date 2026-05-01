@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub push subscriptions with Cloud Run service endpoints and VPC Service Controls",
+  "feature_slug": "pub-sub-push-subscriptions-with-cloud-run-service-endpoints-and-vpc-service-controls",
+  "summary": "Pub/Sub push subscriptions can use Cloud Run service endpoints protected by VPC Service Controls; Pub/Sub push subscriptions can use Cloud Run service endpoints protected by VPC Service Controls in Preview.",
+  "extended_definition": "Pub/Sub push subscriptions can use Cloud Run service endpoints protected by VPC Service Controls; Pub/Sub push subscriptions can use Cloud Run service endpoints protected by VPC Service Controls in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authentication for push subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "source_id": "site-docs-root-2",
+        "final_score": 340,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following guides and tutorials for different use cases with these services: Cloud Run Triggering from Pub/Sub push : Your push auth service account must have the roles/run.invoker role and be bound to a Cloud Run service to invoke a corresponding Cloud Run service Using Pub/Sub with Cloud Run tutorial App Engine Writing and Responding to Pub/Sub Messages Note: If your App Engine application is secured with Identity-Aware Proxy , you must grant your push auth service account the IAP-secured Web App User role on the App Engine application for Pub/Sub push requests to come through.",
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Authentication for push subscriptions Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Run functions HTTP Triggers : Your push auth service account must have the roles/cloudfunctions.invoker role to invoke a function if you intend to use Pub/Sub push requests as HTTP triggers to the function Google Cloud Pub/Sub Triggers : IAM roles and permissions are auto-configured if you use Pub/Sub triggers to invoke a function Note: In first-generation App Engine runtimes, push requests to endpoint URLs of the form / ah/push-handlers/. in the same project are authorized as admin users ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This can be used with push endpoints that are private by default to allow requests only from the Pub/Sub system, for example.",
+          "It must have the format \"projects/{project}/subscriptions/{subscription}\" . {subscription} must start with a letter, and contain only letters ( [A-Za-z] ), numbers ( [0-9] ), dashes ( - ), underscores ( ), periods ( . ), tildes ( ), plus ( + ) or percent signs ( % ).",
+          "The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription. retryPolicy object ( RetryPolicy ) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This can be used with push endpoints that are private by default to allow requests only from the Pub/Sub system, for example.",
+          "This can be used with push endpoints that are private by default to allow requests only from the Pub/Sub system, for example.",
+          "It must have the format \"projects/{project}/subscriptions/{subscription}\" . {subscription} must start with a letter, and contain only letters ( [A-Za-z] ), numbers ( [0-9] ), dashes ( - ), underscores ( ), periods ( . ), tildes ( ), plus ( + ) or percent signs ( % )."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This can be used with push endpoints that are private by default to allow requests only from the Pub/Sub system, for example.",
+          "This can be used with push endpoints that are private by default to allow requests only from the Pub/Sub system, for example.",
+          "It must have the format \"projects/{project}/subscriptions/{subscription}\" . {subscription} must start with a letter, and contain only letters ( [A-Za-z] ), numbers ( [0-9] ), dashes ( - ), underscores ( ), periods ( . ), tildes ( ), plus ( + ) or percent signs ( % )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "claim.email",
+      "cloudfunctions.invoker",
+      "example.com",
+      "i.e",
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com",
+      "run.invoker"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudfunctions.invoker",
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/authenticate-push-subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

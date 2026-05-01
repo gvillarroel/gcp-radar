@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Storage-optimized Vector Search",
+  "feature_slug": "storage-optimized-vector-search",
+  "summary": "Storage-optimized Vector Search adds a preview vector index tier optimized for storage to lower costs for large-scale RAG and semantic search applications with auto-tuning.",
+  "extended_definition": "Storage-optimized Vector Search adds a preview vector index tier optimized for storage to lower costs for large-scale RAG and semantic search applications with auto-tuning.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vector Search quickstart \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BUCKET URI = f \"gs:// { PROJECT ID } -vs-quickstart- { UID } \" ! gcloud storage buckets create $ BUCKET URI -- location = $ LOCATION -- project = $ PROJECT ID ! gcloud storage cp \"gs://github-repo/data/vs-quickstart/product-embs.json\" $ BUCKET URI For using Vector Search to run queries, you also need to copy the embedding file to local directory: ! gcloud storage cp \"gs://github-repo/data/vs-quickstart/product-embs.json\" . # for query tests Build and deploy a Vector Search index Learn how to create an index, create an index endpoint, and then deploy your index to the endpoint.",
+          "You can check status of the index creation on the Vector Search Google Cloud console See Indexes The parameters for creating index: contents delta uri : the URI of Cloud Storage directory where you stored the embedding JSON files dimensions : dimension size of each embedding.",
+          "To see an example of getting started with Vertex AI Vector Search, run the \"Get started with Vertex AI Vector Search\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub In the Vertex AI Vector Search quickstart, learn how to create an index out of a sample dataset from a fictitious ecommerce clothing site."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Vector Search Create Vertex AI Vector Search index .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Vector Search Vertex AI embeddings for text Using Vertex AI Vector Search and Vertex AI embeddings for text for StackOverflow Questions ."
+        ]
+      },
+      {
+        "title": "\"Vertex ML Metadata notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Vector Search Create Vertex AI Vector Search index .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Vector Search Vertex AI embeddings for text Using Vertex AI Vector Search and Vertex AI embeddings for text for StackOverflow Questions ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "embs.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

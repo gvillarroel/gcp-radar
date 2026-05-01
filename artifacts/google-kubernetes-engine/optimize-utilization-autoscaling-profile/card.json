@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Optimize-utilization autoscaling profile",
+  "feature_slug": "optimize-utilization-autoscaling-profile",
+  "summary": "For clusters using the optimize-utilization autoscaling profile, GKE sets the Pod scheduler name to gke.io/optimize-utilization-scheduler in GKE 1.18 and later.",
+  "extended_definition": "For clusters using the optimize-utilization autoscaling profile, GKE sets the Pod scheduler name to gke.io/optimize-utilization-scheduler in GKE 1.18 and later.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About GKE cluster autoscaling \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "source_id": "site-docs-reference-2",
+        "final_score": 238,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To achieve this optimization, GKE sets the scheduler name in the Pod spec to gke.io/optimize-utilization-scheduler .",
+          "Supported Provisioning Classes There are three supported ProvisioningClasses: queued-provisioning.gke.io : this GKE-specific class integrates with the Dynamic Workload Scheduler, lets you queue requests and have them fulfilled when resources become available.",
+          "The following command enables optimize-utilization autoscaling profile in an existing cluster: gcloud container clusters update CLUSTER NAME \\ --autoscaling-profile optimize-utilization Considering Pod scheduling and disruption When scaling down, the cluster autoscaler respects scheduling and eviction rules set on Pods."
+        ]
+      },
+      {
+        "title": "\"Fine-tune and scale reinforcement learning with NVIDIA NeMo RL on GKE \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 236,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. image : repository : \"nvcr.io/nvidia/nemo-rl\" tag : \"v0.5.0\" pullPolicy : Always nameOverride : \"kuberay\" fullnameOverride : \"\" common : containerEnv : {} configMap : fluentbit : data : fluent-bit.conf : [INPUT] Name tail Path /tmp/ray/session latest/logs/worker- Tag ray-worker [INPUT] Name tail Path /tmp/ray/session latest/logs/raylet Tag raylet [INPUT] Name tail Path /tmp/ray/session latest/logs/ Exclude Path /tmp/ray/session latest/logs/debug state.txt,/tmp/ray/session latest/logs/raylet ,/tmp/ray/session latest/logs/worker- Tag ray-misc [OUTPUT] Name stackdriver Match resource gce instance labels key labels --- Head Node Configuration --- head : enableInTreeAutoscaling : false serviceAccountName : \"\" rayStartParams : dashboard-host : '0.0.0.0' template : metadata : annotations : gke-gcsfuse/volumes : \"true\" networking.gke.io/default-interface : 'eth0' containerEnv : - name : RAY GROUP value : \"head\" resources : limits : cpu : \"64\" memory : \"500G\" nvidia.com/gpu : 0 requests : cpu : \"64\" memory : \"500G\" nvidia.com/gpu : 0 tolerations : - operator: \"Exists\" key: \"components.gke.io/gke-managed-components\" - key: \"nvidia.com/gpu\" operator: \"Exists\" effect: \"NoSchedule\" volumeMounts : - mountPath : /data name : lustre-data volumes : - name : log-volume emptyDir : {} - name : fluentbit-config-volume configMap : name : \"ray-cluster-kuberay-fluentbit-config\" - name : lustre-data persistentVolumeClaim : claimName : lustre-pvc sidecarContainers : - name : fluent-bit image : fluent/fluent-bit:latest env : - name : RAY GROUP value : \"head\" volumeMounts : - name : fluentbit-config-volume mountPath : /fluent-bit/etc/ - mountPath : /tmp/ray name : log-volume --- HEAD POD STARTUP SCRIPT --- command : - \"bash\" - \"-c\" - set -ex echo \"--- Head Pod Setup ---\" apt-get update apt-get install -y sudo netcat-openbsd pciutils cd /opt/nemo-rl /usr/bin/python -m pip install uv /usr/bin/python -m uv venv echo \"Head pod setup complete.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : gvnic-1 spec : vpc : ${GVNIC NETWORK PREFIX}-net vpcSubnet : ${GVNIC NETWORK PREFIX}-sub deviceMode : NetDevice --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : gvnic-1 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : gvnic-1 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-0 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-0 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-0 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-0 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-1 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-1 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-1 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-1 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-2 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-2 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-2 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-2 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-3 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-3 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-3 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-3 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-4 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-4 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-4 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-4 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-5 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-5 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-5 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-5 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-6 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-6 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-6 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-6 --- apiVersion : networking.gke.io/v1 kind : GKENetworkParamSet metadata : name : rdma-7 spec : vpc : ${RDMA NETWORK PREFIX}-net vpcSubnet : ${RDMA NETWORK PREFIX}-sub-7 deviceMode : RDMA --- apiVersion : networking.gke.io/v1 kind : Network metadata : name : rdma-7 spec : type : \"Device\" parametersRef : group : networking.gke.io kind : GKENetworkParamSet name : rdma-7 Apply the manifest: kubectl apply -f network-mapping.yaml Prepare storage In this section, you create Cloud Storage buckets and a Managed Lustre instance, which provisions the high-performance storage required for your RL workload.",
+          "Starting Ray...\" exec ${KUBERAY GEN RAY START CMD} args : [] headService : {} nodeSelector: cloud.google.com/gke-accelerator: nvidia-b200 #cloud.google.com/gke-nodepool: cpu-node-pool-llama #cpu-node-pool --- Default Worker (Disabled) --- worker : disabled : true --- A4 GPU Worker Groups --- additionalWorkerGroups : worker-grp-0 : disabled : false replicas : 4 annotations : networking.gke.io/default-interface : 'eth0' networking.gke.io/interfaces : [ {\"interfaceName\":\"eth0\",\"network\":\"default\"}, {\"interfaceName\":\"eth1\",\"network\":\"gvnic-1\"}, {\"interfaceName\":\"eth2\",\"network\":\"rdma-0\"}, {\"interfaceName\":\"eth3\",\"network\":\"rdma-1\"}, {\"interfaceName\":\"eth4\",\"network\":\"rdma-2\"}, {\"interfaceName\":\"eth5\",\"network\":\"rdma-3\"}, {\"interfaceName\":\"eth6\",\"network\":\"rdma-4\"}, {\"interfaceName\":\"eth7\",\"network\":\"rdma-5\"}, {\"interfaceName\":\"eth8\",\"network\":\"rdma-6\"}, {\"interfaceName\":\"eth9\",\"network\":\"rdma-7\"} ] containerEnv : - name : RAY GROUP valueFrom : fieldRef : fieldPath : metadata.labels['ray.io/group'] - name : NCCL NET value : \"gIB\" - name : NCCL IB GID INDEX value : \"3\" - name : GLOO SOCKET IFNAME value : \"eth0\" - name : NCCL CROSS NIC value : \"0\" - name : NCCL SOCKET IFNAME value : \"eth0\" - name : TP SOCKET IFNAME # Specific to DTensor/PyTorch Distributed value : \"eth0\" - name : NCCL TUNER CONFIG PATH value : \"/usr/local/gib/configs/tuner config a4.txtpb\" - name : NCCL NET GDR LEVEL value : \"PIX\" - name : LD LIBRARY PATH value : /usr/local/nvidia/lib64 resources : limits : nvidia.com/gpu : 8 cpu : \"206\" memory : \"2400Gi\" requests : nvidia.com/gpu : 8 cpu : \"206\" memory : \"2400Gi\" nodeSelector : cloud.google.com/gke-accelerator : nvidia-b200 tolerations : - operator : \"Exists\" key : \"nvidia.com/gpu\" - operator : \"Exists\" key : \"cloud.google.com/impending-node-termination\" - operator : \"Exists\" key : \"user-workload\" securityContext : privileged : true volumes : - name : log-volume emptyDir : {} - name : shared-memory emptyDir : medium : \"Memory\" sizeLimit : 240Gi - name : ray-tmp emptyDir : medium : \"Memory\" - name : fluentbit-config-volume configMap : name : \"ray-cluster-kuberay-fluentbit-config\" - name : nvidia-install-dir-host hostPath : path : /home/kubernetes/bin/nvidia - name : gib-nccl-plugin-volume hostPath : path : /home/kubernetes/bin/gib - name : lustre-data persistentVolumeClaim : claimName : lustre-pvc volumeMounts : - mountPath : /tmp/ray name : log-volume - name : shared-memory mountPath : /dev/shm - name : nvidia-install-dir-host mountPath : /usr/local/nvidia - name : gib-nccl-plugin-volume mountPath : /usr/local/gib - mountPath : /data name : lustre-data --- WORKER POD STARTUP SCRIPT --- command : - \"bash\" - \"-c\" - set -ex echo \"--- Worker Pod Setup ---\" apt-get update apt-get install -y sudo netcat-openbsd pciutils cd /opt/nemo-rl /usr/bin/python -m pip install uv /usr/bin/python -m uv venv ldconfig /usr/local/nvidia/lib64/ ldconfig -p grep libcuda sed 's/^/ /' export LD LIBRARY PATH=\"/usr/local/gib/lib64:$LD LIBRARY PATH\" source /usr/local/gib/scripts/set nccl env.sh echo \"Worker pod setup complete."
+        ]
+      },
+      {
+        "title": "\"Serve Gemma open models using GPUs on GKE with vLLM \\_|\\_ GKE AI/ML \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 224,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create the following vllm-4-26b-a4b-it.yaml manifest: apiVersion : apps/v1 kind : Deployment metadata : name : vllm-gemma-deployment spec : replicas : 1 selector : matchLabels : app : gemma-server template : metadata : labels : app : gemma-server ai.gke.io/model : gemma-4-26b-a4b-it ai.gke.io/inference-server : vllm examples.ai.gke.io/source : user-guide spec : containers : - name : inference-server image : us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:gemma4 resources : requests : cpu : \"20\" memory : \"80Gi\" ephemeral-storage : \"80Gi\" nvidia.com/gpu : \"1\" limits : cpu : \"20\" memory : \"80Gi\" ephemeral-storage : \"80Gi\" nvidia.com/gpu : \"1\" command : [ \"python3\" , \"-m\" , \"vllm.entrypoints.api server\" ] args : - --model=$(MODEL ID) - --host=0.0.0.0 - --port=8000 - --tensor-parallel-size=1 - --enable-log-requests - --enable-chunked-prefill - --enable-prefix-caching - --enable-auto-tool-choice - --generation-config=auto - --tool-call-parser=gemma4 - --dtype=bfloat16 - --max-num-seqs=16 - --max-model-len=16384 - --gpu-memory-utilization=0.95 - --reasoning-parser=gemma4 - --trust-remote-code env : - name : LD LIBRARY PATH value : ${LD LIBRARY PATH}:/usr/local/nvidia/lib64 - name : MODEL ID value : google/gemma-4-26B-A4B-it volumeMounts : - mountPath : /dev/shm name : dshm volumes : - name : dshm emptyDir : medium : Memory nodeSelector : cloud.google.com/gke-accelerator : nvidia-rtx-pro-6000 cloud.google.com/gke-gpu-driver-version : latest --- apiVersion : v1 kind : Service metadata : name : llm-service spec : selector : app : gemma-server type : ClusterIP ports : - protocol : TCP port : 8000 targetPort : 8000 Apply the manifest: kubectl apply -f vllm-4-26b-a4b-it.yaml In our example, we limit the context window size by 16 K using vLLM option --max-model-len=16384 .",
+          "Create the following vllm-4-31b-it.yaml manifest: apiVersion : apps/v1 kind : Deployment metadata : name : vllm-gemma-deployment spec : replicas : 1 selector : matchLabels : app : gemma-server template : metadata : labels : app : gemma-server ai.gke.io/model : gemma-4-31b-it ai.gke.io/inference-server : vllm examples.ai.gke.io/source : user-guide spec : containers : - name : inference-server image : us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:gemma4 resources : requests : cpu : \"22\" memory : \"100Gi\" ephemeral-storage : \"80Gi\" nvidia.com/gpu : \"1\" limits : cpu : \"22\" memory : \"100Gi\" ephemeral-storage : \"80Gi\" nvidia.com/gpu : \"1\" command : [ \"python3\" , \"-m\" , \"vllm.entrypoints.api server\" ] args : - --model=$(MODEL ID) - --host=0.0.0.0 - --port=8000 - --tensor-parallel-size=1 - --enable-log-requests - --enable-chunked-prefill - --enable-prefix-caching - --enable-auto-tool-choice - --generation-config=auto - --tool-call-parser=gemma4 - --dtype=bfloat16 - --max-num-seqs=16 - --max-model-len=16384 - --gpu-memory-utilization=0.95 - --reasoning-parser=gemma4 - --trust-remote-code env : - name : LD LIBRARY PATH value : ${LD LIBRARY PATH}:/usr/local/nvidia/lib64 - name : MODEL ID value : google/gemma-4-31B-it volumeMounts : - mountPath : /dev/shm name : dshm volumes : - name : dshm emptyDir : medium : Memory nodeSelector : cloud.google.com/gke-accelerator : nvidia-rtx-pro-6000 cloud.google.com/gke-gpu-driver-version : latest --- apiVersion : v1 kind : Service metadata : name : llm-service spec : selector : app : gemma-server type : ClusterIP ports : - protocol : TCP port : 8000 targetPort : 8000 Apply the manifest: kubectl apply -f vllm-4-31b-it.yaml In our example, we limit the context window size by 16 K using vLLM option --max-model-len=16384 .",
+          "Create the following vllm-4-e4b-it.yaml manifest: apiVersion : apps/v1 kind : Deployment metadata : name : vllm-gemma-deployment spec : replicas : 1 selector : matchLabels : app : gemma-server template : metadata : labels : app : gemma-server ai.gke.io/model : gemma-4-e4b-it ai.gke.io/inference-server : vllm examples.ai.gke.io/source : user-guide spec : containers : - name : inference-server image : us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:gemma4 resources : requests : cpu : \"4\" memory : \"20Gi\" ephemeral-storage : \"20Gi\" nvidia.com/gpu : \"1\" limits : cpu : \"4\" memory : \"20Gi\" ephemeral-storage : \"20Gi\" nvidia.com/gpu : \"1\" command : [ \"python3\" , \"-m\" , \"vllm.entrypoints.api server\" ] args : - --model=$(MODEL ID) - --host=0.0.0.0 - --port=8000 - --tensor-parallel-size=1 - --enable-log-requests - --enable-chunked-prefill - --enable-prefix-caching - --enable-auto-tool-choice - --generation-config=auto - --tool-call-parser=gemma4 - --dtype=bfloat16 - --max-num-seqs=16 - --max-model-len=32768 - --gpu-memory-utilization=0.95 - --reasoning-parser=gemma4 - --trust-remote-code env : - name : LD LIBRARY PATH value : ${LD LIBRARY PATH}:/usr/local/nvidia/lib64 - name : MODEL ID value : google/gemma-4-E4b-it volumeMounts : - mountPath : /dev/shm name : dshm volumes : - name : dshm emptyDir : medium : Memory nodeSelector : cloud.google.com/gke-accelerator : nvidia-rtx-pro-6000 cloud.google.com/gke-gpu-driver-version : latest --- apiVersion : v1 kind : Service metadata : name : llm-service spec : selector : app : gemma-server type : ClusterIP ports : - protocol : TCP port : 8000 targetPort : 8000 Apply the manifest: kubectl apply -f vllm-4-E4b-it.yaml In our example, we limit the context window by 32 K using vLLM option --max-model-len=32768 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a4.txtpb",
+      "ai.gke.io",
+      "bit.conf",
+      "cfg.gpu",
+      "cfg.tensor",
+      "checkpointing.checkpoint",
+      "cluster.gpus",
+      "cluster.num",
+      "components.gke.io",
+      "data.dataset",
+      "data.input",
+      "data.output",
+      "data.subset",
+      "data.train",
+      "data.val",
+      "dataset.py",
+      "docker.pkg.dev",
+      "env.sh",
+      "examples.ai.gke.io",
+      "gke.io",
+      "grpo.max",
+      "grpo.num",
+      "gsm8k.sh",
+      "it.yaml",
+      "logger.tensorboard",
+      "logger.wandb",
+      "logger.wandb.name",
+      "long.yaml",
+      "mapping.yaml",
+      "math.py",
+      "metadata.labels",
+      "networking.gke.io",
+      "nvcr.io",
+      "nvidia.com",
+      "policy.dtensor",
+      "policy.generation.colocated.enabled",
+      "policy.generation.colocated.resources.gpus",
+      "policy.generation.colocated.resources.num",
+      "policy.generation.vllm",
+      "provisioning.gke.io",
+      "ray.io",
+      "state.txt",
+      "utils.py",
+      "v0.5.0",
+      "vllm.entrypoints.api"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/nemo-rl-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-vllm"
+      ]
+    }
+  ]
+}

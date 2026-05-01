@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Vectorized join",
+  "feature_slug": "vectorized-join",
+  "summary": "Vectorized join is a columnar engine capability that improves qualifying join performance through vectorized processing.",
+  "extended_definition": "Vectorized join is a columnar engine capability that improves qualifying join performance through vectorized processing.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/columnar-engine/about",
+      "https://docs.cloud.google.com/alloydb/docs/columnar-engine/configure",
+      "https://docs.cloud.google.com/alloydb/docs/reference/columnar-engine-flags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure the columnar engine \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/columnar-engine/configure",
+        "source_id": "site-docs-reference-2",
+        "final_score": 214,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable vectorized join The columnar engine has a vectorized join feature that can improve the performance of joins by applying vectorized processing to qualifying queries.",
+          "You can increase the number of threads available to this feature by setting the google columnar engine.vectorized join threads flag to a larger value.",
+          "To enable vectorized join on an instance, set the instance's google columnar engine.enable vectorized join flag to on ."
+        ]
+      },
+      {
+        "title": "Columnar engine flags \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/columnar-engine-flags",
+        "source_id": "site-api-reference",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Vectorized join google columnar engine.enable vectorized join Type Boolean Default off Restarts instance No If on , then AlloyDB automatically uses multithreaded vectorized operations to improve the performance of queries that join multiple tables.",
+          "For more information, see Enable vectorized joins . google columnar engine.vectorized join threads Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Auto-columnarization google columnar engine.enable auto columnarization Type Boolean Default on Instance restarts No If on , enables the columnar engine's auto-columnarization features . google columnar engine.relations Type String Default An empty string Instance restarts No Specifies a list of columns for AlloyDB to add to your cluster's column store, apart from auto-columnarization."
+        ]
+      },
+      {
+        "title": "\"About the AlloyDB columnar engine \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/columnar-engine/about",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The AlloyDB columnar engine accelerates SQL query processing of scans, joins, and aggregates by providing these components: A column store that contains table and materialized-view data for selected columns, reorganized into a column-oriented format.",
+          "For tables or views with a small number of rows, typically fewer than 5,000, the query planner might choose to use the row-store instead of the column store for better performance, even if the data is successfully loaded into the columnar engine.",
+          "As long as all the columns accessed from the specific table in the query have supported data types and are in the columnar engine, that table can be processed by the columnar engine, even if other tables in the join have unsupported columns."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "engine.enable",
+      "engine.enabled",
+      "engine.relations",
+      "engine.vectorized"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/columnar-engine/configure",
+        "https://docs.cloud.google.com/alloydb/docs/reference/columnar-engine-flags",
+        "https://docs.cloud.google.com/alloydb/docs/columnar-engine/about"
+      ]
+    }
+  ]
+}

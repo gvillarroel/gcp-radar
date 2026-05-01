@@ -1,0 +1,242 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.011Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "Multiple-key rate limiting",
+  "feature_slug": "multiple-key-rate-limiting",
+  "summary": "Cloud Armor supports rate limiting based on multiple keys.",
+  "extended_definition": "Cloud Armor supports rate limiting based on multiple keys.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/bot-management",
+      "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+      "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure rate limiting \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "source_id": "site-iam-reference",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about exemption cookies and reCAPTCHA assessment, see the Cloud Armor bot management overview . gcloud compute security-policies rules create 115 \\ --security-policy SECURITY POLICY \\ --expression=\"token.recaptcha exemption.valid\" \\ --action=throttle \\ --rate-limit-threshold-count=20 \\ --rate-limit-threshold-interval-sec=300 \\ --conform-action=allow \\ --exceed-action=redirect \\ --exceed-redirect-type=google-recaptcha \\ --enforce-on-key=HTTP-COOKIE \\ --enforce-on-key-name=\"recaptcha-ca-e\" Rate limiting based on JA4 and JA3 fingerprints You can use JA4 and JA3 fingerprints as rate limiting keys.",
+          "Rate limiting based on multiple keys You can also throttle traffic based on multiple rate limiting keys by using the enforce-on-key-configs flag.",
+          "IAM permission API methods Roles compute.securityPolicies.create SecurityPolicies insert Compute Security Admin ( roles/compute.securityAdmin ) compute.securityPolicies.delete SecurityPolicies delete Compute Security Admin ( roles/compute.securityAdmin ) compute.securityPolicies.get SecurityPolicies get SecurityPolicies getRule Security Admin ( roles/iam.securityAdmin ) compute.securityPolicies.list SecurityPolicies list Security Admin ( roles/iam.securityAdmin ) Both of the following: compute.securityPolicies.use compute.backendServices. setSecurityPolicy BackendServices setSecurityPolicy Compute Network Admin ( roles/compute.networkAdmin ) compute.securityPolicies.update SecurityPolicies patch SecurityPolicies addRule SecurityPolicies patchRule SecurityPolicies removeRule Compute Security Admin ( roles/compute.securityAdmin ) Rules for rate-based throttling Rules for rate-based throttling have the following format in the Google Cloud CLI: gcloud compute security-policies rules create PRIORITY \\ --security-policy= SECURITY POLICY \\ {--expression= EXPRESSION --src-ip-ranges= SRC IP RANGE } \\ --action \"throttle\" \\ --rate-limit-threshold-count= RATE LIMIT THRESHOLD COUNT \\ --rate-limit-threshold-interval-sec= RATE LIMIT THRESHOLD INTERVAL SEC \\ --conform-action=[allow] \\ --exceed-action=[deny-403 deny-404 deny-429 deny-502 redirect] \\ --exceed-redirect-type=[google-recaptcha external-302] \\ --exceed-redirect-target= REDIRECT URL \\ --enforce-on-key=[IP ALL HTTP-HEADER XFF-IP HTTP-COOKIE HTTP-PATH SNI REGION-CODE] \\ --enforce-on-key-name=[ HTTP HEADER NAME HTTP COOKIE NAME ] Rate limiting on single keys For example, the following gcloud CLI command creates a throttle rule at priority 105 with a rate limit of 100 requests each 60 seconds for each IP address in 1.2.3.0/24 ."
+        ]
+      },
+      {
+        "title": "Security policy overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "Globally scoped security policies Backend security policy Edge security policy Internal service security policy Frontend type Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cloud Service Mesh clients Attachment point (protected resource) Backend service Backend service Backend service Backend bucket Cloud Service Mesh endpoint policy Rule actions Allow Deny Redirect ( GOOGLE RECAPTCHA and EXTERNAL 302 ) Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Fairshare Client IP address Client geography Client ASN Media CDN only Rate limiting TLS fingerprinting (JA3 and JA4) Bot management HTTP filtering Media CDN only WAF Adaptive Protection Address Group Google Threat Intelligence Media CDN only Security Command Center Cloud Monitoring Request logging Regionally scoped security policies Regional backend security policy Network edge security policy Frontend type Regional external Application Load Balancer Regional internal Application Load Balancer External passthrough Network Load Balancer External protocol forwarding VMs with NICs that have external IP addresses Attachment point (protected resource) Backend service (regional) Backend service (regional) Target pool Target instance Backend service (regional) Instance Rule actions Allow Deny Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Client IP address Client geography Client ASN Rate limiting TLS fingerprinting (JA3 and JA4) JA3 only JA3 only Bot management HTTP filtering WAF Adaptive Protection Address Group Google Threat Intelligence Byte offset filtering Security Command Center Cloud Monitoring Request logging Backend security policies Backend security policies are used with backend services exposed by the following load balancer types: Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer You use backend security policies to filter requests and protect backend services that reference instance groups or any of the supported NEG types behind the previously listed load balancer types.",
+          "When you use rate limiting with global external proxy Network Load Balancers or classic proxy Network Load Balancers, the following restrictions apply: Cloud Armor only enforces rate limiting actions like throttling or banning on new connection requests from clients.",
+          "Cloud Armor logs are generated based on the first (highest priority) rule that matches an incoming request, whether or not the security policy is in preview mode."
+        ]
+      },
+      {
+        "title": "\"Cloud Armor bot management overview \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/bot-management",
+        "source_id": "site-iam-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud Armor and reCAPTCHA provide tools to help you evaluate and act on incoming requests that might be from automated clients. reCAPTCHA uses advanced risk analysis techniques to distinguish between human users and automated clients. reCAPTCHA assesses the user based on the configuration of the reCAPTCHA WAF site keys.",
+          "In addition, you can identify clients for rate limiting based on reCAPTCHA exemption cookies or tokens, to throttle requests or ban clients that reuse or abuse the same cookie or token at a rate exceeding the user-configured threshold.",
+          "Rate limit reCAPTCHA exemption cookies or tokens For security, we recommend that you configure rate limiting rules to prevent token abuse through multiple uses per unique reCAPTCHA action-token, session-token, or exemption cookie."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon Macie with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "source_id": "site-docs-root-2",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"ResponseMetadata\" :{ \"HTTPHeaders\" :{ \"connection\" : \"keep-alive\" , \"content-length\" : \"2741\" , \"content-type\" : \"application/json\" , \"date\" : \"Thu, 22 Oct 2020 11:08:58 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-remapped-content-length\" : \"2741\" , \"x-amzn-remapped-date\" : \"Thu, 22 Oct \"\"2020 11:08:57 \"\"GMT\" , \"x-amzn-remapped-x-amzn-requestid\" : \"eaea00d2-11f8-40d8-adce-f6c9f17e9815\" , \"x-amzn-requestid\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" , \"RetryAttempts\" : 0 }, \"findings\" :[ { \"accountId\" : \" ACCOUNT ID \" , \"archived\" : false , \"category\" : \"CLASSIFICATION\" , \"classificationDetails\" :{ \"detailedResultsLocation\" : \"s3://[export-config-not-set]/AWSLogs/ ACCOUNT ID /Macie/us-east-1/\" , \"jobArn\" : \"arn:aws:macie2:us-east-1\" , \"jobId\" : \"088009521d393eda440a24f3c7ad8fbd\" , \"result\" :{ \"additionalOccurrences\" : false , \"customDataIdentifiers\" :{ \"detections\" :[ ], \"totalCount\" : 0 }, \"mimeType\" : \"application/zip\" , \"sensitiveData\" :[ { \"category\" : \"PERSONAL INFORMATION\" , \"detections\" :[ { \"count\" : 80 , \"type\" : \"PHONE NUMBER\" }, { \"count\" : 5 , \"type\" : \"ADDRESS\" }, { \"count\" : 207 , \"type\" : \"NAME\" } ], \"totalCount\" : 292 }, { \"category\" : \"CREDENTIALS\" , \"detections\" :[ { \"count\" : 5 , \"type\" : \"AWS CREDENTIALS\" } ], \"totalCount\" : 5 } ], \"sizeClassified\" : 44213802 , \"status\" :{ \"code\" : \"PARTIAL\" , \"reason\" : \"ARCHIVE CONTAINS UNPROCESSED FILES\" } } }, \"count\" : 1 , \"createdAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" , \"description\" : \"The object contains more than one type of \"\"sensitive information.\" , \"id\" : \" FINDING ID \" , \"partition\" : \"aws\" , \"region\" : \"us-east-1\" , \"resourcesAffected\" :{ \"s3Bucket\" :{ \"arn\" : \"arn:aws:s3:::testexample\" , \"createdAt\" : da tet ime.da tet ime( 2020 , 9 , 14 , 10 , 31 , 56 , \"tzinfo=tzutc())\" , \"defaultServerSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"name\" : \"testexample\" , \"owner\" :{ \"displayName\" : \"lab aws\" , \"id\" : \" OWNER ID \" }, \"publicAccess\" :{ \"effectivePermission\" : \"PUBLIC\" , \"permissionConfiguration\" :{ \"accountLevelPermissions\" :{ \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false } }, \"bucketLevelPermissions\" :{ \"accessControlList\" :{ \"allowsPublicReadAccess\" : false , \"allowsPublicWriteAccess\" : false }, \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false }, \"bucketPolicy\" :{ \"allowsPublicReadAccess\" : true , \"allowsPublicWriteAccess\" : false } } } }, \"tags\" :[ ] }, \"s3Object\" :{ \"bucketArn\" : \"arn:aws:s3:::testsiemplify\" , \"eTag\" : \"8dfbe2ba101b3ca0a62f8fde823503b4-5\" , \"extension\" : \"zip\" , \"key\" : \"awscliv2.zip\" , \"lastModified\" : da tet ime.da tet ime( 2020 , 9 , 28 , 18 , 47 , 30 , \"tzinfo=tzutc())\" , \"path\" : \"testexample/awscliv2.zip\" , \"publicAccess\" : false , \"serverSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"size\" : 33775890 , \"storageClass\" : \"STANDARD\" , \"tags\" :[ ], \"versionId\" : \"\" } }, \"sample\" : false , \"schemaVersion\" : \"1.0\" , \"severity\" :{ \"description\" : \"High\" , \"score\" : 3 }, \"title\" : \"The S3 object contains multiple types of sensitive \"\"information.\" , \"type\" : \"SensitiveData:S3Object/Multiple\" , \"updatedAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"Amazon Macie findings found\" If is success=False, for example no findings were found: \"No findings were returned.\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the Amazon Macie service!",
+          "If a raw alert contains a list of entities (such as multiple email addresses, hostnames, or IP addresses), connectors automatically flatten them into separate, unique events.",
+          "Error is {0}\".format(exception.stacktrace) General Table Table Name: Amazon Macie Findings Table Columns: Finding ID - \"id\" Category Title Severity Type Is Archived - archived Created At Updated At General Get Findings Get Amazon Macie findings based on specified Finding ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "awscliv2.zip",
+      "compute.backendServices",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "compute.securityPolicies.create",
+      "compute.securityPolicies.delete",
+      "compute.securityPolicies.get",
+      "compute.securityPolicies.list",
+      "compute.securityPolicies.update",
+      "compute.securityPolicies.use",
+      "exception.stacktrace",
+      "exemption.valid",
+      "iam.securityAdmin",
+      "ime.da",
+      "request.path.matches",
+      "token.recaptcha"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/iam.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    }
+  ]
+}

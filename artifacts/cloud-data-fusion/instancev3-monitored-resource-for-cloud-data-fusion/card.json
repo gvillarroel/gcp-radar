@@ -1,0 +1,221 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.500Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion",
+  "feature_name": "InstanceV3 monitored resource for Cloud Data Fusion",
+  "feature_slug": "instancev3-monitored-resource-for-cloud-data-fusion",
+  "summary": "The default monitored resource for instance-level metrics and system service logs was introduced as datafusion.googleapis.com/InstanceV3, replacing InstanceV2 labels by default.",
+  "extended_definition": "The default monitored resource for instance-level metrics and system service logs was introduced as datafusion.googleapis.com/InstanceV3, replacing InstanceV2 labels by default.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+      "https://docs.cloud.google.com/data-fusion/docs/reference/rest",
+      "https://docs.cloud.google.com/monitoring/api/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitored resource types | Cloud Monitoring | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/api/resources",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 278,
+        "relevance": "",
+        "evidence_snippets": [
+          "Labels : resource_container : The ID of the customer project. org_id : The ID of the organization that the customer project belongs to. location : The zone/region that the instance is hosted in. edition : The edition of the instance. is_private_ip_enabled : Does the instance use private IP. version : The data plane version of the instance. instance_id : The instance ID. namespace : Name of the namespace. datafusion.googleapis.com/InstanceV3 Display name : Cloud Data Fusion Instance Description : An instance of Cloud Data Fusion.",
+          "Labels : resource_container : The ID of the customer project. location : The zone/region that the instance is hosted in. edition : The edition of the instance. is_private_ip_enabled : Does the instance use private IP. version : The data plane version of the instance. instance_id : The instance ID. datafusion.googleapis.com/PipelineV2 Display name : Cloud Data Fusion Pipeline Description : A deployed Pipeline in a Cloud Data Fusion instance.",
+          "Labels : resource_container : The identifier of the GCP resource container associated with this resource, such as \"my-project\". location : The region in which the Repository is created. repository_id : The user-specified ID of the Repository. datafusion.googleapis.com/InstanceV2 Display name : Cloud Data Fusion Instance Description : An instance of Cloud Data Fusion."
+        ]
+      },
+      {
+        "title": "CDAP reference | Cloud Data Fusion | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "source_id": "feature-recovery-http",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "PATCH -H 'Content-Type: application/json' -H \"Authorization: Bearer ${AUTH_TOKEN}\" 'https://datafusion.googleapis.com/v1beta1/projects/ project-id /locations/ region /instances/ instance-name ?updateMask=options' -d '{ \"options\": { \"enable.unrecoverable.reset\": \"true\" } }' After the enable.unrecoverable.reset property is set to true , restart the instance: gcloud beta data-fusion instances restart --project= project-id --location= region instance-name Delete the namespace with the following DELETE request or in the web interface.",
+          "PATCH -H 'Content-Type: application/json' -H \"Authorization: Bearer ${AUTH_TOKEN}\" 'https://datafusion.googleapis.com/v1beta1/projects/ project-id /locations/ region /instances/ instance-name ?updateMask=options' -d '{ \"options\": { \"enable.unrecoverable.reset\": \"false\" } }' Parameter Description project-id The project ID that hosts the Cloud Data Fusion instance. region The location of your Cloud Data Fusion instance. instance-name The Cloud Data Fusion instance name. namespace-id The name of the namespace to delete.",
+          "CDAP reference | Cloud Data Fusion | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Cloud Data Fusion Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Cloud Data Fusion REST reference Overview v1 REST Resources projects.locations Overview get list projects.locations.instances Overview create delete get getIamPolicy list patch restart setIamPolicy testIamPermissions projects.locations.instances.dnsPeerings Overview create delete list projects.locations.operations Overview cancel delete get list projects.locations.versions Overview list v1beta1 REST Resources projects.locations Overview get list removeIamPolicy projects.locations.instances Overview create delete get getIamPolicy list patch restart setIamPolicy testIamPermissions upgrade projects.locations.instances.dnsPeerings Overview create delete list projects.locations.instances.namespaces Overview getIamPolicy list setIamPolicy testIamPermissions projects.locations.operations Overview cancel delete get list projects.locations.versions Overview list Shared.Types Types AuditConfig Binding CancelOperationRequest DeleteOperationRequest GetIamPolicyRequest GetLocationRequest GetOperationRequest ListLocationsRequest ListLocationsResponse ListOperationsRequest ListOperationsResponse LogType Policy SetIamPolicyRequest TestIamPermissionsRequest TestIamPermissionsResponse CDAP reference Replication reference Replication API reference Replication data types Replication schema changes SAP Ariba Batch Source reference AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Data analytics Cloud Data Fusion Reference Send feedback CDAP reference Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Cloud Data Fusion API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations REST Resource: v1beta1.projects.locations.instances REST Resource: v1beta1.projects.locations.instances.dnsPeerings REST Resource: v1beta1.projects.locations.instances.namespaces REST Resource: v1beta1.projects.locations.operations REST Resource: v1beta1.projects.locations.versions REST Resource: v1.projects.locations REST Resource: v1.projects.locations.instances REST Resource: v1.projects.locations.instances.dnsPeerings REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.versions Service: datafusion.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://datafusion.googleapis.com REST Resource: v1beta1.projects.locations Methods get GET /v1beta1/{name=projects/ /locations/ } Gets information about a location. list GET /v1beta1/{name=projects/ }/locations Lists information about the supported locations for this service. removeIamPolicy POST /v1beta1/{resource=projects/ /locations/ / }:removeIamPolicy Remove IAM policy that is currently set on the given resource.",
+          "This service provides the following discovery documents: https://datafusion.googleapis.com/$discovery/rest?version=v1 https://datafusion.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datafusion.googleapis.com",
+      "enable.unrecoverable.reset",
+      "folders.timeSeries",
+      "instance.name",
+      "locations.global.metricsScopes",
+      "locations.global.metricsScopes.projects",
+      "organizations.timeSeries",
+      "process.time.avg",
+      "process.time.max",
+      "process.time.min",
+      "process.time.stddev",
+      "process.time.total",
+      "projects.alertPolicies",
+      "projects.alerts",
+      "projects.dashboards",
+      "projects.groups",
+      "projects.groups.members",
+      "projects.location.prometheus.api.v1",
+      "projects.location.prometheus.api.v1.label",
+      "projects.location.prometheus.api.v1.metadata",
+      "projects.locations",
+      "projects.locations.instances",
+      "projects.locations.instances.dnsPeerings",
+      "projects.locations.instances.namespaces",
+      "projects.locations.operations",
+      "projects.locations.versions",
+      "projects.metricDescriptors",
+      "projects.monitoredResourceDescriptors",
+      "projects.notificationChannelDescriptors",
+      "projects.notificationChannels",
+      "projects.snoozes",
+      "projects.timeSeries",
+      "projects.uptimeCheckConfigs",
+      "records.error",
+      "records.in",
+      "records.out",
+      "services.serviceLevelObjectives",
+      "user.BigQuery.process.time.avg",
+      "user.BigQuery.records.out",
+      "v1.projects.locations",
+      "v1.projects.locations.instances",
+      "v1.projects.locations.instances.dnsPeerings",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.versions",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.instances",
+      "v1beta1.projects.locations.instances.dnsPeerings",
+      "v1beta1.projects.locations.instances.namespaces",
+      "v1beta1.projects.locations.operations",
+      "v1beta1.projects.locations.versions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/api/resources",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    }
+  ]
+}

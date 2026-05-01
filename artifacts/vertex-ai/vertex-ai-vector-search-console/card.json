@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Vector Search Console",
+  "feature_slug": "vertex-ai-vector-search-console",
+  "summary": "Vertex AI Vector Search Console launched a Google Cloud console experience for creating and deploying indexes, including public and VPC endpoint creation.",
+  "extended_definition": "Vertex AI Vector Search Console launched a Google Cloud console experience for creating and deploying indexes, including public and VPC endpoint creation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+      "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+      "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vector Search quickstart \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check status of the index creation on the Vector Search Google Cloud console See Indexes The parameters for creating index: contents delta uri : the URI of Cloud Storage directory where you stored the embedding JSON files dimensions : dimension size of each embedding.",
+          "If you lose connection, instead of creating or deploying your new index again, you can check the Vector Search Google Cloud console and use the existing ones to continue.",
+          "To see an example of getting started with Vertex AI Vector Search, run the \"Get started with Vertex AI Vector Search\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub In the Vertex AI Vector Search quickstart, learn how to create an index out of a sample dataset from a fictitious ecommerce clothing site."
+        ]
+      },
+      {
+        "title": "Search using embeddings \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+        "source_id": "site-docs-reference-3",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Search nearest neighbor matches using a public endpoint If you've configured your online store instance to serve feature values using Optimized online serving from a public endpoint, you must do the following to retrieve approximate nearest neighbor matches: Retrieve the public endpoint domain name for the online store Retrieve nearest neighbor matches of an embedding or entity Retrieve the public endpoint domain name for the online store When you create an online store instance for Optimized online serving, Vertex AI Feature Store generates a public endpoint domain name for the online store.",
+          "For online store instances created for Optimized online serving, you can perform a vector similarity search to retrieve a list of semantically similar or related entities, also called approximate nearest neighbors.",
+          "Home Documentation AI and ML Vertex AI Send feedback Search using embeddings Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "source_id": "site-docs-reference-3",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Deploy and manage public endpoints Deploy and manage index endpoints in a VPC network Vector Search Private Service Connect Colab Enterprise runtime The boot disk and data disks of the runtime's VM Use customer-managed encryption keys (CMEK) in Colab Enterprise Colab Enterprise notebook The notebook file and its comments Use customer-managed encryption keys (CMEK) in Colab Enterprise Vertex AI Agent Engine The copy of your agent source files, including code, scripts, and any dependency files The container images built from your agent source files The running instances deployed from your agent container images Vertex AI Agent Engine overview CMEK support for Generative AI tuning pipelines CMEK support is provided in the tuning pipeline of the following models: BERT T5 image-generation (GPU) Limitations CMEK support isn't provided in the following: AutoML image model batch prediction ( BatchPredictionJob ) TPU tuning Configure CMEK for your resources The following sections describe how to create a key ring and key in Cloud Key Management Service, grant Vertex AI encrypter and decrypter permissions for your key, and create resources that use CMEK.",
+          "Train a classification or regression model Train a forecast model Train an AutoML Edge model using the Cloud console Train an AutoML Edge model using the Vertex AI API Creating training pipelines BatchPredictionJob (excludes AutoML image batchPrediction) Any temporary files (for example, model files, logs, VM disks) used in the job to proceed the batch prediction job.",
+          "Train a classification or regression model Train a forecast model Train an AutoML Edge model using the Cloud console Train an AutoML Edge model using the Vertex AI API Creating training pipelines Importing models to Vertex AI Endpoint All model files used for the model deployment under the endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    }
+  ]
+}

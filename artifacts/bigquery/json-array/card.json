@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "JSON_ARRAY",
+  "feature_slug": "json-array",
+  "summary": "JSON_ARRAY creates a JSON array.",
+  "extended_definition": "JSON_ARRAY creates a JSON array.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JSON functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: SELECT JSON OBJECT ( [ 'a' , 'b' ] , [ 10 , NULL ] ) AS json data / -------------------+ json data +-------------------+ {\"a\":10,\"b\":null} +------------------- / SELECT JSON OBJECT ( [ 'a' , 'b' ] , [ JSON '10' , JSON '\"foo\"' ] ) AS json data / --------------------+ json data +--------------------+ {\"a\":10,\"b\":\"foo\"} +-------------------- / SELECT JSON OBJECT ( [ 'a' , 'b' ] , [ STRUCT ( 10 AS id , 'Red' AS color ), STRUCT ( 20 AS id , 'Blue' AS color ) ] ) AS json data / ------------------------------------------------------------+ json data +------------------------------------------------------------+ {\"a\":{\"color\":\"Red\",\"id\":10},\"b\":{\"color\":\"Blue\",\"id\":20}} +------------------------------------------------------------ / SELECT JSON OBJECT ( [ 'a' , 'b' ] , [ TO JSON ( 10 ), TO JSON ( [ 'foo' , 'bar' ] ) ] ) AS json data / ----------------------------+ json data +----------------------------+ {\"a\":10,\"b\":[\"foo\",\"bar\"]} +---------------------------- / The following query groups by id and then creates an array of keys and values from the rows with the same id : WITH Fruits AS ( SELECT 0 AS id , 'color' AS json key , 'red' AS json value UNION ALL SELECT 0 , 'fruit' , 'apple' UNION ALL SELECT 1 , 'fruit' , 'banana' UNION ALL SELECT 1 , 'ripe' , 'true' ) SELECT JSON OBJECT ( ARRAY AGG ( json key ), ARRAY AGG ( json value )) AS json data FROM Fruits GROUP BY id / ----------------------------------+ json data +----------------------------------+ {\"color\":\"red\",\"fruit\":\"apple\"} {\"fruit\":\"banana\",\"ripe\":\"true\"} +---------------------------------- / An error is produced if the size of the JSON keys and values arrays don't match: -- Error: The number of keys and values must match.",
+          "SELECT JSON KEYS ( JSON '{\"a\":[{\"b\":[[{\"c\":1}]]}]}' , mode = > \"lax recursive\" ) as json keys / -----------------+ json keys +-----------------+ [a, a.b, a.b.c] +----------------- / JSON OBJECT Signature 1 : JSON OBJECT([json key, json value][, ...]) Signature 2 : JSON OBJECT(json key array, json value array) Signature 1 JSON OBJECT ( [ json key , json value ][ , ... ] ) Description Creates a JSON object, using key-value pairs.",
+          "SELECT JSON OBJECT ( NULL , 1 ) AS json data An error is produced if the number of JSON keys and JSON values don't match: -- Error: No matching signature for function JSON OBJECT for argument types: -- STRING, INT64, STRING SELECT JSON OBJECT ( 'a' , 1 , 'b' ) AS json data Signature 2 JSON OBJECT ( json key array , json value array ) Creates a JSON object, using an array of keys and values."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the table name exists in the dataset, the following error is returned: Already Exists: project id:dataset.table The table schema contains 3 columns: x: A parameterized string with a maximum length of 10 y: A STRUCT containing a (an array of parameterized bytes with a maximum length of 5), b (a parameterized NUMERIC with a maximum precision of 15, maximum scale of 2, and rounding mode set to 'ROUND HALF EVEN'), and c (a float) z: A parameterized BIGNUMERIC with a maximum precision of 35 and maximum scale of 0 Creating a partitioned table The following example creates a partitioned table named newtable in mydataset using a DATE column: CREATE TABLE mydataset . newtable ( transaction id INT64 , transaction date DATE ) PARTITION BY transaction date OPTIONS ( partition expiration days = 3 , description = \"a table partitioned by transaction date\" ) If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .",
+          "The table option list specifies the: Table expiration time: January 1, 2025 at 00:00:00 UTC Partition expiration time: 1 day Description: A table that expires in 2025 Label: org unit = development Creating a new table from an existing table The following example creates a table named top words in mydataset from a query: CREATE TABLE mydataset . top words OPTIONS ( description = \"Top ten words per Shakespeare corpus\" ) AS SELECT corpus , ARRAY AGG ( STRUCT ( word , word count ) ORDER BY word count DESC LIMIT 10 ) AS top words FROM bigquery - public - data . samples . shakespeare GROUP BY corpus ; If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .",
+          "Examples Creating a new table The following example creates a partitioned table named newtable in mydataset : CREATE TABLE mydataset . newtable ( x INT64 OPTIONS ( description = \"An optional INTEGER field\" ), y STRUCT < a ARRAY < STRING > OPTIONS ( description = \"A repeated STRING field\" ), b BOOL ) PARTITION BY PARTITIONDATE OPTIONS ( expiration timestamp = TIMESTAMP \"2025-01-01 00:00:00 UTC\" , partition expiration days = 1 , description = \"a table that expires in 2025, with each partition living for 24 hours\" , labels =[ ( \"org unit\" , \"development\" ) ] ) If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table ."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Modify the policy to remove the desired role or principal, and then apply the updated policy using the Table#setIamPolicy() method. / TODO(developer): Update and un-comment below lines / // const projectId = \"YOUR PROJECT ID\" // const datasetId = \"YOUR DATASET ID\" // const tableId = \"YOUR TABLE ID\" // const roleToRemove = \"YOUR ROLE\" // const principalToRemove = \"YOUR PRINCIPAL ID\" const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate a client. const client = new BigQuery (); async function revokeAccessToTableOrView () { const dataset = client . dataset ( datasetId ); const table = dataset . table ( tableId ); // Get the IAM access policy for the table or view. const [ policy ] = await table . getIamPolicy (); // Initialize bindings array. if ( ! policy . bindings ) { policy . bindings = []; } // To revoke access to a table or view, // remove bindings from the Table or View policy. // // Find more details about Policy objects here: // https://cloud.google.com/security-command-center/docs/reference/rest/Shared.Types/Policy if ( principalToRemove ) { // Create a copy of bindings for modifications. const bindings = [... policy . bindings ]; // Filter out the principal from each binding. for ( const binding of bindings ) { if ( binding . members ) { binding . members = binding . members . filter ( m = > m !== principalToRemove ); } } // Filter out bindings with empty members. policy . bindings = bindings . filter ( binding = > binding . members && binding . members . length > 0 ); } if ( roleToRemove ) { // Filter out all bindings with the roleToRemove // and assign a new list back to the policy bindings. policy . bindings = policy . bindings . filter ( b = > b . role !== roleToRemove ); } // Set the IAM access policy with updated bindings. await table . setIamPolicy ( policy ); // Both role and principal are removed if ( roleToRemove !== null && principalToRemove !== null ) { console . log ( Role ' ${ roleToRemove } ' revoked for principal ' ${ principalToRemove } ' on resource ' ${ datasetId } . ${ tableId } '. ); } // Only role is removed if ( roleToRemove !== null && principalToRemove === null ) { console . log ( Role ' ${ roleToRemove } ' revoked for all principals on resource ' ${ datasetId } . ${ tableId } '. ); } // Only principal is removed if ( roleToRemove === null && principalToRemove !== null ) { console . log ( Access revoked for principal ' ${ principalToRemove } ' on resource ' ${ datasetId } . ${ tableId } '. ); } // No changes were made if ( roleToRemove === null && principalToRemove === null ) { console . log ( No changes made to access policy for ' ${ datasetId } . ${ tableId } '. ); } } Work with access controls for routines Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Call the Table#getIamPolicy() function to retrieve the current IAM policy for a table or view, modify the policy by adding new bindings, and then use Table#setIamPolicy() function to save changes to the access policy. / TODO(developer): Update and un-comment below lines / // const projectId = \"YOUR PROJECT ID\"; // const datasetId = \"YOUR DATASET ID\"; // const tableId = \"YOUR TABLE ID\"; // const principalId = \"YOUR PRINCIPAL ID\"; // const role = \"YOUR ROLE\"; const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate a client. const client = new BigQuery (); async function grantAccessToTableOrView () { const dataset = client . dataset ( datasetId ); const table = dataset . table ( tableId ); // Get the IAM access policy for the table or view. const [ policy ] = await table . getIamPolicy (); // Initialize bindings array. if ( ! policy . bindings ) { policy . bindings = []; } // To grant access to a table or view // add bindings to the Table or View policy. // // Find more details about Policy and Binding objects here: // https://cloud.google.com/security-command-center/docs/reference/rest/Shared.Types/Policy // https://cloud.google.com/security-command-center/docs/reference/rest/Shared.Types/Binding const binding = { role , members : [ principalId ], }; policy . bindings . push ( binding ); // Set the IAM access policy with updated bindings. await table . setIamPolicy ( policy ); // Show a success message. console . log ( Role ' ${ role } ' granted for principal ' ${ principalId } ' on resource ' ${ datasetId } . ${ tableId } '. ); } await grantAccessToTableOrView (); Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "The access policy details are available in the returned policy object. / TODO(developer): Update and un-comment below lines / // const projectId = \"YOUR PROJECT ID\" // const datasetId = \"YOUR DATASET ID\" // const resourceName = \"YOUR RESOURCE NAME\"; const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate a client. const client = new BigQuery (); async function viewTableOrViewAccessPolicy () { const dataset = client . dataset ( datasetId ); const table = dataset . table ( resourceName ); // Get the IAM access policy for the table or view. const [ policy ] = await table . getIamPolicy (); // Initialize bindings if they don't exist if ( ! policy . bindings ) { policy . bindings = []; } // Show policy details. // Find more details for the Policy object here: // https://cloud.google.com/bigquery/docs/reference/rest/v2/Policy console . log ( Access Policy details for table or view ' ${ resourceName } '. ); console . log ( Bindings: ${ JSON . stringify ( policy . bindings , null , 2 ) } ); console . log ( etag: ${ policy . etag } ); console . log ( Version: ${ policy . version } ); } Revoke access to a table or view To revoke access to a table or view, select one of the following options: Console Go to the BigQuery page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.b",
+      "a.b.c",
+      "dataset.table",
+      "id.dataset.table"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    }
+  ]
+}

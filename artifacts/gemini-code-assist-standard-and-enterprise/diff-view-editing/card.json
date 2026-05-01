@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.414Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "diff view editing",
+  "feature_slug": "diff-view-editing",
+  "summary": "Gemini Code Assist agent mode lets you edit suggested changes directly in the integrated diff view.",
+  "extended_definition": "Gemini Code Assist agent mode lets you edit suggested changes directly in the integrated diff view.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root",
+        "final_score": 315,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Some features of standard Gemini Code Assist chat might not be available in agent mode or might work differently than they do in standard chat.",
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "Help me understand the architecture.\" \"What does this [class/function] do?\" \"Add a feature to this codebase - \"[link-or-path-to-codebase]\".\" \"Refactor function [A] and [B] to use the common method [C].\" \"Fix the GitHub issue [link-to-github-issue].\" \"Build an application to do [goal] with a UI that lets the user do [task] in the [environment].\" \"Migrate library versions in this repository from [X] to [Y].\" \"Optimize performance of this Go code so that it runs faster.\" \"Use [name-of-API] to build out this feature.\" \"Implement an algorithm to do [x], [Y], and [Z].\" Optional: Use an API Key Gemini Code Assist includes different daily quotas for agentic features, depending on the tier you're in."
+        ]
+      },
+      {
+        "title": "Agent mode overview \\_|\\_ Gemini for Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "source_id": "site-docs-reference",
+        "final_score": 301,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Some features of standard Gemini Code Assist chat might not be available in agent mode or might work differently than they do in standard chat.",
+          "IntelliJ The following methods of getting context are usually available to Gemini Code Assist in agent mode: Information in your IDE project including your files, indexed symbols and usage of symbols in your project.",
+          "VS Code The following methods of getting context are usually available to Gemini Code Assist in agent mode: Information in your IDE workspace."
+        ]
+      },
+      {
+        "title": "\"Gemini 3 in Gemini Code Assist \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "source_id": "site-docs-reference",
+        "final_score": 276,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ.",
+          "Use Gemini 3 in IntelliJ If Gemini 3 is available to you, it will automatically be selected for agent mode, chat and code generation.",
+          "You can't select a different model in agent mode, as Gemini CLI automatically selects the model."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "",
+        "evidence_snippets": [
+          "Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code.",
+          "Gemini Code Assist generates the code based on your prompt in a diff view.",
+          "Gemini Code Assist generates the code based on your prompt in a diff view."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bindings.mcp.cloudflare.com",
+      "instance.com",
+      "mcp.json",
+      "observability.mcp.cloudflare.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Cassandra interface",
+  "feature_slug": "spanner-cassandra-interface",
+  "summary": "The Spanner Cassandra interface is now generally available, enabling access to Spanner using familiar Cassandra tools and syntax.",
+  "extended_definition": "The Spanner Cassandra interface is now generally available, enabling access to Spanner using familiar Cassandra tools and syntax.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Valid values are 0, 1, and 3. if ( policy . getVersion () < 3 ) { // conditional role bindings work with policy version 3 policyVersion = 3 ; } Binding binding1 = Binding . newBuilder () . setRole ( \"roles/spanner.fineGrainedAccessUser\" ) . addAllMembers ( ImmutableList . of ( iamMember )) . build (); Binding binding2 = Binding . newBuilder () . setRole ( \"roles/spanner.databaseRoleUser\" ) . setCondition ( Expr . newBuilder (). setDescription ( title ). setExpression ( String . format ( \"resource.name.endsWith(\\\"/databaseRoles/%s\\\")\" , role ) ). setTitle ( title ). build ()) . addAllMembers ( ImmutableList . of ( iamMember )) . build (); ImmutableList<Binding> bindings = ImmutableList . < Binding>builder () . addAll ( policy . getBindingsList ()) . add ( binding1 ) . add ( binding2 ) . build (); Policy policyWithConditions = Policy . newBuilder () . setVersion ( policyVersion ) . setEtag ( policy . getEtag ()) . addAllBindings ( bindings ) . build (); final SetIamPolicyRequest setRequest = SetIamPolicyRequest . newBuilder () . setResource ( DatabaseName . of ( projectId , instanceId , databaseId ). toString ()) . setPolicy ( policyWithConditions ). build (); final Policy response = databaseAdminClient . setIamPolicy ( setRequest ); System . out . printf ( \"Enabled fine-grained access in IAM with version %d%n\" , response . getVersion ()); } } } Note: The old client library interface code samples for Java are archived in GitHub .",
+          "To run the command, you must have the Cloud Asset API enabled on your project, and you must have the cloudasset.assets.searchAllIamPolicies IAM permission. gcloud asset search-all-iam-policies \\ --scope = projects/ PROJECT NAME \\ --query = 'roles=roles/spanner.fineGrainedAccessUser AND resource=//spanner.googleapis.com/projects/ PROJECT NAME /instances/ INSTANCE NAME /databases/ DATABASE NAME ' \\ --flatten = policy.bindings [] .members [] \\ --format = 'table(policy.bindings.members)' Output is similar to the following: MEMBERS user:222larabrown@gmail.com user:baklavainthebalkans@gmail.com serviceAccount:cs-fgac-sa-1@cloud-spanner-demo.google.com.iam.gserviceaccount.com serviceAccount:cs-fgac-sa-2@cloud-spanner-demo.google.com.iam.gserviceaccount.com For more information, see Enabling an API in your Google Cloud project .",
+          "GetPolicyOptions = { requestedPolicyVersion : 3 , }), }); console . log ( newPolicy ); } enableFineGrainedAccess (); Note: The old client library interface code samples for Node.js are archived in GitHub ."
+        ]
+      },
+      {
+        "title": "\"Access a database with fine-grained access control \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use these methods to specify a database role when accessing a Spanner database: Console Select a database, and then on the database Overview page, click the Change database role (pencil) icon adjacent to the Current role field.",
+          "When you submit a query, DML, or row operation, Spanner checks authorization by using the following rules: Google Cloud console Spanner first checks if you have database-level Identity and Access Management (IAM) permissions .",
+          "Home Documentation Databases Spanner Guides Send feedback Access a database with fine-grained access control Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about schema updates, including how to perform a schema update that requires data validation , see Spanner schema update documentation Consider database access and size When you develop your game server and platform services to use Spanner, consider how your game accesses the database and how to size the database to avoid unnecessary costs.",
+          "When you're evaluating performance, keep short cycle testing to a minimum because Spanner transparently splits your data behind the scenes to optimize performance based on your data access patterns.",
+          "In the following diagram, adding an IndexPartition column to the schema after the launch resolves the hotspot issue, and players are evenly distributed across the available Spanner splits."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudasset.assets.searchAllIamPolicies",
+      "demo.google.com.iam.gserviceaccount.com",
+      "gmail.com",
+      "policy.bindings",
+      "policy.bindings.members",
+      "resource.name.endsWith",
+      "spanner.databaseRoleUser",
+      "spanner.fineGrainedAccessUser",
+      "spanner.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/spanner.databaseRoleUser",
+      "roles/spanner.fineGrainedAccessUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/access-with-fgac",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ]
+}

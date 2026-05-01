@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "ListItem glyph type",
+  "feature_slug": "listitem-glyph-type",
+  "summary": "ListItem supports setting list glyph types beyond numeric glyphs.",
+  "extended_definition": "ListItem supports setting list glyph types beyond numeric glyphs.",
+  "lifecycle": {
+    "latest_feature_date": "2012-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/list-container",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/list-item",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the setGlyphType() method to ListItem to support glyph types other than numeric glyphs.",
+          "Fixed Issue 2565 : DocsList.createFile() no longer allows the creation of files with invalid MIME types or Google document MIME types.",
+          "The new classes and methods include: BandingTheme Banding BooleanCondition BooleanCriteria ConditionalFormatRuleBuilder ConditionalFormatRule Dimension Direction FilterCriteriaBuilder FilterCriteria Filter GradientCondition InterpolationType PivotFilter PivotGroup PivotTableSummarizeFunction PivotTable PivotTableDisplayType PivotValue RangeList RelativeDate Selection TextDirection TextRotation TextToColumnsDelimiter WrapStrategy EmbeddedChartBuilder.setHiddenDimensionStrategy(strategy) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setNumHeaders(headers) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setMergeStrategy(mergeStrategy) (also in each of the type-specific chart builder classes) EmbeddedChartBuilder.setTransposeRowsAndColumns(transpose) (also in each of the type-specific chart builder classes) Range.activateAsCurrentCell() Range.applyColumnBanding() Range.applyColumnBanding(bandingTheme) Range.applyColumnBanding(bandingTheme, showHeader, showFooter) Range.applyRowBanding() Range.applyRowBanding(bandingTheme) Range.applyRowBanding(bandingTheme, showHeader, showFooter) Range.createFilter() Range.createPivotTable(sourceData) Range.deleteCells(shiftDimension) Range.getBandings() Range.getNextDataCell(direction) Range.getTextDirection() Range.getTextDirections() Range.getTextRotation() Range.getTextRotations() Range.getWrapStrategies() Range.getWrapStrategy() Range.insertCells(shiftDimension) Range.setShowHyperlink(showHyperlink) Range.setTextDirection(direction) Range.setTextDirections(directions) Range.setTextRotation(degrees) Range.setTextRotation(rotation) Range.setTextRotations(rotations) Range.setVerticalText(isVertical) Range.setWrapStrategies(strategies) Range.setWrapStrategy(strategy) Range.setTextToColumns() Range.setTextToColumns(delimiter) Range.setTextToColumns(delimiter) Sheet.autoResizeColumns(startColumns, numColumns) Sheet.autoResizeRows(startRows, numRows) Sheet.clearConditionalFormatRules() Sheet.getActiveRangeList() Sheet.getBandings() Sheet.getConditionalFormatRules() Sheet.getCurrentCell() Sheet.getFilter() Sheet.getPivotTables() Sheet.getRangeList(a1Notations) Sheet.getSelection() Sheet.hasHiddenGridlines() Sheet.isRightToLeft() Sheet.setActiveRangeList(rangeList) Sheet.setColumnWidths(startColumn numColumns, width) Sheet.setConditionalFormatRules(rules) Sheet.setCurrentCell(cell) Sheet.setHiddenGridlines(hideGridlines) Sheet.setRightToLeft(rightToLeft) Sheet.setRowHeights(startRow, numRows, height) Spreadsheet.getActiveRangeList() Spreadsheet.getBandings() Spreadsheet.getCurrentCell() Spreadsheet.getRangeList(a1Notations) Spreadsheet.getSelection() Spreadsheet.setActiveRangeList(rangeList) Spreadsheet.setCurrentCell(cell) Feature The Charts service has been extended to support EmbeddedCharts in Google Sheets with the enums ChartHiddenDimensionStrategy and ChartMergeStrategy ."
+        ]
+      },
+      {
+        "title": "Class ListItem \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/list-item",
+        "source_id": "site-docs-reference-3",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Only available for Google Workspace add-ons that extend Google Workspace Studio. const listItem = AddOnsResponseService . newListItem () . addTextFormatElements ( AddOnsResponseService . newStyledText ()); Methods Method Return type Brief description add Text Format Element(textFormatElement) List Item Adds a Text Format Element to the list item.",
+          "Home Google Workspace Apps Script Reference Send feedback Class ListItem Stay organized with collections Save and categorize content based on your preferences.",
+          "Parameters Name Type Description text Format Element Text Format Element The Text Format Element to add to the list item."
+        ]
+      },
+      {
+        "title": "Class ListContainer \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/list-container",
+        "source_id": "site-docs-reference-3",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UNORDERED ) . addListItem ( AddOnsResponseService . newListItem () . addTextFormatElement ( AddOnsResponseService . newTextFormatElement () . setStyledText ( sampleStyledText ) )); Methods Method Return type Brief description add List Item(listItem) List Container Adds a list item to the list container. set List Nest Level(listLevel) List Container Sets the level of the list, starts from 0 for the top level, and increases by 1 for each nested list. set List Type(listType) List Container Sets the type of the list to be ordered or unordered.",
+          "Only available for Google Workspace add-ons that extend Google Workspace Studio. const listContainer = AddOnsResponseService . newListContainer () . setListType ( AddOnsResponseService .",
+          "Return ListContainer — This list container object, for chaining. setListType(listType) Sets the type of the list to be ordered or unordered."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "processes.listScriptProcesses"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/list-item",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/list-container"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/list-item",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/list-container"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.933Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js",
+  "feature_name": "Elastic provisioning with VM and application metrics",
+  "feature_slug": "elastic-provisioning-with-vm-and-application-metrics",
+  "summary": "Applications can be provisioned for current load and elastically scaled using both VM-level and application-level metrics.",
+  "extended_definition": "Applications can be provisioned for current load and elastically scaled using both VM-level and application-level metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+      "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Scaling dynamic instances App Engine applications that use basic or automatic scaling are powered by any number of dynamic instances at a given time, depending on the volume of incoming requests.",
+          "Automatic scaling Automatic scaling creates instances based on request rate, response latencies, and other application metrics.",
+          "This helps make App Engine a cost-effective solution for small applications that don't receive continuous requests."
+        ]
+      },
+      {
+        "title": "An overview of App Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OK App Engine is one of the fully managed, serverless platforms for developing and hosting web applications at scale.",
+          "If you are a new Google Cloud user, we recommend using Cloud Run for developing and hosting web applications.",
+          "Home Documentation Application hosting App Engine Guides Send feedback An overview of App Engine Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "An overview of App Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OK App Engine is one of the fully managed, serverless platforms for developing and hosting web applications at scale.",
+          "If you are a new Google Cloud user, we recommend using Cloud Run for developing and hosting web applications.",
+          "Home Documentation Application hosting App Engine Guides Send feedback An overview of App Engine Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/an-overview-of-app-engine",
+        "https://docs.cloud.google.com/appengine/docs/standard/an-overview-of-app-engine"
+      ]
+    }
+  ]
+}

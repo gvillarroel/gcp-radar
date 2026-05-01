@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.312Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "BiDiStreamingAnalyzeContent API",
+  "feature_slug": "bidistreaminganalyzecontent-api",
+  "summary": "Introduces the bidirectional streaming API for next-generation audio and multimodal experiences, returning transcripts or human agent suggestions.",
+  "extended_definition": "Introduces the bidirectional streaming API for next-generation audio and multimodal experiences, returning transcripts or human agent suggestions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+      "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+      "https://docs.cloud.google.com/agent-assist/docs/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bidirectional API \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "The BiDiStreamingAnalyzeContent API is the primary API for next-generation audio and multi-modal experiences in both Conversational Agents and Agent Assist.",
+          "BidiStreamingAnalyzeContentResponse ): \"\"\"Call Bidi Streaming Analyze Content \"\"\" if response . recognition result : print ( f \"Recognition result: { response . recognition result . transcript } \" , ) def audio request iterator ( audio ): \"\"\"Iterate the request for bidi streaming analyze content \"\"\" total audio length = len ( audio ) print ( f \"total audio length { total audio length } \" ) array = [] for i in range ( 0 , total audio length , POINT ONE SECOND IN BYTES ): chunk = audio [ i : i + POINT ONE SECOND IN BYTES ] array . append ( chunk ) if not chunk : break return array def python client handler (): \"\"\"Downloads audios from the google cloud storage bucket and stream to the Bidi streaming AnalyzeContent site. \"\"\" print ( \"Start streaming\" ) conversation = conversation management . create conversation ( project id = PROJECT ID , conversation profile id = CONVERSATION PROFILE ID STAGING ) conversation id = conversation . name . split ( \"conversations/\" )[ 1 ] . rstrip () human agent = human agent = participant management . create participant ( project id = PROJECT ID , conversation id = conversation id , role = \"HUMAN AGENT\" ) end user = end user = participant management . create participant ( project id = PROJECT ID , conversation id = conversation id , role = \"END USER\" ) end user requests = [] agent request = [] download blob ( BUCKET NAME , FOLDER PTAH FOR CUSTOMER AUDIO , end user requests ) download blob ( BUCKET NAME , FOLDER PTAH FOR AGENT AUDIO , agent request ) participant bidi streaming analyze content ( human agent , agent request ) participant bidi streaming analyze content ( end user , end user requests ) conversation management . complete conversation ( PROJECT ID , conversation id ) Enable for telephony SipRec integration You can enable telephony SipRec integration to use BidiStreamingAnalyzeContent for audio processing.",
+          "You can use the Python client library for Agent Assist with BidiStreamingAnalyzeContent as follows. from google.cloud import dialogflow v2beta1 from google.api core.client options import ClientOptions from google.cloud import storage import time import google.auth import participant management import conversation management PROJECT ID = \"your-project-id\" CONVERSATION PROFILE ID = \"your-conversation-profile-id\" BUCKET NAME = \"your-audio-bucket-name\" SAMPLE RATE = 48000 Calculate the bytes with Sample rate hertz bit Depth / 8 -> bytes 48000(sample/second) 16(bits/sample) / 8 = 96000 byte per second, 96000 / 10 = 9600 we send 0.1 second to the stream API POINT ONE SECOND IN BYTES = 9600 FOLDER PTAH FOR CUSTOMER AUDIO = \"your-customer-audios-files-path\" FOLDER PTAH FOR AGENT AUDIO = \"your-agent-audios-file-path\" client options = ClientOptions ( api endpoint = \"dialogflow.googleapis.com\" ) credentials , = google . auth . default ( scopes = [ \"https://www.googleapis.com/auth/cloud-platform\" , \"https://www.googleapis.com/auth/dialogflow\" ]) storage client = storage ."
+        ]
+      },
+      {
+        "title": "Extended streaming \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To use this feature: Call the streamingAnalyzeContent method and set the following fields: StreamingAnalyzeContentRequest.audio config.audio encoding : AUDIO ENCODING LINEAR 16 or AUDIO ENCODING MULAW enable extended streaming : true .",
+          "You can use the extended streaming feature to stream audio content to Dialogflow and stream human agent suggestions back.",
+          "Streaming basics The Agent Assist extended streaming feature is similar to audio streaming for voice transcription."
+        ]
+      },
+      {
+        "title": "Features | Agent Assist | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/features",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Guides Reference Support Resources Technology areas More Agent Assist Site Selector More Guides Reference Support Resources Cross-product tools More Console Agent Assist Agent Assist console Documentation Overview Send feedback Concepts All concepts Agent Assist basics Agent Assist integrations Cloud logging field definitions Features All features AI Coach Overview Tool integration for AI coach Open API and Integration Connectors tools OpenAPI tool for Datastore Best practices Bidirectional API Build your own GenAI assist Build your own assist Build your own assist extension Extended streaming Implement Agent Assist using pre-built modules UI modules overview Implement UI modules and connectors UI modules Container V1 Container V2 Knowledge assist Generative knowledge assist Smart reply Summarization Transcript Agent desktop integration Custom events and custom UI module connectors UI module events Genesys Cloud integration Deploy the application server AudioHook voice integration Configuration for chat integration Test chat integration Twilio integration Twilio basics Deploy Twilio Flex Twilio SIPREC integration Salesforce integration Overview Salesforce chat integration Salesforce voice integration with Twilio Flex Salesforce voice integration with NiCE CXone LivePerson integration Basics Deploy the application server Deploy the proxy server Backend modules basics Integrate backend modules with your system (Proactive) Generative knowledge assist User guide Knowledge assist filters Skip PubSub notifications for empty suggestions Troubleshoot knowledge assist features Best practices Sentiment analysis Smart Reply Summarization Summarization with custom sections user guide Summarization with custom sections best practices Automatic evaluation basics Automatic evaluation user guide Automatic evaluation best practices Transcription Voice Transcription Transcription with Chirp 3 PubSub intermediate transcription How-to guides All how-to guides Enable Cloud Pub/Sub notifications Enable CMEK Enable real-time entity extraction Handoff a conversation CX Agent Studio Dialogflow CX Dialogflow ES Set up Speech-to-Text model adaptation Upload and export conversation data Upload conversation data Export conversation data Tutorials All tutorials Create a conversation profile Train an AI model Train a smart reply model Train a summarization custom model for chat Upload data Overview Conversation datasets Knowledge bases Use the Agent Assist simulator Deprecations Article suggestion FAQ Assist Knowledge documents best practices AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Public sites Agent Assist public features Agent Assist console Home Documentation AI and ML Agent Assist Guides Send feedback Features Stay organized with collections Save and categorize content based on your preferences.",
+          "Extended streaming Increase the amount of time you have to send audio content to the Dialogflow API.",
+          "Bidirectional API Stream audio data and receive transcriptions or human agent suggestions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.audio",
+      "config.input",
+      "config.sample",
+      "core.client",
+      "dialogflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+        "https://docs.cloud.google.com/agent-assist/docs/extended-streaming",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.614Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Search language support",
+  "feature_slug": "search-language-support",
+  "summary": "Search for commerce adds support for additional languages, including Urdu and Serbian (Cyrillic).",
+  "extended_definition": "Search for commerce adds support for additional languages, including Urdu and Serbian (Cyrillic).",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/catalog",
+      "https://docs.cloud.google.com/retail/docs/completion-overview",
+      "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/conversational-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About catalogs and products \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/retail/docs/catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Language settings Vertex AI Search for commerce supports multiple languages.",
+          "Vertex AI Search for commerce product schema BigQuery [ { \"name\" : \"name\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"id\" , \"type\" : \"STRING\" , \"mode\" : \"REQUIRED\" }, { \"name\" : \"type\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"primaryProductId\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"collectionMemberIds\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"gtin\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"categories\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"title\" , \"type\" : \"STRING\" , \"mode\" : \"REQUIRED\" }, { \"name\" : \"brands\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"description\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"languageCode\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"attributes\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"key\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"value\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"text\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"numbers\" , \"type\" : \"FLOAT\" , \"mode\" : \"REPEATED\" } ] } ] }, { \"name\" : \"tags\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"priceInfo\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"currencyCode\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"price\" , \"type\" : \"FLOAT\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"originalPrice\" , \"type\" : \"FLOAT\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"cost\" , \"type\" : \"FLOAT\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"priceEffectiveTime\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"priceExpireTime\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] }, { \"name\" : \"rating\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"ratingCount\" , \"type\" : \"INTEGER\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"averageRating\" , \"type\" : \"FLOAT\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"ratingHistogram\" , \"type\" : \"INTEGER\" , \"mode\" : \"REPEATED\" } ] }, { \"name\" : \"expireTime\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"ttl\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"seconds\" , \"type\" : \"INTEGER\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"nanos\" , \"type\" : \"INTEGER\" , \"mode\" : \"NULLABLE\" } ] }, { \"name\" : \"availableTime\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"availability\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"availableQuantity\" , \"type\" : \"INTEGER\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"fulfillmentInfo\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"type\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"placeIds\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" } ] }, { \"name\" : \"uri\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"images\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"uri\" , \"type\" : \"STRING\" , \"mode\" : \"REQUIRED\" }, { \"name\" : \"height\" , \"type\" : \"INTEGER\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"width\" , \"type\" : \"INTEGER\" , \"mode\" : \"NULLABLE\" } ] }, { \"name\" : \"audience\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"genders\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"ageGroups\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" } ] }, { \"name\" : \"colorInfo\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"colorFamilies\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"colors\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" } ] }, { \"name\" : \"sizes\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"materials\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"patterns\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"conditions\" , \"type\" : \"STRING\" , \"mode\" : \"REPEATED\" }, { \"name\" : \"publishTime\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"promotions\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"promotionId\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] } ] Note: For reranking on inventory prices, use placeId in the search request.",
+          "For more information about product-level inventory, including how to maintain inventory data, see Update inventory for Vertex AI Search for commerce ."
+        ]
+      },
+      {
+        "title": "\"Conversational Commerce agent overview \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Conversational Commerce agent capabilities Conversational Commerce agent adds to the Vertex AI Search for commerce experience in the following ways: Narrows user queries effectively : Conversational Commerce agent filters 10,000 products down to less than 100 products, increasing the likelihood that the user decides to make a purchase.",
+          "Vertex AI Search for commerce processes these variations while accounting for variables like accents, background noise and \"um's,\" \"uh's\" and \"like's.\" For mobile, voice search is not only easier to input, but it can also take up less screen space, allowing more real estate product visuals.",
+          "Instead of searching with keywords, users utilize natural language to ask for what they need, which includes follow up questions, multimodal interactions, improved intent understanding, and grounding with data beyond the product catalog."
+        ]
+      },
+      {
+        "title": "\"Autocomplete for search \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: cURL curl -H \"Authorization: Bearer $(gcloud auth application-default print-access-token)\" \\ \"https://retail.googleapis.com/v2/projects/ PROJECT NUMBER /locations/global/catalogs/default catalog:completeQuery?query=sho&dataset=user-data&deviceType=DESKTOP&maxSuggestions=5\" Implement filtering on suggestion results When using the cloud-retail dataset, Vertex AI Search for commerce can return matched attributes — such as popular brands and categories — alongside the standard text suggestions.",
+          "Home Documentation Industry solutions Vertex AI Search for commerce Guides Send feedback Autocomplete for search Stay organized with collections Save and categorize content based on your preferences.",
+          "Vertex AI Search for commerce returns up to five popular categories and brands related to each query suggestion in the completeQuery.completionResults.attributes API response."
+        ]
+      },
+      {
+        "title": "\"Conversational Commerce agent developer's guide \\_|\\_ Vertex AI Search for\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send user query Example user input : Help me plan a party To enable both conversational commerce agent and conversational product filtering, ensure that your ConversationalSearchRequest includes this configuration: Conversational Commerce API request—Initial query { \"query\" : \"Help me plan a party\" , \"branch\" : \"projects/{project id}/locations/{location id}/catalogs/{catalog id}/branches/default branch\" , \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\" , \"visitorId\" : \"your visitor id\" , \"conversationId\" : \"\" , // Leave empty for the first query, or populate for ongoing conversation \"searchParams\" : { // IMPORTANT: These search parameters should mirror the configuration // of your Commerce Search API calls to ensure consistency. \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" }, \"userInfo\" : { // Optional: User information for enhanced personalization }, \"conversationalFilteringSpec\" : { \"conversationalFilteringMode\" : \"ENABLED\" // Crucial for enabling product filtering } } The key configurations are: conversationalFilteringMode: ENABLED : Setting this field to ENABLED in your conversationalFilteringSpec informs the API that your system can handle conversational product filtering, allowing the API to provide relevant filtering-specific responses.",
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /servingConfigs/ }:search Core product Search API request: Initial query { \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/servingConfigs/default search\" , // Or if using legacy placements: // \"placement\": \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\", \"query\" : \"Help me plan a party\" , // This is the original user query \"visitorId\" : \"your visitor id\" , \"branch\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/branches/default branch\" , \"pageSize\" : 20 , // Optional: Number of results to return per page \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" , // Mirroring the filter from the Conversational Commerce API \"orderBy\" : \"relevance DESC\" , // Optional \"userInfo\" : { // Optional: User information for enhanced personalization, should mirror Conversational Commerce API // \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"searchMode\" : \"PRODUCT SEARCH\" // Typically for product searches } placement (Required) : The resource name of the Retail Search serving config or legacy placement.",
+          "Example user input : Princess theme Conversational Commerce API request—Follow-up query { \"query\" : \"Princess theme\" , \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\" , \"branch\" : \"projects/{project id}/locations/{location id}/catalogs/{catalog id}/branches/default branch\" , \"visitorId\" : \"your visitor id\" , \"conversationId\" : \"1577511e-36ed-4054-8e07-48d1ca016bcb\" , \"searchParams\" : {}, \"userInfo\" : {}, \"conversationalFilteringSpec\" : { \"conversationalFilteringMode\" : \"ENABLED\" } } Possible outcomes for core product search When a query is classified as SIMPLE PRODUCT SEARCH , there are two possible API responses, depending on whether Conversational Product Filtering is triggered."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attributes.type",
+      "retail.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/conversational-search",
+        "https://docs.cloud.google.com/retail/docs/completion-overview",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX open source integrations",
+  "feature_slug": "dialogflow-cx-open-source-integrations",
+  "summary": "Google open sourced a set of Dialogflow CX integrations for multiple external platforms.",
+  "extended_definition": "Google open sourced a set of Dialogflow CX integrations for multiple external platforms.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+      "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Fulfillments \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Session API reference Select a protocol and version for the Session reference: Protocol V3 V3beta1 REST Session resource Session resource RPC Session interface Session interface C++ SessionsClient Not available C# SessionsClient Not available Go SessionsClient Not available Java SessionsClient SessionsClient Node.js SessionsClient SessionsClient PHP Not available Not available Python SessionsClient SessionsClient Ruby Not available Not available Close If no channel is defined in a request, or no matching channel is found in fulfillment, the default response message will be returned by Dialogflow CX.",
+          "Fulfillment use cases Fulfillment is used everywhere that a response message is needed: Page entry fulfillment Routes Event handlers Initial prompts for forms Reprompt handlers for forms For each of these use cases, the console will open a fulfillment editing panel.",
+          "Channel-specific response messages When defining fulfillment, you can create channel-specific response messages , so you can create targeted responses for text chat, voice, SMS, specific integrations that support channels, and so on."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Minimal Conversation The minimum amount of information required to generate a Summary without having a Conversation resource created. com. google. cloud. dialogflow. v2.",
+          "We use QuerySource to distinguish queries directly entered by agents and suggested queries from Participants.SuggestKnowledgeAssist . com. google. cloud. dialogflow. v2.",
+          "Sip Trunk SipTrunk is the resource that represents a SIP trunk to connect to Google Telephony platform SIP trunking service. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Access control \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have integrations with other Google Cloud resources, like Cloud Functions, and you don't want to grant full project access to an application, you must assign the Dialogflow API roles (Admin, Client, or Reader) in the Google Cloud console for IAM.",
+          "When implementing your own client and using OAuth , you must use the following OAuth scope: https://www.googleapis.com/auth/cloud-platform (access to all project resources) Previous arrow back Training Next Using multiple projects arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Access to the Dialogflow API requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloud-platform (access to all project resources) https://www.googleapis.com/auth/dialogflow (access to Dialogflow resources) Requests that involve Cloud Storage access Some Dialogflow requests access objects in Cloud Storage for reading or writing data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    }
+  ]
+}

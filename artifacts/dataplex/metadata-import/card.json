@@ -1,0 +1,263 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.145Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Metadata import",
+  "feature_slug": "metadata-import",
+  "summary": "Dataplex Catalog supports importing entries and their aspects as metadata.",
+  "extended_definition": "Dataplex Catalog supports importing entries and their aspects as metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+      "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata",
+      "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+      "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Import metadata using a custom pipeline \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "source_id": "site-docs-root-2",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permissions that you need to manage metadata import jobs, ask your administrator to grant you the following IAM roles: Modify entries and their aspects in a full entry sync metadata job: Dataplex Entry Type User ( roles/dataplex.entryTypeUser ) on the entry type or the project where the entry type is defined Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) on the aspect type or the project where the aspect type is defined Modify required aspects in an aspect-only metadata job: Dataplex Entry Type User ( roles/dataplex.entryTypeUser ) on the entry type or the project where the entry type is defined Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) on the aspect type or the project where the aspect type is defined Modify optional aspects in an aspect-only metadata job: Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) on the aspect type or the project where the aspect type is defined.",
+          "Comparison logic Knowledge Catalog determines which entries and aspects to modify by comparing the values and timestamps that you provide in the metadata import file with the values and timestamps that exist in your project.",
+          "This document describes how to import metadata from a third-party system into Knowledge Catalog (formerly Dataplex Universal Catalog) by using the metadata import API methods and your own pipeline."
+        ]
+      },
+      {
+        "title": "\"Develop a custom connector for metadata import \\_|\\_ Knowledge Catalog \\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "source_id": "site-docs-root-2",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PROJECT ID = PROJECT LOCATION ID = LOCATION DATAPLEX API = dataplex.googleapis.com/v1/projects/ $PROJECT ID /locations/ $LOCATION ID alias gcurl = 'curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\"' Call the API method, passing the entry types and aspect types that you want to import. gcurl https:// ${ DATAPLEX API } /metadataJobs?metadata job id = \" JOB ID \" -d \" $( cat <<EOF { \"type\" : \"IMPORT\" , \"import spec\" : { \"source storage uri\" : \"gs:// BUCKET / FOLDER /\" , \"entry sync mode\" : \"FULL\" , \"aspect sync mode\" : \"INCREMENTAL\" , \"scope\" : { \"entry groups\" : [ \"projects/ PROJECT /locations/ LOCATION /entryGroups/ ENTRY GROUP ID \" ] , \"entry types\" : [ \"projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-instance\" , \"projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-database\" , \"projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-schema\" , \"projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-table\" , \"projects/ PROJECT /locations/ LOCATION /entryTypes/oracle-view\" ] , \"aspect types\" : [ \"projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-instance\" , \"projects/dataplex-types/locations/global/aspectTypes/schema\" , \"projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-database\" , \"projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-schema\" , \"projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-table\" , \"projects/ PROJECT /locations/ LOCATION /aspectTypes/oracle-view\" ] , } , } , } EOF ) \" The schema aspect type is a global aspect type that is defined by Knowledge Catalog.",
+          "Instead, the example creates DataFrames, converts the DataFrames into JSON entries, and then writes the output into a metadata import file in JSON Lines format that can be imported into Knowledge Catalog.",
+          "Update the src/entry builder.py file with shared methods for applying Spark transformations. \"\"\"Creates entries with PySpark.\"\"\" import pyspark.sql.functions as F from pyspark.sql.types import StringType from src.constants import EntryType , SOURCE TYPE from src import name builder as nb @F . udf ( returnType = StringType ()) def choose metadata type udf ( data type : str ): \"\"\"Choose the metadata type based on Oracle native type.\"\"\" if data type . startswith ( \"NUMBER\" ) or data type in [ \"FLOAT\" , \"LONG\" ]: return \"NUMBER\" if data type . startswith ( \"VARCHAR\" ) or data type . startswith ( \"NVARCHAR2\" ): return \"STRING\" if data type == \"DATE\" : return \"DATETIME\" return \"OTHER\" def create entry source ( column ): \"\"\"Create Entry Source segment.\"\"\" return F . named struct ( F . lit ( \"display name\" ), column , F . lit ( \"system\" ), F . lit ( SOURCE TYPE )) def create entry aspect ( entry aspect name ): \"\"\"Create aspect with general information (usually it is empty).\"\"\" return F . create map ( F . lit ( entry aspect name ), F . named struct ( F . lit ( \"aspect type\" ), F . lit ( entry aspect name ), F . lit ( \"data\" ), F . create map () ) ) def convert to import items ( df , aspect keys ): \"\"\"Convert entries to import items.\"\"\" entry columns = [ \"name\" , \"fully qualified name\" , \"parent entry\" , \"entry source\" , \"aspects\" , \"entry type\" ] Puts entry to \"entry\" key, a list of keys from aspects in \"aspects keys\" and \"aspects\" string in \"update mask\" return df . withColumn ( \"entry\" , F . struct ( entry columns )) \\ . withColumn ( \"aspect keys\" , F . array ([ F . lit ( key ) for key in aspect keys ])) \\ . withColumn ( \"update mask\" , F . array ( F . lit ( \"aspects\" ))) \\ . drop ( entry columns ) def build schemas ( config , df raw schemas ): \"\"\"Create a dataframe with database schemas from the list of usernames."
+        ]
+      },
+      {
+        "title": "\"Import metadata from a custom source using Workflows \\_|\\_ Knowledge Catalog\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following commands: gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"serviceAccount: SERVICE ACCOUNT ID \" \\ --role=roles/logging.logWriter gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"serviceAccount: SERVICE ACCOUNT ID \" \\ --role=roles/dataplex.entryGroupOwner gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"serviceAccount: SERVICE ACCOUNT ID \" \\ --role=roles/dataplex.metadataJobOwner gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"serviceAccount: SERVICE ACCOUNT ID \" \\ --role=roles/dataplex.catalogEditor gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"serviceAccount: SERVICE ACCOUNT ID \" \\ --role=roles/dataproc.editor gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"serviceAccount: SERVICE ACCOUNT ID \" \\ --role=roles/dataproc.worker Replace the following: PROJECT ID : the name of the target Google Cloud project to import the metadata into.",
+          "This document describes how to import metadata from third-party sources into Knowledge Catalog (formerly Dataplex Universal Catalog) by setting up and running a managed connectivity pipeline in Workflows.",
+          "Please select one.\" - condition : ${NETWORK URI == \"\" and SUBNETWORK URI == \"\"} steps : - submit extract job with default network uri : assign : - NETWORK TYPE : \"networkUri\" - NETWORKING : ${\"projects/\" + args.TARGET PROJECT ID + \"/global/networks/default\"} - condition : ${NETWORK URI != \"\"} steps : - submit extract job with network uri : assign : - NETWORKING : ${NETWORK URI} - NETWORK TYPE : \"networkUri\" - condition : ${SUBNETWORK URI != \"\"} steps : - submit extract job with subnetwork uri : assign : - NETWORKING : ${SUBNETWORK URI} - NETWORK TYPE : \"subnetworkUri\" next : check create target entry group - check create target entry group : switch : - condition : ${args.CREATE TARGET ENTRY GROUP == true} next : create target entry group - condition : ${args.CREATE TARGET ENTRY GROUP == false} next : prepare pyspark job body - create target entry group : call : http.post args : url : ${\"https://dataplex.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/entryGroups?entry group id=\" + args.TARGET ENTRY GROUP ID} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" next : prepare pyspark job body - prepare pyspark job body : assign : - pyspark batch body : mainPythonFileUri : file:///main.py args : - ${\"--target project id=\" + args.TARGET PROJECT ID} - ${\"--target location id=\" + args.CLOUD REGION} - ${\"--target entry group id=\" + args.TARGET ENTRY GROUP ID} - ${\"--output bucket=\" + args.CLOUD STORAGE BUCKET ID} - ${\"--output folder=\" + WORKFLOW ID} - ${args.ADDITIONAL CONNECTOR ARGS} next : add jar file uri if present - add jar file uri if present : switch : - condition : ${args.JAR FILE URI != \"\" and args.JAR FILE URI != null} assign : - pyspark batch body.jarFileUris : ${args.JAR FILE URI} next : generate extract job link - generate extract job link : call : sys.log args : data : ${\"https://console.cloud.google.com/dataproc/batches/\" + args.CLOUD REGION + \"/\" + WORKFLOW ID + \"/monitoring?project=\" + args.TARGET PROJECT ID} severity : \"INFO\" next : submit pyspark extract job - submit pyspark extract job : call : http.post args : url : ${\"https://dataproc.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/batches\"} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" headers : Content-Type : \"application/json\" query : batchId : ${WORKFLOW ID} body : pysparkBatch : ${pyspark batch body} runtimeConfig : containerImage : ${args.CUSTOM CONTAINER IMAGE} environmentConfig : executionConfig : serviceAccount : ${args.SERVICE ACCOUNT} stagingBucket : ${args.CLOUD STORAGE BUCKET ID} ${NETWORK TYPE} : ${NETWORKING} networkTags : ${NETWORK TAGS} result : RESPONSE MESSAGE next : check pyspark extract job - check pyspark extract job : call : http.get args : url : ${\"https://dataproc.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/batches/\" + WORKFLOW ID} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" result : PYSPARK EXTRACT JOB STATUS next : check pyspark extract job done - check pyspark extract job done : switch : - condition : ${PYSPARK EXTRACT JOB STATUS.body.state == \"SUCCEEDED\"} next : generate import logs link - condition : ${PYSPARK EXTRACT JOB STATUS.body.state == \"CANCELLED\"} raise : ${PYSPARK EXTRACT JOB STATUS} - condition : ${PYSPARK EXTRACT JOB STATUS.body.state == \"FAILED\"} raise : ${PYSPARK EXTRACT JOB STATUS} next : pyspark extract job wait - pyspark extract job wait : call : sys.sleep args : seconds : 30 next : check pyspark extract job - generate import logs link : call : sys.log args : data : ${\"https://console.cloud.google.com/logs/query?project=\" + args.TARGET PROJECT ID + \"&query=resource.type%3D%22dataplex.googleapis.com%2FMetadataJob%22+AND+resource.labels.location%3D%22\" + args.CLOUD REGION + \"%22+AND+resource.labels.metadata job id%3D%22\" + WORKFLOW ID + \"%22\"} severity : \"INFO\" next : submit import job - submit import job : call : http.post args : url : ${\"https://dataplex.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/metadataJobs?metadata job id=\" + WORKFLOW ID} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" body : type : IMPORT import spec : source storage uri : ${\"gs://\" + args.CLOUD STORAGE BUCKET ID + \"/\" + WORKFLOW ID + \"/\"} entry sync mode : FULL aspect sync mode : INCREMENTAL log level : ${default(map.get(args, \"IMPORT JOB LOG LEVEL\"), \"INFO\")} scope : entry groups : - ${\"projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/entryGroups/\" + args.TARGET ENTRY GROUP ID} entry types : ${args.IMPORT JOB SCOPE ENTRY TYPES} aspect types : ${args.IMPORT JOB SCOPE ASPECT TYPES} result : IMPORT JOB RESPONSE next : get job start time - get job start time : assign : - importJobStartTime : ${sys.now()} next : import job startup wait - import job startup wait : call : sys.sleep args : seconds : 30 next : initial get import job - initial get import job : call : http.get args : url : ${\"https://dataplex.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/metadataJobs/\" + WORKFLOW ID} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" result : IMPORT JOB STATUS next : check import job status available - check import job status available : switch : - condition : ${sys.now() - importJobStartTime > 300} # 5 minutes = 300 seconds next : kill import job - condition : ${\"status\" in IMPORT JOB STATUS.body} next : check import job done next : import job status wait - import job status wait : call : sys.sleep args : seconds : 30 next : check import job status available - check import job done : switch : - condition : ${IMPORT JOB STATUS.body.status.state == \"SUCCEEDED\"} next : the end - condition : ${IMPORT JOB STATUS.body.status.state == \"CANCELLED\"} raise : ${IMPORT JOB STATUS} - condition : ${IMPORT JOB STATUS.body.status.state == \"SUCCEEDED WITH ERRORS\"} raise : ${IMPORT JOB STATUS} - condition : ${IMPORT JOB STATUS.body.status.state == \"FAILED\"} raise : ${IMPORT JOB STATUS} - condition : ${sys.now() - importJobStartTime > 43200} # 12 hours = 43200 seconds next : kill import job next : import job wait - get import job : call : http.get args : url : ${\"https://dataplex.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/metadataJobs/\" + WORKFLOW ID} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" result : IMPORT JOB STATUS next : check import job done - import job wait : call : sys.sleep args : seconds : 30 next : get import job - kill import job : call : http.post args : url : ${\"https://dataplex.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/metadataJobs/\" + WORKFLOW ID + \":cancel\"} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" next : get killed import job - get killed import job : call : http.get args : url : ${\"https://dataplex.googleapis.com/v1/projects/\" + args.TARGET PROJECT ID + \"/locations/\" + args.CLOUD REGION + \"/metadataJobs/\" + WORKFLOW ID} auth : type : OAuth2 scopes : \"https://www.googleapis.com/auth/cloud-platform\" result : KILLED IMPORT JOB STATUS next : killed - killed : raise : ${KILLED IMPORT JOB STATUS} - the end : return : ${IMPORT JOB STATUS} Define Bash variables, create the workflow , and optionally create a schedule for running the pipeline: Define Bash variables (replace with your actual values) project id = \" PROJECT ID \" region = \" LOCATION ID \" service account = \" SERVICE ACCOUNT ID \" workflow source = \" WORKFLOW DEFINITION FILE .yaml\" workflow name = \" WORKFLOW NAME \" workflow args = ' WORKFLOW ARGUMENTS ' Create Workflows resource gcloud workflows deploy ${ workflow name } \\ --project = ${ project id } \\ --location = ${ region } \\ --source = ${ workflow source } \\ --service-account = ${ service account } Create Cloud Scheduler job gcloud scheduler jobs create http ${ workflow name } -scheduler \\ --project = ${ project id } \\ --location = ${ region } \\ --schedule = \" CRON SCHEDULE EXPRESSION \" \\ --time-zone = \"UTC\" \\ --uri = \"https://workflowexecutions.googleapis.com/v1/projects/ ${ project id } /locations/ ${ region } /workflows/ ${ workflow name } /executions\" \\ --http-method = \"POST\" \\ --oauth-service-account-email = ${ service account } \\ --headers = \"Content-Type=application/json\" \\ --message-body = '{\"argument\": ${workflow args}}' Replace the following: PROJECT ID : the name of the target Google Cloud project to import the metadata into."
+        ]
+      },
+      {
+        "title": "\"Manage aspects and enrich metadata \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create and manage aspect types and aspects, ask your administrator to grant you the following IAM roles on the resource: Full set of permissions on metadata resources in Knowledge Catalog, including aspect types and data aspects: Dataplex Catalog Admin ( roles/dataplex.catalogAdmin ) Create and manage metadata resources in Knowledge Catalog, including aspect types and data aspects: Dataplex Catalog Editor ( roles/dataplex.catalogEditor ) Full set of permissions on custom aspect types (except for permissions to use aspect types to create or edit entries): Dataplex Aspect Type Owner ( roles/dataplex.aspectTypeOwner ) View aspect types and IAM policies associated with them: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) Use aspect types to create and modify entries with the corresponding aspects: Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) Add aspects of some of the system aspect types, such as schema , schema-join , overview , contacts : Dataplex Entry and EntryLink Owner ( roles/dataplex.entryOwner ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( CatalogServiceClient client = CatalogServiceClient . create ()) { Entry entry = Entry . newBuilder () . setName ( EntryName . of ( projectId , location , entryGroupId , entryId ). toString ()) . setEntrySource ( EntrySource . newBuilder () . setDescription ( \"updated description of the entry\" ) . build ()) . putAllAspects ( Map . of ( \"dataplex-types.global.generic\" , Aspect . newBuilder () . setAspectType ( \"projects/dataplex-types/locations/global/aspectTypes/generic\" ) . setData ( Struct . newBuilder () // \"Generic\" Aspect Type have fields called \"type\" and \"system. // The values below are a sample of possible options. . putFields ( \"type\" , Value . newBuilder () . setStringValue ( \"updated example value\" ) . build ()) . putFields ( \"system\" , Value . newBuilder () . setStringValue ( \"updated example system\" ) . build ()) . build ()) . build ())) . build (); // Update mask specifies which fields will be updated. // For more information on update masks, see: https://google.aip.dev/161 FieldMask updateMask = FieldMask . newBuilder (). addPaths ( \"aspects\" ). addPaths ( \"entry source.description\" ). build (); return client . updateEntry ( entry , updateMask ); } } } Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries .",
+          "FieldMask ; import java.util.ArrayList ; public class SyncUpdateEntry { public static void main ( String [] args ) throws Exception { syncUpdateEntry (); } public static void syncUpdateEntry () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CatalogServiceClient catalogServiceClient = CatalogServiceClient . create ()) { UpdateEntryRequest request = UpdateEntryRequest . newBuilder () . setEntry ( Entry . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAllowMissing ( true ) . setDeleteMissingAspects ( true ) . addAllAspectKeys ( new ArrayList<String> ()) . build (); Entry response = catalogServiceClient . updateEntry ( request ); } } } Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "args.ADDITIONAL",
+      "args.CLOUD",
+      "args.CREATE",
+      "args.CUSTOM",
+      "args.IMPORT",
+      "args.JAR",
+      "args.SERVICE",
+      "args.TARGET",
+      "body.jarFileUris",
+      "body.state",
+      "body.status.state",
+      "builder.py",
+      "com.google.cloud.dataplex.v1",
+      "console.cloud.google.com",
+      "dataplex.aspectTypeOwner",
+      "dataplex.aspectTypeUser",
+      "dataplex.catalogAdmin",
+      "dataplex.catalogEditor",
+      "dataplex.catalogViewer",
+      "dataplex.entryGroupOwner",
+      "dataplex.entryOwner",
+      "dataplex.entryTypeUser",
+      "dataplex.googleapis.com",
+      "dataplex.metadataJobOwner",
+      "dataproc.editor",
+      "dataproc.googleapis.com",
+      "dataproc.worker",
+      "googleapis.com",
+      "http.get",
+      "http.post",
+      "java.util.ArrayList",
+      "logging.logWriter",
+      "main.py",
+      "map.get",
+      "pyspark.sql.functions",
+      "pyspark.sql.types",
+      "resource.labels.location",
+      "resource.labels.metadata",
+      "resource.type",
+      "source.description",
+      "src.constants",
+      "sys.log",
+      "sys.now",
+      "sys.sleep",
+      "types.global.generic",
+      "workflowexecutions.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataplex.aspectTypeOwner",
+      "roles/dataplex.aspectTypeUser",
+      "roles/dataplex.catalogAdmin",
+      "roles/dataplex.catalogEditor",
+      "roles/dataplex.catalogViewer",
+      "roles/dataplex.entryGroupOwner",
+      "roles/dataplex.entryOwner",
+      "roles/dataplex.entryTypeUser",
+      "roles/dataplex.metadataJobOwner",
+      "roles/dataproc.editor",
+      "roles/dataproc.worker",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/import-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/develop-custom-connector",
+        "https://docs.cloud.google.com/dataplex/docs/import-using-workflows-custom-source",
+        "https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata"
+      ]
+    }
+  ]
+}

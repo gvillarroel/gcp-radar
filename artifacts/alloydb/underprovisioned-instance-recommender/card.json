@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Underprovisioned instance recommender",
+  "feature_slug": "underprovisioned-instance-recommender",
+  "summary": "The Underprovisioned instance recommender helps identify AlloyDB instances that need more capacity.",
+  "extended_definition": "The Underprovisioned instance recommender helps identify AlloyDB instances that need more capacity.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+      "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor the health of your clusters and instances \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin To monitor AlloyDB health issues in the Google Cloud console, you must have the following (Identity and Access Management (IAM)) roles: AlloyDB Administrator ( roles/alloydb.admin ) alloydb.instances.list alloydb.clusters.get Monitoring Viewer ( roles/monitoring.viewer ) monitoring.timeSeries.list Note: This role is required to view insight charts in the Clusters page, but it isn't required to view Database Center health issues.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Monitor the health of your clusters and instances Stay organized with collections Save and categorize content based on your preferences.",
+          "Filter the cluster list by issue The Issues column in the AlloyDB cluster list displays the highest priority issue affecting that cluster or any of its primary and read pool instances."
+        ]
+      },
+      {
+        "title": "\"Manage your AlloyDB resources using Knowledge Catalog \\_|\\_ AlloyDB for\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "source_id": "site-iam-reference",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Knowledge Catalog automatically retrieves the following metadata from AlloyDB clusters, instances, databases, tables, columns, and views: Name Location (Region) Labels (for clusters and instances) Dataplex Integration Enabled (for clusters) Database Version Machine CPU Count (for instances) Availability Type (for instances) Charset (for databases) Collation (for databases) Owner Description (for table, views, columns, and foreign keys) Type (for clusters, instances, and machines) Columns Data Type Mode Primary Key Foreign Keys Referenced Table Column Mappings Creation Time Last modification Time Note: Knowledge Catalog refers to resources in AlloyDB and in other Google Cloud services as assets .",
+          "The format of the query string is as follows: type = \"projects/dataplex-types/locations/global/entryTypes/ QUERY STRING \" Replace the following: QUERY STRING : use the following list to identify a query string based on the type of AlloyDB asset that you want to query: alloydb-database alloydb-cluster alloydb-instance alloydb-table alloydb-schema alloydb-view An example query might look like the following: type=\"projects/1234567890/locations/global/entryTypes/alloydb-cluster\" Search by aspect type Knowledge Catalog includes a few built-in aspect types that help you perform searches.",
+          "Knowledge Catalog operation AlloyDB resource Roles or permissions required Search for AlloyDB resources Cluster alloydb.clusters.get Columns alloydb.databases.get Instance alloydb.instances.get Database alloydb.databases.get Tables alloydb.databases.get Views alloydb.databases.get Caution: If you grant the roles/alloydb.viewer role at the project level, principals with this role can view the metadata for all AlloyDB instances in the project."
+        ]
+      },
+      {
+        "title": "Scale an instance \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a read pool instance with a schedule-based policy To create a read pool instance with a schedule-based automatic scaling policy that defines a minimum number of nodes for a specific time window, run the following command: Note: If you have an existing autoscaling policy that has --autoscaler-max-node-count set , then this becomes an optional field. gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: MAX NODE COUNT : the maximum number of nodes that the autoscaler can create in the read pool instance.",
+          "Create a read pool instance with CPU and schedule-based policies To create a read pool instance with both CPU-based and schedule-based automatic scaling policies, run the following command: gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-target-cpu-usage = TARGET CPU USAGE \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace TARGET CPU USAGE with the target CPU utilization for your read pool instance, expressed as a decimal value between 0.0 and 1.0.",
+          "Create a read pool instance with a CPU-based policy To create a read pool instance with an automatic scaling policy based on a target CPU utilization, run the following command: gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-target-cpu-usage = TARGET CPU USAGE \\ { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: INSTANCE ID : the ID of the read pool instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.clusters.get",
+      "alloydb.databases.get",
+      "alloydb.instances.get",
+      "alloydb.instances.list",
+      "alloydb.viewer",
+      "monitoring.timeSeries.list",
+      "monitoring.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.viewer",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/monitor-health-clusters-instances",
+        "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    }
+  ]
+}

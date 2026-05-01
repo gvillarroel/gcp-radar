@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Automated retries for playbook actions",
+  "feature_slug": "automated-retries-for-playbook-actions",
+  "summary": "Playbooks can automatically retry individual actions that fail due to temporary issues, with configurable attempts and intervals.",
+  "extended_definition": "Playbooks can automatically retry individual actions that fail due to temporary issues, with configurable attempts and intervals.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Explore the Playbooks page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "source_id": "site-docs-reference-2",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Menu : Click edit Edit and select the required playbooks or blocks before using Menu to perform bulk actions: New Folder : Add a new playbooks folder; the playbook automatically inherits any changes made to its associated environment groups.",
+          "Explore the Playbooks page Supported in: Google secops SOAR A playbook is built on triggers, actions, and flows, working together to automate incident response and other security operations tasks.",
+          "Edit : Select single or multiple playbooks and blocks for use with the Actions menu."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon GuardDuty with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use cases Detect and manage threats in the AWS system using playbooks or manual actions.",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"Format\" : \"TXT\" , \"Location\" : \"https: //example.s3.amazonaws.com/test.txt\" , \"Name\" : \"API Test\" , \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"149\" , \"content-type\" : \"application/json\" , \"date\" : \"Mon,19 Oct 2020 06: 23: 22 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-requestid\" : \" REQUEST ID \" , \"x-amzn-trace-id\" : \" TRACE ID \" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \" REQUEST ID \" , \"RetryAttempts\" : 0 }, \"Status\" : \"ERROR\" , \"Tags\" : {} } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully retrieved details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to retrieve details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If no IDs are used: \"No details were retrieved about the provided Threat Intelligence Sets.\".format(list of ids) The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"List Threat Intelligence Sets\".",
+          "This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automated response :Leveraging native playbook orchestration capabilities, security teams can also automate response actions on Chrome Enterprise, such as blocking malicious URLs, blocking extensions, and even quarantining devices, directly from the Google SecOps platform.",
+          "See Install playbooks Ingest the Google Cloud logs into Google SecOps using direct ingestion: See Ingest Google Cloud logs Set up the Google Cloud Export Filter.",
+          "See Map users Enable the response playbooks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.s3.amazonaws.com",
+      "test.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    }
+  ]
+}

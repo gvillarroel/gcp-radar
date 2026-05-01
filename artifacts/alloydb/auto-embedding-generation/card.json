@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Auto embedding generation",
+  "feature_slug": "auto-embedding-generation",
+  "summary": "Auto embedding generation creates large-scale embeddings in AlloyDB for semantic search and retrieval-augmented generation workloads.",
+  "extended_definition": "Auto embedding generation creates large-scale embeddings in AlloyDB for semantic search and retrieval-augmented generation workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/example-embeddings",
+      "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables",
+      "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and manage auto vector embeddings for large tables \\_|\\_ AlloyDB\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables",
+        "source_id": "site-docs-reference",
+        "final_score": 275,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This solution is particularly useful for facilitating semantic search and Retrieval Augmented Generation (RAG) on text content, including the following: Creating initial vector embedding for a new table Generating embeddings after a large data import Refreshing embeddings after significant data changes Maintaining embeddings incrementally Understand auto vector embeddings Auto vector embeddings in AlloyDB provide a scalable way to automate the generation and maintenance of vector embeddings for your data.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Generate and manage auto vector embeddings for large tables Stay organized with collections Save and categorize content based on your preferences.",
+          "For large datasets, you can improve performance by refreshing embeddings for distinct partitions in parallel from different database connections: To refresh the entire table, run the following: CALL ai . refresh embeddings ( table name = > 'documents' , -- This is the root partitioned table embedding column = > 'content embeddings' ); To refresh a single partition, run the following: CALL ai . refresh embeddings ( table name = > 'documents eu' , embedding column = > 'content embeddings' ); Refresh embeddings for newly added or attached partitions The auto-embedding feature supports generating embeddings for partitions that are incorporated into your main table after the initial setup."
+        ]
+      },
+      {
+        "title": "\"Perform a vector search \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/example-embeddings",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To learn more about using ScaNN at scale, see Getting started with Vector Embeddings with AlloyDB AI .",
+          "To learn how to perform a vector search with Vertex AI embeddings, see Getting started with Vector Embeddings with AlloyDB AI .",
+          "Get started with vector embeddings using AlloyDB AI ."
+        ]
+      },
+      {
+        "title": "\"Model endpoint management reference \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example curl request creates embeddings based on the prompt and the model endpoint: curl -m 100 -X POST https://cymbal.com/models/text/embeddings/v1 \\ -H \"Content-Type: application/json\" -d '{\"prompt\": [\"AlloyDB Embeddings\"]}' The following example response is returned: [[ 0.3522231 -0.35932037 0.10156056 0.17734447 -0.11606089 -0.17266059 0.02509351 0.20305622 -0.09787305 -0.12154685 -0.17313677 -0.08075467 0.06821183 -0.06896557 0.1171584 -0.00931572 0.11875633 -0.00077482 0.25604948 0.0519384 0.2034983 -0.09952664 0.10347155 -0.11935943 -0.17872004 -0.08706985 -0.07056875 -0.05929353 0.4177883 -0.14381726 0.07934926 0.31368294 0.12543282 0.10758053 -0.30210832 -0.02951015 0.3908268 -0.03091059 0.05302926 -0.00114946 -0.16233777 0.1117468 -0.1315904 0.13947351 -0.29569918 -0.12330773 -0.04354299 -0.18068913 0.14445548 0.19481727 ]] Based on this input and response, we can infer the following: The model expects JSON input through the prompt field.",
+          "AlloyDB reserves, and creates, the ai schema. ai.text embedding() / google ml.text embedding() function The following shows how to generate text embeddings: SELECT ai . text embedding ( model id = > ' MODEL ID ' , content = > ' CONTENT ' ); Parameter Description MODEL ID A unique ID for the model endpoint that you define.",
+          "The following example curl request passes the version HTTP header which is used by the model endpoint: curl -m 100 -X POST https://cymbal.com/models/text/embeddings/v1 \\ -H \"Content-Type: application/json\" \\ -H \"version: 2024-01-01\" \\ -d '{\"prompt\": [\"AlloyDB Embeddings\"]}' The model expects text input through the version field and returns the version value in JSON format."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.text",
+      "cymbal.com",
+      "ml.embedding",
+      "ml.text"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

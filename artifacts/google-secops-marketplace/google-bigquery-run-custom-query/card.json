@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.277Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Google BigQuery Run Custom Query",
+  "feature_slug": "google-bigquery-run-custom-query",
+  "summary": "Adds an action to run a custom query in Google BigQuery.",
+  "extended_definition": "Adds an action to run a custom query in Google BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Active Directory with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Search Active Directory action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Output messages Available Script result Available JSON result The following example shows the JSON result output received when using the Search Active Directory action: [ { \"primaryGroupID\" : [ 513 ], \"logonCount\" : [ 6505 ], \"cn\" : [ \"user name\" ], \"countryCode\" : [ 0 ], \"objectClass\" : [ \"top\" , \"person\" , \"organizationalPerson\" ], \"userPrincipalName\" : [ \"user@example.com\" ], \"adminCount\" : [ 1 ], \"lastLogonTimestamp\" : [ \"2019-01-09 08:42:03.540783+00:00\" ], \"manager\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host name,DC=domain,DC=LOCAL\" ], \"instanceType\" : [ 4 ], \"distinguishedName\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"dSCorePropagationData\" : [ \"2019-01-14 14:39:16+00:00\" ], \"msDS-SupportedEncryptionTypes\" : [ 0 ], \"objectSid\" : [ \" ID \" ], \"whenCreated\" : [ \"2011-11-07 08:00:44+00:00\" ], \"uSNCreated\" : [ 7288202 ], \"lockoutTime\" : [ \"1601-01-01 00:00:00+00:00\" ], \"badPasswordTime\" : [ \"date\" ], \"pwdLastSet\" : [ \"date\" ], \"sAMAccountName\" : [ \"example\" ], \"objectCategory\" : [ \"CN=Person,CN=Schema,CN=Configuration,DC=host,DC=LOCAL\" ], \"lastLogon\" : [ \"2019-01-14 17:13:54.463070+00:00\" ], \"objectGUID\" : [ \" GUID \" ], \"whenChanged\" : [ \"2019-01-14 16:49:01+00:00\" ], \"badPwdCount\" : [ 1 ], \"accountExpires\" : [ \"9999-12-31 23:59:59.999999\" ], \"displayName\" : [ \"example\" ], \"name\" : [ \"user\" ], \"memberOf\" : [ \"CN=\\\\\\\\u05e7\\\\\\\\u05d1\\\\\\\\u05d5\\\\\\\\u05e6\\\\\\\\u05d4 \\\\\\\\u05d1\\\\\\\\u05e2\\\\\\\\u05d1\\\\\\\\u05e8\\\\\\\\u05d9\\\\\\\\u05ea,OU=TEST,OU=QA,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" , \"CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=domain,DC=LOCAL\" , \"CN=Local Admin,OU=Groups,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"codePage\" : [ 0 ], \"userAccountControl\" : [ 111 ], \"sAMAccountType\" : [ 805306368 ], \"uSNChanged\" : [ 15301168 ], \"sn\" : [ \"example\" ], \"givenName\" : [ \"user\" ], \"lastLogoff\" : [ \"1601-01-01 00:00:00+00:00\" ] } ] Output messages The Search Active Directory action can return the following output messages: Output message Message description Successfully performed the query \" QUERY STRING \" in Active Directory.",
+          "JSON result The following example shows the JSON result output received when using the Enrich Entities action: [ { \"EntityResult\" : { \"primaryGroupID\" : [ 513 ], \"logonCount\" : [ 6505 ], \"cn\" : [ \"user name\" ], \"countryCode\" : [ 0 ], \"objectClass\" : [ \"top\" , \"person\" , \"organizationalPerson\" ], \"userPrincipalName\" : [ \"user@example.com\" ], \"adminCount\" : [ 1 ], \"lastLogonTimestamp\" : [ \"2019-01-09 08:42:03.540783+00:00\" ], \"manager\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host name,DC=domain,DC=LOCAL\" ], \"instanceType\" : [ 4 ], \"distinguishedName\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"dSCorePropagationData\" : [ \"2019-01-14 14:39:16+00:00\" ], \"msDS-SupportedEncryptionTypes\" : [ 0 ], \"objectSid\" : [ \" ID \" ], \"whenCreated\" : [ \"2011-11-07 08:00:44+00:00\" ], \"uSNCreated\" : [ 7288202 ], \"lockoutTime\" : [ \"1601-01-01 00:00:00+00:00\" ], \"badPasswordTime\" : [ \"date\" ], \"pwdLastSet\" : [ \"date\" ], \"sAMAccountName\" : [ \"example\" ], \"objectCategory\" : [ \"CN=Person,CN=Schema,CN=Configuration,DC=host,DC=LOCAL\" ], \"lastLogon\" : [ \"2019-01-14 17:13:54.463070+00:00\" ], \"objectGUID\" : [ \" GUID \" ], \"whenChanged\" : [ \"2019-01-14 16:49:01+00:00\" ], \"badPwdCount\" : [ 1 ], \"accountExpires\" : [ \"9999-12-31 23:59:59.999999\" ], \"displayName\" : [ \"example user\" ], \"name\" : [ \"user\" ], \"memberOf\" : [ \"CN=\\\\\\\\u05e7\\\\\\\\u05d1\\\\\\\\u05d5\\\\\\\\u05e6\\\\\\\\u05d4 \\\\\\\\u05d1\\\\\\\\u05e2\\\\\\\\u05d1\\\\\\\\u05e8\\\\\\\\u05d9\\\\\\\\u05ea,OU=TEST,OU=QA,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" , \"CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=domain,DC=LOCAL\" , \"CN=Local Admin,OU=Groups,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"codePage\" : [ 0 ], \"userAccountControl\" : [ 111 ], \"sAMAccountType\" : [ 805306368 ], \"uSNChanged\" : [ 15301168 ], \"sn\" : [ \"example\" ], \"givenName\" : [ \"user\" ], \"lastLogoff\" : [ \"1601-01-01 00:00:00+00:00\" ]}, \"Entity\" : \"user@example.com\" } ] Script result The following table lists the value for the script result output when using the Enrich Entities action: Script result name Value is success True or False Force Password Update Use the Force Password Update action to require a user to change their password upon the following sign-in.",
+          "JSON result The following example shows the JSON result output received when using the Get Manager Contact Details action: [ { \"EntityResult\" : { \"primaryGroupID\" : [ 513 ], \"logonCount\" : [ 6505 ], \"cn\" : [ \"user name\" ], \"countryCode\" : [ 0 ], \"objectClass\" : [ \"top\" , \"person\" , \"organizationalPerson\" ], \"userPrincipalName\" : [ \"user@example.com\" ], \"adminCount\" : [ 1 ], \"lastLogonTimestamp\" : [ \"2019-01-09 08:42:03.540783+00:00\" ], \"manager\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host name,DC=domain,DC=LOCAL\" ], \"instanceType\" : [ 4 ], \"distinguishedName\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"dSCorePropagationData\" : [ \"2019-01-14 14:39:16+00:00\" ], \"msDS-SupportedEncryptionTypes\" : [ 0 ], \"objectSid\" : [ \" ID \" ], \"whenCreated\" : [ \"2011-11-07 08:00:44+00:00\" ], \"uSNCreated\" : [ 7288202 ], \"lockoutTime\" : [ \"1601-01-01 00:00:00+00:00\" ], \"badPasswordTime\" : [ \"date\" ], \"pwdLastSet\" : [ \"date\" ], \"sAMAccountName\" : [ \"example\" ], \"objectCategory\" : [ \"CN=Person,CN=Schema,CN=Configuration,DC=host,DC=LOCAL\" ], \"lastLogon\" : [ \"2019-01-14 17:13:54.463070+00:00\" ], \"objectGUID\" : [ \"{id}\" ], \"whenChanged\" : [ \"2019-01-14 16:49:01+00:00\" ], \"badPwdCount\" : [ 1 ], \"accountExpires\" : [ \"9999-12-31 23:59:59.999999\" ], \"displayName\" : [ \"example\" ], \"name\" : [ \"user\" ], \"memberOf\" : [ \"CN= u05e7 u05d1 u05d5 u05e6 u05d4 u05d1 u05e2 u05d1 u05e8 u05d9 u05ea,OU=TEST,OU=QA,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" , \"CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=domain,DC=LOCAL\" , \"CN=Local Admin,OU=Groups,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"codePage\" : [ 0 ], \"userAccountControl\" : [ 111 ], \"sAMAccountType\" : [ 805306368 ], \"uSNChanged\" : [ 15301168 ], \"sn\" : [ \"example\" ], \"givenName\" : [ \"user\" ], \"lastLogoff\" : [ \"1601-01-01 00:00:00+00:00\" ] }, \"Entity\" : \"user@example.com\" } ] Output messages The Ping action can return the following output messages: Output message Message description All entities were processed successfully."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight Logger with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True/False is success:False JSON Result { \"fields\" : [ { \"name\" : \" rowId\" , \"type\" : \"string\" , \"alias\" : \" rowId\" }, { \"name\" : \" raw\" , \"type\" : \"string\" , \"alias\" : \" raw\" }, { \"name\" : \"Event Time\" , \"type\" : \"date\" , \"alias\" : \"Event Time\" }, { \"name\" : \"Logger\" , \"type\" : \"string\" , \"alias\" : \"Logger\" }, { \"name\" : \"Device\" , \"type\" : \"string\" , \"alias\" : \"Device\" }, { \"name\" : \"Receipt Time\" , \"type\" : \"date\" , \"alias\" : \"Receipt Time\" }, { \"name\" : \"deviceReceiptTime\" , \"type\" : \"date\" , \"alias\" : \"deviceReceiptTime\" }, { \"name\" : \"deviceCustomString2\" , \"type\" : \"string\" , \"alias\" : \"deviceCustomString2\" }, { \"name\" : \"destinationAddress\" , \"type\" : \"string\" , \"alias\" : \"destinationAddress\" }, { \"name\" : \"deviceCustomNumber3Label\" , \"type\" : \"string\" , \"alias\" : \"deviceCustomNumber3Label\" }, { \"name\" : \"globalEventId\" , \"type\" : \"number\" , \"alias\" : \"globalEventId\" }, { \"name\" : \"deviceVersion\" , \"type\" : \"string\" , \"alias\" : \"deviceVersion\" }, { \"name\" : \"name\" , \"type\" : \"string\" , \"alias\" : \"name\" }, { \"name\" : \"deviceAddress\" , \"type\" : \"string\" , \"alias\" : \"deviceAddress\" }, { \"name\" : \"deviceVendor\" , \"type\" : \"string\" , \"alias\" : \"deviceVendor\" }, { \"name\" : \"Version\" , \"type\" : \"string\" , \"alias\" : \"Version\" }, { \"name\" : \"deviceCustomNumber1Label\" , \"type\" : \"string\" , \"alias\" : \"deviceCustomNumber1Label\" }, { \"name\" : \"deviceEventCategory\" , \"type\" : \"string\" , \"alias\" : \"deviceEventCategory\" }, { \"name\" : \"endTime\" , \"type\" : \"date\" , \"alias\" : \"endTime\" }, { \"name\" : \"fileName\" , \"type\" : \"string\" , \"alias\" : \"fileName\" }, { \"name\" : \"deviceCustomNumber2\" , \"type\" : \"number\" , \"alias\" : \"deviceCustomNumber2\" }, { \"name\" : \"deviceCustomNumber1\" , \"type\" : \"number\" , \"alias\" : \"deviceCustomNumber1\" }, { \"name\" : \"baseEventCount\" , \"type\" : \"number\" , \"alias\" : \"baseEventCount\" }, { \"name\" : \"startTime\" , \"type\" : \"date\" , \"alias\" : \"startTime\" }, { \"name\" : \"deviceCustomNumber3\" , \"type\" : \"number\" , \"alias\" : \"deviceCustomNumber3\" }, { \"name\" : \"agentSeverity\" , \"type\" : \"string\" , \"alias\" : \"agentSeverity\" }, { \"name\" : \"fsize\" , \"type\" : \"string\" , \"alias\" : \"fsize\" }, { \"name\" : \"deviceProduct\" , \"type\" : \"string\" , \"alias\" : \"deviceProduct\" }, { \"name\" : \"deviceEventClassId\" , \"type\" : \"string\" , \"alias\" : \"deviceEventClassId\" }, { \"name\" : \"deviceCustomNumber2Label\" , \"type\" : \"string\" , \"alias\" : \"deviceCustomNumber2Label\" }, { \"name\" : \"deviceCustomString2Label\" , \"type\" : \"string\" , \"alias\" : \"deviceCustomString2Label\" }, { \"name\" : \"fileType\" , \"type\" : \"string\" , \"alias\" : \"fileType\" } ], \"results\" : [ [ \"4BFEFD-86@Local\" , \"CEF:0 ArcSight Logger 7.0.0.8280.0 storagegroup:100 Storage Group Space Used 1 cat=/Monitor/StorageGroup/Space/Used cn1=15 cn1Label=Percent Used cn2=180 cn2Label=retention period (days) cn3=2048 cn3Label=used (MB) cs2=CurrentValue cs2Label=timeframe dst=10.0.2.185 dvc=10.0.2.185 end=1585661238546 fileType=storageGroup fname=Default Storage Group fsize=13 geid=0 rt=1585661238546\" , 1585661238546 , \"Local\" , \"Logger\" , 1585661364960 , 1585661238546 , \"CurrentValue\" , \"10.0.2.185\" , \"used (MB)\" , 0 , \"7.0.0.8280.0\" , \"Storage Group Space Used\" , \"10.0.2.185\" , \"ArcSight\" , \"0\" , \"Percent Used\" , \"/Monitor/StorageGroup/Space/Used\" , 1585661238546 , \"Default Storage Group\" , 180 , 15 , 1 , 1585661238546 , 2048 , \"1\" , \"13\" , \"Logger\" , \"storagegroup:100\" , \"retention period (days)\" , \"timeframe\" , \"storageGroup\" ], [ \"4BFEFD-87@Local\" , \"CEF:0 ArcSight Logger 7.0.0.8280.0 storagegroup:100 Storage Group Space Used 1 cat=/Monitor/StorageGroup/Space/Used cn1=33 cn1Label=Percent Used cn2=365 cn2Label=retention period (days) cn3=1024 cn3Label=used (MB) cs2=CurrentValue cs2Label=timeframe dst=10.0.2.185 dvc=10.0.2.185 end=1585661238546 fileType=storageGroup fname=Internal Event Storage Group fsize=3 geid=0 rt=1585661238546\" , 1585661238546 , \"Local\" , \"Logger\" , 1585661364960 , 1585661238546 , \"CurrentValue\" , \"10.0.2.185\" , \"used (MB)\" , 0 , \"7.0.0.8280.0\" , \"Storage Group Space Used\" , \"10.0.2.185\" , \"ArcSight\" , \"0\" , \"Percent Used\" , \"/Monitor/StorageGroup/Space/Used\" , 1585661238546 , \"Internal Event Storage Group\" , 365 , 33 , 1 , 1585661238546 , 1024 , \"1\" , \"3\" , \"Logger\" , \"storagegroup:100\" , \"retention period (days)\" , \"timeframe\" , \"storageGroup\" ] ] } Case Wall Result type Description Type Output message The action should not fail or stop a playbook execution: If status is set to \"completed\" and hit is greater than zero: \"Successfully returned events for query \"{0}\" from the ArcSight Logger\".format(query) If status is set \"completed\" and hit is set to 0: (is success == false): \"Events were not found for query \"{0}\" in ArcSight Logger\".format(query).",
+          "Reason: {1}\".format(query, errors/message from first response)\" Async output message: \"Starting processing query {0} in ArcSight Logger\".format(query) The action should fail and stop a playbook execution: If a fatal error (wrong credentials, connection error, action crashes) is reported: \"Error executing action \"Send Query\".",
+          "Action results Script result Script result name Value options Example is success True/False is success:False Case Wall Result type Description Type Output message The action should not fail or stop a playbook execution: If no errors and returned data: \"Successfully connected to the ArcSight Logger with the provided connection parameters!\" The action should fail and stop a playbook execution: If an error is reported: \"Error executing action \"Ping\"."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Parameter name Type Default value Is mandatory Description Columns String N/A Yes Example: Message;Username Entries String N/A Yes Example: test1 Me1;Test Me2 Active List UUID String N/A Yes Example: HCN75QGABABCZXCOdT9P51w== Run on This action runs on all entities.",
+          "Parameters Parameter name Type Default value Is mandatory Description Active list UUID String N/A Yes Example: HTcILQWABABCr553ieI0Xmw== Run on This action runs on all entities.",
+          "Copy the following content into that file. #!/bin/bash #Declare the variables: uid= SCRIPTING USER UID gid= SCRIPTING USER GID arcsight ip= ARCSIGHT IP #Install nfs-utils yum install nfs-utils -y #Create the directory that will be shared mkdir /opt/Correlations #Change the permissions chmod -R 755 /opt/Correlations/ chown -R scripting:scripting /opt/Correlations/ #Start the services and enable them to be started at boot time systemctl enable rpcbind systemctl enable nfs-server systemctl enable nfs-lock systemctl enable nfs-idmap systemctl start rpcbind systemctl start nfs-server systemctl start nfs-lock systemctl start nfs-idmap #Edit the exports file as follows echo \"/opt/Correlations/ $arcsight ip(rw,sync,all squash,anonuid=$uid,anongid=$gid)\">>/etc/exports #Restart the NFS service and export the path systemctl restart nfs-server exportfs -a #If FirewallD is running add the next rules: firewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --permanent --zone=public --add-service=mountd firewall-cmd --permanent --zone=public --add-service=rpc-bind firewall-cmd --reload setsebool -P nfs export all rw 1 Declare the uid , gid , and arcisght ip variables according to your environment."
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget.",
+          "For example, the following JSON object represents a poor structure as it would be unusable inside playbooks: { \"10.10.10.10\": { \"is malicious\": \"false\" } } Instead, format it like this: [ { \"is malicious\": \"false\", \"ip\": \"10.10.10.10\" } ] If you're using entities inside the action and return results Per Entity, then the best practice is to structure the JSON Result like this: [ { \"Entity\": \"10.10.10.10\", \"EntityResult\": { \"is malicious\": \"false\", } } ] Always consider how the output of the action can be used inside automation.",
+          "For changes that affect all integration items: Integration - {Update} For changes that affect all actions: Integration's Actions - {Update} For changes that affect all connectors: Integration's Connectors - {Update} For changes that affect all jobs: Integration's Jobs - {Update} If the release contained a regressive change, then in the release note you need to specify REGRESSIVE! ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "entity.identifier",
+      "error.Stacktrace",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    }
+  ]
+}

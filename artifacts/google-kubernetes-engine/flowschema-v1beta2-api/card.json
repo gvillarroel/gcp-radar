@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "FlowSchema v1beta2 API",
+  "feature_slug": "flowschema-v1beta2-api",
+  "summary": "The v1beta2 FlowSchema API is removed in GKE 1.29 in favor of newer API versions; deprecated on 2024-01-11.",
+  "extended_definition": "The v1beta2 FlowSchema API is removed in GKE 1.29 in favor of newer API versions; deprecated on 2024-01-11.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-11",
+    "deprecation_date": "2024-01-11",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer.",
+          "Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer.",
+          "UserManagedKeysConfig JSON representation { \"clusterCa\" : string , \"etcdApiCa\" : string , \"etcdPeerCa\" : string , \"serviceAccountSigningKeys\" : [ string ] , \"serviceAccountVerificationKeys\" : [ string ] , \"aggregationCa\" : string , \"controlPlaneDiskEncryptionKey\" : string , \"controlPlaneDiskEncryptionKeyVersions\" : [ string ] , \"gkeopsEtcdBackupEncryptionKey\" : string } Fields clusterCa string The Certificate Authority Service caPool to use for the cluster CA in this cluster. etcdApiCa string Resource path of the Certificate Authority Service caPool to use for the etcd API CA in this cluster. etcdPeerCa string Resource path of the Certificate Authority Service caPool to use for the etcd peer CA in this cluster. serviceAccountSigningKeys[] string The Cloud KMS cryptoKeyVersions to use for signing service account JWTs issued by this cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer.",
+          "Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer.",
+          "UserManagedKeysConfig JSON representation { \"clusterCa\" : string , \"etcdApiCa\" : string , \"etcdPeerCa\" : string , \"serviceAccountSigningKeys\" : [ string ] , \"serviceAccountVerificationKeys\" : [ string ] , \"aggregationCa\" : string , \"controlPlaneDiskEncryptionKey\" : string , \"controlPlaneDiskEncryptionKeyVersions\" : [ string ] , \"gkeopsEtcdBackupEncryptionKey\" : string } Fields clusterCa string The Certificate Authority Service caPool to use for the cluster CA in this cluster. etcdApiCa string Resource path of the Certificate Authority Service caPool to use for the etcd API CA in this cluster. etcdPeerCa string Resource path of the Certificate Authority Service caPool to use for the etcd peer CA in this cluster. serviceAccountSigningKeys[] string The Cloud KMS cryptoKeyVersions to use for signing service account JWTs issued by this cluster."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following upcoming GKE on AWS versions or newer will include the fix for this vulnerability, and this bulletin will be updated when they are available: 1.5.0-gke.6 1.4.3-gke.7 Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ...",
+          "Upgrade your Container-Optimized OS node pools to one of the following versions or later: 1.27.5-gke.200 1.28.2-gke.1157000 Upgrade your Ubuntu node pools to one of the following versions or later: 1.25.14-gke.1421000 1.26.9-gke.1437000 1.27.6-gke.1248000 1.28.2-gke.1157000 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel.",
+          "For security purposes, even if you have node auto-upgrade enabled, we recommend that you manually upgrade your cluster and node pools to one of the following GKE versions or later: 1.27.16-gke.1008000 1.28.12-gke.1052000 1.29.7-gke.1008000 1.30.3-gke.1225000 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1008000",
+      "gke.1052000",
+      "gke.1157000",
+      "gke.1225000",
+      "gke.1248000",
+      "gke.1421000",
+      "gke.1437000",
+      "gke.1600",
+      "gke.200",
+      "gke.2000",
+      "gke.6",
+      "gke.6100",
+      "gke.7",
+      "gke.N"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    }
+  ]
+}

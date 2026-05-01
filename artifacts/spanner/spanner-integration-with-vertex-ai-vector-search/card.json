@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner integration with Vertex AI Vector Search",
+  "feature_slug": "spanner-integration-with-vertex-ai-vector-search",
+  "summary": "Spanner now supports an integration workflow with Vertex AI Vector Search to enable vector similarity search on data stored in Spanner.",
+  "extended_definition": "Spanner now supports an integration workflow with Vertex AI Vector Search to enable vector similarity search on data stored in Spanner.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/choose-vector-distance-function",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate vector embeddings for textual data in bulk using partitioned DML\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "GoogleSQL CREATE TABLE Products ( product id INT64 NOT NULL , name STRING ( MAX ), description STRING ( MAX ) ) PRIMARY KEY ( product id ); PostgreSQL CREATE TABLE Products ( product id INT8 NOT NULL , name TEXT , description TEXT , PRIMARY KEY ( product id ) ); Your goal is to generate vector embeddings for the description column in this table to find similar items to recommend to customers to improve their shopping experience using vector search .",
+          "This document explains how to generate and backfill vector embeddings in bulk for textual data ( STRING or JSON ) that is stored in Spanner using SQL and the Vertex AI text embedding models .",
+          "What's next Learn how to perform a similarity vector search by finding the K-nearest neighbors ."
+        ]
+      },
+      {
+        "title": "\"Choose among vector distance functions to measure vector embeddings similarity\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/choose-vector-distance-function",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Learn how to export embeddings to Vertex AI Vector Search .",
+          "Normalized data If you have a dataset where all vector embeddings are normalized, then all three functions provide the same semantic search results.",
+          "After you've generated embeddings from your Spanner data, you can perform a similarity search using vector distance functions."
+        ]
+      },
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following topics help you learn how to: Create an Google Cloud project Create a Spanner instance Create a database Create an embedding model Load data into Spanner Generate embeddings for data Perform KNN vector similarity search Scale vector search with a vector index Clean up resources To learn about Spanner pricing details, see Spanner pricing .",
+          "Cymbal Phoenix See and be seen 87 0.525101413779242 Lights with the Phoenix bike lights... ------------------+--------------------+----------------+-------------------- / Scale vector search to use approximate nearest neighbors The previous vector search example uses exact, K-nearest neighbors (KNN) vector search .",
+          "To scale and use ANN vector search in Spanner, do the following: Create a vector index Modify your query to use an ANN distance function Create a vector index Spanner accelerates ANN vector searches by using a specialized vector index that leverages Google Research's Scalable Nearest Neighbor (ScaNN) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/choose-vector-distance-function",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/choose-vector-distance-function",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+      ]
+    }
+  ]
+}

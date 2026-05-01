@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.112Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Custom Organization Policy constraints for Filestore",
+  "feature_slug": "custom-organization-policy-constraints-for-filestore",
+  "summary": "Custom Organization Policy constraints provide granular control over selected Filestore resource fields.",
+  "extended_definition": "Custom Organization Policy constraints provide granular control over selected Filestore resource fields.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+      "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+      "https://docs.cloud.google.com/filestore/docs/custom-performance",
+      "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Creating custom constraints for Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test the policy Try creating an instance without setting deletionProtection to true : gcloud filestore instances create test-ins --zone = us-central1 --tier = enterprise --network = name = \"default\" --file-share = \"capacity=1024,name=test-fs\" The output is similar to the following: ERROR: (gcloud.filestore.instances.create) FAILED PRECONDITION: Operation denied by custom org policy on resource 'projects/test-project/locations/us-central1/instances/test-ins': [\"customConstraints/custom.deletionProtectionEnabledEnforcedOnCreate\": \"Enforce instance creation with deletion protection.\"]. - '@type': type.googleapis.com/google.rpc.DebugInfo detail: \"generic::failed precondition: Operation denied by custom org policy on\\ \\ resource 'projects/test-project/locations/us-central1/instances/test-ins':\\ \\ [\\\"customConstraints/custom.deletionProtectionEnabledEnforcedOnCreate\\\": \\\"\\ Enforce instance creation with deletion protection.\\\"].\" . . . - '@type': type.googleapis.com/google.rpc.DebugInfo - '@type': type.googleapis.com/google.rpc.ErrorInfo domain: file.googleapis.com metadata: customConstraints: customConstraints/custom.deletionProtectionEnabledEnforcedOnCreate resource: projects/test-project/locations/us-central1/instances/test-ins reason: CUSTOM ORG POLICY VIOLATION Example custom organization policies for common use cases The following table lists custom organization policies that you might find useful: Description Constraint syntax When setting the access control to a restricted list of IPs and roles, allow setting the administrator IP to a unique IP name : organizations/ ORGANIZATION ID /customConstraints/custom.filestoreAdminIP resourceTypes : - file.googleapis.com/Instance methodTypes : - CREATE - UPDATE condition : \"resource.fileShares.size() > 0 && resource.fileShares[0].nfsExportOptions.size() > 0 && resource.fileShares[0].nfsExportOptions.exists(o, o.squashMode == 'NO ROOT SQUASH' && o.accessMode == 'READ WRITE' && o.ipRanges.exists(i, i != '10.0.0.1'))\" actionType : ALLOW displayName : Access control admin IP description : Access control restriction allows setting admin IP exclusively to 10.0.0.1.",
+          "However, if you want more granular, customizable control over the specific fields that are restricted in your organization policies, you can also create custom constraints and use those custom constraints in an organization policy.",
+          "Organization Policy provides built-in managed constraints for various Google Cloud services."
+        ]
+      },
+      {
+        "title": "Apply a CMEK organization policy \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "source_id": "site-docs-root-2",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud offers two organization policy constraints to help ensure CMEK usage across an organization: constraints/gcp.restrictNonCmekServices is used to require CMEK protection. constraints/gcp.restrictCmekCryptoKeyProjects is used to limit which Filestore keys are used for CMEK protection.",
+          "Control CMEK use with organization policy Filestore integrates with CMEK organization policy constraints to let you specify encryption compliance requirements for Filestore resources in your organization.",
+          "Require CMEKs for all Filestore resources A common policy is to require CMEKs to be used to protect all resources in an organization."
+        ]
+      },
+      {
+        "title": "Custom performance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "source_id": "site-docs-root-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom performance examples for zonal and regional tiers Provisioned IOPS per TiB Capacity (GiB) Read IOPS Write IOPS Read throughput (MiBps) Write throughput (MiBps) 4,000 100 2,000 600 47 16 600 2,344 703 55 19 1,024 4,000 1,200 94 32 10,239 39,996 11,999 940 320 17,000 100 2,000 600 47 16 600 9,961 2,988 234 80 1024 17,000 5,100 400 136 10,239 169,983 50,995 3,995 1,360 Depending on the access to the small capacity instances feature, the lower capacity range for Filestore regional instances can be either 100 GiB to 10,239 GiB or 1 TiB to 9.75 TiB.",
+          "If custom performance is supported and configured for the provided instance, the response will include the following parameters: \"customPerformanceSupported\": true, \"performanceConfig\": { \"fixedIops\": { \"maxIops\": \"9000\" } }, \"performanceLimits\": { \"maxReadIops\": \"9000\", \"maxWriteIops\": \"2700\", \"maxReadThroughputBps\": \"221184000\", \"maxWriteThroughputBps\": \"73728000\", \"maxIops\": \"9000\" } Custom performance calculations The following table displays performance calculations based on provisioned IOPS per TiB and allocated capacity.",
+          "Disabled means that custom performance is supported but not enabled for this instance. gcloud Get information about a Filestore instance by running the instances describe command: gcloud filestore instances describe INSTANCE ID --project= PROJECT ID --location= LOCATION The output might vary depending on the instance settings."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerAsyncClient (1.16.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Filestore Instance to create the snapshots of, in the format projects/{project id}/locations/{location}/instances/{instance id} This corresponds to the parent field on the request instance; if request is provided, this should not be set. snapshot Snapshot Required.",
+          "Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create backup create backup ( request : typing .",
+          "The elements of the repeated paths field may only include these fields: - \"description\" - \"file shares\" - \"labels\" - \"performance config\" - \"deletion protection enabled\" - \"deletion protection reason\" This corresponds to the update mask field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient",
+      "core.retry",
+      "custom.deletionProtectionEnabledEnforcedOnCreate",
+      "custom.filestoreAdminIP",
+      "file.googleapis.com",
+      "gcloud.filestore.instances.create",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "o.accessMode",
+      "o.ipRanges.exists",
+      "o.squashMode",
+      "resource.fileShares",
+      "resource.fileShares.size",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/cmek-organization-policy",
+        "https://docs.cloud.google.com/filestore/docs/custom-performance",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient"
+      ]
+    }
+  ]
+}

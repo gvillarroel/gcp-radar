@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Cloud Storage Text to BigQuery template",
+  "feature_slug": "cloud-storage-text-to-bigquery-template",
+  "summary": "This Google-provided streaming template loads text data from Cloud Storage into BigQuery; This Google-provided template loads text data from Cloud Storage into BigQuery.",
+  "extended_definition": "This Google-provided streaming template loads text data from Cloud Storage into BigQuery; This Google-provided template loads text data from Cloud Storage into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Storage Text to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Options . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"javascriptTextTransformGcsPath\" , \"javascriptTextTransformFunctionName\" }, optionalOptions = { \"javascriptTextTransformGcsPath\" , \"javascriptTextTransformFunctionName\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud-xlang\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" + \"</pre>\" , \"Create a JavaScript (<code>.js</code>) file with your UDF function that supplies the logic\\n\" + \" to transform the lines of text.",
+          "Options . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"pythonExternalTextTransformGcsPath\" , \"pythonExternalTextTransformFunctionName\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" + \"</pre>\" , \"Create a JavaScript (<code>.js</code>) file with your UDF function that supplies the logic\\n\" + \" to transform the lines of text.",
+          "The Cloud Storage Text to BigQuery batch template doesn't support importing data into STRUCT (Record) fields in the target BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Text to BigQuery template with Python UDF \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "source_id": "site-api-reference",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Options . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"javascriptTextTransformGcsPath\" , \"javascriptTextTransformFunctionName\" }, optionalOptions = { \"javascriptTextTransformGcsPath\" , \"javascriptTextTransformFunctionName\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud-xlang\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" + \"</pre>\" , \"Create a JavaScript (<code>.js</code>) file with your UDF function that supplies the logic\\n\" + \" to transform the lines of text.",
+          "Options . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"pythonExternalTextTransformGcsPath\" , \"pythonExternalTextTransformFunctionName\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" + \"</pre>\" , \"Create a JavaScript (<code>.js</code>) file with your UDF function that supplies the logic\\n\" + \" to transform the lines of text.",
+          "The Cloud Storage Text to BigQuery batch template doesn't support importing data into STRUCT (Record) fields in the target BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Spanner change streams to Cloud Storage template \\_|\\_ Cloud Dataflow \\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "source_id": "site-api-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Output files can be written in either JSON or AVRO format, depending on the user configuration.\\n\" , \"Note that you can minimize network latency and network transport costs by running the Dataflow job from the same region as your Cloud Spanner instance or Cloud Storage bucket. \" + \"If you use sources, sinks, staging file locations, or temporary file locations that are located outside of your job's region, your data might be sent across regions. \" + \"See more about <a href=\\\"https://cloud.google.com/dataflow/docs/concepts/regional-endpoints\\\">Dataflow regional endpoints</a>.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change streams</a>, <a href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to build change streams Dataflow pipelines</a>, and <a href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best practices</a>.\" }, optionsClass = SpannerChangeStreamsToGcsOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The Cloud Storage output bucket must exist prior to running the pipeline.\" }, streaming = true , supportsAtLeastOnce = true ) public class SpannerChangeStreamsToGcs { private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToGcs . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting Input Files to GCS\" ); SpannerChangeStreamsToGcsOptions options = PipelineOptionsFactory . fromArgs ( args ). as ( SpannerChangeStreamsToGcsOptions . class ); run ( options ); } private static String getProjectId ( SpannerChangeStreamsToGcsOptions options ) { return options . getSpannerProjectId (). isEmpty () ? options . getProject () : options . getSpannerProjectId (); } public static PipelineResult run ( SpannerChangeStreamsToGcsOptions options ) { LOG . info ( \"Requested File Format is \" + options . getOutputFileFormat ()); options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); final Pipeline pipeline = Pipeline . create ( options ); // Get the Spanner project, instance, database, and change stream parameters.",
+          "STREAMING , displayName = \"Cloud Spanner change streams to Cloud Storage\" , description = { \"The Cloud Spanner change streams to Cloud Storage template is a streaming pipeline that streams Spanner data change records and writes them into a Cloud Storage bucket using Dataflow Runner V2.\\n\" , \"The pipeline groups Spanner change stream records into windows based on their timestamp, with each window representing a time duration whose length you can configure with this template. \" + \"All records with timestamps belonging to the window are guaranteed to be in the window; there can be no late arrivals. \" + \"You can also define a number of output shards; the pipeline creates one Cloud Storage output file per window per shard. \" + \"Within an output file, records are unordered.",
+          "The Spanner change streams to Cloud Storage template is a streaming pipeline that streams Spanner data change records and writes them into a Cloud Storage bucket using Dataflow Runner v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.services.bigquery.model.TableFieldSchema",
+      "com.google.api.services.bigquery.model.TableRow",
+      "com.google.api.services.bigquery.model.TableSchema",
+      "com.google.cloud.teleport.metadata.MultiTemplate",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.options.BigQueryStorageApiBatchOptions",
+      "com.google.cloud.teleport.v2.templates",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters",
+      "com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer.PythonExternalTextTransformerOptions",
+      "com.google.cloud.teleport.v2.utils.BigQueryIOUtils",
+      "com.google.common.annotations.VisibleForTesting",
+      "com.google.common.base.Strings",
+      "github.com",
+      "java.nio.channels.Channels",
+      "java.nio.channels.ReadableByteChannel",
+      "java.nio.charset.StandardCharsets",
+      "java.util.ArrayList",
+      "java.util.function.Supplier",
+      "java.util.List",
+      "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+      "org.apache.beam.sdk.io.FileSystems",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition",
+      "org.apache.beam.sdk.io.TextIO",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation",
+      "org.apache.beam.sdk.options.ValueProvider.StaticValueProvider",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.MapElements",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.beam.sdk.transforms.SimpleFunction",
+      "org.apache.beam.sdk.util.StreamUtils",
+      "org.apache.beam.sdk.values.PCollection",
+      "org.json.JSONArray",
+      "org.json.JSONObject"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage"
+      ]
+    }
+  ]
+}

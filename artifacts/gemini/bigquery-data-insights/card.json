@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.307Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "BigQuery data insights",
+  "feature_slug": "bigquery-data-insights",
+  "summary": "Gemini in BigQuery can generate data insights in the BigQuery interface.",
+  "extended_definition": "Gemini in BigQuery can generate data insights in the BigQuery interface.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Gemini Code Assist Standard and Enterprise overview \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "source_id": "site-docs-root",
+        "final_score": 279,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini Code Assist code explained for Apigee policies. ( Preview ) Gemini in Application Integration The following table shows the types of generative AI assistance in Application Integration in the Google Cloud console: Integration creation assist Gemini Code Assist Standard Gemini Code Assist Enterprise AI-assisted visual editor for automation flow generation Enterprise context embedded AI-assisted automation authoring Generative AI Automation flow documentation generation and refinement Gemini in BigQuery features with Gemini Code Assist The following table shows the types of generative AI assistance for BigQuery in BigQuery Studio : Data insights Gemini Code Assist Standard Gemini Code Assist Enterprise Data insights provides an insightful library of queries generated from the metadata of your tables.",
+          "Interact with Gemini Code Assist in your IDE After you set up Gemini Code Assist Standard or Enterprise for a Google Cloud project , and install the Gemini Code Assist extension in your IDE ( VS Code or supported JetBrains IDE ), you can ask for assistance in the following ways: Receive code completions or generate code directly in the code editor.",
+          "Gemini in Colab Enterprise The following table shows the types of generative AI assistance for code in Colab Enterprise : Notebook code assist Gemini Code Assist Standard Gemini Code Assist Enterprise Python code generation and completion in notebook Gemini in databases The following table shows the types of generative AI assistance for coding in databases: Generate SQL queries Gemini Code Assist Standard Gemini Code Assist Enterprise Write in natural language to generate SQL statements."
+        ]
+      },
+      {
+        "title": "Set up Gemini in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your organization is using BigQuery Standard edition for compute only, then you can use Gemini Code Assist Standard, which includes data insights and automated metadata generation capabilities in addition to features listed in Gemini Code Assist Standard and Enterprise pricing overview .",
+          "Preview features that require Gemini in BigQuery sign-up include the following: Automated metadata generation for data insights (Preview) Dataset insights with BigQuery knowledge engine (Preview) Turn off Gemini in BigQuery To prevent a user from using Gemini in BigQuery features, revoke the specific cloudaicompanion IAM permissions that grant access to these capabilities, as detailed in Enable necessary APIs and grant roles .",
+          "The following roles grant the permissions required to use Gemini: BigQuery Studio User BigQuery Studio Admin Gemini in BigQuery requires the following permissions: cloudaicompanion.entitlements.get cloudaicompanion.instances.completeCode cloudaicompanion.instances.completeTask cloudaicompanion.instances.generateCode cloudaicompanion.operations.get cloudaicompanion.topics.create Click Done ."
+        ]
+      },
+      {
+        "title": "\"Gemini 3 in Gemini Code Assist \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can't select a different model in agent mode, as Gemini CLI automatically selects the model.",
+          "Responses generated with Gemini 3 include a label identifying the model.",
+          "Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ."
+        ]
+      },
+      {
+        "title": "\"Generate Gemini Code Assist metrics \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, you can generate metrics that report the daily active usage or the acceptance of code recommendations for a variety of Google Cloud products, including Cloud Logging, Google Cloud CLI, Cloud Monitoring, and BigQuery.",
+          "Queries You can use the following sample BigQuery queries to generate user- and aggregate-level data for daily active use and suggestions generated.",
+          "Make note of it so that you can use it in the following sections as the GENERATED BIGQUERY TABLE variable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.entitlements.get",
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.instances.completeCode",
+      "cloudaicompanion.instances.completeTask",
+      "cloudaicompanion.instances.generateCode",
+      "cloudaicompanion.operations.get",
+      "cloudaicompanion.topics.create",
+      "com.google.cloud.geminidataanalytics.v1beta",
+      "labels.product",
+      "labels.user",
+      "resource.type",
+      "timestamp.date"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    }
+  ]
+}

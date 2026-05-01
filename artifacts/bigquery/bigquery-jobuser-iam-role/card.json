@@ -1,0 +1,342 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "bigquery.jobUser IAM role",
+  "feature_slug": "bigquery-jobuser-iam-role",
+  "summary": "BigQuery provides the predefined IAM role bigquery.jobUser.",
+  "extended_definition": "BigQuery provides the predefined IAM role bigquery.jobUser.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+      "https://docs.cloud.google.com/bigquery/docs/authorized-views"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Don't apply the role directly to a resource through Identity and Access Management (IAM). bigquery. rowAccessPolicies. getFilteredData BigQuery Job User ( roles/ bigquery.jobUser ) Provides permissions to run jobs, including queries, within the project.",
+          "BigQuery IAM roles and permissions This document provides a list of Identity and Access Management (IAM) predefined roles and permissions for BigQuery.",
+          "Role Permissions BigQuery Data Policy Admin ( roles/ bigquerydatapolicy.admin ) Role for managing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Editor role for bigquerydatapolicy bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections.create bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery.dataPolicies.update bigquery.datasets.create bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery. datasets. listEffectiveTags bigquery. datasets. listTagBindings bigquery.datasets.updateTag bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery. jobs. listExecutionMetadata bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery.tables.deleteIndex bigquery.tables.getIamPolicy bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.updateIndex bigquery.transfers. bigquery.transfers.get bigquery.transfers.update resourcemanager.projects.get resourcemanager.projects.list BigQuery Data Policy Viewer ( roles/ bigquerydatapolicy.viewer ) Role for viewing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.get bigquery.dataPolicies.list Masked Reader ( roles/ bigquerydatapolicy.maskedReader ) Masked read access to sub-resources tagged by the policy tag associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. maskedGet Raw Data Reader Beta ( roles/ bigquerydatapolicy.rawDataReader ) Raw read access to sub-resources associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. getRawData BigQuery Data Transfer Service roles This table lists the predefined IAM roles and permissions for BigQuery Data Transfer Service."
+        ]
+      },
+      {
+        "title": "Authorized views \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "source_id": "site-docs-reference-5",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Admin permissions on the second dataset that gives access to the view To update dataset properties, you need the following IAM permissions: bigquery.datasets.update bigquery.datasets.setIamPolicy (only required when updating dataset access controls in the Google Cloud console) The roles/bigquery.dataOwner predefined IAM role includes the permissions that you need to update dataset properties.",
+          "User permissions on the project and dataset for the view To share an authorized view with users or groups, you must grant the users or groups the following IAM permissions: The roles/bigquery.jobUser IAM role to the project that contains the authorized view.",
+          "The roles/bigquery.dataEditor predefined IAM role includes the permissions that you need to create a view."
+        ]
+      },
+      {
+        "title": "Configure BigQuery sharing roles \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Analytics Hub Subscriber and Viewer roles To view and subscribe to listings and data exchanges , Sharing provides the following predefined roles that you can grant for a project, a data exchange, or a listing: Analytics Hub Subscriber role ( roles/analyticshub.subscriber ), which lets users view and subscribe to listings.",
+          "Analytics Hub Publisher and Listing Admin roles To manage listings , Sharing provides the following predefined roles that you can grant for a project, a data exchange, or a listing: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets users do the following: Create, update, and delete listings.",
+          "Analytics Hub Subscription Owner role To manage subscriptions , Sharing provides the following predefined role that you can grant at the project level: Analytics Hub Subscription Owner role ( roles/analyticshub.subscriptionOwner ), which lets users manage their subscriptions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.locations.get",
+      "aiplatform.operations.list",
+      "analyticshub.admin",
+      "analyticshub.publisher",
+      "analyticshub.subscriber",
+      "analyticshub.subscriptionOwner",
+      "bigquery.bireservations",
+      "bigquery.bireservations.get",
+      "bigquery.bireservations.update",
+      "bigquery.config",
+      "bigquery.config.get",
+      "bigquery.config.update",
+      "bigquery.connections.create",
+      "bigquery.connections.delete",
+      "bigquery.connections.get",
+      "bigquery.connections.list",
+      "bigquery.connections.update",
+      "bigquery.connections.updateTag",
+      "bigquery.connections.use",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataPolicies.attach",
+      "bigquery.dataPolicies.create",
+      "bigquery.dataPolicies.delete",
+      "bigquery.dataPolicies.get",
+      "bigquery.dataPolicies.list",
+      "bigquery.dataPolicies.update",
+      "bigquery.datasets.create",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.datasets.updateTag",
+      "bigquery.jobs.create",
+      "bigquery.jobs.delete",
+      "bigquery.jobs.get",
+      "bigquery.jobs.list",
+      "bigquery.jobUser",
+      "bigquery.models",
+      "bigquery.models.create",
+      "bigquery.models.delete",
+      "bigquery.models.export",
+      "bigquery.models.getData",
+      "bigquery.models.getMetadata",
+      "bigquery.models.list",
+      "bigquery.models.updateData",
+      "bigquery.models.updateMetadata",
+      "bigquery.models.updateTag",
+      "bigquery.objectRefs",
+      "bigquery.objectRefs.read",
+      "bigquery.objectRefs.write",
+      "bigquery.readsessions",
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "bigquery.readsessions.update",
+      "bigquery.reservationGroups",
+      "bigquery.reservationGroups.get",
+      "bigquery.reservations.create",
+      "bigquery.reservations.delete",
+      "bigquery.reservations.get",
+      "bigquery.reservations.list",
+      "bigquery.reservations.update",
+      "bigquery.reservations.use",
+      "bigquery.routines",
+      "bigquery.routines.create",
+      "bigquery.routines.delete",
+      "bigquery.routines.get",
+      "bigquery.routines.list",
+      "bigquery.routines.update",
+      "bigquery.routines.updateTag",
+      "bigquery.rowAccessPolicies.get",
+      "bigquery.savedqueries",
+      "bigquery.savedqueries.create",
+      "bigquery.savedqueries.delete",
+      "bigquery.savedqueries.get",
+      "bigquery.savedqueries.list",
+      "bigquery.savedqueries.update",
+      "bigquery.tables.createIndex",
+      "bigquery.tables.createSnapshot",
+      "bigquery.tables.deleteIndex",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.replicateData",
+      "bigquery.tables.updateIndex",
+      "bigquery.transfers",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "bigquery.user",
+      "bigquerydatapolicy.admin",
+      "bigquerydatapolicy.editor",
+      "bigquerydatapolicy.maskedReader",
+      "bigquerydatapolicy.rawDataReader",
+      "bigquerydatapolicy.viewer",
+      "cloudaicompanion.companions",
+      "cloudaicompanion.instances",
+      "cloudaicompanion.topics.create",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "compute.projects.get",
+      "compute.regions",
+      "compute.regions.get",
+      "compute.regions.list",
+      "compute.zones",
+      "compute.zones.get",
+      "compute.zones.list",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.folders.create",
+      "dataform.locations",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.repositories.create",
+      "dataform.repositories.list",
+      "dataplex.projects.search",
+      "dataproc.batches",
+      "dataproc.batches.analyze",
+      "dataproc.batches.cancel",
+      "dataproc.batches.create",
+      "dataproc.batches.delete",
+      "dataproc.batches.get",
+      "dataproc.batches.list",
+      "dataproc.operations.cancel",
+      "dataproc.operations.delete",
+      "dataproc.operations.get",
+      "dataproc.operations.list",
+      "dataproc.sessions",
+      "dataproc.sessions.create",
+      "dataproc.sessions.delete",
+      "dataproc.sessions.get",
+      "dataproc.sessions.list",
+      "dataproc.sessions.terminate",
+      "dataproc.sessionTemplates",
+      "dataproc.sessionTemplates.get",
+      "dataproc.sessionTemplates.list",
+      "dataprocrm.nodePools",
+      "dataprocrm.nodePools.create",
+      "dataprocrm.nodePools.delete",
+      "dataprocrm.nodePools.get",
+      "dataprocrm.nodePools.list",
+      "dataprocrm.nodePools.resize",
+      "dataprocrm.nodes.get",
+      "dataprocrm.nodes.heartbeat",
+      "dataprocrm.nodes.list",
+      "dataprocrm.nodes.update",
+      "dataprocrm.operations.get",
+      "dataprocrm.operations.list",
+      "dataprocrm.workloads",
+      "dataprocrm.workloads.cancel",
+      "dataprocrm.workloads.create",
+      "dataprocrm.workloads.delete",
+      "dataprocrm.workloads.get",
+      "dataprocrm.workloads.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.admin",
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.subscriptionOwner",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.jobUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    }
+  ]
+}

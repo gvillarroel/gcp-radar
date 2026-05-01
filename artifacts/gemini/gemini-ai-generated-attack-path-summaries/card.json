@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.307Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Gemini AI-generated attack path summaries",
+  "feature_slug": "gemini-ai-generated-attack-path-summaries",
+  "summary": "Gemini AI-generated summaries of Security Command Center attack paths are no longer available in the console; deprecated on 2024-12-13.",
+  "extended_definition": "Gemini AI-generated summaries of Security Command Center attack paths are no longer available in the console; deprecated on 2024-12-13.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-13",
+    "deprecation_date": "2024-12-13",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/bigquery/security-privacy-compliance",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.geminidataanalytics.v1beta (0.16.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "source_id": "site-java-reference",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Query Data Response Response containing the generated query and related information. com. google. cloud. geminidataanalytics. v1beta.",
+          "Schema Paths Represents an ordered set of paths within the table schema. com. google. cloud. geminidataanalytics. v1beta.",
+          "Builder Response containing the generated query and related information. com. google. cloud. geminidataanalytics. v1beta."
+        ]
+      },
+      {
+        "title": "\"Security, privacy, and compliance for Gemini in BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/bigquery/security-privacy-compliance",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Certifications and capabilities Generally available (GA) Gemini in BigQuery features are covered by the certifications and security statements of Gemini for Google Cloud with exception of the following limitations: Gemini in BigQuery doesn't provide data residency for individual locations.",
+          "Security, privacy, and compliance for Gemini in BigQuery This document describes the controls that support the security of Gemini in BigQuery.",
+          "Security controls Gemini in BigQuery uses the security controls of Google Cloud to help protect your data and resources."
+        ]
+      },
+      {
+        "title": "Gemini Enterprise client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchResult element : response . getResultsList ()) { System . out . println ( \"Response content: \" + element ); } } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR LOCATION'; // Options: 'global', 'us', 'eu' // const collectionId = 'default collection'; // Options: 'default collection' // const dataStoreId = 'YOUR DATA STORE ID' // Create in Cloud Console // const servingConfigId = 'default config'; // Options: 'default config' // const searchQuery = 'Google'; const { SearchServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1beta ; // For more information, refer to: // https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store const apiEndpoint = location === 'global' ? 'discoveryengine.googleapis.com' : ${ location } -discoveryengine.googleapis.com ; // Instantiates a client const client = new SearchServiceClient ({ apiEndpoint : apiEndpoint }); async function search () { // The full resource name of the search engine serving configuration. // Example: projects/{projectId}/locations/{location}/collections/{collectionId}/dataStores/{dataStoreId}/servingConfigs/{servingConfigId} // You must create a search engine in the Cloud Console first. const name = client . projectLocationCollectionDataStoreServingConfigPath ( projectId , location , collectionId , dataStoreId , servingConfigId ); const request = { pageSize : 10 , query : searchQuery , servingConfig : name , }; const IResponseParams = { ISearchResult : 0 , ISearchRequest : 1 , ISearchResponse : 2 , }; // Perform search request const response = await client . search ( request , { // Warning: Should always disable autoPaginate to avoid iterate through all pages. // // By default NodeJS SDK returns an iterable where you can iterate through all // search results instead of only the limited number of results requested on // pageSize, by sending multiple sequential search requests page-by-page while // iterating, until it exhausts all the search results.",
+          "You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::DiscoveryEngine::V1beta::SearchResponse::SearchResult. p item end end Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "After completing all of your requests, call // the searchServiceClient.close() method on the client to safely // clean up any remaining background resources. try ( SearchServiceClient searchServiceClient = SearchServiceClient . create ( settings )) { SearchRequest request = SearchRequest . newBuilder () . setServingConfig ( ServingConfigName . formatProjectLocationCollectionDataStoreServingConfigName ( projectId , location , collectionId , dataStoreId , servingConfigId )) . setQuery ( searchQuery ) . setPageSize ( 10 ) . build (); SearchResponse response = searchServiceClient . search ( request ). getPage (). getResponse (); for ( SearchResponse ."
+        ]
+      },
+      {
+        "title": "\"Generate Gemini Code Assist metrics \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "List the number of unique users The following instructions describe how to use the gcloud CLI to list the number of unique users of Gemini Code Assist in the most recent 28-day period: In a shell environment, ensure that you have updated all installed components of the gcloud CLI to the latest version: gcloud components update Read the log entries for Gemini Code Assist users and usage: gcloud logging read 'resource.type=cloudaicompanion.googleapis.com/Instance labels.product= \"code assist\"' \\ --freshness 28d \\ --project PROJECT ID \\ --format \"csv(timestamp.date('%Y-%m-%d'),labels.user id)\" Replace PROJECT ID with your Google Cloud project ID.",
+          "The output is similar to the following: 2024-10-30,user1@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user1@company.com 2024-10-28,user1@company.com Create a chart that displays daily usage The following steps show how to use Monitoring to create daily use graphs that show the aggregate total of daily active Gemini Code Assist users and the number of their requests per day.",
+          "List individual users by day SELECT DISTINCT labels . user id as user , DATE ( timestamp ) as use date FROM GENERATED BIGQUERY TABLE ORDER BY use date Replace GENERATED BIGQUERY TABLE with the fully qualified path of the BigQuery response table you noted in the previous steps for creating a sink ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "com.google.cloud.geminidataanalytics.v1beta",
+      "company.com",
+      "discoveryengine.googleapis.com",
+      "java.io.IOException",
+      "java.util.concurrent.ExecutionException",
+      "labels.product",
+      "labels.user",
+      "resource.type",
+      "timestamp.date"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "https://docs.cloud.google.com/gemini/docs/bigquery/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    }
+  ]
+}

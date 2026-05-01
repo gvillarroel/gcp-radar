@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.130Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "n2-standard-2 machine type support",
+  "feature_slug": "n2-standard-2-machine-type-support",
+  "summary": "Cloud Workstations supports the n2-standard-2 machine type.",
+  "extended_definition": "Cloud Workstations supports the n2-standard-2 machine type.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+      "https://docs.cloud.google.com/workstations/docs/available-gpus",
+      "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Available machine types \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n1-standard-1 1 3.75 GB n1-standard-2 2 7.5 GB n1-standard-4 4 15 GB n1-standard-8 8 30 GB n1-standard-16 16 60 GB n1-standard-32 32 120 GB n1-standard-64 64 240 GB n1-standard-96 96 360 GB N2 machine types For more information, see the Compute Engine description of the N2 machine series .",
+          "Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n2d-standard-2 2 8 GB n2d-standard-4 4 16 GB n2d-standard-8 8 32 GB n2d-standard-16 16 64 GB n2d-standard-32 32 128 GB N2D high-mem machine types For more information, see the Compute Engine description of the N2D machine series and select N2D high-mem .",
+          "Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n2-standard-2 2 8 GB n2-standard-4 4 16 GB n2-standard-8 8 32 GB n2-standard-16 16 64 GB n2-standard-32 32 128 GB N2D standard machine types For more information, see the Compute Engine description of the N2D machine series ."
+        ]
+      },
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about machine types that Cloud Workstations supports, see the list of available machine types . serviceAccount string Optional.",
+          "For more information about machine types that Cloud Workstations supports, see the list of available machine types .",
+          "Machine Type : nested virtualization can only be enabled on workstation configurations that specify a machineType in the N1 or N2 machine series. shieldedInstanceConfig object ( GceShieldedInstanceConfig ) Optional."
+        ]
+      },
+      {
+        "title": "Available GPUs \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "source_id": "site-docs-root-2",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "For all other GPU models, run this command: gcloud beta workstations configs update \\ --project = PROJECT ID \\ --region = LOCATION \\ --cluster = CLUSTER NAME \\ CONFIG NAME \\ --machine-type = N1 MACHINE TYPE \\ --accelerator-type = ACCELERATOR TYPE \\ --accelerator-count = ACCELERATOR COUNT Replace the following: N1 MACHINE TYPE : the chosen machine type from the N1 series (for example, n1-standard-2 ).",
+          "Limitations A workstation configuration may specify GPUs, subject to the following limitations: Cloud Workstations only supports GPUs for configurations that specify machine types in the N1 machine series , the A2 machine series , or the A3 machine series .",
+          "Using Google Cloud Hyperdisk disk types is only supported on these following machine series: A3 C3 C4 G4 M3 N4 N4D Z3 Supported GPU models Cloud Workstations supports many of the GPU models that Compute Engine makes available."
+        ]
+      },
+      {
+        "title": "\"Class WorkstationsAsyncClient (0.8.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateWorkstationClusterRequest ( parent=\"parent value\", workstation cluster id=\"workstation cluster id value\", ) Make the request operation = client. create workstation cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.workstations v1.types.CreateWorkstationClusterRequest , dict]] The request object.",
+          "CreateWorkstationConfigRequest ( parent=\"parent value\", workstation config id=\"workstation config id value\", ) Make the request operation = client. create workstation config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.workstations v1.types.CreateWorkstationConfigRequest , dict]] The request object.",
+          "CreateWorkstationRequest ( parent=\"parent value\", workstation id=\"workstation id value\", ) Make the request operation = client. create workstation (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.workstations v1.types.CreateWorkstationRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.types.CreateWorkstationClusterRequest",
+      "v1.types.CreateWorkstationConfigRequest",
+      "v1.types.CreateWorkstationRequest",
+      "v1.types.DeleteWorkstationClusterRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    }
+  ]
+}

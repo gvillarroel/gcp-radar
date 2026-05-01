@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.471Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN private origin authentication for Amazon S3-compatible object stores",
+  "feature_slug": "cloud-cdn-private-origin-authentication-for-amazon-s3-compatible-object-stores",
+  "summary": "Cloud CDN adds support for enabling private origin authentication for Amazon S3 and compatible object stores through the Google Cloud Console; Cloud CDN's private origin authentication for Amazon S3 and compatible object stores is available as a general availability capability.",
+  "extended_definition": "Cloud CDN adds support for enabling private origin authentication for Amazon S3 and compatible object stores through the Google Cloud Console; Cloud CDN's private origin authentication for Amazon S3 and compatible object stores is available as a general availability capability.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/authenticate-content",
+      "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+      "https://docs.cloud.google.com/cdn/docs/private-content"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure private origin authentication \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+        "source_id": "site-docs-reference-2",
+        "final_score": 230,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Private origin authentication gives Cloud CDN long-term resource access to private Amazon S3 buckets or other compatible object stores.",
+          "The following snippet shows the contents of a sample my-private-origin.yaml file: name : shopping-cart-services backends : - description : cart-backend-1 group : 'https://www.googleapis.com/compute/v1/projects/my-project-id/global/networkEndpointGroups/my-network-origin-group' securitySettings : awsV4Authentication : accessKeyId : AKIDEXAMPLE accessKey : c4afb1cc5771d871763a393e44b703571b55cc28424d1a5e86da6ed3c154a4b9 accessKeyVersion : prod-access-key-v1.2 originRegion : us-east-2 To update your private origin, import the configuration to your backend service by using the gcloud compute backend-services import command: gcloud compute backend-services import BACKEND SERVICE NAME \\ [--source= SOURCE ] Replace SOURCE with the name of the YAML file.",
+          "If necessary, update to the latest version of the Google Cloud CLI: gcloud components update Configure authentication for private origins To configure private origin authentication, use the following instructions: Console In the Google Cloud console, go to the Cloud CDN page."
+        ]
+      },
+      {
+        "title": "Authenticate content \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/private-content",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Private origin authentication lets you limit connections to your Amazon Simple Storage Service (Amazon S3) buckets or other compatible object stores and prevent users from accessing them directly.",
+          "Private origin authentication Private origin authentication gives Cloud CDN long-term access to private Amazon S3 buckets or compatible object stores.",
+          "Private origin authentication is supported for Cloud CDN with a global external Application Load Balancer or a classic Application Load Balancer."
+        ]
+      },
+      {
+        "title": "Authenticate content \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/authenticate-content",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Private origin authentication lets you limit connections to your Amazon Simple Storage Service (Amazon S3) buckets or other compatible object stores and prevent users from accessing them directly.",
+          "Private origin authentication Private origin authentication gives Cloud CDN long-term access to private Amazon S3 buckets or compatible object stores.",
+          "Private origin authentication is supported for Cloud CDN with a global external Application Load Balancer or a classic Application Load Balancer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "origin.yaml",
+      "v1.2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+        "https://docs.cloud.google.com/cdn/docs/private-content",
+        "https://docs.cloud.google.com/cdn/docs/authenticate-content"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+        "https://docs.cloud.google.com/cdn/docs/private-content",
+        "https://docs.cloud.google.com/cdn/docs/authenticate-content"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+        "https://docs.cloud.google.com/cdn/docs/private-content",
+        "https://docs.cloud.google.com/cdn/docs/authenticate-content"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+        "https://docs.cloud.google.com/cdn/docs/private-content",
+        "https://docs.cloud.google.com/cdn/docs/authenticate-content"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/configure-private-origin-authentication",
+        "https://docs.cloud.google.com/cdn/docs/private-content",
+        "https://docs.cloud.google.com/cdn/docs/authenticate-content"
+      ]
+    }
+  ]
+}

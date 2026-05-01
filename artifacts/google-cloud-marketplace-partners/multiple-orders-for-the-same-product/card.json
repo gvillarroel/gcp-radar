@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.495Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners",
+  "feature_name": "Multiple orders for the same product",
+  "feature_slug": "multiple-orders-for-the-same-product",
+  "summary": "You can create multiple orders for the same product with flat fee pricing in Preview.",
+  "extended_definition": "You can create multiple orders for the same product with flat fee pricing in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+      "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/product-details",
+      "https://docs.cloud.google.com/marketplace/docs/partners/container-updates",
+      "https://docs.cloud.google.com/marketplace/docs/partners/reporting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Pricing models for AI agents from Google Cloud Marketplace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "source_id": "site-iam-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table includes examples of the types of metrics that you can use, and the reporting units that we recommend: Metric type Supported units Recommended reporting unit Example price, shown on your Cloud Marketplace page Time Second, minute, hour, day 1 second (smallest possible) $5 per hour Data processed Byte, Kibibyte (KiB), Mebibyte (MiB), Gibibyte (GiB) The units for data processed are based on binary multiples, where one kibibyte is 1024 bytes, one mebibyte is 1024 kibibytes, and one gibibyte is 1024 mebibytes.",
+          "The following is an example pricing model with three pricing plans, each with on-demand pricing and a different set of features: Standard Pro Enterprise $0.002 per email sent $0.004 per email sent $0.006 per email sent Features: Access to Admin Console Features: Access to Admin Console Multiple logins Security Features: Access to Admin Console Multiple logins Security Tiered pricing : If you want to give customers discounts for continued usage, you can create pricing tiers.",
+          "If your customers sign up for a specific subscription period, then they can change their subscription plan to increase their service level or subscription period, such as: Switch from a shorter subscription period to a longer period, within the same service level."
+        ]
+      },
+      {
+        "title": "\"Add product details for your AI agent \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/product-details",
+        "source_id": "site-iam-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your AI agent connects to Google Distributed Cloud, add the following text to your product info: \"We recommend that you only purchase this product for a duration equal to or less than the shortest subscription length of your Google Distributed Cloud-connected devices.\" To add tutorials, documentation, and, optionally, additional license agreements, complete the Documentation tab of the Product details section.",
+          "After you add your AI agent in Producer Portal, use the Product details tab in Producer Portal to do the following: Add product details for your AI agent's Google Cloud Marketplace listing, such as your AI agent's title, icon, marketing information, and links to documentation.",
+          "After you've submitted your product details for review, if you make additional changes to the Product details tab, you must restart the product details review process."
+        ]
+      },
+      {
+        "title": "\"Reports for your Cloud Marketplace products \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a list of all of the available report types, visit Available reports for your Cloud Marketplace products .",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Go to market Send feedback Reports for your Cloud Marketplace products Stay organized with collections Save and categorize content based on your preferences.",
+          "Google provides reports about the products you have published to Google Cloud Marketplace that are relevant to different parts of your organization, such as finance, marketing, sales, or product management."
+        ]
+      },
+      {
+        "title": "\"Updating, deprecating, and deleting container image products \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/container-updates",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Updating your products in Producer Portal Open Producer Portal in the Google Cloud console: https://console.cloud.google.com/producer-portal?project= YOUR PUBLIC PROJECT ID Replace YOUR PUBLIC PROJECT ID with the ID for the public project that you created for Cloud Marketplace—for example, my-organization-public .",
+          "Updating images in Container Registry Following the same process that you performed when you pushed your image to your Container Registry staging repository, add your new image to Container Registry with the proper tag.",
+          "Note: If you don't see the link, or can't access the URL, verify that you've selected the correct project and have the Editor ( roles/editor ) role for the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/product-details",
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-updates"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/product-details",
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-updates"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/product-details",
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-updates"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/product-details",
+        "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-updates"
+      ]
+    }
+  ]
+}

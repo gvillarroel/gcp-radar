@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.452Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "GpsAvailabilityEnhancedLocationListener.onGpsAvailabilityUpdate callback",
+  "feature_slug": "gpsavailabilityenhancedlocationlistener-ongpsavailabilityupdate-callback",
+  "summary": "The onGpsAvailabilityUpdate callback in GpsAvailabilityEnhancedLocationListener is deprecated in favor of onGpsAvailabilityChange; deprecated on 2025-10-16.",
+  "extended_definition": "The onGpsAvailabilityUpdate callback in GpsAvailabilityEnhancedLocationListener is deprecated in favor of onGpsAvailabilityChange; deprecated on 2025-10-16.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-16",
+    "deprecation_date": "2025-10-16",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnIndoorStateChangeListener",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowClickListener",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowCloseListener",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowLongClickListener"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GoogleMap.OnInfoWindowCloseListener \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowCloseListener",
+        "source_id": "site-docs-reference",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This interface is crucial for responding to info window closures and performing actions based on user interactions with markers on the map. public static interface GoogleMap.OnInfoWindowCloseListener Callback interface for close events on a marker's info window.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-18 UTC.\"],[],[]]",
+          "Page Summary outlined flag GoogleMap.OnInfoWindowCloseListener is a callback interface used for handling events when a marker's info window is closed on a Google Map."
+        ]
+      },
+      {
+        "title": "\"GoogleMap.OnInfoWindowClickListener \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowClickListener",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The onInfoWindowClick method provides the clicked Marker object as a parameter and executes on the Android UI thread. public static interface GoogleMap.OnInfoWindowClickListener Callback interface for click/tap events on a marker's info window.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-18 UTC.\"],[],[]]",
+          "Public Method Summary abstract void onInfoWindowClick ( Marker marker) Called when the marker's info window is clicked."
+        ]
+      },
+      {
+        "title": "\"GoogleMap.OnInfoWindowLongClickListener \\_|\\_ Navigation SDK for Android\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowLongClickListener",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This interaction is handled on the Android UI thread for immediate response. public static interface GoogleMap.OnInfoWindowLongClickListener Callback interface for when the user long presses on a marker's info window.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-18 UTC.\"],[],[]]",
+          "The onInfoWindowLongClick method is triggered when a user long presses on an info window, providing access to the associated marker."
+        ]
+      },
+      {
+        "title": "\"GoogleMap.OnIndoorStateChangeListener \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnIndoorStateChangeListener",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When that level changes, this callback will be triggered regardless of whether the building is focused or not.",
+          "This callback is called when the focused building changes.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-18 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowCloseListener",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowClickListener",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnInfoWindowLongClickListener",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnIndoorStateChangeListener"
+      ]
+    }
+  ]
+}

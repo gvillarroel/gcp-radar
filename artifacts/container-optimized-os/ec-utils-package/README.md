@@ -1,0 +1,31 @@
+# ec-utils Package
+
+Product: Container Optimized OS
+Feature slug: `ec-utils-package`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Provides the ec-utils package in Container-Optimized OS; deprecated on 2024-09-09.
+
+## Lifecycle
+
+- Latest feature date: 2024-09-09
+- Deprecation date: 2024-09-09
+- Status: deprecation_noted
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/container-optimized-os/docs/concepts/security](https://docs.cloud.google.com/container-optimized-os/docs/concepts/security)
+- [https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning](https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning)
+- [https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox](https://docs.cloud.google.com/container-optimized-os/docs/how-to/toolbox)

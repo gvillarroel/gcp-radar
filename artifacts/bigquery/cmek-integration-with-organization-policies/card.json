@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "CMEK integration with organization policies",
+  "feature_slug": "cmek-integration-with-organization-policies",
+  "summary": "This feature integrates customer-managed encryption keys with CMEK organization policies.",
+  "extended_definition": "This feature integrates customer-managed encryption keys with CMEK organization policies.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "The company's self-service, AI-powered integration platform helps organizations connect applications and data sources, automate common workflows and business processes, and deliver exceptional experiences for customers, partners, and employees.",
+          "Partner references Open-source ETL to BigQuery Getting started with BigQuery S3 to BigQuery in minutes Redshift to BigQuery in minutes Partner Advantage page Direct link Aiven Solution Aiven Data Platform Category ETL & Data Integration Description Aiven offers popular & proven open source database and messaging software as easy-to-adopt, fully managed, highly available, secure & compliant SaaS solutions like Kafka, Kafka Connect, Kafka MirrorMaker, PostgreSQL, MySQL, Elasticsearch, Cassandra, Redis and M3DB.",
+          "These solutions are organized by the following categories: BI, ML, & Advanced Analytics Connectors & Developer Tools Data Governance, Security, & MDM Data Quality, Observability, & FinOps ETL & Data Integration BI, ML, & Advanced Analytics Actable Solution Predictable Category BI, ML, & Advanced Analytics Description Actable is a customer data accelerator that helps enterprises organize, analyze, and deploy data through consultative services and ML modeling."
+        ]
+      },
+      {
+        "title": "\"Copy a table with customer-managed encryption keys (CMEK) \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // copyTableWithCMEK demonstrates creating a copy of a table and ensuring the copied data is // protected with a customer managed encryption key. func copyTableWithCMEK ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" // tableID := \"mytable\" ctx := context .",
+          "Home Documentation Data analytics BigQuery Samples Copy a table with customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "Copy a table with customer-managed encryption keys (CMEK)."
+        ]
+      },
+      {
+        "title": "Continuous data integration in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Summary of DWH continuous integration options The following table summarizes the differences, advantages, and potential disadvantages between the options for DWH continuous integration. (Sharing offers a different feature set, and is therefore not measurable using the parameters listed in the table.) Costs Rollbacks Risks Table snapshots and table clones Minimal.",
+          "Integrate data into BigQuery tables BigQuery has two features that can help you design a workflow for data integration: table snapshots and table clones .",
+          "Additional scenarios that aren't covered in this document Although this document focuses on isolating development changes from the production environment, the document doesn't cover the following aspects of data integration: Data testing: Are you able to verify that the data you have conforms to business requirements?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    }
+  ]
+}

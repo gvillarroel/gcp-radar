@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Add-ons third-party resource creation in Docs @ menu",
+  "feature_slug": "add-ons-third-party-resource-creation-in-docs-menu",
+  "summary": "Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs; Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs.",
+  "extended_definition": "Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs; Google Workspace Add-ons can create third-party resources from the @ menu in Google Docs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/docs",
+      "https://developers.google.com/apps-script/guides/menus",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "January 24, 2024 Feature ( Generally Available ): Google Workspace Add-ons now support third-party resource creation from the @ menu in Google Docs.",
+          "November 15, 2023 Feature ( Developer Preview ) : Google Workspace Add-ons now support third-party resource creation from the @ menu in Google Docs.",
+          "To use this feature, see Create third-party resources from the @ menu ."
+        ]
+      },
+      {
+        "title": "Extend Google Docs \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/docs",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add some placeholders function createPlaceholders () { var body = DocumentApp . getActiveDocument (). getActiveTab (). asDocumentTab (). getBody (); body . appendParagraph ( '{name}' ); body . appendParagraph ( '{address}' ); body . appendParagraph ( '{city} {state} {zip}' ); } Replace the placeholders function searchAndReplace () { var body = DocumentApp . getActiveDocument (). getActiveTab (). asDocumentTab (). getBody (); var client = { name : 'Joe Script-Guru' , address : '100 Script Rd' , city : 'Scriptville' , state : 'GA' , zip : 94043 }; body . replaceText ( '{name}' , client . name ); body . replaceText ( '{address}' , client . address ); body . replaceText ( '{city}' , client . city ); body . replaceText ( '{state}' , client . state ); body . replaceText ( '{zip}' , client . zip ); } Custom menus and user interfaces You can customize Docs by adding custom menus , dialog boxes, and sidebars .",
+          "Google Apps Script lets you programmatically create and modify Docs, as well as customize the user interface with new menus, dialog boxes, and sidebars.",
+          "Custom menus, dialog boxes, and sidebars can be added to Google Docs using Apps Script, but the script must be bound to the document."
+        ]
+      },
+      {
+        "title": "Custom Menus in Google Workspace \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/menus",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom menus in Docs, Sheets, Slides, or Forms Apps Script can add new menus in Docs, Sheets, Slides, or Forms, with each menu item tied to a function in a script. (In Forms, custom menus are visible only to an editor who opens the form to modify it, not to a user who opens the form to respond.) Only bound scripts can create menus.",
+          "The most common example is running a script from a custom menu item in Google Docs, Google Sheets, Google Slides, or Google Forms, but script functions can also be triggered by clicking on images and drawings in Sheets.",
+          "Custom menus can be added to Google Docs, Sheets, Slides, or Forms and are tied to specific script functions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "t.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

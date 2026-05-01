@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Additional VM network interfaces in Shared VPC",
+  "feature_slug": "additional-vm-network-interfaces-in-shared-vpc",
+  "summary": "VPC now supports connecting VM network interfaces other than nic0 in Shared VPC, with this capability generally available for individual VM instances while template- and instance-group-based workflows remain in preview.",
+  "extended_definition": "VPC now supports connecting VM network interfaces other than nic0 in Shared VPC, with this capability generally available for individual VM instances while template- and instance-group-based workflows remain in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Test connectivity within VPC networks \\_|\\_ Network Intelligence Center\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VM-to-VM trace through an inaccessible peered VPC network in a different project (click to enlarge) What's next Common test scenarios Learn about Connectivity Tests Troubleshoot Connectivity Tests Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Google Cloud console screenshot for a trace that's blocked by a hierarchical firewall policy rule (click to enlarge) Test failures for Shared VPC networks In Shared VPC networks, not having permissions to the host project or the service project can cause the test failures listed in the following table.",
+          "Ingress firewall rule card expanded (click to enlarge) When a trace contains a VPC network route with the next hop as a peered VPC network, the start of the trace is not a VM instance, but a VPC network."
+        ]
+      },
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Both VM instances communicate with each other and are in a Shared VPC network.",
+          "Base entity Icon Description Aggregation hierarchy (top to bottom) VM instance A Compute Engine VM instance region > network > subnet > zone > instance group > instance VM instance group The collection of VM instances that you can manage as a single entity. region > network > subnet > zone > instance group > Classic Application Load Balancer External passthrough Network Load Balancer External proxy Network Load Balancer The base entity for external load balancer components, such as the forwarding rule and backend service. external load balancing > load balancer Internal load balancer The base entity for internal load balancer components, such as the forwarding rule and backend service. internal load balancing > load balancer Cloud NAT gateway A NAT gateway region > network > NATs > NAT gateway VPC Network Peering A VPC peering endpoint that is shown when you don't have permissions to view the peer network.",
+          "The following list describes the paths that Network Topology visualizes between entities: Traffic in a VPC network such as traffic between VM instances and internal load balancers that are in the same network."
+        ]
+      },
+      {
+        "title": "\"Add Dynamic Network Interfaces to an instance \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure the guest agent to manage Dynamic NICs: Open or create your guest environment configuration file. edit /etc/default/instance configs.cfg Add the following to the configuration file, then save your changes and exit the editor. [NetworkInterfaces] vlan setup enabled = true manage primary nic = true For information about these settings, see the following: vlan setup enabled = true : configures the guest agent to install and manage Dynamic NICs manage primary nic = true : an additional setting required for the guest agent to manage Dynamic NICs created under nic0 For more information about editing the guest agent configuration file, see Configuration in the guest agent documentation.",
+          "VLAN ID Replace the following: VNIC NAME : the name of the parent vNIC assigned by the operating system, such as eth1 or ens4 IP ADDRESS : the IP address of the Dynamic NIC that you created VLAN ID : the VLAN ID that you assigned to the Dynamic NIC MAC ADDRESS : the MAC address that you got in the previous step What's next Configure routing for an additional interface View network interfaces for an instance Update the network interfaces for an instance Delete Dynamic NICs from an instance Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/instanceTemplates { .... \"networkInterfaces\": [ { \"subnetwork\": \"regions/ REGION /subnetworks/ SUBNET A \" }, { \"subnetwork\": \"regions/ REGION /subnetworks/ SUBNET B \", \"vlan\": \" VLAN ID \" }, additional network interfaces... ], other instance settings... } Replace the following: PROJECT ID : the ID of the project that contains the instance template."
+        ]
+      },
+      {
+        "title": "\"Identify and fix ICMP issues \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "source_id": "site-iam-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VPC firewall rule field Value Name allow-ping-from-known-ranges Network Use the name of the network that contains both VMs.",
+          "Console UI snapshot of the trace failing to reach vm2 Create the firewall rule allow-ping-from-known-ranges To allow ingress to the external IP address of vm2 , configure a new VPC firewall rule called allow-ping-from-known-ranges .",
+          "Because allowing all ingress ICMP packets into your VPC network is a security risk, specify only a small set of source ranges that are allowed to send ICMP packets to the external IP address of vm2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "configs.cfg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    }
+  ]
+}

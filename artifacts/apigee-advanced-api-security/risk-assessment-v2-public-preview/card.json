@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.907Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Risk Assessment v2 public preview",
+  "feature_slug": "risk-assessment-v2-public-preview",
+  "summary": "Risk Assessment v2 is introduced in public preview for Apigee Advanced API Security.",
+  "extended_definition": "Risk Assessment v2 is introduced in public preview for Apigee Advanced API Security.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Risk Assessment v2 concepts and scoring methodology Risk assessment security scores assess the security risk of your APIs based on the scoring of security assessments and weights in a security profile.",
+          "Limitations and known issues on Risk Assessment v2 Security scores have the following limitations and known issues: Security scores are only generated if an environment has deployed proxies.",
+          "Home Documentation Application development Apigee Guides Send feedback Risk assessment overview and UI Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Security scores and profiles API \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Risk Assessment v2 API Examples Preview — Risk Assessment v2 This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Get existing custom security profiles This command retrieves the information for all security profiles for your project: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2\" \\ -H \"Authorization: Bearer $TOKEN\" This command retrieves the metadata for a specific security profile and can be used to retrieve information on the google-default profile as well as custom profiles: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2/ PROFILE ID \" \\ -H \"Authorization: Bearer $TOKEN\" Create a new custom security profile To create a new custom security profile, use a command like this: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2?security profile v2 id= PROFILE ID \" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-type: application/json' \\ -d '{ \"description\": \" PROFILE DESC \", \"risk assessment type\": \"APIGEE\", \"profile assessment configs\": { \"auth-policies-check\": {\"weight\": \"MINOR\"}, \"threat-policies-check\": {\"weight\": \"MODERATE\"} } }' Update an existing custom security profile To update an existing profile, use a command like: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2/ PROFILE ID ?update mask= UPDATE MASK \" \\ -X PATCH \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-type: application/json' \\ -d '{\"description\": \" PROFILE DESC \"}' where UPDATE MASK can be one of these values, if present: description , profile assessment configs , description,profile assessment configs , or (everything).",
+          "See Disable collection of metrics for instructions on deleting the Cloud Monitoring metrics. curl -H \"Authorization: Bearer $TOKEN\" \\ \"https://apigee.googleapis.com/v1/organizations/ ORG /securityMonitoringConditions/ MONITORING CONDITION ID \" \\ -X DELETE Risk Assessment v1 This section shows information and examples for Risk Assessment v1 APIs."
+        ]
+      },
+      {
+        "title": "Security alerts \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Current security score of a deployed resource based on a security profile. location, org, scope, resource, security profile Filters Filter Label Description location Location of the resource: global always. org Apigee organization name env Apigee environment name profile Apigee API Security profile name proxy Apigee API proxy name target server Apigee target server name detection rule Apigee API security detection rule name scope For Risk Assessment v2, identifier of the scope associated with the assessed resource. resource For Risk Assessment v2, identifier of the assessed resource. security profile For Risk Assessment v2, identifier of the security profile used to assess the resource.",
+          "Example: Create a risk assessment monitoring condition monitoring alert (Risk Assessment v2) This example creates a new Cloud Monitoring alerting policy for a Risk Assessment monitoring condition that alerts if the security score on any of its monitored proxies falls below a certain threshold.",
+          "This value is measured at least once every 3 hours. location, org, env, profile, target server Apigee API Security Profile Environment Association Security score of Apigee environment: apigee.googleapis.com/security/environment score Applies to Risk Assessment v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    }
+  ]
+}

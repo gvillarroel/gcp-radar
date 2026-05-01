@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench Jupyter dependency environment placement",
+  "feature_slug": "vertex-ai-workbench-jupyter-dependency-environment-placement",
+  "summary": "The Vertex AI Workbench user-managed notebooks rolled back a prior change that moved Jupyter dependencies into a separate Conda environment.",
+  "extended_definition": "The Vertex AI Workbench user-managed notebooks rolled back a prior change that moved Jupyter dependencies into a separate Conda environment.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI Workbench user-managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Workbench uses IAM to manage access to user-managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface.",
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific user-managed notebooks instance so that they have all of the admin abilities to administer that instance.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench user-managed notebooks resources."
+        ]
+      },
+      {
+        "title": "Authenticate to Vertex AI Workbench \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "source_id": "site-docs-reference-2",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Learn more about access control for Vertex AI Workbench instances: Vertex AI Workbench instances access control Manage access to a Vertex AI Workbench instance Manage access to JupyterLab in Vertex AI Workbench instances Learn more about access control for Vertex AI Workbench user-managed notebooks instances: User-managed notebooks access control Manage access to a Vertex AI Workbench user-managed notebooks instance Manage access to JupyterLab in user-managed notebooks Learn more about access control for Vertex AI Workbench managed notebooks instances: Managed notebooks access control Manage access to a managed notebooks instance Manage access to JupyterLab in managed notebooks Learn about Google Cloud authentication methods .",
+          "Google Cloud CLI When you use the gcloud CLI to access Vertex AI Workbench, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands.",
+          "How you authenticate to Vertex AI Workbench depends on the interface you use to access the API and the environment where your code is running."
+        ]
+      },
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench BigQuery datasets Vertex AI for BigQuery users Get started with BigQuery datasets .",
+          "Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "notebooks.admin",
+      "notebooks.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/authentication",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    }
+  ]
+}

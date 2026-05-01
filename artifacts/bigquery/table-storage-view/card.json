@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "TABLE_STORAGE view",
+  "feature_slug": "table-storage-view",
+  "summary": "The TABLE_STORAGE view provides a snapshot of current storage usage for tables and materialized views.",
+  "extended_definition": "The TABLE_STORAGE view provides a snapshot of current storage usage for tables and materialized views.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery APIs and libraries overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery API This is the main API that provides resources for creating, modifying, and deleting core resources such as datasets, tables, jobs, and routines.",
+          "BigQuery APIs and libraries overview This page provides an overview of the various APIs associated with BigQuery.",
+          "For more information about installation and usage, see BigQuery Storage client libraries ."
+        ]
+      },
+      {
+        "title": "\"Use the BigQuery Storage Read API to read table data \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the BigQuery Storage Read API to read table data The BigQuery Storage Read API provides fast access to BigQuery-managed storage by using an rpc-based protocol.",
+          "As a workaround, you can execute a BigQuery query over the view and use the Storage Read API to read from the resulting table.",
+          "The Storage Read API does not provide functionality related to managing BigQuery resources such as datasets, jobs, or tables."
+        ]
+      },
+      {
+        "title": "Export table data to Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn how to query the INFORMATION SCHEMA.JOBS view to get the total bytes processed value, see INFORMATION SCHEMA.JOBS schema View current quota usage You can view your current usage of query, load, extract, or copy jobs by running an INFORMATION SCHEMA query to view metadata about the jobs ran over a specified time period.",
+          "Each of the following predefined IAM roles includes the bigquery.tables.export permission: roles/bigquery.dataViewer roles/bigquery.dataOwner roles/bigquery.dataEditor roles/bigquery.admin Permissions to run an extract job To run an extract job , you need the bigquery.jobs.create IAM permission.",
+          "The job entry in the JOBS BY system tables for the extract job contains a total bytes processed value that can be used to monitor the aggregate usage to ensure that it stays under 50 TiB per-day."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataViewer",
+      "bigquery.jobs.create",
+      "bigquery.tables.export"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    }
+  ]
+}

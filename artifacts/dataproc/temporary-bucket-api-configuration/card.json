@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Temporary bucket API configuration",
+  "feature_slug": "temporary-bucket-api-configuration",
+  "summary": "Dataproc API calls support explicit tempBucket configuration for storing ephemeral cluster and job data in Cloud Storage.",
+  "extended_definition": "Dataproc API calls support explicit tempBucket configuration for storing ephemeral cluster and job data in Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Write a MapReduce job with the BigQuery connector \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also serves \" + \"as the default project for table IDs that don't explicitly specify a project for \" + \"the table. \\n \" + \" QualifiedInputTableId - Input table ID of the form \" + \"(Optional ProjectId):[DatasetId].[TableId] \\n \" + \" InputTableFieldName - Name of the field to count in the input table, e.g., \" + \"'word' in publicdata:samples.shakespeare or 'repository name' in \" + \"publicdata:samples.github timeline. \\n \" + \" QualifiedOutputTableId - Input table ID of the form \" + \"(Optional ProjectId):[DatasetId].[TableId] \\n \" + \" GcsOutputPath - The output path to store temporary Cloud Storage data, e.g., \" + \"gs://bucket/dir/\" ); System . exit ( 1 ); } // Get the individual parameters from the command line .",
+          "QualifiedOutputTableId - Input table ID of the form ( Optional ProjectId ):[ DatasetId ] . [ TableId ] GcsOutputPath - The output path to store temporary Cloud Storage data , e . g . , gs : // bucket / dir / @param args a String [] containing ProjectId , QualifiedInputTableId , InputTableFieldName , QualifiedOutputTableId , and GcsOutputPath . @throws IOException on IO Error . @throws InterruptedException on Interrupt . @throws ClassNotFoundException if not all classes are present . / public static void main ( String [] args ) throws IOException , InterruptedException , ClassNotFoundException { // GenericOptionsParser is a utility to parse command line arguments // generic to the Hadoop framework .",
+          "Examples : test output dataset.wordcount output my-first-cloud-project:test output dataset.wordcount output outputTableFieldSchema A schema that defines the schema for the output BigQuery table GcsOutputPath The output path to store temporary Cloud Storage data ( gs:// bucket/dir/ ) // Define the schema we will be using for the output BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Overview of APIs and Client Libraries \\_|\\_ Managed Service for Apache Spark\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These \"legacy\" libraries access REST but not gRPC APIs (see Google API Client Libraries for additional information). gRPC : If a client library is not available for your programming language of choice, you can generate gRPC client libraries for Dataproc in any gRPC-supported language.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      },
+      {
+        "title": "\"Create a Managed Service for Apache Spark custom image \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "source_id": "site-docs-root",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can avoid this issue by including the following command in your customization script to clear cached credentials. rm -r /root/.gsutil /root/.config/gcloud --zone : the Compute Engine zone where generate custom image.py will create a temporary VM to use to create your custom image. --gcs-bucket : a URI, in the format gs:// BUCKET NAME , that points to your Cloud Storage bucket . generate custom image.py writes log files to this bucket.",
+          "Then, run the generate custom image.py script to have Managed Service for Apache Spark generate and save your custom image. python3 generate custom image.py \\ --image-name= CUSTOM IMAGE NAME \\ [--family= CUSTOM IMAGE FAMILY NAME ] \\ --dataproc-version= IMAGE VERSION \\ --customization-script= LOCAL PATH \\ --zone= ZONE \\ --gcs-bucket= gs:// BUCKET NAME \\ [--no-smoke-test] Required flags --image-name : the output name for your custom image.",
+          "To initialize the gcloud CLI, run the following command: gcloud init Install Python 3.11+ Prepare a customization script that installs custom packages and/or updates configurations, for example: #! /usr/bin/bash apt-get -y update apt-get install python-dev apt-get install python-pip pip install numpy Create a Cloud Storage bucket in your project In the Google Cloud console, go to the Cloud Storage Buckets page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.services.bigquery.model.TableFieldSchema",
+      "com.google.api.services.bigquery.model.TableSchema",
+      "com.google.cloud.hadoop.io.bigquery.BigQueryConfiguration",
+      "com.google.cloud.hadoop.io.bigquery.BigQueryFileFormat",
+      "com.google.cloud.hadoop.io.bigquery.GsonBigQueryInputFormat",
+      "com.google.cloud.hadoop.io.bigquery.output.BigQueryOutputConfiguration",
+      "com.google.cloud.hadoop.io.bigquery.output.IndirectBigQueryOutputFormat",
+      "com.google.gson.JsonElement",
+      "com.google.gson.JsonObject",
+      "dataset.wordcount",
+      "e.g",
+      "image.py",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.List",
+      "mapred.bq.samples.wordcount.word.key",
+      "org.apache.hadoop.conf.Configuration",
+      "org.apache.hadoop.io.LongWritable",
+      "org.apache.hadoop.io.NullWritable",
+      "org.apache.hadoop.io.Text",
+      "org.apache.hadoop.mapreduce.Job",
+      "org.apache.hadoop.mapreduce.lib.output.TextOutputFormat",
+      "org.apache.hadoop.mapreduce.Mapper",
+      "org.apache.hadoop.mapreduce.Reducer",
+      "org.apache.hadoop.util.GenericOptionsParser",
+      "samples.github",
+      "samples.shakespeare"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/bigquery-connector-mapreduce-example",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/api-libraries-overview"
+      ]
+    }
+  ]
+}

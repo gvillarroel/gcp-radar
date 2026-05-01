@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Gemini-assisted aggregation in data preparation",
+  "feature_slug": "gemini-assisted-aggregation-in-data-preparation",
+  "summary": "Gemini assistance in BigQuery data preparation can aggregate table data.",
+  "extended_definition": "Gemini assistance in BigQuery data preparation can aggregate table data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini in BigQuery overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enhanced features in Gemini in BigQuery are the following: SQL generation tool Prompt to generate SQL queries Convert comments to SQL Complete a SQL query Explain a SQL query Generate python code Python code completion Data canvas Data preparation Data insights Locations For information about where Gemini in BigQuery processes your data, see Where Gemini in BigQuery processes your data .",
+          "Gemini in BigQuery overview This document describes how Gemini in BigQuery, which is part of the Gemini for Google Cloud product suite, provides AI-powered assistance to help you work with your data.",
+          "AI assistance with Gemini in BigQuery Gemini in BigQuery provides AI assistance to help you do the following: Explore and understand your data with data insights ."
+        ]
+      },
+      {
+        "title": "Approximate aggregate functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Approximate aggregate functions Stay organized with collections Save and categorize content based on your preferences.",
+          "GoogleSQL for BigQuery supports approximate aggregate functions.",
+          "This makes approximate aggregation appropriate for large data streams for which linear memory usage is impractical, as well as for data that is already approximate."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Syntax: export function aggregate ( state , aggregateParam [, ...][, nonAggregateParam ]){...} Parameters: state : The aggregate state, which is initialState on the first invocation, and then the return value of the previous call to aggregate thereafter. aggregateParam : The name of an aggregation parameter in the JavaScript UDAF.",
+          "Example: export function finalize ( finalState , initialSum ) Serialization functions for a JavaScript UDAF If you want to work with non-serializable aggregation states, the JavaScript UDAF must provide the serialize and deserialize functions: serialize function: Converts an aggregation state into a BigQuery-serializable object.",
+          "Syntax: export function merge ( state , partialState [, nonAggregateParam ]){...} Parameters: state : The state into which partialState is merged. partialState : The second aggregation state to merge. nonAggregateParam : Replace with a NOT AGGREGATE function parameter name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

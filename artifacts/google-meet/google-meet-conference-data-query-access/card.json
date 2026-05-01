@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.117Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet",
+  "feature_name": "Google Meet conference data query access",
+  "feature_slug": "google-meet-conference-data-query-access",
+  "summary": "Meeting participants can query conference records, conference artifacts, and participant records.",
+  "extended_definition": "Meeting participants can query conference records, conference artifacts, and participant records.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+      "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+      "https://developers.google.com/workspace/meet/api/guides/participants",
+      "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Meet meeting spaces overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "During the conference, the meeting owner can call the spaces.endActiveConference method to programmatically end an active conference for all participants.",
+          "How to call the meeting space methods The following table details the meeting roles required to use the meeting space methods: Method Owners Participants Others endActiveConference x get x x x with settings x with active conference x x patch x How Meet identifies a meeting space The Google Meet REST API generates a spaces resource for each meeting space.",
+          "The phoneAccess object contains information required to dial into a conference including the regional phone numbers for the meeting space and a PIN code specific to that phone number."
+        ]
+      },
+      {
+        "title": "Work with participants \\_|\\_ Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/participants",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListParticipantSessionsRequest ( parent = \"parent value\" , ) Make the request page result = client . list participant sessions ( request = request ) Handle the response async for response in page result : print ( response ) cURL curl -X GET \"https://meet.googleapis.com/v2/conferenceRecords/ CONFERENCE RECORD NAME /participants/ PARENT NAME /participantSessions\" \\ -H \"Authorization: Bearer ACCESS TOKEN \" Replace ACCESS TOKEN with the access token that grants access to the API.",
+          "GetParticipantSessionRequest ( name = \"name value\" , ) Make the request response = await client . get participant session ( request = request ) Handle the response print ( response ) cURL curl -X GET \"https://meet.googleapis.com/v2/conferenceRecords/ CONFERENCE RECORD NAME /participants/ PARTICIPANT NAME /participantSessions/ PARTICIPANT SESSION ID \" \\ -H \"Authorization: Bearer ACCESS TOKEN \" Replace ACCESS TOKEN with the access token that grants access to the API.",
+          "ListParticipantsRequest ( parent = \"parent value\" , ) Make the request page result = client . list participants ( request = request ) Handle the response async for response in page result : print ( response ) cURL curl -X GET \"https://meet.googleapis.com/v2/conferenceRecords/ PARENT NAME /participants\" \\ -H \"Authorization: Bearer ACCESS TOKEN \" Replace ACCESS TOKEN with the access token that grants access to the API."
+        ]
+      },
+      {
+        "title": "\"Method: conferenceRecords.participants.participantSessions.list \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "source_id": "site-docs-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Google Meet Reference Send feedback Method: conferenceRecords.participants.participantSessions.list Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://meet.googleapis.com/v2/{parent=conferenceRecords/ /participants/ }/participantSessions The URL uses gRPC Transcoding syntax.",
+          "Format: conferenceRecords/{conferenceRecord}/participants/{participant} Query parameters Parameters pageSize integer Optional."
+        ]
+      },
+      {
+        "title": "\"Configure meeting spaces and members \\_|\\_ Google Meet \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OAuth scopes for settings Setting or accessing meetings settings requires the following OAuth scopes: Use case Scope code Set auto artifact generation for spaces created by other apps. https://www.googleapis.com/auth/meetings.space.settings Get or list artifacts from conferences created by other apps. https://www.googleapis.com/auth/meetings.space.readonly Get or list other pre-meeting settings of a meeting space created by a third-party app. https://www.googleapis.com/auth/meetings.space.created https://www.googleapis.com/auth/meetings.space.readonly Read and edit the settings for all meeting spaces a user can access through any other app, such as Calendar. https://www.googleapis.com/auth/meetings.space.settings For more information on OAuth scopes, see Meet REST API scopes .",
+          "Set moderation and meeting access You can set how users join a meeting, the moderation modes, the feature restrictions, and the permissions users receive when they join a meeting, through the SpaceConfig object.",
+          "To define the entry points that can be used to join meetings hosted in a meeting space, set the entryPointAccess field using the EntryPointAccess object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "meet.googleapis.com",
+      "meetings.space.created",
+      "meetings.space.readonly",
+      "meetings.space.settings",
+      "participants.list",
+      "participants.participantSessions",
+      "participants.participantSessions.list",
+      "spaces.endActiveConference"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    }
+  ]
+}

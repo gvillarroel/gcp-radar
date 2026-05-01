@@ -1,0 +1,45 @@
+# status.nodeInfo.kubeProxyVersion field in the Node API
+
+Product: Google Kubernetes Engine
+Feature slug: `status-nodeinfo-kubeproxyversion-field-in-the-node-api`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The Node API's status.nodeInfo.kubeProxyVersion field is deprecated and will no longer be populated; The Node API's status.nodeInfo.kubeProxyVersion field is deprecated and will no longer be populated; deprecated on 2024-05-01.
+
+## Lifecycle
+
+- Latest feature date: 2024-05-01
+- Deprecation date: 2024-05-01
+- Status: deprecation_noted
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- authorization
+- certificate
+- confidential
+- constraint
+- encrypt
+- firewall
+- identity
+- key
+- kms
+- logging
+- policy
+- private
+- secret
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools)

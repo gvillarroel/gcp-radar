@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.510Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "Pub/Sub topic publishing",
+  "feature_slug": "pub-sub-topic-publishing",
+  "summary": "The QSAM decode command or the pubsub topics publish command can send messages to a Pub/Sub topic.",
+  "extended_definition": "The QSAM decode command or the pubsub topics publish command can send messages to a Pub/Sub topic.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/pub-sub",
+      "https://docs.cloud.google.com/mainframe-connector/docs/pubsub-publish-configuration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Pub/Sub configuration \\_|\\_ Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/pubsub-publish-configuration",
+        "source_id": "site-docs-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure Mainframe Connector transcoder's Pub/Sub publish formatting by adding the required configuration in a JSON file, and specifying this file using the --input-parameter pubsub-publish-configuration = DataPath option with the qsam decode command.",
+          "PubsubPublishConfiguration The PubsubPublishConfiguration object lets you configure the messages that get sent to Pub/Sub and is used with the qsam decode command.",
+          "For example, if the input topic is projects/project example/topics/topic example , the default spillover topic would be projects/project example/topics/topic example spillover . batching settings object ( BatchingSettings ) Specify the batch settings for publishing messages."
+        ]
+      },
+      {
+        "title": "\"Publish messages to Pub/Sub from your mainframe \\_|\\_ Mainframe Connector\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/pub-sub",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To publish mainframe records to Pub/Sub using the qsam decode command , run the following JCL: //STEP01 EXEC BQSH //STDIN DD qsam decode INPUT OUTPUT \\ --copybook COPYBOOK --transcode-configuration TRANSCODE-CONFIG --output-format=JSONL --input-parameter=json-dialect= JSON CONFIGURATION --input-parameter=pubsub-publish-configuration= PUBSUB CONFIGURATION / Replace the following: INPUT : the data path of the QSAM file.",
+          "Publish a message to a Pub/Sub topic To publish an unstructured Pub/Sub message from your mainframe, use the pubsub topics publish command as follows: //STEP01 EXEC BQSH //STDIN DD pubsub topics publish TOPIC --data=\"Hello,World\" / Replace TOPIC with the name of the Pub/Sub topic.",
+          "For information on creating a Pub/Sub topic, see Create a topic . (Optional) To convert the records to JSON before sending them to Pub/Sub, configure the JSON configuration file ."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "TOPIC Flags and arguments The pubsub topics publish command uses the following flags and arguments: TOPIC Specify the name of the topic in the format projects/{project}/topics/{topic} . --attributes = NAME=VALUE (Optional) Specify a comma-separated list of attributes.",
+          "INPUT OUTPUT Flags and arguments The qsam decode command uses the following flags and arguments: INPUT : DataPath Specify the data path of the QSAM file you want to decode.",
+          "You must ensure that your substitution values are properly JSON-escaped if you intend for the final message to remain valid JSON. qsam decode Decode QSAM data."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Query file SELECT FROM bigquery-public-data.samples.wikipedia WHERE title = @mytitle AND num characters > @min chars; Execution example bq query \\ --project id=mainframe-connector-dev \\ --location=\"US\" \\ --parameters=mytitle::Hippocrates,min chars:INT64:42600 Perform a dry run of the gsutil cp command The gsutil cp command decodes a QSAM file using a COBOL copybook, and generates an ORC file on Cloud Storage.",
+          "No qsam and vsam commands qsam decode Use this command to transcode QSAM file records to the format you want using the --output-format argument.",
+          "No Pub/Sub commands pubsub topics publish Use this command to publish a message to a Pub/Sub topic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.wikipedia"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

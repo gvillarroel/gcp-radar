@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery DataFrames in dbt-bigquery",
+  "feature_slug": "bigquery-dataframes-in-dbt-bigquery",
+  "summary": "The dbt-bigquery adapter can run Python code defined in BigQuery DataFrames.",
+  "extended_definition": "The dbt-bigquery adapter can run Python code defined in BigQuery DataFrames.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use open source Python libraries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: client = bigquery.Client () adapter = requests.adapters.HTTPAdapter ( pool connections = 128 , pool maxsize = 128 ,max retries = 3 ) client. http.mount ( \"https://\" ,adapter ) client. http. auth request.session.mount ( \"https://\" ,adapter ) query job = client.query ( QUERY ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information, see Introduction to BigQuery DataFrames . pandas-gbq Python based data processing using client side data copy Open source library maintained by PyData and volunteer contributors Lets you move data to and from Python DataFrames on the client side.",
+          "For more information, see the documentation and source code . google-cloud-bigquery BigQuery deployment, administration, and SQL-based querying Open source library maintained by Google Python package that wraps all the BigQuery APIs."
+        ]
+      },
+      {
+        "title": "\"Deploy and apply a remote function using BigQuery DataFrames \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The BigQuery remote function created to support the BigQuery DataFrames remote function can be located via a property bigframes remote function set in the remote function object. print ( f \"Created BQ remote function: { get bucket . bigframes remote function } \" ) The cloud function can be located via another property bigframes cloud function set in the remote function object. print ( f \"Created cloud function: { get bucket . bigframes cloud function } \" ) Warning: The deployed cloud function may be visible to other users with sufficient privilege in the project, so the user should be careful about having any sensitive data in the code that will be deployed as a remote function.",
+          "Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Use the BigQuery DataFrames API to deploy a Python function as a Cloud Function and use it as a remote function."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following to create the to grayscale UDF: SQL CREATE OR REPLACE FUNCTION cymbal pets . to grayscale ( src json STRING , dst json STRING ) RETURNS STRING LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'to grayscale' , runtime version = 'python-3.11' , packages =[ 'numpy' , 'opencv-python' ] ) AS \" \"\" import cv2 as cv import numpy as np from urllib.request import urlopen, Request import json Transform the image to grayscale. def to grayscale(src ref, dst ref): src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] dst json = json.loads(dst ref) dstUrl = dst json[\" access urls \"][\" write url \"] req = urlopen(srcUrl) arr = np.asarray(bytearray(req.read()), dtype=np.uint8) img = cv.imdecode(arr, -1) # 'Load it as it is' Convert the image to grayscale gray image = cv.cvtColor(img, cv.COLOR BGR2GRAY) Send POST request to the URL , img encoded = cv.imencode('.png', gray image) req = Request(url=dstUrl, data=img encoded.tobytes(), method='PUT', headers = { \" Content - Type \": \" image / png \", }) with urlopen(req) as f: pass return dst ref \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "CREATE OR REPLACE FUNCTION cymbal pets . chunk pdf ( src json STRING , chunk size INT64 , overlap size INT64 ) RETURNS ARRAY<STRING > LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'chunk pdf' , runtime version = 'python-3.11' , packages =[ 'pypdf' ] ) AS \" \"\" import io import json from pypdf import PdfReader # type: ignore from urllib.request import urlopen, Request def chunk pdf(src ref: str, chunk size: int, overlap size: int) -> str: src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] req = urlopen(srcUrl) pdf file = io.BytesIO(bytearray(req.read())) reader = PdfReader(pdf file, strict=False) extract and chunk text simultaneously all text chunks = [] curr chunk = \"\" for page in reader.pages: page text = page.extract text() if page text: curr chunk += page text split the accumulated text into chunks of a specific size with overlaop this loop implements a sliding window approach to create chunks while len(curr chunk) >= chunk size: split idx = curr chunk.rfind(\" \", 0, chunk size) if split idx == -1: split idx = chunk size actual chunk = curr chunk[:split idx] all text chunks.append(actual chunk) overlap = curr chunk[split idx + 1 : split idx + 1 + overlap size] curr chunk = overlap + curr chunk[split idx + 1 + overlap size :] if curr chunk: all text chunks.append(curr chunk) return all text chunks \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . @bpd . udf ( dataset = \"cymbal pets\" , name = \"to grayscale\" , packages = [ \"numpy\" , \"opencv-python\" ], bigquery connection = \"us.cymbal conn\" , max batching rows = 1 , ) def to grayscale ( src ref : str , dst ref : str ) - > str : import json from urllib.request import Request , urlopen import cv2 as cv import numpy as np src json = json . loads ( src ref ) srcUrl = src json [ \"access urls\" ][ \"read url\" ] dst json = json . loads ( dst ref ) dstUrl = dst json [ \"access urls\" ][ \"write url\" ] req = urlopen ( srcUrl ) arr = np . asarray ( bytearray ( req . read ()), dtype = np . uint8 ) img = cv . imdecode ( arr , - 1 ) # 'Load it as it is' Convert the image to grayscale gray image = cv . cvtColor ( img , cv ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "bigquery.Client",
+      "chunk.rfind",
+      "chunks.append",
+      "client.query",
+      "cv.COLOR",
+      "cv.cvtColor",
+      "cv.imdecode",
+      "cv.imencode",
+      "encoded.tobytes",
+      "http.mount",
+      "io.BytesIO",
+      "json.loads",
+      "np.asarray",
+      "np.uint8",
+      "page.extract",
+      "pets.product",
+      "reader.pages",
+      "req.read",
+      "request.session.mount",
+      "requests.adapters.HTTPAdapter",
+      "urllib.request",
+      "us.cymbal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    }
+  ]
+}

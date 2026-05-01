@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.664Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "DICOM transcoding transfer syntax support",
+  "feature_slug": "dicom-transcoding-transfer-syntax-support",
+  "summary": "Cloud Healthcare API DICOM transcoding now supports additional transfer syntaxes, including Deflated Explicit VR Little Endian and JPEG/HTJ2K-related encodings; Cloud Healthcare API DICOM transcoding now supports additional transfer syntaxes, including Deflated Explicit VR Little Endian and JPEG/HTJ2K-related encodings.",
+  "extended_definition": "Cloud Healthcare API DICOM transcoding now supports additional transfer syntaxes, including Deflated Explicit VR Little Endian and JPEG/HTJ2K-related encodings; Cloud Healthcare API DICOM transcoding now supports additional transfer syntaxes, including Deflated Explicit VR Little Endian and JPEG/HTJ2K-related encodings.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput",
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"DICOM conformance statement \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "source_id": "site-api-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DICOM frames The following Accept Headers are supported: multipart/related; type=\"application/octet-stream\"; transfer-syntax= multipart/related; type=\"application/octet-stream\"; transfer-syntax=1.2.840.10008.1.2.1 (default) multipart/related; type=\"image/jpeg\"; transfer-syntax=1.2.840.10008.1.2.4.50 multipart/related; type=\"image/jpeg\"; transfer-syntax=1.2.840.10008.1.2.4.51 multipart/related; type=\"image/jpeg\"; transfer-syntax=1.2.840.10008.1.2.4.57 multipart/related; type=\"image/jpeg\"; transfer-syntax=1.2.840.10008.1.2.4.70 multipart/related; type=\"image/png\" multipart/related; type=\"image/jls\"; transfer-syntax=1.2.840.10008.1.2.4.80 multipart/related; type=\"image/jls\"; transfer-syntax=1.2.840.10008.1.2.4.81 multipart/related; type=\"image/jp2\"; transfer-syntax=1.2.840.10008.1.2.4.90 multipart/related; type=\"image/jp2\"; transfer-syntax=1.2.840.10008.1.2.4.91 multipart/related; type=\"image/jphc\"; transfer-syntax=1.2.840.10008.1.2.4.201 multipart/related; type=\"image/jphc\"; transfer-syntax=1.2.840.10008.1.2.4.202 multipart/related; type=\"image/jphc\"; transfer-syntax=1.2.840.10008.1.2.4.203 multipart/related; type=\"image/jxl\"; transfer-syntax=1.2.840.10008.1.2.4.110 multipart/related; type=\"image/jxl\"; transfer-syntax=1.2.840.10008.1.2.4.112 multipart/related; type=\"image/dicom-rle\"; transfer-syntax=1.2.840.10008.1.2.5 multipart/related; type=\"application/x-deflate\"; transfer-syntax=1.2.840.10008.1.2.8.1 A transfer syntax of allows the user to request no transcoding be done, so the transfer syntax of the uploaded file will be used.",
+          "DICOM instances In addition to the above Accept Headers, RetrieveInstance supports single part content types for convenience: application/dicom; transfer-syntax= application/dicom; transfer-syntax=1.2.840.10008.1.2 application/dicom; transfer-syntax=1.2.840.10008.1.2.1 application/dicom; transfer-syntax=1.2.840.10008.1.2.1.99 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.50 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.51 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.57 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.70 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.80 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.81 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.90 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.91 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.110 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.111 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.112 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.201 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.202 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.203 application/dicom; transfer-syntax=1.2.840.10008.1.2.5 application/dicom; transfer-syntax=1.2.840.10008.1.2.8.1 This is not part of the official DICOMweb standard.",
+          "Additionally, the Cloud Healthcare API supports a proprietary web service for deleting DICOM instances."
+        ]
+      },
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "AuthorizedSession ( scoped credentials ) URL to the Cloud Healthcare API endpoint and version base url = \"https://healthcare.googleapis.com/v1\" TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID dicom store id = 'my-dicom-store' # replace with the DICOM store ID study uid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0' # replace with the study UID series uid = '2.24.52329571877967561426579904912379710633' # replace with the series UID instance uid = '1.3.6.2.4.2.14619.5.2.1.6280.6001.129311971280445372188125744148' # replace with the instance UID url = f \" { base url } /projects/ { project id } /locations/ { location } \" dicom store path = \" {} /datasets/ {} /dicomStores/ {} \" . format ( url , dataset id , dicom store id ) dicomweb path = \" {} /dicomWeb/studies/ {} /series/ {} /instances/ {} \" . format ( dicom store path , study uid , series uid , instance uid ) file name = \"instance.dcm\" Set the required Accept header on the request headers = { \"Accept\" : \"application/dicom; transfer-syntax= \" } response = session . get ( dicomweb path , headers = headers ) response . raise for status () with open ( file name , \"wb\" ) as f : f . write ( response . content ) print ( \"Retrieved DICOM instance and saved to {} in current directory\" . format ( file name ) ) return response Retrieve consumer image formats The following samples show how to retrieve a consumer imaging format like JPEG or PNG using the Cloud Healthcare API implementation of Rendered Resources .",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); const fileName = 'instance file.dcm' ; const dicomWebRetrieveInstance = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; // const seriesUid = '2.24.52329571877967561426579904912379710633'; // const instanceUid = '1.3.6.2.4.2.14619.5.2.1.6280.6001.129311971280445372188125744148'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } /series/ ${ seriesUid } /instances/ ${ instanceUid } ; const request = { parent , dicomWebPath }; const instance = await healthcare . projects . locations . datasets . dicomStores . studies . series . instances . retrieveInstance ( request , { headers : { Accept : 'application/dicom; transfer-syntax= ' }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( instance . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved DICOM instance and saved to ${ fileName } in current directory ); }; dicomWebRetrieveInstance (); Python def dicomweb retrieve instance ( project id , location , dataset id , dicom store id , study uid , series uid , instance uid , ): \"\"\"Handles the GET requests specified in the DICOMweb standard.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); // When specifying the output file, use an extension like \".multipart.\" // Then, parse the downloaded multipart file to get each individual // DICOM file. const fileName = 'study file.multipart' ; const dicomWebRetrieveStudy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } ; const request = { parent , dicomWebPath }; const study = await healthcare . projects . locations . datasets . dicomStores . studies . retrieveStudy ( request , { headers : { Accept : 'multipart/related; type=application/dicom; transfer-syntax= ' , }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( study . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved study and saved to ${ fileName } in current directory ); }; dicomWebRetrieveStudy (); Python def dicomweb retrieve study ( project id , location , dataset id , dicom store id , study uid ): \"\"\"Handles the GET requests specified in the DICOMweb standard."
+        ]
+      },
+      {
+        "title": "\"Data ingestion throughput best practices \\_|\\_ Cloud Healthcare API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput",
+        "source_id": "site-docs-root-2",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DICOM data storage options You can use the following methods to achieve high data throughput when sending data from a Picture Archiving and Communication System (PACS) to the Cloud Healthcare API: The open source Cloud Healthcare API DICOM adapter using the DICOM message service element (DIMSE) protocol The adapter optimizes data throughput when you sync a PACS with the Cloud Healthcare API.",
+          "Data throughput Data throughput is the amount of resources, such as FHIR resources or DICOM instances, or bytes that the Cloud Healthcare API ingests each second.",
+          "For more information, see Storage Transfer Service file system transfer details . dicomStores.import Use this method to store large volumes of DICOM data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file.dcm",
+      "file.multipart",
+      "healthcare.googleapis.com",
+      "instance.dcm",
+      "projects.locations.datasets.dicomStores.studies.series.instances.retrieveInstance"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-data-throughput"
+      ]
+    }
+  ]
+}

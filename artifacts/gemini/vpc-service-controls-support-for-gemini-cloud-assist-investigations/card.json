@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.307Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "VPC Service Controls support for Gemini Cloud Assist investigations",
+  "feature_slug": "vpc-service-controls-support-for-gemini-cloud-assist-investigations",
+  "summary": "Support for VPC Service Controls lets Gemini Cloud Assist investigations operate within service perimeters.",
+  "extended_definition": "Support for VPC Service Controls lets Gemini Cloud Assist investigations operate within service perimeters.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls",
+      "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure VPC Service Controls for Gemini \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls",
+        "source_id": "site-docs-root-2",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enabling VPC Service Controls for Gemini prevents all access from outside the perimeter, including running Gemini Code Assist IDE extensions from machines not in the perimeter, such as company laptops.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure VPC Service Controls for Gemini Stay organized with collections Save and categorize content based on your preferences.",
+          "After you complete these steps, VPC Service Controls checks all calls to the Gemini for Google Cloud API to ensure that they originate from within the same perimeter."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional: Configure VPC Service Controls If your organization has a service perimeter, then you must add the following resources to your perimeter: Gemini for Google Cloud API Gemini Code Assist API If you are using Gemini Code Assist Standard or Enterprise from outside of your service perimeter, then you also need to modify the ingress policy to allow access to those services.",
+          "Configure VPC Service Controls for Gemini Code Assist Standard and Enterprise .",
+          "If a Gemini Code Assist subscription already exists for the billing account associated with the project, this button displays as Manage Gemini Code Assist and lets you edit your subscription ."
+        ]
+      },
+      {
+        "title": "\"Security, privacy, and compliance for Gemini Code Assist Standard and Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "Deployment security controls This section describes some of the security controls for Gemini Code Assist Standard and Enterprise on Google Cloud.",
+          "For more information on setting up VPC Service Controls, see Configure VPC Service Controls for Gemini .",
+          "For example, Gemini Code Assist Standard and Enterprise handle the following data as Customer Data: Prompt data, which includes developer queries Response data from Gemini Code Assist Standard and Enterprise Additional context, such as the current conversation history, snippets of files that are open in the IDE, snippets of files that are stored adjacent to the open file, and cursor location in the current file Because Gemini Code Assist Standard and Enterprise are stateless Google Cloud services, they don't store prompts and responses in Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional: Configure VPC Service Controls If your organization has a service perimeter, then you must add the following resources to your perimeter: Gemini for Google Cloud API Gemini Code Assist API If you are using Gemini Code Assist Standard or Enterprise from outside of your service perimeter, then you also need to modify the ingress policy to allow access to those services.",
+          "Configure VPC Service Controls for Gemini Code Assist Standard and Enterprise .",
+          "If a Gemini Code Assist subscription already exists for the billing account associated with the project, this button displays as Manage Gemini Code Assist and lets you edit your subscription ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    }
+  ]
+}

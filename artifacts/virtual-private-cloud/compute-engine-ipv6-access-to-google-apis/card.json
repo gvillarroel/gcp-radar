@@ -1,0 +1,214 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Compute Engine IPv6 access to Google APIs",
+  "feature_slug": "compute-engine-ipv6-access-to-google-apis",
+  "summary": "Compute Engine instances can access Google APIs and services using IPv6 either through internal Private Google Access or through external IPv6 addresses.",
+  "extended_definition": "Compute Engine instances can access Google APIs and services using IPv6 either through internal Private Google Access or through external IPv6 addresses.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+      "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+      "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access APIs from VMs with external IP addresses \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Domain names that match: accounts.google.com (only supports paths needed for OAuth authentication of service accounts; user account authentication is interactive and not supported) .aiplatform-notebook.cloud.google.com .aiplatform-notebook.googleusercontent.com appengine.google.com .appspot.com .backupdr.cloud.google.com backupdr.cloud.google.com .backupdr.googleusercontent.com backupdr.googleusercontent.com .cloudfunctions.net .cloudproxy.app .composer.cloud.google.com .composer.googleusercontent.com .datafusion.cloud.google.com .datafusion.googleusercontent.com .dataproc.cloud.google.com dataproc.cloud.google.com .dataproc.googleusercontent.com dataproc.googleusercontent.com .developerconnect.dev dl.google.com gcr.io or .gcr.io .googleapis.com .gke.goog gstatic.com or .gstatic.com .kernels.googleusercontent.com .ltsapis.goog .notebooks.byoid.googleusercontent.com .notebooks.cloud.google.com notebooks.cloud.google.com .notebooks.googleusercontent.com packages.cloud.google.com pkg.dev or .pkg.dev pki.goog or .pki.goog .run.app source.developers.google.com storage.cloud.google.com Use private.googleapis.com to access Google APIs and services by using a set of IP addresses only routable from within Google Cloud.",
+          "IPv6 support for private.googleapis.com and restricted.googleapis.com The following IPv6 address ranges can be used to direct traffic from IPv6 clients to Google APIs and services: private.googleapis.com : 2600:2d00:0002:2000::/56 restricted.googleapis.com : 2600:2d00:0002:1000::/56 Consider configuring the IPv6 addresses if you want to use the private.googleapis.com or restricted.googleapis.com domain, and you have clients that use IPv6 addresses.",
+          "Access APIs from VMs with external IP addresses A virtual machine (VM) instance with an external IP address assigned to its network interface can connect to Google APIs and services if the network requirements described on this page are met."
+        ]
+      },
+      {
+        "title": "\"Configure Private Google Access \\_|\\_ Virtual Private Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 243,
+        "relevance": "",
+        "evidence_snippets": [
+          "To list the subnets for a particular network, use the following command: gcloud compute networks subnets list --filter= NETWORK NAME Run the following command to enable Private Google Access: gcloud compute networks subnets update SUBNET NAME \\ --region= REGION \\ --enable-private-ip-google-access Verify that Private Google Access is enabled by running this command: gcloud compute networks subnets describe SUBNET NAME \\ --region= REGION \\ --format=\"get(privateIpGoogleAccess)\" In all above commands, replace the following with valid values: SUBNET NAME : the name of the subnet REGION : the region for the subnet NETWORK NAME : the name of the VPC network that contains the subnet When creating a new subnet , use the --enable-private-ip-google-access flag to enable Private Google Access: gcloud compute networks subnets create SUBNET NAME \\ --region= REGION \\ --network= NETWORK NAME \\ --range= PRIMARY IPV4 RANGE \\ [ --stack-type= STACK TYPE ] \\ [ --ipv6-access-type= IPv6 ACCESS TYPE ] \\ --enable-private-ip-google-access Replace the following with valid values: SUBNET NAME : the name of the subnet REGION : the region for the subnet NETWORK NAME : the name of the VPC network that contains the subnet PRIMARY IPV4 RANGE : the subnet's primary IPv4 address range.",
+          "Domain names that match: accounts.google.com (only supports paths needed for OAuth authentication of service accounts; user account authentication is interactive and not supported) .aiplatform-notebook.cloud.google.com .aiplatform-notebook.googleusercontent.com appengine.google.com .appspot.com .backupdr.cloud.google.com backupdr.cloud.google.com .backupdr.googleusercontent.com backupdr.googleusercontent.com .cloudfunctions.net .cloudproxy.app .composer.cloud.google.com .composer.googleusercontent.com .datafusion.cloud.google.com .datafusion.googleusercontent.com .dataproc.cloud.google.com dataproc.cloud.google.com .dataproc.googleusercontent.com dataproc.googleusercontent.com .developerconnect.dev dl.google.com gcr.io or .gcr.io .googleapis.com .gke.goog gstatic.com or .gstatic.com .kernels.googleusercontent.com .ltsapis.goog .notebooks.byoid.googleusercontent.com .notebooks.cloud.google.com notebooks.cloud.google.com .notebooks.googleusercontent.com packages.cloud.google.com pkg.dev or .pkg.dev pki.goog or .pki.goog .run.app source.developers.google.com storage.cloud.google.com Use private.googleapis.com to access Google APIs and services by using a set of IP addresses only routable from within Google Cloud.",
+          "IPv6 support for private.googleapis.com and restricted.googleapis.com The following IPv6 address ranges can be used to direct traffic from IPv6 clients to Google APIs and services: private.googleapis.com : 2600:2d00:0002:2000::/56 restricted.googleapis.com : 2600:2d00:0002:1000::/56 Consider configuring the IPv6 addresses if you want to use the private.googleapis.com or restricted.googleapis.com domain, and you have clients that use IPv6 addresses."
+        ]
+      },
+      {
+        "title": "\"Access regional Google APIs through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 229,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example request tests that an endpoint with IP address 192.168.1.100 can request the Cloud Spanner API discovery document from the regional endpoint in me-central2 . curl --connect-to spanner.me-central2.rep.googleapis.com:443:192.168.1.100:443 \\ 'https://spanner.me-central2.rep.googleapis.com/$discovery/rest?version=v1' Create a private DNS entry for the endpoint You must create private DNS entries so that clients can direct requests to your Private Service Connect endpoint.",
+          "To verify an IPv4 endpoint, do the following: curl --connect-to REP DNS NAME :443: ADDRESS :443 \\ 'https:// REP DNS NAME / PATH ' To verify an IPv6 endpoint, do the following: curl -6 --connect-to REP DNS NAME :443:[ ADDRESS ]:443 \\ 'https:// REP DNS NAME / PATH ' Replace the following: REP DNS NAME : the public DNS name of the target regional endpoint—for example, spanner.me-central2.rep.googleapis.com .",
+          "Roles To get the permissions that you need to create a regional Private Service Connect endpoint, ask your administrator to grant you the following IAM roles on your VPC network: Compute Network Admin role ( roles/compute.networkAdmin ) DNS Administrator role ( roles/dns.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Access flow logs \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "source_id": "site-docs-root-2",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Logs you want to view Query All flow logs resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") Logs for a specific configuration resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" resource.labels.name=\" CONFIG NAME \" Logs for VM instances in a specific VPC network resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src vpc.vpc name=\" NETWORK NAME \" OR jsonPayload.dest vpc.vpc name=\" NETWORK NAME \") Logs for VM instances in a specific subnet resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src vpc.subnetwork name=\" SUBNET NAME \" OR jsonPayload.dest vpc.subnetwork name=\" SUBNET NAME \") Logs for a specific VM instance resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src instance.vm name=\" VM NAME \" OR jsonPayload.dest instance.vm name=\" VM NAME \") Logs for a specific Google Kubernetes Engine cluster resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src gke details.cluster.cluster name=\" CLUSTER NAME \" OR jsonPayload.dest gke details.cluster.cluster name=\" CLUSTER NAME \") Logs for only egress VM traffic from a subnet resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.reporter=\"SRC\" AND jsonPayload.src vpc.subnetwork name=\" SUBNET NAME \" AND (jsonPayload.dest vpc.subnetwork name!=\" SUBNET NAME \" OR NOT jsonPayload.dest vpc.subnetwork name: ) Logs for only egress VM traffic from a VPC network resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.reporter=\"SRC\" AND jsonPayload.src vpc.vpc name=\" VPC NAME \" AND (jsonPayload.dest vpc.vpc name!=\" VPC NAME \" OR NOT jsonPayload.dest vpc: ) Logs for traffic to a specific subnet range resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") ip in net(jsonPayload.connection.dest ip, \" SUBNET RANGE \") Logs for an individual destination port resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.connection.dest port= PORT jsonPayload.connection.protocol= PROTOCOL Logs for multiple destination ports resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.connection.dest port=( PORT 1 OR PORT 2 ) jsonPayload.connection.protocol= PROTOCOL Logs for a specific source Cloud VPN tunnel resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"SRC GATEWAY\" labels.target resource name=\"projects/ PROJECT NUMBER /regions/ REGION /vpnTunnels/ NAME \" Logs for all destination VLAN attachments resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"DEST GATEWAY\" jsonPayload.dest gateway.type=\"INTERCONNECT ATTACHMENT\" Logs for all destination VLAN attachments in a specific region resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"DEST GATEWAY\" jsonPayload.dest gateway.type=\"INTERCONNECT ATTACHMENT\" jsonPayload.dest gateway.location=\" REGION \" Replace the following: PROJECT ID : the project ID CONFIG NAME : the name of the VPC Flow Logs configuration SUBNET NAME : the name of the subnet VM NAME : the name of the VM SUBNET RANGE : a CIDR range, such as 192.168.1.0/24 CLUSTER NAME : the name of the GKE cluster VPC NAME : the name of the VPC network PORT 1 and PORT 2 : the destination ports PROTOCOL : the communication protocol PROJECT NUMBER : the project number of the Cloud VPN tunnel REGION : the region of the VLAN attachment or Cloud VPN tunnel NAME : the name of the Cloud VPN tunnel Route logs to BigQuery, Pub/Sub, and custom targets You can route flow logs from Logging to a destination of your choice as described in the Routing and storage overview in the Logging documentation.",
+          "In the query editor field, enter a query: For example, to view flow logs for a specific source Cloud VPN tunnel, enter the following query: resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"SRC GATEWAY\" labels.target resource name=\"projects/ PROJECT NUMBER /regions/ REGION /vpnTunnels/ NAME \" Replace the following: PROJECT ID : the Google Cloud project ID of the Cloud VPN tunnel PROJECT NUMBER : the project number of the Cloud VPN tunnel REGION : the region of the Cloud VPN tunnel NAME : the name of the Cloud VPN tunnel If you enabled VPC Flow Logs for a subnet by using the Compute Engine API, the query must target compute.googleapis.com .",
+          "For example, enter the following query, replacing PROJECT ID with your Google Cloud project ID and SUBNET NAME with your subnet: resource.type=\"gce subnetwork\" logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\" resource.labels.subnetwork name=\" SUBNET NAME \" For more examples of queries that you can run to view your flow logs, see Examples of Logs Explorer queries for VPC Flow Logs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "appengine.google.com",
+      "appspot.com",
+      "backupdr.cloud.google.com",
+      "backupdr.googleusercontent.com",
+      "central2.rep.googleapis.com",
+      "cloudfunctions.net",
+      "cloudproxy.app",
+      "composer.cloud.google.com",
+      "composer.googleusercontent.com",
+      "compute.googleapis.com",
+      "compute.networkAdmin",
+      "connection.dest",
+      "connection.protocol",
+      "datafusion.cloud.google.com",
+      "datafusion.googleusercontent.com",
+      "dataproc.cloud.google.com",
+      "dataproc.googleusercontent.com",
+      "details.cluster.cluster",
+      "developerconnect.dev",
+      "dl.google.com",
+      "dns.admin",
+      "gateway.location",
+      "gateway.type",
+      "gcr.io",
+      "gke.goog",
+      "googleapis.com",
+      "gstatic.com",
+      "instance.vm",
+      "kernels.googleusercontent.com",
+      "labels.target",
+      "ltsapis.goog",
+      "networkmanagement.googleapis.com",
+      "notebook.cloud.google.com",
+      "notebook.googleusercontent.com",
+      "notebooks.byoid.googleusercontent.com",
+      "notebooks.cloud.google.com",
+      "notebooks.googleusercontent.com",
+      "packages.cloud.google.com",
+      "pkg.dev",
+      "pki.goog",
+      "private.googleapis.com",
+      "resource.labels.name",
+      "resource.labels.subnetwork",
+      "resource.type",
+      "restricted.googleapis.com",
+      "run.app",
+      "source.developers.google.com",
+      "spanner.me",
+      "storage.cloud.google.com",
+      "vpc.subnetwork",
+      "vpc.vpc"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/dns.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/access-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs"
+      ]
+    }
+  ]
+}

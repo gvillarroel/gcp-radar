@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.285Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Apigee API hub automatic enablement for existing organizations",
+  "feature_slug": "apigee-api-hub-automatic-enablement-for-existing-organizations",
+  "summary": "Apigee API hub is being enabled for existing Apigee organizations in supported regions.",
+  "extended_definition": "Apigee API hub is being enabled for existing Apigee organizations in supported regions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shadow API Discovery overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable, disable, and delete observation jobs To change whether an existing observation job is enabled (active), select either Enable or Disable from the Actions menu in the row for that job in the Observation jobs page.",
+          "Within your centralized Apigee API hub instance, you can attach those projects to view the results of those jobs and automatically compare them to \"known\" APIs documented in API hub.",
+          "View API Observations To view API Observations for enabled observation jobs, choose the API Observations tab and then select the Observation job from the list."
+        ]
+      },
+      {
+        "title": "ExternalCallout policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "source_id": "site-api-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apigee hybrid users: If you use Apigee hybrid, note that the useTargetUrl attribute is available in Apigee hybrid version 1.8 and later versions. < ExternalCallout continueOnError = \"false\" enabled = \"true\" name = \"External-Callout-1\" > < DisplayName>External - Callout - 1 < / DisplayName > < GrpcConnection > < Server name = \"cloud run server name\" / > < Authentication > < GoogleIDToken > < Audience useTargetUrl = \"true\" / > < / GoogleIDToken > < / Authentication > < / GrpcConnection > < TimeoutMs>5000 < / TimeoutMs > < Configurations > < Property name = \"with.request.content\" > true < / Property > < Property name = \"with.request.headers\" > true < / Property > < Property name = \"with.response.content\" > true < / Property > < Property name = \"with.response.headers\" > true < / Property > < FlowVariable>example . flow . variable < / FlowVariable > < FlowVariable>another . flow . variable < / FlowVariable > < / Configurations > < / ExternalCallout > < DataCapture name = \"capturepayment\" continueOnError = \"false\" enabled = \"true\" > < DisplayName>Data - Capture - Policy - 1 < / DisplayName > < IgnoreUnresolvedVariables>false < / IgnoreUnresolvedVariables > < ThrowExceptionOnLimit>false < / ThrowExceptionOnLimit > < !-- Existing Variable -- > < Capture > < Collect ref = \"existing-variable\" default = \"0\" >< / Collect > < DataCollector>dc 1 < / DataCollector > < / Capture > < !-- JSONPayload -- > < Capture > < DataCollector>dc 2 < / DataCollector > < Collect default = \"0\" > < Source>request < / Source > < JSONPayload > < JSONPath>result . var < / JSONPath > < / JSONPayload > < / Collect > < / Capture > < !-- URIPath -- > < Capture > < DataCollector>dc 3 < / DataCollector > < Collect default = \"0\" > < URIPath > < !-- All patterns must specify a single variable to extract named $ -- > < Pattern ignoreCase = \"false\" > / foo / { $ } < / Pattern > < Pattern ignoreCase = \"false\" > / foo / bar / { $ } < / Pattern > < / URIPath > < / Collect > < / Capture > < / DataCapture > --> Child element reference The following sections describe the child elements of ExternalCallout . <TimeoutMs> The request timeout in milliseconds for gRPC requests. <TimeoutMs> must be a positive number. <GrpcConnection> The <GrpcConnection> element sets the gRPC server to be an existing TargetServer , specified by the name attribute.",
+          "To learn more about sending gRPC requests, see the following links: gRPC Protocol Buffers <ExternalCallout> Defines an ExternalCallout policy. <ExternalCallout async=\"true\" continueOnError=\"true\" enabled=\"true\" name=\"EC\"> < DataCapture name = \"capturepayment\" continueOnError = \"false\" enabled = \"true\" > < DisplayName>Data - Capture - Policy - 1 < / DisplayName > < IgnoreUnresolvedVariables>false < / IgnoreUnresolvedVariables > < ThrowExceptionOnLimit>false < / ThrowExceptionOnLimit > < !-- Existing Variable -- > < Capture > < Collect ref = \"existing-variable\" default = \"0\" >< / Collect > < DataCollector>dc 1 < / DataCollector > < / Capture > < !-- JSONPayload -- > < Capture > < DataCollector>dc 2 < / DataCollector > < Collect default = \"0\" > < Source>request < / Source > < JSONPayload > < JSONPath>result . var < / JSONPath > < / JSONPayload > < / Collect > < / Capture > < !-- URIPath -- > < Capture > < DataCollector>dc 3 < / DataCollector > < Collect default = \"0\" > < URIPath > < !-- All patterns must specify a single variable to extract named $ -- > < Pattern ignoreCase = \"false\" > / foo / { $ } < / Pattern > < Pattern ignoreCase = \"false\" > / foo / bar / { $ } < / Pattern > < / URIPath > < / Collect > < / Capture > < / DataCapture > --> This element has the following attributes that are common to all policies: Attribute Default Required?",
+          "Type Complex type Parent Element <GrpcConnection> Child Elements <GoogleIDToken> The Authentication element uses the following syntax: Syntax < ExternalCallout > ... < GrpcConnection > < Server name = \"cloud run server name\" / > < Authentication > < HeaderName ref = \"FLOW VARIABLE\" > STRING < / HeaderName > < GoogleIDToken > < Audience ref = \"variable-1\" > STRING < / Audience > < IncludeEmail ref = \"variable-2\" > BOOLEAN < / IncludeEmail > < / GoogleIDToken > < / Authentication > < / GrpcConnection > < / ExternalCallout > Example The following example shows the GoogleIDToken element: < ExternalCallout continueOnError = \"false\" enabled = \"true\" name = \"External-Callout-1\" > < DisplayName>External - Callout - 1 < / DisplayName > < GrpcConnection > < Server name = \"cloud run server name\" / > < Authentication > < HeaderName ref = 'my-variable' > X - Serverless - Authorization < / HeaderName > < GoogleIDToken > < Audience>https : // cloudrun - hostname . a . run . app < / Audience > < / GoogleIDToken > < / Authentication > < / GrpcConnection > < TimeoutMs>5000 < / TimeoutMs > < Configurations > < Property name = \"with.request.content\" > true < / Property > < Property name = \"with.request.headers\" > true < / Property > < Property name = \"with.response.content\" > true < / Property > < Property name = \"with.response.headers\" > true < / Property > < FlowVariable>example . flow . variable < / FlowVariable > < FlowVariable>another . flow . variable < / FlowVariable > < / Configurations > < / ExternalCallout > Attributes None. <HeaderName> child element By default, when an Authentication configuration is present, Apigee generates a bearer token and injects it into the Authorization header in the message sent to the target system."
+        ]
+      },
+      {
+        "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "The sample policy shown below uses all default parameters: <SanitizeUserPrompt async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> </SanitizeUserPrompt> When you call your API proxy, the input from the prompt is automatically extracted and passed on to Model Armor and processed according to the parameters of your Model Armor template.",
+          "Create a Model Armor template Create a Model Armor template for sanitizing user prompts and LLM responses: gcloud model-armor templates create --location $LOCATION TEMPLATE NAME --rai-settings-filters = '[{ \"filterType\":\"HATE SPEECH\", \"confidenceLevel\": \"MEDIUM AND ABOVE\" },{ \"filterType\": \"HARASSMENT\", \"confidenceLevel\": \"MEDIUM AND ABOVE\" },{ \"filterType\": \"SEXUALLY EXPLICIT\", \"confidenceLevel\": \"MEDIUM AND ABOVE\" }]' --basic-config-filter-enforcement = enabled --pi-and-jailbreak-filter-settings-enforcement = enabled --pi-and-jailbreak-filter-settings-confidence-level = LOW AND ABOVE --malicious-uri-filter-settings-enforcement = enabled --template-metadata-custom-llm-response-safety-error-code = 798 --template-metadata-custom-llm-response-safety-error-message = \"test template llm response evaluation failed\" --template-metadata-custom-prompt-safety-error-code = 799 --template-metadata-custom-prompt-safety-error-message = \"test template prompt evaluation failed\" --template-metadata-ignore-partial-invocation-failures --template-metadata-log-operations --template-metadata-log-sanitize-operations Substitute TEMPLATE NAME with the name of the template you want to create.",
+          "This region name can be used to identify the correct Model Armor template to use for that instance For example: <SanitizeModelResponse async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/ {system.region.name} /templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> Model Armor response processing You can add additional processing logic after the Model Armor policy processes the LLM response."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "content.parts",
+      "example1.flow.variable",
+      "example2.flow.variable",
+      "request.content",
+      "response.content",
+      "response.response.content",
+      "system.region.name",
+      "with.request.content",
+      "with.request.headers",
+      "with.response.content",
+      "with.response.headers"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/external-callout-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    }
+  ]
+}

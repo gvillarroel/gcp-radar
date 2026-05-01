@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.013Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Autocomplete denylist import",
+  "feature_slug": "autocomplete-denylist-import",
+  "summary": "Vertex AI Search introduced preview capability to import autocomplete denylists for supported accounts via allowlist access.",
+  "extended_definition": "Vertex AI Search introduced preview capability to import autocomplete denylists for supported accounts via allowlist access.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure autocomplete \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "source_id": "site-docs-reference",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Even if set to true, if there are suggestions that match the full query, those are returned and no tail suggestions are returned. / // const includeTailSuggestions = true // Imports the Discoveryengine library const { CompletionServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1 ; // Instantiates a client const discoveryengineClient = new CompletionServiceClient (); async function callCompleteQuery () { // Construct request const request = { dataStore , query , }; // Run request const response = await discoveryengineClient . completeQuery ( request ); console . log ( response ); } callCompleteQuery (); Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "Autocomplete features Vertex AI Search supports the following autocomplete features to show the most helpful predictions during search: Feature Description Example or more information Correct typos Correct word spellings that are typos.",
+          "If there is an email address jeffersonloveshiking@gmail.com in the data store, Vertex AI Search won't return the email address as an autocomplete suggestion if the user types jef in the search bar."
+        ]
+      },
+      {
+        "title": "Configure advanced autocomplete \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before reading this page, become familiar with Vertex AI Search's basic autocomplete.",
+          "This page describes Vertex AI Search's advanced autocomplete feature.",
+          "Key features of advanced autocomplete The key features of advanced autocomplete that distinguish it from the basic autocomplete are as follows: Blended search: Advanced autocomplete can be used with blended search apps , those are custom search apps that are connected to more than one data store."
+        ]
+      },
+      {
+        "title": "Get search results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "source_id": "site-iam-reference",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search\" \\ -d '{ \"servingConfig\": \"projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search\", \"query\": \" QUERY \", \"pageSize\": \" PAGE SIZE \", \"offset\": \" OFFSET \", \"orderBy\": \" ORDER BY \", \"params\": {\"user country code\": \" USER COUNTRY CODE \", \"searchType\": \" SEARCH TYPE \"}, \"filter\": \" FILTER \", \"boostSpec\": \" BOOST SPEC \", \"contentSearchSpec\": { \"searchResultMode\": \" RESULT MODE \" }, \"userPseudoId\": \" USER PSEUDO ID \", \"dataStoreSpecs\": [{\" DATA STORE SPEC \"}] }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search\" \\ -d '{ \"query\": \" QUERY \", \"userPseudoId\": \" USER PSEUDO ID \", \"pageSize\": \" PAGE SIZE \", \"offset\": \" OFFSET \", \"orderBy\": \" ORDER BY \", \"filter\": \" FILTER \", \"boostSpec\": \" BOOST SPEC \", \"facetSpec\": \" FACET SPEC \", \"queryExpansionSpec\": \" QUERY EXPANSION SPEC \", \"spellCorrectionSpec\": \" SPELL CORRECTION SPEC \", \"contentSearchSpec\": \" CONTENT SEARCH SPEC \", \"dataStoreSpecs\": [{\" DATA STORE SPEC \"}], }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "Run the following curl command to get search results: Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:searchLite?key= API KEY \" \\ -d '{ \"servingConfig\": \"projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search\", \"query\": \" QUERY \", \"userPseudoId\": \" USER PSEUDO ID \" }' Replace the following: PROJECT ID : the ID of your Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.client",
+      "discoveryengine.googleapis.com",
+      "gmail.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.056Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Third-party SaaS event delivery",
+  "feature_slug": "third-party-saas-event-delivery",
+  "summary": "Eventarc can deliver third-party events from SaaS providers to interested subscribers.",
+  "extended_definition": "Eventarc can deliver third-party events from SaaS providers to interested subscribers.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/overview",
+      "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+      "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Choose Eventarc Advanced or Eventarc Standard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Eventarc Advanced Eventarc Standard Access control Per message access control and central governance with IAM See Access control with IAM See Access control with IAM Capacity Automatically provisioned Automatically provisioned Client library languages Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Compliance standards See Compliance standards See Compliance standards Cross-project event delivery Supported See Publish events from Google sources Not supported Customer managed encryption keys Yes See Use customer-managed encryption keys Yes See Use customer-managed encryption keys Dead letter queues supported No Yes, through Pub/Sub dead letter topic See Retry events Event format Events are delivered to the destination in a CloudEvents format See Event format Optionally, you can override this behavior by defining an HTTP binding Events are delivered to the destination in a CloudEvents format See Event format Event size 1 MB maximum See Quotas and limits 512 KB maximum See Quotas and limits Locations See Eventarc Advanced locations See Eventarc Standard locations Message filtering Filtering on any and all event attributes Filtering on event type and specific attributes Message routing Many providers to many destinations Provider to destination Message schema conversion Yes See Convert the format of received events No Message transformation Yes, through CEL expressions See Transform received events No Observability Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Ordered delivery There is no in-order, first-in-first-out delivery guarantee There is no in-order, first-in-first-out delivery guarantee Pricing See Eventarc pricing See Eventarc pricing Regionality Regional See Understand regionality Regional, Global See Understand Eventarc locations REST endpoints https://eventarc.googleapis.com See Eventarc API https://eventarcpublishing.googleapis.com See Eventarc Publishing API https://eventarc.googleapis.com See Eventarc API Retry and retention At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events Service limits One bus and 100 pipelines per Google Cloud project per supported region See Quotas and limits 500 triggers per Google Cloud project per supported region See Quotas and limits Service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Supported sources Google providers Direct publishers using the Eventarc Publishing API See Event providers and destinations Google providers Google providers through audit logs Third-party providers See Event providers and destinations Supported targets Cloud Run functions (including 1st gen) Cloud Run jobs and services Eventarc Advanced buses Internal HTTP endpoints in VPC networks Pub/Sub topics Workflows See Event providers and destinations Cloud Run functions Cloud Run services Internal HTTP endpoints in VPC networks Public endpoints of private and public GKE services Workflows See Event providers and destinations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you.",
+          "Eventarc Advanced is feature rich and is ideal for organizations with complex eventing and messaging needs, particularly those grappling with managing numerous Pub/Sub topics, Kafka queues, or other third-party messaging systems."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.eventarc.publishing.v1 \\_|\\_ Eventarc \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "source_id": "site-api-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An event provider is a software-as-a-service (SaaS) system or product that can generate and deliver events through Eventarc.",
+          "A partner is a third-party event provider that is integrated with Eventarc.",
+          "Index Publisher (interface) CloudEvent (message) CloudEvent.CloudEventAttributeValue (message) PublishChannelConnectionEventsRequest (message) PublishChannelConnectionEventsResponse (message) PublishEventsRequest (message) PublishEventsResponse (message) PublishRequest (message) PublishResponse (message) Publisher Eventarc processes events generated by an event provider and delivers them to a subscriber."
+        ]
+      },
+      {
+        "title": "Eventarc overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Eventarc Advanced Eventarc Standard Access control Per message access control and central governance with IAM See Access control with IAM See Access control with IAM Capacity Automatically provisioned Automatically provisioned Client library languages Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Compliance standards See Compliance standards See Compliance standards Cross-project event delivery Supported See Publish events from Google sources Not supported Customer managed encryption keys Yes See Use customer-managed encryption keys Yes See Use customer-managed encryption keys Dead letter queues supported No Yes, through Pub/Sub dead letter topic See Retry events Event format Events are delivered to the destination in a CloudEvents format See Event format Optionally, you can override this behavior by defining an HTTP binding Events are delivered to the destination in a CloudEvents format See Event format Event size 1 MB maximum See Quotas and limits 512 KB maximum See Quotas and limits Locations See Eventarc Advanced locations See Eventarc Standard locations Message filtering Filtering on any and all event attributes Filtering on event type and specific attributes Message routing Many providers to many destinations Provider to destination Message schema conversion Yes See Convert the format of received events No Message transformation Yes, through CEL expressions See Transform received events No Observability Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Ordered delivery There is no in-order, first-in-first-out delivery guarantee There is no in-order, first-in-first-out delivery guarantee Pricing See Eventarc pricing See Eventarc pricing Regionality Regional See Understand regionality Regional, Global See Understand Eventarc locations REST endpoints https://eventarc.googleapis.com See Eventarc API https://eventarcpublishing.googleapis.com See Eventarc Publishing API https://eventarc.googleapis.com See Eventarc API Retry and retention At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events Service limits One bus and 100 pipelines per Google Cloud project per supported region See Quotas and limits 500 triggers per Google Cloud project per supported region See Quotas and limits Service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Supported sources Google providers Direct publishers using the Eventarc Publishing API See Event providers and destinations Google providers Google providers through audit logs Third-party providers See Event providers and destinations Supported targets Cloud Run functions (including 1st gen) Cloud Run jobs and services Eventarc Advanced buses Internal HTTP endpoints in VPC networks Pub/Sub topics Workflows See Event providers and destinations Cloud Run functions Cloud Run services Internal HTTP endpoints in VPC networks Public endpoints of private and public GKE services Workflows See Event providers and destinations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you.",
+          "Eventarc Advanced is feature rich and is ideal for organizations with complex eventing and messaging needs, particularly those grappling with managing numerous Pub/Sub topics, Kafka queues, or other third-party messaging systems."
+        ]
+      },
+      {
+        "title": "\"Class EventarcAsyncClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.eventarc v1.types.GoogleChannelConfig A GoogleChannelConfig is a resource that stores the custom settings respected by Eventarc first-party triggers in the matching region.",
+          "Returns Type Description google.cloud.eventarc v1.types.GoogleChannelConfig A GoogleChannelConfig is a resource that stores the custom settings respected by Eventarc first-party triggers in the matching region.",
+          "Returns Type Description google.cloud.eventarc v1.types.Trigger A representation of the trigger resource. google api source path google api source path ( project : str , location : str , google api source : str ) - > str Returns a fully-qualified google api source string. google channel config path google channel config path ( project : str , location : str ) - > str Returns a fully-qualified google channel config string. list channel connections list channel connections ( request : typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "eventarc.googleapis.com",
+      "eventarcpublishing.googleapis.com",
+      "v1.types.CreateChannelConnectionRequest",
+      "v1.types.GoogleChannelConfig",
+      "v1.types.Trigger"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    }
+  ]
+}

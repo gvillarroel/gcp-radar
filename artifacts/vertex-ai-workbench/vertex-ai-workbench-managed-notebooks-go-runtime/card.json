@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench managed notebooks Go runtime",
+  "feature_slug": "vertex-ai-workbench-managed-notebooks-go-runtime",
+  "summary": "The managed notebooks Go runtime was upgraded from version 1.16.5 to 1.19.2.",
+  "extended_definition": "The managed notebooks Go runtime was upgraded from version 1.16.5 to 1.19.2.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI Workbench managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific managed notebooks instance so that they have all of the admin abilities to administer that instance.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench managed notebooks resources.",
+          "Vertex AI Workbench uses IAM to manage access to managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Workbench user-managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific user-managed notebooks instance so that they have all of the admin abilities to administer that instance.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench user-managed notebooks resources.",
+          "Vertex AI Workbench uses IAM to manage access to user-managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface."
+        ]
+      },
+      {
+        "title": "Notebooks API \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.executions Methods create POST /v1/{parent}/executions Creates a new Execution in a given project and location. delete DELETE /v1/{name} Deletes execution get GET /v1/{name} Gets details of executions list GET /v1/{parent}/executions Lists executions in a given project and location REST Resource: v1.projects.locations.instances Methods create POST /v1/{parent}/instances Creates a new Instance in a given project and location. delete DELETE /v1/{name} Deletes a single Instance. diagnose POST /v1/{name}:diagnose Creates a Diagnostic File and runs Diagnostic Tool given an Instance. get GET /v1/{name} Gets details of a single Instance. getIamPolicy GET /v1/{resource}:getIamPolicy Gets the access control policy for a resource. getInstanceHealth GET /v1/{name}:getInstanceHealth Checks whether a notebook instance is healthy. isUpgradeable GET /v1/{notebookInstance}:isUpgradeable Checks whether a notebook instance is upgradable. list GET /v1/{parent}/instances Lists instances in a given project and location. migrate POST /v1/{name}:migrate Migrates an existing User-Managed Notebook to Workbench Instances. register POST /v1/{parent}/instances:register Registers an existing legacy notebook instance to the Notebooks API server. report POST /v1/{name}:report Allows notebook instances to report their latest instance information to the Notebooks API server. reset POST /v1/{name}:reset Resets a notebook instance. rollback POST /v1/{name}:rollback Rollbacks a notebook instance to the previous version. setAccelerator PATCH /v1/{name}:setAccelerator Updates the guest accelerators of a single Instance. setIamPolicy POST /v1/{resource}:setIamPolicy Sets the access control policy on the specified resource. setLabels PATCH /v1/{name}:setLabels Replaces all the labels of an Instance. setMachineType PATCH /v1/{name}:setMachineType Updates the machine type of a single Instance. start POST /v1/{name}:start Starts a notebook instance. stop POST /v1/{name}:stop Stops a notebook instance. testIamPermissions POST /v1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. updateConfig PATCH /v1/{name}:updateConfig Update Notebook Instance configurations. updateMetadataItems PATCH /v1/{name}:updateMetadataItems Add/update metadata items for an instance. updateShieldedInstanceConfig PATCH /v1/{name}:updateShieldedInstanceConfig Updates the Shielded instance configuration of a single Instance. upgrade POST /v1/{name}:upgrade Upgrades a notebook instance to the latest version.",
+          "REST Resource: v1.projects.locations.runtimes Methods create POST /v1/{parent}/runtimes Creates a new Runtime in a given project and location. delete DELETE /v1/{name} Deletes a single Runtime. get GET /v1/{name} Gets details of a single Runtime. getIamPolicy GET /v1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent}/runtimes Lists Runtimes in a given project and location. migrate POST /v1/{name}:migrate Migrate an existing Runtime to a new Workbench Instance. patch PATCH /v1/{runtime.name} Update Notebook Runtime configuration. reportEvent POST /v1/{name}:reportEvent Reports and processes a runtime event. reset POST /v1/{name}:reset Resets a Managed Notebook Runtime. setIamPolicy POST /v1/{resource}:setIamPolicy Sets the access control policy on the specified resource. start POST /v1/{name}:start Starts a Managed Notebook Runtime. stop POST /v1/{name}:stop Stops a Managed Notebook Runtime. switch POST /v1/{name}:switch Switch a Managed Notebook Runtime. testIamPermissions POST /v1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "The Notebooks API lets you manage Vertex AI Workbench resources in Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "notebooks.admin",
+      "notebooks.viewer",
+      "runtime.name",
+      "v1.projects.locations.executions",
+      "v1.projects.locations.instances",
+      "v1.projects.locations.runtimes"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest"
+      ]
+    }
+  ]
+}

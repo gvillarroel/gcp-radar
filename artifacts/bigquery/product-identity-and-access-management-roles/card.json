@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Product Identity and Access Management roles",
+  "feature_slug": "product-identity-and-access-management-roles",
+  "summary": "BigQuery supports product-specific Identity and Access Management roles.",
+  "extended_definition": "BigQuery supports product-specific Identity and Access Management roles.",
+  "lifecycle": {
+    "latest_feature_date": "2016-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/access-control",
+      "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+      "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deny policy attributes The following attributes can be used in your Identity and Access Management deny policies: tool.isReadOnly : a resource attribute that indicates whether the invoked tool only reads data. request.auth.oauth.client id : the OAuth client ID. resource.service : the name of service—for example, bigquery.googleapis.com .",
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Control MCP use with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "Example IAM policies The following sections give examples of Identity and Access Management deny policies that can be used to control MCP use."
+        ]
+      },
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deny policy attributes The following attributes can be used in your Identity and Access Management deny policies: tool.isReadOnly : a resource attribute that indicates whether the invoked tool only reads data. request.auth.oauth.client id : the OAuth client ID. resource.service : the name of service—for example, bigquery.googleapis.com .",
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Control MCP use with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "Example IAM policies The following sections give examples of Identity and Access Management deny policies that can be used to control MCP use."
+        ]
+      },
+      {
+        "title": "\"Access control with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/access-control",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use IAM Conditions in the following places: Allow policy role bindings, including role bindings managed by Privileged Access Manager entitlements Deny policy rules Policy bindings for principal access boundary policies For more information, see the Attribute reference for Identity and Access Management Conditions .",
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Access control with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "To learn more about other management access tasks, such as revoking IAM roles or granting multiple IAM roles, see Manage access to projects, folders, and organizations in the IAM documentation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "request.auth.oauth.client",
+      "resource.service",
+      "tool.isReadOnly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "https://docs.cloud.google.com/mcp/access-control"
+      ]
+    }
+  ]
+}

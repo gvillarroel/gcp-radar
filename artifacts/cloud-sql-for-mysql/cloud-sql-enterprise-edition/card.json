@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Cloud SQL Enterprise edition",
+  "feature_slug": "cloud-sql-enterprise-edition",
+  "summary": "Cloud SQL Enterprise edition provides a Cloud SQL edition with distinct performance and availability characteristics.",
+  "extended_definition": "Cloud SQL Enterprise edition provides a Cloud SQL edition with distinct performance and availability characteristics.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/editions-intro",
+      "https://docs.cloud.google.com/sql/docs/mysql/choose-edition",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL editions overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/editions-intro",
+        "source_id": "site-docs-reference-3",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Cloud SQL for MySQL editions is a tier-based pricing model where each edition provides different performance, availability, observability, and data protection characteristics to support your various business and application needs.",
+          "Cloud SQL Enterprise edition : provides all core capabilities of Cloud SQL and is suitable for applications requiring less stringent availability and performance requirements.",
+          "Cloud SQL offers the following editions: Cloud SQL Enterprise Plus edition : provides the best performance, availability, and observability to run applications."
+        ]
+      },
+      {
+        "title": "\"Choose a Cloud SQL edition \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/choose-edition",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL Enterprise edition : provides all core capabilities of Cloud SQL and is suitable for applications with less stringent availability and performance requirements.",
+          "Cloud SQL offers the following editions: Cloud SQL Enterprise Plus edition : provides enhanced performance, availability, and observability to run applications.",
+          "Each edition provides different performance, availability, observability, and data protection characteristics to support your business and application needs."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Memory must be: 0.9 to 6.5 GB per vCPU A multiple of 256 MB At least 3.75 GB (3840 MB) For example, the following command creates a Cloud SQL Enterprise edition instance with two vCPUs and 7,680 MB of memory: gcloud sql instances create myinstance \\ --database-version = MYSQL 8 0 \\ --cpu = 2 \\ --memory = 7680MB \\ --region = us-central1 The following command creates a Cloud SQL Enterprise Plus edition instance with four cores: gcloud sql instances create myinstance \\ --database-version = MYSQL 8 0 31 \\ --tier = db-perf-optimized-N-4 \\ --edition = ENTERPRISE PLUS \\ --region = us-central1 The default value for REGION is us-central1 .",
+          "For Cloud SQL Enterprise edition instances: gcloud sql instances create INSTANCE NAME \\ --cpu = NUMBER CPUS \\ --memory = MEMORY SIZE \\ --region = REGION Or, alternatively, you can use the --tier flag if you choose db-f1-micro or db-g1-small as the machine type: gcloud sql instances create INSTANCE NAME \\ --tier = API TIER STRING \\ --region = REGION There are restrictions on the values for vCPUs and memory size: vCPUs must be either 1 or an even number between 2 and 96.",
+          "For Cloud SQL Enterprise Plus edition instances: gcloud sql instances create INSTANCE NAME \\ --region = REGION \\ --tier = TIER \\ --database-version = DATABASE VERSION \\ --edition = ENTERPRISE PLUS Note : If you specify a database version earlier than MySQL 8.4 (or don't specify a database version) and you don't specify an edition, then the default Cloud SQL edition of the instance is Enterprise."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/editions-intro",
+        "https://docs.cloud.google.com/sql/docs/mysql/choose-edition",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    }
+  ]
+}

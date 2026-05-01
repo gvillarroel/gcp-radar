@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.104Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Lending document classifier",
+  "feature_slug": "lending-document-classifier",
+  "summary": "Lending document classifier categorizes lending documents by form type.",
+  "extended_definition": "Lending document classifier categorizes lending documents by form type.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+      "https://docs.cloud.google.com/document-ai/docs/label-documents",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+      "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DocumentSchema \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "source_id": "site-api-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"documentSplitter\" : boolean , \"documentAllowMultipleLabels\" : boolean , \"prefixedNamingOnProperties\" : boolean , \"skipNamingValidation\" : boolean } Fields documentSplitter boolean If true, a document entity type can be applied to subdocument (splitting).",
+          "So the string values in DocumentSchema.EntityType.name and DocumentSchema.EntityType.Property.name won't be checked.",
+          "Otherwise, it can only be applied to the entire document (classification). documentAllowMultipleLabels boolean If true, on a given page, there can be multiple document annotations covering it. prefixedNamingOnProperties boolean If set, all the nested entities must be prefixed with the parents. skipNamingValidation boolean If set, this will skip the naming format validation in the schema."
+        ]
+      },
+      {
+        "title": "\"Create, use, and manage a custom document classifier \\_|\\_ Document AI \\_\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "This bucket contains pre-labeled documents in the Document JSON format. cloud-samples-data/documentai/Custom/Patents/JSON/Classification-InventionType From the Data split list, select Auto-split .",
+          "You typically would use a custom classifier on documents that are different types, then use the identification to pass the documents to an extraction processor to extract the entities.",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Input Enable by setting ProcessOptions.ocrConfig.advancedOcrOptions to [\"legacy layout\"] in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"advancedOcrOptions\" : [ \"legacy layout\" ] } } } Specify a page range By default, OCR extracts text and layout information from all pages in the documents.",
+          "Here is an example of LaTeX representation: Image detected Conversion to LaTeX Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableMathOcr to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableMathOcr\" : true } } } } Output The Math OCR output appears in Document.pages[].visualElements[] with \"type\": \"math formula\" . \"visualElements\" : [ { \"layout\" : { \"textAnchor\" : { \"textSegments\" : [ { \"endIndex\" : \"46\" } ] }, \"confidence\" : 1 , \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.14662756 , \"y\" : 0.27891156 }, { \"x\" : 0.9032258 , \"y\" : 0.27891156 }, { \"x\" : 0.9032258 , \"y\" : 0.8027211 }, { \"x\" : 0.14662756 , \"y\" : 0.8027211 } ] }, \"orientation\" : \"PAGE UP\" }, \"type\" : \"math formula\" } ] You can check the full Document JSON output in this link .",
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Label documents \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "source_id": "site-docs-root-2",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Initial reviews : The first few (10 or so) documents labeled for a use case by a new labeler should be reviewed before large numbers of documents are labeled to prevent a large number of mistakes that need to be corrected.",
+          "Use the import toolkit to convert existing labels from another system, for example, CSV format label to JSON documents.",
+          "Each time selective labeling is performed, the most diverse (up to 30) documents from the dataset is selected."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1.BatchDocumentsInputConfig",
+      "documentai.admin",
+      "documentai.googleapis.com",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/documentai.admin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents"
+      ]
+    }
+  ]
+}

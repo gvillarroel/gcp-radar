@@ -1,0 +1,200 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.409Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Network contexts",
+  "feature_slug": "network-contexts",
+  "summary": "Network contexts help meet security goals using fewer firewall policy rules more efficiently; Network contexts help meet security goals using fewer firewall policy rules more efficiently.",
+  "extended_definition": "Network contexts help meet security goals using fewer firewall policy rules more efficiently; Network contexts help meet security goals using fewer firewall policy rules more efficiently.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+      "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+      "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles",
+      "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"URL filtering service overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits of using the URL filtering service The URL filtering service helps you reduce required maintenance that is caused by frequently changing IP addresses, by DNS changes, and by other time-consuming IP address-based firewall changes.",
+          "A firewall policy rule references a security profile group to enable either the URL filtering service or the intrusion detection and prevention service, or both, for the network traffic.",
+          "You can build on any segmentation that you have set up by using tags in your network, and enhance the traffic inspection logic to include the URL filtering service."
+        ]
+      },
+      {
+        "title": "\"Security profile overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View details about the security profile in an organization Any of the following roles for the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) View all of the security profiles in an organization Any of the following roles for the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) Use a security profile in a security profile group Any of the following roles for the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) Quotas To view quotas associated with security profiles, see Quotas and limits .",
+          "Identity and Access Management roles Identity and Access Management (IAM) roles govern the following security profiles actions: Creating a security profile in an organization Modifying or deleting a security profile Viewing details of a security profile Viewing a list of security profiles in an organization Using a security profile in a security profile group The following table describes the roles that are necessary for each step.",
+          "Ability Necessary role Create a security profile Compute Network Admin ( roles/compute.networkAdmin ) and Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) roles on the organization where the security profile is created."
+        ]
+      },
+      {
+        "title": "\"Network Security API \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://networksecurity.googleapis.com REST Resource: v1beta1.organizations.locations.addressGroups Methods addItems POST /v1beta1/{addressGroup=organizations/ /locations/ /addressGroups/ }:addItems Adds items to an address group. cloneItems POST /v1beta1/{addressGroup=organizations/ /locations/ /addressGroups/ }:cloneItems Clones items from one address group to another. create POST /v1beta1/{parent=organizations/ /locations/ }/addressGroups Creates a new address group in a given project and location. delete DELETE /v1beta1/{name=organizations/ /locations/ /addressGroups/ } Deletes an address group. get GET /v1beta1/{name=organizations/ /locations/ /addressGroups/ } Gets details of a single address group. list GET /v1beta1/{parent=organizations/ /locations/ }/addressGroups Lists address groups in a given project and location. listReferences GET /v1beta1/{addressGroup=organizations/ /locations/ /addressGroups/ }:listReferences Lists references of an address group. patch PATCH /v1beta1/{addressGroup.name=organizations/ /locations/ /addressGroups/ } Updates parameters of an address group. removeItems POST /v1beta1/{addressGroup=organizations/ /locations/ /addressGroups/ }:removeItems Removes items from an address group.",
+          "This service provides the following discovery documents: https://networksecurity.googleapis.com/$discovery/rest?version=v1 https://networksecurity.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "Home Documentation Networking Cloud NGFW Reference Send feedback Network Security API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create and manage URL filtering security profiles \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create the URL filtering security profile, run the gcloud network-security security-profiles import command : gcloud network-security security-profiles import NAME \\ --location LOCATION \\ --source FILE NAME \\ --organization ORGANIZATION ID Alternatively, you can create a URL filtering security profile without a YAML file by using the gcloud network-security security-profiles url-filtering create command : gcloud network-security security-profiles url-filtering create NAME \\ --location LOCATION \\ --organization ORGANIZATION ID \\ --description DESCRIPTION Replace the following: NAME : the name of the URL filtering security profile; you can specify the name as a string or as a unique URL identifier.",
+          "Permissions networksecurity.securityProfiles.create networksecurity.securityProfiles.update (required only if a profile with the same name already exists) Roles Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) gcloud To import a URL filtering security profile from a YAML file, use the gcloud network-security security-profiles import command : gcloud network-security security-profiles import NAME \\ --organization ORGANIZATION ID \\ --location LOCATION \\ --source FILE NAME Replace the following: NAME : the name of the security profile of type url-filtering that you want to import; you can specify the name as a string or as a unique URL identifier.",
+          "Permissions networksecurity.securityProfiles.describe Roles Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) gcloud To export a URL filtering security profile to a YAML file, use the gcloud network-security security-profiles export command : gcloud network-security security-profiles export NAME \\ --organization ORGANIZATION ID \\ --location LOCATION \\ --destination FILE NAME Replace the following: NAME : the name of the security profile of type url-filtering that you want to export; you can specify the name as a string or as a unique URL identifier."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkAdmin",
+      "compute.networkUser",
+      "compute.networkViewer",
+      "networksecurity.googleapis.com",
+      "networksecurity.securityProfileAdmin",
+      "networksecurity.securityProfiles.create",
+      "networksecurity.securityProfiles.describe",
+      "networksecurity.securityProfiles.update",
+      "v1beta1.organizations.locations.addressGroups"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.networkUser",
+      "roles/compute.networkViewer",
+      "roles/networksecurity.securityProfileAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
+        "https://docs.cloud.google.com/firewall/docs/configure-urlf-security-profiles"
+      ]
+    }
+  ]
+}

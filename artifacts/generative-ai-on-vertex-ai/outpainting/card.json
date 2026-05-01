@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Outpainting",
+  "feature_slug": "outpainting",
+  "summary": "An editing feature that expands an image beyond a masked area; Outpainting lets you expand a masked area of an image.",
+  "extended_definition": "An editing feature that expands an image beyond a masked area; Outpainting lets you expand a masked area of an image.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and edit images on Vertex AI \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "With Gemini and Imagen on Vertex AI on Vertex AI, application developers can build next-generation AI products that transform their user's imagination into high-quality visual assets using AI generation, in seconds.",
+          "API reference overview : To view an overview of the API options for image generation and editing, see the imagegeneration model API reference .",
+          "Model versions There are multiple image generation models that you can use."
+        ]
+      },
+      {
+        "title": "\"OutpaintingProcessingConfig \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+        "source_id": "site-api-reference",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Fields top integer Number of pixels to expand the image and mask from the top value is an integer that has a minimum of 0 and a maximum of 500. bottom integer Number of pixels to expand the image and mask from the bottom value is an integer that has a minimum of 0 and a maximum of 500. left integer Number of pixels to expand the image and mask from the left value is an integer that has a minimum of 0 and a maximum of 500. right integer Number of pixels to expand the image and mask from the right value is an integer that has a minimum of 0 and a maximum of 500.",
+          "Default value: 0 enableBorderReplicatePadding boolean Parameter to enable recompute with BORDER REPLICATE mode for outpainting image padding. expansionConfig object ( ExpansionConfig ) Fix to one-side expansion issue by adding padding to the image and mask in the backend server and cropped them out in the post-processing.",
+          "JSON representation { \"blendingMode\" : string , \"blendingFactor\" : number , \"enableBorderReplicatePadding\" : boolean , \"expansionConfig\" : { object ( ExpansionConfig ) } } ExpansionConfig ExpansionConfig to fix one-side expansion issue by adding padding to the image and mask in the backend server and cropped them out in the post-processing."
+        ]
+      },
+      {
+        "title": "\"SemanticFilterConfig \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig",
+        "source_id": "site-api-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Final filter list is an union of filter classes and filter entities. enableSemanticFilter boolean Whether to enable semantic filtering mode, which enables the following parameters to apply semantic filter on image editing results. intersectRatioThreshold number A threshold value to decide what detected boxes should be included in semantic filter checking. additionalSampleCount integer Additional count of samples, expect a value between 0 and 4. semanticFilterMode string A string to specify semantic filter experimental mode.",
+          "This allows semantic filter to change the default behavior to filter generated images. detectionScoreThreshold number A detection confidence score threshold to decide which detection boxes are considered as the valid detections for semantic filter checking. intersectRatioThresholdOutpainting number For outpainting case.",
+          "Any detected object in the masked region bearing anyone of the class names will be checked. filterEntitiesOutpainting[] string For outpainting case."
+        ]
+      },
+      {
+        "title": "EditConfig \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig",
+        "source_id": "site-api-reference",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameter to enable post-processing blending for masked editing. outpaintingConfig object ( OutpaintingProcessingConfig ) Outpainting processing config. bgswapConfig object ( BackgroundSwapProcessingConfig ) Background swap processing config.",
+          "This config is only enabled in Editing config. experimentUseServoBackend boolean Experiment flag to use servo backend. editMode string The editing mode that describes the use case for editing.",
+          "Parameter to enable recompute with BORDER REPLICATE mode for outpainting image padding. enablePostProcessingBlend (deprecated) boolean This item is deprecated!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "image.png"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/OutpaintingProcessingConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/SemanticFilterConfig",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    }
+  ]
+}

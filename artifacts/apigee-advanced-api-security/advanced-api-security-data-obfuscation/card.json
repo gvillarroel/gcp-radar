@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.907Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Advanced API Security data obfuscation",
+  "feature_slug": "advanced-api-security-data-obfuscation",
+  "summary": "Data obfuscation support is now available for Advanced API Security use cases, including Apigee API Analytics-related protection.",
+  "extended_definition": "Data obfuscation support is now available for Advanced API Security use cases, including Apigee API Analytics-related protection.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "383372330 Apigee Emulator versions 1.13.0 up to but not including 1.15.1 FIXED in Apigee Emulator versions 1.15.1 and later All proxy deployments fail locally with error messages including Error parsing deployment report as JSON : 06 / 13 / 2025 6 : 45 PM EMULATOR INFO Deploying environment testenv , to Cont ainer apigee - 1.14.2 ( 1.14.2 ) 06 / 13 / 2025 6 : 45 PM EMULATOR ERROR Error parsing deployment report as JSON 06 / 13 / 2025 6 : 45 PM EMULATOR ERROR null 06 / 13 / 2025 6 : 45 PM EMULATOR ERROR Environment testenv deployment , to Cont ainer apigee - 1.14.2 ( 1.14.2 ) failed with Error : 500 06 / 13 / 2025 6 : 45 PM EMULATOR ERROR Deploy to Cont ainer apigee - 1.14.2 ( 1.14.2 ), failed with Error : Environment testenv deployment , to Cont ainer apigee - 1.14.2 ( 1.14.2 ) failed with Error : 500 Fix: Update to an Apigee Emulator version 1.15.1 or later.",
+          "List the ingress-manager pods to reinstall or recreate: kubectl get deployments -n APIGEE NAMESPACE Example output: NAME READY UP-TO-DATE AVAILABLE AGE apigee-controller-manager 1/1 1 1 32d apigee-ingressgateway-manager 2/2 2 2 32d Restart the ingress-manager pods: kubectl rollout restart deployment -n APIGEE NAMESPACE apigee-ingressgateway-manager After a few minutes, monitor the apigee-ingressgateway-manager pods: watch -n 10 kubectl -n APIGEE NAMESPACE get pods -l app=apigee-ingressgateway-manager Example output: NAME READY STATUS RESTARTS AGE apigee-ingressgateway-manager-12345abcde-678wx 3/3 Running 0 10m apigee-ingressgateway-manager-12345abcde-901yz 3/3 Running 0 10m 414499328 hybrid 1.14.1 FIXED in hybrid 1.14.3 and hybrid 1.15.0 ApigeeTelemetry can become stuck in creating state.",
+          "422757662 Apigee 1-15-0-apigee-5 hybrid 1.15.0 FIXED in Apigee 1-15-0-apigee-7 and Apigee 1-15-0-apigee-8 x-b3 headers not available when DistributedTrace is disabled In the Apigee 1-15-0-apigee-5 and hybrid 1.15.0 releases, Apigee stopped sending x-b3 headers to target endpoints when Distributed Trace is disabled."
+        ]
+      },
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "The main feature differences between v1 and v2 are: v2 includes: Improved reliability, including faster score calculations with recent proxy data Score calculation without the need to first attach a security profile to an environment Simplified score presentation, based on a 0% to 100% scale The concept of assessment check weights, which v1 does not support.",
+          "An assessment score that fluctuates could indicate that the API behavior is frequently changing, including proxies deployed without necessary security policies, shared flow modifications via flow hook deployments and FlowCallout policy additions, and target server changes in environment or proxy deployments.",
+          "Data delays The data that Advanced API Security security scores have the following processing windows before results are available: When you enable Advanced API Security in an organization for the first time, it takes time for the scores for existing proxies and targets to be reflected in an environment."
+        ]
+      },
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Abuse Detail tab If the incident or detected traffic includes detected anomalies, the Abuse Detail tab shows information about the detected anomalous events, including time series graphs of traffic from the IP address with anomalous events indicated.",
+          "Top rules detected : Displays up to five of the top groups of rules detected, including the following information: Dominant rules : The most significant detection rules that were triggered by the incident.",
+          "Advanced API Security uses machine learning models to detect patterns that are a sign of malicious activity, including API scraping and anomalies, and cluster events together based on similar patterns."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iamcredentials.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection"
+      ]
+    }
+  ]
+}

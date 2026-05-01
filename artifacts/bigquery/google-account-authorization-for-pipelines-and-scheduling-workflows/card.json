@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Google Account authorization for pipelines and scheduling workflows",
+  "feature_slug": "google-account-authorization-for-pipelines-and-scheduling-workflows",
+  "summary": "Google Account user credentials can authorize creating, scheduling, and running pipelines and scheduling notebooks and data preparations.",
+  "extended_definition": "Google Account user credentials can authorize creating, scheduling, and running pipelines and scheduling notebooks and data preparations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+      "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate Apache Hive Metastore tables to Google Cloud \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "To ensure that the service agent has the necessary permissions to run a Hive Metastore transfer, ask your administrator to grant the following IAM roles to the service agent on the project: Important: You must grant these roles to the service agent, not to your user account.",
+          "Configure permissions To configure permissions for a Hive Metastore transfer, do the following: The user or the service account creating the transfer should be granted the BigQuery Admin role ( roles/bigquery.admin ).",
+          "The service account should belong to the same Google Cloud project where the transfer configuration and destination dataset is created. bq To schedule Hive Metastore transfer, enter the bq mk command and supply the transfer creation flag --transfer config : bq mk --transfer config --data source = hadoop display name = ' TRANSFER NAME ' --service account name = ' SERVICE ACCOUNT ' --project id = ' PROJECT ID ' location = ' REGION ' --params = '{ \"transfer strategy\":\" TRANSFER STRATEGY \", \"table name patterns\":\" LIST OF TABLES \", \"table metadata path\":\"gs:// DUMPER BUCKET /hive-dumper-output.zip\", \"target gcs file path\":\"gs:// MIGRATION BUCKET \", \"metastore\":\" METASTORE \", \"destination dataproc metastore\":\" DATAPROC METASTORE URL \", \"destination bigquery dataset\":\" BIGLAKE METASTORE DATASET \", \"translation output gcs path\":\"gs:// TRANSLATION OUTPUT BUCKET /metadata/config/default database/\", \"storage type\":\" STORAGE TYPE \", \"agent pool name\":\" AGENT POOL NAME \", \"aws access key id\":\" AWS ACCESS KEY ID \", \"aws secret access key\":\" AWS SECRET ACCESS KEY \", \"azure sas token\":\" AZURE SAS TOKEN \", \"partition filter gcs path\":\" FILTER GCS PATH \" }' Replace the following: TRANSFER NAME : the display name for the transfer configuration."
+        ]
+      },
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "With end-user credentials, the catalog passes the identity of the end user accessing it to Cloud Storage for authorization checks.",
+          "To use credential vending, you must use a catalog in credential vending mode and add the X-Iceberg-Access-Delegation header to Iceberg REST catalog requests with a value of vended-credentials by adding the following line to the SparkSession builder: . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) Example with credential vending The following example configures the query engine with credential vending: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , 'gs:// CLOUD STORAGE BUCKET NAME ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f \"spark.sql.catalog. { catalog name } .token\" , \" TOKEN \" ) \\ . config ( f \"spark.sql.catalog. { catalog name } .oauth2-server-uri\" , \"https://oauth2.googleapis.com/token\" ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () For more information, see the Headers in the RESTCatalog section of the Iceberg documentation.",
+          "Configure with credential vending To use credential vending, you must use a catalog in credential vending mode and add the X-Iceberg-Access-Delegation header to Iceberg REST catalog requests with a value of vended-credentials by adding the following line to the SparkSession builder: . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) Example with credential vending The following example configures the query engine with credential vending: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , 'gs:// CLOUD STORAGE BUCKET NAME ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.X-Iceberg-Access-Delegation' , 'vended-credentials' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () For more information, see the Headers in the RESTCatalog section of the Iceberg documentation."
+        ]
+      },
+      {
+        "title": "BigQuery APIs and libraries overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can do this by using Application Default Credentials , a service account key file , or user credentials .",
+          "Examples of pipelines include scheduling periodic ingestions from Cloud Storage, automated ingestion of analytics data from other Google properties such as YouTube, or data transfers from third-party partners who integrate with the service.",
+          "For links to the reference documentation and source code, select a language: C++ API Reference Documentation Source Code C# API Reference Documentation Source Code Go API Reference Documentation Source Code Java API Reference Documentation Source Code Node.js API Reference Documentation Source Code PHP API Reference Documentation Source Code Python API Reference Documentation Source Code Ruby API Reference Documentation Source Code BigQuery Reservation API This API provides the mechanisms by which enterprise users can provision and manage dedicated resources such as slots and BigQuery BI Engine memory allocations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.googleapis.com",
+      "bigquery.admin",
+      "bigquerydatatransfer.googleapis.com",
+      "header.x",
+      "header.X",
+      "oauth2.googleapis.com",
+      "org.apache.iceberg.gcp.auth.GoogleAuthManager",
+      "org.apache.iceberg.gcp.gcs.GCSFileIO",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "output.zip",
+      "pyspark.context",
+      "pyspark.sql",
+      "rest.auth.type",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    }
+  ]
+}

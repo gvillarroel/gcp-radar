@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.141Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "AWS feed management log types",
+  "feature_slug": "aws-feed-management-log-types",
+  "summary": "Chronicle feed management API now supports additional AWS log types for creating AWS data feeds.",
+  "extended_definition": "Chronicle feed management API now supports additional AWS log types for creating AWS data feeds.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+      "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When finished, go to the Feed Management page to view a detailed summary of all configured log types.",
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB .",
+          "You can select from the following feed source types: Amazon Data Firehose Amazon S3 (Deprecated) Amazon S3 (V2) Amazon SQS (Deprecated) Amazon SQS (V2) Azure Blob Storage (Deprecated) Azure Blob Storage (V2) Google Cloud Pub/Sub Cloud Storage (Deprecated) Cloud Storage (V2) Cloud Storage Event Driven Third party API Webhook Important: When using Amazon S3 (Deprecated), Amazon SQS (Deprecated), Azure Blob Storage (Deprecated), and Google Cloud Cloud Storage (Deprecated) feeds, make sure that you have a valid directory path."
+        ]
+      },
+      {
+        "title": "\"Feed management overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google SecOps supports the following source types: Feed source type Description Third-party API Ingest data from a third-party API.",
+          "There are several ways to view a list of supported log types: Google SecOps UI : For information about how to view the list of supported log types for each source type, see Add a feed .",
+          "Note: The log types listed in third-party endpoints in the Feed UI are not listed in any other Cloud Storage options like AWS S3, AWS SQS, Google Cloud Storage, and Azure Blob Store."
+        ]
+      },
+      {
+        "title": "\"Forwarder Management \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "source_id": "site-api-reference",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: \"file settings\": { \"file path\": \"/opt/chronicle/edr/output/sample.txt\", } The collector types and their fields are listed in the subsequent rows of this table.",
+          "SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request(\"GET\", url) POST example uses json body = { \"foo\": \"bar\" } response = http session.request(\"POST\", url, json=body) PATCH example uses params and json params = { \"foo\": \"bar\" } response = http session.request(\"PATCH\", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.",
+          "Request example GET https://backstory.googleapis.com/v2/forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56 Response example { \"name\": \"forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56\", \"displayName\": \"chronicle forwarder\", \"config\": { \"uploadCompression\": \"false\", \"serverSettings\": { \"gracefulTimeout\": 15, \"drainTimeout\": 10, \"httpSettings\": { \"port\": \"8080\", \"host\": \"0.0.0.0\", \"readTimeout\": \"3\", \"readHeaderTimeout\": \"3\", \"writeTimeout\": \"3\", \"idleTimeout\": \"3\" \"routeSettings\": { \"availableStatusCode\": \"204\", \"readyStatusCode\": \"204\", \"unreadyStatusCode\": \"503\" }, }, }, }, \"state\": \"ACTIVE\" } List Forwarders Lists all of the forwarders for a Google SecOps instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "backstory.googleapis.com",
+      "demo.json",
+      "github.com",
+      "requests.AuthorizedSession",
+      "sample.txt",
+      "session.request"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api"
+      ]
+    }
+  ]
+}

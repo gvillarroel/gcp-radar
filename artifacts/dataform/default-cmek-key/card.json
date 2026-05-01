@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.108Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Default CMEK key",
+  "feature_slug": "default-cmek-key",
+  "summary": "A default CMEK key lets a project encrypt multiple Dataform repositories with the same customer-managed encryption key.",
+  "extended_definition": "A default CMEK key lets a project encrypt multiple Dataform repositories with the same customer-managed encryption key.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/cmek",
+      "https://docs.cloud.google.com/dataform/docs/create-repository",
+      "https://docs.cloud.google.com/dataform/docs/create-tables",
+      "https://docs.cloud.google.com/dataform/docs/repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use customer-managed encryption keys \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 301,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set a default Dataform CMEK key Setting a default Dataform CMEK key for your Google Cloud project lets you encrypt multiple repositories with the same CMEK key.",
+          "Use Dataform default CMEK keys To encrypt multiple Dataform repositories with the same CMEK key, you can set a default Dataform CMEK key for your Google Cloud project.",
+          "Click Save to apply the role to the service account. gcloud You can use the Google Cloud CLI to assign the role: gcloud kms keys add-iam-policy-binding \\ --project= KMS PROJECT ID \\ --member serviceAccount: SERVICE AGENT \\ --role roles/cloudkms.cryptoKeyEncrypterDecrypter \\ --location= KMS KEY LOCATION \\ --keyring= KMS KEY RING \\ KMS KEY Replace the following: KMS PROJECT ID : the ID of your Google Cloud project that is running Cloud KMS SERVICE AGENT : the email address of your default Dataform service agent KMS KEY LOCATION : the location name of your Cloud KMS key KMS KEY RING : the key ring name of your Cloud KMS key KMS KEY : the key name of your Cloud KMS key Apply a CMEK organization policy Dataform is integrated with two organization policy constraints to help ensure CMEK usage across an organization: constraints/gcp.restrictNonCmekServices is used to require CMEK protection. constraints/gcp.restrictCmekCryptoKeyProjects is used to limit which Cloud KMS keys are used for CMEK protection."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Caution: If you select the Use the default KMS key checkbox but no default Dataform CMEK key is set for your project, Dataform applies encryption at rest to the repository.",
+          "You can use the default encryption , a unique customer-managed Cloud KMS encryption key, or a default Dataform CMEK key.",
+          "To encrypt the repository with the default Dataform CMEK key, leave the Use the default KMS key checkbox selected."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/repositories",
+        "source_id": "site-docs-root-2",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Caution: If you select the Use the default KMS key checkbox but no default Dataform CMEK key is set for your project, Dataform applies encryption at rest to the repository.",
+          "You can use the default encryption , a unique customer-managed Cloud KMS encryption key, or a default Dataform CMEK key.",
+          "To encrypt the repository with the default Dataform CMEK key, leave the Use the default KMS key checkbox selected."
+        ]
+      },
+      {
+        "title": "Create tables \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "source_id": "site-docs-root-2",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows an incremental table with the transaction id column set as uniqueKey to verify it always contains one row: config { type: \"incremental\", uniqueKey: [\"transaction id\"] } SELECT timestamp, action FROM weblogs.user actions ${ when(incremental(), WHERE timestamp > (SELECT MAX(timestamp) FROM ${self()})) } Filter rows in an incremental table In an incremental partitioned table, to avoid Dataform scanning the whole table to find matching rows, set updatePartitionFilter to only consider a subset of records.",
+          "The ref function lets you reference and automatically depend on the following objects defined in your Dataform workflow, instead of hard coding the schema and table names: Tables of all supported table types .",
+          "If you configure the updatePartitionFilter property without the uniqueKey property, Dataform uses an insert strategy instead of a merge strategy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "weblogs.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-tables"
+      ]
+    }
+  ]
+}

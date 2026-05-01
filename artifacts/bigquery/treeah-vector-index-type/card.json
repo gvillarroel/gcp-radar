@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "TreeAH vector index type",
+  "feature_slug": "treeah-vector-index-type",
+  "summary": "BigQuery vector indexes now support the TreeAH index type based on Google's ScaNN algorithm for efficient batch embedding processing; BigQuery vector indexes support the TreeAH index type, which uses Google's ScaNN algorithm and is optimized for batch queries with many query vectors.",
+  "extended_definition": "BigQuery vector indexes now support the TreeAH index type based on Google's ScaNN algorithm for efficient batch embedding processing; BigQuery vector indexes support the TreeAH index type, which uses Google's ScaNN algorithm and is optimized for batch queries with many query vectors.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE VECTOR INDEX statement: There is no charge for the processing required to build and refresh your vector indexes as long as the total size of the indexed table data is below your per-organization limit .",
+          "When you use vector indexes with vector search, you can take advantage of foundational technologies like inverted file indexing (IVF) and the ScaNN algorithm .",
+          "Pricing The VECTOR SEARCH and AI.SEARCH functions and the CREATE VECTOR INDEX statement use BigQuery compute pricing ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required permissions To get the permissions that you need to alter vector indexes, ask your administrator to grant you the BigQuery Data Editor ( roles/bigquery.dataEditor ) or BigQuery Data Owner ( roles/bigquery.dataOwner ) IAM role on your table.",
+          "For more information, see TreeAH index . distance type STRING Specifies the default distance type to use when performing a vector search using this index.",
+          "You can only partition TreeAH indexes. ( Preview ) index option list : The list of options to set on the vector index."
+        ]
+      },
+      {
+        "title": "\"Perform semantic search and retrieval-augmented generation \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, run the following SQL statement: CREATE OR REPLACE VECTOR INDEX my index ON bqml tutorial.embeddings ( embedding ) OPTIONS ( index type = 'IVF' , distance type = 'COSINE' , ivf options = '{\"num lists\":500}' ) Creating a vector index typically takes only a few seconds.",
+          "Go to BigQuery In the query editor, run the following SQL statement: SELECT table name , index name , index status , coverage percentage , last refresh time , disable reason FROM PROJECT ID .bqml tutorial.INFORMATION SCHEMA.VECTOR INDEXES Replace PROJECT ID with your project ID.",
+          "You can check whether the index is ready to be used by querying the INFORMATION SCHEMA.VECTOR INDEXES view and verifying that the coverage percentage column value is greater than 0 and the last refresh time column value isn't NULL ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "tutorial.embeddings",
+      "tutorial.INFORMATION"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-index-text-search-tutorial"
+      ]
+    }
+  ]
+}

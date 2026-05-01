@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.281Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub-lite/card.json",
+  "product_name": "Pub/Sub Lite",
+  "product_slug": "pub-sub-lite",
+  "feature_name": "Kafka Shim Java client library for Pub/Sub Lite",
+  "feature_slug": "kafka-shim-java-client-library-for-pub-sub-lite",
+  "summary": "The Kafka Shim Java client library for Pub/Sub Lite is generally available; The Kafka Shim Java client library lets you use the Kafka API with Pub/Sub Lite as a backend.",
+  "extended_definition": "The Kafka Shim Java client library for Pub/Sub Lite is generally available; The Kafka Shim Java client library lets you use the Kafka API with Pub/Sub Lite as a backend.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.AsyncPublisherClient",
+      "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.PublisherClient",
+      "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.subscriber_client.AsyncSubscriberClient",
+      "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.subscriber_client.SubscriberClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class AsyncSubscriberClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.subscriber_client.AsyncSubscriberClient",
+        "source_id": "site-python-reference",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClientOptions ] = None ) An AsyncSubscriberClient reads messages similar to Google Pub/Sub, but must be used in an async context.",
+          "Optional [ google . cloud . pubsublite . cloudpubsub . message transformer .",
+          "Optional [ google . cloud . pubsublite . cloudpubsub . message transformer ."
+        ]
+      },
+      {
+        "title": "\"Class SubscriberClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.subscriber_client.SubscriberClient",
+        "source_id": "site-python-reference",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClientOptions ] = None ) A SubscriberClient reads messages similar to Google Pub/Sub.",
+          "Optional [ google . cloud . pubsublite . cloudpubsub . message transformer .",
+          "Optional [ google . cloud . pubsublite . cloudpubsub . message transformer ."
+        ]
+      },
+      {
+        "title": "\"Class AsyncPublisherClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.AsyncPublisherClient",
+        "source_id": "site-python-reference",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClientOptions ] = None , enable idempotence : bool = False ) An AsyncPublisherClient publishes messages similar to Google Pub/Sub, but must be used in an async context.",
+          "ClientOptions ] = None , enable idempotence : bool = False ) Create a new AsyncPublisherClient. aenter aenter () Return self upon entering the runtime context. aexit aexit ( exc type , exc value , traceback ) Raise any exception triggered within the runtime context. publish publish ( topic : typing .",
+          "Version latest keyboard arrow down 1.13.0 (latest) 1.12.0 1.11.1 1.10.0 1.9.0 1.8.3 1.7.0 1.6.0 1.5.0 1.4.3 1.3.0 1.2.0 1.1.4 1.0.2 0.6.1 0.5.0 0.4.1 0.3.0 0.2.0 0.1.0 AsyncPublisherClient ( , per partition batching settings : typing ."
+        ]
+      },
+      {
+        "title": "\"Class PublisherClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.PublisherClient",
+        "source_id": "site-python-reference",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClientOptions ] = None , enable idempotence : bool = False ) A PublisherClient publishes messages similar to Google Pub/Sub.",
+          "ClientOptions ] = None , enable idempotence : bool = False ) Create a new PublisherClient. enter enter () Return self upon entering the runtime context. exit exit ( exc type , exc value , traceback ) Raise any exception triggered within the runtime context. publish publish ( topic : typing .",
+          "Version latest keyboard arrow down 1.13.0 (latest) 1.12.0 1.11.1 1.10.0 1.9.0 1.8.3 1.7.0 1.6.0 1.5.0 1.4.3 1.3.0 1.2.0 1.1.4 1.0.2 0.6.1 0.5.0 0.4.1 0.3.0 0.2.0 0.1.0 PublisherClient ( , per partition batching settings : typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.pubsublite"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.subscriber_client.AsyncSubscriberClient",
+        "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.subscriber_client.SubscriberClient",
+        "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.AsyncPublisherClient",
+        "https://docs.cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.PublisherClient"
+      ]
+    }
+  ]
+}

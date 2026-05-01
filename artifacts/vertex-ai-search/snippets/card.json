@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.013Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Snippets",
+  "feature_slug": "snippets",
+  "summary": "Vertex AI Search snippets are now supported in 25 languages.",
+  "extended_definition": "Vertex AI Search snippets are now supported in 25 languages.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google is continuously improving out-of-the-box \\u003cb\\u003eperformance of Spanner\\u003c/b\\u003e and reducing the need for manual tuning.\", \"snippetStatus\": \"SUCCESS\" } ] } ] } } ] } ] }, \"answerQueryToken\": \"NMwKDAj1 d62BhC72 X AhIkNjZkN2I4YWEtMDAwMC0yYTdiLWIxMmMtMDg5ZTA4MjhlNzY0\" } In this example, the query is decomposed into parts: \"What is the performance of Spanner?\" and \"What is the performance of BigQuery?\" Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "This page provides an overview of supported statements in \\u003cb\\u003eGoogleSQL\\u003c/b\\u003e.\", \"snippetStatus\": \"SUCCESS\" } ] } ] } } ] } ] }, \"answerQueryToken\": \"NMwKDAiFm y2BhC nfrYAxIkNjZkYjg3NjItMDAwMC0yZTBkLTg0ZDAtMDg5ZTA4MmRjYjg0\" } Python For more information, see the Vertex AI Search Python API reference documentation .",
+          "By choosing this approach to ...\", \"snippetStatus\": \"SUCCESS\" } ] } ] } } ] } ] }, \"answerQueryToken\": \"M8gKCwjp t62BhC7wOFMEiQ2NmQ3YjhhZS0wMDAwLTJhN2ItYjEyYy0wODllMDgyOGU3NjQ\" } Python For more information, see the Vertex AI Search Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "ContentSearchSpec JSON representation { \"snippetSpec\" : { object ( SnippetSpec ) } , \"summarySpec\" : { object ( SummarySpec ) } , \"extractiveContentSpec\" : { object ( ExtractiveContentSpec ) } , \"searchResultMode\" : enum ( SearchResultMode ) , \"chunkSpec\" : { object ( ChunkSpec ) } } Fields snippetSpec object ( SnippetSpec ) If snippetSpec is not specified, snippets are not included in the search response. summarySpec object ( SummarySpec ) If summarySpec is not specified, summaries are not included in the search response. extractiveContentSpec object ( ExtractiveContentSpec ) If there is no extractive content spec provided, there will be no extractive answer in the search response. searchResultMode enum ( SearchResultMode ) Specifies the search result mode.",
+          "Only available if the SearchRequest.ContentSearchSpec.search result mode is set to CHUNKS SnippetSpec JSON representation { \"maxSnippetCount\" : integer , \"referenceOnly\" : boolean , \"returnSnippet\" : boolean } Fields maxSnippetCount (deprecated) integer This item is deprecated! [DEPRECATED] This field is deprecated.",
+          "Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Get search results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "source_id": "site-iam-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search\" \\ -d '{ \"servingConfig\": \"projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search\", \"query\": \" QUERY \", \"pageSize\": \" PAGE SIZE \", \"offset\": \" OFFSET \", \"orderBy\": \" ORDER BY \", \"params\": {\"user country code\": \" USER COUNTRY CODE \", \"searchType\": \" SEARCH TYPE \"}, \"filter\": \" FILTER \", \"boostSpec\": \" BOOST SPEC \", \"contentSearchSpec\": { \"searchResultMode\": \" RESULT MODE \" }, \"userPseudoId\": \" USER PSEUDO ID \", \"dataStoreSpecs\": [{\" DATA STORE SPEC \"}] }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:search\" \\ -d '{ \"query\": \" QUERY \", \"userPseudoId\": \" USER PSEUDO ID \", \"pageSize\": \" PAGE SIZE \", \"offset\": \" OFFSET \", \"orderBy\": \" ORDER BY \", \"filter\": \" FILTER \", \"boostSpec\": \" BOOST SPEC \", \"facetSpec\": \" FACET SPEC \", \"queryExpansionSpec\": \" QUERY EXPANSION SPEC \", \"spellCorrectionSpec\": \" SPELL CORRECTION SPEC \", \"contentSearchSpec\": \" CONTENT SEARCH SPEC \", \"dataStoreSpecs\": [{\" DATA STORE SPEC \"}], }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "For more information, see Set up authentication for a local development environment . using Google.Api.Gax ; using Google.Cloud.DiscoveryEngine.V1Beta ; using Google.Protobuf.WellKnownTypes ; using System ; public sealed partial class GeneratedSearchServiceClientSnippets { /// <summary>Snippet for Search</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void SearchRequestObject () { // Create client SearchServiceClient searchServiceClient = SearchServiceClient ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "columns.Hereby",
+      "columns.To",
+      "connected.If",
+      "criteria.The",
+      "data.After",
+      "database.When",
+      "database.With",
+      "database.You",
+      "databases.Each",
+      "databases.Is",
+      "developed.It",
+      "discoveryengine.googleapis.com",
+      "distros.SQL",
+      "firstname.Next",
+      "firstname.When",
+      "hash.Login",
+      "information.The",
+      "job.There",
+      "language.SQL",
+      "language.SQLite",
+      "manner.This",
+      "method.For",
+      "no.Yes",
+      "others.For",
+      "people.Then",
+      "predicates.WHERE",
+      "premium.SQL",
+      "products.They",
+      "products.This",
+      "program.SQLite3",
+      "queries.When",
+      "recordset.A",
+      "server.This",
+      "servers.Structured",
+      "sheet.Description",
+      "shown.A",
+      "tables.Although",
+      "tool.It",
+      "unfamiliar.Bypass",
+      "vendor.Every"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    }
+  ]
+}

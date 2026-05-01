@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable Spark connector",
+  "feature_slug": "bigtable-spark-connector",
+  "summary": "The Bigtable Spark connector now supports reading and writing with Spark SQL and DataFrames.",
+  "extended_definition": "The Bigtable Spark connector now supports reading and writing with Spark SQL and DataFrames.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/beam-connector",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/data-boost-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable Data Boost overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following are ideal use cases for Data Boost: Scheduled or triggered export or ETL pipeline jobs from Bigtable to Cloud Storage for data enrichment, analysis, archiving, offline ML model training, or ingestion by your customers' third-party partners ETL using a tool such as Dataflow for short scan or batch read processes that support in-place aggregations, rule-based transformations for MDM, or ML jobs Spark applications that use the Bigtable Spark connector to read Bigtable data Ad hoc queries and scheduled analytics jobs that use BigQuery external tables to read Bigtable data.",
+          "Use the Bigtable Spark connector.",
+          "This is especially true if your instance uses replication and you are reading data that was written to a cluster in a different region than you are reading from."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Composite keys are imitated by joining the data of multiple columns by using a common delimiter—for example, the hash (#) or percent (%) symbols. node : a machine responsible for reading and writing data that's associated with a series of primary key partition hash ranges.",
+          "In Cassandra, data is stored on block-level storage that's attached to the node server. node : a virtual compute resource responsible for reading and writing data that's associated with a series of row key ranges.",
+          "The Java client understands your CQL queries, and lets you use Bigtable transparently with your existing Cassandra-based application without rewriting code."
+        ]
+      },
+      {
+        "title": "Bigtable Beam connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/beam-connector",
+        "source_id": "site-docs-root-2",
+        "final_score": 55,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you are migrating from HBase to Bigtable or you are running an application uses the HBase API instead of the Bigtable APIs, use the Bigtable HBase Beam connector ( CloudBigtableIO ) instead of the connector described on this page.",
+          "Bigtable Kafka Connect sink connector Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Bigtable Beam connector The Bigtable Beam connector ( BigtableIO ) is an open source Apache Beam I/O connector that can help you perform batch and streaming operations on Bigtable data in a pipeline using Dataflow ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/beam-connector"
+      ]
+    }
+  ]
+}

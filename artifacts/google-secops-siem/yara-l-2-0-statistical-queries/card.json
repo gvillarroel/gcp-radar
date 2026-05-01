@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.409Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "YARA-L 2.0 statistical queries",
+  "feature_slug": "yara-l-2-0-statistical-queries",
+  "summary": "YARA-L 2.0 now supports statistical queries and result grouping over UDM events for analysis.",
+  "extended_definition": "YARA-L 2.0 now supports statistical queries and result grouping over UDM events for analysis.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.",
+          "When you use a data table in your YARA-L search, the results reference the data table rows linked to the matching events.",
+          "View aggregated results For statistics-based searches, Google SecOps supports large aggregated result sets."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Functions Supported in: Google secops SIEM This section describes the YARA-L 2.0 functions that you can use in Rules, Search, and Dashboard queries.",
+          "Param data types INT FLOAT , BOOL Return type FLOAT Code samples Example 1 This example returns the median when the input values aren't zero. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 2 if the file sizes in the match window are [1, 2, 3] condition: $e } Example 2 This example returns the median when the input includes some zero values that shouldn't be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 3 This example returns the median when the input includes some zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size, true) // returns 2 if the file sizes in the match window are [0,0, 1, 2, 3] condition: $e } Example 4 This example returns the median when the input includes all zero values which should be ignored. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 0 if the file sizes in the match window are [0,0] condition: $e } Example 5 This example shows that, when there are multiple medians, only one median is returned. rule median file size { meta: events: $e.metadata.event type = \"FILE COPY\" $userid = $e.principal.user.userid match: $userid over 1h outcome: $median file size = window.median($e.principal.file.size) // returns 1 if the file sizes in the match window are [1, 2, 3, 4] condition: $e } window.mode Supported in: Rules window.mode(values) Description Return the mode of the input values.",
+          "Param data types INT FLOAT Return type FLOAT Code samples Example 1 This example returns the standard deviation of integers in a match window. // This rule creates a detection when the file size stddev in 5 minutes for a user is over a threshold. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 4.0 if the event file size values in the match window are [10, 14, 18]. condition: $e and #p1 > 2 Example 2 This example returns the standard deviation of floats in a match window. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 4.488686 if the event file size values in the match window are [10.00, 14.80, 18.97]. condition: $e and #p1 > 2 Example 3 This example returns the standard deviation in a match window that contains negative numbers. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 48.644972 if the event file size values in the match window are [-1, -56, -98]. condition: $e and #p1 > 2 Example 4 This example returns with zero standard deviation when all values in the match window are the same. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 0.000000 if the event file size values in the match window are [1, 1, 1]. condition: $e and #p1 > 2 Example 5 This example returns the standard deviation of a match window containing positive and negative numbers. events: $e.user.userid = $userid match: $userid over 5m outcome: $p1 = window.stddev($e.file.size) // yields 1.000000 if the event file size values in the match window are [1, 0, -1]. condition: $e and #p1 > 10 window.variance Supported in: Rules window.variance(values) Description This function returns the specified variance of the input values."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request POST https://backstory.googleapis.com/v2/detect/rules:streamTestRule Request body { \"rule\": { \"ruleText\": \"<ruleText here>\" }, \"startTime\": \"<startTime here>\", \"endTime\": \"<endTime here>\", \"maxResults\": \"<maxResults here>\", } Body parameters Parameter Name Value Required Description rule.ruleText string Required Text of the new rule in YARA-L 2.0 format. startTime string Required Start time for the time range of logs being processed, in RFC 3339 format. endTime string Required End time for the time range of logs being processed, in RFC 3339 format. maxResults integer Optional Maximum number of results to return.",
+          "Sample response { \"retrohuntId\": \"oh d738c8ea-8fd7-4cc1-b43d-25835b8e1785\", \"ruleId\": \"ru 30979d84-aa89-47d6-bf4d-b4bb0eacb497\", \"versionId\": \"ru 30979d84-aa89-47d6-bf4d-b4bb0eacb497@v 1612472807 179679000\", \"eventStartTime\": \"2021-01-14T23:00:00Z\", \"eventEndTime\": \"2021-01-30T23:00:00Z\", \"retrohuntStartTime\": \"2021-02-08T02:40:59.192113Z\", \"state\": \"RUNNING\" } StreamDetectionAlerts Continuously receive Detection Engine results over an HTTP stream as the detections are discovered.",
+          "VerifyRule Verifies that a rule is a valid YARA-L 2.0 rule without creating a new rule or evaluating it over data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "backstory.googleapis.com",
+      "customername.backstory.chronicle.security",
+      "e.file.size",
+      "e.metadata.event",
+      "e.principal.file.size",
+      "e.principal.user.userid",
+      "e.user.userid",
+      "rule.ruleText",
+      "window.median",
+      "window.mode",
+      "window.stddev",
+      "window.variance"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ]
+}

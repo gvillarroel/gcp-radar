@@ -1,0 +1,250 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.056Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "CMEK support in Cloud Console",
+  "feature_slug": "cmek-support-in-cloud-console",
+  "summary": "Eventarc can use customer-managed encryption keys when configured through Cloud Console.",
+  "extended_definition": "Eventarc can use customer-managed encryption keys when configured through Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+      "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+      "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 311,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On the Trigger details page, the Encryption status displays, the message, Events encrypted using Customer-managed encryption keys . gcloud To confirm the CMEK key, you can use the google-channels describe command. gcloud eventarc google-channels describe \\ --location = LOCATION The output should be similar to the following: cryptoKeyName: projects/ PROJECT ID /locations/ LOCATION /keyRings/ RING NAME /cryptoKeys/ KEY NAME name: projects/ PROJECT ID /locations/ LOCATION /googleChannelConfig updateTime: '2022-06-28T17:24:56.365866104Z' The cryptokeyName value shows the Cloud KMS key used for the Google channel.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Eventarc.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"cryptoKeyName\": \"\" } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://eventarc.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /channels/ CHANNEL NAME ?updateMask=cryptoKeyName\" Select-Object -Expand Content If successful, the response body contains a newly created instance of Operation : { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.eventarc.v1.OperationMetadata\", \"createTime\": \"2024-01-25T17:17:45.782370139Z\", \"target\": \"projects/ PROJECT ID /locations/ LOCATION /channels/ CHANNEL NAME \", \"verb\": \"update\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Apply a CMEK organization policy Eventarc is integrated with two organization policy constraints to help ensure CMEK usage across an organization: constraints/gcp.restrictNonCmekServices is used to require CMEK protection. constraints/gcp.restrictCmekCryptoKeyProjects is used to limit which Cloud KMS keys are used for CMEK protection."
+        ]
+      },
+      {
+        "title": "\"Create custom organization policy constraints for Eventarc \\_|\\_ Eventarc\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Constraint syntax Require CMEK key name : organizations/ ORGANIZATION ID /customConstraints/custom.eventarcCMEKOrgPolicy resourceTypes : - eventarc.googleapis.com/Channel methodTypes : - CREATE condition : \"resource.cryptoKeyName.contains('projects/my-project/')\" actionType : ALLOW displayName : Enforce the use of a CMEK key from my-project description : All Eventarc channels must be created with a CMEK key from my-project Deny CMEK key name : organizations/ ORGANIZATION ID /customConstraints/custom.eventarcGoogleChannelKey resourceTypes : - eventarc.googleapis.com/GoogleChannelConfig methodTypes : - CREATE - UPDATE condition : \"resource.cryptoKeyName.contains('projects/my-project/')\" actionType : DENY displayName : Constrain the use of CMEK keys from my-project description : CMEK keys from a specific project are denied when creating or updating the configuration that supports using a Google Cloud service as an event source Require logging severity name : organizations/ ORGANIZATION ID /customConstraints/custom.eventarcPipelineErrorLog resourceTypes : - eventarc.googleapis.com/Pipeline methodTypes : - CREATE condition : \"resource.loggingConfig.logSeverity=='ERROR'\" actionType : ALLOW displayName : Enforce minimum severity for log entries description : All Eventarc Advanced pipelines must be configured with a logging level of ERROR applied Deny destination name : organizations/ ORGANIZATION ID /customConstraints/custom.eventarcTriggerNoTestDestination resourceTypes : - eventarc.googleapis.com/Trigger methodTypes : - CREATE condition : \"resource.destination.cloudRun.service.contains('test')\" actionType : DENY displayName : Constrain Cloud Run service destinations description : Specific Cloud Run service destinations are denied when creating an Eventarc Standard trigger Eventarc supported resources The following table lists the Eventarc resources that you can reference in custom constraints.",
+          "Advanced Standard This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: eventarc.googleapis.com/Channel eventarc.googleapis.com/ChannelConnection eventarc.googleapis.com/Enrollment eventarc.googleapis.com/GoogleApiSource eventarc.googleapis.com/GoogleChannelConfig eventarc.googleapis.com/MessageBus eventarc.googleapis.com/Pipeline eventarc.googleapis.com/Trigger To learn more about Organization Policy, see Custom organization policies .",
+          "Limitations To apply a custom organization policy constraint to a Pub/Sub topic created by Eventarc and used as a trigger's transport layer ( resource.transport.pubsub.topic ), you must enforce the constraint on the Pub/Sub topic resource instead, and not the Eventarc Standard trigger."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.eventarc.publishing.v1 \\_|\\_ Eventarc \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "source_id": "site-api-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ChannelConnection is a first-class Eventarc resource that is created and managed by the partner in their Google Cloud project.",
+          "Channel is a first-class Eventarc resource that is created and managed by the subscriber in their Google Cloud project.",
+          "Bus is a first-class Eventarc resource that is created and managed in a Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Build a BigQuery processing pipeline for Knative serving with Eventarc \\_\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following roles are bound: roles/compute.viewer roles/container.developer roles/iam.serviceAccountAdmin Create a service account and bind access roles Before creating the Eventarc trigger, set up a user-managed service account and grant it specific roles so that Eventarc can forward Pub/Sub events.",
+          "Create an Identity and Access Management (IAM) binding between the service accounts: PROJECT NUMBER = \" $( gcloud projects describe $( gcloud config get-value project ) --format = 'value(projectNumber)' ) \" gcloud iam service-accounts add-iam-policy-binding \\ --role roles/iam.workloadIdentityUser \\ --member \"serviceAccount: $PROJECT ID .svc.id.goog[default/default]\" \\ $PROJECT NUMBER -compute@developer.gserviceaccount.com Add the iam.gke.io/gcp-service-account annotation to the GKE service account, using the email address of the compute service account: kubectl annotate serviceaccount \\ --namespace default \\ default \\ iam.gke.io/gcp-service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com Enable GKE destinations To allow Eventarc to manage resources in the GKE cluster, enable GKE destinations and bind the Eventarc service account with the required roles.",
+          "Make sure that the bucket and the charts are publicly available, and in the same region as your GKE service: export BUCKET = \" $( gcloud config get-value core/project ) -charts\" gcloud storage buckets create gs:// ${ BUCKET } --location = $( gcloud config get-value run/region ) gcloud storage buckets update gs:// ${ BUCKET } --uniform-bucket-level-access gcloud storage buckets add-iam-policy-binding gs:// ${ BUCKET } --member = allUsers --role = roles/storage.objectViewer Clone the repository Clone the GitHub repository. git clone https://github.com/GoogleCloudPlatform/eventarc-samples cd eventarc-samples/processing-pipelines Deploy the notifier service From the bigquery/notifier/python directory, deploy a Knative serving service that receives chart creator events and uses SendGrid to email links to the generated charts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.viewer",
+      "container.developer",
+      "custom.eventarcCMEKOrgPolicy",
+      "custom.eventarcGoogleChannelKey",
+      "custom.eventarcPipelineErrorLog",
+      "custom.eventarcTriggerNoTestDestination",
+      "developer.gserviceaccount.com",
+      "eventarc.googleapis.com",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "github.com",
+      "iam.gke.io",
+      "iam.serviceAccountAdmin",
+      "iam.workloadIdentityUser",
+      "request.json",
+      "resource.cryptoKeyName.contains",
+      "resource.destination.cloudRun.service.contains",
+      "resource.loggingConfig.logSeverity",
+      "resource.transport.pubsub.topic",
+      "storage.objectViewer",
+      "svc.id.goog",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.viewer",
+      "roles/container.developer",
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.workloadIdentityUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/use-cmek",
+        "https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+      ]
+    }
+  ]
+}

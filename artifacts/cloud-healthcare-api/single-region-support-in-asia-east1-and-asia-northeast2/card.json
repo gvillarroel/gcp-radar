@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.664Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "Single-region support in asia-east1 and asia-northeast2",
+  "feature_slug": "single-region-support-in-asia-east1-and-asia-northeast2",
+  "summary": "Cloud Healthcare API adds single-region availability for the asia-east1 (Taiwan) and asia-northeast2 (Osaka, Japan) regions; Cloud Healthcare API adds single-region availability for the asia-east1 (Taiwan) and asia-northeast2 (Osaka, Japan) regions.",
+  "extended_definition": "Cloud Healthcare API adds single-region availability for the asia-east1 (Taiwan) and asia-northeast2 (Osaka, Japan) regions; Cloud Healthcare API adds single-region availability for the asia-east1 (Taiwan) and asia-northeast2 (Osaka, Japan) regions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+      "https://docs.cloud.google.com/healthcare-api/docs/requirements"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Regions \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud Healthcare API is available in the following regions: Regional locations Region name Region description Americas northamerica-northeast1 Montréal northamerica-northeast2 Toronto us-central1 Iowa us-east1 South Carolina us-east4 North Virginia us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City southamerica-east1 São Paulo Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne Europe europe-north1 Finland europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zurich Middle East me-west1 Tel Aviv me-central1 Doha me-central2 Dammam Multi-regional locations Multi-region name Multi-region description us Data centers in the United States eu Data centers within member states of the European Union Location quota requests You can request a quota increase for the Cloud Healthcare API in a specific region , or in a multi-region location .",
+          "Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback Regions Stay organized with collections Save and categorize content based on your preferences.",
+          "Available regions The Cloud Healthcare API supports a subset of the full list of Google Cloud locations ."
+        ]
+      },
+      {
+        "title": "Requirements \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/requirements",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Regions and versions Cloud regions Only these Google Cloud regions are available: Regional locations Region name Region description Americas northamerica-northeast1 Montréal northamerica-northeast2 Toronto us-central1 Iowa us-east1 South Carolina us-east4 North Virginia us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City southamerica-east1 São Paulo Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne Europe europe-north1 Finland europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zurich Middle East me-west1 Tel Aviv me-central1 Doha me-central2 Dammam Multi-regional locations Multi-region name Multi-region description us Data centers in the United States eu Data centers in Europe Google Cloud CLI Cloud Healthcare API requires version 236.0.0 or higher of the Google Cloud CLI .",
+          "Home Documentation Industry solutions Cloud Healthcare API Resources Send feedback Requirements Stay organized with collections Save and categorize content based on your preferences.",
+          "Permitted characters and size requirements Resources in the Cloud Healthcare API are limited to certain characters and might be limited to certain lengths."
+        ]
+      },
+      {
+        "title": "\"Enable customer-managed encryption keys (CMEK) for Cloud Healthcare API\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a Cloud Healthcare API dataset in region asia-northeast1 must be protected with a key ring from region asia-northeast1 .",
+          "The following process describes how key availability is checked, and how a dataset can be disabled and deleted: After a CMEK-encrypted Cloud Healthcare API dataset is created, the Cloud Healthcare API checks the key's status every five minutes to ensure the key is available.",
+          "For example, a Cloud Healthcare API dataset in region us must be protected with a key ring from region us , and a Cloud Healthcare API dataset in region eu must be protected with a key ring from region europe ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+        "https://docs.cloud.google.com/healthcare-api/docs/requirements",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+        "https://docs.cloud.google.com/healthcare-api/docs/requirements",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek"
+      ]
+    }
+  ]
+}

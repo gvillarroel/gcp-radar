@@ -1,0 +1,258 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Volume snapshots",
+  "feature_slug": "volume-snapshots",
+  "summary": "Volume snapshots are generally available, and GKE 1.21+ supports v1 snapshots.",
+  "extended_definition": "Volume snapshots are generally available, and GKE 1.21+ supports v1 snapshots.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy PostgreSQL to GKE using CloudNativePG \\_|\\_ Kubernetes Engine \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "source_id": "site-docs-root-2",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "It brings the following features to PostgreSQL deployment: A declarative and Kubernetes-native way to manage and configure and PostgreSQL clusters Backup management using volume snapshots or Cloud Storage In-transit encrypted TLS connection, the ability to use your own certificate authority and integration with Certificate Manager for automated TLS certificate issuance and rotation Rolling updates for minor PostgreSQL releases Use of Kubernetes API server to maintain a PostgreSQL cluster status and failovers for high availability with no additional tools required A built-in Prometheus exporter configuration through user-defined metrics written in SQL Objectives Plan and deploy GKE infrastructure for Postgres Deploy and configure the CloudNativePG Postgres operator with Helm Deploy a PostgreSQL cluster Configure PostgreSQL authentication and observability Deployment architecture PostgreSQL has various deployment options from a standalone database server to a replicated highly-available cluster.",
+          "NAME AGE INSTANCES READY STATUS PRIMARY gke-pg-cluster 2m53s 3 3 Cluster in healthy state gke-pg-cluster-1 Inspect the resources Confirm that GKE created the resources for the cluster: kubectl get cluster,pod,svc,pvc,pdb,secret,cm -n pg-ns The output is similar to the following: NAME AGE INSTANCES READY STATUS PRIMARY cluster.postgresql.cnpg.io/gke-pg-cluster 32m 3 3 Cluster in healthy state gke-pg-cluster-1 NAME READY STATUS RESTARTS AGE pod/gke-pg-cluster-1 1/1 Running 0 31m pod/gke-pg-cluster-2 1/1 Running 0 30m pod/gke-pg-cluster-3 1/1 Running 0 29m NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/gke-pg-cluster-r ClusterIP 10.52.11.24 <none> 5432/TCP 32m service/gke-pg-cluster-ro ClusterIP 10.52.9.233 <none> 5432/TCP 32m service/gke-pg-cluster-rw ClusterIP 10.52.1.135 <none> 5432/TCP 32m NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGECLASS AGE persistentvolumeclaim/gke-pg-cluster-1 Bound pvc-bbdd1cdd-bdd9-4e7c-8f8c-1a14a87e5329 2Gi RWO standard 32m persistentvolumeclaim/gke-pg-cluster-2 Bound pvc-e7a8b4df-6a3e-43ce-beb0-b54ec1d24011 2Gi RWO standard 31m persistentvolumeclaim/gke-pg-cluster-3 Bound pvc-dac7f931-6ac5-425f-ac61-0cfc55aae72f 2Gi RWO standard 30m NAME MIN AVAILABLE MAX UNAVAILABLE ALLOWED DISRUPTIONS AGE poddisruptionbudget.policy/gke-pg-cluster 1 N/A 1 32m poddisruptionbudget.policy/gke-pg-cluster-primary 1 N/A 0 32m NAME TYPE DATA AGE secret/gke-pg-cluster-app kubernetes.io/basic-auth 3 32m secret/gke-pg-cluster-ca Opaque 2 32m secret/gke-pg-cluster-replication kubernetes.io/tls 2 32m secret/gke-pg-cluster-server kubernetes.io/tls 2 32m secret/gke-pg-cluster-superuser kubernetes.io/basic-auth 3 32m NAME DATA AGE configmap/cnpg-default-monitoring 1 32m configmap/kube-root-ca.crt 1 135m The operator creates the following resources: A cluster custom resource representing the PostgreSQL cluster which is controlled by the operator PersistentVolumeClaim resources with corresponding Persistent Volumes Secrets with user credentials for accessing the database and replication between Postgres nodes.",
+          "Deploy Postgres The following manifest describes a PostgreSQL cluster as defined by the CloudNativePG operator's custom resource: apiVersion : postgresql.cnpg.io/v1 kind : Cluster metadata : name : gke-pg-cluster spec : description : \"Standard GKE PostgreSQL cluster\" imageName : ghcr.io/cloudnative-pg/postgresql:16.2 enableSuperuserAccess : true instances : 3 startDelay : 300 primaryUpdateStrategy : unsupervised postgresql : pg hba : - host all all 10.48.0.0/20 md5 bootstrap : initdb : database : app storage : storageClass : premium-rwo size : 2Gi resources : requests : memory : \"1Gi\" cpu : \"1000m\" limits : memory : \"1Gi\" cpu : \"1000m\" affinity : enablePodAntiAffinity : true tolerations : - key : cnpg.io/cluster effect : NoSchedule value : gke-pg-cluster operator : Equal additionalPodAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 podAffinityTerm : labelSelector : matchExpressions : - key : app.component operator : In values : - \"pg-cluster\" topologyKey : topology.kubernetes.io/zone monitoring : enablePodMonitor : true This manifest has the following fields: spec.instances : the number of cluster Pods spec.primaryUpdateStrategy : the rolling update strategy: Unsupervised : autonomously updates the primary cluster node after the replica nodes Supervised : manual switchover is required for the primary cluster node spec.postgresql : postgres.conf file parameter overrides, such as pg-hba rules, LDAP, and requirements for sync replicas to be met. spec.storage : storage-related settings, such as storage class, volume size, and write-ahead log settings. spec.bootstrap : parameters of the initial database created in the cluster, user credentials, and database restore options spec.resources : requests and limits for cluster Pods spec.affinity : affinity and anti-affinity rules of the cluster workloads Create a basic Postgres cluster Create a namespace: kubectl create ns pg-ns Create the PostgreSQL cluster using the custom resource: kubectl apply -n pg-ns -f manifests/01-basic-cluster/postgreSQL cluster.yaml This command might take several minutes to complete."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following patched GKE versions are available: 1.26.15-gke.1090004 1.26.15-gke.1191001 1.26.15-gke.1300001 1.26.15-gke.1320002 1.26.15-gke.1381001 1.26.15-gke.1390001 1.26.15-gke.1404002 1.26.15-gke.1469001 1.27.13-gke.1070002 1.27.13-gke.1166001 1.27.13-gke.1201002 1.27.14-gke.1022001 1.27.14-gke.1042001 1.27.14-gke.1059002 1.27.14-gke.1100002 1.27.15-gke.1012003 1.28.9-gke.1069002 1.28.9-gke.1209001 1.28.9-gke.1289002 1.28.10-gke.1058001 1.28.10-gke.1075001 1.28.10-gke.1089002 1.28.10-gke.1148001 1.28.11-gke.1019001 1.29.4-gke.1043004 1.29.5-gke.1060001 1.29.5-gke.1091002 1.29.6-gke.1038001 1.30.1-gke.1329003 1.30.2-gke.1023004 To check whether a patch is available in your cluster zone or region, run the following command: gcloud container get-server-config --location= LOCATION Replace LOCATION with your zone or region.",
+          "We recommend you to upgrade your node pools to one of the following versions or above to take advantage of the latest patches: 1.21.4-gke.301 1.20.10-gke.301 1.19.14-gke.301 1.18.20-gke.4501 The following versions also contain the fix: 1.21.3-gke.2001 1.20.8-gke.2101 1.20.9-gke.701 1.20.9-gke.1001 1.19.12-gke.2101 1.19.13-gke.701 1.18.20-gke.3001 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.",
+          "It is recommended that you: Upgrade your AWSManagementService , AWSCluster and AWSNodePool objects to the following version: 1.8.2 Update the gke-version of your AWSCluster and AWSNodePool objects to one of the supported Kubernetes versions : 1.17.17-gke.15800 1.18.20-gke.4800 1.19.14-gke.600 1.20.10-gke.600 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem."
+        ]
+      },
+      {
+        "title": "\"Deploy a highly-available PostgreSQL database on GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "source_id": "site-docs-root-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "To perform a backup and restore, follow these steps: Verify the status of ProtectedApplication on cluster-db1 . kubectl get ProtectedApplication -A The output looks similar to the following: NAMESPACE NAME READY TO BACKUP postgresql postgresql-ha true Create a backup plan for the ProtectedApplication. export NAMESPACE = postgresql export PROTECTED APP = $( kubectl get ProtectedApplication -n $NAMESPACE grep -v 'NAME' awk '{ print $1 }' ) gcloud beta container backup-restore backup-plans create $BACKUP PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --cluster = projects/ $PROJECT ID /locations/ $REGION /clusters/ $SOURCE CLUSTER \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --include-secrets \\ --include-volume-data \\ --cron-schedule = \"0 3 \" \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 0 Manually create a backup. gcloud beta container backup-restore backups create $BACKUP NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = $BACKUP PLAN NAME \\ --wait-for-completion Set up a restore plan. gcloud beta container backup-restore restore-plans create $RESTORE PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME \\ --cluster = projects/ $PROJECT ID /locations/ $DR REGION /clusters/ $TARGET CLUSTER \\ --cluster-resource-conflict-policy = use-existing-version \\ --namespaced-resource-restore-mode = delete-and-restore \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --cluster-resource-scope-selected-group-kinds = \"storage.k8s.io/StorageClass\" , \"scheduling.k8s.io/PriorityClass\" Restore from the backup. gcloud beta container backup-restore restores create $RESTORE NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --restore-plan = $RESTORE PLAN NAME \\ --backup = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME /backups/ $BACKUP NAME \\ --wait-for-completion Verify that your cluster is restored To verify that the restored cluster has all the expected Pods, PersistentVolume, and StorageClass resources, follow these steps: Configure kubectl command line access to the backup cluster cluster-db2 . gcloud container clusters get-credentials $TARGET CLUSTER --location $DR REGION --project $PROJECT ID Verify that the StatefulSet is ready with 3/3 Pods. kubectl get all -n $NAMESPACE The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/postgresql-postgresql-ha-pgpool-778798b5bd-k2q4b 1/1 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-0 2/2 Running 2 (4m13s ago) 4m49s pod/postgresql-postgresql-ha-postgresql-1 2/2 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-2 2/2 Running 0 4m49s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/postgresql-postgresql-ha-pgpool ClusterIP 192.168.241.46 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql ClusterIP 192.168.220.20 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-headless ClusterIP None <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-metrics ClusterIP 192.168.226.235 <none> 9187/TCP 4m49s NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/postgresql-postgresql-ha-pgpool 1/1 1 1 4m49s NAME DESIRED CURRENT READY AGE replicaset.apps/postgresql-postgresql-ha-pgpool-778798b5bd 1 1 1 4m49s NAME READY AGE statefulset.apps/postgresql-postgresql-ha-postgresql 3/3 4m49s Verify all Pods in the postgres namespace are running. kubectl get pods -n $NAMESPACE The output is similar to the following: postgresql-postgresql-ha-pgpool-569d7b8dfc-2f9zx 1/1 Running 0 7m56s postgresql-postgresql-ha-postgresql-0 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-1 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-2 2/2 Running 0 7m56s Verify the PersistentVolumes and StorageClass.",
+          "Terraform creates a private cluster in the us-central1 region, and enables Backup for GKE for disaster recovery and Managed Service for Prometheus for cluster monitoring. module \"gke-db1\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db1\" regional = true region = \"us-central1\" network = module.network.network name subnetwork = module.network.primary subnet name ip range pods = \"ip-range-pods-db1\" ip range services = \"ip-range-svc-db1\" create service account = true enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.0/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 36 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Create a backup cluster in the us-west1 region for disaster recovery. module \"gke-db2\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db2\" regional = true region = \"us-west1\" network = module.network.network name subnetwork = module.network.secondary subnet name ip range pods = \"ip-range-pods-db2\" ip range services = \"ip-range-svc-db2\" create service account = false service account = module.gke-db1.service account enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.16/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 10 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Tip: To debug issues when running Terraform, you can capture debug output by setting the Terraform log level environment variable TF LOG .",
+          "The deployment defined in prepareforha.yaml ensures that Autopilot provisions nodes across three zones in your cluster, by setting these values: replicas:3 podAntiAffinity with requiredDuringSchedulingIgnoredDuringExecution and topologyKey: \"topology.kubernetes.io/zone\" kubectl -n $NAMESPACE apply -f scripts/prepareforha.yaml apiVersion : apps/v1 kind : Deployment metadata : name : prepare-three-zone-ha labels : app : prepare-three-zone-ha app.kubernetes.io/name : postgresql-ha spec : replicas : 3 selector : matchLabels : app : prepare-three-zone-ha app.kubernetes.io/name : postgresql-ha template : metadata : labels : app : prepare-three-zone-ha app.kubernetes.io/name : postgresql-ha spec : affinity : podAntiAffinity : requiredDuringSchedulingIgnoredDuringExecution : - labelSelector : matchExpressions : - key : app operator : In values : - prepare-three-zone-ha topologyKey : \"topology.kubernetes.io/zone\" nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - preference : matchExpressions : - key : cloud.google.com/compute-class operator : In values : - \"Scale-Out\" weight : 1 nodeSelector : app.stateful/component : postgresql tolerations : - effect : NoSchedule key : app.stateful/component operator : Equal value : postgresql containers : - name : prepare-three-zone-ha image : busybox:latest command : - \"/bin/sh\" - \"-c\" - \"while true; do sleep 3600; done\" resources : limits : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" requests : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" Update the Helm dependency. cd helm/postgresql-bootstrap helm dependency update Inspect and verify the charts that Helm will install. helm -n postgresql template postgresql . \\ --set global.imageRegistry = \"us-docker.pkg.dev/ $PROJECT ID /main\" Install the Helm chart. helm -n postgresql upgrade --install postgresql . \\ --set global.imageRegistry = \"us-docker.pkg.dev/ $PROJECT ID /main\" The output is similar to the following: NAMESPACE: postgresql STATUS: deployed REVISION: 1 TEST SUITE: None Verify that the PostgreSQL replicas are running. kubectl get all -n $NAMESPACE The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/postgresql-postgresql-bootstrap-pgpool-75664444cb-dkl24 1/1 Running 0 8m39s pod/postgresql-postgresql-ha-pgpool-6d86bf9b58-ff2bg 1/1 Running 0 8m39s pod/postgresql-postgresql-ha-postgresql-0 2/2 Running 0 8m39s pod/postgresql-postgresql-ha-postgresql-1 2/2 Running 0 8m39s pod/postgresql-postgresql-ha-postgresql-2 2/2 Running 0 8m38s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/postgresql-postgresql-ha-pgpool ClusterIP 192.168.99.236 <none> 5432/TCP 8m39s service/postgresql-postgresql-ha-postgresql ClusterIP 192.168.90.20 <none> 5432/TCP 8m39s service/postgresql-postgresql-ha-postgresql-headless ClusterIP None <none> 5432/TCP 8m39s service/postgresql-postgresql-ha-postgresql-metrics ClusterIP 192.168.127.198 <none> 9187/TCP 8m39s NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/postgresql-postgresql-bootstrap-pgpool 1/1 1 1 8m39s deployment.apps/postgresql-postgresql-ha-pgpool 1/1 1 1 8m39s NAME DESIRED CURRENT READY AGE replicaset.apps/postgresql-postgresql-bootstrap-pgpool-75664444cb 1 1 1 8m39s replicaset.apps/postgresql-postgresql-ha-pgpool-6d86bf9b58 1 1 1 8m39s NAME READY AGE statefulset.apps/postgresql-postgresql-ha-postgresql 3/3 8m39s Create a test dataset In this section, you'll create a database and a table with sample values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.component",
+      "app.kubernetes.io",
+      "app.stateful",
+      "ca.crt",
+      "client.sh",
+      "cluster.postgresql.cnpg.io",
+      "cluster.yaml",
+      "cnpg.io",
+      "db1.service",
+      "deployment.apps",
+      "docker.pkg.dev",
+      "ghcr.io",
+      "github.com",
+      "gke.1001",
+      "gke.1012003",
+      "gke.1019001",
+      "gke.1022001",
+      "gke.1023004",
+      "gke.1038001",
+      "gke.1042001",
+      "gke.1043004",
+      "gke.1058001",
+      "gke.1059002",
+      "gke.1060001",
+      "gke.1069002",
+      "gke.1070002",
+      "gke.1075001",
+      "gke.1089002",
+      "gke.1090004",
+      "gke.1091002",
+      "gke.1100002",
+      "gke.1148001",
+      "gke.1166001",
+      "gke.1191001",
+      "gke.1201002",
+      "gke.1209001",
+      "gke.1289002",
+      "gke.1300001",
+      "gke.1320002",
+      "gke.1329003",
+      "gke.1381001",
+      "gke.1390001",
+      "gke.1404002",
+      "gke.1469001",
+      "gke.15800",
+      "gke.2001",
+      "gke.2101",
+      "gke.3001",
+      "gke.301",
+      "gke.4501",
+      "gke.4800",
+      "gke.6",
+      "gke.600",
+      "gke.7",
+      "gke.701",
+      "global.imageRegistry",
+      "kubernetes.io",
+      "module.gke",
+      "module.network.network",
+      "module.network.primary",
+      "module.network.secondary",
+      "poddisruptionbudget.policy",
+      "postgres.conf",
+      "postgresql.cnpg.io",
+      "prepareforha.yaml",
+      "replicaset.apps",
+      "rows.sql",
+      "scheduling.k8s.io",
+      "spec.affinity",
+      "spec.bootstrap",
+      "spec.instances",
+      "spec.postgresql",
+      "spec.primaryUpdateStrategy",
+      "spec.resources",
+      "spec.storage",
+      "statefulset.apps",
+      "storage.k8s.io",
+      "topology.kubernetes.io",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/cloudnativepg",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+      ]
+    }
+  ]
+}

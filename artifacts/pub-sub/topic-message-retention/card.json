@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Topic message retention",
+  "feature_slug": "topic-message-retention",
+  "summary": "Extended topic retention lets Pub/Sub retain published messages for up to 31 days.",
+  "extended_definition": "Extended topic retention lets Pub/Sub retain published messages for up to 31 days.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "These copies are considered distinct by Pub/Sub and have distinct message id values. topicMessageRetentionDuration string ( Duration format) Output only.",
+          "If this field is set, messages published to the subscription's topic in the last topic message retention duration are always available to subscribers."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "These copies are considered distinct by Pub/Sub and have distinct message id values. topicMessageRetentionDuration string ( Duration format) Output only.",
+          "If this field is set, messages published to the subscription's topic in the last topic message retention duration are always available to subscribers."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 283,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "These copies are considered distinct by Pub/Sub and have distinct message id values. topicMessageRetentionDuration string ( Duration format) Output only."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 283,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "These copies are considered distinct by Pub/Sub and have distinct message id values. topicMessageRetentionDuration string ( Duration format) Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

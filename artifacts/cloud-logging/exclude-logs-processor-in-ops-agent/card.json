@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "exclude_logs Processor in Ops Agent",
+  "feature_slug": "exclude-logs-processor-in-ops-agent",
+  "summary": "Ops Agent provides an exclude_logs processor to prevent ingestion of selected logs.",
+  "extended_definition": "Ops Agent provides an exclude_logs processor to prevent ingestion of selected logs.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure the Ops Agent \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the metrics collected, see Metrics ingested by the receivers . logging : receivers : syslog : type : files include paths : - /var/log/messages - /var/log/syslog service : pipelines : default pipeline : receivers : [ syslog ] metrics : receivers : hostmetrics : type : hostmetrics collection interval : 60s processors : metrics filter : type : exclude metrics metrics pattern : [] service : pipelines : default pipeline : receivers : [ hostmetrics ] processors : [ metrics filter ] Windows By default, the Ops Agent collects Windows event logs from System , Application , and Security channels, as well as host metrics, IIS metrics, and SQL Server metrics.",
+          "This can be used to remove placeholder values, such as: httpRequest.referer : move from : jsonPayload.referer omit if : httpRequest.referer = \"-\" Sample Configurations The parse json processor would transform a JSON file containing { \"http status\" : \"400\" , \"path\" : \"/index.html\" , \"referer\" : \"-\" } into a LogEntry structure that looks like this: { \"jsonPayload\" : { \"http status\" : \"400\" , \"path\" : \"/index.html\" , \"referer\" : \"-\" } } This could then be transformed with modify fields into this LogEntry : { \"httpRequest\" : { \"status\" : 400 , \"requestUrl\" : \"/index.html\" , } } by using this Ops Agent configuration: logging : receivers : in : type : files include paths : - /var/log/http.json processors : parse json : type : parse json set http request : type : modify fields fields : httpRequest.status : move from : jsonPayload.http status type : integer httpRequest.requestUrl : move from : jsonPayload.path httpRequest.referer : move from : jsonPayload.referer omit if : jsonPayload.referer = \"-\" service : pipelines : pipeline : receivers : [ in ] processors : [ parse json , set http request ] This configuration reads JSON-formatted logs from /var/log/http.json and populates part of the httpRequest structure from fields in the logs.",
+          "The entire metrics configuration looks like the following: metrics : service : pipelines : default pipeline : receivers : [] The following example shows the built-in service configuration for Windows: metrics : service : pipelines : default pipeline : receivers : - hostmetrics - iis - mssql processors : - metrics filter The following service configuration customizes log verbosity for the metrics submodule to be debug instead: metrics : service : log level : debug Collection of self logs By default, the Ops Agent's Fluent Bit self logs are sent to Cloud Logging."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Running the Ops Agent and the legacy agents on the same VM can cause ingestion of duplicate logs or conflicts in metrics ingestion.",
+          "Enter the following query and click Run query : severity>=DEBUG log id(\"GCEGuestAgentManager\") \"The agent config file is not valid\" Linux Run the following command on the Linux Compute Engine VM: journalctl -u google-guest-agent-manager grep \"The agent config file is not valid\" Windows Run the following command on the Windows Compute Engine VM: Get-Eventlog -Source google guest agent manager -LogName Application Where-Object {$ .Message -like \" The agent config file is not valid \"} If you see logs containing the string The agent config file is not valid , then the custom configuration for the Ops Agent you provided when creating or updating the extension policy is invalid.",
+          "Troubleshoot extension policies This section provides information about troubleshooting the use of extension policies to manage the Ops Agent: gcloud beta compute zone-vm-extension-policies commands fail The extension policy is created, but the Ops Agent status is \"not detected\" Linux systemctl and Windows Service Manager don't work with the Ops Agent For information about troubleshooting the Ops Agent, see Troubleshoot the Ops Agent . gcloud beta compute zone-vm-extension-policies commands fail When a gcloud beta compute zone-vm-extension-policies command fails, the response includes troubleshooting suggestions."
+        ]
+      },
+      {
+        "title": "\"Installing the Ops Agent on individual VMs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "source_id": "site-docs-root-2",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, the status might be inaccurate if the VM lacks necessary access scopes or if the associated service account has insufficient IAM roles. gcpdiag : gcpdiag provides more reliable and robust information about agent status than the VM Instances dashboard, verifying both agent installation and transmission of telemetry from the VM.",
+          "The Ops Agent collects logs and metrics on Compute Engine instances, sending your logs to Cloud Logging and your metrics to Cloud Monitoring.",
+          "In this case, clicking Install/Update Ops Agent provides a series of commands to run in Cloud Shell."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.googleapis.com",
+      "config.yaml",
+      "http.json",
+      "index.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+      ]
+    }
+  ]
+}

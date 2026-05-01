@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE security posture dashboard threat insights",
+  "feature_slug": "gke-security-posture-dashboard-threat-insights",
+  "summary": "The GKE security posture dashboard uses Security Command Center to show the top threats affecting GKE workloads.",
+  "extended_definition": "The GKE security posture dashboard uses Security Command Center to show the top threats affecting GKE workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About the security posture dashboard \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 276,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "GKE security posture dashboard pricing The pricing for the capabilities of the security posture dashboard is as follows, applicable to standalone GKE clusters and fleet GKE clusters: GKE security posture dashboard pricing Workload configuration auditing No extra charge Security bulletin surfacing No extra charge (Deprecated) Container OS vulnerability scanning No extra charge (Deprecated) Advanced vulnerability insights Uses Artifact Analysis pricing.",
+          "Also, if you activate the Premium or Enterprise service tier of Security Command Center in your organization or project, then the security posture dashboard shows the following additional panes: Top threats : summarizes the top threats that affect your GKE workloads, grouped by severity and category.",
+          "Integration with Security Command Center If you activate Security Command Center in your organization or project, then you see security posture dashboard findings in Security Command Center."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "To list the MCG managed firewall rules in your current environment, run the following command: gcloud compute firewall-rules list --format = \"json\" --filter = \"name:gkemcg1-l7- \" jq -r '.[] \"\\(.name): \\(.sourceRanges // \"No source range\")\"' awk -F: '{if ($2 /No source range ^\\s $/) print \"Rule \"$1\" has an EMPTY or MISSING source range.\"; else print \"Rule \"$1\" has source range(s): \"$2;}' To search logs for updates to MCG managed firewall configurations, use the Logs Explorer with the below query: protoPayload.serviceName=\"compute.googleapis.com\" resource.type=\"gce firewall rule\" protoPayload.resourceName= \"projects/[^/]+/global/firewalls/gkemcg1-\" -operation.last=\"true\" To list the MCG managed firewall rules across your organization, run the following command to query Cloud Asset Inventory: gcloud asset search-all-resources --scope = 'organizations/ ' --asset-types = 'compute.googleapis.com/Firewall' --query 'name: //compute.googleapis.com/projects/ / /firewalls/gkemcg ' The following additional controls provide defense in depth against untrusted networks and can be considered to strengthen security posture: Use private GKE nodes to ensure your nodes only get private IPs.",
+          "Built detection rules into Event Threat Detection (GKE CONTROL PLANE CREATE SENSITIVE BINDING) as part of Security Command Center.",
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters."
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend that you do all of the following: Enroll your clusters in the GKE security posture dashboard to audit workloads for concerns such as problematic security configurations or vulnerabilities in your container operating system packages and get actionable mitigation information.",
+          "You can manually enable the following capabilities: NET RAW for ping and SYS PTRACE for debugging: Add to Pod SecurityContext NET ADMIN for service meshes such as Istio: Specify --workload-policies=allow-net-admin in your cluster creation command.",
+          "Monitor your security posture After setting up your clusters and deploying your workloads, you should set up and configure monitoring and logging so that you have observability over your cluster security posture."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "operation.last",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    }
+  ]
+}

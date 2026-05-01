@@ -1,0 +1,36 @@
+# Disable enabling Identity-Aware Proxy on global resources
+
+Product: Resource Manager
+Feature slug: `disable-enabling-identity-aware-proxy-on-global-resources`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+This organization policy constraint blocks enabling Identity-Aware Proxy on global resources.
+
+## Lifecycle
+
+- Latest feature date: 2022-06-14
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- constraint
+- iam
+- identity
+- policy
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/resource-manager/docs/custom-constraints](https://docs.cloud.google.com/resource-manager/docs/custom-constraints)
+- [https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs](https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs)
+- [https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview](https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview)

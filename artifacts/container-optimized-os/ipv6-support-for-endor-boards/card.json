@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.606Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "IPv6 support for endor boards",
+  "feature_slug": "ipv6-support-for-endor-boards",
+  "summary": "Container-Optimized OS adds IPv6 support for endor boards.",
+  "extended_definition": "Container-Optimized OS adds IPv6 support for endor boards.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "This level includes recommendations such as the following: Firewall rules exist for all open ports ICMP redirects and router advertisements are not accepted Default user shell timeout is 900 seconds or less How Container-Optimized OS complies with the CIS Benchmarks Starting with Milestone 97 , Container-Optimized OS images comply with to CIS Level 1 by default and provide an option to comply with CIS Level 2.",
+          "Periodic checking of CIS compliance status Container-Optimized OS images include the following services to periodically check CIS compliance: cis-compliance-scanner.service : checks the compliance status based on environment variables defined at /etc/cis-scanner/env vars .",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring and Checking CIS Compliance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configuring the host firewall \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "source_id": "site-docs-reference",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "Consider the following cloud-init example: #cloud-config write files : - path : /etc/systemd/system/config-firewall.service permissions : 0644 owner : root content : [Unit] Description=Configures the host firewall [Service] Type=oneshot RemainAfterExit=true ExecStart=/sbin/iptables -A INPUT -p tcp --dport 80 -j ACCEPT - path : /etc/systemd/system/myhttp.service permissions : 0644 owner : root content : [Unit] Description=My HTTP service After=docker.service config-firewall.service Wants=docker.service config-firewall.service [Service] Restart=always ExecStart=/usr/bin/docker run --rm --name=%n --net=host nginx ExecStop=-/usr/bin/docker exec %n -s quit runcmd : - systemctl daemon-reload - systemctl start myhttp.service Using this cloud-init configuration with a VM running Container-Optimized OS will result in the following behaviors on every boot: The host firewall will be configured to allow incoming TCP connections on port 80.",
+          "In the following example, the nginx container will be accessible on the network on port 80: docker run --rm -d -p 80 :80 --name = nginx nginx Note: If IPv6 address is used for accessing the deployed container over the network, you must explicitly configure the host firewall using ip6tables commands like \"ip6tables -A INPUT -p tcp --dport 80 -j ACCEPT\" .This is because Docker does not automatically configure the IPv6 rules for host firewall to expose your application on the network due to known limitation .",
+          "Running containers in the host's network namespace If you are deploying a container on Container-Optimized OS that must be accessible over the network and you are using Docker's --net=host option, you must explicitly configure the host firewall yourself."
+        ]
+      },
+      {
+        "title": "\"Collecting debugging information using sosreport \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Collecting the sosreport data To generate a sosreport: Connect to the instance using the gcloud compute ssh command. gcloud compute ssh [INSTANCE NAME] --zone [ZONE] --project [PROJECT ID] Check the OS version: sudo cat /etc/os-release egrep -w 'NAME VERSION' The output is similar to the following: NAME=\"Container-Optimized OS\" VERSION=105 Run the sos command that corresponds to your OS version: COS 85 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo toolbox sudo apt install sosreport -y COS 105 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo toolbox sudo apt install sosreport -y Ubuntu-18 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo apt install sosreport Ubuntu-20 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo apt install sosreport You can change the directory where the report is stored by passing a different directory to the --tmp-dir option.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Collecting debugging information using sosreport Stay organized with collections Save and categorize content based on your preferences.",
+          "Container-Optimized OS includes the sosreport utility, which collects information on demand to help you debug problems in a Container-Optimized OS virtual machine instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.service",
+      "firewall.service",
+      "myhttp.service",
+      "scanner.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+      ]
+    }
+  ]
+}

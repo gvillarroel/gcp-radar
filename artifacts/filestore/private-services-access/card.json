@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.112Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Private services access",
+  "feature_slug": "private-services-access",
+  "summary": "Filestore supports private services access; Filestore supports private services access for instances on Shared VPC networks in service projects.",
+  "extended_definition": "Filestore supports private services access; Filestore supports private services access for instances on Shared VPC networks in service projects.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/csi-driver",
+      "https://docs.cloud.google.com/filestore/docs/overview",
+      "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 297,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can see the IP address ranges for the subnets of your network by going to the VPC networks page in the Google Cloud console: Go to the VPC networks page You can get the reserved IP address range for any Filestore instance on the Filestore instances page in the Google Cloud console: Go to the Filestore instances page If you want to use private services access and specify a reserved IP address range, you must specify the name of an allocated address range for the connection.",
+          "This consideration applies only to Filestore instances that use private services access or direct peering connection methods.",
+          "A justification for the deletion protection setting is provided. gcloud filestore instances create render1 \\ --project=myproject \\ --region=us-central1 \\ --tier=REGIONAL \\ --performance=max-iops-per-tb=17000 \\ --network=name=\"default\",reserved-ip-range=\"10.0.7.0/29\" \\ --flags-file=nfs-export-options.json \\ --deletion-protection \\ --deletion-protection-reason=\"All genomics data must adhere to current organization policies.\" nfs-export-options.json file contents: { \"--file-share\": { \"capacity\": \"2048\", \"name\": \"my vol\", \"nfs-export-options\": [ { \"access-mode\": \"READ WRITE\", \"ip-ranges\": [ \"10.0.0.0/29\", \"10.2.0.0/29\" ], \"squash-mode\": \"ROOT SQUASH\", \"anon uid\": 1003, \"anon gid\": 1003 }, { \"access-mode\": \"READ ONLY\", \"ip-ranges\": [ \"192.168.0.0/26\" ], \"squash-mode\": \"NO ROOT SQUASH\" } ] } } REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.instances \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "source_id": "site-api-reference",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private services access provides an IP address range for multiple Google Cloud services, including Filestore.",
+          "Resource: Instance JSON representation State FileShareConfig JSON representation NfsExportOptions JSON representation AccessMode SquashMode NetworkConfig JSON representation AddressMode ConnectMode PscConfig JSON representation SuspensionReason Replication JSON representation Role ReplicaConfig JSON representation State StateReason PerformanceConfig JSON representation IOPSPerTB JSON representation FixedIOPS JSON representation PerformanceLimits JSON representation Methods Resource: Instance A Filestore instance.",
+          "The range you specify can't overlap with either existing subnets or assigned IP address ranges for other Filestore instances in the selected VPC network. ipAddresses[] string Output only."
+        ]
+      },
+      {
+        "title": "Filestore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As a type of persistent file storage, Filestore supports multiple concurrent application instances accessing the same file system simultaneously.",
+          "Supports VPC Network Peering , private services access , and Private Service Connect .",
+          "Supports VPC Network Peering , private services access , and Private Service Connect ."
+        ]
+      },
+      {
+        "title": "\"Access Filestore instances with the Filestore CSI driver \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "source_id": "site-docs-root",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access pre-existing Filestore instances using the Filestore CSI driver This section describes the typical process for using a Kubernetes volume to access pre-existing Filestore instances using Filestore CSI driver in GKE: Create a PersistentVolume and a PersistentVolumeClaim to access the instance Create a manifest file like the one shown in the following example, and name it preprov-filestore.yaml : apiVersion : v1 kind : PersistentVolume metadata : name : PV NAME spec : storageClassName : \"\" capacity : storage : 1Ti accessModes : - ReadWriteMany persistentVolumeReclaimPolicy : Retain volumeMode : Filesystem csi : driver : filestore.csi.storage.gke.io volumeHandle : \"modeInstance/ FILESTORE INSTANCE LOCATION / FILESTORE INSTANCE NAME / FILESTORE SHARE NAME \" volumeAttributes : ip : FILESTORE INSTANCE IP volume : FILESTORE SHARE NAME protocol : FILESYSTEM PROTOCOL claimRef : name : PVC NAME namespace : NAMESPACE --- kind : PersistentVolumeClaim apiVersion : v1 metadata : name : PVC NAME namespace : NAMESPACE spec : accessModes : - ReadWriteMany storageClassName : \"\" resources : requests : storage : 1Ti To create the PersistentVolumeClaim and PersistentVolume resources based on the preprov-filestore.yaml manifest file, run the following command: kubectl apply -f preprov-filestore.yaml To specify the NFSv4.1 file system protocol, set the protocol field to NFS V4 1 in the volumeAttributes field of a PersistentVolume object.",
+          "Save the following manifest as filestore-example-deployment.yaml : apiVersion : apps/v1 kind : Deployment metadata : name : web-server-deployment labels : app : nginx spec : replicas : 3 selector : matchLabels : app : nginx template : metadata : labels : app : nginx spec : containers : - name : nginx image : nginx volumeMounts : - mountPath : /usr/share/nginx/html name : mypvc volumes : - name : mypvc persistentVolumeClaim : claimName : podpvc --- kind : PersistentVolumeClaim apiVersion : v1 metadata : name : podpvc spec : accessModes : - ReadWriteMany storageClassName : filestore-example resources : requests : storage : 1Ti To create a Deployment based on the filestore-example-deployment.yaml manifest file, run the following command: kubectl apply -f filestore-example-deployment.yaml Confirm the Deployment was successfully created: kubectl get deployment It might take a while for Filestore instances to complete provisioning.",
+          "Create a volume using the Filestore CSI driver The following sections describe the typical process for using a Kubernetes volume backed by a Filestore CSI driver in GKE: Create a StorageClass Use a PersistentVolumeClaim to access the volume Create a Deployment that consumes the volume Create a StorageClass After you enable the Filestore CSI driver, GKE automatically installs the following StorageClasses for provisioning Filestore instances: zonal-rwx , using the Filestore zonal tier . enterprise-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a Filestore instance. enterprise-multishare-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a share of a given Filestore instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deployment.yaml",
+      "file.googleapis.com",
+      "filestore.csi.storage.gke.io",
+      "filestore.yaml",
+      "options.json",
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/csi-driver"
+      ]
+    }
+  ]
+}

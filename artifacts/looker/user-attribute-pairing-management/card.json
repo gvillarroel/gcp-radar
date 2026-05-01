@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.212Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "User attribute pairing management",
+  "feature_slug": "user-attribute-pairing-management",
+  "summary": "User attribute pairing management adds a side panel for adding, removing, viewing, filtering, and paginating attribute pairings.",
+  "extended_definition": "User attribute pairing management adds a side panel for adding, removing, viewing, filtering, and paginating attribute pairings.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To pair claims with corresponding Looker user attributes, or manage existing pairings, follow these steps: In the User Attribute Settings section, click the Manage Pairings button to open the Manage Pairings side panel.",
+          "Your Looker groups will still mirror your OpenID Connect configuration, but you will be able to do additional group and user management within Looker, such as adding OpenID Connect users to Looker-specific groups or assigning Looker roles directly to OpenID Connect users.",
+          "Attribute pairings Optionally, you can use the data in your OpenID Connect claims to automatically populate values in Looker user attributes when a user logs in."
+        ]
+      },
+      {
+        "title": "Admin settings - LDAP authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To pair LDAP user attributes with corresponding Looker user attributes, or manage existing pairings, follow these steps: In the User Attribute Pairings section, click the Manage Pairings button to open the Manage Pairings side panel.",
+          "Example This example ldiff user entry demonstrates how to set corresponding Looker settings: Ldiff User Entry dn: cn=mward,ou=People,dc=example,dc=com objectClass: person objectClass: inetOrgPerson objectClass: organizationalPerson objectClass: top cn: mward userpassword: normal givenname: Marcus telephonenumber: +1 408 555 5688 sn: Ward mail: mward@example.com ou: People Corresponding Looker Settings Base DN: ou=People,dc=looker,dc=com User Object Class: person Login Attrs: cn Email Attr: mail First Name Attr: givenname Last Name Attr: sn ID Attr: cn Pairing LDAP user attributes with Looker user attributes You can optionally use the data in your LDAP user attributes to automatically populate values in Looker user attributes when a user logs in.",
+          "Your Looker groups will still mirror your LDAP configuration, but you will be able to do additional group and user management within Looker, such as adding LDAP users to Looker groups or assigning Looker roles directly to LDAP users."
+        ]
+      },
+      {
+        "title": "Admin settings - SAML authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To pair SAML user attributes with corresponding Looker user attributes, or manage existing pairings, follow these steps: In the User Attribute Settings section, click the Manage Pairings button to open the Manage Pairings side panel.",
+          "Your Looker groups will still mirror your SAML configuration, but you will be able to do additional group and user management within Looker, such as adding SAML users to Looker-specific groups or assigning Looker roles directly to SAML users.",
+          "Pairing SAML attributes with Looker user attributes You can optionally use the data in your SAML attributes to automatically populate values in Looker user attributes when a user logs in."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    }
+  ]
+}

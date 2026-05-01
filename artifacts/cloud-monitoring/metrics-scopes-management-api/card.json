@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.165Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Metrics scopes management API",
+  "feature_slug": "metrics-scopes-management-api",
+  "summary": "An API is available to manage the metrics scope of a Google Cloud project.",
+  "extended_definition": "An API is available to manage the metrics scope of a Google Cloud project.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The Metrics Management page lists only alerting policies and custom dashboards defined in the current project; metrics listed with no alerting policies or custom dashboards might have alerting policies or custom dashboards in another project in your metrics scope.",
+          "If your project has multiple projects in its metrics scope, then the metrics shown on the Metrics Management page include the metrics from all of those projects.",
+          "View information about your metrics scope The set of metrics displayed in the Metrics Management page depends on the metrics scope of your project."
+        ]
+      },
+      {
+        "title": "\"Set up Google Cloud Observability for Application Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Only configure scopes To get the permissions that you need to configure the observability scope, ask your administrator to grant you the following IAM roles: Observability Editor ( roles/observability.editor ) on your App Hub host project or management project Logs Configuration Writer ( roles/logging.configWriter ) on your App Hub host project or management project Monitoring admin ( roles/monitoring.admin ) on your App Hub host project or management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on your App Hub host project or management project App Hub viewer ( roles/apphub.viewer ) on your App Hub host project or management project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Configure the metrics scope Make sure that the metrics scope for your App Hub host project or management project lists all projects that store your application's metric data: For app-enabled folders, Google Cloud Observability attempts to synchronize the list of projects in your app-enabled folder with the list of projects in the metrics scope.",
+          "For App Hub host projects and for management projects for single-project boundaries, you must configure the metrics scope ."
+        ]
+      },
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "The displayed data can be stored in any project listed by the metrics scope of the your App Hub host project or management project.",
+          "The observability scope controls which data is available to your App Hub host project or management project.",
+          "This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.viewer",
+      "cloudtrace.user",
+      "logging.configWriter",
+      "logging.viewAccessor",
+      "logging.viewer",
+      "monitoring.admin",
+      "observability.editor"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.viewer",
+      "roles/cloudtrace.user",
+      "roles/logging.configWriter",
+      "roles/logging.viewAccessor",
+      "roles/logging.viewer",
+      "roles/monitoring.admin",
+      "roles/observability.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    }
+  ]
+}

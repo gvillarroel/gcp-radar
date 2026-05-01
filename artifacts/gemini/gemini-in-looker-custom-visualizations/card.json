@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.307Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Gemini in Looker custom visualizations",
+  "feature_slug": "gemini-in-looker-custom-visualizations",
+  "summary": "The Visualization Assistant generates custom formatting options for Looker visualizations from natural-language prompts.",
+  "extended_definition": "The Visualization Assistant generates custom formatting options for Looker visualizations from natural-language prompts.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+      "https://docs.cloud.google.com/gemini/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Gemini 3 in Gemini Code Assist \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ.",
+          "You can't select a different model in agent mode, as Gemini CLI automatically selects the model.",
+          "Responses generated with Gemini 3 include a label identifying the model."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service .",
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service .",
+          "Optional: To delete the index, in a shell environment, use the gemini code-repository-indexes delete command : gcloud gemini code-repository-indexes delete INDEX NAME \\ --location= REGION \\ --project= PROJECT ID What's next Start using Gemini Code Assist: VS Code, IntelliJ, and other supported JetBrains IDEs: Code with Gemini Code Assist Cloud Shell Editor: Code with Gemini Code Assist Cloud Workstations: Code with Gemini Code Assist Learn how to use code customization and best practices."
+        ]
+      },
+      {
+        "title": "\"Use Gemini Code Assist code customization \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "source_id": "site-docs-root-2",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use cases and prompt examples The following table provides guidance and examples about using code customization in specific use cases: Use case Things worth trying Writing new code Try the following to generate code in your IDE or Gemini Code Assist chat: Generate code that would use terms which are already mentioned in your codebase.",
+          "How to use code customization The following table lists ways to use Gemini Code Assist code customization: Form How to trigger Notes and resources Natural language chat Enter a natural language prompt in Gemini Code Assist chat in the IDE.",
+          "Include health checks.\" \"Write a FUNCTION OR CLASS in the following structure: EXPLAIN STRUCTURE .\" After you generate some code, try using a follow-up prompt to improve it: \"Try the /fix command to adjust the generated code—for example, syntax errors.\" \"Add missing imports.\" \"Try /fix on chat-generated code.\" Cleaning, simplifying, and refactoring code Try the following prompts in Gemini Code Assist chat: \"Can you merge IMPORTS VARIABLES OR NOTE EXPORTED FUNCTIONS in this file?\" \"How would you simplify the FUNCTION NAME function?\" \"Can you merge FUNCTION NAME 1 and FUNCTION NAME 2 into one function?\" \"Could you inline some variables in FUNCTION NAME ?\" \"Could you simplify variable naming in the function FUNCTION NAME ?\" Readability Try the following prompts in Gemini Code Assist chat: \"Write the function FUNCTION NAME in fewer lines of code, if possible.\" \"Add comments to the function FUNCTION NAME .\" \"Remove unnecessary whitespaces in the function FUNCTION NAME .\" \"Format the function FUNCTION NAME in a similar way as the rest of the code.\" Code review Try the following prompts in Gemini Code Assist chat: \"Split the code in parts and explain each part using our codebase.\" \"Are there variables or keywords that could be shorter and more self-explanatory?\" \"Can you give me useful code from the REPOSITORY NAME PACKAGE MODULE context for this code?\" \"What do you think about the function FUNCTION NAME ?\" Debugging Try the following prompts in Gemini Code Assist chat: \"I am getting an error when I try to do X/add Y."
+        ]
+      },
+      {
+        "title": "Gemini for Google Cloud overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create custom Looker visualizations.",
+          "The following table shows the types of generative AI assistance that are available in Gemini for Google Cloud, along with links to product overview information: Product Type of assistance Tasks Gemini Cloud Assist Design, optimize, and operate cloud applications.",
+          "Gemini AI assistance in other Google products Gemini AI-powered assistance is also available in Gemini for Google Workspace ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.codeToolsSettings.settingBindings",
+      "projects.locations.codeToolsSettings.settingBindings.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.152Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "feature_name": "US multi-region location deprecation",
+  "feature_slug": "us-multi-region-location-deprecation",
+  "summary": "Deprecates the Apigee Integration US multi-region (us) location and directs new deployments to supported single regions; deprecated on 2022-11-10.",
+  "extended_definition": "Deprecates the Apigee Integration US multi-region (us) location and directs new deployments to supported single regions; deprecated on 2022-11-10.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-04",
+    "deprecation_date": "2022-11-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest",
+      "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage authentication profiles \\_|\\_ Application Integration \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can use terraform to create the following authentication profiles: Auth token SSL/TLS client certification only JSON Web Token (JWT) OAuth 2.0 authorization code OAuth 2.0 client credentials OIDC ID token Service account Auth token The following example creates a Auth token authentication type in the us-central1 region: resource \"google integrations client\" \"client\" { location = \"us-central1\" } resource \"google integrations auth config\" \"auth config auth token\" { location = \"us-central1\" display name = \"tf-auth-token\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"AUTH TOKEN\" auth token { type = \"Basic\" token = \"some-random-token\" } } depends on = [google integrations client.client] } SSL/TLS client certification The following example creates a SSL/TLS client certification authentication type in the us-central1 region: resource \"google integrations auth config\" \"auth config certificate\" { location = \"us-central1\" display name = \"tf-certificate\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"CLIENT CERTIFICATE ONLY\" } client certificate { ssl certificate = <<EOT -----BEGIN CERTIFICATE----- MIICTTCCAbagAwIBAgIJAPT0tSKNxan/MA0GCSqGSIb3DQEBCwUAMCoxFzAVBgNV BAoTDkdvb2dsZSBURVNUSU5HMQ8wDQYDVQQDEwZ0ZXN0Q0EwHhcNMTUwMTAxMDAw MDAwWhcNMjUwMTAxMDAwMDAwWjAuMRcwFQYDVQQKEw5Hb29nbGUgVEVTVElORzET MBEGA1UEAwwKam9lQGJhbmFuYTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA vDYFgMgxi5W488d9J7UpCInl0NXmZQpJDEHE4hvkaRlH7pnC71H0DLt0/3zATRP1 JzY2+eqBmbGl4/sgZKYv8UrLnNyQNUTsNx1iZAfPUflf5FwgVsai8BM0pUciq1NB xD429VFcrGZNucvFLh72RuRFIKH8WUpiK/iZNFkWhZ0CAwEAAaN3MHUwDgYDVR0P AQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMB Af8EAjAAMBkGA1UdDgQSBBCVgnFBCWgL/iwCqnGrhTPQMBsGA1UdIwQUMBKAEKey Um2o4k2WiEVA0ldQvNYwDQYJKoZIhvcNAQELBQADgYEAYK986R4E3L1v+Q6esBtW JrUwA9UmJRSQr0N5w3o9XzarU37/bkjOP0Fw0k/A6Vv1n3vlciYfBFaBIam1qRHr 5dMsYf4CZS6w50r7hyzqyrwDoyNxkLnd2PdcHT/sym1QmflsjEs7pejtnohO6N2H wQW6M0H7Zt8claGRla4fKkg= -----END CERTIFICATE----- EOT encrypted private key = <<EOT -----BEGIN PRIVATE KEY----- MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCA/Oj2HXqs5fTk j/8DrlOQtLG3K9RMsYHvnwICLxkGqVcTfut58hDFLbQM8C3C0ENAKitNJplCJmYG 8VpgZzgq8VxaGnlP/sXUFLMGksd5sATn0sY3SkPndTKk/dqqA4MIh/dYfh19ynEN hB9Ll/h54Yic2je2Qaxe/uMMu8RODTz3oCn7FcoYpPvfygfU0ntn4IcqH/hts5DG s+3otJk4entRZglQDxR+sWOsbLtJIQZDP8rH3jDVdl5l3wspgtMTY8b5T5+pLm0p /OzCmxT0dq/O6BhpxI1xf/zcdRZeWk5DTJxTi5AgPquTlAG/B6A3HkqBJ14hT/Rk iv7Ma3DLAgMBAAECggEABATkf9VfpiAT9zYdouk50bBpckvymQTyQLD8SlBaX+KY kgv/pHSXK4Pm4iensrQerFLgfqPA3U+FiqjW5Mv7c1VRK6HJbuVkpdzoXLI9IQsL vsBY7//9Ajk5P7NokjdB6JPdU/2dHROuQVa59cxPtzpHo0htnPlDOKXfFZZuoZ17 Nr8WQHrHy8P8ABM1tLOzvU9Nlh7TcjQvev+HxkLek4qzYyJ/Ac7XOjg/XKUm1tZk O3BHr8YLabwyjO7l1t+2b14rUTL/8pfUZnAkEi3FAlPxm3ilftmX65zliC9G4ghk dr5PByT3DqnuIIglua9bISv1H34ogecd+9a6EU7RxQKBgQC2RPKLounXZo8vYiU4 sFTEvjbs+u9Ypk4OrNLnb8KdacLBUaJGnf++xbBoKpwFCBJfy//fvuQfusYF9Gyn GxL43tw94C/H5upQYnDsmnQak6TbOu3mA24OGK7Rcq6NEHgeCY4HomutnSiPTZJq 8jlpqgqh1itETe5avgkMNq3zBwKBgQC1KlztGzvbB+rUDc6Kfvk5pUbCSFKMMMa2 NWNXeD6i2iA56zEYSbTjKQ3u9pjUV8LNqAdUFxmbdPxZjheNK2dEm68SVRXPKOeB EmQT+t/EyW9LqBEA2oZt3h2hXtK8ppJjQm4XUCDs1NphP87eNzx5FLzJWjG8VqDq jOvApNqPHQKBgDQqlZSbgvvwUYjJOUf5R7mri0LWKwyfRHX0xsQQe43cCC6WM7Cs Zdbu86dMkqzp+4BJfalHFDl0llp782D8Ybiy6CwZbvNyxptNIW7GYfZ9TVCllBMh 5izIqbgub4DWNtq591l+Bf2BnmstU3uiagYw8awSBP4eo9p6y1IgkDafAoGBAJbi lIiqEP0IqA06/pWc0Qew3rD7OT0ndqjU6Es2i7xovURf3QDkinJThBZNbdYUzdsp IgloP9yY33/a90SNLLIYlARJtyNVZxK59X4qiOpF9prlfFvgpOumfbkj15JljTB8 aGKkSvfVA5jRYwLysDwMCHwO0bOR1u3itos5AgsFAoGAKEGms1kuQ5/HyFgSmg9G wBUzu+5Y08/A37rvyXsR6GjmlZJvULEopJNUNCOOpITNQikXK63sIFry7/59eGv5 UwKadZbfwbVF5ipu59UxfVE3lipf/mYePDqMkHVWv/8p+OnnJt9uKnyW8VSOu5uk 82QF30zbIWDTUjrcugVAs+E= -----END PRIVATE KEY----- EOT } depends on = [google integrations client.client] } JSON Web Token (JWT) The following example creates a JSON Web Token (JWT) authentication type in the us-central1 region: resource \"google integrations auth config\" \"auth config jwt\" { location = \"us-central1\" display name = \"tf-jwt\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"JWT\" jwt { jwt header = \"{\\\"alg\\\": \\\"HS256\\\", \\\"typ\\\": \\\"JWT\\\"}\" jwt payload = \"{\\\"sub\\\": \\\"1234567890\\\", \\\"name\\\": \\\"John Doe\\\", \\\"iat\\\": 1516239022}\" secret = \"secret\" } } depends on = [google integrations client.client] } OAuth 2.0 authorization code The following example creates a SSL/TLS client certification authentication type in the us-central1 region: resource \"google integrations auth config\" \"auth config oauth2 authorization code\" { location = \"us-central1\" display name = \"tf-oauth2-authorization-code\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"OAUTH2 AUTHORIZATION CODE\" oauth2 authorization code { client id = \"Kf7utRvgr95oGO5YMmhFOLo8\" client secret = \"D-XXFDDMLrg2deDgczzHTBwC3p16wRK1rdKuuoFdWqO0wliJ\" scope = \"photo offline access\" auth endpoint = \"https://authorization-server.com/authorize\" token endpoint = \"https://authorization-server.com/token\" } } depends on = [google integrations client.client] } OAuth 2.0 client credentials The following example creates a OAuth 2.0 client credentials authentication type in the us-central1 region: resource \"google integrations auth config\" \"auth config oauth2 client credentials\" { location = \"us-central1\" display name = \"tf-oauth2-client-credentials\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"OAUTH2 CLIENT CREDENTIALS\" oauth2 client credentials { client id = \"demo-backend-client\" client secret = \"MJlO3binatD9jk1\" scope = \"read\" token endpoint = \"https://login-demo.curity.io/oauth/v2/oauth-token\" request type = \"ENCODED HEADER\" token params { entries { key { literal value { string value = \"string-key\" } } value { literal value { string value = \"string-value\" } } } } } } depends on = [google integrations client.client] } Google OIDC ID token The following example creates a Google OIDC ID token authentication type in the us-central1 region: resource \"random id\" \"default\" { byte length = 8 } resource \"google service account\" \"service account\" { account id = \"sa-${random id.default.hex}\" display name = \"Service Account\" } resource \"google integrations auth config\" \"auth config oidc token\" { location = \"us-central1\" display name = \"tf-oidc-token\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"OIDC TOKEN\" oidc token { service account email = google service account.service account.email audience = \"https://us-central1-project.cloudfunctions.net/functionA 1234987819200.apps.googleusercontent.com\" } } depends on = [google service account.service account, google integrations client.client] } Service account The following example creates a service account authentication type in the us-central1 region: resource \"random id\" \"default\" { byte length = 8 } resource \"google service account\" \"service account\" { account id = \"sa-${random id.default.hex}\" display name = \"Service Account\" } resource \"google integrations auth config\" \"auth config service account\" { location = \"us-central1\" display name = \"tf-service-account\" description = \"Test auth config created via terraform\" decrypted credential { credential type = \"SERVICE ACCOUNT\" service account credentials { service account = google service account.service account.email scope = \"https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/adexchange.buyer https://www.googleapis.com/auth/admob.readonly\" } } depends on = [google service account.service account, google integrations client.client] } After you save, the new authentication profile is available as an option in the Authorization profile to use drop-down of any task requiring authentication.",
+          "Under Authorized redirect URIs , click +Add URI and enter the following: https://console.cloud.google.com/integrations/callback/locations/ AUTH PROFILE REGION Click Create .",
+          "The region you select here must be the same as the AUTH PROFILE REGION used in the Authorized redirect URIs when you created the OAuth 2.0 client ID."
+        ]
+      },
+      {
+        "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This region name can be used to identify the correct Model Armor template to use for that instance For example: <SanitizeModelResponse async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/ {system.region.name} /templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> Model Armor response processing You can add additional processing logic after the Model Armor policy processes the LLM response.",
+          "Set environment variables In the Google Cloud project that contains your Apigee instance, use the following command to set environment variables: export PROJECT = PROJECT ID export LOCATION = REGION export RUNTIME HOSTNAME = RUNTIME HOSTNAME Where: PROJECT ID is the ID of the project with your Apigee instance.",
+          "Set the regional endpoint: gcloud config set api endpoint overrides/modelarmor \"https://modelarmor.$LOCATION.rep.googleapis.com/\" You should receive the following response: Updated property [ api endpoint overrides/modelarmor ] ."
+        ]
+      },
+      {
+        "title": "Apigee Integrations API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest",
+        "source_id": "site-api-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee Integration provides the following regional service endpoints: Region REST/HTTP endpoint asia-east1 asia-east1-integrations.googleapis.com asia-northeast1 asia-northeast1-integrations.googleapis.com asia-south1 asia-south1-integrations.googleapis.com asia-southeast1 asia-southeast1-integrations.googleapis.com australia-southeast1 australia-southeast1-integrations.googleapis.com australia-southeast2 australia-southeast2-integrations.googleapis.com europe-north1 europe-north1-integrations.googleapis.com europe-west1 europe-west1-integrations.googleapis.com europe-west2 europe-west2-integrations.googleapis.com europe-west3 europe-west3-integrations.googleapis.com europe-west4 europe-west4-integrations.googleapis.com europe-west6 europe-west6-integrations.googleapis.com europe-west9 europe-west9-integrations.googleapis.com europe-southwest1 europe-southwest1-integrations.googleapis.com northamerica-northeast1 northamerica-northeast1-integrations.googleapis.com southamerica-east1 southamerica-east1-integrations.googleapis.com us-central1 us-central1-integrations.googleapis.com us-east1 us-east1-integrations.googleapis.com us-east4 us-east4-integrations.googleapis.com us-west1 us-west1-integrations.googleapis.com us-west2 us-west2-integrations.googleapis.com me-central1 me-central1-integrations.googleapis.com me-west1 me-west1-integrations.googleapis.com REST Resource: v1.projects.locations.products.authConfigs Methods create POST /v1/{parent=projects/ /locations/ /products/ }/authConfigs Creates an auth config record. delete DELETE /v1/{name=projects/ /locations/ /products/ /authConfigs/ } Deletes an auth config. get GET /v1/{name=projects/ /locations/ /products/ /authConfigs/ } Gets a complete auth config. list GET /v1/{parent=projects/ /locations/ /products/ }/authConfigs Lists all auth configs that match the filter. patch PATCH /v1/{authConfig.name=projects/ /locations/ /products/ /authConfigs/ } Updates an auth config.",
+          "Apigee Integrations has regional service endpoints, where a region corresponds to a specific geographic location.",
+          "REST Resource: v1.projects.locations.products.integrations.versions Methods create POST /v1/{parent=projects/ /locations/ /products/ /integrations/ }/versions Create a integration with a draft version in the specified project. delete DELETE /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ } Soft-deletes the integration. download GET /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:download Downloads an integration. get GET /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ } Get a integration in the specified project. list GET /v1/{parent=projects/ /locations/ /products/ /integrations/ }/versions Returns the list of all integration versions in the specified project. patch PATCH /v1/{integrationVersion.name=projects/ /locations/ /products/ /integrations/ /versions/ } Update a integration with a draft version in the specified project. publish POST /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:publish This RPC throws an exception if the integration is in ARCHIVED or ACTIVE state. takeoverEditLock POST /v1/{integrationVersion=projects/ /locations/ /products/ /integrations/ /versions/ }:takeoverEditLock Clears the locked by and locked at timestamp in the DRAFT version of this integration. unpublish POST /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:unpublish Sets the status of the ACTIVE integration to SNAPSHOT with a new tag \"PREVIOUSLY PUBLISHED\" after validating it. upload POST /v1/{parent=projects/ /locations/ /products/ /integrations/ }/versions:upload Uploads an integration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.email",
+      "account.service",
+      "adexchange.buyer",
+      "admob.readonly",
+      "apps.googleusercontent.com",
+      "client.client",
+      "console.cloud.google.com",
+      "content.parts",
+      "demo.curity.io",
+      "id.default.hex",
+      "integrations.googleapis.com",
+      "project.cloudfunctions.net",
+      "rep.googleapis.com",
+      "request.content",
+      "response.content",
+      "server.com",
+      "system.region.name",
+      "v1.projects.locations.products.authConfigs",
+      "v1.projects.locations.products.integrations",
+      "v1.projects.locations.products.integrations.versions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-authentication-profiles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    }
+  ]
+}

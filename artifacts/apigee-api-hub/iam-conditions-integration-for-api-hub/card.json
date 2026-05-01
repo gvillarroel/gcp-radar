@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.962Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "IAM Conditions integration for API hub",
+  "feature_slug": "iam-conditions-integration-for-api-hub",
+  "summary": "API hub now integrates with IAM Conditions to support fine-grained, attribute-based conditional access control over API hub resources.",
+  "extended_definition": "API hub now integrates with IAM Conditions to support fine-grained, attribute-based conditional access control over API hub resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add IAM conditions \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Identity and Access Management (IAM) Conditions lets you to define and enforce conditional access control for Google Cloud resources, including API hub resources.",
+          "Home Documentation Application development Apigee Guides Send feedback Add IAM conditions Stay organized with collections Save and categorize content based on your preferences.",
+          "Examples of using IAM conditions for API hub Example 1: Access control for all API resources starting with a prefix or based on a Tag ."
+        ]
+      },
+      {
+        "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "source_id": "site-docs-reference-2",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Download the following prebuilt integration JSON file and use it for the purpose of this tutorial: Integration file Download link enrich-with-spec-yaml.json Click to download Create and upload an integration To begin, you'll create a new integration in Application Integration and then upload the downloaded JSON file to define the curation logic: In the Google Cloud console, go to the Application Integration page.",
+          "Step 1: Create an integration for custom curation With the environment ready, you can now define the custom curation logic using Application Integration, which will handle the process of identifying, enriching, and transforming the API metadata.",
+          "The logic for this custom curation is defined using an integration in Application Integration."
+        ]
+      },
+      {
+        "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram illustrates the workflow you'll be setting up: Objectives In this tutorial, you will complete the following steps: Step 1: Create an Azure App Step 2: Configure Google Cloud resources Step 3: Create and publish an integration in Application Integration Step 4: Execute the integration to ingest API data from Azure APIM to API hub Step 5: Verify and view the ingested API data in API hub Costs In this document, you use the following billable components of Google Cloud: Application Integration To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "Make sure that you have the following role or roles on the project: API hub Admin ( roles/apihub.admin ) Application Integration Admin ( roles/integrations.admin ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Check for the roles In the Google Cloud console, go to the IAM page.",
+          "Replace the following: <GCP PROJECT ID> : the ID of your Google Cloud project. <GCP REGION> : the region where API hub is provisioned. <AZURE SUBSCRIPTION ID> : your Azure subscription ID. <AZURE TENANT ID> : your Azure tenant ID. <AZURE RESOURCE GROUP> : the name of the Azure resource group that contains your Azure APIM instance. <AZURE APP NAME> : apihub-integration ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apihub.admin",
+      "env.sh",
+      "googleapis.com",
+      "iam.serviceAccountAdmin",
+      "integration.sh",
+      "integrations.admin",
+      "resourcemanager.projectIamAdmin",
+      "serviceusage.serviceUsageAdmin",
+      "setup.sh",
+      "template.json",
+      "yaml.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/apihub.admin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/integrations.admin",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/add-iam-conditions",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    }
+  ]
+}

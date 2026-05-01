@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Vertex AI Conversation generative agents",
+  "feature_slug": "vertex-ai-conversation-generative-agents",
+  "summary": "Vertex AI Conversation provides generative agents in the Vertex AI Conversation console.",
+  "extended_definition": "Vertex AI Conversation provides generative agents in the Vertex AI Conversation console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Conversational Agents console overview \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console compatibility Agents previously built with the Dialogflow CX console or the Vertex AI Agent Builder console can be seamlessly accessed by the Conversational Agents console.",
+          "Using the Conversational Agents console, you can create interactive agents that use generative playbooks , generative data stores , and deterministic flows .",
+          "The Conversational Agents console is a new console that includes features from both the Dialogflow CX console and the Vertex AI Agent Builder console."
+        ]
+      },
+      {
+        "title": "Agents \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: if the source agent refers to a data store named projects/123/locations/eu-west2/collections/default collection/dataStores/myDataStore1 and the App of the target agent is named projects/321/locations/us-east1/collections/default collections/engines/app123 , then the resulting data store reference in the target agent will become: projects/321/locations/us-east1/collections/default collection/dataStores/myDataStore1 Note: in the API and in the contents of the exported data, a Vertex AI Agents App is called a GenAppBuilder Engine.",
+          "Vertex AI Agents Apps : The association to a Vertex AI Agents App remains unchanged in the target agent. (In other words, the value of engine in GenAppBuilderSettings ) This means that data store agents can only be restored into other existing data store agents, because the resulting agent also needs to have an association to a Vertex AI Agents App.",
+          "Vertex AI Agents Data Stores : All references to data stores will be overwritten in the target agent according to the following rules: If the target agent isn't associated with an App, then it's not possible to restore an agent with data store references into it."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Conversational Agents console agent settings To access agent settings: Console Open the Conversational Agents console .",
+          "GenAI The following generative AI settings are available for agent apps: Generative model selection Select the generative model that agents should use by default.",
+          "Conversation start link This setting determines whether your agent starts the conversation with a generative playbook or a deterministic flow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "PostgreSQL 10",
+  "feature_slug": "postgresql-10",
+  "summary": "Cloud SQL for PostgreSQL supports PostgreSQL major version 10; Cloud SQL for PostgreSQL offers PostgreSQL major version 10 in beta.",
+  "extended_definition": "Cloud SQL for PostgreSQL supports PostgreSQL major version 10; Cloud SQL for PostgreSQL offers PostgreSQL major version 10 in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+      "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+      "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About client-side encryption \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "source_id": "site-iam-reference",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tink supports envelope encryption in C++, Java, Go, and Python using the AEAD API: public interface Aead { byte [] encrypt ( final byte [] plaintext, final byte [] associatedData ) throws… byte [] decrypt ( final byte [] ciphertext, final byte [] associatedData ) throws… } Besides the normal message/ciphertext argument, the encrypt and decrypt methods support optional associated data.",
+          "Cloud KMS supports many different key types."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-managed encryption keys use the following format: projects / [ KMS PROJECT ID ] / locations / [ LOCATION ] / keyRings / [ KEY RING ] / cryptoKeys / [ KEY NAME ] If Cloud SQL is unable to access the key (such as if you disable the key version), Cloud SQL suspends the instance.",
+          "You can't use customer-managed encryption keys to encrypt: External servers (external primary instances and external replicas) Instance metadata, such as the instance ID, database version, machine type, flags, backup schedule, etc.",
+          "When you rotate keys, instances that are encrypted with that key aren't automatically re-encrypted with the new primary key version."
+        ]
+      },
+      {
+        "title": "\"Authorize with authorized networks \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "source_id": "site-iam-reference",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Limitations Some IP address ranges can't be added as authorized networks.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } REST v1beta4 Configuring authorized networks replaces the existing authorized networks list.",
+          "Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 An authorized ip address or range network range 2 Another authorized ip address or range HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { \"settings\": { \"ipConfiguration\": { \"authorizedNetworks\": [{\"value\": \" network range 1 \"}, {\"value\": \" network range 2 \"}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/cmek"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.152Z",
+  "source_step08_card": "data/step-08/current/products/speech-to-text/card.json",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text",
+  "feature_name": "OGG_OPUS sample rate support in Cloud Speech-to-Text",
+  "feature_slug": "ogg-opus-sample-rate-support-in-cloud-speech-to-text",
+  "summary": "Cloud Speech-to-Text expanded support for the OGG_OPUS audio encoding to include 8,000 Hz, 12,000 Hz, 16,000 Hz, 24,000 Hz, and 48,000 Hz input sample rates.",
+  "extended_definition": "Cloud Speech-to-Text expanded support for the OGG_OPUS audio encoding to include 8,000 Hz, 12,000 Hz, 16,000 Hz, 24,000 Hz, and 48,000 Hz input sample rates.",
+  "lifecycle": {
+    "latest_feature_date": "2018-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/speech-to-text/docs/audit-logging",
+      "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+      "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+      "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to audio encoding for Cloud Speech-to-Text \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "source_id": "site-docs-root",
+        "final_score": 346,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you specify an encoding or sample rate value that does not match the value in the file header, then Cloud Speech-to-Text returns an error.",
+          "If omitted, Cloud Speech-to-Text automatically determines the encoding and sample rate for WAV or FLAC files based on the file header.",
+          "A FLAC file must contain the sample rate in the header in order to be submitted to the Cloud Speech-to-Text API."
+        ]
+      },
+      {
+        "title": "Speech-to-Text audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/audit-logging",
+        "source_id": "site-docs-root",
+        "final_score": 316,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Speech-to-Text audit logs use the service name speech.googleapis.com .",
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Speech-to-Text audit logging Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes audit logging for Speech-to-Text."
+        ]
+      },
+      {
+        "title": "\"Transcribe speech to text by using the command line \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "source_id": "site-docs-root",
+        "final_score": 313,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To initialize the gcloud CLI, run the following command: gcloud init Make an audio transcription request Use the following code sample to send a recognize REST request to the Speech-to-Text API.",
+          "You should see a response similar to the following: { \"results\" : [ { \"alternatives\" : [ { \"transcript\" : \"how old is the Brooklyn Bridge\" , \"confidence\" : 0.98267895 } ] } ] } You sent your first request to Speech-to-Text.",
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Transcribe speech to text by using the command line Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "RecognitionConfig \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig",
+        "source_id": "site-api-reference",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"encoding\" : enum ( AudioEncoding ) , \"sampleRateHertz\" : integer , \"audioChannelCount\" : integer , \"enableSeparateRecognitionPerChannel\" : boolean , \"languageCode\" : string , \"alternativeLanguageCodes\" : [ string ] , \"maxAlternatives\" : integer , \"profanityFilter\" : boolean , \"adaptation\" : { object ( SpeechAdaptation ) } , \"transcriptNormalization\" : { object ( TranscriptNormalization ) } , \"speechContexts\" : [ { object ( SpeechContext ) } ] , \"enableWordTimeOffsets\" : boolean , \"enableWordConfidence\" : boolean , \"enableAutomaticPunctuation\" : boolean , \"enableSpokenPunctuation\" : boolean , \"enableSpokenEmojis\" : boolean , \"diarizationConfig\" : { object ( SpeakerDiarizationConfig ) } , \"metadata\" : { object ( RecognitionMetadata ) } , \"model\" : string , \"useEnhanced\" : boolean } Fields encoding enum ( AudioEncoding ) Encoding of audio data sent in all RecognitionAudio messages.",
+          "OGG OPUS Opus encoded audio frames in Ogg container ( OggOpus ). sampleRateHertz must be one of 8000, 12000, 16000, 24000, or 48000.",
+          "JSON representation AudioEncoding SpeechAdaptation JSON representation ABNFGrammar JSON representation TranscriptNormalization JSON representation Entry JSON representation SpeechContext JSON representation SpeakerDiarizationConfig JSON representation RecognitionMetadata JSON representation InteractionType MicrophoneDistance OriginalMediaType RecordingDeviceType Provides information to the recognizer that specifies how to process the request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "speech.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/audit-logging",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/audit-logging",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/encoding",
+        "https://docs.cloud.google.com/speech-to-text/docs/audit-logging",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig"
+      ]
+    }
+  ]
+}

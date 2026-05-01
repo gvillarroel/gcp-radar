@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.596Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Transaction log backup import",
+  "feature_slug": "transaction-log-backup-import",
+  "summary": "Cloud SQL supports importing transaction log backups to help reduce migration downtime.",
+  "extended_definition": "Cloud SQL supports importing transaction log backups to help reduce migration downtime.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Export and import using BAK files and transaction log files \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is because importing a database backup with --no-recovery is a prerequisite for importing transaction log backups.",
+          "Cloud SQL doesn't support importing transaction log backups on instances that are enabled with point-in-time recovery.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /import\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ TARGET INSTANCE ID \", \"status\": \"PENDING\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"IMPORT\", \"importContext\": { \"uri\": {uri}, \"database\": DATABASE NAME , \"kind\": \"sql#importContext\", \"fileType\": \"BAK\", \"bakImportOptions\": { \"noRecovery\": false, \"bakType\": TLOG, \"recoveryOnly\": false } }, \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Repeat this step until all transaction log backups are imported."
+        ]
+      },
+      {
+        "title": "\"Method: Backups.ListBackups \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "source_id": "site-api-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"backups\" : [ { object ( Backup ) } ] , \"nextPageToken\" : string , \"warnings\" : [ { object ( ApiWarning ) } ] } Fields backups[] object ( Backup ) A list of backups. nextPageToken string A token, which can be sent as pageToken to retrieve the next page.",
+          "Home Documentation Databases Cloud SQL SQL Server Reference Send feedback Method: Backups.ListBackups Stay organized with collections Save and categorize content based on your preferences.",
+          "When paginating, all other parameters provided to Backups.ListBackups must match the call that provided the page token. filter string Multiple filter queries are separated by spaces."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backup options Cloud SQL offers two backup service options to manage your instance's backups: Enhanced backups : backups are managed and stored in a centralized backup management project that leverages the Backup and DR Service, and provides enforced retention, granular scheduling, and monitoring.",
+          "For standard backups, since instance names can be used after an instance is deleted in Cloud SQL, retained backups are stored in your Google Cloud project with a field called instance deletion time .",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Cloud SQL backups overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/Backups/ListBackups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    }
+  ]
+}

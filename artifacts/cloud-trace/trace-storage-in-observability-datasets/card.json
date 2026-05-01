@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.015Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Trace storage in observability datasets",
+  "feature_slug": "trace-storage-in-observability-datasets",
+  "summary": "Cloud Trace stores trace data in an observability dataset that can be linked for querying with services such as BigQuery.",
+  "extended_definition": "Cloud Trace stores trace data in an observability dataset that can be linked for querying with services such as BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/analytics",
+      "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+      "https://docs.cloud.google.com/trace/docs/storage-manage",
+      "https://docs.cloud.google.com/trace/docs/storage-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage trace storage \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "source_id": "site-docs-root-2",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For each object, the value of the name field has the following format: projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID /dataset/ DATASET ID For example, when a command was issued to the buckets.datasets.list endpoint with the parent parameter set to projects/my-project/locations/us/buckets/ Trace , the response was: { \"datasets\": [ { \"name\": \"projects/my-project/locations/us/buckets/ Trace/datasets/Spans\", \"description\": \"Trace Spans\", \"createTime\": \"2025-01-01T15:42:30.988919645Z\", \"updateTime\": \"2025-02-04T15:42:30.988919645Z\", } ] } You can issue commands to other Observability API endpoints to get information about the dataset whose ID is DATASET ID .",
+          "For example, when a command was issued to the buckets.datasets.views.list endpoint with the parent parameter set to projects/my-project/locations/us/buckets/ Trace/datasets/Spans/views , the response was: { \"views\": [ { \"name\": \"projects/my-project/locations/us/buckets/ Trace/datasets/Spans/views/ AllSpans\", \"filter\": \"\", \"createTime\": \"2025-01-01T15:42:30.988919645Z\", \"updateTime\": \"2025-02-04T15:42:30.988919645Z\", } ] } For a complete list of Observability API endpoints, see the Observability API reference documentation .",
+          "For example, when a command was issued to the buckets.datasets.links.list endpoint with the parent parameter set to projects/my-project/locations/us/buckets/ Trace/datasets/Spans/links , the response was: { \"links\": [ { \"name\": \"projects/my-project/locations/us/buckets/ Trace/datasets/Spans/links/my link\", \"description\": \"My link for traces to BigQuery\", \"createTime\": \"2025-01-12T15:42:30.988919645Z\" } ] } For a complete list of Observability API endpoints, see the Observability API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"Collect and view multimodal prompts and responses \\_|\\_ Cloud Trace \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "source_id": "site-docs-root-2",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a linked dataset on your log bucket To determine whether the log bucket that stores your log data is upgraded for Observability Analytics, run the following command: gcloud logging buckets describe LOG BUCKET ID --location = LOCATION Replace the following before you run the command: LOG BUCKET ID : The ID of the log bucket.",
+          "Go to the section titled Load in Google Observability Gen AI datasets and enter values for the following sources: INPUT SOURCE OUTPUT SOURCE SYSTEM SOURCE You can find values for these fields by using the gen ai labels that are attached to your log entries.",
+          "To run evaluations by using a Google Colaboratory notebook, do the following: To view an example notebook, click evaluating observability datasets.ipynb ."
+        ]
+      },
+      {
+        "title": "Trace storage overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "source_id": "site-docs-root",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Observability storage model The Observability API storage model relies on the following architecture: Observability buckets An observability bucket is the management entity for datasets, which store data.",
+          "Storage configuration for trace data Your trace data is stored in an observability bucket named Trace .",
+          "Data residency for observability buckets If you have compliance or regulatory requirements to store your data in specific locations or to use CMEK, then we recommend that you configure default settings for observability buckets: For organizations, folders, and projects, default settings for observability buckets let you configure the following: A default storage location."
+        ]
+      },
+      {
+        "title": "Query and analyze traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About linked BigQuery datasets You don't need a linked BigQuery dataset to query your trace data, or to query your trace and log data.",
+          "You do need a linked BigQuery dataset when you want to do any of the following: Join trace data with other BigQuery datasets.",
+          "Enable the API To get the permissions that you need to load the Observability Analytics page, write, run, and save private queries on your trace data, ask your administrator to grant you the following IAM roles: Observability View Accessor ( roles/observability.viewAccessor ) on the observability views that you want to query."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "buckets.datasets.links.list",
+      "buckets.datasets.list",
+      "buckets.datasets.views.list",
+      "datasets.ipynb",
+      "observability.viewAccessor",
+      "projects.locations.buckets.datasets.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/observability.viewAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/storage-manage",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/storage-overview",
+        "https://docs.cloud.google.com/trace/docs/analytics"
+      ]
+    }
+  ]
+}

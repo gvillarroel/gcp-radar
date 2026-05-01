@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.779Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud EKM with VPC",
+  "feature_slug": "cloud-ekm-with-vpc",
+  "summary": "Cloud EKM with VPC lets you access your external key manager through a private endpoint over a virtual private network; Cloud EKM with VPC lets you access your external key manager through a private endpoint over a virtual private network.",
+  "extended_definition": "Cloud EKM with VPC lets you access your external key manager through a private endpoint over a virtual private network; Cloud EKM with VPC lets you access your external key manager through a private endpoint over a virtual private network.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+      "https://docs.cloud.google.com/kms/docs/create-external-key",
+      "https://docs.cloud.google.com/kms/docs/ekm",
+      "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "EKM key management from Cloud KMS When using Cloud EKM through a VPC with an external key management partner that supports the Cloud EKM control plane, you can use the Cloud KMS EKM management mode to simplify the process of maintaining external keys in your external key management partner and in Cloud EKM.",
+          "Key Access Justifications When you use Cloud EKM with Key Access Justifications, each request to your external key management partner includes a field that identifies the reason for each request.",
+          "Cloud EKM through a VPC A version of Cloud EKM where Google Cloud communicates with your external key manager over a Virtual Private Cloud (VPC)."
+        ]
+      },
+      {
+        "title": "\"Create an EKM connection \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "source_id": "site-iam-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ensure a Cloud EKM service account exists for the project. gcloud CLI gcloud beta services identity create \\ --service=cloudkms.googleapis.com \\ --project= KEY PROJECT ID Grant the servicedirectory.viewer and servicedirectory.pscAuthorizedService in your VPC project to service- KEY PROJECT NUMBER @gcp-sa-ekms.iam.gserviceaccount.com For help with getting your project ID and number, see Creating and managing projects . gcloud CLI gcloud projects add-iam-policy-binding VPC PROJECT ID \\ --member=serviceAccount:service- KEY PROJECT NUMBER @gcp-sa-ekms.iam.gserviceaccount.com \\ --role=roles/servicedirectory.viewer gcloud projects add-iam-policy-binding VPC PROJECT ID \\ --member=serviceAccount:service- KEY PROJECT NUMBER @gcp-sa-ekms.iam.gserviceaccount.com \\ --role=roles/servicedirectory.pscAuthorizedService Create an EKM connection To connect your external key manager to Cloud EKM, create an EKM connection in your key project .",
+          "Authorize Cloud EKM to access your VPC For each key project, you must authorize Cloud EKM to access your VPC on that project's behalf, even if the key project and the VPC project are the same.",
+          "This page shows you how to set up Cloud External Key Manager (Cloud EKM) to connect to your external key management (EKM) provider over a Virtual Private Cloud (VPC) network ."
+        ]
+      },
+      {
+        "title": "\"Create an external key \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "source_id": "site-iam-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The key shows as Pending generation until the key path is returned by your EKM and the Cloud EKM key is available. gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . gcloud kms keys create KEY NAME \\ --keyring KEY RING \\ --location LOCATION \\ --purpose PURPOSE \\ --default-algorithm ALGORITHM \\ --protection-level \"external-vpc\" \\ --crypto-key-backend VPC CONNECTION RESOURCE ID Replace the following: KEY NAME : the name of the key.",
+          "Home Documentation Security Cloud KMS Guides Send feedback Create an external key Stay organized with collections Save and categorize content based on your preferences.",
+          "If you see the Key path field, the EKM via VPC connection that you selected isn't configured for coordinated external keys."
+        ]
+      },
+      {
+        "title": "\"Cloud EKM error reference \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/ekm_errors",
+        "source_id": "site-api-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you observe frequent timeouts or network errors, ensure that the geographic location of your Cloud EKM keys as near as possible to the region you use for the external keys.",
+          "Home Documentation Security Cloud KMS Reference Send feedback Cloud EKM error reference Stay organized with collections Save and categorize content based on your preferences.",
+          "Grant the appropriate permissions in your external key manager, and then try again by rotating the Cloud EKM key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com",
+      "ekms.iam.gserviceaccount.com",
+      "servicedirectory.pscAuthorizedService",
+      "servicedirectory.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/servicedirectory.pscAuthorizedService",
+      "roles/servicedirectory.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/ekm_errors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect global access for endpoints",
+  "feature_slug": "private-service-connect-global-access-for-endpoints",
+  "summary": "Private Service Connect endpoints for published services gained the ability to be configured with global access so clients in any region can reach them.",
+  "extended_definition": "Private Service Connect endpoints for published services gained the ability to be configured with global access so clients in any region can reach them.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 335,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints .",
+          "IP version translation For Private Service Connect endpoints that connect to published services (service attachments), the IP version of the consumer forwarding rule's IP address determines the IP version of the endpoint and traffic that egresses the endpoint.",
+          "About accessing published services through endpoints This document provides an overview of connecting to services in another VPC network by using Private Service Connect endpoints."
+        ]
+      },
+      {
+        "title": "\"Access published services through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 335,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to access published services through endpoints: To create, view, and delete endpoints in your project: compute.networks.use on your project compute.subnetworks.use on your project compute.addresses.createInternal on your project compute.addresses.deleteInternal on your project compute.addresses.get on your project compute.addresses.list on your project compute.addresses.use on your project compute.forwardingRules.create on your project compute.forwardingRules.delete on your project compute.forwardingRules.get on your project compute.forwardingRules.list on your project compute.forwardingRules.pscCreate on your project compute.forwardingRules.pscDelete on your project compute.regionOperations.get on your project servicedirectory.namespaces.create on your project servicedirectory.namespaces.delete on your project servicedirectory.services.create on your project servicedirectory.services.delete on your project To create, view, and delete endpoints in a service project that is attached to a Shared VPC network: compute.addresses.createInternal on the service project compute.addresses.deleteInternal on the service project compute.addresses.get on the service project compute.addresses.list on the service project compute.addresses.use on the service project compute.forwardingRules.create on the service project compute.forwardingRules.delete on the service project compute.forwardingRules.get on the service project compute.forwardingRules.list on the service project compute.forwardingRules.pscCreate on the service project compute.forwardingRules.pscDelete on the service project compute.regionOperations.get on the service project servicedirectory.namespaces.create on the service project servicedirectory.namespaces.delete on the service project servicedirectory.services.create on the service project servicedirectory.services.delete on the service project compute.networks.use on the host project compute.subnetworks.use on the host project To automatically or manually configure DNS entries for an endpoint in your project: dns.managedZones.create on your project dns.managedZones.delete on your project dns.networks.bindPrivateDNSZone on your project servicedirectory.namespaces.associatePrivateZone on your project To automatically or manually configure DNS entries for an endpoint in a Shared VPC network: dns.managedZones.create on the service project dns.managedZones.delete on the service project dns.networks.bindPrivateDNSZone on the service project servicedirectory.namespaces.associatePrivateZone on the service project To access the Private Service Connect page in the Google Cloud console: compute.forwardingRules.list on your project compute.globalForwardingRules.list on your project compute.networkEndpointGroups.list on your project compute.regionNetworkEndpointGroups.list on your project compute.urlMaps.list on your project compute.backendService.list on your project compute.regionBackendService.list on your project compute.backendBucket.list on your project compute.targetHttpProxy.list on your project compute.targetHttpsProxy.list on your project compute.regionTargetTcpProxy.list on your project compute.targetTcpProxy.list on your project compute.targetSslProxy.list on your project compute.sslCertificate.list on your project compute.sslPolicy.list on your project compute.regionHealthCheck.list on your project compute.healthCheck.list on your project compute.httpHealthCheck.list on your project compute.httpsHealthCheck.list on your project You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Endpoint creation fails when global access is configured Not all Private Service Connect published services support endpoints with global access.",
+          "If you create an endpoint with global access and the published service doesn't support it, you see this error message: Private Service Connect global access is not supported for the given forwarding rule, since its producer service does not support consumer global access."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 309,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private Service Connect provides two methods to connect to published services: Endpoints (based on a forwarding rule) Backends (based on a load balancer) These endpoint types require slightly different producer configurations.",
+          "Known issues Health check failures with global access consumer endpoints Consumers can connect a global access endpoint to a published service that's not configured for global access.",
+          "Update any automation so that new producer load balancers that support global access Private Service Connect endpoints are configured for global access."
+        ]
+      },
+      {
+        "title": "\"Create a Private Service Connect backend \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "source_id": "site-docs-root-2",
+        "final_score": 303,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instructions that include creating a load balancer with a Private Service Connect backend, see the following: Create an internal Application Load Balancer to access Google APIs Create a global external Application Load Balancer to access a published service Roles The Compute Load Balancer Admin role ( roles/compute.loadBalancerAdmin ) contains the permission required to perform the tasks described in this guide.",
+          "Create a Private Service Connect NEG When you create a NEG, you choose which type of target it connects to: A published service A regional Google API A global Google API Create a NEG to connect to a published service When you create a Private Service Connect NEG that points to a published service, you need the service attachment URI for the service.",
+          "For complete instructions about creating a cross-region internal Application Load Balancer and a Private Service Connect NEG to access global Google APIs, see Access global Google APIs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses.createInternal",
+      "compute.addresses.deleteInternal",
+      "compute.addresses.get",
+      "compute.addresses.list",
+      "compute.addresses.use",
+      "compute.backendBucket.list",
+      "compute.backendService.list",
+      "compute.forwardingRules.create",
+      "compute.forwardingRules.delete",
+      "compute.forwardingRules.get",
+      "compute.forwardingRules.list",
+      "compute.forwardingRules.pscCreate",
+      "compute.forwardingRules.pscDelete",
+      "compute.globalForwardingRules.list",
+      "compute.googleapis.com",
+      "compute.healthCheck.list",
+      "compute.httpHealthCheck.list",
+      "compute.httpsHealthCheck.list",
+      "compute.loadBalancerAdmin",
+      "compute.networkEndpointGroups.list",
+      "compute.networks.use",
+      "compute.regionBackendService.list",
+      "compute.regionHealthCheck.list",
+      "compute.regionNetworkEndpointGroups.list",
+      "compute.regionOperations.get",
+      "compute.regionTargetTcpProxy.list",
+      "compute.sslCertificate.list",
+      "compute.sslPolicy.list",
+      "compute.subnetworks.use",
+      "compute.targetHttpProxy.list",
+      "compute.targetHttpsProxy.list",
+      "compute.targetSslProxy.list",
+      "compute.targetTcpProxy.list",
+      "compute.urlMaps.list",
+      "dns.managedZones.create",
+      "dns.managedZones.delete",
+      "dns.networks.bindPrivateDNSZone",
+      "servicedirectory.namespaces.associatePrivateZone",
+      "servicedirectory.namespaces.create",
+      "servicedirectory.namespaces.delete",
+      "servicedirectory.services.create",
+      "servicedirectory.services.delete"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.loadBalancerAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends"
+      ]
+    }
+  ]
+}

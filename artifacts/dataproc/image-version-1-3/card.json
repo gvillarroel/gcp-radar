@@ -1,0 +1,248 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Image version 1.3",
+  "feature_slug": "image-version-1-3",
+  "summary": "Dataproc image version 1.3 is a generally available image line that updates major Hadoop ecosystem components and enables Hive on Tez by default; Dataproc image version 1.3 is a preview image line with updated Spark, Hadoop, Hive, Pig, and Tez versions and Hive on Tez by default.",
+  "extended_definition": "Dataproc image version 1.3 is a generally available image line that updates major Hadoop ecosystem components and enables Hive on Tez by default; Dataproc image version 1.3 is a preview image line with updated Spark, Hadoop, Hive, Pig, and Tez versions and Hive on Tez by default.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+      "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+      "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managed Service for Apache Spark security configuration | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "source_id": "feature-recovery-http",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Quickstart guide Compare serverless and cluster deployments Key Concepts Get started Create a cluster Submit a Spark job to a cluster Use Gemini to develop Spark applications Run Spark using Kubernetes Develop Data processing Configure Spark Manage Spark dependencies Customize Spark environment Enable concurrent writes Enhance Spark performance Tune Spark Run Spark jobs Use the console Use the command line Use the REST APIs Explorer Create a cluster Run a Spark job Update a cluster Delete a cluster Use client libraries Run Hadoop jobs Write and run Spark Scala jobs Run Trino Run Flink Run Hive Run Pig Run HBase Run Python Configure the Python environment Use Cloud Client Libraries for Python Use data connectors Use the Spark BigQuery connector Overview BigQuery connector code samples Use the Cloud Storage connector Use the Spark Spanner connector Data lakes and lake houses Explore and extract data Transform data Load data into BigQuery Create a lake house with Spark and BigQuery Configure metastores Create an Apache Iceberg table with metadata in BigLake metastore Use Iceberg Use Delta Use Hudi Data science notebooks and UIs Use notebooks Overview Run a Jupyter notebook on a cluster Run a genomics analysis on a notebook Use the JupyterLab extension to develop serverless Spark workloads Use the Component Gateway Data sources and storage Connect to data sources Connect to Cloud Storage Connect to BigQuery Connect Hive to BigQuery Connect to Bigtable Connect to Pub/Sub Lite Cluster creation Overview Configure a network Overview Use secure tags Configure Private Service Connect Select a cluster region Enable auto zone placement Schedule cluster deletion Use initialization actions Set cluster metadata Set cluster properties Enable cluster web interfaces Create a high availability cluster Create a node group cluster Create a partial cluster Create a single-node cluster Create sole-tenant cluster Create a custom image Cluster management Set labels for filtering Scale clusters Autoscale clusters Start and stop clusters Schedule cluster stop Start and stop a cluster manually Recreate a cluster Rotate clusters Update and delete a cluster Use SSH to connect to a cluster Follow best practices Manage cluster data Hadoop data storage Select storage type Cache cluster data Offload shuffle data View cluster logs Cluster resources Components Overview Delta Lake Docker Flink HBase Hive WebHCat Hudi Iceberg Jupyter Pig Presto Ranger Install Ranger Use Ranger Use Ranger with Kerberos Use Ranger with caching and downscoping Back up and restore a Ranger schema Solr Trino Zeppelin Zookeeper Managed Service for Apache Spark services Managed Service for Apache Spark versions Overview 3.0.x release versions 2.3.x release versions 2.2.x release versions 2.1.x release versions 2.0.x release versions Cluster image version lists Compute options Machine types GPUs Minimum CPU platform Flexible VMs Secondary workers Local solid state drives Boot disks Attached hyperdisks Create and manage Kubernetes cluster Overview Release versions Recreate a cluster Create node pools Create a custom image Scale clusters Delete a cluster Job management and orchestration Life of a job Restart jobs Monitor jobs Use workflow templates Overview Parameterization Use YAML files Use cluster selectors Use inline workflows Orchestrate workflows GitHub templates Workflow scheduling solutions Use workflow templates Use Cloud Composer Use Cloud Functions Use Cloud Scheduler Administration and data governance Fleet management Lineage Enable Spark data lineage Enable Hive data lineage Monitor and troubleshoot Managed Service for Apache Spark metrics Create metric alerts Profile resource usage Google Cloud Assist Analyze logs Managed Service for Apache Spark logs Job output logs Audit logs Troubleshoot clusters View cluster diagnostic data Troubleshoot cluster creation issues Diagnose Kubernetes clusters Enable Kubernetes logging Troubleshoot jobs Troubleshoot jobs Troubleshoot memory errors Troubleshoot job delays View job history Troubleshoot workflow templates Tutorials and examples Analyze public datasets with Spark Sentiment analysis with Spark MLlib Security and compliance Shared Responsibility Model Security best practices Authenticate users Authenticate to Managed Service for Apache Spark Authenticate personal clusters Workforce identity federation Assign roles and permissions Roles and permissions Managed Service for Apache Spark principals Granular IAM Assign roles for Kubernetes Service accounts Secure clusters Secure multi-tenancy using Kerberos Secure multi-tenancy using service accounts Encrypt memory Manage data encryption keys Enable Ranger authorization service Use the Secret Manager credential provider Create and secure a Hive metastore cluster Custom constraints Assured Workloads FedRAMP Compliance IAM and access control Use Kerberos VPC Service Controls Set Workforce access Developer resources Code samples AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools \"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Create a Kerberos cluster You can use the Google Cloud CLI, the Managed Service for Apache Spark API, or the Google Cloud console to enable Kerberos on clusters that use Managed Service for Apache Spark image version 1.3 and later. gcloud command To automatically configure a new Kerberos Managed Service for Apache Spark cluster (image version 1.3 and later), use the gcloud dataproc clusters create command. gcloud dataproc clusters create cluster-name \\ --image-version=2.0 \\ --enable-kerberos Cluster property: Instead of using the --enable-kerberos flag as shown in the preceding example, you can automatically configure Kerberos by passing the --properties \"dataproc:kerberos.beta.automatic-config.enable=true\" flag to the clusters create command (see Managed Service for Apache Spark service properties ).",
+          "Example : gcloud storage cp kerberos-root-principal-password.encrypted gs:// my-bucket Create the cluster You can use the gcloud command or the Managed Service for Apache Spark API to enable Kerberos on clusters with your own root principal password. gcloud command To create a Kerberos Managed Service for Apache Spark cluster (image version 1.3 and later), use the gcloud dataproc clusters create command. gcloud dataproc clusters create cluster-name \\ --region= region \\ --image-version=2.0 \\ --kerberos-root-principal-password-uri=gs:// my-bucket /kerberos-root-principal-password.encrypted \\ --kerberos-kms-key=projects/ project-id /locations/global/keyRings/ my-keyring /cryptoKeys/ my-key Use a YAML (or JSON) config file."
+        ]
+      },
+      {
+        "title": "Cluster web interfaces | Managed Service for Apache Spark | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "source_id": "feature-recovery-http",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Quickstart guide Compare serverless and cluster deployments Key Concepts Get started Create a cluster Submit a Spark job to a cluster Use Gemini to develop Spark applications Run Spark using Kubernetes Develop Data processing Configure Spark Manage Spark dependencies Customize Spark environment Enable concurrent writes Enhance Spark performance Tune Spark Run Spark jobs Use the console Use the command line Use the REST APIs Explorer Create a cluster Run a Spark job Update a cluster Delete a cluster Use client libraries Run Hadoop jobs Write and run Spark Scala jobs Run Trino Run Flink Run Hive Run Pig Run HBase Run Python Configure the Python environment Use Cloud Client Libraries for Python Use data connectors Use the Spark BigQuery connector Overview BigQuery connector code samples Use the Cloud Storage connector Use the Spark Spanner connector Data lakes and lake houses Explore and extract data Transform data Load data into BigQuery Create a lake house with Spark and BigQuery Configure metastores Create an Apache Iceberg table with metadata in BigLake metastore Use Iceberg Use Delta Use Hudi Data science notebooks and UIs Use notebooks Overview Run a Jupyter notebook on a cluster Run a genomics analysis on a notebook Use the JupyterLab extension to develop serverless Spark workloads Use the Component Gateway Data sources and storage Connect to data sources Connect to Cloud Storage Connect to BigQuery Connect Hive to BigQuery Connect to Bigtable Connect to Pub/Sub Lite Cluster creation Overview Configure a network Overview Use secure tags Configure Private Service Connect Select a cluster region Enable auto zone placement Schedule cluster deletion Use initialization actions Set cluster metadata Set cluster properties Enable cluster web interfaces Create a high availability cluster Create a node group cluster Create a partial cluster Create a single-node cluster Create sole-tenant cluster Create a custom image Cluster management Set labels for filtering Scale clusters Autoscale clusters Start and stop clusters Schedule cluster stop Start and stop a cluster manually Recreate a cluster Rotate clusters Update and delete a cluster Use SSH to connect to a cluster Follow best practices Manage cluster data Hadoop data storage Select storage type Cache cluster data Offload shuffle data View cluster logs Cluster resources Components Overview Delta Lake Docker Flink HBase Hive WebHCat Hudi Iceberg Jupyter Pig Presto Ranger Install Ranger Use Ranger Use Ranger with Kerberos Use Ranger with caching and downscoping Back up and restore a Ranger schema Solr Trino Zeppelin Zookeeper Managed Service for Apache Spark services Managed Service for Apache Spark versions Overview 3.0.x release versions 2.3.x release versions 2.2.x release versions 2.1.x release versions 2.0.x release versions Cluster image version lists Compute options Machine types GPUs Minimum CPU platform Flexible VMs Secondary workers Local solid state drives Boot disks Attached hyperdisks Create and manage Kubernetes cluster Overview Release versions Recreate a cluster Create node pools Create a custom image Scale clusters Delete a cluster Job management and orchestration Life of a job Restart jobs Monitor jobs Use workflow templates Overview Parameterization Use YAML files Use cluster selectors Use inline workflows Orchestrate workflows GitHub templates Workflow scheduling solutions Use workflow templates Use Cloud Composer Use Cloud Functions Use Cloud Scheduler Administration and data governance Fleet management Lineage Enable Spark data lineage Enable Hive data lineage Monitor and troubleshoot Managed Service for Apache Spark metrics Create metric alerts Profile resource usage Google Cloud Assist Analyze logs Managed Service for Apache Spark logs Job output logs Audit logs Troubleshoot clusters View cluster diagnostic data Troubleshoot cluster creation issues Diagnose Kubernetes clusters Enable Kubernetes logging Troubleshoot jobs Troubleshoot jobs Troubleshoot memory errors Troubleshoot job delays View job history Troubleshoot workflow templates Tutorials and examples Analyze public datasets with Spark Sentiment analysis with Spark MLlib Security and compliance Shared Responsibility Model Security best practices Authenticate users Authenticate to Managed Service for Apache Spark Authenticate personal clusters Workforce identity federation Assign roles and permissions Roles and permissions Managed Service for Apache Spark principals Granular IAM Assign roles for Kubernetes Service accounts Secure clusters Secure multi-tenancy using Kerberos Secure multi-tenancy using service accounts Encrypt memory Manage data encryption keys Enable Ranger authorization service Use the Secret Manager credential provider Create and secure a Hive metastore cluster Custom constraints Assured Workloads FedRAMP Compliance IAM and access control Use Kerberos VPC Service Controls Set Workforce access Developer resources Code samples AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools \"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Clusters created with Managed Service for Apache Spark image version 1.3.29 and later can install and enable access to component web interfaces, including YARN, HDFS, Jupyter, and Zeppelin UIs, without relying on SSH tunnels or modifying firewall rules to allow inbound traffic.",
+          "Set commonly used command variables To make copying and running command-line examples on your local machine or in Cloud Shell easier, set gcloud dataproc command variables."
+        ]
+      },
+      {
+        "title": "\"Enable Hive data lineage \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage",
+        "source_id": "site-iam-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Managed Service for Apache Spark cluster Run the following command in a local terminal window or in Cloud Shell to create a Managed Service for Apache Spark cluster . gcloud dataproc clusters create CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --image-version IMAGE VERSION \\ --initialization-actions gs://goog-dataproc-initialization-actions- REGION /connectors/connectors.sh, gs://goog-dataproc-initialization-actions- REGION /hive-lineage/hive-lineage.sh \\ --metadata hive-bigquery-connector-version= HIVE BQ VERSION Notes: CLUSTER NAME : The name of the cluster.",
+          "Note: See Important considerations and guidelines when using initialization actions in production. gcloud CLI cluster creation example: gcloud dataproc clusters create CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --image-version IMAGE VERSION \\ --initialization-actions gs://goog-dataproc-initialization-actions- REGION /hive-lineage/hive-lineage.sh Replace the following: CLUSTER NAME : The name of the cluster.",
+          "IMAGE VERSION The intended image version for the cluster. --initialization-actions : These installation actions, located in Cloud Storage, install the Hive-BigQuery connector and enable Hive data lineage ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.enable",
+      "connectors.sh",
+      "kerberos.beta.automatic",
+      "lineage.sh",
+      "password.encrypted"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/configuring-clusters/security",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces",
+        "https://docs.cloud.google.com/dataproc/docs/guides/hive-lineage"
+      ]
+    }
+  ]
+}

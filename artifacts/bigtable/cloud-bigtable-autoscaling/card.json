@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable autoscaling",
+  "feature_slug": "cloud-bigtable-autoscaling",
+  "summary": "Makes autoscaling generally available for Cloud Bigtable, allowing clusters to automatically add or remove nodes based on usage and exposing related operational metrics.",
+  "extended_definition": "Makes autoscaling generally available for Cloud Bigtable, allowing clusters to automatically add or remove nodes based on usage and exposing related operational metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+      "https://docs.cloud.google.com/bigtable/docs/cmek",
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Autoscaling \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Bigtable autoscaling determines the number of nodes required, based on the following dimensions: CPU utilization target Storage utilization target Minimum number of nodes Maximum number of nodes Each scaling dimension generates a recommended node count, and Bigtable automatically uses the highest one.",
+          "When you enable infrequent access as part of tiered storage, autoscaling additionally makes sure that the combined SSD and the infrequent access storage doesn't exceed the limit of 32 TB per node.",
+          "Account for replication In an instance that uses replication, each cluster's autoscaling settings and activity are completely independent of those for the other clusters in the instance."
+        ]
+      },
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Read and write latency are unaffected : A continuous materialized view has minimal impact on performance on the source table when the instance's clusters are adequately provisioned or use autoscaling.",
+          "As a best practice to make sure the data in the continuous materialized view remains fresh, enable autoscaling for the clusters in the instance that contains your continuous materialized view.",
+          "Autoscaling automatically adds enough nodes to handle the processing overhead and then removes them when they're no longer needed."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Bigtable \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "CMEK-protected Bigtable resources (instances, clusters, tables, or backups) tied to a key that has been made inaccessible as the result of a user-triggered action (such as disabling or destroying a key, or by revoking the Encrypter/Decrypter role) for more than 30 consecutive days are automatically deleted .",
+          "The Bigtable process of automatically disabling all clusters in an instance after one key is disabled can take up to several hours.",
+          "Cross-region protection: You can enable CMEK in instances that have clusters in any region where Bigtable is available."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/cmek"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/cmek"
+      ]
+    }
+  ]
+}

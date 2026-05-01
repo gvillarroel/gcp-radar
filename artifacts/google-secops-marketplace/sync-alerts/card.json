@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.277Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Sync Alerts",
+  "feature_slug": "sync-alerts",
+  "summary": "Adds a job that syncs alerts; Adds a job that syncs alerts.",
+  "extended_definition": "Adds a job that syncs alerts; Adds a job that syncs alerts.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate CBN alerts to YARA-L detection rule alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following example. metadata . vendor name = \"Microsoft\" metadata . product name = \"Windows Defender AV\" metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" principal . asset . hostname = \"client02.example.local\" security result . action = \"BLOCK\" security result . severity = \"MEDIUM\" Create a new YARA-L detection engine rule. rule windows defender av monitored events { meta : author = \"Chronicle\" description = \"Migration of CBN alerts to Google SecOps YARA-L detection engine rule alert.\" // Severity is set at the Outcome level via security result.severity severity = \"INFORMATIONAL\" priority = \"INFORMATIONAL\" events : $ windows defender av . metadata . vendor name = \"Microsoft\" $ windows defender av . metadata . product name = \"Windows Defender AV\" $ windows defender av . metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" $ windows defender av . principal . asset . hostname = $ host // optionally tune to only detection on ALLOW, i.e., failure to BLOCK //$windows defender av.security result.action = \"ALLOW\" // optionally tune on severity of detection //$windows defender av.security result.severity != \"LOW\" outcome : $ risk score = max ( if ( $ windows defender av . security result . severity = \"UNKNOWN SEVERITY\" , 0 ) + if ( $ windows defender av . security result . severity = \"LOW\" , 25 ) + if ( $ windows defender av . security result . severity = \"MEDIUM\" , 50 ) + if ( $ windows defender av . security result . severity = \"HIGH\" , 75 ) + if ( $ windows defender av . security result . severity = \"CRITICAL\" , 100 ) ) $ severity = array distinct ( $ windows defender av . security result . severity ) condition : $ windows defender av } CBN alert appears to use a field that was not parsed into UDM Using the parser extensions option you can quickly address this scenario.",
+          "For example, Corelight CBN alert uses the notice field and conditionally alerts only if true: if [ notice ] == \"true\" { mutate { replace = > { \"is significant\" = > \"true\" \"is alert\" = > \"true\" } } } Because this value isn't normalized into UDM by default you can use a parser extension Grok as follows to add that value as a UDM field of type Additional : filter { mutate { replace = > { \"notice\" = > \"\" } } grok { match = > { \"message\" = > [ \"(?P<message>\\{. \\})$\" ] } on error = > \" grok not syslog\" overwrite = > [ \"message\" ] } json { on error = > \"not json\" source = > \"message\" array function = > \"split columns\" } if ! [ not json ] { if [ notice ] != \"\" { mutate { convert = > { \"notice\" = > \"string\" } } mutate { replace = > { \"additional notice.key\" = > \"notice\" \"additional notice.value.string value\" = > \"%{notice}\" } } mutate { merge = > { \"event1.idm.read only udm.additional.fields\" = > \"additional notice\" } } mutate { merge = > { \"@output\" = > \"event1\" } } } } } You can then utilize this in a YARA-L detection engine rule as follows, and using the Maps function : events : // Corelight : Weird Log ( $ corelight . metadata . vendor name = \"Corelight\" and $ corelight . metadata . product name = \"Zeek\" and // this requires a custom parser extension to extract notice $ corelight . metadata . product event type = \"weird\" and $ corelight . additional . fields [ \"notice\" ] = \"true\" ) You must enable and turn on the authored rules for alerting.",
+          "Use UDM search Using the UDM search option, you can view events with the alert state set in the parsers: security result.alert state = \"ALERTING\" From the UDM search results, you can explore the following fields to understand which sources are generating CBN alerts in your environment: Metadata > Vendor Name Metadata > Product Name Download default CBN alerts using the Tools API and manually review The previous approach helps you to find alerts that have fired, but does not cover the scenario of alerts that you have not seen before."
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "For changes that affect all integration items: Integration - {Update} For changes that affect all actions: Integration's Actions - {Update} For changes that affect all connectors: Integration's Connectors - {Update} For changes that affect all jobs: Integration's Jobs - {Update} If the release contained a regressive change, then in the release note you need to specify REGRESSIVE! .",
+          "In general, the structure of the name should be like this: {integration display name} - {process} Job For example: ServiceNow - Sync Incidents Job Description The Description of the job should highlight to the user what the job is doing during the iterations; for example, This job will synchronize Security Command Center based cases created by the Urgent Posture Findings connector.",
+          "In general, the structure of the name should be like this: {integration display name} - {data that is being ingested} Connector For example: Crowdstrike - Pull Alerts Connector Description The Description of the connector should highlight to the user what will be ingested by the connector; for example, Pull alerts from Crowdstrike ."
+        ]
+      },
+      {
+        "title": "\"Migrate from CrowdStrike Detects API to Alerts API \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "By creating a new client with the correct permissions, you can ensure that the connector uses the modern Alerts API.",
+          "Option 1: Update permissions for your existing CrowdStrike API client (Recommended) Option 2: Create and use a new CrowdStrike API client Option 1: Update permissions for your existing CrowdStrike API client (Recommended) This approach requires configuration changes only in your CrowdStrike Falcon console and has the lowest impact on existing detection rules that reference the CS DETECTS log type.",
+          "CrowdStrike's deprecation of this API affects the following actions and connectors: Add Comment to Detection Close Detection Update Detection CrowdStrike - Detections Connector The SOAR CrowdStrike integration already supports the Alerts API, which replaces the Detections API."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Copy the following content into that file. #!/bin/bash #Declare the variables: uid= SCRIPTING USER UID gid= SCRIPTING USER GID arcsight ip= ARCSIGHT IP #Install nfs-utils yum install nfs-utils -y #Create the directory that will be shared mkdir /opt/Correlations #Change the permissions chmod -R 755 /opt/Correlations/ chown -R scripting:scripting /opt/Correlations/ #Start the services and enable them to be started at boot time systemctl enable rpcbind systemctl enable nfs-server systemctl enable nfs-lock systemctl enable nfs-idmap systemctl start rpcbind systemctl start nfs-server systemctl start nfs-lock systemctl start nfs-idmap #Edit the exports file as follows echo \"/opt/Correlations/ $arcsight ip(rw,sync,all squash,anonuid=$uid,anongid=$gid)\">>/etc/exports #Restart the NFS service and export the path systemctl restart nfs-server exportfs -a #If FirewallD is running add the next rules: firewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --permanent --zone=public --add-service=mountd firewall-cmd --permanent --zone=public --add-service=rpc-bind firewall-cmd --reload setsebool -P nfs export all rw 1 Declare the uid , gid , and arcisght ip variables according to your environment.",
+          "Copy the following content into that file. #!/bin/bash #Declare the variables: siemplify ip= SIEMPLIFY IP #Install nfs-utils yum install nfs-utils -y #Start the services and enable them to be started at boot time systemctl enable rpcbind systemctl enable nfs-server systemctl enable nfs-lock systemctl enable nfs-idmap systemctl start rpcbind systemctl start nfs-server systemctl start nfs-lock systemctl start nfs-idmap #If FirewallD is running add the next rules: firewall-cmd --permanent --zone=public --add-service=nfs firewall-cmd --permanent --zone=public --add-service=mountd firewall-cmd --permanent --zone=public --add-service=rpc-bind firewall-cmd --reload #Create the NFS directory mount point mkdir -p /mnt/nfs/var/SiemShare #Add the values: echo \"$siemplify ip:/opt/Correlations /mnt/nfs/var/SiemShare nfs defaults 0 0\">>/etc/fstab mount -a Declare the siemplify ip variable according to your environment.",
+          "If you are using the old path and are applying the upgrade, then you need to change the permission back to the scripting user with the following steps: Before starting the upgrade, stop the NFS server service: systemctl stop nfs-server After the upgrade is complete, change the folder permissions: chmod -R 755 /opt/siemplify/Correlations/ chown -R scripting:scripting/opt/siemplify/Correlations/ systemctl start nfs-server exportfs -a To confirm that the NFS server is working correctly after the changes, check its status: systemctl status nfs-server Create and configure a user for API access Sign in to the ArcSight console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "av.security",
+      "client02.example.local",
+      "event1.idm.read",
+      "i.e",
+      "notice.key",
+      "notice.value.string",
+      "result.action",
+      "result.alert",
+      "result.severity",
+      "udm.additional.fields"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    }
+  ]
+}

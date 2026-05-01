@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.791Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center",
+  "feature_name": "Network Analyzer recommender insights",
+  "feature_slug": "network-analyzer-recommender-insights",
+  "summary": "Network Analyzer adds recommender insight subtypes for invalid next hops and shadowed dynamic routes.",
+  "extended_definition": "Network Analyzer adds recommender insight subtypes for invalid next hops and shadowed dynamic routes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network Analyzer overview \\_|\\_ Network Intelligence Center - Network Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared VPC insights For Shared VPC cases, there are two scenarios: Host project: Network Analyzer provides relevant information for VPC networks in the host project, such as IP address utilization insights that display the IP address allocation percentage of subnets.",
+          "Insights are grouped into the following categories: VPC network Network services Kubernetes engine Hybrid connectivity Managed services For more information about these groups and their related insight types, see Insight groups and types .",
+          "Analysis schedule Network Analyzer generates insights whenever relevant configuration changes are made, as well as periodically."
+        ]
+      },
+      {
+        "title": "\"Enable Cloud Network Insights \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "source_id": "site-iam-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Network Insights Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ): To enable Cloud Network Insights and editing permissions for Cloud Network Insights resources.",
+          "We highly recommend that you create a dedicated project for enabling Cloud Network Insights where you don't create other Google Cloud resources.",
+          "Before you begin During the Preview period, contact your Technical Account Manager to request access to Cloud Network Insights."
+        ]
+      },
+      {
+        "title": "\"Best practices for Cloud Network Insights \\_|\\_ Network Intelligence Center\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Best practices for Cloud Network Insights Stay organized with collections Save and categorize content based on your preferences.",
+          "Enable in a dedicated Google Cloud project While you can enable Cloud Network Insights in any Google Cloud project, we recommend creating a new, dedicated project for enabling Cloud Network Insights.",
+          "This page describes the best practices for monitoring your networks with Cloud Network Insights."
+        ]
+      },
+      {
+        "title": "\"APIs and reference \\_|\\_ Network Intelligence Center - Cloud Network Insights\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "source_id": "site-iam-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As such, both Google Cloud APIs and Broadcom AppNeta APIs can be used to perform actions with Cloud Network Insights.",
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights APIs & Reference APIs and reference Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes Google Cloud CLI commands and APIs that can be used with Cloud Network Insights and links to Broadcom AppNeta APIs that can be used in conjunction with Google Cloud CLI APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkmanagement.CloudNetworkInsightsEditor"
+    ],
+    "missing_inventory_roles": [
+      "roles/networkmanagement.CloudNetworkInsightsEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/best-practices",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis"
+      ]
+    }
+  ]
+}

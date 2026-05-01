@@ -1,0 +1,244 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.011Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "Cloud Armor deny lists and allow lists",
+  "feature_slug": "cloud-armor-deny-lists-and-allow-lists",
+  "summary": "Cloud Armor deny lists and allow lists are available in general availability; Cloud Armor deny lists and allow lists are available in beta.",
+  "extended_definition": "Cloud Armor deny lists and allow lists are available in general availability; Cloud Armor deny lists and allow lists are available in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/cscc-findings",
+      "https://docs.cloud.google.com/armor/docs/custom-constraints",
+      "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+      "https://docs.cloud.google.com/armor/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security Command Center findings \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "source_id": "site-iam-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud Armor is integrated automatically with Security Command Center and exports two findings to the Security Command Center dashboard: Allowed traffic spike and Increasing deny ratio .",
+          "An Allowed traffic spike finding identifies the backend service to which the RPS spike is directed and provides the traffic characteristics that caused Cloud Armor to classify it as an RPS spike.",
+          "Allowed traffic spike finding Allowed traffic consists of well-formed HTTP(S) requests that are destined to reach your backend services after a Cloud Armor security policy is enforced."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot Cloud Armor issues \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output is similar to the following: creationTimestamp: '2017-04-18T14:47:58.045-07:00 description: '' fingerprint: Yu5spBjdoC0= id: '2560355463394441057' kind: compute#securityPolicy name: POLICY NAME rules: -action: allow description: allow high priority rule kind: compute#securityPolicyRule match: srcIpRanges: -'1.2.3.4/32' preview: false priority: 100 -action: deny description: deny lower priority rule kind: compute#securityPolicyRule match: srcIpRanges: -'1.2.3.0/24 preview: false priority: 200 -action: deny description: default rule kind: compute#securityPolicyRule match: srcIpRanges: -' ' preview: false priority: 2147483647 selfLink: http://www.googleapis.com/compute/v1/projects/bigclustertestdev0-devconsole/global/securityPolicies/sp Preconfigured rule returns false positives XSS and SQLi detection are based on static signature matching on HTTP request headers and other Layer 7 parameters.",
+          "Monitoring metrics Raw metrics that measure the requests allowed and denied are available for edge security policies.",
+          "Check for the following fields and make sure that they match the rule that you configured to deny the traffic: configuredAction must match the action configured in the rule. name must match the name of the Cloud Armor security policy attached to this backend service. outcome must match configuredAction . priority must match the priority number of the rule. httpRequest: remoteIp: 104.133.0.95 requestMethod: GET requestSize: '801' requestUrl: http://74.125.67.38/ responseSize: '246' serverIp: 10.132.0.4 status: 200 userAgent: curl/7.35.0 insertId: ajvis5ev4i60 internalId: projectNumber: '895280006100' jsonPayload: '@type': type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry enforcedSecurityPolicy: configuredAction: ACCEPT name: mydev-policy-log-test1 outcome: ACCEPT priority: 2147483647 statusDetails: response sent by backend logName: projects/mydev-staging/logs/requests resource: labels: backend service name: BACKEND SERVICE NAME forwarding rule name: FORWARDING RULE NAME project id: PROJECT ID target proxy name: TARGET HTTP PROXY NAME url map name: URL MAP NAME zone: global type: http load balancer severity: INFO timestamp: '2017-04-18T18:57:05.845960288Z' This output includes the following values: BACKEND SERVICE NAME : the name of the backend service FORWARDING RULE NAME : the name of the forwarding rule PROJECT ID : the ID of your project TARGET HTTP PROXY NAME : the name of the target HTTP proxy URL MAP NAME : the name of the URL map Review the hierarchy of rules to ensure that the correct rule is matched."
+        ]
+      },
+      {
+        "title": "\"Manage Google Cloud Armor resources by using custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies for Cloud Armor resources: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Security Policy : compute.googleapis.com/SecurityPolicy Name: resource.name Description: resource.description Rules: resource.rules[] Header action: resource.rules[].headerAction Request headers to add: resource.rules[].headerAction.requestHeadersToAdds[] Header name: resource.rules[].headerAction.requestHeadersToAdds[].headerName Header value: resource.rules[].headerAction.requestHeadersToAdds[].headerValue Matcher: resource.rules[].match Versioned expression: resource.rules[].match.versionedExpr Config: resource.rules[].match.config Source IP ranges: resource.rules[].match.config.srcIpRanges[] Expression: resource.rules[].match.expr Expression options: resource.rules[].match.exprOptions reCAPTCHA options: resource.rules[].match.exprOptions.recaptchaOptions Action token site keys: resource.rules[].match.exprOptions.recaptchaOptions.actionTokenSiteKeys[] Session token site keys: resource.rules[].match.exprOptions.recaptchaOptions.sessionTokenSiteKeys[] Network matcher: resource.rules[].networkMatch User defined field match: resource.rules[].networkMatch.userDefinedFieldMatch Name: resource.rules[].networkMatch.userDefinedFieldMatch.name Values: resource.rules[].networkMatch.userDefinedFieldMatch.values Source IP ranges: resource.rules[].networkMatch.srcIpRanges Destination IP ranges: resource.rules[].networkMatch.destIpRanges IP protocols: resource.rules[].networkMatch.ipProtocols Source ports: resource.rules[].networkMatch.srcPorts Destination ports: resource.rules[].networkMatch.destPorts Source region codes: resource.rules[].networkMatch.srcRegionCodes Source ASNs: resource.rules[].networkMatch.srcAsns Preconfigured WAF config: resource.rules[].preconfiguredWafConfig Exclusions: resource.rules[].preconfiguredWafConfig.exclusions[] Target rule set: resource.rules[].preconfiguredWafConfig.exclusions[].targetRuleSet Target rule IDs: resource.rules[].preconfiguredWafConfig.exclusions[].targetRuleIds[] Request headers to exclude: resource.rules[].preconfiguredWafConfig.exclusions[].requestHeadersToExclude[] Value: resource.rules[].preconfiguredWafConfig.exclusions[].requestHeadersToExclude[].val Operation: resource.rules[].preconfiguredWafConfig.exclusions[].requestHeadersToExclude[].op Request cookies to exclude: resource.rules[].preconfiguredWafConfig.exclusions[].requestCookiesToExclude[] Value: resource.rules[].preconfiguredWafConfig.exclusions[].requestCookiesToExclude[].val Operation: resource.rules[].preconfiguredWafConfig.exclusions[].requestCookiesToExclude[].op Request query params to exclude: resource.rules[].preconfiguredWafConfig.exclusions[].requestQueryParamsToExclude[] Value: resource.rules[].preconfiguredWafConfig.exclusions[].requestQueryParamsToExclude[].val Operation: resource.rules[].preconfiguredWafConfig.exclusions[].requestQueryParamsToExclude[].op Request URIs to exclude: resource.rules[].preconfiguredWafConfig.exclusions[].requestUrisToExclude[] Value: resource.rules[].preconfiguredWafConfig.exclusions[].requestUrisToExclude[].val Operation: resource.rules[].preconfiguredWafConfig.exclusions[].requestUrisToExclude[].op Redirect options: resource.rules[].redirectOptions[] Type: resource.rules[].redirectOptions[].type Target: resource.rules[].redirectOptions[].target Rate limit options: resource.rules[].rateLimitOptions[] Rate limit threshold: resource.rules[].rateLimitOptions[].rateLimitThreshold Count: resource.rules[].rateLimitOptions[].rateLimitThreshold.count Interval seconds: resource.rules[].rateLimitOptions[].rateLimitThreshold.intervalSec Conform action: resource.rules[].rateLimitOptions[].conformAction Exceed action: resource.rules[].rateLimitOptions[].exceedAction Exceed redirect options: resource.rules[].rateLimitOptions[].exceedRedirectOptions Type: resource.rules[].rateLimitOptions[].exceedRedirectOptions.type Target: resource.rules[].rateLimitOptions[].exceedRedirectOptions.target Exceed action RPC status: resource.rules[].rateLimitOptions[].exceedActionRpcStatus Code: resource.rules[].rateLimitOptions[].exceedActionRpcStatus.code Message: resource.rules[].rateLimitOptions[].exceedActionRpcStatus.message Enforce on key: resource.rules[].rateLimitOptions[].enforceOnKey Enforce on key name: resource.rules[].rateLimitOptions[].enforceOnKeyName Enforce on key configs: resource.rules[].rateLimitOptions[].enforceOnKeyConfigs Enforce on key type: resource.rules[].rateLimitOptions[].enforceOnKeyConfigs.enforceOnKeyType Enforce on key name: resource.rules[].rateLimitOptions[].enforceOnKeyConfigs.enforceOnKeyName Ban threshold: resource.rules[].rateLimitOptions[].banThreshold Count: resource.rules[].rateLimitOptions[].banThreshold.count Interval seconds: resource.rules[].rateLimitOptions[].banThreshold.intervalSec Ban duration seconds: resource.rules[].rateLimitOptions[].banDurationSec Redirect target: resource.rules[].redirectTarget Rule number: resource.rules[].ruleNumber Adaptive protection config: resource.adaptiveProtectionConfig Layer 7 DDoS defense config: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig Enable: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.enable Rule visibility: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.ruleVisibility Threshold configs: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[] Name: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].name Auto deploy load threshold: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].autoDeployLoadThreshold Auto deploy confidence threshold: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].autoDeployConfidenceThreshold Auto deploy impacted baseline threshold: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].autoDeployImpactedBaselineThreshold Auto deploy expiration seconds: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].autoDeployExpirationSec Detection load threshold: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].detectionLoadThreshold Detection absolute QPS: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].detectionAbsoluteQps Detection relative to baseline QPS: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].detectionRelativeToBaselineQps Traffic granularity configs: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].trafficGranularityConfigs[] Type: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].trafficGranularityConfigs[].type Value: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].trafficGranularityConfigs[].value Enable each unique value: resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs[].trafficGranularityConfigs[].enableEachUniqueValue Auto deploy config: resource.adaptiveProtectionConfig.autoDeployConfig Load threshold: resource.adaptiveProtectionConfig.autoDeployConfig.loadThreshold Confidence threshold: resource.adaptiveProtectionConfig.autoDeployConfig.confidenceThreshold Impacted baseline threshold: resource.adaptiveProtectionConfig.autoDeployConfig.impactedBaselineThreshold Expiration seconds: resource.adaptiveProtectionConfig.autoDeployConfig.expirationSec Advanced options config: resource.advancedOptionsConfig JSON parsing: resource.advancedOptionsConfig.jsonParsing JSON custom config: resource.advancedOptionsConfig.jsonCustomConfig Content types: resource.advancedOptionsConfig.jsonCustomConfig.contentTypes[] Log level: resource.advancedOptionsConfig.logLevel User IP request headers: resource.advancedOptionsConfig.userIpRequestHeaders[] DDoS protection config: resource.ddosProtectionConfig DDoS protection: resource.ddosProtectionConfig.ddosProtection reCAPTCHA options config: resource.recaptchaOptionsConfig Redirect site key: resource.recaptchaOptionsConfig.redirectSiteKey Type: resource.type User defined fields: resource.userDefinedFields[] Name: resource.userDefinedFields[].name Base: resource.userDefinedFields[].base Offset: resource.userDefinedFields[].offset Size: resource.userDefinedFields[].size Mask: resource.userDefinedFields[].mask Network Edge Security Service : compute.googleapis.com/NetworkEdgeSecurityService Name: resource.name Description: resource.description Security policy: resource.securityPolicy Defining custom constraints A custom constraint is defined by the resources, methods, conditions, and actions that are supported by the service on which you are enforcing the organization policy.",
+          "Example: Create a constraint that requires all security policies to have standard JSON parsing enabled This constraint prevents security policies from being created if they don't have standard JSON parsing enabled. gcloud Create a requireStandardJsonParsing.yaml constraint file with the following information. name : organizations/ ORGANIZATION ID /customConstraints/custom.requireStandardJsonParsing resource types : compute.googleapis.com/SecurityPolicy condition : \"resource.advancedOptionsConfig.jsonParsing != 'STANDARD'\" action type : DENY method types : [ CREATE , UPDATE ] display name : Security policies must have standard JSON parsing enabled."
+        ]
+      },
+      {
+        "title": "\"Configure custom rules language attributes \\_|\\_ Google Cloud Armor \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following expression matches with requests to multiple domains using contains : request.headers['host'].lower().contains('test.example.com') request.headers['host'].lower().contains('test22.example.com') The following expression matches requests for a domain and its subdomains using matches : request.headers['host'].matches('(?i:(sub\\.)?test\\.example\\.com)') Allow or deny traffic from a specific region If your web application isn't available in the AU region, then all requests from that region must be blocked.",
+          "Cloud Armor rules and expressions explicitly use those region codes to allow or deny requests. origin.asn integer The autonomous system number (ASN) that is associated with the client IP address.",
+          "In the following example, requests from 1.2.3.0/24 (such as your alpha testers) in the AU region match the following expression: origin.region code == \"AU\" && inIpRange(origin.ip, '1.2.3.0/24') The following expression matches requests from 1.2.3.4 where a user agent contains the string WordPress : inIpRange(origin.ip, '1.2.3.4/32') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('WordPress') Allow or deny traffic for a request URI that matches a regular expression The following expression matches with requests that contain the string /example path/ in the URI: request.path.matches('/example path/') The following expression matches with requests that have Chrome in the User-Agent header field: request.headers['user-agent'].matches('Chrome') The following expression shows case-insensitive matching for the User-Agent header containing wordpress ; it matches with User-Agent:WordPress/605.1.15 , User-Agent:wordPress , and other variations of wordpress : request.headers['user-agent'].matches('(?i:wordpress)') Allow or deny traffic that contains a specific base64 decoded value The following expression matches with requests that have a base64 decoded value of myValue for the user-id header: has(request.headers['user-id']) && request.headers['user-id'].base64Decode().contains('myValue') Allow or deny traffic that contains a string value of a specific length The following expression matches requests that have a URL length greater than 10 characters: size(request.path) > 10 The following expression matches requests that have a header x-data length greater than or equal to 1024 characters: size(request.headers['x-data']) >= 1024 Allow or deny traffic that has zero content-length in the HTTP body The following expression matches requests that have a zero content-length in the HTTP body: int(request.headers[\"content-length\"]) == 0 Allow or deny traffic that contains a specific URL encoded value The following expression matches with requests that have a cookie value containing %3c : has(request.headers['cookie']) && request.headers['cookie'].urlDecode().contains('<') Allow or deny traffic that contains a specific URL encoded value of a Unicode string The following expression matches with requests that have a cookie value equal to Match%2BValue or Match%u002BValue : has(request.headers['cookie']) && request.headers['cookie'].urlDecodeUni() == 'Match+Value' Allow or deny traffic that contains a specific Unicode string of a UTF-8 text The following expression matches with requests that have a cookie value equal to ¬ : has(request.headers['cookie']) && request.headers['cookie'].utf8ToUnicode() == '%u00ac' Allow or deny traffic based on a known JA4 fingerprint The following expression matches with requests that have a JA4 fingerprint equal to t13d1516h2 8daaf6152771 b186095e22b6 : origin.tls ja4 fingerprint == 't13d1516h2 8daaf6152771 b186095e22b6' Allow or deny traffic based on a list of JA4 fingerprints The following expression matches with requests that have a JA4 fingerprint equal to any of the following JA4 fingerprints: t00d0000h0 000000000000 000000000000 t13d1516h2 8daaf6152771 b186095e22b6 origin.tls ja4 fingerprint == 't00d0000h0 000000000000 000000000000' origin.tls ja4 fingerprint == 't13d1516h2 8daaf6152771 b186095e22b6' Preconfigured WAF rules Preconfigured WAF rules use preconfigured static signatures, regular expressions, or both to match on the HTTP request body, HTTP request headers, and query parameters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "custom.requireStandardJsonParsing",
+      "document.cookie",
+      "gcloud.compu",
+      "match.config",
+      "match.config.srcIpRanges",
+      "match.expr",
+      "match.exprOptions",
+      "match.exprOptions.recaptchaOptions",
+      "match.exprOptions.recaptchaOptions.actionTokenSiteKeys",
+      "match.exprOptions.recaptchaOptions.sessionTokenSiteKeys",
+      "match.versionedExpr",
+      "om.requireS",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "origin.asn",
+      "origin.ip",
+      "origin.region",
+      "origin.tls",
+      "origin.user",
+      "policy.yaml",
+      "request.headers",
+      "request.path",
+      "request.path.matches",
+      "resource.adaptiveProtectionConfig",
+      "resource.adaptiveProtectionConfig.autoDeployConfig",
+      "resource.adaptiveProtectionConfig.autoDeployConfig.confidenceThreshold",
+      "resource.adaptiveProtectionConfig.autoDeployConfig.expirationSec",
+      "resource.adaptiveProtectionConfig.autoDeployConfig.impactedBaselineThreshold",
+      "resource.adaptiveProtectionConfig.autoDeployConfig.loadThreshold",
+      "resource.adaptiveProtectionConfig.layer7DdosDefenseConfig",
+      "resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.enable",
+      "resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.ruleVisibility",
+      "resource.adaptiveProtectionConfig.layer7DdosDefenseConfig.thresholdConfigs",
+      "resource.advancedOptionsConfig",
+      "resource.advancedOptionsConfig.jsonCustomConfig",
+      "resource.advancedOptionsConfig.jsonCustomConfig.contentTypes",
+      "resource.advancedOptionsConfig.jsonParsing",
+      "resource.advancedOptionsConfig.logLevel",
+      "resource.advancedOptionsConfig.userIpRequestHeaders",
+      "resource.ddosProtectionConfig",
+      "resource.ddosProtectionConfig.ddosProtection",
+      "resource.description",
+      "resource.name",
+      "resource.recaptchaOptionsConfig",
+      "resource.recaptchaOptionsConfig.redirectSiteKey",
+      "resource.rules",
+      "resource.securityPolicy",
+      "resource.type",
+      "resource.userDefinedFields",
+      "test.example.com",
+      "test22.example.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/cscc-findings",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/custom-constraints",
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+      ]
+    }
+  ]
+}

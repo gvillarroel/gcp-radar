@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.583Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "cancel-preview subcommand",
+  "feature_slug": "cancel-preview-subcommand",
+  "summary": "The gcloud tool provides a cancel-preview subcommand for deployment previews.",
+  "extended_definition": "The gcloud tool provides a cancel-preview subcommand for deployment previews.",
+  "lifecycle": {
+    "latest_feature_date": "2015-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+      "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Previewing a configuration \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alternatively, if you don't want to move forward with the configuration, you can cancel the preview, and then delete the deployment: gcloud deployment-manager deployments cancel-preview example-config Note: If you perform many previews without canceling or moving forward with any of them, you will end up with many empty deployments.",
+          "Performing multiple previews If you want to change your configuration and perform another preview, use the update command with the --preview flag: gcloud deployment-manager deployments update example-config \\ --config new-config.yaml --preview In the API, make a PUT() request with an existing deployment and provide the preview=true query parameter.",
+          "For example, the following API request previews a simple template: POST https : //www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments?preview=true { \"name\" : \"example-config\" , \"target\" : { \"config\" : { \"content\" : \"resources:\\n- name: vm-created-by-cloud-config\\n type: compute.v1.instance\\n properties:\\n zone: us-central1-a\\n machineType: https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/machineTypes/n1-standard-1\\n disks:\\n - deviceName: boot\\n type: PERSISTENT\\n boot: true\\n autoDelete: true\\n initializeParams:\\n diskName: disk-created-by-cloud-config\\n sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20140619\\n networkInterfaces:\\n networkInterfaces:\\n - network: https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default\" } } } When a deployment is in preview mode, you can move forward with the deployment in one of three ways: Deploy the configuration by performing an update ."
+        ]
+      },
+      {
+        "title": "\"Deployments: cancelPreview \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request HTTP request POST https://www.googleapis.com/deploymentmanager/v2/projects/ project /global/deployments/ deployment /cancelPreview Parameters Parameter name Value Description Path parameters deployment string The name of the deployment for this request. project string The project ID for this request.",
+          "This ensures optimistic concurrency so that the deployment does not have conflicting requests (e.g. if someone attempts to make a new update request while another user attempts to cancel a preview, this would prevent one of the requests).",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Reference Send feedback Deployments: cancelPreview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Updating a Deployment \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The fingerprint value looks like this: \"fingerprint\": \"nU2v7bzeA7gBBI8bdbtmFg==\" Your cancelPreview() request looks like this: POST https://www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments/example-deployment/cancelPreview { \"fingerprint\": \"nU2v7bzeA7gBBI8bdbtmFg==\" } Make the update request To perform the update: gcloud With the Google Cloud CLI, use the deployments update subcommand, providing a new configuration and optionally, your update policies. gcloud deployment-manager deployments update my-first-deployment \\ --create-policy POLICY \\ --delete-policy POLICY If you previously previewed a configuration, omit the configuration and Deployment Manager uses the last previewed configuration to perform the update. gcloud deployment-manager deployments update my-first-deployment API In the API, make an update request and provide the latest deployment fingerprint.",
+          "If you do not want to continue, or if you want to use a different configuration file to update the deployment, cancel the current preview. gcloud With the Google Cloud CLI, make a deployments cancel-preview request: gcloud deployment-manager deployments cancel-preview my-first-deployment API In the API, make a PUT() request to the cancelPreview method and provide the latest deployment fingerprint.",
+          "If you are trying to cancel a preview, see the Cancel a preview section. gcloud With the Google Cloud CLI, make a deployments stop request: gcloud deployment-manager deployments stop my-first-deployment API In the API, make a POST() request to the stop method and provide the latest fingerprint property."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.v1.instance",
+      "config.yaml",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/cancelPreview"
+      ]
+    }
+  ]
+}

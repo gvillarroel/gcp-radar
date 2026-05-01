@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.111Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Admin Console to Cloud Console redirect",
+  "feature_slug": "admin-console-to-cloud-console-redirect",
+  "summary": "App Engine Admin Console menus now begin redirecting users to the Cloud Console while some services remain in the Admin Console.",
+  "extended_definition": "App Engine Admin Console menus now begin redirecting users to the Cloud Console while some services remain in the Admin Console.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+      "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"An Overview of the Admin API \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .",
+          "Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.",
+          "After configuring authentication, you can begin managing your apps, including deploying versions of applications and managing the amount of traffic to those versions."
+        ]
+      },
+      {
+        "title": "\"An Overview of the Admin API \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "source_id": "site-docs-reference-3",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Admin API provides programmatic access to several of the App Engine administrative operations that are found in the Google Cloud console .",
+          "Home Technology areas App Engine Admin API Overview Send feedback An Overview of the Admin API Stay organized with collections Save and categorize content based on your preferences.",
+          "After configuring authentication, you can begin managing your apps, including deploying versions of applications and managing the amount of traffic to those versions."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "To perform these steps, you must have one of the following roles on the host project: Owner role ( roles/owner ) Compute Security Admin role ( roles/compute.securityAdmin ) Custom Identity and Access Management (IAM) role with the compute.firewalls.create permission enabled For a basic configuration, apply the rules to allow serverless resources in any service project connected to the Shared VPC network to send requests to any resource in the network.",
+          "Update a connector You can update and monitor the following attributes of your connector by using the Google Cloud console, Google Cloud CLI, or the API: Machine (instance) type Minimum and maximum number of instances Recent throughput, number of instances, and CPU utilization Update machine type Caution: Changing machine type can cause some long-running connections to drop.",
+          "When a connector and its VPC network are in different projects, a Shared VPC network administrator must create the connector's subnet in the Shared VPC network before you can create the connector, and you must create the connector using an existing subnet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.firewalls.create",
+      "compute.securityAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.securityAdmin",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/getting-started",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ]
+}

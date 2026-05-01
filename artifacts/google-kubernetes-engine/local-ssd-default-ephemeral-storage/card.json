@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Local SSD default ephemeral storage",
+  "feature_slug": "local-ssd-default-ephemeral-storage",
+  "summary": "GKE uses Local SSD volumes as ephemeral storage by default on third-generation machine series and makes the Local NVMe SSD block count optional.",
+  "extended_definition": "GKE uses Local SSD volumes as ephemeral storage by default on third-generation machine series and makes the Local NVMe SSD block count optional.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manually optimize Cloud Storage FUSE CSI driver for performance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "source_id": "site-docs-reference-2",
+        "final_score": 187,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a Pod manifest with the following specification to consume the PersistentVolumeClaim, depending on whether you are using Local SSD-backed file caching or RAM disk-backed file caching: Local SSD apiVersion : v1 kind : Pod metadata : name : gcs-fuse-csi-example-pod namespace : NAMESPACE annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : containers : Your workload container spec ... volumeMounts : - name : serving-bucket-vol mountPath : /serving-data readOnly : true serviceAccountName : KSA NAME volumes : - name : serving-bucket-vol persistentVolumeClaim : claimName : serving-bucket-pvc RAM disk apiVersion : v1 kind : Pod metadata : name : gcs-fuse-csi-example-pod namespace : NAMESPACE annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/cpu-limit : \"0\" gke-gcsfuse/memory-limit : \"0\" gke-gcsfuse/ephemeral-storage-limit : \"0\" spec : containers : Your workload container spec ... volumeMounts : - name : serving-bucket-vol mountPath : /serving-data readOnly : true serviceAccountName : KSA NAME volumes : - name : gke-gcsfuse-cache # gcsfuse file cache backed by RAM Disk emptyDir : medium : Memory - name : serving-bucket-vol persistentVolumeClaim : claimName : serving-bucket-pvc Apply the manifest to the cluster: kubectl apply -f POD FILE PATH Replace POD FILE PATH with the path to your YAML file.",
+          "If your VM family supports Local SSD but doesn't have the ephemeral storage on Local SSD enabled by default, you can enable Local SSD in your node pool.",
+          "GKE uses an emptyDir volume by default for Cloud Storage FUSE file caching backed by the ephemeral storage configured on the node."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "This lets you secure your nodes until the new version becomes the default for your specific release channel If your cluster uses in-cluster Cloud Service Mesh, you must manually upgrade to one of the following versions ( release notes ): 1.17.8-asm.8 1.18.6-asm.2 1.19.5-asm.4 What vulnerabilities are being addressed by this patch?",
+          "Google Distributed Cloud Virtual for Bare Metal uses Envoy by default for Ingress, so Ingress services may be vulnerable to denial of service.",
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW Note: GKE Sandbox pods already disable CAP NET RAW by default and do not require the changes above."
+        ]
+      },
+      {
+        "title": "\"Optimize GKE resource utilization for mixed AI/ML training and inference\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This manifest defines the fine-tuning Job. apiVersion : v1 kind : Service metadata : name : headless-svc-l4 spec : clusterIP : None # clusterIP must be None to create a headless service selector : job-name : finetune-gemma-l4 # must match Job name --- apiVersion : batch/v1 kind : Job metadata : name : finetune-gemma-l4 labels : kueue.x-k8s.io/queue-name : lq spec : backoffLimit : 4 completions : 2 parallelism : 2 completionMode : Indexed suspend : true # Set to true to allow Kueue to control the Job when it starts template : metadata : labels : app : finetune-job annotations : gke-gcsfuse/volumes : \"true\" gke-gcsfuse/memory-limit : \"35Gi\" spec : priorityClassName : low-priority-preempting containers : - name : gpu-job imagePullPolicy : Always image : us-docker.pkg.dev/google-samples/containers/gke/gemma-fine-tuning:v1.0.0 ports : - containerPort : 29500 resources : requests : nvidia.com/gpu : \"2\" limits : nvidia.com/gpu : \"2\" command : - bash - -c - accelerate launch \\ --config file fsdp config.yaml \\ --debug \\ --main process ip finetune-gemma-l4-0.headless-svc-l4 \\ --main process port 29500 \\ --machine rank ${JOB COMPLETION INDEX} \\ --num processes 4 \\ --num machines 2 \\ fine tune.py env : - name : \"EXPERIMENT\" value : \"finetune-experiment\" - name : MODEL NAME value : \"google/gemma-2-2b\" - name : NEW MODEL value : \"gemma-ft\" - name : MODEL PATH value : \"/model-data/model-gemma2/experiment\" - name : DATASET NAME value : \"b-mc2/sql-create-context\" - name : DATASET LIMIT value : \"5000\" - name : EPOCHS value : \"1\" - name : GRADIENT ACCUMULATION STEPS value : \"2\" - name : CHECKPOINT SAVE STEPS value : \"10\" - name : HF TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token volumeMounts : - mountPath : /dev/shm name : dshm - name : gcs-fuse-csi-ephemeral mountPath : /model-data readOnly : false nodeSelector : cloud.google.com/gke-accelerator : nvidia-l4 restartPolicy : OnFailure serviceAccountName : default subdomain : headless-svc-l4 terminationGracePeriodSeconds : 60 volumes : - name : dshm emptyDir : medium : Memory - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : < MODEL BUCKET > mountOptions : \"implicit-dirs\" gcsfuseLoggingSeverity : warning Apply the manifest to create the fine-tuning Job: cd ${ EXAMPLE HOME } /workloads sed -e \"s/<MODEL BUCKET>/ $MODEL BUCKET /g\" \\ -e \"s/<PROJECT ID>/ $PROJECT ID /g\" \\ -e \"s/<REGION>/ $REGION /g\" \\ fine-tune-l4.yaml kubectl apply --filename = - --namespace = llm Verify that your Deployments are running.",
+          "It uses tensor parallelism , by setting the NUM SHARD environment variable, to fit the model into GPU memory. apiVersion : apps/v1 kind : Deployment metadata : name : tgi-gemma-deployment labels : app : gemma-server spec : replicas : 1 selector : matchLabels : app : gemma-server template : metadata : labels : app : gemma-server ai.gke.io/model : gemma-2-9b-it ai.gke.io/inference-server : text-generation-inference examples.ai.gke.io/source : user-guide kueue.x-k8s.io/queue-name : lq spec : priorityClassName : high-priority-preempting containers : - name : inference-server image : us-docker.pkg.dev/deeplearning-platform-release/gcr.io/huggingface-text-generation-inference-cu121.2-1.ubuntu2204.py310 resources : requests : cpu : \"4\" memory : \"30Gi\" ephemeral-storage : \"30Gi\" nvidia.com/gpu : \"2\" limits : cpu : \"4\" memory : \"30Gi\" ephemeral-storage : \"30Gi\" nvidia.com/gpu : \"2\" env : - name : AIP HTTP PORT value : '8000' - name : NUM SHARD value : '2' - name : MODEL ID value : google/gemma-2-9b-it - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token volumeMounts : - mountPath : /dev/shm name : dshm volumes : - name : dshm emptyDir : medium : Memory nodeSelector : cloud.google.com/gke-accelerator : \"nvidia-l4\" --- apiVersion : v1 kind : Service metadata : name : llm-service spec : selector : app : gemma-server type : ClusterIP ports : - protocol : TCP port : 8000 targetPort : 8000 Apply the manifest by running the following command: kubectl apply --filename = tgi-gemma-2-9b-it-hp.yaml --namespace = llm The deployment operation will take a few minutes to complete.",
+          "The preemption field in the ClusterQueue configuration references the PriorityClasses to determine which Pods can be preempted when resources are scarce. apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} # match all. preemption : reclaimWithinCohort : LowerPriority withinClusterQueue : LowerPriority resourceGroups : - coveredResources : [ \"cpu\" , \"memory\" , \"nvidia.com/gpu\" , \"ephemeral-storage\" ] flavors : - name : default-flavor resources : - name : \"cpu\" nominalQuota : 72 - name : \"memory\" nominalQuota : 288Gi - name : \"nvidia.com/gpu\" nominalQuota : 6 - name : \"ephemeral-storage\" nominalQuota : 200Gi LocalQueue This manifest creates a Kueue LocalQueue named lq in the llm namespace. apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : llm # LocalQueue under llm namespace name : lq spec : clusterQueue : cluster-queue # Point to the ClusterQueue View the default-priorityclass.yaml , low-priorityclass.yaml , and high-priorityclass.yaml files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.gke.io",
+      "asm.2",
+      "asm.4",
+      "asm.8",
+      "beta.5",
+      "c1f6bfd2.kueue.x",
+      "config.kueue.x",
+      "config.yaml",
+      "constraints.gatekeeper.sh",
+      "container.googleapis.com",
+      "cu121.2",
+      "docker.pkg.dev",
+      "example.com",
+      "examples.ai.gke.io",
+      "flavors.yaml",
+      "gcr.io",
+      "gcsfuse.csi.storage.gke.io",
+      "hp.yaml",
+      "jobset.x",
+      "k8s.io",
+      "kubeflow.org",
+      "kubernetes.io",
+      "kueue.x",
+      "l4.yaml",
+      "leaderworkerset.x",
+      "metadata.name",
+      "nvidia.com",
+      "priorityclass.yaml",
+      "queue.yaml",
+      "ray.io",
+      "tune.py",
+      "ubuntu2204.py310",
+      "v1.0.0",
+      "v1.example.com",
+      "v3.1.0",
+      "workload.codeflare.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    }
+  ]
+}

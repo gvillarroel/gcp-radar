@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Table widgets for Log Analytics results in Monitoring dashboards",
+  "feature_slug": "table-widgets-for-log-analytics-results-in-monitoring-dashboards",
+  "summary": "Monitoring dashboards can display Log Analytics query results as a table widget.",
+  "extended_definition": "Monitoring dashboards can display Log Analytics query results as a table widget.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+      "https://docs.cloud.google.com/logging/docs/buckets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save and use private queries logging.queries.usePrivate logging.queries.{listShared,getShared} Save and use shared queries logging.queries.{share, getShared, updateShared, deleteShared, listShared} Use recent queries logging.queries.{create, list} Create and manage log scopes logging.logScopes.{create, delete, get, list, update} Set and manage the default log scope observability.scopes.{get, update} Create and manage analytics views observability.analyticsViews.{create, delete, get, list, update} Create and manage linked datasets logging.links.{create, delete, get, list} You might need additional IAM roles to query the linked dataset.",
+          "Required roles To get the permissions that you need to create log-based alerting policies, to create notification channels, and to create the associated Logging notification rules , ask your administrator to grant you the following IAM roles on your project: Monitoring AlertPolicy Editor ( roles/monitoring.alertPolicyEditor ) Monitoring NotificationChannel Editor ( roles/monitoring.notificationChannelEditor ) Logs Configuration Writer ( roles/logging.configWriter ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create log-based alerting policies, to create notification channels, and to create the associated Logging notification rules : monitoring.alertPolicies.create monitoring.notificationChannels.create logging.notificationRules.create You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Internet Information Services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "source_id": "site-docs-root-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "To view an installed dashboard, do the following: In the Google Cloud console, go to the dashboard Dashboards page: Go to Dashboards If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "For more information about dashboards in Cloud Monitoring, see Dashboards and charts .",
+          "The following table shows the mapping of v1 metrics to v2 metrics: v1 metric ( agent.googleapis.com/iis/ ) v2 metric ( workload.googleapis.com/ ) current connections iis.connection.active network/transferred bytes count iis.network.io new connection count iis.connection.attempt.count request count iis.request.count Prerequisites To collect IIS telemetry, you must install the Ops Agent : For metrics v1, install version 1.0.0 or higher."
+        ]
+      },
+      {
+        "title": "Configure log buckets \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/buckets",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you want to create a bucket with the BUCKET ID my-bucket in the global region, your command would look like the following: gcloud logging buckets create my-bucket --location global --description \"My first bucket\" For example, to create a bucket with the BUCKET ID my-upgraded-bucket in the global location, and then upgrade the log bucket to use Observability Analytics, your command would look like the following: gcloud logging buckets create my-upgraded-bucket --location global \\ --description \"My first upgraded bucket\" \\ --enable-analytics --retention-days=45 Note: After you create your log bucket, you can't change your bucket's region.",
+          "After Logging displays the linked dataset name on the Logs Storage page, it might take several minutes before BigQuery recognizes the dataset. gcloud To create a linked dataset for a log bucket that is upgraded to use Observability Analytics, run the gcloud logging links create command: gcloud logging links create LINK ID --bucket= BUCKET ID --location= LOCATION The LINK ID that you provide is used as the name of the BigQuery dataset, and the value of this field must be unique for your Google Cloud project.",
+          "If you want to upgrade the log bucket to use Observability Analytics, then include the --enable-analytics and --async flags, and make sure that you set the variable LOCATION to a supported region : gcloud logging buckets create BUCKET ID --location= LOCATION --enable-analytics --async OPTIONAL FLAGS The flag --async forces the command to be asynchronous."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.googleapis.com",
+      "iis.connection.active",
+      "iis.connection.attempt.count",
+      "iis.network.io",
+      "iis.request.count",
+      "logging.configWriter",
+      "logging.links",
+      "logging.logScopes",
+      "logging.notificationRules.create",
+      "logging.queries",
+      "logging.queries.usePrivate",
+      "logging.viewer",
+      "monitoring.alertPolicies.create",
+      "monitoring.alertPolicyEditor",
+      "monitoring.notificationChannelEditor",
+      "monitoring.notificationChannels.create",
+      "observability.analyticsViews",
+      "observability.scopes",
+      "resource.type",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.configWriter",
+      "roles/logging.viewer",
+      "roles/monitoring.alertPolicyEditor",
+      "roles/monitoring.notificationChannelEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+      ]
+    }
+  ]
+}

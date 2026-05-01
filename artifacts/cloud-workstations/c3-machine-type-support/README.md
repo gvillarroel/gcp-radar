@@ -1,0 +1,41 @@
+# C3 machine type support
+
+Product: Cloud Workstations
+Feature slug: `c3-machine-type-support`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Cloud Workstations supports selecting C3 machine types in the Google Cloud console, with Hyperdisk automatically chosen for this machine series.
+
+## Lifecycle
+
+- Latest feature date: 2026-02-19
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- audit
+- confidential
+- constraint
+- encrypt
+- key
+- kms
+- policy
+- private
+- role
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient](https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient)
+- [https://docs.cloud.google.com/workstations/docs/available-gpus](https://docs.cloud.google.com/workstations/docs/available-gpus)
+- [https://docs.cloud.google.com/workstations/docs/available-machine-types](https://docs.cloud.google.com/workstations/docs/available-machine-types)
+- [https://docs.cloud.google.com/workstations/docs/custom-constraints](https://docs.cloud.google.com/workstations/docs/custom-constraints)

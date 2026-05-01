@@ -31,6 +31,8 @@ The validator must check:
   official Google host
 - security capability evidence links embedded in promoted service and feature
   artifact cards use the `http` or `https` scheme on an official Google host
+- Step 08 product cards, service cards, and index totals keep feature counts
+  and IAM status counts aligned with the constructed feature cards
 - promoted feature cards still satisfy Step 09 promotion eligibility: Step 07
   pass status is true, failure count is zero, a technical summary is present,
   source links are official Google URLs, and feature warning rules are listed

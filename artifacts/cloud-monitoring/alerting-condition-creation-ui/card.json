@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.165Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Alerting Condition Creation UI",
+  "feature_slug": "alerting-condition-creation-ui",
+  "summary": "A Metrics Explorer-based interface provides fine-grained control for creating alerting conditions.",
+  "extended_definition": "A Metrics Explorer-based interface provides fine-grained control for creating alerting conditions.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create alerts based on metric ingestion To be notified of a spike, dip, or trend in the metric collection rates for your billable metrics, create an alerting policy.",
+          "For examples that start with the Namespace Volume Ingestion chart and use Metrics Explorer to perform ingestion-volume attribution, see the following: Identify high-volume metrics Identify high-volume namespaces For more information about using Metrics Explorer to analyze data, including actions like comparing the current month's behavior to the last month's behavior, see Explore charted data .",
+          "View the volume of excluded metrics To see the volume of excluded bytes or samples as a chart in Metrics Explorer, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following sections describe the query tools available in Cloud Monitoring with Metrics Explorer: PromQL Monitoring filters You can create Cloud Monitoring dashboards and alerting policies for your metrics.",
+          "The following meta labels are available on targets for you to use in the relabel configs section: meta gce instance id : the numeric ID of the Compute Engine instance (local) meta gce instance name : the name of the Compute Engine instance (local); the Ops Agent automatically places this value in the mutable instance name label on your metrics. meta gce machine type : full or partial URL of the machine type of the instance; the Ops Agent automatically places this value in the mutable machine type label on your metrics. meta gce metadata NAME : each metadata item of the instance meta gce network : the network URL of the instance meta gce private ip : the private IP address of the instance meta gce interface ipv4 NAME : IPv4 address of each named interface meta gce project : the Google Cloud project in which the instance is running (local) meta gce public ip : the public IP address of the instance, if present meta gce tags : comma separated list of instance tags meta gce zone : the Compute Engine zone URL in which the instance is running The values of these labels are set when the Ops Agent starts.",
+          "The estimate is based on the following factors: Number of scalar metrics; each value is one sample Number of distribution metrics; each histogram counts as (2 + number of buckets in the histogram) samples Sampling frequency of each metric Number of hosts from which the metrics are sampled For more information about pricing, see Google Cloud Observability pricing ."
+        ]
+      },
+      {
+        "title": "\"Collect OpenTelemetry Protocol (OTLP) metrics and traces \\_|\\_ Cloud Monitoring\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "source_id": "site-iam-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Monitoring supports the following tools for querying metric data: A query-builder based interface built into tools like Metrics Explorer, the dashboard-builder interface, and the alert-policy configuration interface.",
+          "These examples use Metrics Explorer, but the principles are the same for dashboards and alerting policies.",
+          "These examples use Metrics Explorer, but the principles are the same for dashboards and alerting policies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "otlp.test.cumulative",
+      "prometheus.googleapis.com",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    }
+  ]
+}

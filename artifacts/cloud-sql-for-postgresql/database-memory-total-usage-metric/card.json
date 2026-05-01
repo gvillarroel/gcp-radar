@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "database/memory/total_usage metric",
+  "feature_slug": "database-memory-total-usage-metric",
+  "summary": "Cloud SQL exposes the database/memory/total_usage metric to show database working set memory usage including buffer cache.",
+  "extended_definition": "Cloud SQL exposes the database/memory/total_usage metric to show database working set memory usage including buffer cache.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+      "https://docs.cloud.google.com/sql/docs/postgres/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After sampling, data is not visible for up to 165 seconds. database/memory/total usage GA (project) Total memory usage GAUGE , INT64 , By cloudsql database Total RAM usage in bytes.",
+          "After sampling, data is not visible for up to 165 seconds. event type : Kind of Mysql event, one of [innodb hash0hash,innodb memory,innodb row0sel,sql table,sql thd main,sql dd,sql string,mysys iocache] database/mysql/memory/global GA (project) Global memory allocated GAUGE , DOUBLE , By cloudsql database The total allocated memory, reported by performance schema.",
+          "After sampling, data is not visible for up to 165 seconds. database/sqlserver/memory/checkpoint page count GA (project) Checkpoint pages DELTA , INT64 , 1 cloudsql database Total number of pages flushed to disk by a checkpoint or other operation that requires all dirty pages to be flushed."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud SQL Admin API produces detailed metrics that can help you track your usage of the API, monitor performance of your Cloud SQL instance and the API, and discover problems between your instance and the API.",
+          "Each instance of a Cloud Run service or job can have 100 connections to the database, and as this service or job scales, the total number of connections per deployment can grow.",
+          "Each instance of a Cloud Run service or job can have 100 connections to the database, and as this service or job scales, the total number of connections per deployment can grow."
+        ]
+      },
+      {
+        "title": "\"General best practices \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also use the total usage metric to observe the percentage of available memory that your Cloud SQL instance is using, including memory used by the database container and memory allocated by the operating system cache.",
+          "You can view the transaction ID usage of your instance on the Metrics Explorer page in the Google Cloud console by setting the Resource Type as Cloud SQL Database and Metric as Percentage of instance's transaction IDs consumed .",
+          "When looking for signs of memory exhaustion, you should primarily use the usage metric."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas"
+      ]
+    }
+  ]
+}

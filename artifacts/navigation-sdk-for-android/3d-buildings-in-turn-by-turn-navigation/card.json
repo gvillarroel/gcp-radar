@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.452Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "3D buildings in turn-by-turn navigation",
+  "feature_slug": "3d-buildings-in-turn-by-turn-navigation",
+  "summary": "Displays 3D building polygons during turn-by-turn navigation when available.",
+  "extended_definition": "Displays 3D building polygons during turn-by-turn navigation when available.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modify the navigation UI \\_|\\_ Navigation SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Turn off 3D buildings For performance-constrained devices, you can turn off the display of 3D buildings by calling GoogleMap.setBuildingsEnabled(false) .",
+          "View the code Show/Hide the Java code for the navigation activity. package com . example . navsdkcustomization ; import android.content.pm.PackageManager ; import android.graphics.Bitmap ; import android.graphics.BitmapFactory ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.model.BitmapDescriptorFactory ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.StylingOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a customized navigation UI . / public class NavigationActivityCustomization extends AppCompatActivity { private static final String TAG = NavigationActivityCustomization . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private GoogleMap mMap ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "You can set the following attributes: Attribute Type Attributes Background color Primary day mode - the daytime color of the navigation header Secondary day mode - the daytime color of the next-turn indicator Primary night mode - the nighttime color of the navigation header Secondary night mode - the nighttime color of the next-turn indicator Text elements for instructions Text color Font Text size of the first row Text size of the second row Text elements for next steps Font Text color of the distance value Text size of the distance value Text color of the distance units Text size of the distance units Maneuver icons Color of the large maneuver icon Color of the small maneuver icon Lane guidance Color of the recommended lane or lanes The following example shows how to set styling options: private SupportNavigationFragment mNavFragment ; mNavFragment = ( SupportNavigationFragment ) getFragmentManager () . findFragmentById ( R . id . navigation fragment ); // Set the styling options on the fragment. mNavFragment . setStylingOptions ( new StylingOptions () . primaryDayModeThemeColor ( 0xff1A237E ) . secondaryDayModeThemeColor ( 0xff3F51B5 ) . primaryNightModeThemeColor ( 0xff212121 ) . secondaryNightModeThemeColor ( 0xff424242 ) . headerLargeManeuverIconColor ( 0xffffff00 ) . headerSmallManeuverIconColor ( 0xffffa500 ) . headerNextStepTypefacePath ( \"/system/fonts/NotoSerif-BoldItalic.ttf\" ) . headerNextStepTextColor ( 0xff00ff00 ) . headerNextStepTextSize ( 20 f ) . headerDistanceTypefacePath ( \"/system/fonts/NotoSerif-Italic.ttf\" ) . headerDistanceValueTextColor ( 0xff00ff00 ) . headerDistanceUnitsTextColor ( 0xff0000ff ) . headerDistanceValueTextSize ( 20 f ) . headerDistanceUnitsTextSize ( 18 f ) . headerInstructionsTypefacePath ( \"/system/fonts/NotoSerif-BoldItalic.ttf\" ) . headerInstructionsTextColor ( 0xffffff00 ) . headerInstructionsFirstRowTextSize ( 24 f ) . headerInstructionsSecondRowTextSize ( 20 f ) . headerGuidanceRecommendedLaneColor ( 0xffffa500 )); Turn off the traffic layer Use GoogleMap.setTrafficEnabled() to enable or disable the traffic layer on the map."
+        ]
+      },
+      {
+        "title": "GoogleMap \\_|\\_ Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.",
+          "Parameters listener public void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. public void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off.",
+          "Returns The UiSettings for this map. public boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled."
+        ]
+      },
+      {
+        "title": "\"Enable turn-by-turn data feed \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It provides upcoming maneuvers with elements you supply: icons (left, right, U-turn) turn numbers in roundabouts road names estimated distances and time to the next navigation step or final destination You can use the turn-by-turn feed to create experiences where the full Navigation SDK UI is not appropriate, such as for Android Auto or for small screen displays where a full Android stack is not available.",
+          "Expand to see examples icons for different maneuvers Sample Icon TurnByTurn Maneuvers DEPART UNKNOWN STRAIGHT ON RAMP UNSPECIFIED OFF RAMP UNSPECIFIED NAME CHANGE TURN RIGHT ON RAMP RIGHT TURN LEFT ON RAMP LEFT TURN SLIGHT RIGHT ON RAMP SLIGHT RIGHT OFF RAMP SLIGHT RIGHT TURN SLIGHT LEFT ON RAMP SLIGHT LEFT OFF RAMP SLIGHT LEFT TURN SHARP RIGHT ON RAMP SHARP RIGHT OFF RAMP SHARP RIGHT TURN SHARP LEFT ON RAMP SHARP LEFT OFF RAMP SHARP LEFT TURN U TURN COUNTERCLOCKWISE ON RAMP U TURN COUNTERCLOCKWISE OFF RAMP U TURN COUNTERCLOCKWISE TURN U TURN CLOCKWISE ON RAMP U TURN CLOCKWISE OFF RAMP U TURN CLOCKWISE ROUNDABOUT SHARP RIGHT COUNTERCLOCKWISE ROUNDABOUT SHARP RIGHT CLOCKWISE ROUNDABOUT RIGHT COUNTERCLOCKWISE ROUNDABOUT RIGHT CLOCKWISE ROUNDABOUT SLIGHT RIGHT COUNTERCLOCKWISE ROUNDABOUT SLIGHT RIGHT CLOCKWISE ROUNDABOUT STRAIGHT COUNTERCLOCKWISE ROUNDABOUT STRAIGHT CLOCKWISE ROUNDABOUT SLIGHT LEFT COUNTERCLOCKWISE ROUNDABOUT SLIGHT LEFT CLOCKWISE ROUNDABOUT LEFT COUNTERCLOCKWISE ROUNDABOUT LEFT CLOCKWISE ROUNDABOUT SHARP LEFT COUNTERCLOCKWISE ROUNDABOUT SHARP LEFT CLOCKWISE ROUNDABOUT U TURN COUNTERCLOCKWISE ROUNDABOUT U TURN CLOCKWISE ROUNDABOUT COUNTERCLOCKWISE ROUNDABOUT CLOCKWISE ROUNDABOUT EXIT COUNTERCLOCKWISE ROUNDABOUT EXIT CLOCKWISE MERGE RIGHT OFF RAMP RIGHT MERGE LEFT OFF RAMP LEFT FORK RIGHT TURN KEEP RIGHT ON RAMP KEEP RIGHT OFF RAMP KEEP RIGHT FORK LEFT TURN KEEP LEFT ON RAMP KEEP LEFT OFF RAMP KEEP LEFT MERGE UNSPECIFIED DESTINATION DESTINATION RIGHT DESTINATION LEFT FERRY BOAT FERRY TRAIN Use generated icons To facilitate Android Auto use cases, the Navigation SDK supports generation of maneuver and lane guidance icons.",
+          "The service in the following example receives navigation information and uses the TurnByTurnManager to convert the data into a NavInfo object that contains the navigation details. / Receives turn - by - turn navigation information forwarded from NavSDK . / public class NavInfoReceivingService extends Service { / The messenger used by the service to receive nav step updates . / private Messenger incomingMessenger ; private TurnByTurnManager turnByTurnManager ; private final class IncomingNavStepHandler extends Handler { public IncomingNavStepHandler ( Looper looper ) { super ( looper ); } @ Override public void handleMessage ( Message msg ) { // Identify the message through the msg . what field . if ( TurnByTurnManager ."
+        ]
+      },
+      {
+        "title": "\"Navigate a multi-destination route \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "LENGTH LONG ) . show (); } if ( displayMedium . equals ( DISPLAY BOTH ) displayMedium . equals ( DISPLAY LOG )) { Log . d ( TAG , errorMessage ); } } } Add a navigation fragment The SupportNavigationFragment is the UI component that displays the visual output of navigation, including an interactive map and turn-by-turn directions.",
+          "Create a helper method to show a message on screen and in the log. private void displayMessage(String errorMessage, String displayMedium) { if (displayMedium.equals(DISPLAY BOTH) displayMedium.equals(DISPLAY TOAST)) { Toast.makeText(this, errorMessage, Toast.LENGTH LONG).show(); } if (displayMedium.equals(DISPLAY BOTH) displayMedium.equals(DISPLAY LOG)) { Log.d(TAG, errorMessage); } } Initialize the Navigation SDK and override the onNavigatorReady() callback to start navigation when the navigator is ready: NavigationApi.getNavigator(this, new NavigationApi.NavigatorListener() { / Sets up the navigation UI when the navigator is ready for use. / @Override public void onNavigatorReady(Navigator navigator) { displayMessage(\"Navigator ready.\", DISPLAY BOTH); mNavigator = navigator; mNavFragment = (SupportNavigationFragment) getFragmentManager() .findFragmentById(R.id.navigation fragment); // Set the camera to follow the device location with 'TILTED' driving view. mNavFragment.getCamera().followMyLocation(Camera.Perspective.TILTED); // Navigate to the specified places. navigateToPlaces(); } / Handles errors from the Navigation SDK. @param errorCode The error code returned by the navigator. / @Override public void onError(@NavigationApi.ErrorCode int errorCode) { switch (errorCode) { case NavigationApi.ErrorCode.NOT AUTHORIZED: displayMessage(\"Error loading Navigation SDK: Your API key is \" + \"invalid or not authorized to use the Navigation SDK.\", DISPLAY BOTH); break; case NavigationApi.ErrorCode.TERMS NOT ACCEPTED: displayMessage(\"Error loading Navigation SDK: User did not accept \" + \"the Navigation Terms of Use.\", DISPLAY BOTH); break; case NavigationApi.ErrorCode.NETWORK ERROR: displayMessage(\"Error loading Navigation SDK: Network error.\", DISPLAY BOTH); break; case NavigationApi.ErrorCode.LOCATION PERMISSION MISSING: displayMessage(\"Error loading Navigation SDK: Location permission \" + \"is missing.\", DISPLAY BOTH); break; default: displayMessage(\"Error loading Navigation SDK: \" + errorCode, DISPLAY BOTH); } } }); Add a method to create a Waypoint object from a given place ID and title. private void createWaypoint(String placeId, String title) { try { mWaypoints.add( Waypoint.builder() .setPlaceIdString(placeId) .setTitle(title) .build() ); } catch (Waypoint.UnsupportedPlaceIdException e) { displayMessage(\"Error starting navigation: Place ID is not supported: \" + placeId, DISPLAY BOTH); } } Add a method to display the calculated travel time and distance to each waypoint. private void displayTimesAndDistances() { List<TimeAndDistance> timesAndDistances = mNavigator.getTimeAndDistanceList(); int leg = 1; String message = \"You're on your way!\"; for (TimeAndDistance timeAndDistance : timesAndDistances) { message = message + \"\\nRoute leg: \" + leg++ + \": Travel time (seconds): \" + timeAndDistance.getSeconds() + \".",
+          "ListenableResultFuture<Navigator.RouteStatus> pendingRoute = mNavigator.setDestinations(mWaypoints); // Define the action to perform when the SDK has determined the route. pendingRoute.setOnResultListener( new ListenableResultFuture.OnResultListener<Navigator.RouteStatus>() { @Override public void onResult(Navigator.RouteStatus code) { switch (code) { case OK: mJourneyInProgress = true; // Hide the toolbar to maximize the navigation UI. if (getActionBar() != null) { getActionBar().hide(); } // Register some listeners for navigation events. registerNavigationListeners(); // Display the time and distance to each waypoint. displayTimesAndDistances(); // Enable voice audio guidance (through the device speaker). mNavigator.setAudioGuidance( Navigator.AudioGuidance.VOICE ALERTS AND GUIDANCE); // Simulate vehicle progress along the route for demo/debug builds. if (BuildConfig.DEBUG) { mNavigator.getSimulator().simulateLocationsAlongExistingRoute( new SimulationOptions().speedMultiplier(5)); } // Start turn-by-turn guidance along the current route. mNavigator.startGuidance(); break; // Handle error conditions returned by the navigator. case NO ROUTE FOUND: displayMessage(\"Error starting navigation: No route found.\", DISPLAY BOTH); break; case NETWORK ERROR: displayMessage(\"Error starting navigation: Network error.\", DISPLAY BOTH); break; case ROUTE CANCELED: displayMessage(\"Error starting navigation: Route canceled.\", DISPLAY BOTH); break; default: displayMessage(\"Error starting navigation: \" + String.valueOf(code), DISPLAY BOTH); } } }); } Build and run your app Connect an Android device to your computer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.content.pm.PackageManager",
+      "android.graphics.Bitmap",
+      "android.graphics.BitmapFactory",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.widget.Toast",
+      "androidx.annotation.NonNull",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.core.content.ContextCompat",
+      "class.getName",
+      "com.google.android.gms.maps.GoogleMap",
+      "com.google.android.gms.maps.GoogleMap.CameraPerspective",
+      "com.google.android.gms.maps.model.BitmapDescriptorFactory",
+      "com.google.android.gms.maps.model.LatLng",
+      "com.google.android.gms.maps.model.Marker",
+      "com.google.android.gms.maps.model.MarkerOptions",
+      "com.google.android.gms.maps.OnMapReadyCallback",
+      "com.google.android.libraries.navigation.ListenableResultFuture",
+      "com.google.android.libraries.navigation.NavigationApi",
+      "com.google.android.libraries.navigation.Navigator",
+      "com.google.android.libraries.navigation.SimulationOptions",
+      "com.google.android.libraries.navigation.StylingOptions",
+      "com.google.android.libraries.navigation.SupportNavigationFragment",
+      "com.google.android.libraries.navigation.Waypoint",
+      "developers.google.com",
+      "id.navigation",
+      "navigator.registerServiceForNavUpdates"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination"
+      ]
+    }
+  ]
+}

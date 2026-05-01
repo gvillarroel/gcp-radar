@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.927Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Discovery service subscription pricing mode",
+  "feature_slug": "discovery-service-subscription-pricing-mode",
+  "summary": "The discovery service offers a subscription pricing mode with reserved profiling capacity and no per-byte charge.",
+  "extended_definition": "The discovery service offers a subscription pricing mode with reserved profiling capacity and no per-byte charge.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable sensitive data discovery \\_|\\_ Security Command Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discovery capacity in Enterprise and Premium Premium and Enterprise service tiers (some features require organization-level activation ) If your sensitive data discovery needs exceed the capacity allocated for Security Command Center Enterprise or Premium (organization-level) customers, then Sensitive Data Protection might increase your capacity temporarily.",
+          "Sensitive data discovery in Security Command Center Premium Premium service tier If you have an organization-level activation of Security Command Center Premium, then your Premium subscription includes an organization-level subscription to the Sensitive Data Protection discovery service.",
+          "Sensitive data discovery in Security Command Center Enterprise Enterprise service tier (requires organization-level activation ) Security Command Center Enterprise includes an organization-level subscription to the Sensitive Data Protection discovery service."
+        ]
+      },
+      {
+        "title": "\"Overview of sensitive data discovery \\_|\\_ Sensitive Data Protection \\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "source_id": "site-docs-reference-3",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the delay lasts longer than 24 hours and you're in subscription pricing mode, confirm whether you have remaining capacity for the month .",
+          "For information on how Sensitive Data Protection charges for profiling data, see Discovery pricing .",
+          "It includes the following settings: Scope (organization, folder, or project) of the discovery operation Type of resource to profile Inspection templates to use Scan frequency Specific subsets of data that should be included in or excluded from discovery Actions that you want Sensitive Data Protection to take after discovery—for example, which Google Cloud services to publish the profiles to Service agent to use for discovery operations For information about how to create an organization-level or project-level discovery scan configuration, see the following pages: Discovery type Create an organization-level scan configuration Create a project-level scan configuration 1 Discovery for BigQuery data Profile BigQuery data in an organization or folder Profile BigQuery data in a single project Discovery for Cloud SQL data Profile Cloud SQL data in an organization or folder Profile Cloud SQL data in a single project Discovery for Cloud Storage data Profile Cloud Storage data in an organization or folder Profile Cloud Storage data in a single project Discovery for Vertex AI data Profile Vertex AI data in an organization or folder Profile Vertex AI data in a single project Discovery for Amazon S3 data Discovery for Amazon S3 data Not applicable Discovery for Azure Blob Storage data Discovery for Azure Blob Storage data Not applicable Secrets discovery (no profiles generated) Configure secrets discovery at the organization level Configure secrets discovery at the project level 1 Not suitable for customers who have an organization-level discovery subscription, such as one provided through Security Command Center Scan configuration scopes You can create a scan configuration at the following levels: Organization Folder Project Single data resource At the organization and folder levels, if two or more active scan configurations have the same project in their scope, Sensitive Data Protection determines which scan configuration can generate profiles for that project."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud SQL data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql",
+        "source_id": "site-docs-reference-3",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If your discovery pricing mode is subscription mode , the rate at which Sensitive Data Protection profiles your data is affected by how much capacity you purchased.",
+          "Before you begin If you have an organization-level discovery subscription—including one through Security Command Center—be aware that this project-level discovery configuration isn't included in your subscription and is billed separately.",
+          "Review and create If you want to make sure that profiling doesn't start automatically after you create the scan configuration, select Create scan in paused mode ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/activate-sensitive-data-discovery",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    }
+  ]
+}

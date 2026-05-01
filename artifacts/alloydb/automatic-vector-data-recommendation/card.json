@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Automatic vector data recommendation",
+  "feature_slug": "automatic-vector-data-recommendation",
+  "summary": "Automatic vector data recommendation updates google_columnar_engine to recommend data for searches without manually adding vector columns to a table.",
+  "extended_definition": "Automatic vector data recommendation updates google_columnar_engine to recommend data for searches without manually adding vector columns to a table.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+      "https://docs.cloud.google.com/alloydb/docs/columnar-engine/about",
+      "https://docs.cloud.google.com/alloydb/docs/columnar-engine/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure the columnar engine \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/columnar-engine/configure",
+        "source_id": "site-docs-reference-2",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Configure memory for the columnar engine If the column store becomes larger than the allocated portion of your instance's memory, AlloyDB automatically uses the instance's underlying cache layer to store the additional columnar data.",
+          "Enable vectorized join The columnar engine has a vectorized join feature that can improve the performance of joins by applying vectorized processing to qualifying queries.",
+          "Manually refresh your columnar engine By default, when you enable the columnar engine, it is set to automatically refresh the column store in the background."
+        ]
+      },
+      {
+        "title": "\"Perform a vector search \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "00 ORDER BY embedding < = > embedding ( 'text-embedding-005' , 'music' ):: vector LIMIT 3 ; Accelerate your filtered vector search You can use the columnar engine content store to improve the performance of vector similarity searches, specifically K-Nearest Neighbor (KNN) searches, when combined with highly selective predicate filtering —for example, using LIKE — in databases.",
+          "CREATE EXTENSION IF NOT EXISTS vector ; CREATE TABLE items ( id SERIAL PRIMARY KEY , description TEXT , embedding VECTOR ( 512 ) ); Populate the data by running the following statements to insert 1 million rows into the example items table. -- Simplified example of inserting matching ( 0.1%) and non-matching data INSERT INTO items ( description , embedding ) SELECT CASE WHEN g % 1000 = 0 THEN 'product ' md5 ( random ():: text ) ' common' -- 0.1% match ELSE 'generic item ' g ' ' md5 ( random ():: text ) -- 99.9% don't match END , random vector ( 512 ) -- Assumes random vector function exists FROM generate series ( 1 , 999999 ) g ; Measure the baseline performance of the vector similarity search without the columnar engine.",
+          "To use the gcloud CLI, you can install and initialize the gcloud CLI. gcloud beta alloydb instances update INSTANCE ID \\ --cluster = CLUSTER ID \\ --region = REGION ID \\ --project = PROJECT ID \\ --database-flags = google columnar engine.enabled = on,google columnar engine.enable vector support = on Add the items table to the columnar engine: SELECT google columnar engine add ( 'items' ); Measure the performance of the vector similarity search using the columnar engine."
+        ]
+      },
+      {
+        "title": "\"About the AlloyDB columnar engine \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/columnar-engine/about",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The columnar engine supports only columns with the following built-in data types: array bigint boolean bytea char date decimal double precision enum float4 float8 integer json jsonb numeric real serial short smallint text timestamp timestamptz uuid varchar vector The columnar engine ignores any attempts to manually add columns with unsupported data types to the column store.",
+          "To find the recommended columnar engine memory size for your instance, see Recommend column store memory size .",
+          "Unsupported data sources The columnar engine does not support tables or materialized views with the following attributes as data sources: Non-leaf partitioned tables Foreign tables Columnar engine limitations If you're running an analytical query on a column that has an index, the AlloyDB optimizer may choose to use row-store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "engine.enable",
+      "engine.enabled",
+      "engine.vectorized"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/columnar-engine/configure",
+        "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+        "https://docs.cloud.google.com/alloydb/docs/columnar-engine/about"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.212Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "OpenID Connect Authentication",
+  "feature_slug": "openid-connect-authentication",
+  "summary": "Looker (Google Cloud core) supports OpenID Connect authentication.",
+  "extended_definition": "Looker (Google Cloud core) supports OpenID Connect authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enabling mirror OpenID Connect groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication .",
+          "Looker only supports OpenID Connect authentication using OpenID Connect's Authorization Code Flow .",
+          "The following section is from an example of a discovery document: { \"issuer\": \"https://accounts.google.com\", \"authorization endpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\", \"token endpoint\": \"https://www.googleapis.com/oauth2/v4/token\", \"userinfo endpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\", \"revocation endpoint\": \"https://accounts.google.com/o/oauth2/revoke\", \"jwks uri\": \"https://www.googleapis.com/oauth2/v3/certs\", \"response types supported\": [ \"code\", \"token\", \"id token\", \"code token\" \"code id token\", \"token id token\", \"code token id token\", \"none\" ], \"subject types supported\": [ \"public\" ], \"id token signing alg values supported\": [ \"RS256\" ], \"scopes supported\": [ \"openid\", \"email\", \"profile\" ], \"token endpoint auth methods supported\": [ \"client secret post\", \"client secret basic\" ], \"claims supported\": [ \"aud\", \"email\", \"email verified\", \"exp\", \"family name\", \"given name\", \"iat\", \"iss\", \"locale\", \"name\", \"picture\", \"sub\" ], Configuring OpenID Connect auth settings To configure OpenID Connect authentication for your Looker instance, select OpenID Connect from the Authentication section of the Admin panel."
+        ]
+      },
+      {
+        "title": "Admin settings - SAML authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enabling mirror SAML groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication .",
+          "If you are using Looker (Google Cloud core) , the Bypass Login Page option is available automatically if SAML is used as the primary authentication method, and defaults to disabled.",
+          "By default, the backup authentication method for Looker (Google Cloud core) is OAuth ."
+        ]
+      },
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instead, you'll map your LDAP, SAML, or OpenID Connect groups to Looker roles during the setup process, and will only be able to change assigned roles from the LDAP, SAML, or OpenID Connect setup pages.",
+          "One Looker group will be created for each LDAP, SAML, or OpenID Connect group, and the Looker group name will mirror the LDAP, SAML, or OpenID Connect group name.",
+          "You may also use LDAP to apply user-specific database connections to Looker queries, as described on the LDAP authentication documentation page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    }
+  ]
+}

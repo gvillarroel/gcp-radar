@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.112Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Filestore NFS datastore for Google Cloud VMware Engine",
+  "feature_slug": "filestore-nfs-datastore-for-google-cloud-vmware-engine",
+  "summary": "Filestore can be used as an NFS datastore for Google Cloud VMware Engine.",
+  "extended_definition": "Filestore can be used as an NFS datastore for Google Cloud VMware Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+      "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+      "https://docs.cloud.google.com/filestore/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Filestore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filestore instances are fully managed file servers on Google Cloud that can be connected to a number of client types: Compute Engine VMs Google Kubernetes Engine (GKE) clusters External datastores such as Google Cloud VMware Engine On-premises machines Cloud Run services Once provisioned, you can scale the capacity of your instances according to need without any downtime.",
+          "For details, see the following resources: Benefits of NFSv4.1 Encryption in Transit in Google Cloud Access control You can control the level of access that a client has on Filestore instance data based on the client's IP address.",
+          "For Google Kubernetes Engine users, for example, Filestore provides multiple reader, multiple writer access, letting you mount your GKE PersistentVolumes as read-write by many nodes."
+        ]
+      },
+      {
+        "title": "Get instance information \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the Filestore instances page Click the instance ID to open the instance details page. gcloud Get information about a Filestore instance by running the instances describe command: gcloud filestore instances describe instance-id --project= project-id --location= location The response to the instances describe command is similar to the following: createTime: '2021-10-11T17:28:23.340943077Z' customPerformanceSupported: true fileShares: - capacityGb: '1024' name: vol1 kmsKeyName: projects/example-project/locations/us-central1/keyRings/example-ring/cryptoKeys/example-key labels: key:val name: projects/yourproject/locations/us-central1/instances/nfs-server networks: - ipAddresses: - 10.0.0.2 network: default reservedIpRange: 10.0.0.0/26 performanceConfig: iopsPerTb: maxIopsPerTb: '17000' performanceLimits: maxIops: '17000' maxReadIops: '17000' maxReadThroughputBps: '417792000' maxWriteIops: '5100' maxWriteThroughputBps: '139264000' state: READY tier: REGIONAL These fields represent the following values: createTime : The time the instance was created, in RFC 3339 format. fileShares : capacityGb : The size of the Filestore file share in binary gigabytes ( GB ), where 1 GB = 1024 3 bytes. name : The name of the Filestore file share.",
+          "List the mount points for an instance You can list all mount points where a Filestore instance is mounted by running: sudo showmount -a INSTANCE IP Example The following command lists all mount points for a Filestore instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 The response looks similar to the following: All mount points on 10 .77.67.226: 10 .128.0.1:/fileshare 10 .128.0.2:/fileshare 10 .128.0.3:/fileshare Get the number of mount points for an instance You can get the total number of mount points for a Filestore instance by running: sudo showmount -a INSTANCE IP --no-headers wc -l Example The following command displays the number of mount points for an instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 --no-headers wc -l What's next Create another instance .",
+          "Example The following command provides information about the test-nfs instance in project myproject , in region us-central1 . gcloud filestore instances describe test-nfs --project=myproject --region=us-central1 REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      },
+      {
+        "title": "\"Mounting file shares on Compute Engine clients \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To reduce the possibility of I/O disruptions when the Filestore instance reboots, we recommend using the hard mount option for both Linux and Windows clients. timeo=600 The NFS client waits 600 deciseconds (60 seconds) before retrying an NFS request. retrans=3 The NFS client attempts NFS requests three times before taking further recovery action. rsize=524288 The NFS client can receive a maximum of 524,288 bytes from the NFS server per READ request.",
+          "Install NFS: Debian/Ubuntu Use the following commands to install NFS on Debian or Ubuntu. sudo apt-get -y update && sudo apt-get install nfs-common RHEL/CentOS Use the following commands to install NFS on Red Hat Enterprise Linux or CentOS. sudo yum update && sudo yum install nfs-utils SUSE Use the following commands to install NFS on SUSE. sudo zypper update && sudo zypper -n install nfs-client Make a local directory to map to the Filestore file share: sudo mkdir -p mount-point-directory where mount-point-directory is the directory to create, for example /mnt/filedir .",
+          "Install NFS: Debian/Ubuntu Use the following commands to install NFS on Debian or Ubuntu. sudo apt-get -y update && sudo apt-get install nfs-common RHEL/CentOS Use the following commands to install NFS on Red Hat Enterprise Linux or CentOS. sudo yum update && sudo yum install nfs-utils SUSE Use the following commands to install NFS on SUSE. sudo zypper update && sudo zypper -n install nfs-client Make a local directory to map to the Filestore file share: sudo mkdir -p mount-point-directory where mount-point-directory is the directory to create, for example /mnt/filedir ."
+        ]
+      },
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use Filestore instances as external datastores for VMware ESXi hosts in VMware Engine .",
+          "The following table shows the instance sizes available for each tier: Tier Minimum size Maximum size Incremental step size Zonal 1 TiB 9.75 TiB 256 GiB Zonal 10 TiB 100 TiB 2.5 TiB Regional 100 GiB or 1 TiB 10,239 GiB or 9.75 TiB 1 GiB or 256 GiB Regional 10 TiB 100 TiB 2.5 TiB Basic HDD 1 TiB 63.9 TiB 1 GiB Basic SSD 2.5 TiB 63.9 TiB 1 GiB Enterprise 1 TiB 10 TiB 256 GiB Depending on the access to the small capacity instances feature, the lower capacity range for Filestore regional instances can be either 100 GiB to 10,239 GiB or 1 TiB to 9.75 TiB.",
+          "Scales up or down in increments of 256 GiB Regional (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Scales up or down in increments of 256 GiB Performance Basic HDD : Static Basic SSD : Performance step at 10 TiB Configurable Configurable Scales linearly with capacity Protocol NFSv3 NFSv3, NFSv4.1 NFSv3, NFSv4.1 NFSv3, NFSv4.1 Create operations for zonal, regional, and enterprise instances can take anywhere between 15 minutes and one hour to complete, depending on instance size."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    }
+  ]
+}

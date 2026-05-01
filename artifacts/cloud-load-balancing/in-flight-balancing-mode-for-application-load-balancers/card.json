@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.883Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "In-flight balancing mode for Application Load Balancers",
+  "feature_slug": "in-flight-balancing-mode-for-application-load-balancers",
+  "summary": "Application Load Balancers support an in-flight balancing mode for distributing requests that take more than a second to complete.",
+  "extended_definition": "Application Load Balancers support an in-flight balancing mode for distributing requests that take more than a second to complete.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Application Load Balancers (except classic Application Load Balancers) and Cloud Service Mesh backends with a long traffic duration setting can use the IN FLIGHT balancing mode with one of the following required target capacity parameters: Table : Target capacity parameters for the IN FLIGHT balancing mode Target capacity parameter Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance.",
+          "Custom metrics target capacity parameters for Application Load Balancer backends with a long traffic duration setting Application Load Balancer backends with a long traffic duration setting can use the CUSTOM METRICS balancing mode with one of the following target capacity parameters or combinations of parameters: Table: CUSTOM METRICS balancing mode target capacity parameters and parameter combinations for Application Load Balancer backends with a long traffic duration setting ( Preview ) Target capacity parameter or parameter combination Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs backends[].customMetrics[].maxUtilization Target custom metric utilization per backend zone max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests and backends[].customMetrics[].maxUtilization Target is the first to be reached in the backend zone: Zone's target custom metric utilization Zone's target number of in-progress HTTP requests max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance.",
+          "Utilization target capacity parameters for Application Load Balancer and Cloud Service Mesh backends with a long traffic duration setting Application Load Balancer and Cloud Service Mesh backends with a long traffic duration setting ( Preview ) can use the UTILIZATION balancing mode with one of the following target capacity parameters or combinations of parameters: Table: UTILIZATION balancing mode target capacity parameters and parameter combinations for Application Load Balancer and Cloud Service Mesh backends with a long traffic duration setting ( Preview ) Target capacity parameter or parameter combination Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs max-utilization Target utilization per backend zone max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests and max-utilization Target is the first to be reached in the backend zone: Zone's target utilization Zone's target number of in-progress HTTP requests max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance."
+        ]
+      },
+      {
+        "title": "\"Custom metrics for Application Load Balancers \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "You use the --custom-metrics flag to specify your custom metric and the threshold to be used for load balancing decisions. gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics='name=\" BACKEND METRIC NAME 1 \",maxUtilization= MAX UTILIZATION FOR METRIC 1 ' \\ --custom-metrics='name=\" BACKEND METRIC NAME 2 \",maxUtilization= MAX UTILIZATION FOR METRIC 2 ' Replace the following: BACKEND SERVICE NAME : the name of the backend service NEG NAME : the name of the zonal or hybrid NEG NEG ZONE : the zone where the NEG was created REGION : for regional load balancers, the region where the load balancer was created BACKEND METRIC NAME : the custom metric names used here must match the custom metric names being reported by the backend's ORCA report MAX UTILIZATION FOR METRIC : the maximum utilization that the load balancing algorithms must target for each metric For example, if your backends are reporting two custom metrics, customUtilA and customUtilB (as demonstrated in the Configure backends to report metrics to the load balancer section), you use the following command to configure your load balancer to use these metrics: gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics='name=\"customUtilA\",maxUtilization=0.8' \\ --custom-metrics='name=\"customUtilB\",maxUtilization=0.9' Alternatively, you can provide a list of custom metrics in a structured JSON file: { \"name\" : \" METRIC NAME 1 \" , \"maxUtilization\" : MAX UTILIZATION FOR METRIC 1 , \"dryRun\" : true } { \"name\" : \" METRIC NAME 2 \" , \"maxUtilization\" : MAX UTILIZATION FOR METRIC 2 , \"dryRun\" : false } Then attach the metrics file in JSON format to the backend as follows: gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics-file=' BACKEND METRIC FILE NAME ' If you want to test whether the metrics are being reported without actually affecting the load balancer, you can set the dryRun flag to true when configuring the metric as follows: gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-zone= NEG ZONE \\ [--global region= REGION ] \\ --balancing-mode=CUSTOM METRICS \\ --custom-metrics 'name=\" BACKEND METRIC NAME \",maxUtilization= MAX UTILIZATION FOR METRIC , dryRun=true ' When a metric is configured with dryRun set to true , the metric is reported to Monitoring but isn't actually used by the load balancer.",
+          "In case your applications often have backend processing latencies in the order of seconds, you can use your global compute capacity more efficiently by load balancing requests based on custom metrics rather than network latency.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Custom metrics for Application Load Balancers Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related documentation: Serverless NEGs overview Set up a global external Application Load Balancer with a Cloud Run, Cloud Run functions, or App Engine backend Set up a regional external Application Load Balancer with a Cloud Run backend Set up a regional internal Application Load Balancer with a Cloud Run backend Set up a cross-region internal Application Load Balancer with Cloud Run Load balancing to backends outside Google Cloud Application Load Balancers support load-balancing traffic to endpoints that extend beyond Google Cloud, such as on-premises data centers and other cloud environments.",
+          "To learn more about how failover works, see the following topics: Global external Application Load Balancers: How requests are distributed Cross-region internal Application Load Balancers: High availability and cross-region failover Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more details, see the following: Traffic management overview for global external Application Load Balancers Traffic management overview for regional external Application Load Balancers Extensibility with Service Extensions The integration with Service Extensions lets you inject custom logic into the load balancing path of supported Application Load Balancers ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

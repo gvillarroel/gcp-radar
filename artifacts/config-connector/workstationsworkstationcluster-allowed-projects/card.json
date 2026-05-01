@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.734Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "WorkstationsWorkstationCluster allowed projects",
+  "feature_slug": "workstationsworkstationcluster-allowed-projects",
+  "summary": "Config Connector supports configuring allowed projects in WorkstationsWorkstationCluster private cluster settings.",
+  "extended_definition": "Config Connector supports configuring allowed projects in WorkstationsWorkstationCluster private cluster settings.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Securing access to resources with IAM \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 28,
+        "relevance": "",
+        "evidence_snippets": [
+          "Confirm the pubsub-topic-service-account is allowed to create PubSubTopic resources by confirming the output of the following command is yes : kubectl auth can-i get pubsubtopics \\ --as=system:serviceaccount:default:pubsub-topic-service-account Cleaning up Use kubectl delete to remove the Service Account, IAM Role and Rolebinding. kubectl delete -f pubsub-topic-editor-rolebinding.yaml --namespace CC NAMESPACE kubectl delete -f pubsub-topic-editor-role.yaml --namespace CC NAMESPACE kubectl delete -f pubsub-topic-service-account.yaml --namespace CC NAMESPACE Replace CC NAMESPACE with the namespace Config Connector manages resources from.",
+          "Confirm the policy has been applied to Google Cloud by running this command and looking for your email address in the output, replacing PROJECT ID with your project ID: gcloud beta pubsub topics get-iam-policy projects/ PROJECT ID /topics/pubsubtopic-sample Access to your Pub/Sub topics is now protected with an IAMPolicyMember ."
+        ]
+      },
+      {
+        "title": "AlloyDBInstance \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "source_id": "site-docs-root",
+        "final_score": 28,
+        "relevance": "",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.instances Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.instances Config Connector Resource Short Names gcpalloydbinstance gcpalloydbinstances alloydbinstance Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbinstances.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string availabilityType : string clusterRef : external : string name : string namespace : string connectionPoolConfig : enabled : boolean flags : string : string databaseFlags : string : string displayName : string gceZone : string instanceType : string instanceTypeRef : external : string name : string namespace : string machineConfig : cpuCount : integer machineType : string networkConfig : authorizedExternalNetworks : - cidrRange : string enableOutboundPublicIp : boolean enablePublicIp : boolean observabilityConfig : assistiveExperiencesEnabled : boolean enabled : boolean maxQueryStringLength : integer preserveComments : boolean queryPlansPerMinute : integer recordApplicationTags : boolean trackActiveQueries : boolean trackClientAddress : boolean trackWaitEvents : boolean queryInsightsConfig : queryPlansPerMinute : integer queryStringLength : integer recordApplicationTags : boolean recordClientAddress : boolean readPoolConfig : nodeCount : integer resourceID : string Fields annotations Optional map (key: string, value: string) Annotations to allow client tools to store small amount of arbitrary data.",
+          "Possible values: [\"AVAILABILITY TYPE UNSPECIFIED\", \"ZONAL\", \"REGIONAL\"]. clusterRef Required object The AlloyDBInstance cluster that this resource belongs to. clusterRef.external Optional string If provided must be in the format projects/[projectId]/locations/[location]/clusters/[clusterId]. clusterRef.name Optional string The metadata.name field of a AlloyDBCluster resource. clusterRef.namespace Optional string The metadata.namespace field of a AlloyDBCluster resource. connectionPoolConfig Optional object Configuration for Managed Connection Pool. connectionPoolConfig.enabled Optional boolean Optional.",
+          "This field is only allowed to be set when 'enablePublicIp' is set to true. networkConfig.authorizedExternalNetworks[] Optional object networkConfig.authorizedExternalNetworks[].cidrRange Optional string CIDR range for one authorzied network of the instance. networkConfig.enableOutboundPublicIp Optional boolean Optional."
+        ]
+      },
+      {
+        "title": "BillingBudgetsBudget \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget",
+        "source_id": "site-docs-root-2",
+        "final_score": 28,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default notifications are sent to those with Billing Account Administrator and Billing Account User IAM roles for the target account. allUpdatesRule.monitoringNotificationChannels Optional list (object) allUpdatesRule.monitoringNotificationChannels[] Optional object allUpdatesRule.monitoringNotificationChannels[].external Optional string Allowed value: The Google Cloud resource name of a MonitoringNotificationChannel resource (format: projects/{{project}}/notificationChannels/{{name}}). allUpdatesRule.monitoringNotificationChannels[].name Optional string Name of the referent.",
+          "If omitted, the report will include all labeled and unlabeled usage. budgetFilter.projects Optional list (object) budgetFilter.projects[] Optional object budgetFilter.projects[].external Optional string Allowed value: The Google Cloud resource name of a Project resource (format: projects/{{name}}). budgetFilter.projects[].name Optional string Name of the referent.",
+          "Allowed value: The Google Cloud resource name of a PubSubTopic resource (format: projects/{{project}}/topics/{{name}}). allUpdatesRule.pubsubTopicRef.name Optional string Name of the referent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.yaml",
+      "alloydb.googleapis.com",
+      "alloydbinstances.alloydb.cnrm.cloud.google.com",
+      "billingbudgets.cnrm.cloud.google.com",
+      "example.com",
+      "metadata.name",
+      "metadata.namespace",
+      "monitoring.cnrm.cloud.google.com",
+      "projects.locations.clusters.instances",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "role.yaml",
+      "rolebinding.yaml",
+      "v1.projects.locations.clusters.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/securing-access-to-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/billingbudgets/billingbudgetsbudget"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.249Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Custom job IDs in Storage Transfer Service",
+  "feature_slug": "custom-job-ids-in-storage-transfer-service",
+  "summary": "Storage Transfer Service jobs can now be created with custom job identifiers.",
+  "extended_definition": "Storage Transfer Service jobs can now be created with custom job identifiers.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/access-control",
+      "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+      "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Custom organization policy constraints \\_|\\_ Storage Transfer Service \\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Constraint syntax Restrict transfers to only allow Cloud Storage to Cloud Storage name : organizations/ ORGANIZATION ID /customConstraints/custom.enforceCloudStorageToCloudStorageOnly resourceTypes : - storagetransfer.googleapis.com/TransferJob methodTypes : - CREATE - UPDATE condition : \"has(resource.transferSpec.gcsDataSource) && has(resource.transferSpec.gcsDataSink)\" actionType : ALLOW displayName : Enforce Cloud Storage to Cloud Storage transfers only description : Only allow transfer jobs that move data from Cloud Storage to Cloud Storage.",
+          "Restrict transfers to a specific list of approved source buckets name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictSourceBuckets resourceTypes : - storagetransfer.googleapis.com/TransferJob methodTypes : - CREATE - UPDATE condition : \"!(resource.transferSpec.gcsDataSource.bucketName in ['approved-bucket-1', 'approved-bucket-2'])\" actionType : DENY displayName : Restrict source buckets description : Deny transfer jobs that do not use an approved source bucket.",
+          "Create the constraint Save the following file as constraint-transfer-job.yaml : name: organizations/ ORGANIZATION ID /customConstraints/custom.restrictLogging resourceTypes: - storagetransfer.googleapis.com/TransferJob methodTypes: - CREATE condition: resource.loggingConfig.logActions.size () > 0 && resource.loggingConfig.logActionStates.size () > 0 actionType: ALLOW displayName: Require transfer job logging description: All new transfer jobs must have logging enabled."
+        ]
+      },
+      {
+        "title": "\"Monitor transfer jobs \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource details Monitored resource name: storage transfer job Resource field / Target field REST resource and field used to populate this field Description project id TransferJob.project id The identifier of the project associated with this resource job id TransferJob.name The globally unique name of the transfer location Will always be set to global since transfer jobs are not associated with a region or location The location of the transfer job Metric details All Storage Transfer Service metrics are delta metrics .",
+          "Home Documentation Storage Storage Transfer Service Send feedback Monitor transfer jobs Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Monitoring automatically collects and stores information for your Storage Transfer Service jobs."
+        ]
+      },
+      {
+        "title": "\"Permissions and roles \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This role doesn't allow transfer to be deleted, so that auditors or security personnel can view a fully preserved record of past transfers. resourcemanager.projects.get resourcemanager.projects.list storagetransfer.agentpools.create storagetransfer.agentpools.get storagetransfer.agentpools.list storagetransfer.agentpools.report storagetransfer.agentpools.update storagetransfer.jobs.create storagetransfer.jobs.get storagetransfer.jobs.list storagetransfer.jobs.run storagetransfer.jobs.update storagetransfer.operations. storagetransfer.projects.getServiceAccount Storage Transfer Viewer ( roles/storagetransfer.viewer ) Provides permissions to list and get jobs and transfer operations within the project.",
+          "This role is most suitable for users or internal teams that audit transfer usage, such as security, compliance, or business unit leaders. resourcemanager.projects.get resourcemanager.projects.list storagetransfer.agentpools.get storagetransfer.agentpools.list storagetransfer.jobs.get storagetransfer.jobs.list storagetransfer.operations.get storagetransfer.operations.list storagetransfer.projects.getServiceAccount Storage Transfer Agent ( roles/storagetransfer.transferAgent ) Gives transfer agents the Storage Transfer Service permissions required to complete a transfer.",
+          "Role comparison You can assign the following project role or Storage Transfer Service predefined roles: Capability Editor ( roles/editor ) Storage Transfer ( roles/storagetransfer. ) Admin ( admin ) User ( user ) Viewer ( viewer ) List/get jobs Create jobs Run jobs Update jobs Delete jobs List/get transfer operations Pause/resume transfer operations Read Google service account details that are used by Storage Transfer Service to access Cloud Storage buckets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.enforceCloudStorageToCloudStorageOnly",
+      "custom.restrictLogging",
+      "custom.restrictSourceBuckets",
+      "gcloud.transfer.jobs.create",
+      "iam.googleapis.com",
+      "job.yaml",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.attachSubscription",
+      "pubsub.topics.create",
+      "pubsub.topics.delete",
+      "pubsub.topics.get",
+      "pubsub.topics.publish",
+      "pubsub.topics.update",
+      "resource.loggingConfig.logActions.size",
+      "resource.loggingConfig.logActionStates.size",
+      "resource.transferSpec.gcsDataSink",
+      "resource.transferSpec.gcsDataSource",
+      "resource.transferSpec.gcsDataSource.bucketName",
+      "storagetransfer.agentpools.create",
+      "storagetransfer.agentpools.get",
+      "storagetransfer.agentpools.list",
+      "storagetransfer.agentpools.report",
+      "storagetransfer.agentpools.update",
+      "storagetransfer.googleapis.com",
+      "storagetransfer.jobs.create",
+      "storagetransfer.jobs.get",
+      "storagetransfer.jobs.list",
+      "storagetransfer.jobs.run",
+      "storagetransfer.jobs.update",
+      "storagetransfer.operations",
+      "storagetransfer.operations.get",
+      "storagetransfer.operations.list",
+      "storagetransfer.projects.getServiceAccount",
+      "storagetransfer.transferAgent",
+      "storagetransfer.viewer",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/storagetransfer",
+      "roles/storagetransfer.transferAgent",
+      "roles/storagetransfer.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/custom-constraints",
+        "https://docs.cloud.google.com/storage-transfer/docs/monitor-transfer-jobs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.285Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Debug sessions listing API",
+  "feature_slug": "debug-sessions-listing-api",
+  "summary": "The new Management API method lists recent debug sessions for a proxy across revisions, environments, and deployment states.",
+  "extended_definition": "The new Management API method lists recent debug sessions for a proxy across revisions, environments, and deployment states.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debug overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee Support use of Debug Only customers can trigger a debug session, but Apigee Support can access non-deleted past debug sessions during the course of a support case to help troubleshoot proxy-specific issues.",
+          "Since saved debug sessions are valid for only 24 hours, we recommend that you download the debug session and attach it to the case opened with Support to enable offline viewing.",
+          "Alternatively, you can download debug sessions and view and analyze them offline, as described in Using Offline Debug ."
+        ]
+      },
+      {
+        "title": "JavaScript object model \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use getHash() to get any of the supported hash objects Examples var hash1 = crypto . getHash ( 'MD5' ); var hash2 = crypto . getHash ( 'SHA-1' ); var hash3 = crypto . getHash ( 'SHA-256' ); var hash4 = crypto . getHash ( 'SHA-512' ); Sample with crypto try { // get values to use with hash functions var salt = context . getVariable ( \"salt\" ) 'SomeHardCodedSalt' ; var host = context . getVariable ( \"request.header.Host\" ); var unhashedToken = \"\" ; var timeNow = Number ( context . getVariable ( 'system.timestamp' )); var now = crypto . dateFormat ( 'YYYY-MM-DD HH:mm:ss.SSS' , 'PST' , timeNow ); unhashed token = \" \" + now + \" \" + host // generate a hash with the unhashedToken: var sha512 = crypto . getSHA512 (); sha512 . update ( salt ); sha512 . update ( unhashedToken ); // convert to base64 var base64Token = sha512 . digest64 (); // set headers context . setVariable ( \"request.header.now\" , now ); context . setVariable ( \"request.header.token\" , base64Token ); } catch ( e ) { throw 'Error in Javascript' ; } context object reference context object summary context object methods context object properties context object children A context object is created for each request/response transaction executed by an API proxy.",
+          "Name Description Properties context A wrapper for the message processing pipeline context and the request and response Flows that are executed by the ProxyEndpoint and TargetEndpoint. flow, session context. proxyRequest An object that represents the inbound request message to the ProxyEndpoint (from the requesting app to the API proxy) headers, query parameters, method, body, url context. targetRequest An object that represents the outbound request message from the TargetEndpoint (from the API proxy to the backend service). headers, query parameters, method, body, url context. targetResponse An object that represents the inbound target response message (from the backend service to the API proxy) headers, content, status context. proxyResponse An object that represents the outbound proxy response message (from the API proxy to the requesting app) headers, content, status context.flow The name of the current flow.",
+          "For example: if ( context . flow == \"PROXY REQ FLOW\" ) { print ( \"In proxy request flow\" ); var username = context . getVariable ( \"request.queryparam.user\" ); print ( \"Got query param: \" + username ); context . setVariable ( \"USER.name\" , username ); print ( \"Set query param: \" + context . getVariable ( \"USER.name\" )); } if ( context . flow == \"TARGET REQ FLOW\" ) { print ( \"In target request flow\" ); var username = context . getVariable ( \"USER.name\" ); var url = \"http://mocktarget.apigee.net/user?\" context . setVariable ( \"target.url\" , url + \"user=\" + username ); print ( \"Callout to URL: \" , context . getVariable ( \"target.url\" )); } To see the output, select Output from all transactions at the bottom of the Debug window."
+        ]
+      },
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operation: Click Edit and configure the following paths and methods: Path: /get with Method: GET Path: / TARGET PROXY NAME with Method: GET TARGET PROXY NAME is the name of the proxy that processes extension traffic.",
+          "Create the Extension Processor proxy The Extension Processor proxy is an Apigee API proxy that is used to apply API management policies to the load balancer traffic.",
+          "The XML specification for the proxy should appear similar to the following: <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <APIProxy revision=\"1\" name=\"extproc-sample\"> <DisplayName/> <Description/> <CreatedAt>1739581781912</CreatedAt> <LastModifiedAt>1739582447868</LastModifiedAt> <BasePaths>/</BasePaths> <ProxyEndpoints> <ProxyEndpoint>default</ProxyEndpoint> </ProxyEndpoints> </APIProxy> Configure the EventFlow in the proxy: <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> <APIProxy revision=\"1\" name=\"extproc-sample\"> <DisplayName/> <Description/> <CreatedAt>1739581781912</CreatedAt> <LastModifiedAt>1739582447868</LastModifiedAt> <BasePaths>/</BasePaths> <ProxyEndpoints> <ProxyEndpoint>default</ProxyEndpoint> <EventFlow name=\"EventFlow\" content-type=\"text/event-stream\"> <Response/> </EventFlow> <HTTPProxyConnection> <Properties/> <URL>https://httpbin.org/sse</URL> </HTTPProxyConnection> </ProxyEndpoints> </APIProxy> Follow the steps in Deploy an API proxy to deploy the proxy to the environment you created earlier."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "context.flow",
+      "httpbin.org",
+      "mocktarget.apigee.net",
+      "request.header.Host",
+      "request.header.now",
+      "request.header.token",
+      "request.queryparam.user",
+      "ss.SSS",
+      "system.timestamp",
+      "target.url"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/debug/trace-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    }
+  ]
+}

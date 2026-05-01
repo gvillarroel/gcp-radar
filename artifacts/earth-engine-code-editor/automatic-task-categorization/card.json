@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.664Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Automatic task categorization",
+  "feature_slug": "automatic-task-categorization",
+  "summary": "Tasks older than one day are automatically categorized.",
+  "extended_definition": "Tasks older than one day are automatically categorized.",
+  "lifecycle": {
+    "latest_feature_date": "2015-04-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/access_control",
+      "https://developers.google.com/earth-engine/guides/command_line",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import tasks in the upload phase will show their progress in the Unsubmitted tasks section and automatically submit to the server once the file upload is complete.",
+          "Tasks tab Earth Engine Tasks are operations that are capable of running much longer than the standard API request timeout.",
+          "The Code Editor has the following elements (illustrated in Figure 1): JavaScript code editor Map display for visualizing geospatial datasets API reference documentation (Docs tab) Git -based Script Manager (Scripts tab) Console output (Console tab) Task Manager (Tasks tab) to handle long-running queries Interactive map query (Inspector tab) Search of the data archive or saved scripts Geometry drawing tools Figure 1."
+        ]
+      },
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key actions include: authenticate to sign in; acl to manage asset access; asset to view/edit asset metadata; cp/mv to copy/move assets; create to make folders/collections; ls to list contents; model prepare for TensorFlow model transformation; project config to configure project settings; rm to delete assets; set project to set the default cloud project; task to manage long running tasks; and upload to add images or tables from Google Cloud Storage.\\n\"]]",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[\"The earthengine tool manages Earth Engine assets and tasks via the command line.",
+          "For safety when deleting multiple assets, you can use the --dry run flag to verify exactly what will be deleted without actually deleting anything. set project Sets the Google Cloud project through which computation requests are routed. earthengine set project foo-project This command is needed prior to running commands that require Cloud functionality, for example model . task Prints information about or manages long-running tasks."
+        ]
+      },
+      {
+        "title": "Control access to resources \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access_control",
+        "source_id": "site-docs-root-2",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "These roles are: Role Title Description roles/earthengine.viewer Earth Engine Resource Viewer Provides permission to view and list Assets and tasks. roles/earthengine.writer Earth Engine Resource Writer Provides permission to read, create, modify and delete assets, import images and tables, read and update tasks, perform interactive computations, and create long running export tasks. roles/earthengine.admin Earth Engine Admin Provides permission for all Earth Engine resources including changing access controls for Earth Engine assets. roles/earthengine.appsPublisher Earth Engine Apps Publisher Provides permission to create a service account for use with an Earth Engine app.",
+          "App tasks such as app creation and deletion require specific permissions like iam.serviceAccounts.create and roles like Service Account Admin.\\n\"]]",
+          "Permissions needed resourcemanager.projects.get resourcemanager.folders.list resourcemanager.folders.get resourcemanager.organizations.get (uncommon) Suggested roles Viewer ( roles/viewer ) OR Earth Engine Resource Viewer ( roles/earthengine.viewer ) on relevant projects OR Browser ( roles/browser , recommended for advanced organization cases) Folder Viewer ( roles/resourcemanager.folderViewer ) on relevant folders Select a project for use in the Code Editor Permissions needed resourcemanager.projects.get serviceusage.services.get If project has not previously been set up On first selecting a project through the Code Editor, the project is initialized for use with Earth Engine."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.admin",
+      "billing.subscriptions.create",
+      "billing.subscriptions.list",
+      "billing.viewer",
+      "developers.google.com",
+      "earthengine.admin",
+      "earthengine.appsPublisher",
+      "earthengine.viewer",
+      "earthengine.writer",
+      "iam.serviceAccounts.create",
+      "image.tif",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.folderViewer",
+      "resourcemanager.organizations.get",
+      "serviceusage.services.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/billing.admin",
+      "roles/billing.viewer",
+      "roles/browser",
+      "roles/earthengine.admin",
+      "roles/earthengine.appsPublisher",
+      "roles/earthengine.viewer",
+      "roles/earthengine.writer",
+      "roles/resourcemanager.folderViewer",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    }
+  ]
+}

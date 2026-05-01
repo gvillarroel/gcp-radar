@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.906Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "history.list message label details",
+  "feature_slug": "history-list-message-label-details",
+  "summary": "The history.list method returns current message label IDs in change events to help reconstruct message state before and after a change.",
+  "extended_definition": "The history.list method returns current message label IDs in change events to help reconstruct message state before and after a change.",
+  "lifecycle": {
+    "latest_feature_date": "2015-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/push",
+      "https://developers.google.com/workspace/gmail/api/guides/sync",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.history.list \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "source_id": "site-docs-reference",
+        "final_score": 239,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "JSON representation { \"id\" : string , \"messages\" : [ { object ( Message ) } ] , \"messagesAdded\" : [ { object ( MessageAdded ) } ] , \"messagesDeleted\" : [ { object ( MessageDeleted ) } ] , \"labelsAdded\" : [ { object ( LabelAdded ) } ] , \"labelsRemoved\" : [ { object ( LabelRemoved ) } ] } Fields id string The mailbox sequence ID. messages[] object ( Message ) List of messages changed in this history record.",
+          "Any messages contained in the response will typically only have id and threadId fields populated. nextPageToken string Page token to retrieve the next page of results in the list. historyId string The ID of the mailbox's current history record.",
+          "We recommend using the specific change-type fields instead of this. messagesAdded[] object ( MessageAdded ) Messages added to the mailbox in this history record. messagesDeleted[] object ( MessageDeleted ) Messages deleted (not Trashed) from the mailbox in this history record. labelsAdded[] object ( LabelAdded ) Labels added to messages in this history record. labelsRemoved[] object ( LabelRemoved ) Labels removed from messages in this history record."
+        ]
+      },
+      {
+        "title": "Configure push notifications in Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/push",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The message.data field is a Base64URL-encoded string that decodes to a JSON object containing the email address and the new mailbox history ID for the user: { \"emailAddress\" : \"user@example.com\" , \"historyId\" : \"9876543210\" } You can then use the history.list method to get the change details for the user since their last known historyId , as described in the Synchronize clients with Gmail API .",
+          "For example, use the history.list method to identify changes that occurred between your initial watch request and the receipt of the notification message shared in the previous example.",
+          "For example, use the following request to be notified any time a change is made to the inbox: Protocol POST \"https://www.googleapis.com/gmail/v1/users/me/watch\" Content - type : application / json { topicName : \"projects/myproject/topics/mytopic\" , labelIds : [ \"INBOX\" ], labelFilterBehavior : \"INCLUDE\" , } Python request = { 'labelIds' : [ 'INBOX' ], 'topicName' : 'projects/myproject/topics/mytopic' , 'labelFilterBehavior' : 'INCLUDE' } gmail . users () . watch ( userId = 'me' , body = request ) . execute () Watch response If the watch request is successful, you receive a response like the following: { historyId: 1234567890 expiration: 1431990098200 } The response contains the current mailbox historyId for the user."
+        ]
+      },
+      {
+        "title": "Synchronize clients with Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/sync",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To retrieve the historyId of a recent message, use the messages.get or messages.list methods.",
+          "Partial synchronization If your app has synchronized recently, you can perform a partial sync using the history.list method to return all history records newer than the startHistoryId query parameter you must specify in your request.",
+          "The returned History object includes message IDs and the type of change for each message, such as message added or labels modified, since the time of the provided startHistoryId ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "example.com",
+      "history.list",
+      "message.data",
+      "messages.get",
+      "messages.list",
+      "users.history",
+      "users.history.list",
+      "users.labels",
+      "users.labels.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/push",
+        "https://developers.google.com/workspace/gmail/api/guides/sync"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex ML Metadata filtering by association and attribution",
+  "feature_slug": "vertex-ml-metadata-filtering-by-association-and-attribution",
+  "summary": "Vertex ML Metadata now supports filtering contexts, executions, and artifacts using association and attribution criteria.",
+  "extended_definition": "Vertex ML Metadata now supports filtering contexts, executions, and artifacts using association and attribution criteria.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex ML Metadata notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .",
+          "Tutorial steps Formalize model experiment in a script Run model traning using local script on Vertex AI Training Check out ML experiment parameters and metrics in Vertex AI Experiments Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Experiments Vertex ML Metadata Custom training Get started with Vertex AI Experiments .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource version metadata Vertex AI Feature Store only supports the version 0 for features.",
+          "Feature metadata Vertex AI Feature Store is integrated with Knowledge Catalog to provide feature governance capabilities, including feature metadata.",
+          "For more information about searching for Vertex AI Feature Store resources, see Search for resource metadata in Data Catalog ."
+        ]
+      },
+      {
+        "title": "\"Configure feature-based explanations \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based",
+        "source_id": "site-docs-reference-3",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "The flags most pertinent to Vertex Explainable AI are highlighted. gcloud ai models upload \\ --region = LOCATION \\ --display-name = MODEL NAME \\ --container-image-uri = IMAGE URI \\ --artifact-uri = PATH TO MODEL ARTIFACT DIRECTORY \\ --explanation-method = sampled-shapley \\ --explanation-path-count = PATH COUNT \\ --explanation-metadata-file = explanation-metadata.json Replace the following: PATH COUNT : The number of feature permutations to use for the Sampled Shapley attribution method.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /models:upload Request JSON body: { \"model\": { \"displayName\": \" MODEL NAME \", \"containerSpec\": { \"imageUri\": \" IMAGE URI \" }, \"artifactUri\": \" PATH TO MODEL ARTIFACT DIRECTORY \", \"explanationSpec\": { \"parameters\": { \"integratedGradientsAttribution\": { \"stepCount\": STEP COUNT } }, \"metadata\": { \"inputs\": { \" FEATURE NAME \": { \"inputTensorName\": \" INPUT TENSOR NAME \", \"modality\": \" MODALITY \", \"visualization\": VISUALIZATION SETTINGS } }, \"outputs\": { \" OUTPUT NAME \": { \"outputTensorName\": \" OUTPUT TENSOR NAME \" } } } } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /models:upload Request JSON body: { \"model\": { \"displayName\": \" MODEL NAME \", \"containerSpec\": { \"imageUri\": \" IMAGE URI \" }, \"artifactUri\": \" PATH TO MODEL ARTIFACT DIRECTORY \", \"explanationSpec\": { \"parameters\": { \"xraiAttribution\": { \"stepCount\": STEP COUNT } }, \"metadata\": { \"inputs\": { \" FEATURE NAME \": { \"inputTensorName\": \" INPUT TENSOR NAME \", \"modality\": \"image\", \"visualization\": VISUALIZATION SETTINGS } }, \"outputs\": { \" OUTPUT NAME \": { \"outputTensorName\": \" OUTPUT TENSOR NAME \" } } } } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "metadata.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based"
+      ]
+    }
+  ]
+}

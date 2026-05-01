@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.409Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "RoCE VPC networks",
+  "feature_slug": "roce-vpc-networks",
+  "summary": "RoCE VPC networks support creating RDMA over converged ethernet networks and applying firewall rules to them; RoCE VPC networks support creating RDMA over converged ethernet networks and applying firewall rules to them.",
+  "extended_definition": "RoCE VPC networks support creating RDMA over converged ethernet networks and applying firewall rules to them; RoCE VPC networks support creating RDMA over converged ethernet networks and applying firewall rules to them.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+      "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+      "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage firewall rules for RoCE VPC networks \\_|\\_ Cloud Next\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "source_id": "site-docs-root",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A Virtual Private Cloud (VPC) network that uses the Remote Direct Memory Access (RDMA) over Converged Ethernet (RoCE) network profile is called an RoCE VPC network .",
+          "This section describes how to perform the following tasks: Create an RoCE VPC network Create a regional network firewall policy that works with the RoCE VPC network Create rules in the regional network firewall policy Associate the regional network firewall policy with the RoCE VPC network Before you begin Make sure that you review the supported and unsupported features in VPC networks with an RDMA network profile.",
+          "Before you begin, review the following information: RDMA RoCE network profile Cloud NGFW for RoCE VPC networks Because the rules in a regional network firewall policy used by an RoCE VPC network rely heavily on target secure tags and source secure tags, ensure that you're familiar with how to create and manage secure tags and bind secure tags to the VM instances."
+        ]
+      },
+      {
+        "title": "\"Firewall endpoint overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ability Necessary role Create a new firewall endpoint Any of the following roles on the organization where the firewall endpoint is created: Compute Network Admin ( roles/compute.networkAdmin ) Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) Modify an existing firewall endpoint Any of the following roles on the organization: Compute Network Admin ( roles/compute.networkAdmin ) Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) View details about the firewall endpoint in an organization Any of the following roles on the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) View all the firewall endpoints in an organization Any of the following roles on the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) IAM roles govern the following actions for the firewall endpoint associations: Creating a firewall endpoint association in a project Modifying or deleting a firewall endpoint association Viewing details of a firewall endpoint association Viewing all the firewall endpoint associations configured in a project The following table describes the roles that are necessary for each step.",
+          "If you have multiple VPC networks with overlapping IP address ranges, this network identifier helps to ensure that each redirected packet is correctly associated with its VPC network.",
+          "Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) Modify (update or delete) the firewall endpoint associations Any of the following roles on the project where the VPC network exists: Compute Network Admin ( roles/compute.networkAdmin ) Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) View details about the firewall endpoint association in a project Any of the following roles on the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Firewall Endpoint Admin ( roles/networksecurity.firewallEndpointAdmin ) View all of the firewall endpoint associations in a project."
+        ]
+      },
+      {
+        "title": "\"Security profile overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Identity and Access Management roles Identity and Access Management (IAM) roles govern the following security profiles actions: Creating a security profile in an organization Modifying or deleting a security profile Viewing details of a security profile Viewing a list of security profiles in an organization Using a security profile in a security profile group The following table describes the roles that are necessary for each step.",
+          "View details about the security profile in an organization Any of the following roles for the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) View all of the security profiles in an organization Any of the following roles for the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Compute Network Viewer ( roles/compute.networkViewer ) Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) Use a security profile in a security profile group Any of the following roles for the organization: Compute Network Admin ( roles/compute.networkAdmin ) Compute Network User ( roles/compute.networkUser ) Security Profile Admin ( roles/networksecurity.securityProfileAdmin ) Quotas To view quotas associated with security profiles, see Quotas and limits .",
+          "When you create a security profile of type threat-prevention , the following default threat signatures with default severity and associated actions are added to the profile: Vulnerability detection signatures Anti-spyware signatures Antivirus signatures DNS signatures You have the option to add severity overrides to your threat prevention security profiles."
+        ]
+      },
+      {
+        "title": "\"Configure global network firewall policy to deny egress connections to specific\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a subnet, run the following command: gcloud compute networks subnets create subnet-1-us \\ --network=vpc-geo-location \\ --region=us-central1 \\ --range=10.0.0.0/24 To create another subnet, run the following command: gcloud compute networks subnets create subnet-2-sg \\ --network=vpc-geo-location \\ --region=asia-southeast1 \\ --range=192.168.200.0/24 Create VMs In this section, you create two VMs in the subnets you configured in the preceding section.",
+          "When you delete a VPC, its subnets are also deleted. gcloud To delete the subnet subnet-1-us of the vpc-geo-location VPC network, run the following command: gcloud compute networks subnets delete subnet-1-us \\ --region=us-central1 When prompted, press Y to confirm, and then press Enter .",
+          "To delete the subnet subnet-2-sg of the vpc-geo-location VPC network, run the following command: gcloud compute networks subnets delete subnet-2-sg \\ --region=asia-southeast1 When prompted, press Y to confirm and press Enter ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkAdmin",
+      "compute.networkUser",
+      "compute.networkViewer",
+      "networksecurity.firewallEndpointAdmin",
+      "networksecurity.securityProfileAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.networkUser",
+      "roles/compute.networkViewer",
+      "roles/networksecurity.firewallEndpointAdmin",
+      "roles/networksecurity.securityProfileAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/create-manage-roce-vpcs",
+        "https://docs.cloud.google.com/firewall/docs/about-firewall-endpoints",
+        "https://docs.cloud.google.com/firewall/docs/about-security-profiles",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+      ]
+    }
+  ]
+}

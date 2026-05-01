@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "cluster_type field in Dataproc monitoring metrics",
+  "feature_slug": "cluster-type-field-in-dataproc-monitoring-metrics",
+  "summary": "Dataproc job and operation metrics in Cloud Monitoring include a cluster_type field.",
+  "extended_definition": "Dataproc job and operation metrics in Cloud Monitoring include a cluster_type field.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"clusterType\" : enum ( ClusterType ) , \"clusterTier\" : enum ( ClusterTier ) , \"configBucket\" : string , \"tempBucket\" : string , \"gceClusterConfig\" : { object ( GceClusterConfig ) } , \"masterConfig\" : { object ( InstanceGroupConfig ) } , \"workerConfig\" : { object ( InstanceGroupConfig ) } , \"secondaryWorkerConfig\" : { object ( InstanceGroupConfig ) } , \"softwareConfig\" : { object ( SoftwareConfig ) } , \"initializationActions\" : [ { object ( NodeInitializationAction ) } ] , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"autoscalingConfig\" : { object ( AutoscalingConfig ) } , \"securityConfig\" : { object ( SecurityConfig ) } , \"lifecycleConfig\" : { object ( LifecycleConfig ) } , \"endpointConfig\" : { object ( EndpointConfig ) } , \"metastoreConfig\" : { object ( MetastoreConfig ) } , \"dataprocMetricConfig\" : { object ( DataprocMetricConfig ) } , \"auxiliaryNodeGroups\" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional.",
+          "JSON representation ClusterType ClusterTier GceClusterConfig JSON representation PrivateIpv6GoogleAccess ReservationAffinity JSON representation Type NodeGroupAffinity JSON representation ShieldedInstanceConfig JSON representation ConfidentialInstanceConfig JSON representation SoftwareConfig JSON representation Component NodeInitializationAction JSON representation EncryptionConfig JSON representation AutoscalingConfig JSON representation SecurityConfig JSON representation KerberosConfig JSON representation IdentityConfig JSON representation LifecycleConfig JSON representation EndpointConfig JSON representation DataprocMetricConfig JSON representation Metric JSON representation MetricSource AuxiliaryNodeGroup JSON representation The cluster config.",
+          "If this source is enabled, Dataproc enables the monitoring agent in Compute Engine, and collects monitoring agent metrics, which are published with an agent.googleapis.com prefix."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark metrics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed Service for Apache Spark resource metric collection Cloud Monitoring collects metrics related to the following Managed Service for Apache Spark resources: Cloud Dataproc Cluster Cloud Dataproc Job Cloud Dataproc Batch Cloud Dataproc Session Managed Service for Apache Spark resource metrics are collected in the following format: dataproc.googleapis.com/ RESOURCE / METRIC , and include the collection of several OSS metrics.",
+          "Google Cloud Observability collects and ingests metrics, events, and metadata from Managed Service for Apache Spark clusters, including per-cluster HDFS, YARN, job, and operation metrics, to generate insights via dashboards and charts (see Cloud Monitoring Managed Service for Apache Spark metrics ).",
+          "Disk agent.googleapis.com/disk/bytes used agent.googleapis.com/disk/io time agent.googleapis.com/disk/merged operations agent.googleapis.com/disk/operation count agent.googleapis.com/disk/operation time agent.googleapis.com/disk/pending operations agent.googleapis.com/disk/percent used agent.googleapis.com/disk/read bytes count Swap agent.googleapis.com/swap/bytes used agent.googleapis.com/swap/io agent.googleapis.com/swap/percent used Memory agent.googleapis.com/memory/bytes used agent.googleapis.com/memory/percent used Processes - Some attributes follow unique quota policies . agent.googleapis.com/processes/count by state agent.googleapis.com/processes/cpu time agent.googleapis.com/processes/disk/read bytes count agent.googleapis.com/processes/disk/write bytes count agent.googleapis.com/processes/fork count agent.googleapis.com/processes/rss usage agent.googleapis.com/processes/vm usage Interface agent.googleapis.com/interface/errors agent.googleapis.com/interface/packets agent.googleapis.com/interface/traffic Network agent.googleapis.com/network/tcp connections Build a Monitoring dashboard You can build a Monitoring dashboard that displays charts of selected Managed Service for Apache Spark metrics."
+        ]
+      },
+      {
+        "title": "\"Class ClusterControllerAsyncClient (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UpdateClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", cluster=cluster, ) Make the request operation = client. update cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.UpdateClusterRequest , dict]] The request object.",
+          "DiagnoseClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", ) Make the request operation = client. diagnose cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.DiagnoseClusterRequest , dict]] The request object.",
+          "DeleteClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", ) Make the request operation = client. delete cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.DeleteClusterRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.googleapis.com",
+      "com.google.cloud.dataproc.v1",
+      "dataproc.googleapis.com",
+      "v1.types.DeleteClusterRequest",
+      "v1.types.DiagnoseClusterRequest",
+      "v1.types.StartClusterRequest",
+      "v1.types.UpdateClusterRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    }
+  ]
+}

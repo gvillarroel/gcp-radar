@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ML Explainable AI",
+  "feature_slug": "bigquery-ml-explainable-ai",
+  "summary": "Explainable AI in BigQuery ML helps interpret prediction and forecasting results at scale; Explainable AI in BigQuery ML shows how input features contribute to classification and regression predictions.",
+  "extended_definition": "Explainable AI in BigQuery ML helps interpret prediction and forecasting results at scale; Explainable AI in BigQuery ML shows how input features contribute to classification and regression predictions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use BigQuery ML to predict penguin weight \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select the model you'll use for predictions. read gbq model loads model data from BigQuery, but you could also use the model object object from previous steps. model = bpd . read gbq model ( your model id , For example: \"bqml tutorial.penguins model\", ) Load data from BigQuery bq df = bpd . read gbq ( \"bigquery-public-data.ml datasets.penguins\" ) Use 'contains' function to filter by island containing the string \"Biscoe\". biscoe data = bq df . loc [ bq df [ \"island\" ] . str . contains ( \"Biscoe\" )] result = model . predict ( biscoe data ) Expected output results: predicted body mass g species island culmen length mm culmen depth mm body mass g flipper length mm sex 23 4681.782896 Gentoo penguin (Pygoscelis papua) Biscoe <NA> <NA> <NA> <NA> <NA> 332 4740.7907 Gentoo penguin (Pygoscelis papua) Biscoe 46.2 14.4 214.0 4650.0 <NA> 160 4731.310452 Gentoo penguin (Pygoscelis papua) Biscoe 44.5 14.3 216.0 4100.0 <NA> The results should look similar to the following: Explain the prediction results SQL To understand why the model is generating these prediction results, you can use the ML.EXPLAIN PREDICT function .",
+          "For more information, see Set up ADC for a local development environment . import bigframes.pandas as bpd Select the model you will be evaluating. read gbq model loads model data from BigQuery, but you could also use the model object from the previous steps. model = bpd . read gbq model ( your model id , # For example: \"bqml tutorial.penguins model\" ) Score the model with input data defined in an earlier step to compare model predictions on feature columns to true labels in label columns. score = model . score ( feature columns , label columns ) Expected output results: index mean absolute error mean squared error mean squared log error median absolute error r2 score explained variance 0 227.012237 81838.159892 0.00507 173.080816 0.872377 0.872377 1 rows x 6 columns The results should look similar to the following: Because you performed a linear regression, the results include the following columns: mean absolute error mean squared error mean squared log error median absolute error r2 score explained variance An important metric in the evaluation results is the R 2 score .",
+          "For more information, see BigQuery ML explainable AI overview ."
+        ]
+      },
+      {
+        "title": "\"Forecast a single time series with a multivariate model \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.seattle pm25 xreg model OPTIONS ( MODEL TYPE = 'ARIMA PLUS XREG' , time series timestamp col = 'date' , # Identifies the column that contains time points time series data col = 'pm25' ) # Identifies the column to forecast AS SELECT date , # The column that contains time points pm25 , # The column to forecast temperature , # Temperature input to use in forecasting wind speed # Wind speed input to use in forecasting FROM bqml tutorial.seattle air quality daily WHERE date BETWEEN DATE ( '2012-01-01' ) AND DATE ( '2020-12-31' ); The query takes about 20 seconds to complete, after which you can access the seattle pm25 xreg model model.",
+          "In time series forecasting, the prediction interval, as represented by the prediction interval lower bound and prediction interval upper bound column values, is as important as the forecast value column value.",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE TABLE bqml tutorial.seattle air quality daily AS WITH pm25 daily AS ( SELECT avg ( arithmetic mean ) AS pm25 , date local AS date FROM bigquery-public-data.epa historical air quality.pm25 nonfrm daily summary WHERE city name = 'Seattle' AND parameter name = 'Acceptable PM2.5 AQI & Speciation Mass' GROUP BY date local ), wind speed daily AS ( SELECT avg ( arithmetic mean ) AS wind speed , date local AS date FROM bigquery-public-data.epa historical air quality.wind daily summary WHERE city name = 'Seattle' AND parameter name = 'Wind Speed - Resultant' GROUP BY date local ), temperature daily AS ( SELECT avg ( first max value ) AS temperature , date local AS date FROM bigquery-public-data.epa historical air quality.temperature daily summary WHERE city name = 'Seattle' AND parameter name = 'Outdoor Temperature' GROUP BY date local ) SELECT pm25 daily . date AS date , pm25 , wind speed , temperature FROM pm25 daily JOIN wind speed daily USING ( date ) JOIN temperature daily USING ( date ); Visualize the input data Before creating the model, you can optionally visualize your input time series data to get a sense of the distribution."
+        ]
+      },
+      {
+        "title": "\"Forecast a single time series with an ARIMA_PLUS univariate model \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "In time series forecasting, the prediction interval, as represented by the prediction interval lower bound and prediction interval upper bound column values, is as important as the forecast value column value.",
+          "For more information, see Set up ADC for a local development environment . ex pred = model . predict explain ( horizon = 30 , confidence level = 0.8 ) print ( ex pred . head ( 4 )) Expected output: time series timestamp time series type time series data time series adjusted data standard error confidence level prediction interval lower bound prediction interval upper bound trend seasonal period yearly seasonal period quarterly seasonal period monthly seasonal period weekly seasonal period daily holiday effect spikes and dips step changes residual 0 2016-08-01 00:00:00+00:00 history 1711.0 505.716474 206.939556 <NA> <NA> <NA> 0.0 <NA> <NA> <NA> 169.611938 <NA> <NA> <NA> 1205.283526 336.104536 1 2016-08-02 00:00:00+00:00 history 2140.0 623.137701 206.939556 <NA> <NA> <NA> 336.104428 <NA> <NA> <NA> 287.033273 <NA> <NA> <NA> 1205.283526 311.578773 2 2016-08-03 00:00:00+00:00 history 2890.0 1008.655091 206.939556 <NA> <NA> <NA> 563.514213 <NA> <NA> <NA> 445.140878 <NA> <NA> <NA> 1205.283526 676.061383 3 2016-08-04 00:00:00+00:00 history 3161.0 1389.40959 206.939556 <NA> <NA> <NA> 986.317236 <NA> <NA> <NA> 403.092354 <NA> <NA> <NA> 1205.283526 566.306884 4 2016-08-05 00:00:00+00:00 history 2702.0 1394.395741 206.939556 <NA> <NA> <NA> 1248.707386 <NA> <NA> <NA> 145.688355 <NA> <NA> <NA> 1205.283526 102.320733 5 2016-08-06 00:00:00+00:00 history 1663.0 437.09243 206.939556 <NA> <NA> <NA> 1188.59004 <NA> <NA> <NA> -751.49761 <NA> <NA> <NA> 1205.283526 20.624044 If you would like to visualize the results, you can use Data Studio as described in the Visualize the input data section to create a chart, using the following columns as metrics: time series data prediction interval lower bound prediction interval upper bound trend seasonal period weekly step changes Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "For more information, see Set up ADC for a local development environment . prediction = model . predict ( horizon = 30 , confidence level = 0.8 ) print ( prediction . peek ()) Expected output: forecast timestamp forecast value standard error confidence level prediction interval lower bound prediction interval upper bound confidence interval lower bound confidence interval upper bound 11 2017-08-13 00:00:00+00:00 1845.439732 328.060405 0.8 1424.772257 2266.107208 1424.772257 2266.107208 29 2017-08-31 00:00:00+00:00 2615.993932 431.286628 0.8 2062.960849 3169.027015 2062.960849 3169.027015 7 2017-08-09 00:00:00+00:00 2639.285993 300.301186 0.8 2254.213792 3024.358193 2254.213792 3024.358193 25 2017-08-27 00:00:00+00:00 1853.735689 410.596551 0.8 1327.233216 2380.238162 1327.233216 2380.238162 1 2017-08-03 00:00:00+00:00 2621.33159 241.093355 0.8 2312.180802 2930.482379 2312.180802 2930.482379 The output rows are in chronological order by the forecast timestamp column value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "data.epa",
+      "data.google",
+      "data.ml",
+      "datasets.penguins",
+      "quality.pm25",
+      "quality.temperature",
+      "quality.wind",
+      "sample.ga",
+      "totals.visits",
+      "tutorial.penguins",
+      "tutorial.seattle",
+      "visits.head"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial"
+      ]
+    }
+  ]
+}

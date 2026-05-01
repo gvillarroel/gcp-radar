@@ -1,0 +1,208 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "GPU attachment",
+  "feature_slug": "gpu-attachment",
+  "summary": "GPU attachment lets Dataproc clusters attach 1 to 8 Compute Engine GPUs to master and worker nodes.",
+  "extended_definition": "GPU attachment lets Dataproc clusters attach 1 to 8 Compute Engine GPUs to master and worker nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Attach a Managed Service for Apache Spark cluster or a self-managed cluster\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc",
+        "source_id": "site-docs-root-2",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are two ways that you can attach a Managed Service for Apache Spark cluster using the ENDPOINT URI and WAREHOUSE DIR properties: Option 1: While creating a Managed Service for Apache Spark cluster When creating a Managed Service for Apache Spark cluster, use the properties flag with the following Hive configuration. gcloud dataproc clusters create CLUSTER NAME \\ --properties=\"hive:hive.metastore.uris= ENDPOINT URI ,hive:hive.metastore.warehouse.dir= WAREHOUSE DIR /hive-warehouse\" Replace the following: CLUSTER NAME : the name of your new Managed Service for Apache Spark cluster.",
+          "When it's ready for use, the status changes to Running . gcloud CLI To create a cluster and attach a Dataproc Metastore, run the following gcloud dataproc clusters create command: gcloud dataproc clusters create CLUSTER NAME \\ --dataproc-metastore=projects/ PROJECT ID /locations/ LOCATION /services/ SERVICE \\ --region= LOCATION \\ --scopes= SCOPES Replace the following: CLUSTER NAME : the name of your new Managed Service for Apache Spark cluster.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create a Dataproc Metastore and a Managed Service for Apache Spark cluster: To create a Dataproc Metastore: metastore.services.create on the user account or service account To create a Managed Service for Apache Spark cluster: dataproc.clusters.create on the user account or service account To access the Hive warehouse directory: orgpolicy.policy.get1 , resourcemanager.projects.get , resourcemanager.projects.list , storage.objects. , storage.multipartUploads. on the Managed Service for Apache Spark VM service account You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Authenticate to Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute Engine is an exception—it lets you attach a service account to a VM instance at any time.",
+          "On Google Cloud To authenticate a workload running on Google Cloud, you use the credentials of the service account attached to the compute resource where your code is running, such as a Compute Engine virtual machine (VM) instance .",
+          "For example, if you use Compute Engine: Create a Compute Engine instance."
+        ]
+      },
+      {
+        "title": "\"Run a Spark job on Google Kubernetes Engine \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "User roles To get the permissions that you need to create a Managed Service for Apache Spark cluster, ask your administrator to grant you the following IAM roles: Dataproc Editor ( roles/dataproc.editor ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the Compute Engine default service account Service account role To ensure that the Compute Engine default service account has the necessary permissions to create a Managed Service for Apache Spark cluster, ask your administrator to grant the Dataproc Worker ( roles/dataproc.worker ) IAM role to the Compute Engine default service account on the project.",
+          "Run the command: gcloud dataproc clusters gke create ${DP CLUSTER} \\ --region=${REGION} \\ --gke-cluster=${GKE CLUSTER} \\ --spark-engine-version=latest \\ --staging-bucket=${BUCKET} \\ --pools=\"name=${DP POOLNAME},roles=default\" \\ --setup-workload-identity \\ --history-server-cluster=${PHS CLUSTER} Notes: --spark-engine-version : The Spark image version used on the Managed Service for Apache Spark cluster.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1",
+      "dataproc.clusters.create",
+      "dataproc.editor",
+      "dataproc.googleapis.com",
+      "dataproc.worker",
+      "dpgke.unstable.outputOnly.endpoints.sparkHistoryServer",
+      "hive.metastore.uris",
+      "hive.metastore.warehouse.dir",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountUser",
+      "jobs.submit",
+      "metastore.services.create",
+      "orgpolicy.policy.get1",
+      "request.json",
+      "spark.eventLog.dir",
+      "spark.eventLog.enabled",
+      "storage.multipartUploads",
+      "storage.objects"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataproc.editor",
+      "roles/dataproc.worker",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/attach-dataproc"
+      ]
+    }
+  ]
+}

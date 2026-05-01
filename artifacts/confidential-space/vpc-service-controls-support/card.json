@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.638Z",
+  "source_step08_card": "data/step-08/current/products/confidential-space/card.json",
+  "product_name": "Confidential Space",
+  "product_slug": "confidential-space",
+  "feature_name": "VPC Service Controls support",
+  "feature_slug": "vpc-service-controls-support",
+  "summary": "Confidential Space can be protected with VPC Service Controls perimeters.",
+  "extended_definition": "Confidential Space can be protected with VPC Service Controls perimeters.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "VPC Service Controls \\_|\\_ Confidential Space \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Security Confidential Space Guides Send feedback VPC Service Controls Stay organized with collections Save and categorize content based on your preferences.",
+          "If these buckets reside outside your perimeter, you must configure the following egress rule: - egressTo : operations : - serviceName : storage.googleapis.com methodSelectors : - method : google.storage.objects.get resources : - projects/870449385679 - projects/180376494128 egressFrom : identityType : ANY IDENTITY The following table lists the projects containing the necessary certificates: Project ID Project number Description cloud-shielded-ca-prod 870449385679 Project containing attestation certificates cloud-shielded-ca-prod-root 180376494128 Project containing root certificates If the Compute Engine API is restricted by your service perimeter, you must create the following egress rule: - egressTo : operations : - serviceName : compute.googleapis.com methodSelectors : - method : InstancesService.Insert resources : - projects/30229352718 egressFrom : identityType : ANY IDENTITY The following table lists the project necessary to fetch Confidential Space VM images: Project ID Project number Description confidential-space-images 30229352718 Project containing Confidential Space VM images Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To validate its attestation token, Confidential Space needs to download certificates from Cloud Storage buckets."
+        ]
+      },
+      {
+        "title": "Confidential Space overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Confidential Space roles The components in a Confidential Space system are managed by people with three distinct roles: Data collaborators : The people or organizations who own the protected resources being operated on by the workload.",
+          "Confidential Space components A Confidential Space system has three core components: A workload : A containerized image containing code that processes the protected resources.",
+          "In general, setting up a Confidential Space might look similar to the following process: Multiple data collaborators store encrypted confidential data in their own isolated Google Cloud projects, often in different organizations."
+        ]
+      },
+      {
+        "title": "Confidential Space overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Confidential Space roles The components in a Confidential Space system are managed by people with three distinct roles: Data collaborators : The people or organizations who own the protected resources being operated on by the workload.",
+          "Confidential Space components A Confidential Space system has three core components: A workload : A containerized image containing code that processes the protected resources.",
+          "In general, setting up a Confidential Space might look similar to the following process: Multiple data collaborators store encrypted confidential data in their own isolated Google Cloud projects, often in different organizations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/vpc-service-controls",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview"
+      ]
+    }
+  ]
+}

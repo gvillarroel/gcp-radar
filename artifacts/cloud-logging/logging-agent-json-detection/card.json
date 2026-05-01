@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logging agent JSON detection",
+  "feature_slug": "logging-agent-json-detection",
+  "summary": "Logging agent version 1.5.18-1 allows JSON detection to be enabled through configuration.",
+  "extended_definition": "Logging agent version 1.5.18-1 allows JSON detection to be enabled through configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON log field LogEntry field Cloud Logging agent function Example value severity severity The Logging agent attempts to match a variety of common severity strings, which includes the list of LogSeverity strings recognized by the Logging API. \"severity\":\"ERROR\" message textPayload (or part of jsonPayload ) The message that appears on the log entry line in the Logs Explorer. \"message\":\"There was an error in the application.\" Note : message is saved as textPayload if it is the only field remaining after the Logging agent moves the other special-purpose fields and detect json wasn't enabled; otherwise message remains in jsonPayload . detect json is not applicable to managed logging environments like Google Kubernetes Engine.",
+          "For more information, see traceSampled on the LogEntry page. \"logging.googleapis.com/trace sampled\": false Time-related fields In general, time-related information about a log entry is stored in the timestamp field of the LogEntry object: { insertId: \"1ad8d08f-6529-47ea-832e-467f869a2da4\" ... resource: {2} timestamp: \"2023-10-30T16:33:15.505196Z\" } When the source for a log entry is structured data, the Logging agent uses the following rules to search the fields in the jsonPayload entry for time-related information: Search for a timestamp field that is a JSON object that includes the seconds and nanos fields, representing, respectively, a signed number of seconds from the UTC epoch and a nonnegative number of fractional seconds: jsonPayload: { ... \"timestamp\": { \"seconds\": CURRENT SECONDS, \"nanos\": CURRENT NANOS } } If the previous search fails, then search for a pair of timestampSeconds and timestampNanos fields: jsonPayload: { ... \"timestampSeconds\": CURRENT SECONDS, \"timestampNanos\": CURRENT NANOS } If the previous search fails, then search for a time field that is a string in RFC 3339 format: jsonPayload: { ... \"time\": CURRENT TIME RFC3339 } When time-related information is found, the Logging agent uses that information to set the value of the LogEntry.timestamp , and it doesn't copy that information from the structured record into the LogEntry.jsonPayload object.",
+          "To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{\"code\": \"send-log-via-fluent-cat\", \"message\": \"This is a log from in forward plugin.\"}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: \"1kvvmhsg1ib4689\" jsonPayload: { code: \"send-log-via-fluent-cat\" message: \"This is a log from in forward plugin.\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/log-via-in-forward-plugin\" receiveTimestamp: \"2018-03-21T02:11:27.981020900Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T02:11:22.717692494Z\" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation ."
+        ]
+      },
+      {
+        "title": "Use agent policies (beta) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "To verify that the OS Config metadata is enabled, you can run the following command: gcloud compute project-info describe \\ --project PROJECT ID \\ grep \"enable-osconfig\\ enable-guest-attributes\" -A 1 The expected output follows: - key: enable-guest-attributes value: 'TRUE' - key: enable-osconfig value: 'TRUE' Observability agents are installed, but not functioning properly For information about debugging specific agents, see the following documents: Troubleshoot the Ops Agent Troubleshoot the legacy Logging agent Troubleshoot the legacy Monitoring agent Enable debug-level logs for the OS Config agent It can be useful to enable debug-level logging in the OS Config agent when reporting an issue.",
+          "To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash set-permissions.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash set-permissions.sh --project= PROJECT ID \\ --iam-user= USER EMAIL \\ --iam-permission-role=guestPolicy [Admin Editor Viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash set-permissions.sh --project= PROJECT ID \\ --iam-service-account= SERVICE ACCT EMAIL \\ --iam-permission-role=guestPolicy [Admin Editor Viewer] The diagnose.sh script Given a project ID, a Compute Engine instance ID, and the agent policy ID, the diagnose.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS Config guest policy The policies that are applicable to this Compute Engine instance The agent package repositories that are pulled on to this Compute Engine instance To invoke the script, run the following command: bash diagnose.sh --project-id= PROJECT ID \\ --gce-instance-id= INSTANCE ID \\ --policy-id= POLICY ID Terraform integration To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "Linux To verify that the OS Config agent is installed, run the following command: gcloud compute ssh instance-id \\ --project project-id \\ -- sudo systemctl status google-osconfig-agent A sample output is: google-osconfig-agent.service - Google OSConfig Agent Loaded: loaded (/lib/systemd/system/google-osconfig-agent.service; enabled; vendor preset: Active: active (running) since Wed 2020-01-15 00:14:22 UTC; 6min ago Main PID: 369 (google osconfig) Tasks: 8 (limit: 4374) Memory: 102.7M CGroup: /system.slice/google-osconfig-agent.service └─369 /usr/bin/google osconfig agent Windows To verify that the OS Config agent is installed, run the following steps: Connect to your instance using RDP or a similar tool and login to Windows."
+        ]
+      },
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID \\ --iam-user= USER EMAIL \\ --iam-policy-access= [admin editor viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID \\ --iam-service-account= SERVICE ACCT EMAIL \\ --iam-policy-access= [admin editor viewer] The diagnose policies.sh script Given a project ID, a Compute Engine instance ID, a Compute Engine zone, and the agent policy ID, the diagnose policies.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS policy assignment The OS policy assignments that are applicable to this Compute Engine instance A description of this Compute Engine instance To invoke the script, run the following command: bash diagnose policies.sh --project-id= PROJECT ID \\ --gce-instance-id= INSTANCE ID \\ --policy-id= POLICY ID \\ --zone= ZONE Pricing The gcloud compute instances ops-agents policies commands are implemented by using OS policy assignment resources from VM Manager .",
+          "The examples assume that you put the YAML in a file named agent-policy-description.yaml and that you create the policy in the us-central1-a zone by using a command like the following: gcloud compute instances ops-agents policies create POLICY ID \\ --zone us-central1-a \\ --file agent-policy-description.yaml \\ --project PROJECT ID Install on all VMs To install the latest version of the Ops Agent on all VMs in the us-central1-a zone, use the following policy description: agentsRule : packageState : installed version : latest instanceFilter : all : True Remove from all VMs To remove the latest version of the Ops Agent on all VMs in the us-central1-a zone, use the following policy description: agentsRule : packageState : removed version : latest instanceFilter : all : True Install on VMs based on labels To install the latest version of the Ops Agent on all VMs in the us-central1-a zone with the label \"env=prod\" or \"app=web\", use the following policy description: agentsRule : packageState : installed version : latest instanceFilter : inclusionLabels : - labels : env : prod - labels : app : web When you specify multiple labels: entries for inclusion or exclusion, a VM matches if any of the labels is present; that is, the sets of labels for inclusion or exclusion are matched as a logical OR operation, not a logical AND operation.",
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The prepare-for-ops-agents-policies.sh script The diagnose policies.sh script The prepare-for-ops-agents-policies.sh script After you download the prepare-for-ops-agents-policies.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.service",
+      "compute.googleapis.com",
+      "description.yaml",
+      "diagnose.sh",
+      "logging.googleapis.com",
+      "permissions.sh",
+      "policies.sh",
+      "system.slice"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies"
+      ]
+    }
+  ]
+}

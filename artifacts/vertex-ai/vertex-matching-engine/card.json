@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex Matching Engine",
+  "feature_slug": "vertex-matching-engine",
+  "summary": "Vertex Matching Engine is a vector similarity search capability within Vertex AI.",
+  "extended_definition": "Vertex Matching Engine is a vector similarity search capability within Vertex AI.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+      "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vector Search quickstart \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The APIs are available under the aiplatform package of the SDK. init the aiplatform package from google.cloud import aiplatform aiplatform . init ( project = PROJECT ID , location = LOCATION ) Create a MatchingEngineIndex with its create tree ah index function (Matching Engine is the previous name of Vector Search). create Index my index = aiplatform .",
+          "To see an example of getting started with Vertex AI Vector Search, run the \"Get started with Vertex AI Vector Search\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub In the Vertex AI Vector Search quickstart, learn how to create an index out of a sample dataset from a fictitious ecommerce clothing site.",
+          "The pricing of the Google Cloud services used in this tutorial are available in the following pages: Vertex AI Vector Search Cloud Storage Vertex AI Workbench You can also use the pricing calculator to generate a cost estimate based on your projected usage."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information on filtering, see Filtering VertexRagStore JSON representation { \"ragCorpora\" : [ string ] , \"ragResources\" : [ { object ( RagResource ) } ] , \"ragRetrievalConfig\" : { object ( RagRetrievalConfig ) } , \"storeContext\" : boolean , // Union field similarity top k can be only one of the following: \"similarityTopK\" : integer // End of list of possible types for union field similarity top k . // Union field vector distance threshold can be only one of the following: \"vectorDistanceThreshold\" : number // End of list of possible types for union field vector distance threshold . } Fields ragCorpora[] (deprecated) string This item is deprecated!",
+          "VertexAISearch JSON representation { \"datastore\" : string , \"engine\" : string , \"maxResults\" : integer , \"filter\" : string , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] } Fields datastore string Optional.",
+          "Fully-qualified Vertex AI Search engine resource ID."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using the embedding management capabilities of Vertex AI Feature Store, you can perform vector similarity searches to retrieve entities that are approximate nearest neighbors for a specified entity or embedding value.",
+          "For information about how to perform a vector similarity search in Vertex AI Feature Store, see Perform a vector search for entities .",
+          "Open in Colab Open in Colab Enterprise View on GitHub Build a GenAI RAG application with Vertex AI Feature Store and BigQuery In this tutorial, you learn how to build a low-latency vector search system for your Gen AI application using BigQuery vector search and Vertex AI Feature Store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    }
+  ]
+}

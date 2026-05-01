@@ -1,0 +1,195 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.092Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "Client IP resolution",
+  "feature_slug": "client-ip-resolution",
+  "summary": "Apigee Hybrid adds client IP resolution functionality in versions 1.14.0 and later.",
+  "extended_definition": "Apigee Hybrid adds client IP resolution functionality in versions 1.14.0 and later.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Client IP resolution \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Setting the client IP resolution configuration for an environment in Apigee hybrid is available with hybrid versions 1.14.0 and later.",
+          "Understand the client IP resolution configuration syntax The client IP resolution setting has this format: \"clientIpResolutionConfig\": { \"headerIndexAlgorithm\": { \"ipHeaderName\" : \"X-Forwarded-For\", \"ipHeaderIndex\": 2 } } The following example uses the True-Client-Ip header: \"clientIpResolutionConfig\": { \"headerIndexAlgorithm\": { \"ipHeaderName\" : \"True-Client-Ip\", \"ipHeaderIndex\": 0 } } where ipHeaderName is the header to use for the client IP.",
+          "When to set the client IP resolution for an environment Although it's not required to set client IP resolution, you might want to if the default client IP address resolution does not meet your needs and you want to override it to provide a specified client IP address resolution for Analytics, Advanced API Security, or performing any other function that requires consistent and reliable information on client IP addresses."
+        ]
+      },
+      {
+        "title": "\"New Apigee hybrid installation and administration Preview \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Exit the shell inside vault-0 exit Install secrets store CSI driver Add repo to helm helm repo add secrets-store-csi-driver https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts Install driver in cluster helm install csi secrets-store-csi-driver/secrets-store-csi-driver Create SecretProviderClass kubernetes resource that references the secret that you created inside vault cat > spc-vault.yaml <<EOF apiVersion: secrets-store.csi.x-k8s.io/v1alpha1 kind: SecretProviderClass metadata: name: vault-apigee-runtime-gcp-sa-key spec: provider: vault parameters: vaultAddress: \"http://vault.default:8200\" roleName: \"apigee-runtime-role\" objects: - objectName: \"client secret.json\" secretPath: \"secret/data/runtime-gcp-sa-key\" secretKey: \"key\" EOF Apply the yaml kubectl apply -f spc-vault.yaml Create the kubernetes service account to which we assigned the permissions in step (4.e) kubectl create serviceaccount -n ${ APIGEE NAMESPACE } apigee-runtime-sa Modify the apigee-environment.yaml file for the environment and add the following lines: apiVersion: apigee.cloud.google.com/v1alpha2 kind: ApigeeEnvironment existing content spec: name: {ENV NAME} organizationRef: {ORG NAME} components: runtime: existing content pod containers: - name: apigee-runtime podServiceAccountName: apigee-runtime-sa existing content volumeMounts: - name: secrets-store-inline mountPath: \"/opt/apigee/sa\" readOnly: true volumes: - name: secrets-store-inline csi: driver: secrets-store.csi.k8s.io readOnly: true volumeAttributes: secretProviderClass: \"vault-apigee-runtime-gcp-sa-key\" Apply the changes: kubectl apply -k ${ INSTALL DIR } /overlays/instances/ ${ INSTANCE DIR } /environments/ $ENV NAME Apigee Hybrid Upgrade Note: - This procedure covers upgrades between hybrid versions that are supporting the new installation model.",
+          "In the folder structure below, you can make a copy of instance1 directory called instance2 and modify the datastore and ingress configurations as needed. apigee-hybrid-setup folder structure for multi instance setup.] . ├── bases │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - controller - deployment . yaml │ │ │ └── kustomization . yaml │ │ └── istiod │ │ ├── apigee - ingressgateway - manager - deployment . yaml │ │ └── kustomization . yaml │ └── initialization │ ├── certificates │ │ ├── certificates - and - issuers . yaml │ │ └── kustomization . yaml │ ├── crds │ │ ├── customresourcedefinition - apigeedatastores . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeedeployments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeenvironments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeorganizations . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeredis . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeerouteconfigs . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeroutes . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeetelemetries . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - cassandradatareplications . apigee . cloud . google . com . yaml │ │ └── kustomization . yaml │ ├── ingress │ │ ├── envoyfilter - 1.11 . yaml │ │ └── kustomization . yaml │ ├── openshift │ │ ├── kustomization . yaml │ │ └── scc . yaml │ ├── rbac │ │ ├── apigee - controller │ │ │ ├── kustomization . yaml │ │ │ └── rbac . yaml │ │ └── apigee - embedded - ingress - controller │ │ ├── cluster - role - bindings . yaml │ │ ├── cluster - roles . yaml │ │ ├── kustomization . yaml │ │ └── service - account . yaml │ └── webhooks │ ├── kustomization . yaml │ ├── mutatingwebhookconfiguration . yaml │ └── validatingwebhookconfiguration . yaml ├── instances │ └── instance1 ( Add the 2 nd instance under instances directory similar to instance1 ) │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - env - group │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── workload - identity - logger │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ └── workload - identity - metrics │ │ ├── apigee - workload - identities . yaml │ │ ├── kustomization . yaml │ │ └── patch . yaml │ └── kustomization . yaml ├── overlays │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - hybrid - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ ├── istiod │ │ │ ├── apigee - ingressgateway - manager - deployment - patch . yaml │ │ │ ├── apigee - istio - mesh - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ ├── initialization │ │ ├── certificates │ │ │ ├── apigee - ingressgateway - manager - certificate . yaml │ │ │ └── kustomization . yaml │ │ ├── crds │ │ │ └── kustomization . yaml │ │ ├── ingress │ │ │ └── kustomization . yaml │ │ ├── namespace . yaml │ │ ├── openshift │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── rbac │ │ │ ├── apigee - controller │ │ │ │ └── kustomization . yaml │ │ │ ├── apigee - embedded - ingress - controller │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ └── webhooks │ │ ├── kustomization . yaml │ │ ├── mutatingwebhookconfiguration . yaml │ │ └── validatingwebhookconfiguration . yaml │ └── instances │ └── instance1 │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── openshift - scc │ │ │ │ ├── kustomization . yaml │ │ │ │ └── scc . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - envgroup │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── openshift - scc │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── workload - identity - logger │ │ │ ├── apigee - workload - identities . yaml │ │ │ └── kustomization . yaml │ │ └── workload - identity - metrics │ │ ├── apigee - workload - identities . yaml │ │ ├── kustomization . yaml │ │ └── patch . yaml │ └── kustomization . yaml ├── README . md ├── templates │ ├── ingress - certificate . yaml │ ├── ingress - cert - secret . yaml │ └── service - account - key - secret . yaml └── tools ├── apigee - hybrid - setup . sh ├── common . sh ├── create - service - account . sh └── dump kubernetes . sh Multi Instance setup on GKE Prerequisites Before configuring multiple instances of hybrid, you are expected have completed the following prerequisites: Set up Kubernetes clusters in multiple regions(same or different) with different CIDR blocks Set up cross-region communication Open Cassandra ports 7000 and 7001 between Kubernetes clusters across all regions (7000 may be used as a backup option during troubleshooting).",
+          "Resources will be created in the correct order and command will block until all are healthy. -- rename-directories Rename the environment and environment group to the names of the correct environment and environment group. --verbose Shows detailed output for debugging. --help Display usage information. --setup-all This will execute all the tasks that can be performed by this script Apigee Hybrid Setup Folder Structure The apigee-hybrid-setup folder has the following hierarchical structure by default: . ├── bases │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - controller - deployment . yaml │ │ │ └── kustomization . yaml │ │ └── apigee - ingressgateway - manager │ │ ├── apigee - ingressgateway - manager - deployment . yaml │ │ └── kustomization . yaml │ ├── datastore │ │ └── backup - and - restore │ │ ├── backup │ │ │ ├── cronjob . yaml │ │ │ └── kustomization . yaml │ │ ├── common │ │ │ ├── kustomization . yaml │ │ │ ├── rbac . yaml │ │ │ └── tls - certificate . yaml │ │ └── restore │ │ ├── job . yaml │ │ └── kustomization . yaml │ └── initialization │ ├── certificates │ │ ├── certificates - and - issuers . yaml │ │ └── kustomization . yaml │ ├── crds │ │ ├── customresourcedefinition - apigeedatastores . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeedeployments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeenvironments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeorganizations . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeredis . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeerouteconfigs . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeroutes . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeetelemetries . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - cassandradatareplications . apigee . cloud . google . com . yaml │ │ └── kustomization . yaml │ ├── openshift │ │ ├── kustomization . yaml │ │ └── scc . yaml │ ├── rbac │ │ ├── apigee - controller │ │ │ ├── kustomization . yaml │ │ │ └── rbac . yaml │ │ └── apigee - embedded - ingress - controller │ │ ├── cluster - role - bindings . yaml │ │ ├── cluster - roles . yaml │ │ ├── kustomization . yaml │ │ └── service - account . yaml │ └── webhooks │ ├── kustomization . yaml │ ├── mutatingwebhookconfiguration . yaml │ └── validatingwebhookconfiguration . yaml ├── CONTRIBUTING . md ├── docs │ └── api references │ ├── v1alpha1 . md │ └── v1alpha2 . md ├── kokoro │ ├── build . sh │ ├── common . cfg │ ├── continuous . cfg │ ├── presubmit . cfg │ └── release . cfg ├── LICENSE ├── overlays │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - hybrid - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ ├── apigee - ingressgateway - manager │ │ │ ├── apigee - ingressgateway - manager - deployment - patch . yaml │ │ │ ├── apigee - istio - mesh - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ ├── initialization │ │ ├── certificates │ │ │ ├── apigee - ingressgateway - manager - certificate - patch . yaml │ │ │ ├── apigee - serving - cert - patch . yaml │ │ │ ├── components │ │ │ │ └── disable - apigee - root - certificate - generation │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ ├── crds │ │ │ └── kustomization . yaml │ │ ├── ingress │ │ │ ├── envoyfilter - 1.11 . yaml │ │ │ └── kustomization . yaml │ │ ├── namespace . yaml │ │ ├── openshift │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── rbac │ │ │ ├── apigee - controller │ │ │ │ └── kustomization . yaml │ │ │ ├── apigee - ingressgateway - manager │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ └── webhooks │ │ ├── kustomization . yaml │ │ ├── mutatingwebhookconfiguration . yaml │ │ └── validatingwebhookconfiguration . yaml │ └── instances │ └── instance1 │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── gcs - backup │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── cron - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── gcs - restore │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── job - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── multi - region │ │ │ │ ├── cassandra - data - replication . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── non - gcs - backup │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── cron - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── non - gcs - restore │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── job - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── openshift - scc │ │ │ │ ├── kustomization . yaml │ │ │ │ └── scc . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - envgroup │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── openshift - scc │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── workload - identity - logger │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ └── workload - identity - metrics │ │ ├── kustomization . yaml │ │ ├── patch . yaml │ │ └── service - accounts . yaml │ └── kustomization . yaml ├── README . md ├── templates │ ├── certificate - org - envgroup . yaml │ ├── secret - apigee - cassandra - backup - and - restore - gcp - sa - key . yaml │ ├── secret - apigee - cassandra - backup - and - restore - key - file . yaml │ ├── secret - gcp - sa - key . yaml │ └── secret - ingress - tls - cert - key . yaml └── tools ├── apigee - hybrid - setup . sh ├── apigee - pull - push . sh ├── common . sh ├── create - service - account . sh └── dump kubernetes . sh A version of the above files can be found in the preview-1 tag of the github repository at: https://github.com/apigee/apigee-hybrid-install/releases/tag/preview-1 ."
+        ]
+      },
+      {
+        "title": "Configuration property reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default access log format: '{\"start time\":\"%START TIME%\",\"remote address\":\"%DOWNSTREAM DIRECT REMOTE ADDRESS%\",\"user agent\":\"%REQ(USER-AGENT)%\",\"host\":\"%REQ(:AUTHORITY)%\",\"request\":\"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%\",\"request time\":\"%DURATION%\",\"status\":\"%RESPONSE CODE%\",\"status details\":\"%RESPONSE CODE DETAILS%\",\"bytes received\":\"%BYTES RECEIVED%\",\"bytes sent\":\"%BYTES SENT%\",\"upstream address\":\"%UPSTREAM HOST%\",\"upstream response flags\":\"%RESPONSE FLAGS%\",\"upstream response time\":\"%RESPONSE DURATION%\",\"upstream service time\":\"%RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%\",\"upstream cluster\":\"%UPSTREAM CLUSTER%\",\"x forwarded for\":\"%REQ(X-FORWARDED-FOR)%\",\"request method\":\"%REQ(:METHOD)%\",\"request path\":\"%REQ(X-ENVOY-ORIGINAL-PATH?:PATH)%\",\"request protocol\":\"%PROTOCOL%\",\"tls protocol\":\"%DOWNSTREAM TLS VERSION%\",\"request id\":\"%REQ(X-REQUEST-ID)%\",\"sni host\":\"%REQUESTED SERVER NAME%\",\"apigee dynamic data\":\"%DYNAMIC METADATA(envoy.lua)%\"}' The following is a copy of the default access log format with line breaks added for readability. '{\"start time\":\"%START TIME%\", \"remote address\":\"%DOWNSTREAM DIRECT REMOTE ADDRESS%\", \"user agent\":\"%REQ(USER-AGENT)%\", \"host\":\"%REQ(:AUTHORITY)%\", \"request\":\"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%\", \"request time\":\"%DURATION%\", \"status\":\"%RESPONSE CODE%\", \"status details\":\"%RESPONSE CODE DETAILS%\", \"bytes received\":\"%BYTES RECEIVED%\", \"bytes sent\":\"%BYTES SENT%\", \"upstream address\":\"%UPSTREAM HOST%\", \"upstream response flags\":\"%RESPONSE FLAGS%\", \"upstream response time\":\"%RESPONSE DURATION%\", \"upstream service time\":\"%RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%\", \"upstream cluster\":\"%UPSTREAM CLUSTER%\", \"x forwarded for\":\"%REQ(X-FORWARDED-FOR)%\", \"request method\":\"%REQ(:METHOD)%\", \"request path\":\"%REQ(X-ENVOY-ORIGINAL-PATH?:PATH)%\", \"request protocol\":\"%PROTOCOL%\", \"tls protocol\":\"%DOWNSTREAM TLS VERSION%\", \"request id\":\"%REQ(X-REQUEST-ID)%\", \"sni host\":\"%REQUESTED SERVER NAME%\", \"apigee dynamic data\":\"%DYNAMIC METADATA(envoy.lua)%\"}' istiod.forwardClientCertDetails Advanced Introduced in version: 1.9.2 Default value: SANITIZE SET Chart: apigee-ingress-manager Determines how the Envoy proxy (for the Apigee ingress gateway) handles the x-forwarded-client-cert (XFCC) HTTP header.",
+          "The minimum value is 1. virtualhosts[].selector Basic Introduced in version: 1.2.0 Default value: app: apigee-ingressgateway Chart: apigee-virtualhost Required A key-value selector-value pair for pointing to different ingress selectors. apigee-ingressgateway : for Apigee hybrid installations using Apigee ingress gateway. istio-ingressgateway : for Apigee hybrid installations using Cloud Service Mesh (Apigee hybrid versions 1.8 and earlier).",
+          "Version 1.16 (latest) keyboard arrow down Supported versions: v1.16 (latest) v1.15 v1.14 List of supported versions Unsupported versions: v1.13 v1.12 v1.11 v1.10 v1.9 v1.8 v1.7 v1.6 v1.5 v1.4 v1.3 v1.2 v1.1 This section lists all of the configuration properties that you can use to customize the runtime plane of your Apigee hybrid deployment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ao.args.disableManagedClusterRoles",
+      "apigee.cloud.google.com",
+      "e.g",
+      "environment.yaml",
+      "envoy.lua",
+      "github.com",
+      "istiod.forwardClientCertDetails",
+      "k8s.io",
+      "org.apache.cassandra.locator.LocalStrategy",
+      "org.apache.cassandra.locator.NetworkTopologyStrategy",
+      "raw.githubusercontent.com",
+      "secret.json",
+      "store.csi.k8s.io",
+      "store.csi.x",
+      "v1.1",
+      "v1.10",
+      "v1.11",
+      "v1.12",
+      "v1.13",
+      "v1.14",
+      "v1.15",
+      "v1.16",
+      "v1.2",
+      "v1.3",
+      "v1.4",
+      "v1.5",
+      "v1.6",
+      "v1.7",
+      "v1.8",
+      "v1.9",
+      "vault.default",
+      "vault.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    }
+  ]
+}

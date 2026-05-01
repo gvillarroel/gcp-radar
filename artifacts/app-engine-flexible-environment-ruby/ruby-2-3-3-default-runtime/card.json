@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.630Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby",
+  "feature_name": "Ruby 2.3.3 default runtime",
+  "feature_slug": "ruby-2-3-3-default-runtime",
+  "summary": "The Ruby runtime uses Ruby 2.3.3 by default and supports version override with a .ruby-version file.",
+  "extended_definition": "The Ruby runtime uses Ruby 2.3.3 by default and supports version override with a .ruby-version file.",
+  "lifecycle": {
+    "latest_feature_date": "2016-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"The Ruby runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime",
+        "source_id": "site-docs-reference-2",
+        "final_score": 138,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you don't provide a .ruby-version file, the Ruby runtime defaults to version 2.7.",
+          "Specify the operating system setting in your app.yaml file: runtime : ruby env : flex runtime config : operating system : \"ubuntu24\" Optionally, you can specify a version of the Ruby interpreter using a .ruby-version file in your application directory.",
+          "To use Ruby runtime version 3.1 and earlier , specify a version of the Ruby interpreter using a .ruby-version file in your application directory."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable billing in your new Google Cloud project by creating a new billing account or setting an existing one: Go to Billing Download and install the Google Cloud CLI and then initialize the gcloud CLI: Download the SDK Run the following gcloud command to create an App Engine application and specify in which geographical region that you want your app to run: gcloud app create Due to changes in the default behavior for how Cloud Build uses service accounts in new projects, and secure-by-default organization policy changes , you might need to grant additional roles to your deploying service account.",
+          "OK Download the Hello World app Choose one of the following to download the Hello World sample app from GitHub, to your local machine: Clone the Hello World sample app from the following repository: git clone https://github.com/GoogleCloudPlatform/appengine-custom-runtimes-samples Download the sample as a .zip file and then extract it to a local directory.",
+          "The app.yaml file must reside in the same directory as the Dockerfile file. runtime : custom env : flex The runtime: custom entry tells App Engine to look for a Dockerfile that will define your runtime's image and env: flex specifies that you are deploying to the flexible environment."
+        ]
+      },
+      {
+        "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "By default, App Engine uses the latest available LTS .NET version if the runtime version setting is not specified.",
+          "For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : \"10\" operating system : \"ubuntu24\" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.",
+          "Specify the operating system setting in your app.yaml file: runtime : aspnetcore env : flex runtime config : operating system : \"ubuntu24\" Optionally, you can specify a runtime version by including the runtime version setting in your app.yaml file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "github.com",
+      "net10.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.510Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "Cloud Run jobs integration",
+  "feature_slug": "cloud-run-jobs-integration",
+  "summary": "Cloud Run jobs can integrate extraction, transformation, and loading tools with Mainframe Connector.",
+  "extended_definition": "Cloud Run jobs can integrate extraction, transformation, and loading tools with Mainframe Connector.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+      "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Cloud Run with Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+        "source_id": "site-docs-root-2",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, you can use this feature, to integrate your existing extraction, transformation, and loading (ETL) tool with Mainframe Connector using Cloud Run jobs.",
+          "This page discusses how you can perform the following tasks using Mainframe Connector: Trigger a Cloud Run job: initiate a Cloud Run job from Mainframe Connector View Cloud Run job logs: view Cloud Run job logs locally on your Mainframe for monitoring Cancel a Cloud Run job: cancel an ongoing Cloud Run job For more information about creating and managing Cloud Run jobs, see Cloud Run documentation .",
+          "To view the logs for a specific Cloud Run job execution, use the cloud run job logs command from your Mainframe JCL file: //STEP01 EXEC BQSH //STDIN DD cloud run job logs EXECUTION ID / Replace EXECUTION ID with the execution ID of the Cloud Run job. (Optional) To cancel a Cloud Run job, use the cloud run job cancel command from your Mainframe JCL file: Example JCL //STEP01 EXEC BQSH //STDIN DD cloud run job cancel EXECUTION ID / Replace EXECUTION ID with the execution ID of the Cloud Run job that you want to cancel."
+        ]
+      },
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Transcode data using Mainframe Connector in standalone mode on Cloud Run Mainframe Connector provides two ways in which you can run Mainframe Connector as a standalone job on Google Cloud: Using qsam commands (release 5.16.0 and later) Using the gsutil cp command Advantages of qsam commands The qsam commands provide the following advantages: Support for compound data types, including the OCCURS clause (lists), REDEFINES clause, and nested records.",
+          "Deploy the new job using the following command: gcloud run jobs replace job.yaml Run the job using the following command: gcloud run jobs execute JOB NAME Replace JOB NAME with the name of the job.",
+          "Deploy the new job using the following command: gcloud run jobs replace job.yaml Run the job using the following command: gcloud run jobs execute JOB NAME Replace JOB NAME with the name of the job."
+        ]
+      },
+      {
+        "title": "Deploy Mainframe Connector on Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "source_id": "site-docs-root-2",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can trigger this service from your mainframe to perform remote transcoding , or as a standalone instance that is integrated with an existing extract, transfer, and load (ETL) workflow .",
+          "What's next Transcode mainframe data remotely on Google Cloud Transcode mainframe data moved to Google Cloud using a virtual tape library Run Mainframe Connector as a standalone job Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Deploy Mainframe Connector. terraform apply -var-file= VARIABLE FILE NAME Replace VARIABLE FILE NAME with the variables file you created in the previous step. (Optional) To check if Mainframe Connector is deployed and running, go to the Cloud Run page, and select the Services tab."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Synopsis cloud run job cancel [-h] --project= PROJECT --region= REGION EXECUTION Flags and arguments The cloud run job cancel command uses the following flags and arguments: EXECUTION Specify the name of the Cloud Run job execution id. --help or -h (Optional) Display this help message. --project = PROJECT Specify the project ID. --region = REGION Specify the region in which the resource can be found. cloud run job execute Execute a specific job.",
+          "The default value is 60s. --project = PROJECT Specify the project ID. --region = REGION Specify the region in which the resource can be found. --tail-logs (Optional) If you run the command in the synchronous mode by specifying the --tail logs flag, Mainframe Connector displays the progress logs on the screen.",
+          "To view the complete job logs, use the cloud run job log command after the job has finished. --task-timeout = TIMEOUT (Optional) Displays the existing maximum time (deadline) a job task attempt can run for."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "job.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/run-jobs",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference"
+      ]
+    }
+  ]
+}

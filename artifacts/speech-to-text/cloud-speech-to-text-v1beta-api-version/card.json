@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.152Z",
+  "source_step08_card": "data/step-08/current/products/speech-to-text/card.json",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text",
+  "feature_name": "Cloud Speech-to-Text v1beta API version",
+  "feature_slug": "cloud-speech-to-text-v1beta-api-version",
+  "summary": "The Cloud Speech-to-Text v1beta API version is no longer available and users are required to migrate to v1 or v1p1beta1; deprecated on 2019-04-04.",
+  "extended_definition": "The Cloud Speech-to-Text v1beta API version is no longer available and users are required to migrate to v1 or v1p1beta1; deprecated on 2019-04-04.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "2019-04-04",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/speech-to-text/docs/apis",
+      "https://docs.cloud.google.com/speech-to-text/docs/migration",
+      "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+      "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transcribe speech to text by using the command line \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "source_id": "site-docs-root",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the Speech-to-Text APIs.",
+          "Enable the Speech-to-Text APIs.",
+          "Replace /full/path/to/audio/file.wav with the path to the audio file you want to transcribe: echo \"{ \\\"config\\\": { \\\"auto decoding config\\\": {}, \\\"language codes\\\": [\\\"en-US\\\"], \\\"model\\\": \\\"long\\\" }, \\\"content\\\": \\\" $( base64 -w 0 /full/path/to/audio/file.wav sed 's/+/-/g; s/\\// /g' ) \\\" }\" > /tmp/data.txt Use curl to make a recognize request: curl -X POST -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -d @/tmp/data.txt \\ https://speech.googleapis.com/v2/projects/ PROJECT ID /locations/global/recognizers/ :recognize Note: To pass a filename to curl , you use the -d option (for \"data\") and precede the filename with an @ sign."
+        ]
+      },
+      {
+        "title": "\"Migrate to the latest version of Cloud Speech-to-Text API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "source_id": "site-docs-root",
+        "final_score": 326,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrating in the API Similar to Cloud STT V1, to transcribe audio , you need to create a RecognitionConfig by selecting the language of your audio and the recognition model of your choice: Note: The difference between the V1 and V2 versions of the Cloud Speech-to-Text API in the definition of RecognitionConfig message is the addition of the AutoDetectDecodingConfig message, which automatically detects the audio specifications.",
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Migrate to the latest version of Cloud Speech-to-Text API Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Speech-to-Text API V2 brings the latest Google Cloud API design for customers to meet enterprise security and regulatory requirements out of the box."
+        ]
+      },
+      {
+        "title": "\"Transcribe speech to text by using client libraries \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the Speech-to-Text APIs.",
+          "Enable the Speech-to-Text APIs.",
+          "Enable the APIs Make sure that you have the following role or roles on the project: Cloud Speech Administrator Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "APIs and references \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/apis",
+        "source_id": "site-api-reference",
+        "final_score": 301,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Speech REST API REST API Reference. (Non-streaming JSON.) Cloud Speech RPC API gRPC API Reference. (Streaming and non-streaming Proto3.) Language support The list of languages supported by Cloud Speech-to-Text.",
+          "Home Documentation AI and ML Cloud Speech-to-Text Reference Send feedback APIs and references Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Speech-to-Text On-Prem API The Cloud Speech-to-Text On-Prem solution."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.client",
+      "data.txt",
+      "file.wav",
+      "speech.googleapis.com",
+      "v2.types"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-api",
+        "https://docs.cloud.google.com/speech-to-text/docs/migration",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/apis"
+      ]
+    }
+  ]
+}

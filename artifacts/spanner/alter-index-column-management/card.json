@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "ALTER INDEX column management",
+  "feature_slug": "alter-index-column-management",
+  "summary": "Spanner ALTER INDEX statement now supports adding columns to an index and dropping non-key columns.",
+  "extended_definition": "Spanner ALTER INDEX statement now supports adding columns to an index and dropping non-key columns.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Commit timestamps in GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can add the column by running the add timestamp column sample or by running this DDL statement against your database: ALTER TABLE Albums ADD COLUMN LastUpdateTime TIMESTAMP OPTIONS (allow commit timestamp=true) Example: @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function query data with timestamp column(string $instanceId, string $databaseId): void { $spanner = new SpannerClient(); $instance = $spanner->instance($instanceId); $database = $instance->database($databaseId); $results = $database->execute( 'SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime ' . ' FROM Albums ORDER BY LastUpdateTime DESC' ); foreach ($results as $row) { if ($row['MarketingBudget'] == null) { $row['MarketingBudget'] = 'NULL'; } if ($row['LastUpdateTime'] == null) { $row['LastUpdateTime'] = 'NULL'; } printf('SingerId: %s, AlbumId: %s, MarketingBudget: %s, LastUpdateTime: %s' .",
+          "For example to add a LastUpdateTime column to the Performances table, use the following statement: ALTER TABLE Performances ADD COLUMN LastUpdateTime TIMESTAMP NOT NULL OPTIONS ( allow commit timestamp = true ) Convert a timestamp column to a commit timestamp column You can convert an existing timestamp column into a commit timestamp column, but doing so requires Spanner to validate that the existing timestamp values are in the past.",
+          "When altering an existing table : to add a new column supporting commit timestamps, to alter an existing TIMESTAMP column to support commit timestamps, to alter an existing TIMESTAMP column to remove commit timestamp support Keys and indexes You can use a commit timestamp column as a primary key column or as a non-key column."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Spanner JDBC driver (Java Database Connectivity) supports session management statements, which let you modify the state of your connection, execute transactions, and efficiently execute batches of statements.",
+          "The JDBC driver supports three alternatives for executing partitioned queries: SET SPANNER.AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Session management statements don't work in the client libraries, the Google Cloud CLI, or the JDBC driver created by Simba."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Spanner JDBC driver (Java Database Connectivity) supports session management statements, which let you modify the state of your connection, execute transactions, and efficiently execute batches of statements.",
+          "The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Session management statements don't work in the client libraries, the Google Cloud CLI, or the JDBC driver created by Simba."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    }
+  ]
+}

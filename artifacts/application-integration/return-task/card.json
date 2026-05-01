@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.342Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Return task",
+  "feature_slug": "return-task",
+  "summary": "The Return task allows customizing error message mappings for HTTP response codes returned during integration execution failures.",
+  "extended_definition": "The Return task allows customizing error message mappings for HTTP response codes returned during integration execution failures.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-return-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Return task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-return-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 248,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can modify or customize error messages for the following HTTP response codes: HTTP code Canonical code 400 INVALID ARGUMENT 400 OUT OF RANGE 401 UNAUTHENTICATED 403 PERMISSION DENIED 404 NOT FOUND 409 ALREADY EXISTS 429 RESOURCE EXHAUSTED 499 CANCELLED Configure the Return task To configure the Return task: In the Google Cloud console, go to the Application Integration page.",
+          "Return task The Return task lets you customize the error messages corresponding to the HTTP response codes that are returned during an integration execution failure.",
+          "Customized return message String The custom error message for the specified HTTP code."
+        ]
+      },
+      {
+        "title": "Cloud Function task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Returns: Parameter value. \"\"\" value = param [ 'value' ] if len ( value ) != 1 : raise RuntimeError ( 'param does not have size of 1' ) for value name in VALUE NAME : if value name in value : if value name == 'protoValue' and value [ value name ][ '@type' ] == VALUE TYPE URL : return value [ value name ][ 'value' ] return value [ value name ] for array value name in ARRAY VALUE NAME : if array value name in value : return value [ array value name ][ ARRAY VALUE NAME [ array value name ]] raise RuntimeError ( 'Cannot get value from param ' + str ( param )) def set error ( self ): \"\"\"Set the cloud function error to event parameters in order for user to see on IP.\"\"\" self . set ( CLOUD FUNCTION EXCEPTION KEY , traceback . format exc ()) def log ( self , message ): self . log . append ( str ( message )) def get response ( self ): \"\"\"Get the response that can be returned to IP.",
+          "For example, if you have an integration variable named EmployeeName that you want to use in your Cloud Function source file, define the following task parameters: Key : EmployeeKey Value : EmployeeName The following sample script shows the usage of set and get functions to access the defined integration variables. def run ( event ): Read the integration variable EmployeeName using the reference variable EmployeeKey value = event . get ( ' EmployeeKey ' ); Change the integration variable EmployeeName value using the reference variable EmployeeKey event . set ( ' EmployeeKey ' , ' XYZ ' ); The new value of the integration variable is retained throughout the Cloud Function task. return Error handling strategy An error handling strategy for a task specifies the action to take if the task fails due to a temporary error .",
+          "Returns: The response text or any set of values that can be turned into a Response object using make response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make response>. \"\"\" try : request json = request . get json ( silent = True ) event = Event ( request json ) run ( event ) except : event . set error () return event . get response () requirements.txt Function dependencies, for example: package>=version For more information about response format, see ValueType ."
+        ]
+      },
+      {
+        "title": "\"Call REST Endpoint task \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task",
+        "source_id": "site-docs-root-2",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For other HTTP response codes, return error code and error message in the response.",
+          "Task should fail on HTTP error Boolean Exception handling strategy when the REST API call fails.",
+          "But returns the error code and the error message in the response."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "flask.Flask.make",
+      "flask.pocoo.org",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-return-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-return-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-return-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-return-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-return-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-cloud-function-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-call-rest-endpoint-task"
+      ]
+    }
+  ]
+}

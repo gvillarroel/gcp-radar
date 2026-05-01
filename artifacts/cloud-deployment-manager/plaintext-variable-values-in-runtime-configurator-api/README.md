@@ -1,0 +1,55 @@
+# Plaintext variable values in Runtime Configurator API
+
+Product: Cloud Deployment Manager
+Feature slug: `plaintext-variable-values-in-runtime-configurator-api`
+Coverage: `MEDIUM`
+IAM mapping: `explicit`
+
+## Technical Summary
+
+The Runtime Configurator API supports plaintext variable values when creating a variable.
+
+## Lifecycle
+
+- Latest feature date: 2016-11-01
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+Explicit IAM evidence was found in the supporting documentation.
+
+Roles:
+
+- `roles/accessapproval.admin`
+- `roles/accessapproval.approver`
+- `roles/accessapproval.configEditor`
+
+Permissions:
+
+- `resourcemanager.projects.get`
+- `resourcemanager.projects.list`
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- certificate
+- credential
+- firewall
+- iam
+- key
+- logging
+- permission
+- policy
+- private
+- role
+- secret
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/deployment-manager/docs/access-control](https://docs.cloud.google.com/deployment-manager/docs/access-control)
+- [https://docs.cloud.google.com/deployment-manager/docs/best-practices](https://docs.cloud.google.com/deployment-manager/docs/best-practices)
+- [https://docs.cloud.google.com/deployment-manager/docs/configuration/adding-templates](https://docs.cloud.google.com/deployment-manager/docs/configuration/adding-templates)

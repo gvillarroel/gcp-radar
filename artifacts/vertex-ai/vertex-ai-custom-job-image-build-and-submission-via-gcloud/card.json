@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI custom job image build and submission via gcloud",
+  "feature_slug": "vertex-ai-custom-job-image-build-and-submission-via-gcloud",
+  "summary": "The `gcloud beta ai custom-jobs create` command can now build a Docker image from local training code, push it to Container Registry, and create a CustomJob resource.",
+  "extended_definition": "The `gcloud beta ai custom-jobs create` command can now build a Docker image from local training code, push it to Container Registry, and create a CustomJob resource.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/image-classification",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Hello custom training: Serve predictions from a custom image classification\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving",
+        "source_id": "site-docs-reference-2",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Serve predictions from a custom image classification model Stay organized with collections Save and categorize content based on your preferences.",
+          "Previous arrow back Train a custom image classification model Next Clean up your project arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Activate Cloud Shell In the Cloud Shell session, run the following command: cd hello-custom-sample Create an endpoint To get online predictions from the ML model that you trained when following the previous page of this tutorial, create a Vertex AI endpoint ."
+        ]
+      },
+      {
+        "title": "\"Fine-tune an image classification model with custom data on Vertex AI Pipelines\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/image-classification",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataset ) . output image tfrecord data = transcode imagedataset tfrecord from csv op ( csv image data path = image data , class names = class names ) . outputs [ 'tfrecord image data path' ] loaded model outputs = load image classification model from tfhub op ( class names = class names , ) . outputs preprocessed data = preprocess image data op ( image tfrecord data , height width path = loaded model outputs [ 'image size path' ], ) . outputs trained model = ( train tensorflow image classification model op ( preprocessed training data path = preprocessed data [ 'preprocessed training data path' ], preprocessed validation data path = preprocessed data [ 'preprocessed validation data path' ], model path = loaded model outputs [ 'loaded model path' ]) . set cpu limit ( '96' ) . set memory limit ( '128G' ) . add node selector constraint ( 'cloud.google.com/gke-accelerator' , 'NVIDIA TESLA A100' ) . set gpu limit ( '8' ) . outputs [ 'trained model path' ]) vertex model name = upload Tensorflow model to Google Cloud Vertex AI op ( model = trained model , ) . outputs [ 'model name' ] Deploying the model might incur additional costs over time if deploy model : vertex endpoint name = deploy model to endpoint op ( model name = vertex model name , ) . outputs [ 'endpoint name' ] pipeline func = image classification pipeline %% Pipeline submission if name == ' main ' : from google.cloud import aiplatform aiplatform .",
+          "Home Documentation AI and ML Vertex AI Send feedback Fine-tune an image classification model with custom data on Vertex AI Pipelines Stay organized with collections Save and categorize content based on your preferences.",
+          "Image classification python3 -m pip install \"kfp<2.0.0\" \"google-cloud-aiplatform>=1.16.0\" --upgrade --quiet from kfp import components from kfp.v2 import dsl %% Loading components upload Tensorflow model to Google Cloud Vertex AI op = components . load component from url ( 'https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/Vertex AI/Models/Upload Tensorflow model/component.yaml' ) deploy model to endpoint op = components . load component from url ( 'https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/399405402d95f4a011e2d2e967c96f8508ba5688/community-content/pipeline components/google-cloud/Vertex AI/Models/Deploy to endpoint/component.yaml' ) transcode imagedataset tfrecord from csv op = components . load component from url ( 'https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/main/community-content/pipeline components/image ml model training/transcode tfrecord image dataset from csv/component.yaml' ) load image classification model from tfhub op = components . load component from url ( 'https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/b5b65198a6c2ffe8c0fa2aa70127e3325752df68/community-content/pipeline components/image ml model training/load image classification model/component.yaml' ) preprocess image data op = components . load component from url ( 'https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/main/community-content/pipeline components/image ml model training/preprocess image data/component.yaml' ) train tensorflow image classification model op = components . load component from url ( 'https://raw.githubusercontent.com/GoogleCloudPlatform/vertex-ai-samples/main/community-content/pipeline components/image ml model training/train image classification model/component.yaml' ) %% Pipeline definition def image classification pipeline (): class names = [ 'daisy' , 'dandelion' , 'roses' , 'sunflowers' , 'tulips' ] csv image data path = 'gs://cloud-samples-data/ai-platform/flowers/flowers.csv' deploy model = False image data = dsl . importer ( artifact uri = csv image data path , artifact class = dsl ."
+        ]
+      },
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Create custom Ray on Vertex AI container image Create a Ray cluster on Vertex AI using custom container image Run Spark interactively on the cluster using RayDP Run Spark application on cluster via Ray Job API Read files from Google Cloud Storage in Spark application Pandas UDF in Spark application on Ray on Vertex AI Delete the Ray cluster on Vertex AI Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Training Vertex AI Reduction Server PyTorch distributed training with Vertex AI Reduction Server .",
+          "Tutorial steps Using Python & SQL to query public data in BigQuery Exploring the dataset using BigQuery INFORMATION SCHEMA Creating interactive elements to help explore interesting parts of the data Doing some exploratory correlation and time series analysis Creating static and interactive outputs (data tables and plots) in the notebook Saving some outputs to Cloud Storage Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Custom training Build a fraud detection model on Vertex AI .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "component.yaml",
+      "flowers.csv",
+      "kfp.v2",
+      "raw.githubusercontent.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/serving",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/image-classification"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.092Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "Apigee Hybrid analytics and debug data pipeline for data residency",
+  "feature_slug": "apigee-hybrid-analytics-and-debug-data-pipeline-for-data-residency",
+  "summary": "Requires data residency-enabled hybrid organizations on v1.13.x to use the new control-plane analytics and debug data pipeline and enables it through control plane access and overrides configuration.",
+  "extended_definition": "Requires data residency-enabled hybrid organizations on v1.13.x to use the new control-plane analytics and debug data pipeline and enables it through control plane access and overrides configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using data residency with Apigee hybrid | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 315,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: instanceID: \"my_hybrid_example\" namespace: apigee gcp: projectID: hybrid-example region: us-central1 k8sCluster: name: apigee-hybrid region: us-central1 org: hybrid-example contractProvider: https://us-apigee.googleapis.com newDataPipeline: debugSession: true analytics: true See Step 6: Create the overrides When calling the Apigee APIs When you make curl calls to Apigee APIs to perform tasks in your hybrid installation, you will need to call APIs from within the control plane location: curl -H \"Authorization: Bearer $TOKEN\" \\ \"https:// CONTROL_PLANE_LOCATION -apigee.googleapis.com/v1/organizations/ ORG_NAME /envgroups\" For example: curl -H \"Authorization: Bearer $TOKEN\" \\ \"https:// us -apigee.googleapis.com/v1/organizations/my-hybrid-org/envgroups\" URL allowlisting If you are using forward proxies with data residency, you must additionally allowlist in the forward proxy: CONTROL_PLANE_LOCATION -apigee.googleapis.com ANALYTICS_REGION -pubsub.googleapis.com URLs required by Apigee hybrid, see Google Cloud URLs to allow for Hybrid .",
+          "Enable analytics and debug data collection with data residency To enable analytics and debug data collection, follow the instructions in Configure hybrid to use the new data pipeline .",
+          "Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback Using data residency with Apigee hybrid Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Apigee hybrid supported platforms and versions | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 291,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback Apigee hybrid supported platforms and versions Stay organized with collections Save and categorize content based on your preferences.",
+          "Apigee hybrid supported platforms and versions | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Apigee Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console DISCOVER What is Apigee?",
+          "Apigee technical feature overview Apigee terminology API development lifecycle Key points of API proxy development Apigee architecture overview Apigee locations GET STARTED Introduction to provisioning Compare eval and paid organizations Provisioning options Prerequisites About Apigee provisioning permissions Networking options Introduction to data residency Introduction to CMEK Best practices for Apigee CMEK Using organization policy constraints Understand Apigee observability Provision paid orgs Before you begin Subscription Cloud console Select your project Provision Apigee with one click Configure and customize Step 1: Enable required APIs Step 2: Set up networking Step 3: Configure hosting and encryption Step 4: Customize access routing Recommended next steps Command line With VPC peering Without VPC peering Pay-as-you-go Cloud console Select your project Provision Apigee with one click Configure and customize Step 1: Enable required APIs Step 2: Set up networking Step 3: Configure hosting and encryption Step 4: Customize access routing Recommended next steps Command line With VPC peering Without VPC peering Provision eval orgs Before you begin Wizard Command line With VPC peering Without VPC peering Next steps Calling a proxy with internal-only access Accessing Apigee Using the UI Using the API Get information about calls to your APIs Using gcloud Troubleshooting DEVELOP Tutorial: Building your first API proxy Overview Step 1: Create an API proxy Step 2: Deploy an API proxy Step 3: Call an API proxy Step 4: Change the target endpoint Step 5: Add a policy Next steps: Go deeper Tutorial: Creating an API proxy from an OpenAPI Specification Building API proxies Understanding APIs and API proxies Programmable proxy basics Introduction to API proxy building Creating an API proxy Editing an API proxy (create a revision) Downloading and uploading an API proxy configuration bundle Deleting an API proxy Environments and organizations Understanding organizations Overview of environments and environment groups Working with environments Working with environment groups Best practices Routes and flows Understanding routes Controlling API proxies with flows Conditional flows Flow variables Flow variable overview Request and response flow variables Message flow variable Conditions with flow variables Shared flows and flow hooks Creating reusable shared flows Attaching a shared flow using flow hooks Chaining API proxies together Handling faults Adding features to a programmable API proxy Using policies Tutorial: Adding the SpikeArrest policy What's a policy?"
+        ]
+      },
+      {
+        "title": "Introduction to data residency \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "source_id": "site-docs-reference",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee hybrid version 1.14.0 and later with data residency enabled supports Advanced API Security , Apigee API analytics , the Debug tool , and Monetization .",
+          "If you have a Google Cloud organization policy that uses a resource location constraint ( constraints/gcp.resourceLocations ), the constraint will apply to the following Apigee resources that are created when Apigee is provisioned: Control plane Consumer data Runtime Endpoints attachment Analytics If you are provisioning a new Apigee organization within a Google Cloud project with a resource location constraint applied, you must ensure that the location constraint is compatible with the control plane location specified for your Apigee organization: If you provision an Apigee organization without data residency, the resource location constraint in your Google Cloud organization policy must be set to global .",
+          "If you choose to enable data residency when provisioning an Apigee Subscription or Pay-as-you-go organization, the following services are in scope under Apigee's FedRAMP Authority To Operate (ATO): The regionalized Apigee organization's control plane, runtime plane, and analytics ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "developers.apps.keys.create",
+      "environments.analytics.reports.dailysupp",
+      "gcp.resourceLocations",
+      "pubsub.googleapis.com",
+      "v1.13.x",
+      "v1.14"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/using-data-residency-with-apigee-hybrid",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/supported-platforms",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    }
+  ]
+}

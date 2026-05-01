@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.606Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "IMEX channel character device for GB200 GPUs",
+  "feature_slug": "imex-channel-character-device-for-gb200-gpus",
+  "summary": "Injects an IMEX channel character device for GB200 GPUs.",
+  "extended_definition": "Injects an IMEX channel character device for GB200 GPUs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "End-to-end: Running a GPU application on Container-Optimized OS The following end-to-end example shows you how to use cloud-init to configure Container-Optimized OS VM instances that provision a GPU application container myapp:latest after the GPU driver has been installed: #cloud-config users : - name : myuser uid : 2000 write files : - path : /etc/systemd/system/install-gpu.service permissions : 0644 owner : root content : [Unit] Description=Install GPU drivers Wants=gcr-online.target docker.socket After=gcr-online.target docker.socket [Service] User=root Type=oneshot ExecStart=cos-extensions install gpu StandardOutput=journal+console StandardError=journal+console - path : /etc/systemd/system/myapp.service permissions : 0644 owner : root content : [Unit] Description=Run a myapp GPU application container Requires=install-gpu.service After=install-gpu.service [Service] User=root Type=oneshot RemainAfterExit=true ExecStart=/usr/bin/docker run --rm -u 2000 --name=myapp --device /dev/nvidia0:/dev/nvidia0 myapp:latest StandardOutput=journal+console StandardError=journal+console runcmd : - systemctl daemon-reload - systemctl start install-gpu.service - systemctl start myapp.service About the NVIDIA CUDA-X libraries CUDA® is NVIDIA's parallel computing platform and programming model for GPUs.",
+          "Install NVIDIA GPU device drivers After you create an instance with one or more GPUs, your system requires device drivers so that your applications can access the device.",
+          "The following example shows you how to run a CUDA application in a Docker container that consumes /dev/nvidia0 : docker run \\ --volume /var/lib/nvidia/lib64:/usr/local/nvidia/lib64 \\ --volume /var/lib/nvidia/bin:/usr/local/nvidia/bin \\ --device /dev/nvidia0:/dev/nvidia0 \\ --device /dev/nvidia-uvm:/dev/nvidia-uvm \\ --device /dev/nvidiactl:/dev/nvidiactl \\ registry.k8s.io/cuda-vector-add:v0.1 You can run your containers through cloud-init to specify the dependency between driver installation and your containers. see the End-to-end: Running a GPU application on Container-Optimized OS section for more details."
+        ]
+      },
+      {
+        "title": "\"Disks and file system overview \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "source_id": "site-docs-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a script file using the following contents: #cloud-config bootcmd : - fsck.ext4 -tvy /dev/ DEVICE ID - mkdir -p /mnt/disks/ MNT DIR - mount -t ext4 -o ... /dev/ DEVICE ID /mnt/disks/ MNT DIR Replace the following: DEVICE ID : the device ID of the disk that you want to format and mount.",
+          "Follow the instructions on Formatting and mounting a persistent disk or Format and mount a local SSD device for the appropriate use-case.",
+          "The following example mounts the disk DEVICE ID under the /mnt/disks directory."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "If enabled, the behavior depends on the release channel: cos-dev and cos-beta: Updates from latest OS version in the corresponding image family LTS milestone and cos-stable: Updates from latest OS version from the same milestone Milestones < 117: Enabled by default Milestones >= 117: Disabled by default cos-metrics-enabled Enables crash dump collection.",
+          "For example: mounting a PD. bootcmd : - fsck.ext4 -tvy /dev/[DEVICE ID] - mkdir -p /mnt/disks/[MNT DIR] - mount -t ext4 -O ... /dev/[DEVICE ID] /mnt/disks/[MNT DIR] Note: Using systemctl enable in the runcmd section of cloud-init will not work as intended."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.socket",
+      "fsck.ext4",
+      "gpu.service",
+      "myapp.service",
+      "nvidia.ko",
+      "nvidia.NVreg",
+      "online.target",
+      "registry.k8s.io",
+      "v0.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.587Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_name": "Kubernetes 1.18 support in Anthos clusters on AWS",
+  "feature_slug": "kubernetes-1-18-support-in-anthos-clusters-on-aws",
+  "summary": "Support for Kubernetes 1.18 clusters on Anthos clusters on AWS is removed; deprecated on 2021-12-14.",
+  "extended_definition": "Support for Kubernetes 1.18 clusters on Anthos clusters on AWS is removed; deprecated on 2021-12-14.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-14",
+    "deprecation_date": "2021-12-14",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GKE Multi-Cloud API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoints and all URIs below are relative to these service endpoints: https://asia-east2-gkemulticloud.googleapis.com https://asia-northeast2-gkemulticloud.googleapis.com https://asia-south1-gkemulticloud.googleapis.com https://asia-southeast1-gkemulticloud.googleapis.com https://asia-southeast2-gkemulticloud.googleapis.com https://australia-southeast1-gkemulticloud.googleapis.com https://europe-north1-gkemulticloud.googleapis.com https://europe-west1-gkemulticloud.googleapis.com https://europe-west2-gkemulticloud.googleapis.com https://europe-west3-gkemulticloud.googleapis.com https://europe-west4-gkemulticloud.googleapis.com https://europe-west6-gkemulticloud.googleapis.com https://europe-west8-gkemulticloud.googleapis.com https://europe-west9-gkemulticloud.googleapis.com https://me-central2-gkemulticloud.googleapis.com https://northamerica-northeast1-gkemulticloud.googleapis.com https://southamerica-east1-gkemulticloud.googleapis.com https://us-central1-gkemulticloud.googleapis.com https://us-east4-gkemulticloud.googleapis.com https://us-east7-gkemulticloud.googleapis.com https://us-west1-gkemulticloud.googleapis.com REST Resource: v1.projects.locations Methods generateAttachedClusterInstallManifest GET /v1/{parent=projects/ /locations/ }:generateAttachedClusterInstallManifest Generates the install manifest to be installed on the target cluster. getAttachedServerConfig GET /v1/{name=projects/ /locations/ /attachedServerConfig} Returns information, such as supported Kubernetes versions, on a given Google Cloud location. getAwsServerConfig (deprecated) GET /v1/{name=projects/ /locations/ /awsServerConfig} Returns information, such as supported AWS regions and Kubernetes versions, on a given Google Cloud location. getAzureServerConfig (deprecated) GET /v1/{name=projects/ /locations/ /azureServerConfig} Returns information, such as supported Azure regions and Kubernetes versions, on a given Google Cloud location.",
+          "REST Resource: v1.projects.locations.azureClusters Methods create (deprecated) POST /v1/{parent=projects/ /locations/ }/azureClusters Creates a new AzureCluster resource on a given Google Cloud Platform project and region. delete (deprecated) DELETE /v1/{name=projects/ /locations/ /azureClusters/ } Deletes a specific AzureCluster resource. generateAzureAccessToken (deprecated) GET /v1/{azureCluster=projects/ /locations/ /azureClusters/ }:generateAzureAccessToken Generates a short-lived access token to authenticate to a given AzureCluster resource. generateAzureClusterAgentToken (deprecated) POST /v1/{azureCluster=projects/ /locations/ /azureClusters/ }:generateAzureClusterAgentToken Generates an access token for a cluster agent. get (deprecated) GET /v1/{name=projects/ /locations/ /azureClusters/ } Describes a specific AzureCluster resource. getJwks (deprecated) GET /v1/{azureCluster=projects/ /locations/ /azureClusters/ }/jwks Gets the public component of the cluster signing keys in JSON Web Key format. list (deprecated) GET /v1/{parent=projects/ /locations/ }/azureClusters Lists all AzureCluster resources on a given Google Cloud project and region. patch (deprecated) PATCH /v1/{azureCluster.name=projects/ /locations/ /azureClusters/ } Updates an AzureCluster .",
+          "REST Resource: v1.projects.locations.awsClusters Methods create (deprecated) POST /v1/{parent=projects/ /locations/ }/awsClusters Creates a new AwsCluster resource on a given Google Cloud Platform project and region. delete (deprecated) DELETE /v1/{name=projects/ /locations/ /awsClusters/ } Deletes a specific AwsCluster resource. generateAwsAccessToken (deprecated) GET /v1/{awsCluster=projects/ /locations/ /awsClusters/ }:generateAwsAccessToken Generates a short-lived access token to authenticate to a given AwsCluster resource. generateAwsClusterAgentToken (deprecated) POST /v1/{awsCluster=projects/ /locations/ /awsClusters/ }:generateAwsClusterAgentToken Generates an access token for a cluster agent. get (deprecated) GET /v1/{name=projects/ /locations/ /awsClusters/ } Describes a specific AwsCluster resource. getJwks (deprecated) GET /v1/{awsCluster=projects/ /locations/ /awsClusters/ }/jwks Gets the public component of the cluster signing keys in JSON Web Key format. list (deprecated) GET /v1/{parent=projects/ /locations/ }/awsClusters Lists all AwsCluster resources on a given Google Cloud project and region. patch (deprecated) PATCH /v1/{awsCluster.name=projects/ /locations/ /awsClusters/ } Updates an AwsCluster ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters \\_|\\_ GKE Multi-Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more info on RBAC, see https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles AwsClusterUser GKE-on-AWS is deprecated.",
+          "Methods create (deprecated) Creates a new AwsCluster resource on a given Google Cloud Platform project and region. delete (deprecated) Deletes a specific AwsCluster resource. generateAwsAccessToken (deprecated) Generates a short-lived access token to authenticate to a given AwsCluster resource. generateAwsClusterAgentToken (deprecated) Generates an access token for a cluster agent. get (deprecated) Describes a specific AwsCluster resource. getJwks (deprecated) Gets the public component of the cluster signing keys in JSON Web Key format. list (deprecated) Lists all AwsCluster resources on a given Google Cloud project and region. patch (deprecated) Updates an AwsCluster .",
+          "Resource: AwsCluster JSON representation AwsClusterNetworking JSON representation AwsControlPlane JSON representation AwsDatabaseEncryption JSON representation AwsServicesAuthentication JSON representation AwsAuthorization JSON representation AwsClusterUser JSON representation AwsClusterGroup JSON representation State AwsClusterError JSON representation Methods Resource: AwsCluster GKE-on-AWS is deprecated."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource: AwsNodePool JSON representation AwsNodeConfig JSON representation AwsAutoscalingGroupMetricsCollection JSON representation SpotConfig JSON representation AwsNodePoolAutoscaling JSON representation State AwsNodePoolError JSON representation AwsNodeManagement JSON representation NodeKubeletConfig JSON representation UpdateSettings JSON representation SurgeSettings JSON representation Methods Resource: AwsNodePool GKE-on-AWS is deprecated.",
+          "Methods create (deprecated) Creates a new AwsNodePool , attached to a given AwsCluster . delete (deprecated) Deletes a specific AwsNodePool resource. get (deprecated) Describes a specific AwsNodePool resource. list (deprecated) Lists all AwsNodePool resources on a given AwsCluster . patch (deprecated) Updates an AwsNodePool . rollback (deprecated) Rolls back a previously aborted or failed AwsNodePool update request.",
+          "See https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/ The following values are allowed. \"none\": the default, which represents the existing scheduling behavior. \"static\": allows pods with certain resource characteristics to be granted increased CPU affinity and exclusivity on the node."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gkemulticloud.googleapis.com",
+      "kubernetes.io",
+      "projects.locations.awsClusters",
+      "projects.locations.awsClusters.awsNodePools",
+      "v1.21",
+      "v1.22",
+      "v1.projects.locations",
+      "v1.projects.locations.awsClusters",
+      "v1.projects.locations.awsClusters.awsNodePools",
+      "v1.projects.locations.azureClusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ]
+    }
+  ]
+}

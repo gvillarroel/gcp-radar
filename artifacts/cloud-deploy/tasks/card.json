@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.555Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Tasks",
+  "feature_slug": "tasks",
+  "summary": "Tasks let you provide user-defined actions in Cloud Deploy, including deploy hooks, deployment verification, analysis, and custom target type workflows.",
+  "extended_definition": "Tasks let you provide user-defined actions in Cloud Deploy, including deploy hooks, deployment verification, analysis, and custom target type workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes/delete",
+      "https://docs.cloud.google.com/deploy/docs/config-files",
+      "https://docs.cloud.google.com/deploy/docs/hooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configuration schema reference \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/config-files",
+        "source_id": "site-docs-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can define predeploy and postdeploy hooks in either of two ways: Configure tasks Reference reference custom actions .",
+          "For GKE and GKE attached clusters targets The following YAML shows how to configure a deployment strategy for a target that deploys to GKE or GKE attached clusters, using service-based networking : canary : runtimeConfig : kubernetes : serviceNetworking : service : \" SERVICE NAME \" deployment : \" DEPLOYMENT NAME \" disablePodOverprovisioning : true false canaryDeployment : percentages : [ PERCENTAGES ] verify : tasks : [] The following YAML shows how to configure a deployment strategy for a target that deploys to GKE or GKE attached clusters, using Gateway API : canary : runtimeConfig : kubernetes : gatewayServiceMesh : httpRoute : \" HTTP ROUTE NAME \" service : \" SERVICE NAME \" deployment : \" DEPLOYMENT NAME \" routeUpdateWaitTime : \" WAIT TIME \" routeDestinations : destinationIds : [ \"KEY\" ] propagateService : [ true false ] canaryDeployment : percentages : [ \" PERCENTAGES \" ] verify : tasks : [] Notice in this example routeUpdateWaitTime .",
+          "Delivery pipeline config apiVersion : deploy.cloud.google.com/v1 kind : DeliveryPipeline metadata : name : annotations : labels : description : suspended : serialPipeline : stages : - targetId : profiles : [] Deployment strategies One of: standard: canary: See the strategy section in this document for details. strategy : standard : predeploy : tasks : [] verify : tasks : [] analysis : postdeploy : tasks : [] deployParameters : - values : matchTargetLabels : - targetId : profiles : [] strategy : deployParameters : --- Target config apiVersion : deploy.cloud.google.com/v1 kind : Target metadata : name : annotations : labels : description : multiTarget : targetIds : [] deployParameters : requireApproval : Runtimes one of the following runtimes: gke : cluster : dnsEndpoint : internalIp : proxyUrl : or: anthosCluster : membership : or: run : location : or: customTarget : customTargetType : (End runtimes."
+        ]
+      },
+      {
+        "title": "\"Run hooks before and after deploying \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/hooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To run hooks on the application cluster, you must configure them as customActions in your skaffold.yaml , and reference them using actions in the predeploy or postdeploy stanza in your delivery pipeline stage configuration: serialPipeline : stages : - targetId : hooks-staging profiles : [] strategy : standard : predeploy : actions : [ \"my-predeploy-action\" ] postdeploy : actions : [ \"my-postdeploy-action\" ] Note: If you configure hooks using tasks , those hooks run only in the Cloud Deploy execution environment.",
+          "The following is an example customActions stanza that includes executionMode to invoke the hook container on the application cluster: customActions : - name : predeploy-action containers : - name : predeploy-echo image : ubuntu command : [ \"/bin/sh\" ] args : [ \"-c\" , 'echo \"this is a predeploy action\"' ] executionMode : kubernetesCluster : {} The executionMode stanza is optional, and if you omit it, Skaffold runs the custom action container in the Cloud Deploy execution environment.",
+          "The following is how you would configure pre-and post-deploy hooks in a pipeline stage when using a standard deployment strategy: serialPipeline : stages : - targetId : hooks-staging profiles : [] strategy : standard : predeploy : tasks : [ TASKS ] postdeploy : tasks : [ TASKS ] In this yaml: TASKS Is a list of one or more Tasks that you want to run as part of your predeploy or postdeploy hooks."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.customTargetTypes.delete \\_|\\_ Cloud Deploy \\_\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes/delete",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application development Cloud Deploy Reference Send feedback Method: projects.locations.customTargetTypes.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: clouddeploy.customTargetTypes.delete For more information, see the IAM documentation .",
+          "HTTP request DELETE https://clouddeploy.googleapis.com/v1/{name=projects/ /locations/ /customTargetTypes/ } The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.customTargetTypes.delete",
+      "clouddeploy.googleapis.com",
+      "deploy.cloud.google.com",
+      "projects.locations.customTargetTypes",
+      "projects.locations.customTargetTypes.delete",
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/hooks",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes/delete"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/hooks",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes/delete"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/hooks",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes/delete"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/config-files",
+        "https://docs.cloud.google.com/deploy/docs/hooks",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes/delete"
+      ]
+    }
+  ]
+}

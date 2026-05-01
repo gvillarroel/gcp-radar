@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.583Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Server-side expansion",
+  "feature_slug": "server-side-expansion",
+  "summary": "Deployment Manager supports server-side expansion of configurations.",
+  "extended_definition": "Deployment Manager supports server-side expansion of configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2015-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration",
+      "https://docs.cloud.google.com/deployment-manager/docs/deprecations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configurations Overview \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuration limits All configurations are expanded on the server side within a controlled environment that Deployment Manager maintains.",
+          "Any configurations uploaded to Deployment Manager are limited in the amount of time the configuration can take to run and the amount of processing power the configuration consumes during expansion.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Configurations Overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Deployment Manager deprecation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/deprecations",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuration and templating Feature Deployment Manager Infra Manager Considerations Configuration language YAML with Jinja/Python templates Terraform HCL Learn Terraform's HCL language and convert existing DM configurations.",
+          "Deployment updates and rollbacks Feature Deployment Manager Infra Manager Considerations Deployment update mechanism Supports in-place updates and rolling updates.",
+          "Convert your configurations and templates to Infrastructure Manager To convert your Deployment Manager configurations and templates into a Terraform configuration: Convert your Deployment Manager configurations and templates into a Terraform configuration and state file."
+        ]
+      },
+      {
+        "title": "Best practices for using Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "To attach the disk, the configuration has a reference to the disk: resources : instance - name : example-instance type : compute.v1.instance properties : disks : - type : PERSISTENT source:$(ref.example-disk.selfLink) disk - name : example-disk type : compute.v1.disk properties : zone : us-central1-a sizeGb : 10 type : ... ❑ If you want to create and manage private Google Kubernetes Engine (GKE) clusters with Deployment Manager, set the following privateClusterConfig and ipAllocationPolicy options in your deployment. privateClusterConfig : enablePrivateNodes : true enablePrivateEndpoint : true Configure the IP range for the hosted master network masterIpv4CidrBlock : IP RANGE ipAllocationPolicy : useIpAliases : true createSubnetwork : true For requirements and additional considerations when you are creating a private cluster with GKE, read Setting up a private cluster .",
+          "Not a valid instance configuration, used solely for demonstration resources : - name : example-resource type : gcp-types/compute-v1:instances properties : zone : us-central1-a disks : - autoDelete : true boot : true Will not be redacted password : hunter2 Building templates ❑ To speed up defining your templates, consider starting with the production-ready sample templates from the Cloud Foundation Toolkit Project . ❑ If you have complex infrastructure requirements, such as the need to create multiple environments, read the tutorial and samples for using Deployment Manager at scale . ❑ Use Python to build your templates .",
+          "Using Deployment Manager allows you to easily delete resources from a project so that you do not hit your resource quotas. ❑ Use Deployment Manager to create the stateful parts of the project and network configuration and deploy these outside of the CI/CD process as part of the initial setup."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.v1.disk",
+      "compute.v1.instance",
+      "disk.selfLink",
+      "ref.example"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration",
+        "https://docs.cloud.google.com/deployment-manager/docs/deprecations",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration",
+        "https://docs.cloud.google.com/deployment-manager/docs/deprecations",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration",
+        "https://docs.cloud.google.com/deployment-manager/docs/deprecations",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration",
+        "https://docs.cloud.google.com/deployment-manager/docs/deprecations",
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.190Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby",
+  "feature_name": "Ruby 2.7 runtime",
+  "feature_slug": "ruby-2-7-runtime",
+  "summary": "Ruby 2.7 runtime support lets App Engine standard environment run Ruby 2.7 applications; Ruby 2.7 runtime support lets App Engine standard environment run Ruby 2.7 applications.",
+  "extended_definition": "Ruby 2.7 runtime support lets App Engine standard environment run Ruby 2.7 applications; Ruby 2.7 runtime support lets App Engine standard environment run Ruby 2.7 applications.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/configuring-your-app-with-app-yaml",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Ruby Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "The runtime will install all dependencies before your entrypoint is called. source \"https://rubygems.org\" gem \"rack\" gem \"puma\" An example entrypoint using puma for a Rails application: entrypoint : bundle exec rails server Puma - p $PORT An example entrypoint using puma for any Rack application: entrypoint : bundle exec rackup - s Puma - p $PORT For applications that can handle requests without a Rack server, you can just execute a ruby script: entrypoint : bundle exec ruby app . rb Note: The entrypoint command will be executed by bash's exec function .",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Ruby Runtime Environment Stay organized with collections Save and categorize content based on your preferences.",
+          "This document explains the details of the Ruby runtime environment, including what headers are provided to your code and other information to successfully deploy your application on App Engine."
+        ]
+      },
+      {
+        "title": "\"Runtime lifecycle \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "source_id": "site-docs-reference-4",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Runtime lifecycle GA-level support End of Support Deprecated Decommissioned Creation & redeployment Yes No 1 No No Project Configuration Updates Yes Yes No No Running existing workloads Yes Yes Yes May be disabled UI & CLI Warnings Yes Yes No No Language patches Automatic No automatic updates No automatic updates No automatic updates Patching APIs & SDKs Automatic No automatic updates No automatic updates No automatic updates Patching OS Automatic No automatic updates No automatic updates No automatic updates Customer Support GA-level support No runtime support No runtime support No runtime support Notification period App Engine will begin issuing in-app notifications 90 days before the application reaches end of support.",
+          "For details, see the migration guides: Migrate from Python 2.7 to the latest Python runtime Migrate from PHP 5 to the latest PHP runtime Migrate from Go 1.11 to the latest Go runtime Migrate from Java 8 to the latest Java runtime In certain cases, Google may permit your Organization to re-enable deployments in unsupported runtimes, subject to service specific terms and conditions.",
+          "In certain cases, Google may permit your organization to re-enable deployments for legacy runtimes using an organization policy . ↩ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Defining runtime settings \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/configuring-your-app-with-app-yaml",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Generally, your app.yaml file requires only the runtime element for a simple Ruby app in the standard environment, for example: runtime : ruby40 App Engine provides default values for all other settings, including the F1 instance class , which determines the memory and CPU resources that are available to your app, and automatic scaling , which controls how and when new instances of your app are created.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Defining runtime settings Stay organized with collections Save and categorize content based on your preferences.",
+          "An App Engine app is configured using an app.yaml file, that contains the runtime, handlers, scaling, and other general settings including environment variables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "rubygems.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/configuring-your-app-with-app-yaml"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/configuring-your-app-with-app-yaml"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+# Google BigQuery Run Custom Query
+
+Product: Google SecOps Marketplace
+Feature slug: `google-bigquery-run-custom-query`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Adds an action to run a custom query in Google BigQuery.
+
+## Lifecycle
+
+- Latest feature date: 2025-02-05
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- audit
+- credential
+- encrypt
+- firewall
+- iam
+- identity
+- logging
+- permission
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight)
+- [https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger](https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight-logger)
+- [https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines](https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines)

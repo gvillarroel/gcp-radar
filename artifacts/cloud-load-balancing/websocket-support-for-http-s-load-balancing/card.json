@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.883Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "WebSocket support for HTTP(S) Load Balancing",
+  "feature_slug": "websocket-support-for-http-s-load-balancing",
+  "summary": "HTTP(S) Load Balancing supports WebSocket connections for bidirectional client-server communication.",
+  "extended_definition": "HTTP(S) Load Balancing supports WebSocket connections for bidirectional client-server communication.",
+  "lifecycle": {
+    "latest_feature_date": "2017-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load balancer mode HTTP/3 support Global external Application Load Balancer (always Premium Tier) Classic Application Load Balancer in Premium Tier Classic Application Load Balancer in Standard Tier Regional external Application Load Balancer (Premium or Standard Tier) How HTTP/3 is negotiated When HTTP/3 is enabled, the load balancer advertises this support to clients, allowing clients that support HTTP/3 to attempt to establish HTTP/3 connections with the HTTPS load balancer.",
+          "There are 2 modes of HTTP/2 support: HTTP/2 over TLS Cleartext HTTP/2 over TCP HTTP/2 over TLS HTTP/2 over TLS is supported for connections between clients and the external Application Load Balancer, and for connections between the load balancer and its backends.",
+          "These include the following: When a client supports versions of HTTP/3 that aren't compatible with the HTTP/3 versions supported by the HTTPS load balancer."
+        ]
+      },
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table: Supported session affinity settings Product Session affinity options Cross-region internal Application Load Balancer Regional internal Application Load Balancer None ( NONE ) Client IP ( CLIENT IP ) Generated cookie ( GENERATED COOKIE ) Header field ( HEADER FIELD ) HTTP cookie ( HTTP COOKIE ) Stateful cookie-based affinity ( STRONG COOKIE AFFINITY ) Also note: The effective default value of the load balancing locality policy ( localityLbPolicy ) changes according to your session affinity settings.",
+          "There are 2 modes of HTTP/2 support: HTTP/2 over TLS Cleartext HTTP/2 over TCP HTTP/2 over TLS HTTP/2 over TLS is supported for connections between clients and the external Application Load Balancer, and for connections between the load balancer and its backends.",
+          "The websocket protocol works as follows: The load balancer recognizes a websocket Upgrade request from an HTTP or HTTPS client."
+        ]
+      },
+      {
+        "title": "\"Creating persistent connections with WebSockets \\_|\\_ App Engine flexible\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity",
+        "source_id": "site-docs-reference-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "To work around this, many applications use libraries such as socket.io that fall back on http long polling with clients that don't support WebSockets.",
+          "Clone the sample app Copy the sample apps to your local machine, and navigate to the websockets directory: git clone https://github.com/GoogleCloudPlatform/java-docs-samples cd java-docs-samples/flexible/java-17/websocket-jetty/ Run the sample locally To run the sample application on your local computer: Start the local Eclipse Jetty web server using the Jetty Maven plugin: mvn jetty:run-exploded In your web browser, enter the following address: http://localhost:8080 Deploy and run the sample on App Engine To deploy your application to the App Engine flexible environment, run the following command from the websocket-jetty directory: mvn package appengine:deploy -Dapp.deploy.projectId= PROJECT ID Replace PROJECT ID with the ID of your Google Cloud project.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating persistent connections with WebSockets Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deploy.projectId",
+      "github.com",
+      "socket.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/using-websockets-and-session-affinity"
+      ]
+    }
+  ]
+}

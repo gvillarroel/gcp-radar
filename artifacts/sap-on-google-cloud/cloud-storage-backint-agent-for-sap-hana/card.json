@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.703Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "Cloud Storage Backint agent for SAP HANA",
+  "feature_slug": "cloud-storage-backint-agent-for-sap-hana",
+  "summary": "The Cloud Storage Backint agent for SAP HANA is deprecated and replaced by the Backint feature in version 3.0 of Google Cloud's Agent for SAP; The Cloud Storage Backint agent for SAP HANA provides backup integration with Cloud Storage and includes encryption options and other enhancements; deprecated on 2025-02-28.",
+  "extended_definition": "The Cloud Storage Backint agent for SAP HANA is deprecated and replaced by the Backint feature in version 3.0 of Google Cloud's Agent for SAP; The Cloud Storage Backint agent for SAP HANA provides backup integration with Cloud Storage and includes encryption options and other enhancements; deprecated on 2025-02-28.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-31",
+    "deprecation_date": "2025-02-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"HA scale-up cluster configuration guide for SAP HANA on SLES \\_|\\_ SAP on\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the Cloud Storage Backint agent for SAP HANA to backup and restore HANA databases.",
+          "See Cloud Storage Backint agent for SAP HANA .",
+          "To fix your deployments to a specific release of the scripts, comment out the type property above and uncomment the type property below. type: https://storage.googleapis.com/cloudsapdeploy/deploymentmanager/ yyyymmddhhmm /dm-templates/sap hana/sap hana.py properties: instanceName: hana-ha-vm-2 instanceType: n2-highmem-32 zone: us-central1-c subnetwork: example-subnet-us-central1 linuxImage: family/sles-15-sp1-sap linuxImageProject: suse-sap-cloud sap hana deployment bucket: hana2-sp4-rev46 sap hana sid: HA1 sap hana instance number: 22 sap hana sidadm password: Google123 sap hana system password: Google123 sap hana scaleout nodes: 0 networkTag: cluster-ntwk-tag serviceAccount: limited-roles@example-project-123456.iam.gserviceaccount.com sap hana sidadm uid: 900 sap hana sapsys gid: 79 Create firewall rules that allow access to the host VMs If you haven't done so already, create firewall rules that allow access to each host VM from the following sources: For configuration purposes, your local workstation, a bastion host, or a jump server For access between the cluster nodes, the other host VMs in the HA cluster When you create VPC firewall rules, you specify the network tags that you defined in the template.yaml configuration file to designate your host VMs as the target for the rule."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram shows the flow of backups when you use the Backint feature of Google Cloud's Agent for SAP: Back up to disks You can use the native SAP HANA backup and recovery function with Compute Engine Persistent Disk volumes and use a Cloud Storage bucket for longer-term storage of the backups.",
+          "Back up to Cloud Storage From version 3.0, Google Cloud's Agent for SAP supports the Backint feature, which allows SAP HANA to back up and recover database backups directly from Cloud Storage.",
+          "Back up directly to Cloud Storage using the SAP-certified Backint feature of Google Cloud's Agent for SAP ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram shows the flow of backups when you use the Backint feature of Google Cloud's Agent for SAP: Back up to disks You can use the native SAP HANA backup and recovery function with Compute Engine Persistent Disk volumes and use a Cloud Storage bucket for longer-term storage of the backups.",
+          "Back up to Cloud Storage From version 3.0, Google Cloud's Agent for SAP supports the Backint feature, which allows SAP HANA to back up and recover database backups directly from Cloud Storage.",
+          "Back up directly to Cloud Storage using the SAP-certified Backint feature of Google Cloud's Agent for SAP ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "hana.py",
+      "iam.gserviceaccount.com",
+      "storage.googleapis.com",
+      "template.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    }
+  ]
+}

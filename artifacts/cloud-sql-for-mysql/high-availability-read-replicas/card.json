@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "High-availability read replicas",
+  "feature_slug": "high-availability-read-replicas",
+  "summary": "Cloud SQL for MySQL supports enabling high availability for read replicas.",
+  "extended_definition": "Cloud SQL for MySQL supports enabling high availability for read replicas.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+      "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Legacy configuration for high availability \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "source_id": "site-docs-reference-3",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Legacy configuration for high availability Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server Important: As of January 13, 2025, the legacy configuration for high availability (HA) is deprecated for all instances.",
+          "In a legacy HA configuration, a Cloud SQL for MySQL instance uses a failover replica to add high availability to the instance."
+        ]
+      },
+      {
+        "title": "About read pools \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "source_id": "site-docs-reference-3",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In addition to operations that aren't supported on read replicas, the following operations aren't supported on read pools: Enable and disable replication Promote replica Restart Import Export Failover Re-encrypt Clone SSL/TLS certificates with shared CA or customer-managed CA can't be used with a read pool.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback About read pools Stay organized with collections Save and categorize content based on your preferences.",
+          "Traffic is served from read pool nodes based on whether the database is healthy, but regardless of how high replication lag on that read pool node is."
+        ]
+      },
+      {
+        "title": "Create read replicas \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica",
+        "source_id": "site-docs-root",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create the new replica by specifying your primary replica as the primary instance using the --master-instance-name flag: gcloud sql instances create REPLICA NAME \\ --master-instance-name = PARENT REPLICA NAME \\ Replace the following: REPLICA NAME : the unique ID for the replica that you are creating PARENT REPLICA NAME : the name of the parent replica After you create the cascading replica, you can see that the changes made to the primary instance are replicated through all the replicas in the cascading replicas chain. curl If you are using MySQL version 5.7 or later, enable binary logging: To enable binary logging, save the following JSON in a file named request.JSON, then invoke the curl command to enable binary logging. { \"settings\" : { \"backupConfiguration\" : { \"enabled\" : false, \"binaryLogEnabled\" : true } } } To create a replica under the parent replica, edit the following JSON code sample, and save it to a file called request.json : { \"masterInstanceName\" : \" PARENT REPLICA NAME \" , \"project\" : \" PROJECT ID \" , \"name\" : \" REPLICA NAME \" , \"region\" : \" REPLICA REGION \" , \"settings\" : { \"tier\" : \" MACHINE TYPE \" , } } Run the following command: curl -X POST -H \"Authorization: Bearer \" $( gcloud auth print-access-token ) -H \"Content-Type: application/json; charset=utf-8\" -d @request.json \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances\" Troubleshoot Issue Troubleshooting Read replica didn't start replicating on creation.",
+          "Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the instance INSTANCE NAME : the name of the primary or read replica instance that you're configuring for high availability START TIME : the time (in hours and minutes) HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME Request JSON body: { \"settings\": { \"backupConfiguration\": { \"startTime\": \" START TIME \", \"enabled\": true, \"binaryLogEnabled\": true } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the instance INSTANCE NAME : the name of the primary or read replica instance that you're configuring for high availability START TIME : the time (in hours and minutes) HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME Request JSON body: { \"settings\": { \"backupConfiguration\": { \"startTime\": \" START TIME \", \"enabled\": true, \"binaryLogEnabled\": true } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "instance.primary.name",
+      "request.json",
+      "request.JSON",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-legacy-ha",
+        "https://docs.cloud.google.com/sql/docs/mysql/replication/create-replica"
+      ]
+    }
+  ]
+}

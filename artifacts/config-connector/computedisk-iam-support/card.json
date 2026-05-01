@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.734Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "ComputeDisk IAM support",
+  "feature_slug": "computedisk-iam-support",
+  "summary": "ComputeDisk supports IAM integration.",
+  "extended_definition": "ComputeDisk supports IAM integration.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAMAuditConfig \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "source_id": "site-docs-root-2",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "IAMPolicy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "source_id": "site-docs-root-2",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kind Supports Conditions Supports Audit Configs AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy Y CloudFunctionsFunction Y ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Y Folder Y Y IAMServiceAccount Y IAMWorkforcePool Y KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy Y NetworkSecurityClientTLSPolicy Y NetworkSecurityServerTLSPolicy Y Organization Y Y Project Y Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema auditConfigs : - auditLogConfigs : - exemptedMembers : - string logType : string service : string bindings : - condition : description : string expression : string title : string members : - string role : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string Fields auditConfigs Optional list (object) Optional."
+        ]
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : labels : availability : high target-audience : production name : containercluster-sample-vpcnative spec : description : A large regional VPC-native cluster set up with special networking considerations. location : us-central1 initialNodeCount : 1 defaultMaxPodsPerNode : 16 nodeLocations : - us-central1-a - us-central1-b - us-central1-c - us-central1-f workloadIdentityConfig : Workload Identity supports only a single namespace based on your project name.",
+          "This field will only work for routes-based clusters, where ip allocation policy is not defined. clusterTelemetry Optional object Telemetry integration for the cluster. clusterTelemetry.type Required string Type of the integration. confidentialNodes Optional object Immutable.",
+          "Currently supports only DNS endpoint configuration and disable IP endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    }
+  ]
+}

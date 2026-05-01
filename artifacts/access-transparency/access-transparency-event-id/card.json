@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.295Z",
+  "source_step08_card": "data/step-08/current/products/access-transparency/card.json",
+  "product_name": "Access Transparency",
+  "product_slug": "access-transparency",
+  "feature_name": "Access Transparency event ID",
+  "feature_slug": "access-transparency-event-id",
+  "summary": "Access Transparency logs include an eventID field to correlate related accesses by Google personnel to the same incident.",
+  "extended_definition": "Access Transparency logs include an eventID field to correlate related accesses by Google personnel to the same incident.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview",
+      "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+      "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Understanding and using Access Transparency logs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sample Access Transparency log entry The following is an example of an Access Transparency log entry: { insertId : \"abcdefg12345\" jsonPayload : { @ type : \"type.googleapis.com/google.cloud.audit.TransparencyLog\" location : { principalOfficeCountry : \"US\" principalEmployingEntity : \"Google LLC\" principalPhysicalLocationCountry : \"CA\" } principalJobTitle : \"Engineering\" product : [ 0 : \"Cloud Storage\" ] reason : [ detail : \"Case number: bar123\" type : \"CUSTOMER INITIATED SUPPORT\" ] permissionDetails :[ 0 : { permissionType : \"DATA READ\" logAccessed : true } 1 : { permissionType : \"ADMIN READ\" } ] eventId : \"asdfg12345asdfg12345asdfg12345\" accesses : [ 0 : { methodName : \"GoogleInternal.Read\" resourceName : \"//googleapis.com/storage/buckets/ BUCKET NAME /objects/foo123\" } ] accessApprovals : [ 0 : \"projects/123/approvalRequests/abcdef12345\" ] } logName : \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com %2F access transparency\" operation : { id : \"12345xyz\" } receiveTimestamp : \"2017-12-18T16:06:37.400577736Z\" resource : { labels : { project id : \"1234567890\" } type : \"project\" } severity : \"NOTICE\" timestamp : \"2017-12-18T16:06:24.660001Z\" } Log field descriptions Field Description insertId Unique identifier for the log. @type Access Transparency log identifier. principalOfficeCountry ISO 3166-1 alpha-2 country code of country in which the accessor has a permanent desk, ?? if location not available, or 3-character continent identifier where Google personnel are in a low-population country. principalEmployingEntity The entity that employs the Google personnel making the access (for example, Google LLC ). principalPhysicalLocationCountry ISO 3166-1 alpha-2 country code of country from which access was made, ?? if location not available, or 3-character continent identifier where Google personnel are in a low-population country. principalJobTitle The job family of the Google personnel making the access. product Customer's Google Cloud product that was accessed. reason:detail Details of the reason, for example, a support ticket ID. reason:type Access reason type (for example, CUSTOMER INITIATED SUPPORT) . permissionDetails Details about permissions linked to an access.",
+          "Access Transparency logs published before the date March 24, 2021 won't have this field populated. logName Name of the log location. operation:id Log cluster ID. receiveTimestamp Time the access was received by the logging pipeline. project id Project associated with the resource that was accessed. type Type of resource that was accessed (for example, project ). eventId Unique event ID associated with a single access event justification (for example, a single support case).",
+          "Values for permissionDetails fields The following permission details are available in Access Transparency logs: permissionType : Indicates the Identity and Access Management (IAM) Permission type associated with the data access by the Google administrator."
+        ]
+      },
+      {
+        "title": "\"Viewing Access Transparency logs for Google Workspace \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sample Access Transparency log for Google Workspace The following sample is an example of the Access Transparency log for Google Workspace. { \"insertId\" : \"-6x8cuqc3rk\" , \"jsonPayload\" : { \"activityId\" : { \"uniqQualifier\" : \"1720950322606095479\" , \"timeUsec\" : \"1621441673703908\" }, \"@type\" : \"type.googleapis.com/ccc hosted reporting.ActivityProto\" , \"event\" : [ { \"status\" : { \"success\" : true }, \"eventType\" : \"GSUITE RESOURCE\" , \"parameter\" : [ { \"multiStrValue\" : [ \"GMAIL\" ], \"name\" : \"GSUITE PRODUCT NAME\" , }, { \"name\" : \"RESOURCE NAME\" , \"multiStrValue\" : [ \"//googleapis.com/gmail/users/owner@example.com\" ], }, { \"name\" : \"LOG ID\" , \"value\" : \"Qt8v90c0fAEy SyaOplDvJc\" , }, { \"multiStrValue\" : [ \"Google Initiated Service - For details, please refer to the documentation.\" ], \"name\" : \"JUSTIFICATIONS\" , }, { \"name\" : \"ACTOR HOME OFFICE\" , \"value\" : \"US\" , }, { \"value\" : \"owner@example.net\" , \"name\" : \"OWNER EMAIL\" , } ], \"eventName\" : \"ACCESS\" } ] }, \"resource\" : { \"type\" : \"organization\" , \"labels\" : { \"organization id\" : \"12345\" } }, \"timestamp\" : \"2021-05-19T16:27:53.703908Z\" , \"severity\" : \"NOTICE\" , \"logName\" : \"organizations/12345/logs/cloudaudit.googleapis.com%2Faccess transparency\" , \"receiveTimestamp\" : \"2021-05-19T16:28:52.867650088Z\" } For information about the event and parameters that can appear in the jsonPayload field of the Access Transparency logs generated when Google personnel access Google Workspace resources, see Access Transparency Activity Events .",
+          "For information about all the other fields in the Access Transparency logs for Google Workspace, see LogEntry .",
+          "Go to Logs Explorer Enter the following query in the Logs Explorer: logName = \"organizations/ ORG ID /logs/cloudaudit.googleapis.com %2F access transparency\" jsonPayload . @ type = \"type.googleapis.com/ccc hosted reporting.ActivityProto\" Replace ORG ID with the unique identifier of your Google Cloud organization."
+        ]
+      },
+      {
+        "title": "Overview of Access Transparency \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "By ingesting Access Transparency logs into your security information and event management (SIEM) tools for compliance or auditing purposes, you can augment any existing data, such as Security Command Center security findings.",
+          "For more information about the details covered in Access Transparency logs, see Log field descriptions .",
+          "Access Transparency logs are similar to Cloud Audit Logs ; however, Cloud Audit Logs records the actions that members of your Google Cloud organization have taken in your Google Cloud resources, whereas Access Transparency logs record the actions taken by Google personnel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "example.com",
+      "example.net",
+      "googleapis.com",
+      "reporting.ActivityProto",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/understanding-workspace-logs",
+        "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/overview"
+      ]
+    }
+  ]
+}

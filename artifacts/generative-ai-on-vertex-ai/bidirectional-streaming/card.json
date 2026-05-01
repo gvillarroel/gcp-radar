@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Bidirectional streaming",
+  "feature_slug": "bidirectional-streaming",
+  "summary": "Agent Engine now supports bidirectional streaming.",
+  "extended_definition": "Agent Engine now supports bidirectional streaming.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Agent Engine Vertex AI Agent Engine, a part of the Vertex AI Platform, is a set of services that enables developers to deploy, manage, and scale AI agents in production.",
+          "Agent Engine handles the infrastructure to scale agents in production so you can focus on creating applications.",
+          "For more information, see Vertex AI Agent Engine overview ."
+        ]
+      },
+      {
+        "title": "\"Vertex AI GenAI API \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations Methods askContexts POST /v1beta1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1beta1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1beta1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1beta1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. evaluateDataset POST /v1beta1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1beta1/{location}:evaluateInstances Evaluates instances based on a given metric. generateInstanceRubrics POST /v1beta1/{location}:generateInstanceRubrics Generates rubrics for a given prompt. generateSyntheticData POST /v1beta1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1beta1/{name} Gets a RagEngineConfig. retrieveContexts POST /v1beta1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1beta1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1.projects.locations Methods askContexts POST /v1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. evaluateDataset POST /v1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1/{location}:evaluateInstances Evaluates instances based on a given metric. generateInstanceRubrics POST /v1/{location}:generateInstanceRubrics Generates rubrics for a given prompt. generateSyntheticData POST /v1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1/{name} Gets a RagEngineConfig. retrieveContexts POST /v1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1beta1.projects.locations.reasoningEngines.a2a.v1 Methods card GET /v1beta1/{name}/a2a/{a2aEndpoint} Get request for reasoning engine instance via the A2A get protocol apis. extendedAgentCard GET /v1beta1/{name}/a2a/{a2aEndpoint} Get request for reasoning engine instance via the A2A get protocol apis. tasks GET /v1beta1/{name}/a2a/{a2aEndpoint} Get request for reasoning engine instance via the A2A get protocol apis."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Maps in Vertex AI \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "It has a rating of 4.2 stars based on 411 reviews.\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"groundingChunks\": [ { \"maps\": { \"uri\": \"https://maps.google.com/?cid=9001322937822692826\", \"title\": \"The Italian Place\", \"placeId\": \"places/ChIJOTRDf qwt4kR2kV WYUf63w\" } }, { \"maps\": { \"uri\": \"https://maps.google.com/?cid=9001322937822692826\", \"title\": \"Hank's Pasta Bar\", \"placeId\": \"places/MMVtPzn9FGcevML89\", \"placeAnswerSources\": { \"reviewSnippets\": [ { \"id\": \"places/ChIJOTRDf qwt4kR2kV WYUf63w\", \"title\": \"Google Maps Review\", \"uri\": \"https://maps.google.com/?cid=9001322937822692826\" }, ] } } }, ... ], \"groundingSupports\": [ { \"segment\": { \"endIndex\": 79, \"text\": \"\\\"The Italian Place\\\" in Alexandria, VA, is good for children and offers takeout.\" }, \"groundingChunkIndices\": [ 0 ] }, ], \"googleMapsWidgetContextToken\": \"widgetcontent/...\" } } ], ... } Place properties This section lists place properties that are used to describe locations and used by Grounding with Google Maps to generate responses.",
+          "The Routing tool supports the following: Modes of transportation : Routing for driving, walking, bicycling, transit, and two-wheeled motorized vehicles (not all travel modes are available in all countries) Multiple waypoints : Up to 13 intermediate stops between origin and destination Real-time traffic : Accounting for current traffic conditions to provide accurate \"live\" travel times rather than static averages The following are examples of the types of questions that the Routing tool supports: Proximity based on travel time : \"What are some American restaurants within a 10-minute walk from the Hilton Hotel on 1335 6th Ave in NYC?\" Commute estimation : \"How long does it take to take public transit from Pike Place Market to Capitol Hill in Seattle?\" Understand the response When a prompt triggers the Routing tool, the model generates a natural language answer backed by structured metadata.",
+          "GMP-attribution { font-family : Roboto , Sans-Serif ; font-style : normal ; font-weight : 400 ; font-size : 1 rem ; letter-spacing : normal ; white-space : nowrap ; color : #5e5e5e ; } Context token, place ID, and review ID The Google Maps data includes context token, place ID, and review ID."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "source_id": "site-docs-root",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "The chunk includes the following: url : the web page URL for attribution (also known as the \"landing page\"). image url : the direct image URL. groundingSupports : provides specific mappings that link the generated content to its relevant citation source in the chunks. searchEntryPoint : includes the Google Search chip that contains compliant HTML and CSS to render Google Search Suggestions.",
+          "There is a slight chance of rain on both days.\\n\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"webSearchQueries\": [ \"weather in Chicago this weekend\" ], \"searchEntryPoint\": { \"renderedContent\": \"...\" }, \"groundingChunks\": [ { \"web\": { \"uri\": \"https://www.google.com/search?q=weather+in+Chicago,+IL\", \"title\": \"Weather information for locality: Chicago, administrative area: IL\", \"domain\": \"google.com\" } }, { \"web\": { \"uri\": \"...\", \"title\": \"weatherbug.com\", \"domain\": \"weatherbug.com\" } } ], \"groundingSupports\": [ { \"segment\": { \"startIndex\": 85, \"endIndex\": 214, \"text\": \"The temperature will be between 49°F (9°C) and 55°F (13°C) on Saturday and between 51°F (11°C) and 56°F (13°C) on Sunday.\" }, \"groundingChunkIndices\": [ 0 ], \"confidenceScores\": [ 0.8662828 ] }, { \"segment\": { \"startIndex\": 215, \"endIndex\": 261, \"text\": \"There is a slight chance of rain on both days.\" }, \"groundingChunkIndices\": [ 1, 0 ], \"confidenceScores\": [ 0.62836814, 0.6488607 ] } ], \"retrievalMetadata\": {} } } ], \"usageMetadata\": { \"promptTokenCount\": 10, \"candidatesTokenCount\": 98, \"totalTokenCount\": 108, \"trafficType\": \"ON DEMAND\", \"promptTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 10 } ], \"candidatesTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 98 } ] }, \"modelVersion\": \"gemini-2.0-flash\", \"createTime\": \"2025-05-19T14:42:55.000643Z\", \"responseId\": \"b0MraIMFoqnf-Q-D66G4BQ\" } Grounding with Google Image Search Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Use of alternative search engine options When using Grounding with Google Search a Customer Application can: Offer alternative search engine options, Make other search engines the default option, Display their own or third-party search suggestions or search results as long as: any non-Google results must be displayed separately from Google's Grounded Results and Search Suggestions, and shown in a way that does not confuse users or suggest they are from Google."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "maps.google.com",
+      "v1.projects.locations",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.reasoningEngines.a2a",
+      "v1beta1.projects.locations.reasoningEngines.a2a.v1",
+      "weatherbug.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.748Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "VPC Service Controls",
+  "feature_slug": "vpc-service-controls",
+  "summary": "Memorystore for Redis supports VPC Service Controls.",
+  "extended_definition": "Memorystore for Redis supports VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-cloud-run",
+      "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+      "https://docs.cloud.google.com/memorystore/docs/redis/networking"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to a Redis instance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a list of Google Cloud environments that Memorystore for Redis supports, see Supported environments .",
+          "If your cluster is version 1.7 or lower, or your version 1.8 or higher cluster doesn't have IP aliases enabled, follow these workaround steps before trying to connect to your instance: Workaround Run the following commands, replacing RESERVED IP RANGE with the reserved IP range of your instance: git clone https://github.com/bowei/k8s-custom-iptables.git cd k8s-custom-iptables/ TARGETS=\" RESERVED IP RANGE \" ./install.sh If you don't know the reserved IP range of your instance, you can find out by entering this command: gcloud redis instances describe INSTANCE ID --region [REGION] For more information about IP aliases, including how to create a cluster with this setting enabled, see Creating a VPC-native cluster .",
+          "If your cluster is version 1.7 or lower, or your version 1.8 or higher cluster doesn't have IP aliases enabled, follow these workaround steps before trying to connect to your instance: Workaround Run the following commands, replacing RESERVED IP RANGE with the reserved IP range of your instance: git clone https://github.com/bowei/k8s-custom-iptables.git cd k8s-custom-iptables/ TARGETS=\" RESERVED IP RANGE \" ./install.sh If you don't know the reserved IP range of your instance, you can find out by entering this command: gcloud redis instances describe INSTANCE ID --region= REGION For more information about IP aliases, including how to create a cluster with this setting enabled, see Creating a VPC-native cluster ."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connect to a Memorystore for Redis instance You can use any standard Redis client on the following environments to connect to your Memorystore for Redis instance : App Engine flexible environment App Engine standard environment Compute Engine VM instances Cloud Run functions Cloud Run Google Kubernetes Engine clusters Some serverless environments require a Serverless VPC Access connector as a prerequisite for connectivity with Memorystore for Redis.",
+          "Scale, as needed: Memorystore for Redis enables scaling your instances up to a maximum of 300 GB and supports up to 16 Gbps of network throughput.",
+          "Memorystore for Redis currently supports RDB snapshots and exporting data ."
+        ]
+      },
+      {
+        "title": "\"Connect to a Redis instance from a Cloud Run service \\_|\\_ Memorystore for\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-cloud-run",
+        "source_id": "site-docs-root-2",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Clone the repository for your chosen programming language and navigate to the folder that contains the sample code: Go git clone https : //github.com/GoogleCloudPlatform/golang-samples cd golang - samples / memorystore / redis Java git clone https : //github.com/GoogleCloudPlatform/java-docs-samples cd java - docs - samples / memorystore / redis Node.js git clone https : //github.com/GoogleCloudPlatform/nodejs-docs-samples cd nodejs - docs - samples / memorystore / redis Python git clone https : // github . com / GoogleCloudPlatform / python - docs - samples cd python - docs - samples / memorystore / redis This sample application increments a Redis counter every time the / endpoint is accessed.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Connect to a Redis instance from a Cloud Run service Stay organized with collections Save and categorize content based on your preferences.",
+          "Prepare VPC network egress for configuration To connect to your Redis instance, your Cloud Run service must have access to the Redis instance's authorized VPC network."
+        ]
+      },
+      {
+        "title": "Networking \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/networking",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission required to create a private services access connection in the UI: serviceusage.services.enable Needed to enable the Service Networking API. compute.addresses.create compute.addresses.list servicenetworking.services.addPeering gcloud permissions gcloud permissions required to check the private services access connection compute.networks.list Needed in both the local and host projects. gcloud permissions required to create a private services access connection serviceusage.services.enable Needed to enable the Service Networking API. compute.addresses.create compute.addresses.list servicenetworking.services.addPeering Supported networks and client IP ranges Memorystore for Redis supports RFC 1918 private IP addresses and some non-RFC 1918 private IP addresses.",
+          "On-premises access with private services access You can connect from a client in an on-premises network if the on-premises network is connected to the VPC network to which your Memorystore for Redis instance is connected.",
+          "Using private services access enables you to use the following capabilities for your Redis instance: Provision a Memorystore for Redis instance in a service project using Shared VPC."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.properties",
+      "com.example.redis",
+      "compute.addresses.create",
+      "compute.addresses.list",
+      "compute.networks.list",
+      "github.com",
+      "install.sh",
+      "iptables.git",
+      "java.io.IOException",
+      "java.net.SocketException",
+      "java.util.Properties",
+      "javax.servlet.annotation.WebListener",
+      "javax.servlet.annotation.WebServlet",
+      "javax.servlet.http.HttpServlet",
+      "javax.servlet.http.HttpServletRequest",
+      "javax.servlet.http.HttpServletResponse",
+      "javax.servlet.ServletContextEvent",
+      "javax.servlet.ServletContextListener",
+      "redis.clients",
+      "redis.clients.jedis.Jedis",
+      "redis.clients.jedis.JedisPool",
+      "redis.clients.jedis.JedisPoolConfig",
+      "redis.host",
+      "redis.port",
+      "servicenetworking.services.addPeering",
+      "serviceusage.services.enable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-cloud-run",
+        "https://docs.cloud.google.com/memorystore/docs/redis/networking"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-cloud-run",
+        "https://docs.cloud.google.com/memorystore/docs/redis/networking"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-cloud-run",
+        "https://docs.cloud.google.com/memorystore/docs/redis/networking"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-cloud-run",
+        "https://docs.cloud.google.com/memorystore/docs/redis/networking"
+      ]
+    }
+  ]
+}

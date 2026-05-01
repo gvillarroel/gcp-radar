@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.672Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Analysis layer-based image scanning",
+  "feature_slug": "artifact-analysis-layer-based-image-scanning",
+  "summary": "Artifact Analysis now supports viewing vulnerability metadata for individual image layers of container images.",
+  "extended_definition": "Artifact Analysis now supports viewing vulnerability metadata for individual image layers of container images.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/copy-images",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Artifact analysis and vulnerability scanning \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "source_id": "site-docs-root-2",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Registry scanning This section outlines Artifact Analysis vulnerability scanning features based in Artifact Registry, and lists related Google Cloud products where you can enable complementary capabilities to support your security posture.",
+          "Home Documentation Application development Artifact Registry Guides Send feedback Artifact analysis and vulnerability scanning Stay organized with collections Save and categorize content based on your preferences.",
+          "To learn about using Artifact Analysis for metadata management, and costs for the optional vulnerability scanning service, see the Artifact Analysis documentation ."
+        ]
+      },
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metadata storage and analysis with Artifact Analysis Scans for OS and language package vulnerabiities with on-demand scanning in images with a supported OS.",
+          "Since registry hosts are only available in multi-regions, data transfer costs include deploying images to Google Cloud Artifact Registry has its own pricing , based on storage and network data transfer.",
+          "Automatic scanning The Google Cloud CLI command gcloud artifacts docker images includes flags for viewing scan results, including vulnerabilities and other metadata."
+        ]
+      },
+      {
+        "title": "\"Copy images between repositories \\_|\\_ Artifact Registry \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/copy-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Artifact Registry Guides Send feedback Copy images between repositories Stay organized with collections Save and categorize content based on your preferences.",
+          "Since the gcrane tool skips uploading image layers that are already uploaded, this limit is for new data that you are copying.",
+          "For example, the gcr-cleaner tool helps you to find and remove old images based on different criteria."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/copy-images"
+      ]
+    }
+  ]
+}

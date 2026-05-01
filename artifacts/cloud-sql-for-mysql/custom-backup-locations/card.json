@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Custom backup locations",
+  "feature_slug": "custom-backup-locations",
+  "summary": "Cloud SQL lets you specify backup locations to keep backup data within a single region.",
+  "extended_definition": "Cloud SQL lets you specify backup locations to keep backup data within a single region.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups",
+      "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Choose your backup option \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom backup locations Cloud SQL lets you select a custom location for your backup data.",
+          "Default backup locations If you don't specify a storage location, then your backups are stored in the multi-region that is geographically closest to the location of your Cloud SQL instance.",
+          "For more information about setting and view backup locations for an instance, see Set a custom location for backups and View backup locations ."
+        ]
+      },
+      {
+        "title": "Manage standard backups \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Save . gcloud For reference information, see gcloud sql instances patch . gcloud sql instances patch INSTANCE NAME \\ --backup-location = BACKUP LOCATION Terraform To specify a custom location for a database instance backup, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"mysql-instance-with-backup-location\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" backup configuration { enabled = true location = \"asia-northeast1\" } } } REST v1 Use the instance's settings.backupConfiguration.location parameter for the backup location.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /backupRuns/ backup-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"DELETE BACKUP\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Set a custom location for backups Only use a custom backup location if required by regulation.",
+          "The number can't be less than the default (seven). gcloud sql instances patch INSTANCE NAME \\ --retained-backups-count = NUM TO RETAIN Terraform To specify the number of automated backups to retain for a database instance, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"mysql-instance-backup-retention\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" backup configuration { enabled = true backup retention settings { retained backups = 365 retention unit = \"COUNT\" } } } } REST v1beta4 Before using any of the request data, make the following replacements: unit : Optional: The retention unit can either be an integer or a string."
+        ]
+      },
+      {
+        "title": "Data residency overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about backup locations, see Custom backup locations .",
+          "You can also fine-tune policies for a constraint to specify multi-regions such as asia and europe , or regions such as us-east1 or europe-west1 , as allowed or denied locations.",
+          "Cloud SQL also lets you add another layer of encryption to data using customer-managed encryption keys (CMEK) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "settings.backupConfiguration.location",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-standard-backups"
+      ]
+    }
+  ]
+}

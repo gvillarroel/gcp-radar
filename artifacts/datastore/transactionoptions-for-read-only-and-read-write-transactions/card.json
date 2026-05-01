@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.372Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "TransactionOptions for read-only and read-write transactions",
+  "feature_slug": "transactionoptions-for-read-only-and-read-write-transactions",
+  "summary": "TransactionOptions lets Datastore Data API clients choose read-only or read-write transaction behavior.",
+  "extended_definition": "TransactionOptions lets Datastore Data API clients choose read-only or read-write transaction behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2018-01-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+      "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore",
+      "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+      "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Datastore Transactions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "source_id": "site-iam-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Entity taskList ; QueryResults<Entity> tasks ; Transaction txn = datastore . newTransaction ( TransactionOptions . newBuilder (). setReadOnly ( ReadOnly . newBuilder (). build ()). build ()); try { taskList = txn . get ( taskListKey ); Query<Entity> query = Query . newEntityQueryBuilder () . setKind ( \"Task\" ) . setFilter ( PropertyFilter . hasAncestor ( taskListKey )) . build (); tasks = txn . run ( query ); txn . commit (); } finally { if ( txn . isActive ()) { txn . rollback (); } } Node.js To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "For more information, see Set up authentication for a local development environment . task list name = \"default\" task list key = datastore . key \"TaskList\" , task list name datastore . read only transaction do tx task list = tx . find task list key query = datastore . query ( \"Task\" ) . ancestor ( task list ) tasks in list = tx . run query end Transactions and entity groups An entity group is a set of entities connected through ancestry to a common root element.",
+          "These kinds of transactions are often called read-only transactions, since they perform no writes."
+        ]
+      },
+      {
+        "title": "\"Balancing Strong and Eventual Consistency with Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "Strong Consistency on Reading Entity Values and Indexes In Datastore, there are only two APIs that provide a strongly consistent view for reading entity values and indexes: (1) the lookup by key method and (2) the ancestor query.",
+          "For query requests, read the list of Player entities from Memcache and execute a keys-only query on Datastore when the list is not present in Memcache.",
+          "Additional Resources The following resources provide more information about the topics discussed in this document: Google App Engine: Storing Data Datastore Overview Google Cloud Platform Blog Cloud SQL Using Python App Engine with Cloud SQL Bigtable: A Distributed Storage System for Structured Data App Engine 1.5.2 SDK Released Megastore: Providing Scalable, Highly Available Storage for Interactive Services [1] An entity group can even be formed by specifying only one key of the root or parent entity, without storing the actual entities for the root or parent, because the entity group functions are all implemented based on relationships between keys. [2] The supported limit is one update per second per entity group outside transactions, or one transaction per second per entity group."
+        ]
+      },
+      {
+        "title": "Cloud Datastore best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A possible strategy for gradually ramping up reads or writes to a new kind is use a deterministic hash of the user ID to get a random percentage of users that write new entities.",
+          "Maintaining such an index could lead to hotspots that impact Datastore latency for applications with high read and write rates.",
+          "API calls Use batch operations for your reads, writes, and deletes instead of single operations."
+        ]
+      },
+      {
+        "title": "Fast and Reliable Ranking in Google Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "To determine the rank for a player who has a score of 30, the library only needs to read four entities —the nodes circled by the dashed line in the diagram—to add up the number of players who have a score higher than 30.",
+          "The transaction may be open for a second or more, but because there is a single thread driving the library and Datastore, there is no contention and no concurrent modification problem.",
+          "Because there is only one thread and only one transaction open on the entity group, there are no transaction failures due to concurrent updates."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastore.Datastore"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/cloud-datastore-transactions",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    }
+  ]
+}

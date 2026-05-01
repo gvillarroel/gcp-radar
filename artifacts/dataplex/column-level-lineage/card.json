@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.145Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Column-level lineage",
+  "feature_slug": "column-level-lineage",
+  "summary": "Dataplex provides lineage tracking between individual columns in BigQuery tables; Dataplex provides lineage tracking between individual columns in BigQuery tables.",
+  "extended_definition": "Dataplex provides lineage tracking between individual columns in BigQuery tables; Dataplex provides lineage tracking between individual columns in BigQuery tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+      "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+      "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use data lineage with Google Cloud systems \\_|\\_ Knowledge Catalog \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following view types are available: Graph view : displays lineage as an interactive graph, letting you explore relationships between data assets and columns by expanding nodes.",
+          "The List view offers simplified and detailed tabular representations of lineage for both table-level and column-level lineage, synchronized with the Graph view.",
+          "The List view offers simplified and detailed tabular representations of lineage for both table-level and column-level lineage, synchronized with the Graph view."
+        ]
+      },
+      {
+        "title": "About data lineage \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Column-level lineage limitations Column-level lineage has the following additional limitations: Column-level lineage isn't collected for BigQuery load jobs or for routines.",
+          "Column-level lineage isn't collected if a job creates more than 1,500 column-level links.",
+          "Column-level lineage is only fetched from the region where the root table is located."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataplex.v1 (1.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "source_id": "site-java-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "These are used for granting different levels of access (IAM roles) on the individual data product's data assets. com. google. cloud. dataplex. v1.",
+          "These are used for granting different levels of access (IAM roles) on the individual data product's data assets. com. google. cloud. dataplex. v1.",
+          "Data Quality Column Result DataQualityColumnResult provides a more detailed, per-column view of the results. com. google. cloud. dataplex. v1."
+        ]
+      },
+      {
+        "title": "About metadata management in Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "This section provides a mapping between the Data Catalog API and the Dataplex API.",
+          "Search is performed over the following: All Google Cloud sources described in Entries and entry groups Custom entries that are created in Data Catalog Tags that are created in Data Catalog Data lineage Data lineage retrieves entry details for asset nodes by using the Dataplex API.",
+          "As an administrator, to make glossaries and associated links between business terms and columns that you created in Data Catalog available in Knowledge Catalog, see Migrate glossaries to Knowledge Catalog ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataplex.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview"
+      ]
+    }
+  ]
+}

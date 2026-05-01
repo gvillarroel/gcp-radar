@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.627Z",
+  "source_step08_card": "data/step-08/current/products/netapp-volumes/card.json",
+  "product_name": "NetApp Volumes",
+  "product_slug": "netapp-volumes",
+  "feature_name": "Volume deletion protection",
+  "feature_slug": "volume-deletion-protection",
+  "summary": "Volume deletion protection prevents deletion of protected volumes to safeguard VMware Engine datastores.",
+  "extended_definition": "Volume deletion protection prevents deletion of protected volumes to safeguard VMware Engine datastores.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+      "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+      "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool",
+      "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a volume \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When enabled, clients that don't support SMB3 encryption can't access the share. check check Hide SMB share: disable discoverability for the share using network browsing. check check Enable access-based enumeration: access-based enumeration hides files and folders that users don't have permissions to access. check check Enable continuous availability share support for SQL Server, FSLogix : enable this option only for SQL Server and FSLogix workloads that require continuous availability (CA). check Click Block volume from deletion when clients are connected in the Configuration for selected protocol(s) for volumes used as GCVE datastores.",
+          "Create an iSCSI volume Create an iSCSI volume in the Flex service level of the Unified type pool: gcloud netapp volumes create VOLUME NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --storage-pool = STORAGE POOL \\ --capacity = CAPACITY \\ --protocols = ISCSI \\ --block-devices = name = LUN NAME ,host-groups = HOST GROUP NAME ,os-type = OS TYPE \\ --snapshot-directory = false Replace the following information: VOLUME NAME : the name of the volume.",
+          "Additional volumes generate within a few seconds to a few minutes. gcloud Create a volume Create a volume using the following command: gcloud netapp volumes create VOLUME NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --storage-pool = STORAGE POOL \\ --capacity = CAPACITY \\ --protocols = PROTOCOLS \\ --share-name = SHARE NAME Replace the following information: VOLUME NAME : the name of the volume."
+        ]
+      },
+      {
+        "title": "Create a volume quickstart \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To confirm deletion, type the name of the volume.",
+          "Home Documentation Storage NetApp Volumes Guides Send feedback Create a volume quickstart Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a volume Use the following instructions to create a volume: Go to the NetApp Volumes page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Manage auto-tiering \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Save . gcloud Edit the auto-tiering parameters using the following command: gcloud netapp volumes update VOLUME NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --tiering-policy = tier-action = ENABLED OR DISABLED ,cooling-threshold-days = DAYS Replace the following information: VOLUME NAME : the name of the volume.",
+          "Premium or Extreme type volumes The performance of an auto-tiered volume depends on the sizes of the hot and cold tiers.",
+          "The storage pool billing is based on the total cold tier size of all volumes within that pool."
+        ]
+      },
+      {
+        "title": "\"Create a storage pool quickstart \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Storage NetApp Volumes Guides Send feedback Create a storage pool quickstart Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to use SMB volumes, you need to select and define an Active Directory policy before you can proceed, see Create an Active Directory policy .",
+          "Clean up Use the following instructions to delete a storage pool: Go to the NetApp Volumes page in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool"
+      ]
+    }
+  ]
+}

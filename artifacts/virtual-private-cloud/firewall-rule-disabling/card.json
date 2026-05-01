@@ -1,0 +1,257 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Firewall rule disabling",
+  "feature_slug": "firewall-rule-disabling",
+  "summary": "Virtual Private Cloud supports disabling firewall rules, enabling administrators to temporarily deactivate rules without deleting them.",
+  "extended_definition": "Virtual Private Cloud supports disabling firewall rules, enabling administrators to temporarily deactivate rules without deleting them.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/audit-logging",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Private Google Access \\_|\\_ Virtual Private Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default domains: all IP address ranges for Google APIs and services . private.googleapis.com : 199.36.153.8/30 and 2600:2d00:0002:2000::/56 restricted.googleapis.com : 199.36.153.4/30 and 2600:2d00:0002:1000::/56 Additionally, we recommend that you include 34.126.0.0/18 and 2001:4860:8040::/42 in your egress allow firewall rule.",
+          "The default allow egress firewall rule allows this traffic, if there is no higher priority rule that blocks it. private.googleapis.com Configure DNS records in a private DNS zone to send requests to the following IP addresses: For IPv4 traffic: 199.36.",
+          "0.0/18 For IPv6 traffic: 2600:2d00: 0002: 2000::/56 2001:4860: 8040::/42 Ensure that your firewall rules allow egress to the following IP ranges: For IPv4 traffic: 199.36."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC Network Peering also provides certain external IPv6 connectivity to the destination external IPv6 address ranges of the following resources when the routes to those destination external IPv6 addresses are exchanged by VPC Network Peering: Dual-stack and IPv6-only virtual machine (VM) instance network interfaces Forwarding rules for external protocol forwarding Forwarding rules for external passthrough Network Load Balancers VPC Network Peering supports both IPv4 and IPv6 connectivity.",
+          "Rules in network firewall policies can use secure Tags , which are different from network tags, to identify targets and sources: When used to specify a target for an ingress or egress rule in a network firewall policy, a Tag can only identify targets in the VPC network to which the Tag is scoped.",
+          "Subject to IAM permissions, a security administrator of a peered VPC network might be able to use the same service account to define targets of firewall rules in a peered VPC network, but the targets of the firewall rules in the peered VPC network don't include instances in your VPC network."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you configure ingress firewall rules for backend services, the source of traffic depends on the type of load balancer that your service uses: Category Source of traffic to backends Passthrough load balancers: Internal passthrough Network Load Balancer Internal protocol forwarding Port mapping service The IP address ranges of the Private Service Connect (NAT) subnets associated with the service Proxy load balancers: Cross-region internal Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Secure Web Proxy The IP address ranges of the associated proxy-only subnets Services with health checks The probe IP address ranges of your load balancer type Publish a service To publish a service, you create a service attachment.",
+          "Configure firewall rules Your network configuration must allow traffic from appropriate source IP address ranges to the instances or network endpoints that are configured as backends for your backend services.",
+          "If your backends are in a VPC network, you can use VPC ingress firewall rules or firewall policies to allow this traffic."
+        ]
+      },
+      {
+        "title": "Virtual Private Cloud audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ v1.compute.firewalls.get v1.compute.firewalls.list v1.compute.networks.get v1.compute.networks.getEffectiveFirewalls v1.compute.networks.list v1.compute.networks.listPeeringRoutes v1.compute.forwardingRules.aggregatedList v1.compute.forwardingRules.get v1.compute.forwardingRules.list v1.compute.routes.get v1.compute.routes.list v1.compute.subnetworks.aggregatedList v1.compute.subnetworks.get v1.compute.subnetworks.getIamPolicy v1.compute.subnetworks.list v1.compute.subnetworks.testIamPermissions ADMIN WRITE v1.compute.firewalls.delete v1.compute.firewalls.insert v1.compute.firewalls.patch v1.compute.firewalls.update v1.compute.networks.addPeering v1.compute.networks.delete v1.compute.networks.insert v1.compute.networks.patch v1.compute.networks.removePeering v1.compute.networks.switchToCustomMode v1.compute.networks.updatePeering v1.compute.forwardingRules.delete v1.compute.forwardingRules.insert v1.compute.forwardingRules.patch v1.compute.forwardingRules.setLabels v1.compute.forwardingRules.setTarget v1.compute.routes.delete v1.compute.routes.insert v1.compute.subnetworks.delete v1.compute.subnetworks.expandIpCidrRange v1.compute.subnetworks.insert v1.compute.subnetworks.patch v1.compute.subnetworks.setIamPolicy v1.compute.subnetworks.setPrivateIpGoogleAccess google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.CreatePolicyBasedRoute google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.DeletePolicyBasedRoute OTHER google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.GetPolicyBasedRoute : To enable this log, enable ADMIN READ under the service networkconnectivity.googleapis.com . google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes : To enable this log, enable ADMIN READ under the service networkconnectivity.googleapis.com .",
+          "API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Virtual Private Cloud. compute.v1.FirewallsService The following audit logs are associated with methods belonging to compute.v1.FirewallsService . delete Method : v1.compute.firewalls.delete Audit log type : Admin activity Permissions : compute.firewalls.delete - ADMIN WRITE compute.networks.updatePolicy - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"v1.compute.firewalls.delete\" get Method : v1.compute.firewalls.get Audit log type : Data access Permissions : compute.firewalls.get - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"v1.compute.networks.listPeeringRoutes\" patch Method : v1.compute.networks.patch Audit log type : Admin activity Permissions : compute.networks.get - ADMIN READ compute.networks.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"v1.compute.networks.patch\" removePeering Method : v1.compute.networks.removePeering Audit log type : Admin activity Permissions : compute.networks.removePeering - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"v1.compute.networks.removePeering\" switchToCustomMode Method : v1.compute.networks.switchToCustomMode Audit log type : Admin activity Permissions : compute.networks.switchToCustomMode - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"v1.compute.networks.switchToCustomMode\" updatePeering Method : v1.compute.networks.updatePeering Audit log type : Admin activity Permissions : compute.networks.updatePeering - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"v1.compute.networks.updatePeering\" compute.v1.RegionForwardingRulesService The following audit logs are associated with methods belonging to compute.v1.RegionForwardingRulesService . aggregatedList Method : v1.compute.forwardingRules.aggregatedList Audit log type : Data access Permissions : compute.forwardingRules.list - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.firewalls.delete",
+      "compute.firewalls.get",
+      "compute.forwardingRules.list",
+      "compute.forwardingRules.setLabels",
+      "compute.forwardingRules.setTarget",
+      "compute.forwardingRules.update",
+      "compute.networks.get",
+      "compute.networks.removePeering",
+      "compute.networks.switchToCustomMode",
+      "compute.networks.update",
+      "compute.networks.updatePeering",
+      "compute.networks.updatePolicy",
+      "compute.regionBackendServices.use",
+      "compute.regionTargetHttpsProxies.use",
+      "compute.routes.delete",
+      "compute.routes.get",
+      "compute.v1.FirewallsService",
+      "compute.v1.RegionForwardingRulesService",
+      "compute.v1.RoutesService",
+      "networkconnectivity.googleapis.com",
+      "private.googleapis.com",
+      "restricted.googleapis.com",
+      "v1.compute.firewalls.delete",
+      "v1.compute.firewalls.get",
+      "v1.compute.firewalls.insert",
+      "v1.compute.firewalls.list",
+      "v1.compute.firewalls.patch",
+      "v1.compute.firewalls.update",
+      "v1.compute.forwardingRules.aggregatedList",
+      "v1.compute.forwardingRules.delete",
+      "v1.compute.forwardingRules.get",
+      "v1.compute.forwardingRules.insert",
+      "v1.compute.forwardingRules.list",
+      "v1.compute.forwardingRules.patch",
+      "v1.compute.forwardingRules.setLabels",
+      "v1.compute.forwardingRules.setTarget",
+      "v1.compute.networks.addPeering",
+      "v1.compute.networks.delete",
+      "v1.compute.networks.get",
+      "v1.compute.networks.getEffectiveFirewalls",
+      "v1.compute.networks.insert",
+      "v1.compute.networks.list",
+      "v1.compute.networks.listPeeringRoutes",
+      "v1.compute.networks.patch",
+      "v1.compute.networks.removePeering",
+      "v1.compute.networks.switchToCustomMode",
+      "v1.compute.networks.updatePeering",
+      "v1.compute.routes.delete",
+      "v1.compute.routes.get",
+      "v1.compute.routes.insert",
+      "v1.compute.routes.list",
+      "v1.compute.subnetworks.aggregatedList",
+      "v1.compute.subnetworks.delete",
+      "v1.compute.subnetworks.expandIpCidrRange",
+      "v1.compute.subnetworks.get",
+      "v1.compute.subnetworks.getIamPolicy",
+      "v1.compute.subnetworks.insert",
+      "v1.compute.subnetworks.list",
+      "v1.compute.subnetworks.patch",
+      "v1.compute.subnetworks.setIamPolicy",
+      "v1.compute.subnetworks.setPrivateIpGoogleAccess",
+      "v1.compute.subnetworks.testIamPermissions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/audit-logging"
+      ]
+    }
+  ]
+}

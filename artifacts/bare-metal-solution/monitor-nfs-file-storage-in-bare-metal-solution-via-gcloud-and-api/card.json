@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.851Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Monitor NFS file storage in Bare Metal Solution via gcloud and API",
+  "feature_slug": "monitor-nfs-file-storage-in-bare-metal-solution-via-gcloud-and-api",
+  "summary": "Adds monitoring support for NFS file storage through gcloud and API interfaces.",
+  "extended_definition": "Adds monitoring support for NFS file storage through gcloud and API interfaces.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-planning-guide",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "When the migration job completes, the system removes and unmaps the Backup and DR-presented backup image copy (ASM diskgroup or file system) from the target, and the database runs from your production storage.",
+          "You can use the Oracle online datafile move API to move the data back to the production storage location (ASM disk group or file system) while the database and application are up and running.",
+          "The Control File and the Redo Log file of the database gets placed on the selected local production storage location (ASM diskgroup or file system) on the target."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's Agent for SAP planning guide \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Diagnostic type Execution mode Description Input/output diagnostics On-demand This is done by using the Flexible I/O tester (FIO) tool, which can stress-test the I/O capabilities of storage systems, and also simulate workloads to assess performance of the underlying infrastructure such as disks and network file system.",
+          "Version 3.12 (latest) of Google Cloud's Agent for SAP is the successor of Google Cloud's monitoring agent for SAP NetWeaver version 2, monitoring agent for SAP HANA version 2, and the Cloud Storage Backint agent for SAP HANA.",
+          "For instructions about how to install and configure the agent, validate your installation, and verify that the agent is running as expected, see: Install and configure the agent on a Compute Engine instance Install and configure the agent on a Bare Metal Solution server If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Supported features Version 3.12 (latest) of Google Cloud's Agent for SAP supports the following features: SAP Host Agent metrics collection SAP system discovery Agent health metrics collection Process Monitoring metrics collection Workload Manager evaluation metrics collection SAP HANA monitoring metrics collection Backint based backup and recovery for SAP HANA Disk snapshot based backup and recovery for SAP HANA Workload performance diagnostics SAP Host Agent metrics collection The SAP Host Agent metrics collection is enabled by default for agent instances installed on Compute Engine instances or Bare Metal Solution servers."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's Agent for SAP planning guide \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-monitoring-agent-user-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Diagnostic type Execution mode Description Input/output diagnostics On-demand This is done by using the Flexible I/O tester (FIO) tool, which can stress-test the I/O capabilities of storage systems, and also simulate workloads to assess performance of the underlying infrastructure such as disks and network file system.",
+          "Version 3.12 (latest) of Google Cloud's Agent for SAP is the successor of Google Cloud's monitoring agent for SAP NetWeaver version 2, monitoring agent for SAP HANA version 2, and the Cloud Storage Backint agent for SAP HANA.",
+          "For instructions about how to install and configure the agent, validate your installation, and verify that the agent is running as expected, see: Install and configure the agent on a Compute Engine instance Install and configure the agent on a Bare Metal Solution server If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Supported features Version 3.12 (latest) of Google Cloud's Agent for SAP supports the following features: SAP Host Agent metrics collection SAP system discovery Agent health metrics collection Process Monitoring metrics collection Workload Manager evaluation metrics collection SAP HANA monitoring metrics collection Backint based backup and recovery for SAP HANA Disk snapshot based backup and recovery for SAP HANA Workload performance diagnostics SAP Host Agent metrics collection The SAP Host Agent metrics collection is enabled by default for agent instances installed on Compute Engine instances or Bare Metal Solution servers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

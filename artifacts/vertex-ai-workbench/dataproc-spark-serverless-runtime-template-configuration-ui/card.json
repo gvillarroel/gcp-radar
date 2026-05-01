@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Dataproc Spark serverless runtime template configuration UI",
+  "feature_slug": "dataproc-spark-serverless-runtime-template-configuration-ui",
+  "summary": "The Serverless Spark runtime template creation screen for Spark notebooks now provides an easier UI to configure resource allocation, autoscaling, and GPU settings.",
+  "extended_definition": "The Serverless Spark runtime template creation screen for Spark notebooks now provides an easier UI to configure resource allocation, autoscaling, and GPU settings.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "This config will only be set when idle shutdown is enabled. eucConfig object ( NotebookEucConfig ) EUC configuration of the NotebookRuntimeTemplate. createTime string ( Timestamp format) Output only.",
+          "Example: { \"name\": \"wrench\", \"mass\": \"1.3kg\", \"count\": \"3\" } . idleShutdownConfig object ( NotebookIdleShutdownConfig ) The idle shutdown configuration of NotebookRuntimeTemplate.",
+          "NotebookRuntimeTemplate JSON representation { \"name\" : string , \"displayName\" : string , \"description\" : string , \"isDefault\" : boolean , \"machineSpec\" : { object ( MachineSpec ) } , \"dataPersistentDiskSpec\" : { object ( PersistentDiskSpec ) } , \"networkSpec\" : { object ( NetworkSpec ) } , \"serviceAccount\" : string , \"etag\" : string , \"labels\" : { string : string , ... } , \"idleShutdownConfig\" : { object ( NotebookIdleShutdownConfig ) } , \"eucConfig\" : { object ( NotebookEucConfig ) } , \"createTime\" : string , \"updateTime\" : string , \"notebookRuntimeType\" : enum ( NotebookRuntimeType ) , \"shieldedVmConfig\" : { object ( ShieldedVmConfig ) } , \"networkTags\" : [ string ] , \"encryptionSpec\" : { object ( EncryptionSpec ) } , \"softwareConfig\" : { object ( NotebookSoftwareConfig ) } } Fields name string The resource name of the NotebookRuntimeTemplate. displayName string Required."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Dataproc Serverless for Spark Digest and analyze data from BigQuery with Dataproc .",
+          "Learn more about Dataproc Serverless for Spark .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Dataproc SparkML with Dataproc and BigQuery ."
+        ]
+      },
+      {
+        "title": "\"Vertex ML Metadata notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Dataproc Serverless for Spark Digest and analyze data from BigQuery with Dataproc .",
+          "Learn more about Dataproc Serverless for Spark .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Workbench Dataproc SparkML with Dataproc and BigQuery ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    }
+  ]
+}

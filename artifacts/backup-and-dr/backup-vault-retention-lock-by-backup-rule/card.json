@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.762Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Backup Vault retention lock by backup rule",
+  "feature_slug": "backup-vault-retention-lock-by-backup-rule",
+  "summary": "A backup vault setting was added to prevent deletion during the retention duration defined in the backup rule, blocking manual deletion.",
+  "extended_definition": "A backup vault setting was added to prevent deletion during the retention duration defined in the backup rule, blocking manual deletion.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backup vault for immutable and indelible backups \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "source_id": "site-docs-reference",
+        "final_score": 166,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Prevent deletion for duration specified in backup rule This setting allows a backup vault to adopt the retention period defined in an associated backup plan.",
+          "When this setting is active, the Enforced retention column for the backup vault will indicate Inherited from rule .",
+          "Example: Retention precedence If you have the following configuration: Backup vault Minimum enforced retention : 3 days Backup vault Prevent deletion for duration specified in backup rule : Enabled Backup plan Delete backups after : 7 days Result: The backup cannot be deleted for the 7-day period specified in the backup plan's rule and will be automatically deleted only after 7 days have passed."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If production log retention is set then purge will run based on the Retention of production db logs in hour setting under Application Details & Settings .",
+          "If production log retention is set, then purge runs based on the Retention of production db logs in hours setting under Application Details & Settings .",
+          "Size the HANA archive log backup disk to store archives based on the production log retention setting."
+        ]
+      },
+      {
+        "title": "\"Configure advanced policy settings \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: The Enforced Retention advanced policy setting is not compatible with application protection that points to a backup vault.",
+          "You can modify a policy that is already used to protect an application by setting a longer enforced retention period.",
+          "When a backup vault is the storage target, the backup vault determines the enforced retention period."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+      ]
+    }
+  ]
+}

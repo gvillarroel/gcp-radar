@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.098Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "HTTP connector status check",
+  "feature_slug": "http-connector-status-check",
+  "summary": "The HTTP connector can check a connection's status by using an endpoint URL in the Status Check field.",
+  "extended_definition": "The HTTP connector can check a connection's status by using an endpoint URL in the Status Check field.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optionally, in Task Input section of the Connectors task, you can filter your result set by specifying a filter clause .",
+          "You can use the connection in an integration through the Connectors task.",
+          "SSL - Certificate connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-conn Service Account NAME-compute@developer.gserviceaccount.com Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 SSL Configuration Enable SSL True Trust Store Private Custom Trust Store A full PEM Certificate (-----BEGIN CERTIFICATE----- MIIChTCCAe4CAQAwDQYJKoZIhv......Qw== -----END CERTIFICATE-----) Secret version 1 Host Address xx.1HOST NAME.cloud.couchbase.com:18xxx Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Analytics Couchbase connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-Analytics-conn Service Account NAME-compute@developer.gserviceaccount.com Analytics Port 18095 Couchbase Service Analytics Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 Host Address xx.1HOST NAME.cloud.couchbase.com:18095 Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application."
+        ]
+      },
+      {
+        "title": "Azure DevOps \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Field name Information model Project model Repository model Analytics model All models AzureAD connection Location europe-west1 europe-west1 europe-west1 europe-west1 asia-east1 europe-west1 Connector Azure DevOps Azure DevOps Azure DevOps Azure DevOps Azure DevOps Azure DevOps Connector version 1 1 1 1 1 1 Connection Name azuredevops-informationmodel azuredevops-projectmodel azuredevops-repositorymodel azuredevops-analyticsmodel devops azuredevops-oauth Enable Cloud Logging Yes Yes Yes Yes Yes Yes Log Level Debug Debug Debug Debug Debug Debug Service Account Your Project Number@serviceaccount Your Project Number@serviceaccount Your Project Number@serviceaccount Your Project Number@serviceaccount Your Project Number@serviceaccount Your Project Number@serviceaccount Azure Tenant Tenant Id Tenant Id Tenant Id Tenant Id Tenant Id Tenant Id Organization Organization Name Organization Name Organization Name Organization Name Organization Name Organization Name Schema Information Project Repository RepositoryId Analytics Project Catalog Devops Project ProjectId Project ProjectId Project ProjectId Project ProjectId Azure Dev Ops Edition AzureDevOps Online AzureDevOps Online AzureDevOps Online AzureDevOps Online AzureDevOps Online AzureDevOps Online Azure Dev Ops Service API 6.0 6.0 6.0 6.0 6.0 6.0 Include Custom Fields Yes Yes Yes Yes Yes Yes CustomizedDefaultCatalogName CustomizedDefaultCatalogName=Google CustomizedDefaultCatalogName=Google Minimum number of nodes 2 2 2 2 2 2 Maximum number of nodes 50 50 50 50 50 50 Authentication Yes Yes Yes Yes Yes Yes Basic Yes Yes Yes Yes Yes API Token Api Token provided by your app Api Token provided by your app Api Token provided by your app Api Token provided by your app Api Token provided by your app Secret version 1 1 1 1 1 1 AzureAD Yes Client ID Client Id Client Secret Value Client Secret Value Scopes user impersonation Authorization URL https://login.microsoftonline.com/c6f32d0e-6725-4007-81c2-951e853061a6/oauth2/authorize You can use the following connection properties to manage data fetched from Azure DevOps.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"CloneRequirements\": true, \"CopyAllSuites\": true, \"RelatedLinkComment\": \"Cloned from existing test plan googlecloud\", \"DestinationPlanName\": \"TestPlan 2\", \"DestinationPlanAreaPath\": \"GCPTesting New Project\", \"DestinationPlanIteration\": \"GCPTesting New Project\", \"DestinationPlanProject\": \"GCPTesting New Project\", \"SourceTestPlanId\": 1, \"CopyAncestorHierarchy\": true } If the action is successful, the CloneTestPlan task's connectorOutputPayload response parameter will have a value similar to the following: [ { \"CloneOperationId\": null, \"CloneOperationState\": \"queued\", \"sourcetestplan project id\": \"ea4270d3-d335-4ef1-b1af-37a7591880cf\", \"sourcetestplan project name\": \"GCPTesting New Project\", \"sourcetestplan project state\": \"unchanged\", \"sourcetestplan project visibility\": \"unchanged\", \"sourcetestplan project lastupdatetime\": \"0001-01-01T00:00:00\", \"sourcetestplan id\": \"1\", \"sourcetestplan name\": \"Test Plan 1\", \"destinationtestplan id\": \"15\", \"destinationtestplan project id\": \"ea4270d3-d335-4ef1-b1af-37a7591880cf\", \"destinationtestplan project name\": \"GCPTesting New Project\", \"destinationtestplan project state\": \"unchanged\", \"destinationtestplan project visibility\": \"unchanged\", \"destinationtestplan project lastupdatetime\": \"0001-01-01T00:00:00\", \"destinationtestplan updateddate\": \"2025-01-07T14:02:31.247Z\", \"destinationtestplan updatedby displayname\": \"Charlie Cruz\", \"destinationtestplan updatedby url\": \"https://spsprodcin1.vssps.visualstudio.com/A0f5fd5e8-7721-4842-b504-2a8ddb8efeb0/ apis/Identities/df102a0c-59d2-6d69-aecd-556086d6d8d6\", \"destinationtestplan updatedby links avatar href\": \"https://dev.azure.com/sunitavenkata2024/ apis/GraphProfile/MemberAvatars/msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2\", \"destinationtestplan updatedby id\": \"df102a0c-59d2-6d69-aecd-556086d6d8d6\", \"destinationtestplan updatedby uniquename\": \"sunitavenkata2024@outlook.com\", \"destinationtestplan updatedby imageurl\": \"https://dev.azure.com/sunitavenkata2024/ apis/GraphProfile/MemberAvatars/msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2\", \"destinationtestplan updatedby descriptor\": \"msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2\", \"destinationtestplan rootsuite id\": \"16\", \"destinationtestplan rootsuite name\": \"TestPlan 2\", \"destinationtestplan links self href\": \"https://dev.azure.com/sunitavenkata2024/GCPTesting New Project/ apis/testplan/Plans/15\", \"destinationtestplan links clienturl href\": \"mtms://dev.azure.com:443/sunitavenkata2024/p:GCPTesting New Project/Testing/testplan/connect?id=15\", \"destinationtestplan links rootsuite href\": \"https://dev.azure.com/sunitavenkata2024/GCPTesting New Project/ apis/testplan/Plans/15/Suites/16\", \"destinationtestplan revision\": \"1\", \"destinationtestplan name\": \"TestPlan 2\", \"destinationtestplan areapath\": \"GCPTesting New Project\", \"destinationtestplan startdate\": \"2025-01-07T14:02:31.0878913Z\", \"destinationtestplan enddate\": \"2025-01-14T14:02:31.0878913Z\", \"destinationtestplan iteration\": \"GCPTesting New Project\", \"destinationtestplan owner displayname\": \"sunita m V\", \"destinationtestplan owner url\": \"https://spsprodcin1.vssps.visualstudio.com/A0f5fd5e8-7721-4842-b504-2a8ddb8efeb0/ apis/Identities/df102a0c-59d2-6d69-aecd-556086d6d8d6\", \"destinationtestplan owner links avatar href\": \"https://dev.azure.com/sunitavenkata2024/ apis/GraphProfile/MemberAvatars/msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2\", \"destinationtestplan owner id\": \"df102a0c-59d2-6d69-aecd-556086d6d8d6\", \"destinationtestplan owner uniquename\": \"sunitavenkata2024@outlook.com\", \"destinationtestplan owner imageurl\": \"https://dev.azure.com/sunitavenkata2024/ apis/GraphProfile/MemberAvatars/msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2\", \"destinationtestplan owner descriptor\": \"msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2\", \"destinationtestplan state\": \"Active\", \"destinationtestplan testoutcomesettings syncoutcomeacrosssuites\": \"false\", \"cloneoptions relatedlinkcomment\": \"Cloned from existing test plan gcp\", \"cloneoptions copyallsuites\": \"true\", \"cloneoptions copyancestorhierarchy\": \"true\", \"cloneoptions clonerequirements\": \"true\", \"cloneoperationresponse state\": \"queued\", \"cloneoperationresponse links self href\": \"https://dev.azure.com/sunitavenkata2024/GCPTesting New Project/ apis/testplan/Plans/CloneOperation/0\" } ] Example - Clone a test suite In the Configure connector task dialog, click Actions .",
+          "You can use the connection in an integration through the Connectors task."
+        ]
+      },
+      {
+        "title": "Confluence \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description proxy enabled BOOLEAN False Select this checkbox to configure a proxy server for the connection. proxy auth scheme ENUM False The authentication type to use to authenticate to the ProxyServer proxy.",
+          "Note: You can customize the connection node values only if you are a Pay-as-you-go customer. (Optional) In the Advanced settings section, select the Use proxy checkbox to configure a proxy server for the connection and configure the following values: Proxy Auth Scheme : Select the authentication type to authenticate with the proxy server.",
+          "You can use the connection in an integration through the Connectors task."
+        ]
+      },
+      {
+        "title": "Acumatica \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST connection type Field name Details Location europe-west1 Connector Acumatica Connector version 1 Connection Name acumatica Enable Cloud Logging False Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Verbosity Level 5 Minimum number of nodes 2 Maximum number of nodes 50 Host https://examplepetstore.com Username USERNAME Password PASSWORD Secret version 1 OData connection type Field name Details Location europe-west1 Connector Acumatica Connector version 1 Connection Name acumatica Enable Cloud Logging False Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Company Example Organization Endpoint Version 22.200.001 Inquiry Table PX Objects AP APInvoice Schema OData Verbosity Level 5 Minimum number of nodes 2 Maximum number of nodes 50 Host https://examplepetstore.com Username USERNAME Password PASSWORD Secret version 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"ActionName\" : \"PrintSalesOrder\" , \"TopLevelEntity\" : \"SalesOrder\" \"EntityRecord\" : \"{ \" Type \": { \" value \": \" IN \" }, \" OrderNbr \": { \" value \": \" 000007 \" }, \" Cus t omerID \": { \" value \": \" CANDYY \" }, \" Loca t io n ID \": { \" value \": \" MAIN \" }}}\" If the action is successful, the ExecuteAction task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Status\" : \"Success\" , \"AffectedRecords\" : \"1\" }] Entity operation examples This section shows how to perform some of the entity operations in this connector.",
+          "Optionally, in Task Input section of the Connectors task, you can filter your result set by specifying a filter clause ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dani.dana",
+      "dev.azure.com",
+      "developer.gserviceaccount.com",
+      "examplepetstore.com",
+      "gmail.com",
+      "iam.gserviceaccount.com",
+      "login.microsoftonline.com",
+      "msa.ZGYxMDJhMGMtNTlkMi03ZDY5LWFlY2QtNTU2MDg2ZDZkOGQ2",
+      "outlook.com",
+      "sample.txt",
+      "spsprodcin1.vssps.visualstudio.com",
+      "xx.1HOST"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredevops/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/acumatica/configure"
+      ]
+    }
+  ]
+}

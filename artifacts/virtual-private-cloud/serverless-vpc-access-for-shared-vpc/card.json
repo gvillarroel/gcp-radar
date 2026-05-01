@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Serverless VPC Access for Shared VPC",
+  "feature_slug": "serverless-vpc-access-for-shared-vpc",
+  "summary": "Serverless VPC Access support for Shared VPC was introduced in VPC, available in Beta.",
+  "extended_definition": "Serverless VPC Access support for Shared VPC was introduced in VPC, available in Beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 260,
+        "relevance": "",
+        "evidence_snippets": [
+          "Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints .",
+          "Configuration Consumer support Producer support Regional Cloud Service Mesh Regional external Application Load Balancer Regional external proxy Network Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Internal passthrough Network Load Balancer Internal protocol forwarding (target instance) Shared VPC Service Project Admins can create endpoints in Shared VPC service projects that use IP addresses from Shared VPC networks .",
+          "By default, the endpoint can be accessed only by clients that are in the same region and the same VPC network (or Shared VPC network) as the endpoint."
+        ]
+      },
+      {
+        "title": "\"Serverless VPC Access API \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://vpcaccess.googleapis.com REST Resource: v1beta1.projects.locations Methods list GET /v1beta1/{name=projects/ }/locations Lists information about the supported locations for this service.",
+          "Home Documentation Networking Virtual Private Cloud Send feedback Serverless VPC Access API Stay organized with collections Save and categorize content based on your preferences.",
+          "API for managing VPC access connectors."
+        ]
+      },
+      {
+        "title": "\"About accessing regional endpoints through Private Service Connect endpoints\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration Details Consumer configuration (endpoint) Global reachability If global access is enabled Cloud Interconnect traffic Cloud VPN traffic Access through VPC Network Peering Connection propagation through NCC DNS configuration Manual DNS configuration IP version IPv4 or IPv6 Producer Supported services Supported regional Google APIs Specifications Public hostnames for regional endpoints have the following format: SERVICE .",
+          "By default, endpoints can be accessed only by clients that are in the same region and the same VPC network (or Shared VPC network) as the endpoint.",
+          "About accessing regional endpoints through Private Service Connect endpoints This page provides an overview of using Private Service Connect endpoints to access regional endpoints for supported Google APIs in supported regions ."
+        ]
+      },
+      {
+        "title": "\"Reasons for dropped test packets \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "source_id": "site-iam-reference",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Recommendations If you try to access the destination endpoint by using its private IP address, make sure that you have configured a Serverless VPC Access connector for the App Engine standard environment version, the Cloud Run function, or the Cloud Run revision.",
+          "Serverless VPC Access connector is not configured The packet was dropped because the App Engine standard environment version, the Cloud Run function, or the Cloud Run revision does not have a Serverless VPC Access connector configured.",
+          "The packet leaves the source, but there is no Serverless VPC Access connector configured for the App Engine standard environment version, the Cloud Run function, or the Cloud Run revision."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connector.name",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.connectors",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    }
+  ]
+}

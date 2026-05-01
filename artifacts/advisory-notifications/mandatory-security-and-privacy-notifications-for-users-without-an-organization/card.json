@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.305Z",
+  "source_step08_card": "data/step-08/current/products/advisory-notifications/card.json",
+  "product_name": "Advisory Notifications",
+  "product_slug": "advisory-notifications",
+  "feature_name": "Mandatory security and privacy notifications for users without an organization",
+  "feature_slug": "mandatory-security-and-privacy-notifications-for-users-without-an-organization",
+  "summary": "Advisory Notifications sends mandatory security and privacy alerts to Google Cloud users that are not part of an organization.",
+  "extended_definition": "Advisory Notifications sends mandatory security and privacy alerts to Google Cloud users that are not part of an organization.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+      "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+      "https://docs.cloud.google.com/iam/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: organizations.locations.notifications \\_|\\_ Advisory Notifications\\",
+        "url": "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "NotificationType Type of notification Enums NOTIFICATION TYPE UNSPECIFIED Default type NOTIFICATION TYPE SECURITY PRIVACY ADVISORY Security and privacy advisory notifications NOTIFICATION TYPE SENSITIVE ACTIONS Sensitive action notifications NOTIFICATION TYPE SECURITY MSA General security MSA NOTIFICATION TYPE THREAT HORIZONS Threat horizons MSA Methods get Gets a notification. list Lists notifications under a given parent.",
+          "Resource: Notification JSON representation Subject JSON representation Text JSON representation LocalizationState Message JSON representation Body JSON representation Attachment JSON representation Csv JSON representation CsvRow JSON representation NotificationType Methods Resource: Notification A notification object for notifying customers about security and privacy issues.",
+          "Home Documentation Security Advisory Notifications Reference Send feedback REST Resource: organizations.locations.notifications Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Viewing notifications \\_|\\_ Advisory Notifications \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Required roles for projects without an organization If you don't have an organization resource, you receive notifications through your project.",
+          "These permissions are included in the Advisory Notifications Viewer ( roles/advisorynotifications.viewer ) IAM role. advisorynotifications.notifications.get advisorynotifications.notifications.list resourcemanager.organizations.get , if you need to view notifications for your organization resourcemanager.projects.get , if you need to view notifications for your project Required roles for organizations If you have an organization resource, you receive notifications through your organization.",
+          "To help users receive access, Advisory Notifications provides recipients of each notification email a two-week voucher to request permissions from a highly privileged grantor by using the following instructions: Click View notification details in the Advisory Notifications email you received."
+        ]
+      },
+      {
+        "title": "\"IAM overview \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you want to let your security administrator manage allow policies for all resources in your organization, then you could grant them the Security Admin role ( roles/iam.securityAdmin ) on the organization.",
+          "However, they have a higher maintenance burden than predefined roles and there's a limit to the number of custom roles that you can have in your project and in your organization.",
+          "Policy inheritance Google Cloud has container resources—such as projects, folders, and organizations—that let you organize your resources in a parent-child hierarchy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "advisorynotifications.notifications.get",
+      "advisorynotifications.notifications.list",
+      "advisorynotifications.viewer",
+      "iam.securityAdmin",
+      "organizations.locations",
+      "organizations.locations.getSettings",
+      "organizations.locations.notifications",
+      "organizations.locations.notifications.get",
+      "resourcemanager.organizations.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/advisorynotifications.viewer",
+      "roles/iam.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications",
+        "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    }
+  ]
+}

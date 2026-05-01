@@ -659,7 +659,7 @@ async function buildProductCard(productSlug, rolesIndex, permissionsIndex) {
     const iamSummary = {
       explicit_feature_count: 0,
       derived_feature_count: 0,
-      unknown_feature_count: Number(step02Summary?.unique_feature_count || 0),
+      unknown_feature_count: 0,
       related_permission_groups: [],
     };
     const serviceCard = buildServiceCard({

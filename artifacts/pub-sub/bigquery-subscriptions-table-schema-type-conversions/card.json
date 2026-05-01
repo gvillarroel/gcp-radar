@@ -1,0 +1,273 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "BigQuery subscriptions table schema type conversions",
+  "feature_slug": "bigquery-subscriptions-table-schema-type-conversions",
+  "summary": "BigQuery subscriptions with Use table schema enabled now support type conversions for DATE, TIME, DATETIME, TIMESTAMP, NUMERIC, and BIGNUMERIC values.",
+  "extended_definition": "BigQuery subscriptions with Use table schema enabled now support type conversions for DATE, TIME, DATETIME, TIMESTAMP, NUMERIC, and BIGNUMERIC values.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+      "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 224,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you use this option, remember to check the following additional requirements: The fields in the topic schema and the BigQuery schema must have the same names and their types must be compatible with each other.",
+          "Any messages that validated against a deleted schema revision at the time of publish cannot be written to BigQuery using a BigQuery subscription with Use topic schema enabled.",
+          "Use the default Pub/Sub service agent that lets any user with the ability to create subscriptions in the project to create a subscription that writes to the table."
+        ]
+      },
+      {
+        "title": "Changelog \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Version latest keyboard arrow down 2.35.0 (latest) 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.1 2.28.0 2.27.3 2.26.1 2.25.2 2.23.1 2.22.0 2.21.5 2.20.3 2.19.8 2.18.4 2.17.1 2.16.1 2.15.2 2.14.1 2.13.12 2.12.1 2.11.1 2.10.0 2.9.0 2.8.0 2.7.1 2.6.1 2.5.0 2.4.2 2.3.0 2.2.0 2.1.0 2.0.0 1.7.2 1.6.1 1.5.0 1.4.3 1.3.1 1.2.0 1.1.0 1.0.2 0.45.0 0.44.0 0.43.0 PyPI History 2.35.0 (2026-02-05) Documentation A comment for field topic in message .google.pubsub.v1.Subscription is updated ( 07011139f51e4ff195889faf849bd707655e6d46 ) A comment for field analytics hub subscription info in message .google.pubsub.v1.Subscription is updated ( 07011139f51e4ff195889faf849bd707655e6d46 ) A comment for field subscription in message .google.pubsub.v1.CreateSnapshotRequest is updated ( 07011139f51e4ff195889faf849bd707655e6d46 ) add tags documentation links to Pub/Sub resource tags fields ( 07011139f51e4ff195889faf849bd707655e6d46 ) Add the IDENTIFIER field behavior annotation to fields of Cloud Pub/Sub methods that represent a specific identity and need to be sourced with additional care ( 07011139f51e4ff195889faf849bd707655e6d46 ) Features Add AIInference MessageTransform type ( 07011139f51e4ff195889faf849bd707655e6d46 ) 2.34.0 (2025-12-16) Features support mTLS certificates when available (#1566) ( 24761a2fedeb17f5af98a72a62306ad59306a553 ) 2.33.0 (2025-10-30) Features Add AwsKinesisFailureReason.ApiViolationReason ( ac68093 ) Add tags to Subscription, Topic, and CreateSnapshotRequest messages for use in CreateSubscription, CreateTopic, and CreateSnapshot requests respectively ( ac68093 ) Annotate some resource fields with their corresponding API types ( ac68093 ) Bug Fixes Deprecate credentials file argument ( ac68093 ) Documentation A comment for field received messages in message .google.pubsub.v1.StreamingPullResponse is changed ( ac68093 ) 2.32.0 (2025-10-28) Features Adds Python 3.14 support ( #1512 ) ( 95a2690 ) Debug logs ( #1460 ) ( b5d4a45 ) Support the protocol version in StreamingPullRequest ( #1455 ) ( e6294a1 ) Bug Fixes Ignore future warnings on python versions ( #1546 ) ( 8e28dea ) 2.31.1 (2025-07-28) Bug Fixes Change Log Severities for Terminated Streams ( #1433 ) ( 3a3aa79 ) Propagate Otel Context to Subscriber Callback if Provided ( #1429 ) ( b0f6f49 ) 2.31.0 (2025-06-26) Features Add MessageTransformationFailureReason to IngestionFailureEvent ( #1427 ) ( 8ab13e1 ) Bug Fixes Surface Fatal Stream Errors to Future; Adjust Retryable Error Codes ( #1422 ) ( e081beb ) 2.30.0 (2025-06-07) Features Add SchemaViolationReason to IngestionFailureEvent ( #1411 ) ( c046ca2 ) 2.29.1 (2025-05-23) Bug Fixes Remove setup.cfg configuration for creating universal wheels ( #1376 ) ( 60639c4 ) Documentation sample: Add samples for topic and subscription SMTs ( #1386 ) ( 4d072e0 ) Update documentation for JavaScriptUDF to indicate that the message id metadata field is optional instead of required ( #1380 ) ( be90054 ) Update readme links ( #1409 ) ( 77ba05d ) 2.29.0 (2025-03-19) Features Add REST Interceptors which support reading metadata ( 4363179 ) Add support for opt-in debug logging ( 4363179 ) Deprecate enabled field for message transforms and add disabled field ( 4363179 ) Bug Fixes Allow logs to propagate upstream for caplog testing ( #1374 ) ( fa39b0e ) Allow Protobuf 6.x ( #1369 ) ( c95b7a5 ) Fix typing issue with gRPC metadata when key ends in -bin ( 4363179 ) Documentation A comment for field code in message .google.pubsub.v1.JavaScriptUDF is changed ( 4363179 ) Add samples and test for ingestion from Kafka sources ( #1354 ) ( 820f986 ) Deprecate enabled field for message transforms and add disabled field ( 4363179 ) samples: Increase example max bytes setting for cloud storage subscriptions to encourage more performant subscribe ( #1324 ) ( cb760a7 ) 2.28.0 (2025-01-30) Features Add support for message transforms to Topic and Subscription ( #1274 ) ( e5e2f3f ) Bug Fixes Get channel target for a gRPC request ( #1339 ) ( 16ea766 ) Set creds only if transport not provided ( #1348 ) ( 59965a4 ) 2.27.3 (2025-01-24) Bug Fixes Stop using api core default timeouts in publish since they are broken ( #1326 ) ( ba2c2ee ) 2.27.2 (2025-01-06) Bug Fixes Handle TransportError Exceptions thrown from gapic publish ( #1318 ) ( 0e058c7 ) 2.27.1 (2024-11-08) Bug Fixes Add support for Python3.13 ( #1302 ) ( ab22e27 ) 2.27.0 (2024-11-02) Features Add support for Python 3.13 ( #1281 ) ( 0b46a33 ) Bug Fixes Mark test streaming pull max messages flaky ( #1288 ) ( d6635a0 ) 2.26.1 (2024-10-10) Documentation Add ingestion from GCS sample ( #1273 ) ( b59cc8d ) 2.26.0 (2024-10-09) Features Add ingestion Cloud Storage fields and Platform Logging fields to Topic ( #1248 ) ( a7a4caa ) 2.25.2 (2024-09-30) Documentation Add command line args for OpenTelemetry Subscribe sample ( #1265 ) ( 0ff7f2a ) 2.25.1 (2024-09-29) Bug Fixes Update the requirements.txt for samples directory ( #1263 ) ( 5cce8b1 ) 2.25.0 (2024-09-28) Features Add OpenTelemetry publish sample ( #1258 ) ( bc13ff0 ) 2.24.0 (2024-09-24) Features Add OpenTelemetry support for Subscribe Side ( #1252 ) ( 1b6f3d2 ) Open Telemetry Publish Side Support ( #1241 ) ( bb5f3d1 ) Bug Fixes Fix flaky test ( #1254 ) ( 1ae49de ) 2.23.1 (2024-09-09) Bug Fixes Replace asserts with None checks for graceful shutdown ( #1244 ) ( ced4f52 ) 2.23.0 (2024-07-29) Features Add max messages batching for Cloud Storage subscriptions ( #1224 ) ( 91c89d3 ) 2.22.0 (2024-07-06) Features Add service account email for export subscriptions ( ec0cc34 ) Add use topic schema for Cloud Storage Subscriptions ( ec0cc34 ) 2.21.5 (2024-06-20) Bug Fixes Allow Protobuf 5.x ( a369f04 ) 2.21.4 (2024-06-18) Documentation samples: Add code sample for optimistic subscribe ( #1182 ) ( d8e8aa5 ) 2.21.3 (2024-06-10) Bug Fixes Race condition where future callbacks invoked before client is in paused state ( #1145 ) ( d12bac6 ) Suppress warnings caused during pytest runs ( #1189 ) ( cd51149 ) Typecheck errors in samples/snippets/subscriber.py ( #1186 ) ( 3698450 ) 2.21.2 (2024-05-30) Bug Fixes Test failures due to grpcio changes ( #1178 ) ( 086dd46 ) 2.21.1 (2024-04-04) Bug Fixes Set timeout to infinite for publishing with ordering keys enabled ( #1134 ) ( 67daf3c ) 2.21.0 (2024-03-26) Features Add custom datetime format for Cloud Storage subscriptions ( #1131 ) ( 4da6744 ) 2.20.3 (2024-03-21) Documentation samples: Update Region Tags ( #1128 ) ( e3bc89e ) 2.20.2 (2024-03-15) Documentation samples: Add Create Topic with Kinesis IngestionDataSourceSettings Sample ( #1120 ) ( 83dc9ff ) samples: Update Topic with Kinesis Ingestion Settings ( #1123 ) ( e0e2d83 ) 2.20.1 (2024-03-06) Bug Fixes Catch and surface BaseException() ( #1108 ) ( 07e427f ) 2.20.0 (2024-03-05) Features Add include recaptcha script for as a new action in firewall policies ( #1109 ) ( 54041a5 ) Documentation samples: Correct type and description of timeout parameter in subscriber quickstart ( #1051 ) ( 141a473 ) 2.19.8 (2024-03-05) Bug Fixes deps: Exclude google-auth 2.24.0 and 2.25.0 ( #1102 ) ( 165c983 ) 2.19.7 (2024-02-24) Bug Fixes deps: Require google-api-core&gt;=1.34.1 ( #1080 ) ( 1a5a134 ) 2.19.6 (2024-02-23) Bug Fixes Remove LOGGER.exception() line ( #1087 ) ( a395d26 ) 2.19.5 (2024-02-22) Bug Fixes Update system test python versions ( #1096 ) ( c659ac7 ) 2.19.4 (2024-02-09) Bug Fixes diregapic: S/bazel/bazelisk/ in DIREGAPIC build GitHub action ( #1064 ) ( d56ad12 ) 2.19.3 (2024-02-08) Bug Fixes Add google-auth as a direct dependency ( #1076 ) ( 5ce7301 ) 2.19.2 (2024-02-08) Bug Fixes Unit test failures in https://github.com/googleapis/python-pubsu… ( #1074 ) ( 3c6d128 ) 2.19.1 (2024-02-02) Documentation samples: Swap writer and reader schema to correct places ( 265f410 ) 2.19.0 (2023-12-10) Features Add use table schema field to BigQueryConfig ( #1035 ) ( ac6d912 ) Add support for Python 3.12 ( #1025 ) ( 660b8ea ) Introduce compatibility with native namespace packages ( #1024 ) ( 0432420 ) Bug Fixes Use retry async instead of retry in async client ( #1030 ) ( 05dd571 ) 2.18.4 (2023-09-09) Documentation Minor formatting ( #988 ) ( 4eea8c5 ) 2.18.3 (2023-08-18) Bug Fixes Make retry policy back off more aggressively for RPCs that retry RESOURCE EXHAUSTD ( #979 ) ( 4073b3d ) 2.18.2 (2023-08-07) Bug Fixes Change retry multiplier from 1.3 to 4, for requests that retry Resour… ( #971 ) ( e4364d2 ) 2.18.1 (2023-07-26) Documentation Clarified where ordering key will be written if write metadata is set ( #965 ) ( 3d95034 ) 2.18.0 (2023-07-12) Features Add push config wrapper fields ( #925 ) ( 8e803cf ) Bug Fixes Add async context manager return types ( #944 ) ( a3b2061 ) Documentation Tightened requirements on cloud storage subscription filename suffixes ( #938 ) ( f54dcd0 ) Update Community section in README.rst ( #945 ) ( dea258c ) 2.17.1 (2023-05-23) Documentation Add attributes to pubsub v1.types ( #921 ) ( 4607dca ) 2.17.0 (2023-05-12) Features Add cloud storage subscription fields ( #918 ) ( 6e262da ) 2.16.1 (2023-05-05) Bug Fixes Allow dropping cleaned-up keys ( #911 ) ( 4b3157c ) Documentation Add comment to setup.py ( #905 ) ( 9825109 ) 2.16.0 (2023-04-06) Features Enable “rest” transport in Python for services supporting numeric enums ( #863 ) ( a80c1d1 ) Documentation Fix formatting of request arg in docstring ( #894 ) ( ee2ea73 ) 2.15.2 (2023-03-20) Documentation Update missing docstrings ( #890 ) ( 5849e04 ) 2.15.1 (2023-03-14) Bug Fixes Set x-goog-request-params for streaming pull request ( #884 ) ( 0d247e6 ) 2.15.0 (2023-02-22) Features Add google.api.method.signature to update methods ( 3dd43d6 ) Add temporary failed ack ids to ModifyAckDeadlineConfirmation ( 3dd43d6 ) Bug Fixes Add service yaml parameters to py gapic library BUILD.bazel targets ( 3dd43d6 ) Move global import in publisher sample ( #866 ) ( 271a46d ) Port proto changes ( #871 ) ( 3dd43d6 ) Documentation Clarify BigQueryConfig PERMISSION DENIED state ( 3dd43d6 ) Clarify subscription description ( 3dd43d6 ) Fix Pull description ( 3dd43d6 ) Fix PullResponse description ( 3dd43d6 ) Replacing HTML code with Markdown ( 3dd43d6 ) Update Pub/Sub topic retention limit from 7 days to 31 days ( 3dd43d6 ) 2.14.1 (2023-02-08) Bug Fixes Add context manager return types ( 4f690b9 ) Documentation Add documentation for enums ( 4f690b9 ) Mark revision id in CommitSchemaRevisionRequest as deprecated ( #861 ) ( 09b846d ) 2.14.0 (2023-01-18) Features Add schema evolution methods and fields ( 9479356 ) Add support for python 3.11 ( 9479356 ) 2.13.12 (2023-01-06) Bug Fixes deps: Require google-api-core >=1.34.0, >=2.11.0 ( 060f00b ) Drop usage of pkg resources ( 060f00b ) Fix timeout default values ( 060f00b ) Documentation samples: Snippetgen should call await on the operation coroutine before calling result ( 060f00b ) 2.13.11 (2022-11-11) Bug Fixes Remove suboptimal logic in leasing behavior ( #816 ) ( f067af3 ) 2.13.10 (2022-10-14) Bug Fixes Batch at most 1,000 ack ids per request ( #802 ) ( 4361e67 ) deps: Allow protobuf 3.19.5 ( #801 ) ( fa23503 ) Silence invalid ack id warnings for receipt modacks ( #798 ) ( 17feea5 ) Miscellaneous Chores release as 2.13.10 ( 34f022b ) 2.13.8 (2022-10-03) Bug Fixes deps: Require protobuf >= 3.20.2 ( #792 ) ( 1a54f7c ) 2.13.7 (2022-09-22) Bug Fixes Remove expired ack ids ( #787 ) ( b4b809d ) 2.13.6 (2022-08-11) Bug Fixes deps: allow protobuf < 5.0.0 ( #762 ) ( 260bd18 ) deps: require proto-plus >= 1.22.0 ( 260bd18 ) set stream ack deadline to max duration per lease extension or 60 s, set ack deadline to min duration per lease extension or 10 s ( #760 ) ( 4444129 ) Update stream ack deadline with ack deadline ( #763 ) ( e600ad8 ) 2.13.5 (2022-08-10) Documentation reorganize sphinx structure ( #751 ) ( b6de574 ) 2.13.4 (2022-07-15) Bug Fixes Remove bidi modacks on StreamingPull initial request ( #738 ) ( 1e7d469 ) 2.13.3 (2022-07-13) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #735 ) ( a5624fb ) 2.13.2 (2022-07-08) Bug Fixes deps: require google-api-core >= 2.8.0 ( #726 ) ( c80ad41 ) 2.13.1 (2022-07-07) Bug Fixes change info logs to debug ( #693 ) ( 950fbce ) require python 3.7+ ( #730 ) ( 0d949b8 ) 2.13.0 (2022-06-06) Features add BigQuery configuration for subscriptions ( #685 ) ( 6fa03be ) Bug Fixes add info log for bidi streaming pull ack deadline requests ( #692 ) ( fcb67dd ) deps: require protobuf <4.0.0dev ( #699 ) ( dcdf013 ) Documentation fix changelog header to consistent size ( #700 ) ( 93f2b62 ) 2.12.1 (2022-05-11) Bug Fixes Add emulator support to schema service ( #658 ) ( 1a07d7c ) Handle duplicate acks with streaming pull ( #662 ) ( 219491e ) set min snooze on lease management to .01 sec ( #678 ) ( 91c6e69 ) Documentation fix project path typo in UPGRADING.md ( #660 ) ( 20d661c ) mark eod as preview ( #657 ) ( 418e1a3 ) 2.12.0 (2022-04-06) Features increase GRPC max metadata size to 4 MB ( #623 ) ( 54b9e07 ) Bug Fixes mypy errors ( #622 ) ( dab13d5 ) process ErrorInfo / GRPC errors for ack/modack only when exactly-once delivery is enabled ( #626 ) ( cc1953b ) 2.11.0 (2022-03-09) Features retry temporary GRPC statuses for ack/modack/nack when exactly-once delivery is enabled ( #607 ) ( a91bed8 ) return singleton success future for exactly-once methods in Message ( #608 ) ( 253ced2 ) Bug Fixes deps: require google-api-core>=1.31.5, >=2.3.2 ( #600 ) ( 1608b7f ) deps: require proto-plus>=1.15.0 ( 1608b7f ) 2.10.0 (2022-03-04) Features add api key support ( #571 ) ( cdda762 ) add exactly once delivery flag ( #577 ) ( d6614e2 ) add support for exactly once delivery ( #578 ) ( 95a86fa ) exactly-once delivery support ( #550 ) ( 2fb6e15 ) Bug Fixes deps: move libcst to extras ( #585 ) ( 0846762 ) refactor client classes for safer type checking ( #552 ) ( 7f705be ) resolve DuplicateCredentialArgs error when using credentials file ( 8ca8cf2 ) Samples samples: create subscription with filtering enabled #580 samples: handle empty response in sync pull samples #586 samples: sample for receiving messages with exactly-once delivery enabled #588 samples: create subscription with exactly once delivery #592 ( https://github.com/googleapis/python-pubsub/pull/588 Documentation add autogenerated code snippets ( aa3754c ) Docs have inconsistent default values for max latency and max bytes ( #572 ) ( d136dfd ) 2.9.0 (2021-11-10) Features add context manager support in client ( #516 ) ( 51eae67 ) add support for Python 3.10 ( #518 ) ( bb25d75 ) Bug Fixes add ‘dict’ annotation type to ‘request’ ( b72522a ) deps: drop packaging dependency ( 290b9c5 ) deps: require google-api-core >= 1.28.0 ( 290b9c5 ) improper types in pagers generation ( 2ad639d ) Documentation add type annotations to codebase ( #509 ) ( 093cabf ) list oneofs in docstring ( 290b9c5 ) 2.8.0 (2021-09-02) Features closed subscriber as context manager raises ( #488 ) ( a05a3f2 ) Documentation clarify the types of Message parameters ( #486 ) ( 633e91b ) 2.7.1 (2021-08-13) Bug Fixes remove dependency on pytz ( #472 ) ( 972cc16 ) 2.7.0 (2021-07-24) Features Add always use jwt access . ( 1f30ef7 ) Add method signature for Subscriber.Pull without the deprecated return immediately field. ( 1f30ef7 ) Add Pub/Sub topic retention fields. ( #456 ) ( 911829d ) Add subscription properties to streaming pull response. ( 1f30ef7 ) Support self-signed JWT flow for service accounts. ( 1f30ef7 ) Bug Fixes Add async client to %name %version/init.py . ( 1f30ef7 ) Disable always use jwt access . ( 1f30ef7 ) Enable self signed JWT for gRPC. ( #458 ) ( c6e0ff6 ) Dependencies Add packaging requirement. ( 1f30ef7 ) Require google-api-core >= 1.26.0 . ( 1f30ef7 ) 2.6.1 07-05-2021 10:33 PDT Dependencies Fix possible crash by requiring grpcio >= 1.38.1 . ( #414 ) ( 7037a28 ) Documentation Adjust samples for publishing with error handler and flow control. ( #433 ) Internal / Testing Changes Fix flaky sync pull sample test. ( #434 ) Mitigate flaky snippets tests. ( #432 ) 2.6.0 (2021-06-17) Features support customizable retry and timeout settings on the publisher client ( #299 ) ( 7597604 ) Bug Fixes ACK deadline set for received messages can be too low ( #416 ) ( e907f6e ) threads can skip the line in publisher flow controller ( #422 ) ( ef89f55 ) Documentation block until the streaming pull shuts down ( #424 ) ( d0d0b70 ) explain that future.cancel() is non-blocking ( #420 ) ( c825789 ) 2.5.0 (2021-05-18) Features Make publish futures compatible with concurrent.futures.as completed() . ( #397 ) ( e29a2c0 ) Bug Fixes Scheduler errors when executor in shutdown. ( #399 ) ( 39a83d3 ) 2.4.2 05-06-2021 23:50 PDT Implementation Changes Fix memory leak when publishing messages. ( #406 ) Do not crash if distribution cannot be found when extracting semantic version. ( #393 ) Emit a warning if return immediately is set with synchronous pull. ( #355 ) Regenerate GAPIC layer with latest changes, use explicit default timeouts. ( #345 ) Documentation Add additional info on use legacy flow control parameter. ( #301 ) Remove EXPERIMENTAL tag for ordering keys in publisher/client.py . ( #324 ) Fix create topic() call in README. ( #360 ) Generate PyPI token in secrets manager, fix spacing in docs (via synth). ( #384 ) Add SECURITY.md . ( #401 ) Internal / Testing Changes Require 100% unit test coverage (via synth). ( #359 ) Bump test coverage to 100%. ( #364 ) Fix streaming pull close unit test flakiness. ( #361 ) Pass explicit credentials in all unit tests creating clients. ( #369 ) Fix flaky test for blocking pull shutdown. ( #378 ) Add missing licence header. ( #377 ) 2.4.1 (2021-03-30) Bug Fixes Move await msg callbacks flag to subscribe() method, fixing a regression in Pub/Sub Lite client. ( #320 ) ( d40d027 ) SSL error when using the client with the emulator. ( #297 ) ( 83db672 ) Implementation Changes (samples) Bump the max time to 10 minutes for a flaky test. ( #311 ) ( e2678d4 ), closes #291 (samples) Mark delivery attempts test as flaky. ( #326 ) ( 5a97ef1 ) (samples) Mitigate flakiness in subscriber tests. ( #304 ) ( 271a385 ) (samples) Retry InternalServerError in dead letter policy test. ( #329 ) ( 34c9b11 ), closes #321 Documentation Remove EXPERIMENTAL tag for ordering keys in types.py . ( #323 ) ( 659cd7a ) Remove EXPERIMENTAL tag from Schema service (via synth). ( #307 ) ( ad85202 ) 2.4.0 02-22-2021 05:02 PST Implementation Changes New Features Add graceful streaming pull shutdown. ( #292 ) Documentation Update samples with using the subscriber client as a context manager. ( #254 ) 2.3.0 (2021-02-08) Features surface SchemaServiceClient in google.cloud.pubsub ( #281 ) ( 8751bcc ) Bug Fixes client version missing from the user agent header ( #275 ) ( b112f4f ) Don’t open the google.cloud package by adding pubsub.py ( #269 ) ( 542d79d ) flaky samples tests ( #263 ) ( 3d6a29d ) Modify synth.py to update grpc transport options ( #266 ) ( 41dcd30 ) pass anonymous credentials for emulator ( #250 ) ( 8eed8e1 ) remove grpc send/recieve limits ( #259 ) ( fd2840c ) 2.2.0 (2020-11-16) Features Add dead lettering max delivery attempts argument ( #236 ) ( 7687ae5 ) Enable server side flow control by default with the option to turn it off ( #231 ) ( 94d738c ) Bug Fixes fix mtls issue in handwritten layer ( #226 ) ( 09a409c ) make fixup script consistent with migration docs ( #208 ) ( b64e218 ) Documentation document potentially unexpected blocking behavior of publish() method ( #214 ) ( b6d9bd7 ) fix get topic path in subscriber sample ( #210 ) ( 7228f6c ) 2.1.0 09-21-2020 02:19 PDT Implementation Changes Convert all RPC error types to exceptions. ( #163 ) ( #170 ) Pass client options to publisher and subscriber clients. ( #166 ) ( #190 ) New Features Regenerate the client lib to pick new mtls env (via synth). ( #197 ) Documentation Add subscription detachment sample. ( #152 ) Use new call syntax in subscriber docs. ( #198 ) ( #203 ) Internal / Testing Changes Update CODEOWNERS. ( #193 ) 2.0.0 09-11-2020 05:03 PDT Implementation Changes Transition the library to microgenerator. ( #158 ) This is a breaking change that introduces several method signature changes and drops support for Python 2.7 and 3.5 .",
+          "1.0.1 09-27-2019 07:01 PDT Implementation Changes Set default stream ACK deadline to subscriptions’. ( #9268 ) Documentation Fix intersphinx reference to requests. ( #9294 ) Link to correct TimeoutError in futures docs. ( #9216 ) Internal / Testing Changes Adjust messaging RPC timeout settings (via synth). #9279 1.0.0 08-29-2019 09:27 PDT Implementation Changes Add ‘ReceivedMessage.delivery attempt’ field (via synth). ( #9098 ) Remove send/recv msg size limit, update docstrings (via synth). ( #8964 ) Documentation Update docstrings for client kwargs and fix return types uris ( #9037 ) Remove CI for gh-pages, use googleapis.dev for api core refs. ( #9085 ) Remove compatability badges from READMEs. ( #9035 ) Internal / Testing Changes Add dead-letter-policy field in preparation for its implementation (via synth) ( #9078 ) 0.45.0 07-31-2019 02:03 PDT Implementation Changes Remove deprecated methods and settings ( #8836 ) Documentation Use double backticks for ReST correctness. ( #8829 ) Update intersphinx mapping for requests. ( #8805 ) 0.44.0 07-29-2019 04:28 PDT Implementation Changes PubSub: Deprecate several FlowControl settings and things in Message class ( #8796 ) Documentation Pub/Sub: document regional endpoint ( #8789 ) 0.43.0 07-24-2019 17:13 PDT Implementation Changes Accomodate new location of ‘IAMPolicyStub’ (via synth). ( #8680 ) Use kwargs in test subscriber client ( #8414 ) New Features Add options argument to clients’ get iam policy ; pin black version (via synth). ( #8657 ) Add ‘client options’ support, update list method docstrings (via synth). ( #8518 ) Dependencies Bump minimum version for google-api-core to 1.14.0. ( #8709 ) Update pin for ‘grpc-google-iam-v1’ to 0.12.3+. ( #8647 ) Documentation Link to googleapis.dev documentation in READMEs. ( #8705 ) Add compatibility check badges to READMEs. ( #8288 ) Fix typo in publisher index. ( #8619 ) Document how to choose the PubSub auth method ( #8429 ) Document different PuSub received message types ( #8468 ) PubSub: Document batch settings, make synth operations idempotent ( #8448 ) Add custom docstrings for FlowControl enum and values (via synth). ( #8426 ) Internal / Testing Changes Add docs job to publish to googleapis.dev. ( #8464 ) Add system tests for PubSub clients ( #8277 ) 0.42.1 06-18-2019 15:14 PDT Implementation Changes Increase the minimum allowed version for api core. ( #8419 ) Allow kwargs to be passed to create channel. ( #8399 ) 0.42.0 06-18-2019 11:32 PDT Implementation Changes Core: Mitigate busy reopen loop in ResumableBidiRpc consuming 100% CPU ( #8193 ) Pub/Sub: Increase initial rpc timeout for messaging (via synth). ( #8219 ) PubSub: Release the state lock before calling the publish api ( #8234 ) Pub/Sub: Expose publish retry settings ( #8231 ) Prevent unhandled background error on SPM shutdown ( #8111 ) Update timeouts, blacken noxfile.py, setup.py (via synth). ( #8128 ) PubSub: Fix streaming pull incorrectly handling FlowControl max messages setting ( #7948 ) Documentation Document PubSub FlowControl settings ( #8293 ) Replace readthedocs links with links to github docs. ( #8291 ) Pub/Sub: surface publish future in documentation ( #8229 ) Pubsub: Separate subscriber and publish future documentation. ( #8205 ) Drop mention of long-removed ‘policy’ object. ( #8081 ) Internal / Testing Changes Pub/Sub: staticmethod check ( #8091 ) Add empty lines (via synth). ( #8067 ) 0.41.0 05-15-2019 13:57 PDT New Features Add kms key name arg to create topic ; remove BETA warnings (via synth). ( #7936 ) Add message ordering (via synth). ( #7551 ) Implementation Changes Propagate subscribe callback errors to main thread ( #7954 ) Fix pubsub Streaming Pull shutdown on RetryError ( #7863 ) Make PubSub subscriber Scheduler inherit from ABC ( #7690 ) Add routing header to method metadata (via synth). ( #7623 ) Internal / Testing Changes Remove classifier for Python 3.4 for end-of-life. ( #7535 ) Add nox session docs (via synth). ( #7778 ) Pub/Sub (nit): wrong var name in sample ( #7705 ) 0.40.0 03-15-2019 14:09 PDT Implementation Changes Propagate ‘RetryError’ in ‘PublisherClient.publish’. ( #7071 ) Protoc-generated serialization update.. ( #7091 ) New Features Add ‘authentication method’ to ‘PushConfig’ (via synth). ( #7512 ) Add protos as an artifact to library ( #7205 ) Pub/sub: pass transport w/ custom channel to GAPIC API clients. ( #7008 ) Dependencies Documentation Updated client library documentation URLs. ( #7307 ) Update copyright headers Fix broken docstring cross-reference links. ( #7132 ) Docstring changes from updates to .proto files. ( #7054 ) Pick up stub docstring fix in GAPIC generator. ( #6978 ) Internal / Testing Changes Copy proto files alongside protoc versions.",
+          "New Features Add support for server-side flow control. ( #143 ) ( 04e261c ) Dependencies Update samples dependency google-cloud-pubsub to v1.6.1 . ( #144 ) ( 1cb6746 ) Documentation Add pubsub/cloud-client samples from the common samples repo (with commit history). ( #151 ) Add flow control section to publish overview. ( #129 ) ( acc19eb ) Add a link to Pub/Sub filtering language public documentation to pubsub.proto . ( #121 ) ( 8802d81 ) 1.6.1 (2020-06-30) Documentation added Python2 sunset notice (synth) ( #140 ) ( c8f6378 ) explain how to nack a sync pull message ( #123 ) ( f2eec65 ) 1.6.0 (2020-06-09) Features Add flow control for message publishing ( #96 ) ( 06085c4 ) Bug Fixes Fix PubSub incompatibility with api-core 1.17.0+ ( #103 ) ( c02060f ) Documentation Clarify that Schedulers shouldn’t be used with multiple SubscriberClients ( #100 ) ( cf9e87c ) Fix update subscription/snapshot/topic samples ( #113 ) ( e62c38b ) Internal / Testing Changes Re-generated service implementaton using synth: removed experimental notes from the RetryPolicy and filtering features in anticipation of GA, added DetachSubscription (experimental) ( #114 ) ( 0132a46 ) Incorporate will accept() checks into publish() ( #108 ) ( 6c7677e ) 1.5.0 (2020-05-04) Features add methods for listing snapshots (via synth) ( #66 ) ( 4ce898e ) send client id with StreamingPullRequest ( #58 ) ( 9f8acfa ), closes #62 1.4.3 (2020-04-16) Bug Fixes fix docs warnings in Sphinx 3.0+ ( #70 ) ( 21e761e ) restrict api-core dependency to < 1.17.0 ( #76 ) ( 191b051 ) 1.4.2 (2020-03-25) Bug Fixes update generated retry timings for publish and pull rpcs via synth ( #43 ) ( 4f7fe85 ) use client options.api endpoint parameter instead of ignoring it ( #59 ) ( 56b8d7b ), closes #61 1.4.1 (2020-03-23) Bug Fixes Don’t assert on unordered publishes after publish error. ( #49 ) ( ea19ce6 ) 1.4.0 (2020-03-06) Features pubsub: implement max duration per lease extension option ( #38 ) ( d911a2d ) 1.3.1 (2020-02-28) Bug Fixes shutdown error on streaming pull callback error ( #40 ) ( 552539e ) 1.3.0 (2020-02-20) Features pubsub: ordering keys ( #26 ) ( cc3093a ) add context manager capability to subscriber ( #32 ) ( b58d0d8 ) 1.2.0 (2020-02-05) Features pubsub: add delivery attempt property to message object received by user code ( #10205 ) ( a0937c1 ) add StreamingPullRequest.client id field (via synth) ( 199d56a ) Bug Fixes pubsub: handle None in on response callback ( #9982 ) ( 6596c4b ) replace unsafe six.PY3 with PY2 for better future compatibility with Python 4 ( #10081 ) ( 975c1ac ) 1.1.0 12-09-2019 18:51 PST Implementation Changes Update client configurations (via synth). ( #9784 ) Include request overhead when computing publish batch size overflow. ( #9911 ) Split large (mod)ACK requests into smaller ones. ( #9594 ) Fix messages delivered multiple times despite a long ACK deadline. ( #9525 ) Update batching and flow control parameters to be same as the other client libraries. ( #9597 ) Add StreamingPullManager. should terminate . ( #9335 ) New Features Add stop method. ( #9365 ) Dependencies Add Python 2 sunset banner to documentation. ( #9036 ) Documentation Change spacing in docs templates (via synth). ( #9759 ) Internal / Testing Changes Refactor fake leaser test helper. ( #9632 ) Add subscriber role test for streaming. ( #9507 ) 1.0.2 09-30-2019 11:57 PDT Implementation Changes Streaming pull shouldn’t need subscriptions.get permission ( #9360 )."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "When true, use the topic's schema as the columns to write to in BigQuery, if it exists. use topic schema and use table schema cannot be enabled at the same time. writeMetadata boolean Optional.",
+          "When true, use the BigQuery table's schema as the columns to write to in BigQuery. use table schema and use topic schema cannot be enabled at the same time. serviceAccountEmail string Optional.",
+          "Pattern: \"projects/{project}/locations/{location}/subscriptions/{subscription}\" MessageTransform JSON representation { \"enabled\" : boolean , \"disabled\" : boolean , // Union field transform can be only one of the following: \"javascriptUdf\" : { object ( JavaScriptUDF ) } , \"aiInference\" : { object ( AIInference ) } // End of list of possible types for union field transform . } Fields enabled (deprecated) boolean This item is deprecated!"
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "When true, use the topic's schema as the columns to write to in BigQuery, if it exists. use topic schema and use table schema cannot be enabled at the same time. writeMetadata boolean Optional.",
+          "When true, use the BigQuery table's schema as the columns to write to in BigQuery. use table schema and use topic schema cannot be enabled at the same time. serviceAccountEmail string Optional.",
+          "When true, use the topic's schema as the columns to write to in BigQuery, if it exists. use topic schema and use table schema cannot be enabled at the same time. writeMetadata boolean Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.py",
+      "concurrent.futures.as",
+      "control.max",
+      "future.cancel",
+      "github.com",
+      "googleapis.dev",
+      "init.py",
+      "nox.py",
+      "noxfile.py",
+      "options.api",
+      "pubsub.googleapis.com",
+      "pubsub.proto",
+      "pubsub.py",
+      "requirements.txt",
+      "setup.cfg",
+      "setup.py",
+      "six.PY3",
+      "subscriber.py",
+      "subscriptions.get",
+      "synth.py",
+      "types.py",
+      "v1.0.0",
+      "v1.6.1",
+      "v1.types"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/changelog",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    }
+  ]
+}

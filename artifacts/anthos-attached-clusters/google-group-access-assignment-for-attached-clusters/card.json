@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.573Z",
+  "source_step08_card": "data/step-08/current/products/anthos-attached-clusters/card.json",
+  "product_name": "Anthos Attached Clusters",
+  "product_slug": "anthos-attached-clusters",
+  "feature_name": "Google-group access assignment for attached clusters",
+  "feature_slug": "google-group-access-assignment-for-attached-clusters",
+  "summary": "Enabled attached cluster access control using Google groups instead of per-user access starting with version 1.26.",
+  "extended_definition": "Enabled attached cluster access control using Google groups instead of per-user access starting with version 1.26.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to your CNCF conformant cluster \\_|\\_ GKE attached clusters \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This step is only necessary if you want to grant users or groups the ability to create or update clusters; it's not required for simply accessing a cluster .",
+          "In other words, you grant a Google group access to a cluster and any users belonging to that Google group have access to the cluster.",
+          "Using Google Groups to grant cluster access is more efficient than creating separate authorizations for individual users."
+        ]
+      },
+      {
+        "title": "\"Connect to your AKS cluster \\_|\\_ GKE attached clusters \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This step is only necessary if you want to grant users or groups the ability to create or update clusters; it's not required for simply accessing a cluster .",
+          "In other words, you grant a Google group access to a cluster and any users belonging to that Google group have access to the cluster.",
+          "Using Google Groups to grant cluster access is more efficient than creating separate authorizations for individual users."
+        ]
+      },
+      {
+        "title": "\"Connect to your EKS attached cluster \\_|\\_ GKE attached clusters \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This step is only necessary if you want to grant users or groups the ability to create or update clusters; it's not required for simply accessing a cluster .",
+          "In other words, you grant a Google group access to a cluster and any users belonging to that Google group have access to the cluster.",
+          "Using Google Groups to grant cluster access is more efficient than creating separate authorizations for individual users."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "rbac.authorization.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/connect-to-cluster"
+      ]
+    }
+  ]
+}

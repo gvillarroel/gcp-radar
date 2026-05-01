@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.686Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Hierarchical Resource Quotas",
+  "feature_slug": "hierarchical-resource-quotas",
+  "summary": "Hierarchy Controller includes preview support for hierarchical resource quotas that apply to a namespace and its descendants.",
+  "extended_definition": "Hierarchy Controller includes preview support for hierarchical resource quotas that apply to a namespace and its descendants.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/hierarchical-repo",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Disable Hierarchy Controller \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You need to manually remove those CRDs using kubectl : HierarchyConfiguration HNCConfiguration SubnamespaceAnchor HierarchicalResourceQuota To remove the Hierarchy Controller fields, review the instructions for the method that you used to install Hierarchy Controller: gcloud Remove the hierarchyController block from your Google Cloud CLI apply spec file .",
+          "To determine how to disable Hierarchy Controller, inspect the kubectl ConfigManagement object or gcloud apply spec file and take an action that corresponds to the value in the following fields: hierarchyController.enablePodTreeLabels : if true , and you previously enabled hierarchical observability, don't proceed with the steps on this page.",
+          "Config Connector Set Hierarchy Controller fields to false in the GKEHubFeatureMembership resource."
+        ]
+      },
+      {
+        "title": "Use a hierarchical repository \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/hierarchical-repo",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The system/ directory contains configs for the ConfigManagement Operator. ├── cluster │ ├── clusterrolebinding-namespace-reader.yaml │ ├── clusterrole-namespace-reader.yaml │ ├── clusterrole-secret-admin.yaml │ └── clusterrole-secret-reader.yaml ├── namespaces │ ├── limit-range.yaml │ ├── team-1 │ │ ├── namespace.yaml │ │ ├── network-policy-default-deny-egress.yaml │ │ ├── resource-quota-pvc.yaml │ │ ├── rolebinding-secret-reader.yaml │ │ └── sa.yaml │ └── team-2 │ ├── namespace.yaml │ ├── network-policy-default-deny-all.yaml │ ├── resource-quota-pvc.yaml │ ├── rolebinding-secret-admin.yaml │ └── sa.yaml ├── README.md └── system └── repo.yaml Use namespace inheritance and abstract namespaces With a hierarchical source of truth, you can use the concept of namespace inheritance to automatically apply configs to groups of namespaces in all the clusters where those namespaces exist (or should exist).",
+          "We recommend that you use an unstructured source of truth instead of hierarchical because it provides the same core capabilities, but gives you more flexibility in organizing your resources.",
+          "Each team has its own Kubernetes namespace, Kubernetes service account, resource quotas, network policies, rolebindings."
+        ]
+      },
+      {
+        "title": "Error reference \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you were previously syncing to a hierarchical repository and had to declare the controller namespace alongside any resources, consider switching to an unstructured repository for more flexibility in your source structure.",
+          "KNV1033: Illegal System Resource Placement Error If you're using a hierarchical repository, you can only declare HierarchyConfig and Repo Kinds in the system/ directory.",
+          "If you declared the resource-group-system or config-management-monitoring namespaces, unmanage the controller namespace: Update Config Sync to stop managing the namespace and any resource declared underneath."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.yaml",
+      "all.yaml",
+      "egress.yaml",
+      "namespace.yaml",
+      "pvc.yaml",
+      "range.yaml",
+      "reader.yaml",
+      "repo.yaml",
+      "sa.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/hierarchical-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/hierarchical-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/hierarchical-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    }
+  ]
+}

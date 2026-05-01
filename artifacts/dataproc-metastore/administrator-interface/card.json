@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.345Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore",
+  "feature_name": "Administrator interface",
+  "feature_slug": "administrator-interface",
+  "summary": "The administrator interface provides a centralized tool to inspect and manage metadata and supports altering Hive table properties; The administrator interface provides a centralized tool to inspect and manage the metadata stored in a Dataproc Metastore service.",
+  "extended_definition": "The administrator interface provides a centralized tool to inspect and manage metadata and supports altering Hive table properties; The administrator interface provides a centralized tool to inspect and manage the metadata stored in a Dataproc Metastore service.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataproc Metastore administrator interface \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "source_id": "site-iam-reference",
+        "final_score": 282,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The administrator interface provides you with a centralized tool to inspect and manage the metadata stored in your Dataproc Metastore service, all without having to connect to a Managed Service for Apache Spark cluster or a Hive instance.",
+          "Required roles To get the permissions that you need to use the Dataproc Metastore administrator interface, ask your administrator to grant you the following IAM roles on your project, based on the principle of least privilege: To query Dataproc Metastore metadata: Metadata query administrator ( roles/metastore.metadataQueryAdmin ) on the user account or service account To alter the resource location of your metadata, including databases, tables and partitions, or move a table to another database: Metadata mutate administrator ( roles/metastore.metadataMutateAdmin ) on the user account or service account Dataproc Metastore Editor ( roles/metastore.editor ) on the user account or service account For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to use the Dataproc Metastore administrator interface: To query Dataproc Metastore metadata: metastore.services.queryMetadata To alter or move Dataproc Metastore tables: metastore.services.mutateMetadata You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Authenticate to Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a local development environment You can set up credentials for a local development environment in the following ways: User credentials for client libraries or third-party tools User credentials for REST requests from the command line Service account impersonation Client libraries or third-party tools Set up Application Default Credentials (ADC) in your local environment: Install the Google Cloud CLI.",
+          "Google Cloud CLI When you use the gcloud CLI to access Dataproc Metastore, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands.",
+          "How you authenticate to Dataproc Metastore depends on the interface you use to access the API and the environment where your code is running."
+        ]
+      },
+      {
+        "title": "\"Interface AlterMetadataResourceLocationRequestOrBuilder (2.89.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "source_id": "site-java-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Java Client libraries Send feedback Interface AlterMetadataResourceLocationRequestOrBuilder (2.89.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "2.89.0 (latest) 2.88.0 2.86.0 2.84.0 2.83.0 2.82.0 2.81.0 2.79.0 2.77.0 2.76.0 2.75.0 2.74.0 2.73.0 2.71.0 2.69.0 2.68.0 2.65.0 2.64.0 2.63.0 2.61.0 2.60.0 2.59.0 2.58.0 2.57.0 2.56.0 2.55.0 2.54.0 2.53.0 2.52.0 2.50.0 2.49.0 2.48.0 2.47.0 2.46.0 2.45.0 2.44.0 2.43.0 2.42.0 2.41.0 2.40.0 2.38.0 2.37.0 2.36.0 2.35.0 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.0 2.28.0 2.25.0 2.24.0 2.23.0 2.22.0 2.21.0 2.20.0 2.19.0 2.18.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.10.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.4 2.3.0 2.2.0 2.1.9 public interface AlterMetadataResourceLocationRequestOrBuilder extends MessageOrBuilder Implements MessageOrBuilder Methods getLocationUri() public abstract String getLocationUri () Required.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Interface BackendMetastoreOrBuilder (2.89.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder",
+        "source_id": "site-java-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Java Client libraries Send feedback Interface BackendMetastoreOrBuilder (2.89.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "2.89.0 (latest) 2.88.0 2.86.0 2.84.0 2.83.0 2.82.0 2.81.0 2.79.0 2.77.0 2.76.0 2.75.0 2.74.0 2.73.0 2.71.0 2.69.0 2.68.0 2.65.0 2.64.0 2.63.0 2.61.0 2.60.0 2.59.0 2.58.0 2.57.0 2.56.0 2.55.0 2.54.0 2.53.0 2.52.0 2.50.0 2.49.0 2.48.0 2.47.0 2.46.0 2.45.0 2.44.0 2.43.0 2.42.0 2.41.0 2.40.0 2.38.0 2.37.0 2.36.0 2.35.0 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.0 2.28.0 2.25.0 2.24.0 2.23.0 2.22.0 2.21.0 2.20.0 2.19.0 2.18.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.10.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.4 2.3.0 2.2.0 2.1.9 public interface BackendMetastoreOrBuilder extends MessageOrBuilder Implements MessageOrBuilder Methods getMetastoreType() public abstract BackendMetastore .",
+          "MetastoreType getMetastoreType () The type of the backend metastore. .google.cloud.metastore.v1.BackendMetastore.MetastoreType metastore type = 2; Returns Type Description BackendMetastore.MetastoreType The metastoreType. getMetastoreTypeValue() public abstract int getMetastoreTypeValue () The type of the backend metastore. .google.cloud.metastore.v1.BackendMetastore.MetastoreType metastore type = 2; Returns Type Description int The enum numeric value on the wire for metastoreType. getName() public abstract String getName () The relative resource name of the metastore that is being federated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+      "com.google.cloud.metastore.v1.BackendMetastore.MetastoreType",
+      "com.google.cloud.metastore.v1.BackendMetastoreOrBuilder",
+      "iam.googleapis.com",
+      "metastore.editor",
+      "metastore.metadataMutateAdmin",
+      "metastore.metadataQueryAdmin",
+      "metastore.services.mutateMetadata",
+      "metastore.services.queryMetadata"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.editor",
+      "roles/metastore.metadataMutateAdmin",
+      "roles/metastore.metadataQueryAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder"
+      ]
+    }
+  ]
+}

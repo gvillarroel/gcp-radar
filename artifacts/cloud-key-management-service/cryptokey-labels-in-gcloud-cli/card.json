@@ -1,0 +1,208 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.779Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "CryptoKey labels in gcloud CLI",
+  "feature_slug": "cryptokey-labels-in-gcloud-cli",
+  "summary": "The gcloud CLI supports specifying labels when creating keys and shows labels in key list output.",
+  "extended_definition": "The gcloud CLI supports specifying labels when creating keys and shows labels in key list output.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures",
+      "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+      "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+      "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Labeling keys \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CryptoKey createdKey = client . createCryptoKey ( keyRingName , id , key ); System . out . printf ( \"Created key with labels %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const id = 'my-labeled-key'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the parent key ring name const keyRingName = client . keyRingPath ( projectId , locationId , keyRingId ); async function createKeyLabels () { const [ key ] = await client . createCryptoKey ({ parent : keyRingName , cryptoKeyId : id , cryptoKey : { purpose : 'ENCRYPT DECRYPT' , versionTemplate : { algorithm : 'GOOGLE SYMMETRIC ENCRYPTION' , }, labels : { team : 'alpha' , cost center : 'cc1234' , }, }, }); console . log ( Created labeled key: ${ key . name } ); return key ; } return createKeyLabels (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CreateCryptoKeyRequest; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\CryptoKey\\CryptoKeyPurpose; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersion\\CryptoKeyVersionAlgorithm; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersionTemplate; function create key labels( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $id = 'my-key-with-labels' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent key ring name. $keyRingName = $client->keyRingName($projectId, $locationId, $keyRingId); // Build the key. $key = (new CryptoKey()) ->setPurpose(CryptoKeyPurpose::ENCRYPT DECRYPT) ->setVersionTemplate((new CryptoKeyVersionTemplate()) ->setAlgorithm(CryptoKeyVersionAlgorithm::GOOGLE SYMMETRIC ENCRYPTION) ) ->setLabels([ 'team' => 'alpha', 'cost center' => 'cc1234', ]); // Call the API. $createCryptoKeyRequest = (new CreateCryptoKeyRequest()) ->setParent($keyRingName) ->setCryptoKeyId($id) ->setCryptoKey($key); $createdKey = $client->createCryptoKey($createCryptoKeyRequest); printf('Created labeled key: %s' .",
+          "CryptoKey updatedKey = client . updateCryptoKey ( key , fieldMask ); System . out . printf ( \"Updated key %s%n\" , updatedKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '123'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the key name const keyName = client . cryptoKeyPath ( projectId , locationId , keyRingId , keyId ); async function updateKeyUpdateLabels () { const [ key ] = await client . updateCryptoKey ({ cryptoKey : { name : keyName , labels : { new label : 'new value' , }, }, updateMask : { paths : [ 'labels' ], }, }); console . log ( Updated labels for: ${ key . name } ); return key ; } return updateKeyUpdateLabels (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\UpdateCryptoKeyRequest; use Google\\Protobuf\\FieldMask; function update key update labels( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $keyId = 'my-key' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the key name. $keyName = $client->cryptoKeyName($projectId, $locationId, $keyRingId, $keyId); // Build the key. $key = (new CryptoKey()) ->setName($keyName) ->setLabels(['new label' => 'new value']); // Create the field mask. $updateMask = (new FieldMask()) ->setPaths(['labels']); // Call the API. $updateCryptoKeyRequest = (new UpdateCryptoKeyRequest()) ->setCryptoKey($key) ->setUpdateMask($updateMask); $updatedKey = $client->updateCryptoKey($updateCryptoKeyRequest); printf('Updated key: %s' .",
+          "CryptoKey createdKey = client . updateCryptoKey ( key , fieldMask ); System . out . printf ( \"Updated key %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '123'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the key name const keyName = client . cryptoKeyPath ( projectId , locationId , keyRingId , keyId ); async function updateKeyRemoveLabels () { const [ key ] = await client . updateCryptoKey ({ cryptoKey : { name : keyName , labels : null , }, updateMask : { paths : [ 'labels' ], }, }); console . log ( Removed labels from: ${ key . name } ); return key ; } return updateKeyRemoveLabels (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\UpdateCryptoKeyRequest; use Google\\Protobuf\\FieldMask; function update key remove labels( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $keyId = 'my-key' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the key name. $keyName = $client->cryptoKeyName($projectId, $locationId, $keyRingId, $keyId); // Build the key. $key = (new CryptoKey()) ->setName($keyName) ->setLabels([]); // Create the field mask. $updateMask = (new FieldMask()) ->setPaths(['labels']); // Call the API. $updateCryptoKeyRequest = (new UpdateCryptoKeyRequest()) ->setCryptoKey($key) ->setUpdateMask($updateMask); $updatedKey = $client->updateCryptoKey($updateCryptoKeyRequest); printf('Updated key: %s' ."
+        ]
+      },
+      {
+        "title": "\"Use a Cloud HSM key for TLS offloading with NGINX \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "source_id": "site-api-reference",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also, confirm that you have the IAP-Secured Tunnel User ( roles/iap.tunnelResourceAccessor ) role on the instance for the identity authenticated with gcloud CLI.",
+          "Create a Cloud HSM-hosted signing key Create a Cloud HSM EC-P256-SHA256 signing key in your Google Cloud project, in the key ring that you previously configured for OpenSSL: gcloud kms keys create NGINX KEY \\ --keyring \" KEY RING \" --project \" PROJECT ID \" \\ --location \" LOCATION \" --purpose \"asymmetric-signing\" \\ --default-algorithm \"ec-sign-p256-sha256\" --protection-level \"hsm\" Note: Make sure that your Compute Engine service account has the correct Identity and Access Management (IAM) permissions on the key ring to be able to use it.",
+          "In the http block add the following attributes: ssl certificate \"/etc/ssl/nginx/ CA CERT \" ; ssl certificate key \"engine:pkcs11: PKCS KEY TYPE = KEY IDENTIFIER \" ; ssl protocols TLSv1.2 TLSv1.3 ; # Consider changing the default to only TLS1.2 or newer Consider defining the ssl ciphers to use ciphers approved by your security teams and handle appropriate client compatibility requirements."
+        ]
+      },
+      {
+        "title": "\"Creating and validating digital signatures \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PublicKey rsaKey = KeyFactory . getInstance ( \"RSA\" ). generatePublic ( keySpec ); // Verify the 'RSA SIGN PKCS1 2048 SHA256' signature. // For other key algorithms: // http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Signature Signature rsaVerify = Signature . getInstance ( \"SHA256withRSA\" ); rsaVerify . initVerify ( rsaKey ); rsaVerify . update ( plaintext ); // Verify the signature. boolean verified = rsaVerify . verify ( signature ); System . out . printf ( \"Signature verified: %s\" , verified ); } } // Converts a base64-encoded PEM certificate like the one returned from Cloud // KMS into a DER formatted certificate for use with the Java APIs. private byte [] convertPemToDer ( String pem ) { BufferedReader bufferedReader = new BufferedReader ( new StringReader ( pem )); String encoded = bufferedReader . lines () . filter ( line - > ! line . startsWith ( \"-----BEGIN\" ) && ! line . startsWith ( \"-----END\" )) . collect ( Collectors . joining ()); return Base64 . getDecoder (). decode ( encoded ); } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'your-project-id'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '1'; // const message = 'my message to verify'; // const signatureBuffer = Buffer.from('...'); // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the key name const versionName = client . cryptoKeyVersionPath ( projectId , locationId , keyRingId , keyId , versionId ); async function verifyAsymmetricSignatureRsa () { // Get public key const [ publicKey ] = await client . getPublicKey ({ name : versionName , }); // Create the verifier.",
+          "PublicKey ecKey = KeyFactory . getInstance ( \"EC\" ). generatePublic ( keySpec ); // Verify the 'RSA SIGN PKCS1 2048 SHA256' signature. // For other key algorithms: // http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Signature Signature ecVerify = Signature . getInstance ( \"SHA256withECDSA\" ); ecVerify . initVerify ( ecKey ); ecVerify . update ( plaintext ); // Verify the signature. boolean verified = ecVerify . verify ( signature ); System . out . printf ( \"Signature verified: %s\" , verified ); } } // Converts a base64-encoded PEM certificate like the one returned from Cloud // KMS into a DER formatted certificate for use with the Java APIs. private byte [] convertPemToDer ( String pem ) { BufferedReader bufferedReader = new BufferedReader ( new StringReader ( pem )); String encoded = bufferedReader . lines () . filter ( line - > ! line . startsWith ( \"-----BEGIN\" ) && ! line . startsWith ( \"-----END\" )) . collect ( Collectors . joining ()); return Base64 . getDecoder (). decode ( encoded ); } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'your-project-id'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '1'; // const message = 'my message to verify'; // const signatureBuffer = Buffer.from('...'); // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the key name const versionName = client . cryptoKeyVersionPath ( projectId , locationId , keyRingId , keyId , versionId ); async function verifyAsymmetricSignatureEc () { // Get public key const [ publicKey ] = await client . getPublicKey ({ name : versionName , }); // Create the verifier.",
+          "The algorithm must match the algorithm of the key. const crypto = require ( 'crypto' ); const verify = crypto . createVerify ( 'sha256' ); verify . update ( message ); verify . end (); // Build the key object const key = { key : publicKey . pem , }; // Verify the signature using the public key const verified = verify . verify ( key , signatureBuffer ); return verified ; } return verifyAsymmetricSignatureEc (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\GetPublicKeyRequest; function verify asymmetric ec( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $keyId = 'my-key', string $versionId = '123', string $message = '...', string $signature = '...' ): bool { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the key version name. $keyVersionName = $client->cryptoKeyVersionName($projectId, $locationId, $keyRingId, $keyId, $versionId); // Get the public key. $getPublicKeyRequest = (new GetPublicKeyRequest()) ->setName($keyVersionName); $publicKey = $client->getPublicKey($getPublicKeyRequest); // Verify the signature."
+        ]
+      },
+      {
+        "title": "\"Creating and validating MAC digital signatures \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "System . out . printf ( \"Success: %s%n\" , response . getSuccess ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'your-project-id'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '123'; // const data = Buffer.from('...'); // const signature = Buffer.from('...'); // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the version name const versionName = client . cryptoKeyVersionPath ( projectId , locationId , keyRingId , keyId , versionId ); async function verifyMac () { // Verify the data with Cloud KMS const [ verifyResponse ] = await client . macVerify ({ name : versionName , data : data , mac : signature , }); console . log ( Verified: ${ verifyResponse . success } ); return verifyResponse ; } return verifyMac (); Python To run this code, first set up a Python development environment and install the Cloud KMS Python SDK . from google.cloud import kms def verify mac ( project id : str , location id : str , key ring id : str , key id : str , version id : str , data : str , signature : bytes , ) - > kms .",
+          "String encodedSignature = Base64 . getEncoder (). encodeToString ( response . getMac (). toByteArray ()); System . out . printf ( \"Signature: %s%n\" , encodedSignature ); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'your-project-id'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '123'; // const data = Buffer.from('...'); // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the version name const versionName = client . cryptoKeyVersionPath ( projectId , locationId , keyRingId , keyId , versionId ); async function signMac () { // Sign the data with Cloud KMS const [ signResponse ] = await client . macSign ({ name : versionName , data : data , }); // Example of how to display signature.",
+          "CryptoKeyVersionName keyVersionName = CryptoKeyVersionName . of ( projectId , locationId , keyRingId , keyId , keyVersionId ); // Verify the signature MacVerifyResponse response = client . macVerify ( keyVersionName , ByteString . copyFromUtf8 ( data ), ByteString . copyFrom ( signature )); // The data comes back as raw bytes, which may include non-printable // characters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iap.tunnelResourceAccessor",
+      "projects.locations.keyRings.cryptoKeys"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.tunnelResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/create-validate-signatures",
+        "https://docs.cloud.google.com/kms/docs/create-validate-mac-signatures"
+      ]
+    }
+  ]
+}

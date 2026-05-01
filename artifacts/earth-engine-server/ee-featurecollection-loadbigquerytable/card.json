@@ -1,0 +1,285 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.832Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "ee.FeatureCollection.loadBigQueryTable",
+  "feature_slug": "ee-featurecollection-loadbigquerytable",
+  "summary": "This algorithm reads data from a BigQuery table into a feature collection.",
+  "extended_definition": "This algorithm reads data from a BigQuery table into a feature collection.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/earth-engine",
+      "https://developers.google.com/earth-engine/apidocs/ee-featurecollection",
+      "https://developers.google.com/earth-engine/guides/bigquery_integrations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery integrations \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Read BigQuery data from Earth Engine Earth Engine can directly access BigQuery data as ee.FeatureCollection objects, allowing you to visualize and incorporate BigQuery data in Earth Engine analyses. ee.FeatureCollection.loadBigQueryTable() : Reads a BigQuery table into Earth Engine. ee.FeatureCollection.runBigQuery() : Executes a BigQuery SQL query and retrieves results into Earth Engine.",
+          "The integration enables efficient workflows, including querying raster data in BigQuery using ST REGIONSTATS , reading BigQuery data into Earth Engine as ee.FeatureCollection , and writing Earth Engine data to BigQuery using Export.table.toBigQuery() .",
+          "Reading BigQuery data into Earth Engine : Accessing BigQuery tables or query results as ee.FeatureCollection objects for use in Earth Engine scripts."
+        ]
+      },
+      {
+        "title": "ee.FeatureCollection | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-featurecollection",
+        "source_id": "feature-recovery-http",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ee.FeatureCollection | Google Earth Engine | Google for Developers 기본 콘텐츠로 건너뛰기 Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 로그인 홈 가이드 참조 지원 커뮤니티 Data Catalog Earth Engine 홈 가이드 참조 지원 커뮤니티 Data Catalog API 참조 개요 클라이언트 라이브러리 JavaScript/Python ee.Algorithms CannyEdgeDetector 컬렉션 CrossCorrelation Date 설명 사전 FMask.fillMinima FMask.matchClouds 특성 GeometryConstructors.BBox GeometryConstructors.LineString GeometryConstructors.LinearRing GeometryConstructors.MultiGeometry GeometryConstructors.MultiLineString GeometryConstructors.MultiPoint GeometryConstructors.MultiPolygon GeometryConstructors.Point GeometryConstructors.Polygon GeometryConstructors.Rectangle HillShadow HoughTransform 키와 연결된 현재 신호 수가 Image.Segmentation.GMeans Image.Segmentation.KMeans Image.Segmentation.SNIC Image.Segmentation.seedGrid 같음 Landsat.TOA Landsat.calibratedRadiance Landsat.pathRowLimit Landsat.simpleCloudScore Landsat.simpleComposite 객체 유형 ProjectionTransform Sentinel2.CDI 문자열 TemporalSegmentation.C2c TemporalSegmentation.Ccdc TemporalSegmentation.Ewmacd TemporalSegmentation.LandTrendr TemporalSegmentation.LandTrendrFit TemporalSegmentation.StructuralChangeBreakpoints TemporalSegmentation.VCT TemporalSegmentation.Verdet 지형 ee.Array ee.Array abs 누적 acos 추가 및 argmax asin atan atan2 bitCount bitsToArray bitwiseAnd bitwiseNot bitwiseOr bitwiseXor 바이트 고양이 cbrt ceil cos Cosh 컷 디가마 나누기 dotProduct 이중 eigen eq ERF erfInv erfc erfcInv exp 첫 번째 firstNonZero float 층 감마 gammainc get gt gte 하이팟 ID int int16 int32 int64 int8 lanczos leftShift 길이 log log10 긴 동영상 lt lte 마스크 matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose 최대 분 mod 곱하기 neq 않는 또는 패드 CANNOT TRANSLATE 프로젝트 reduce 반복 형태 변경 rightShift 라운드 짧은 동영상 signum sin 신 slice sort sqrt 빼기 tan Tanh toByte toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toList toLong toShort toUint16 toUint32 toUint8 전치 trigamma uint16 uint32 uint8 ee.Blob ee.Blob string url ee.Classifier amnhMaxent confusionMatrix decisionTree decisionTreeEnsemble explain libsvm load minimumDistance 모드 schema setOutputMode smileCart smileGradientTreeBoost smileKNN smileNaiveBayes smileRandomForest spectralRegion 기차 ee.Clusterer schema 기차 wekaCascadeKMeans wekaCobweb wekaKMeans wekaLVQ wekaXMeans ee.ConfusionMatrix ee.ConfusionMatrix 정확성 배열 consumersAccuracy fscore 카파 주문 producersAccuracy ee.Date ee.Date advance aside 차이 evaluate format fromYMD get getFraction getInfo getRange getRelative Millis parse serialize unitRatio update ee.DateRange ee.DateRange 포함 end 교집합 intersects isEmpty isUnbounded 시작 unbounded 합집합 ee.Dictionary ee.Dictionary aside combine 포함 evaluate fromLists get getArray getGeometry getInfo getNumber getString keys 지도 remove rename 선택 serialize set size toArray toImage 값 ee.ErrorMargin ee.ErrorMargin ee.Feature ee.Feature 영역 aside 경계 buffer centroid closestPoint closestPoints containedIn 포함 convexHull copyProperties cutLines 차이 불연속 용해 distance evaluate 도형 get getArray getInfo getMapId getNumber getString hersDescriptor id 교집합 intersects 길이 경계 propertyNames 선택 serialize set setGeometry simplify symmetricDifference toArray toDictionary 변환 합집합 withinDistance ee.FeatureCollection ee.FeatureCollection aggregate_array aggregate_count aggregate_count_distinct aggregate_first aggregate_histogram aggregate_max aggregate_mean aggregate_min aggregate_product aggregate_sample_sd aggregate_sample_var aggregate_stats aggregate_sum aggregate_total_sd aggregate_total_var aside 경계 분류 클러스터 copyProperties distance distinct draw errorMatrix evaluate filter filterBounds filterDate 첫 번째 flatten 도형 get getArray getDownloadURL getInfo getMapId getNumber getString inverseDistance 반복 크리깅 제한 loadBigQueryTable makeArray 지도 merge propertyNames randomColumn randomPoints reduceColumns reduceToImage 재매핑 runBigQuery 선택 serialize set size sort style toDictionary toList 합집합 ee.Filter ee.Filter 및 영역 aside 경계 calendarRange 포함 날짜 dateRangeContains 연도 불연속 eq 등호 evaluate expression getInfo greaterThan greaterThanOrEquals gt gte hasType inList intersects isContained lessThan lessThanOrEquals listContains lt lte maxDifference neq 않는 notEquals notNull 또는 rangeContains serialize stringContains stringEndsWith stringStartsWith withinDistance ee.Geometry ee.Geometry BBox BBox.area BBox.aside BBox.bounds BBox.buffer BBox.centroid BBox.closestPoint BBox.closestPoints BBox.containedIn BBox.contains BBox.convexHull BBox.coordinates BBox.coveringGrid BBox.cutLines BBox.difference BBox.disjoint BBox.dissolve BBox.distance BBox.edgesAreGeodesics BBox.evaluate BBox.geodesic BBox.geometries BBox.getInfo BBox.intersection BBox.intersects BBox.isUnbounded BBox.length BBox.perimeter BBox.projection BBox.serialize BBox.simplify BBox.symmetricDifference BBox.toGeoJSON BBox.toGeoJSONString BBox.transform BBox.type BBox.union BBox.withinDistance 유도선 LineString.area LineString.aside LineString.bounds LineString.buffer LineString.centroid LineString.closestPoint LineString.closestPoints LineString.containedIn LineString.contains LineString.convexHull LineString.coordinates LineString.coveringGrid LineString.cutLines LineString.difference LineString.disjoint LineString.dissolve LineString.distance LineString.edgesAreGeodesics LineString.evaluate LineString.geodesic LineString.geometries LineString.getInfo LineString.intersection LineString.intersects LineString.isUnbounded LineString.length LineString.perimeter LineString.projection LineString.serialize LineString.simplify LineString.symmetricDifference LineString.toGeoJSON LineString.toGeoJSONString LineString.transform LineString.type LineString.union LineString.withinDistance 선형 링(LinearRing) LinearRing.area LinearRing.aside LinearRing.bounds LinearRing.buffer LinearRing.centroid LinearRing.closestPoint LinearRing.closestPoints LinearRing.containedIn LinearRing.contains LinearRing.convexHull LinearRing.coordinates LinearRing.coveringGrid LinearRing.cutLines LinearRing.difference LinearRing.disjoint LinearRing.dissolve LinearRing.distance LinearRing.edgesAreGeodesics LinearRing.evaluate LinearRing.geodesic LinearRing.geometries LinearRing.getInfo LinearRing.intersection LinearRing.intersects LinearRing.isUnbounded LinearRing.length LinearRing.perimeter LinearRing.projection LinearRing.serialize LinearRing.simplify LinearRing.symmetricDifference LinearRing.toGeoJSON LinearRing.toGeoJSONString LinearRing.transform LinearRing.type LinearRing.union LinearRing.withinDistance MultiLineString MultiLineString.area MultiLineString.aside MultiLineString.bounds MultiLineString.buffer MultiLineString.centroid MultiLineString.closestPoint MultiLineString.closestPoints MultiLineString.containedIn MultiLineString.contains MultiLineString.convexHull MultiLineString.coordinates MultiLineString.coveringGrid MultiLineString.cutLines MultiLineString.difference MultiLineString.disjoint MultiLineString.dissolve MultiLineString.distance MultiLineString.edgesAreGeodesics MultiLineString.evaluate MultiLineString.geodesic MultiLineString.geometries MultiLineString.getInfo MultiLineString.intersection MultiLineString.intersects MultiLineString.isUnbounded MultiLineString.length MultiLineString.perimeter MultiLineString.projection MultiLineString.serialize MultiLineString.simplify MultiLineString.symmetricDifference MultiLineString.toGeoJSON MultiLineString.toGeoJSONString MultiLineString.transform MultiLineString.type MultiLineString.union MultiLineString.withinDistance MultiPoint MultiPoint.area MultiPoint.aside MultiPoint.bounds MultiPoint.buffer MultiPoint.centroid MultiPoint.closestPoint MultiPoint.closestPoints MultiPoint.containedIn MultiPoint.contains MultiPoint.convexHull MultiPoint.coordinates MultiPoint.coveringGrid MultiPoint.cutLines MultiPoint.difference MultiPoint.disjoint MultiPoint.dissolve MultiPoint.distance MultiPoint.edgesAreGeodesics MultiPoint.evaluate MultiPoint.geodesic MultiPoint.geometries MultiPoint.getInfo MultiPoint.intersection MultiPoint.intersects MultiPoint.isUnbounded MultiPoint.length MultiPoint.perimeter MultiPoint.projection MultiPoint.serialize MultiPoint.simplify MultiPoint.symmetricDifference MultiPoint.toGeoJSON MultiPoint.toGeoJSONString MultiPoint.transform MultiPoint.type MultiPoint.union MultiPoint.withinDistance 다중 다각형 MultiPolygon.area MultiPolygon.aside MultiPolygon.bounds MultiPolygon.buffer MultiPolygon.centroid MultiPolygon.closestPoint MultiPolygon.closestPoints MultiPolygon.containedIn MultiPolygon.contains MultiPolygon.convexHull MultiPolygon.coordinates MultiPolygon.coveringGrid MultiPolygon.cutLines MultiPolygon.difference MultiPolygon.disjoint MultiPolygon.dissolve MultiPolygon.distance MultiPolygon.edgesAreGeodesics MultiPolygon.evaluate MultiPolygon.geodesic MultiPolygon.geometries MultiPolygon.getInfo MultiPolygon.intersection MultiPolygon.intersects MultiPolygon.isUnbounded MultiPolygon.length MultiPolygon.perimeter MultiPolygon.projection MultiPolygon.serialize MultiPolygon.simplify MultiPolygon.symmetricDifference MultiPolygon.toGeoJSON MultiPolygon.toGeoJSONString MultiPolygon.transform MultiPolygon.type MultiPolygon.union MultiPolygon.withinDistance Point Point.area Point.aside Point.bounds Point.buffer Point.centroid Point.closestPoint Point.closestPoints Point.containedIn Point.contains Point.convexHull Point.coordinates Point.coveringGrid Point.cutLines Point.difference Point.disjoint Point.dissolve Point.distance Point.edgesAreGeodesics Point.evaluate Point.geodesic Point.geometries Point.getInfo Point.intersection Point.intersects Point.isUnbounded Point.length Point.perimeter Point.projection Point.serialize Point.simplify Point.symmetricDifference Point.toGeoJSON Point.toGeoJSONString Point.transform Point.type Point.union Point.withinDistance Polygon Polygon.area Polygon.aside Polygon.bounds Polygon.buffer Polygon.centroid Polygon.closestPoint Polygon.closestPoints Polygon.containedIn Polygon.contains Polygon.convexHull Polygon.coordinates Polygon.coveringGrid Polygon.cutLines Polygon.difference Polygon.disjoint Polygon.dissolve Polygon.distance Polygon.edgesAreGeodesics Polygon.evaluate Polygon.geodesic Polygon.geometries Polygon.getInfo Polygon.intersection Polygon.intersects Polygon.isUnbounded Polygon.length Polygon.perimeter Polygon.projection Polygon.serialize Polygon.simplify Polygon.symmetricDifference Polygon.toGeoJSON Polygon.toGeoJSONString Polygon.transform Polygon.type Polygon.union Polygon.withinDistance 직사각형 Rectangle.area Rectangle.aside Rectangle.bounds Rectangle.buffer Rectangle.centroid Rectangle.closestPoint Rectangle.closestPoints Rectangle.containedIn Rectangle.contains Rectangle.convexHull Rectangle.coordinates Rectangle.coveringGrid Rectangle.cutLines Rectangle.difference Rectangle.disjoint Rectangle.dissolve Rectangle.distance Rectangle.edgesAreGeodesics Rectangle.evaluate Rectangle.geodesic Rectangle.geometries Rectangle.getInfo Rectangle.intersection Rectangle.intersects Rectangle.isUnbounded Rectangle.length Rectangle.perimeter Rectangle.projection Rectangle.serialize Rectangle.simplify Rectangle.symmetricDifference Rectangle.toGeoJSON Rectangle.toGeoJSONString Rectangle.transform Rectangle.type Rectangle.union Rectangle.withinDistance 영역 aside 경계 buffer centroid closestPoint closestPoints containedIn 포함 convexHull 좌표 coveringGrid cutLines 차이 불연속 용해 distance edgesAreGeodesics evaluate fromS2CellId fromS2CellToken geodesic 도형 getInfo 교집합 intersects isUnbounded 길이 경계 프로젝션 s2Cell serialize simplify symmetricDifference toGeoJSON toGeoJSONString 변환 유형 합집합 withinDistance ee.Image ee.Image abs acos 추가 addBands 및 arrayAccum arrayArgmax arrayCat arrayDimensions arrayDotProduct arrayFlatten arrayGet arrayLength arrayLengths arrayMask arrayPad arrayProject arrayReduce arrayRepeat arrayReshape arraySlice arraySort arrayTranspose aside asin atan atan2 bandNames bandTypes bitCount bitsToArrayImage bitwiseAnd bitwiseNot bitwiseOr bitwiseXor 혼합 바이트 cast 고양이 cbrt ceil changeProj 고정하다 분류 클립 clipToBoundsAndScale clipToCollection 클러스터 connectedComponents connectedPixelCount 상수 convolve copyProperties cos Cosh cumulativeCost 날짜 파생어 디가마 directionalDistanceTransform 변위 배기량 distance 나누기 이중 엔트로피 eq ERF erfInv erfc erfcInv evaluate exp expression fastDistanceTransform 첫 번째 firstNonZero float 층 focalMax focalMean focalMedian focalMin focalMode 감마 gammainc 도형 get getArray getDownloadURL getInfo getMapId getNumber getString getThumbId getThumbURL glcmTexture 그라데이션 gt gte hersDescriptor hersFeature hersImage hsvToRgb 하이팟 id int int16 int32 int64 int8 보간 lanczos leftShift linkCollection load loadGeoTIFF loadZarrV2Array log log10 긴 동영상 lt lte 마스크 matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixIdentity matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose 최대 medialAxis 메타데이터 분 mod 곱하기 neighborhoodToArray neighborhoodToBands neq normalizedDifference 않는 또는 물감 pixelArea pixelCoordinates pixelLonLat 다항식 CANNOT TRANSLATE 프로젝션 propertyNames 임의 순서 randomVisualizer reduce reduceConnectedComponents reduceNeighborhood reduceRegion reduceRegions reduceResolution reduceToVectors regexpRename register 재매핑 rename reproject 리샘플링 rgb rgbToHsv rightShift 라운드 rsedTransform 샘플 sampleRectangle sampleRegions 선택 selfMask serialize set setDefaultProjection 짧은 동영상 signum sin 신 sldStyle slice spectralDilation spectralDistance spectralErosion spectralGradient sqrt stratifiedSample 빼기 tan Tanh toArray toByte toDictionary toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toLong toShort toUint16 toUint32 toUint8 translate trigamma uint16 uint32 uint8 unitScale 숨김 해제 unmix updateMask 시각화 어디서 zeroCrossing ee.ImageCollection ee.ImageCollection aggregate_array aggregate_count aggregate_count_distinct aggregate_first aggregate_histogram aggregate_max aggregate_mean aggregate_min aggregate_product aggregate_sample_sd aggregate_sample_var aggregate_stats aggregate_sum aggregate_total_sd aggregate_total_var 및 aside 경계 cast combine copyProperties 개수 distance distinct draw errorMatrix evaluate filter filterBounds filterDate 첫 번째 flatten formaTrend fromImages 도형 get getArray getFilmstripThumbURL getInfo getMapId getNumber getRegion getString getVideoThumbURL 반복 제한 linkCollection load loadZarrV2Array 지도 최대 평균 중앙값 merge 분 모드 모자이크 또는 product propertyNames qualityMosaic randomColumn reduce reduceColumns reduceToImage 재매핑 선택 serialize set size sort style 합계 toArray toArrayPerBand toBands toDictionary toList 합집합 ee.Join 적용 내부 반전 saveAll saveBest saveFirst 단순해야 합니다. ee.Kernel 추가 chebyshev Circle 나침반 교차 Diamond euclidean 고정 가우시안 역수 kirsch laplacian4 laplacian8 맨하탄 팔각형 더하기 prewitt 직사각형 로버츠 rotate sobel 정사각형 ee.List ee.List 추가 aside 고양이 포함 containsAll distinct 등호 evaluate filter flatten 빈도 get getArray getGeometry getInfo getNumber getString indexOf indexOfSublist insert 반복 join lastIndexOfSubList 길이 지도 reduce remove 모두 삭제 반복 replace replaceAll reverse rotate 시퀀스 serialize set Shuffle size slice sort splice 스왑 unzip 우편번호 ee.Model fromVertexAi predictImage predictProperties ee.Number ee.Number abs acos 추가 및 aside asin atan atan2 bitCount bitwiseAnd bitwiseNot bitwiseOr bitwiseXor 바이트 cbrt ceil 고정하다 cos Cosh 디가마 나누기 이중 eq ERF erfInv erfc erfcInv evaluate exp expression 첫 번째 firstNonZero float 층 format 감마 gammainc getInfo gt gte 하이팟 int int16 int32 int64 int8 lanczos leftShift log log10 긴 동영상 lt lte 최대 분 mod 곱하기 neq 않는 또는 parse CANNOT TRANSLATE rightShift 라운드 serialize 짧은 동영상 signum sin 신 sqrt 빼기 tan Tanh toByte toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toLong toShort toUint16 toUint32 toUint8 trigamma uint16 uint32 uint8 unitScale ee.PixelType ee.PixelType 측정기준 이중 float int16 int32 int64 int8 maxValue minValue precision uint16 uint32 uint8 ee.Projection ee.Projection atScale crs nominalScale 활용 변환 translate wkt ee.Reducer allNonZero anyNonZero autoHistogram bitwiseAnd bitwiseOr centeredCovariance circularMean circularStddev circularVariance combine 개수 countDistinct countDistinctNonNull countEvery countRuns 공분산 분해 첫 번째 firstNonNull fixed2DHistogram fixedHistogram forEach forEachBand forEachElement frequencyHistogram geometricMedian getOutputs 그룹 histogram intervalMean kendallsCorrelation 쿠르토시 마지막 lastNonNull linearFit linearRegression 최대 평균 중앙값 분 minMax 모드 pearsonsCorrelation 백분위수 product 반복 ridgeRegression robustLinearRegression sampleStdDev sampleVariance sensSlope setOutputs 왜곡 spearmansCorrelation splitWeights stdDev 합계 toCollection toList 가중치 없음 variance ee.String ee.String aside 고양이 compareTo decodeJSON encodeJSON 등호 evaluate getInfo 색인 길이 관심장소 replace rindex serialize slice split toLowerCase toUpperCase 자르기 ee.Terrain 관점 fillMinima hillShadow hillshade 제품 슬로프 ee.apply ee.apply ee.call ee.call ee.data authenticateViaOauth authenticateViaPopup authenticateViaPrivateKey cancelOperation computeValue copyAsset createAsset createAssetHome createFolder deleteAsset getAsset getAssetAcl getAssetRootQuota getDownloadId getFeatureViewTilesKey getFilmstripThumbId getMapId getOperation getTableDownloadId getThumbId getTileUrl getVideoThumbId getWorkloadTag listAssets listBuckets listFeatures listImages listOperations makeDownloadUrl makeTableDownloadUrl makeThumbUrl newTaskId renameAsset resetWorkloadTag setAssetAcl setDefaultWorkloadTag setWorkloadTag startIngestion startProcessing startTableIngestion updateAsset updateTask ee.initialize ee.initialize ee.reset ee.reset Export.classifier toAsset Export.image toAsset toCloudStorage toDrive Export.map toCloudStorage Export.table toAsset toBigQuery toCloudStorage toDrive toFeatureView Export.video toCloudStorage toDrive 코드 편집기 JavaScript 코드 편집기 지도 추가 addLayer centerObject 지우기 drawingTools getBounds getCenter getScale getZoom 레이어 onChangeBounds onChangeCenter onChangeZoom onClick onIdle onTileLoaded remove setCenter setControlVisibility setGestureHandling setLocked setOptions setZoom style unlisten 위젯 내보내기 내보내기 인쇄 인쇄 require require ui.Button ui.Button getDisabled getImageUrl getLabel onClick setDisabled setImageUrl setLabel style unlisten ui.Chart ui.Chart array.values feature.byFeature feature.byProperty feature.groups feature.histogram getChartType getDataTable getDownloadable getOptions getView image.byClass image.byRegion image.doySeries image.doySeriesByRegion image.doySeriesByYear image.histogram image.regions image.series image.seriesByRegion onClick setChartType setDataTable setDownloadable setOptions setSeriesNames setView style unlisten ui.Checkbox ui.Checkbox getDisabled getLabel getValue onChange setDisabled setLabel 값 설정 style unlisten ui.DateSlider ui.DateSlider getDisabled getEnd getPeriod getStart getValue onChange setDisabled setEnd setPeriod setStart 값 설정 style unlisten ui.Label ui.Label getImageUrl getUrl getValue setImageUrl setUrl 값 설정 style ui.Map ui.Map CloudStorageLayer CloudStorageLayer.getBucket CloudStorageLayer.getMaxZoom CloudStorageLayer.getName CloudStorageLayer.getOpacity CloudStorageLayer.getPath CloudStorageLayer.getShown CloudStorageLayer.getSuffix CloudStorageLayer.setBucket CloudStorageLayer.setMaxZoom CloudStorageLayer.setName CloudStorageLayer.setOpacity CloudStorageLayer.setPath CloudStorageLayer.setShown CloudStorageLayer.setSuffix DrawingTools DrawingTools.addLayer DrawingTools.clear DrawingTools.draw DrawingTools.edit DrawingTools.get DrawingTools.getDrawModes DrawingTools.getLinked DrawingTools.getMap DrawingTools.getSelected DrawingTools.getShape DrawingTools.getShown DrawingTools.layers DrawingTools.onDraw DrawingTools.onEdit DrawingTools.onErase DrawingTools.onLayerAdd DrawingTools.onLayerConfig DrawingTools.onLayerRemove DrawingTools.onLayerSelect DrawingTools.onSelect DrawingTools.onShapeChange DrawingTools.set DrawingTools.setDrawModes DrawingTools.setLinked DrawingTools.setSelected DrawingTools.setShape DrawingTools.setShown DrawingTools.stop DrawingTools.toFeatureCollection DrawingTools.unlisten FeatureViewLayer FeatureViewLayer.getAssetId FeatureViewLayer.getName FeatureViewLayer.getOpacity FeatureViewLayer.getShown FeatureViewLayer.getVisParams FeatureViewLayer.setAssetId FeatureViewLayer.setName FeatureViewLayer.setOpacity FeatureViewLayer.setShown FeatureViewLayer.setVisParams GeometryLayer GeometryLayer.fromGeometry GeometryLayer.geometries GeometryLayer.get GeometryLayer.getColor GeometryLayer.getEeObject GeometryLayer.getLocked GeometryLayer.getName GeometryLayer.getShown GeometryLayer.openConfigurationDialog GeometryLayer.set GeometryLayer.setColor GeometryLayer.setLocked GeometryLayer.setName GeometryLayer.setShown GeometryLayer.toGeometry 레이어 Layer.getEeObject Layer.getName Layer.getOpacity Layer.getShown Layer.getVisParams Layer.setEeObject Layer.setName Layer.setOpacity Layer.setShown Layer.setVisParams 링커 Linker.add Linker.forEach Linker.get Linker.getJsArray Linker.insert Linker.length Linker.remove Linker.reset Linker.set 추가 addLayer centerObject 지우기 drawingTools getBounds getCenter getScale getZoom insert 레이어 onChangeBounds onChangeCenter onChangeZoom onClick onIdle onTileLoaded remove setCenter setControlVisibility setGestureHandling setLocked setOptions setZoom style unlisten 위젯 ui.Panel ui.Panel Layout.absolute Layout.flow 추가 지우기 getLayout insert remove setLayout style 위젯 ui.Select ui.Select getDisabled getPlaceholder getValue 항목 onChange setDisabled setPlaceholder 값 설정 style unlisten ui.Slider ui.Slider getDisabled getMax getMin getStep getValue onChange onSlide setDisabled setMax setMin setStep 값 설정 style unlisten ui.SplitPanel ui.SplitPanel getFirstPanel getOrientation getPanel getSecondPanel getWipe setFirstPanel setOrientation setPanel setSecondPanel setWipe style unlisten ui.Textbox ui.Textbox getDisabled getPlaceholder getValue onChange setDisabled setPlaceholder 값 설정 style unlisten ui.Thumbnail ui.Thumbnail getImage getParams onClick setImage setParams style unlisten ui.data ActiveDictionary ActiveDictionary.get ActiveDictionary.set ActiveList ActiveList.add ActiveList.forEach ActiveList.get ActiveList.getJsArray ActiveList.insert ActiveList.length ActiveList.remove ActiveList.reset ActiveList.set ui.root 추가 지우기 getLayout insert onResize remove setKeyHandler setLayout 위젯 ui.url get set ui.util 지우기 clearTimeout 디바운싱 getCurrentPosition rateLimit setInterval setTimeout 제한 REST API 개요 빠른 시작 예 계산된 이미지 계산된 테이블 Cloud GeoTIFF 지원 애셋 만들기 API 참조 개요 v1 REST 리소스 projects 개요 getConfig listAssets updateConfig projects.algorithms 개요 list projects.assets 개요 복사 create delete get getIamPolicy getPixels listAssets listFeatures move patch setIamPolicy testIamPermissions projects.classifier 개요 export projects.featureView 개요 create projects.featureViews 개요 create projects.featureViews.tiles 개요 get projects.filmstripThumbnails 개요 create getPixels projects.image 개요 computePixels export import projects.imageCollection 개요 computeImages projects.locations.assets 개요 create projects.locations.filmstripThumbnails 개요 create projects.locations.maps 개요 create projects.locations.tables 개요 create projects.locations.thumbnails 개요 create projects.locations.videoThumbnails 개요 create projects.map 개요 export projects.maps 개요 create projects.maps.tiles 개요 get projects.operations 개요 cancel delete get list wait projects.table 개요 computeFeatures export import projects.tables 개요 create getFeatures projects.thumbnails 개요 create getPixels projects.value 개요 compute projects.video 개요 export projects.videoThumbnails 개요 create getPixels 유형 AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination 표현식 특성 GridDimensions ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions v1beta REST 리소스 projects 개요 getConfig listAssets updateConfig projects.algorithms 개요 list projects.assets 개요 복사 create delete get getIamPolicy getPixels listAssets listFeatures move patch setIamPolicy testIamPermissions projects.classifier 개요 export projects.featureView 개요 create projects.featureViews 개요 create projects.featureViews.tiles 개요 get projects.filmstripThumbnails 개요 create getPixels projects.image 개요 computePixels export import projects.imageCollection 개요 computeImages projects.locations.assets 개요 create projects.locations.filmstripThumbnails 개요 create projects.locations.maps 개요 create projects.locations.tables 개요 create projects.locations.thumbnails 개요 create projects.locations.videoThumbnails 개요 create projects.map 개요 export projects.maps 개요 create projects.maps.tiles 개요 get projects.operations 개요 cancel delete get list wait projects.table 개요 computeFeatures export import projects.tables 개요 create getFeatures projects.thumbnails 개요 create getPixels projects.value 개요 compute projects.video 개요 export projects.videoThumbnails 개요 create getPixels 유형 AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination 표현식 특성 GridDimensions ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions v1alpha REST 리소스 projects 개요 getConfig listAssets updateConfig projects.algorithms 개요 list projects.assets 개요 복사 create delete get getIamPolicy getPixels listAssets listFeatures listImages move patch setIamPolicy testIamPermissions projects.classifier 개요 export projects.featureView 개요 create projects.featureViews 개요 create projects.featureViews.tiles 개요 get projects.filmstripThumbnails 개요 create getPixels projects.image 개요 computePixels export import importExternal projects.imageCollection 개요 computeImages projects.locations.assets 개요 create projects.locations.filmstripThumbnails 개요 create projects.locations.maps 개요 create projects.locations.tables 개요 create projects.locations.thumbnails 개요 create projects.locations.videoThumbnails 개요 create projects.map 개요 export projects.maps 개요 create projects.maps.tiles 개요 get projects.operations 개요 cancel delete get list wait projects.table 개요 computeFeatures export import projects.tables 개요 create getFeatures projects.thumbnails 개요 create getPixels projects.value 개요 compute projects.video 개요 export projects.videoThumbnails 개요 create getPixels 유형 AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination 표현식 특성 GcsDestination GridDimensions ImageFileExportOptions ImageFileFormat ImageManifest ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions 개념 추가 API 약관 명령줄 도구 Data Catalog 게시자 데이터 카탈로그 Landsat 알고리즘 Sentinel-1 알고리즘 Landsat C1에서 C2로의 이전 가이드 삭제된 데이터 세트 기타 출시 노트 용어집 서비스 약관 Earth Engine은 공유 컴퓨팅 리소스를 보호하고 모든 사용자에게 안정적인 성능을 보장하기 위해 비상업적 할당량 등급 을 도입합니다. 모든 비상업용 프로젝트는 2026년 4월 27일 까지 할당량 등급을 선택해야 하며, 선택하지 않으면 커뮤니티 등급이 기본적으로 사용됩니다. 등급 할당량은 등급 선택 날짜와 관계없이 2026년 4월 27일 에 모든 프로젝트에 적용됩니다. 자세히 알아보기 홈 제품 Google Earth Engine 참조 의견 보내기 ee.FeatureCollection 컬렉션을 사용해 정리하기 내 환경설정을 기준으로 콘텐츠를 저장하고 분류하세요.",
+          "FeatureCollection ( geojson ) display ( 'FeatureCollection from GeoJSON:' , geojson_fc ) 의견 보내기 달리 명시되지 않는 한 이 페이지의 콘텐츠에는 Creative Commons Attribution 4.0 라이선스 에 따라 라이선스가 부여되며, 코드 샘플에는 Apache 2.0 라이선스 에 따라 라이선스가 부여됩니다. 자세한 내용은 Google Developers 사이트 정책 을 참조하세요. 자바는 Oracle 및/또는 Oracle 계열사의 등록 상표입니다. 최종 업데이트: 2026-01-08(UTC) 의견을 전달하고 싶나요? [[[\"이해하기 쉬움\",\"easyToUnderstand\",\"thumb-up\"],[\"문제가 해결됨\",\"solvedMyProblem\",\"thumb-up\"],[\"기타\",\"otherUp\",\"thumb-up\"]],[[\"필요한 정보가 없음\",\"missingTheInformationINeed\",\"thumb-down\"],[\"너무 복잡함/단계 수가 너무 많음\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"오래됨\",\"outOfDate\",\"thumb-down\"],[\"번역 문제\",\"translationIssue\",\"thumb-down\"],[\"샘플/코드 문제\",\"samplesCodeIssue\",\"thumb-down\"],[\"기타\",\"otherDown\",\"thumb-down\"]],[\"최종 업데이트: 2026-01-08(UTC)\"],[],[\"`FeatureCollection` is created using various inputs: a collection name (string), a single geometry, a single feature, a list of features, or a GeoJSON FeatureCollection.",
+          "FeatureCollection은 다음 인수로 구성할 수 있습니다. - 문자열: 컬렉션의 이름으로 간주됩니다. - 단일 도형 - 단일 기능 - 기능 목록 - GeoJSON FeatureCollection - 계산된 객체: 컬렉션으로 재해석됩니다. 사용 반환 값 ee.FeatureCollection(args, column ) FeatureCollection 인수 유형 세부정보 args ComputedObject|Feature|FeatureCollection|Geometry|List[Object]|Number|String 생성자 인수입니다. column 문자열, 선택사항 사용할 지오메트리 열의 이름입니다. 이름이 지정된 컬렉션으로 작업할 때만 유용합니다. 예 코드 편집기(JavaScript) // FeatureCollection from a string (collection name)."
+        ]
+      },
+      {
+        "title": "Earth Engine | Google Cloud",
+        "url": "https://cloud.google.com/earth-engine",
+        "source_id": "feature-recovery-http",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Earth Engine users can now easily move data between Earth Engine and BigQuery: Use the ee.FeatureCollection.loadBigQueryTable() function to load data directly from a BigQuery table without transforming it within BigQuery Use the ee.FeatureCollection.runBigQuery() function to trigger BigQuery computation to evaluate a SQL query directly against BigQuery tables and retrieve the results as an Earth Engine FeatureCollection Use the `Export.table.toBigQuery()`function to write the results of Earth Engine computation to BigQuery Learn how to use the Earth Engine to BigQuery connector 90+ petabytes of analysis-ready geospatial data The Earth Engine catalog is one of the largest publicly available data catalogs, with 90+ petabytes of analysis-ready satellite imagery and 1,000+ curated geospatial datasets.",
+          "Google Cloud partners Learn about the ecosystem and resources. close Overview arrow_forward Solutions arrow_forward Products arrow_forward Pricing arrow_forward Resources arrow_forward Docs Support Console Accelerate your digital transformation Learn more Key benefits Why Google Cloud AI and ML Multicloud Global infrastructure Data Cloud Modern Infrastructure Cloud Security Productivity and collaboration Reports and insights Executive insights Analyst reports Whitepapers Customer stories Industry Solutions Retail Consumer Packaged Goods Financial Services Healthcare and Life Sciences Media and Entertainment Telecommunications Games Manufacturing Supply Chain and Logistics Government Education See all industry solutions See all solutions Application Modernization CAMP Modernize Traditional Applications Migrate from PaaS: Cloud Foundry, Openshift Migrate from Mainframe Modernize Software Delivery DevOps Best Practices SRE Principles Platform Engineering Run Applications at the Edge Architect for Multicloud Go Serverless Artificial Intelligence Customer Engagement Suite with Google AI Document AI Vertex AI Search for commerce Google Cloud with Gemini Generative AI on Google Cloud APIs and Applications New Business Channels Using APIs Unlocking Legacy Applications Using APIs Open Banking APIx Data Analytics Data Migration Data Lakehouse Real-time Analytics Marketing Analytics Datasets Business Intelligence AI for Data Analytics Geospatial Analytics Databases Database Migration Database Modernization Databases for Games Google Cloud Databases Migrate Oracle workloads to Google Cloud Open Source Databases SQL Server on Google Cloud Gemini for Databases Infrastructure Modernization Application Migration SAP on Google Cloud High Performance Computing Windows on Google Cloud Data Center Migration Active Assist Virtual Desktops Rapid Migration and Modernization Program Backup and Disaster Recovery Red Hat on Google Cloud Cross-Cloud Network Observability Productivity and Collaboration Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security Agentic SOC Web App and API Protection Security and Resilience Framework Risk and compliance as code (RCaC) Software Supply Chain Security Security Foundation Google Cloud Cybershield™ Startups and SMB Startup Program Small and Medium Business Software as a Service Featured Products Compute Engine Cloud Storage BigQuery Cloud Run Google Kubernetes Engine Vertex AI Looker Apigee API Management Cloud SQL Gemini Enterprise Cloud CDN See all products (100+) AI and Machine Learning Vertex AI Platform Vertex AI Studio Vertex AI Agent Builder Conversational Agents Vertex AI Search Speech-to-Text Text-to-Speech Translation AI Gemini Enterprise Vision AI Contact Center as a Service See all AI and machine learning products Business Intelligence Looker Looker Studio Compute Compute Engine App Engine Cloud GPUs Migrate to Virtual Machines Spot VMs Batch Sole-Tenant Nodes Bare Metal Recommender VMware Engine Cloud Run See all compute products Containers Google Kubernetes Engine Cloud Run Cloud Build Artifact Registry Cloud Code Cloud Deploy Migrate to Containers Deep Learning Containers Knative Data Analytics BigQuery Looker Dataflow Pub/Sub Dataproc Google Cloud Serverless for Apache Spark Cloud Composer BigLake Dataplex Universal Catalog BigQuery Migration Services Managed Service for Apache Kafka See all data analytics products Databases AlloyDB for PostgreSQL Cloud SQL Firestore Spanner Bigtable Datastream Database Migration Service Bare Metal Solution Memorystore Developer Tools Artifact Registry Cloud Code Cloud Build Cloud Deploy Cloud Deployment Manager Cloud SDK Cloud Scheduler Cloud Source Repositories Infrastructure Manager Cloud Workstations Gemini Code Assist See all developer tools Distributed Cloud Google Distributed Cloud Connected Google Distributed Cloud Air-gapped Hybrid and Multicloud Google Kubernetes Engine Apigee API Management Migrate to Containers Cloud Build Observability Cloud Service Mesh Google Distributed Cloud Industry Specific Anti Money Laundering AI Cloud Healthcare API Device Connect for Fitbit Telecom Network Automation Telecom Data Fabric Telecom Subscriber Insights Spectrum Access System (SAS) Integration Services Application Integration Workflows Apigee API Management Cloud Tasks Cloud Scheduler Dataproc Cloud Data Fusion Cloud Composer Pub/Sub Eventarc Management Tools Cloud Shell Cloud console Cloud Endpoints Cloud IAM Cloud APIs Service Catalog Cost Management Observability Carbon Footprint Config Connector Active Assist See all management tools Maps and Geospatial Earth Engine Google Maps Platform Media Services Cloud CDN Live Stream API OpenCue Transcoder API Video Stitcher API Migration Migration Center Application Migration Migrate to Virtual Machines Cloud Foundation Toolkit Database Migration Service Migrate to Containers BigQuery Migration Services Rapid Migration and Modernization Program Transfer Appliance Storage Transfer Service VMware Engine Mixed Reality Immersive Stream for XR Networking Cloud Armor Cloud CDN and Media CDN Cloud DNS Cloud Load Balancing Cloud NAT Cloud Connectivity Network Connectivity Center Network Intelligence Center Network Service Tiers Virtual Private Cloud Private Service Connect See all networking products Operations Cloud Logging Cloud Monitoring Error Reporting Managed Service for Prometheus Cloud Trace Cloud Profiler Cloud Quotas Productivity and Collaboration AppSheet Gemini Enterprise Google Workspace Google Workspace Essentials Cloud Identity Chrome Enterprise Security and Identity Cloud IAM Sensitive Data Protection Mandiant Managed Defense Google Threat Intelligence Security Command Center Cloud Key Management Mandiant Incident Response Chrome Enterprise Premium Assured Workloads Google Security Operations Mandiant Consulting See all security and identity products Serverless Cloud Run Cloud Functions App Engine Workflows API Gateway Storage Cloud Storage Block Storage Filestore Persistent Disk Cloud Storage for Firebase Local SSD Storage Transfer Service Google Cloud Managed Lustre Google Cloud NetApp Volumes Backup and DR Service Web3 Blockchain Node Engine Blockchain RPC Save money with our transparent approach to pricing Request a quote Pricing overview and tools Google Cloud pricing Pricing calculator Google Cloud free tier Cost optimization framework Cost management tools Product-specific Pricing Compute Engine Cloud SQL Google Kubernetes Engine Cloud Storage BigQuery See full price list with 100+ products Learn & build Google Cloud Free Program Solution Generator Quickstarts Blog Learning Hub Google Cloud certification Cloud computing basics Cloud Architecture Center Connect Innovators Developer Center Events and webinars Google Cloud Community Consulting and Partners Google Cloud Consulting Google Cloud Marketplace Find a partner Google Cloud partners Why Google Choosing Google Cloud Trust and security Modern Infrastructure Cloud Multicloud Global infrastructure Locations Customers and case studies Analyst reports Whitepapers Blog Products and pricing Google Cloud pricing Google Workspace pricing See all products Solutions Infrastructure modernization Databases Application modernization Smart analytics Artificial Intelligence Security Productivity & work transformation Industry solutions DevOps solutions Small business solutions See all solutions Resources Google Cloud Affiliate Program Google Cloud documentation Google Cloud quickstarts Google Cloud Marketplace Learn about cloud computing Support Code samples Cloud Architecture Center Training Certifications Google for Developers Google Cloud for Startups System status Release Notes Engage Contact sales Find a Partner Become a Partner Events Podcasts Developer Center Press Corner Google Cloud on YouTube Google Cloud Tech on YouTube Follow on X Join User Research We're hiring.",
+          "The ST_RegionStats() function, now in Preview, allows you to run a new BigQuery geography function to efficiently extract statistics from raster data within specified geographic boundaries Earth Engine datasets in Analytics Hub give you access to a growing collection of Earth Engine datasets directly within BigQuery, simplifying data discovery and access Learn how to use Earth Engine in BigQuery Earth Engine and BigQuery interoperability Earth Engine focuses on image (raster) processing, whereas BigQuery is optimized for processing large tabular datasets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "array.values",
+      "developers.google.com",
+      "ee.Algorithms",
+      "ee.apply",
+      "ee.Array",
+      "ee.Blob",
+      "ee.call",
+      "ee.Classifier",
+      "ee.Clusterer",
+      "ee.ConfusionMatrix",
+      "ee.data",
+      "ee.Date",
+      "ee.DateRange",
+      "ee.Dictionary",
+      "ee.ErrorMargin",
+      "ee.Feature",
+      "ee.FeatureCollection",
+      "ee.FeatureCollection.loadBigQueryTable",
+      "ee.FeatureCollection.runBigQuery",
+      "ee.Filter",
+      "ee.Geometry",
+      "ee.Image",
+      "ee.ImageCollection",
+      "ee.initialize",
+      "ee.Join",
+      "ee.Kernel",
+      "ee.List",
+      "ee.Model",
+      "ee.Number",
+      "ee.PixelType",
+      "ee.Projection",
+      "ee.Reducer",
+      "ee.reset",
+      "ee.String",
+      "ee.Terrain",
+      "feature.byFeature",
+      "feature.byProperty",
+      "feature.groups",
+      "feature.histogram",
+      "image.byClass",
+      "image.byRegion",
+      "image.doySeries",
+      "image.doySeriesByRegion",
+      "image.doySeriesByYear",
+      "image.histogram",
+      "image.regions",
+      "image.series",
+      "image.seriesByRegion",
+      "projects.algorithms",
+      "projects.assets",
+      "projects.classifier",
+      "projects.featureView",
+      "projects.featureViews",
+      "projects.featureViews.tiles",
+      "projects.filmstripThumbnails",
+      "projects.image",
+      "projects.imageCollection",
+      "projects.locations.assets",
+      "projects.locations.filmstripThumbnails",
+      "projects.locations.maps",
+      "projects.locations.tables",
+      "projects.locations.thumbnails",
+      "projects.locations.videoThumbnails",
+      "projects.map",
+      "projects.maps",
+      "projects.maps.tiles",
+      "projects.operations",
+      "projects.table",
+      "projects.tables",
+      "projects.thumbnails",
+      "projects.value",
+      "projects.video",
+      "projects.videoThumbnails",
+      "table.toBigQuery",
+      "ui.Button",
+      "ui.Chart",
+      "ui.Checkbox",
+      "ui.data",
+      "ui.DateSlider",
+      "ui.Label",
+      "ui.Map",
+      "ui.Panel",
+      "ui.root",
+      "ui.Select",
+      "ui.Slider",
+      "ui.SplitPanel",
+      "ui.Textbox",
+      "ui.Thumbnail",
+      "ui.url",
+      "ui.util"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/bigquery_integrations",
+        "https://cloud.google.com/earth-engine",
+        "https://developers.google.com/earth-engine/apidocs/ee-featurecollection"
+      ]
+    }
+  ]
+}

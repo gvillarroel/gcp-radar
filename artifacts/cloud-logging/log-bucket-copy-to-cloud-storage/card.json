@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Log Bucket Copy to Cloud Storage",
+  "feature_slug": "log-bucket-copy-to-cloud-storage",
+  "summary": "Cloud Logging can copy log entries from a Logging bucket to a Cloud Storage bucket.",
+  "extended_definition": "Cloud Logging can copy log entries from a Logging bucket to a Cloud Storage bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/routing/overview",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+      "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Write and query log entries using a Python script \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create the sink mysink that exports all log entries with a severity of at least INFO to the Cloud Storage bucket myloggingproject-1 , run the following command: python export . py create mysink myloggingproject - 1 \"severity>=INFO\" The script returns the following: Created sink mysink To view your sinks, run the export.py script with the list option: python export . py list The script returns the following: mysink: severity>=INFO -> storage.googleapis.com/myloggingproject-1 Update destination permissions The permissions of the destination, in this case, your Cloud Storage bucket, aren't modified when you create a sink by using the export.py script.",
+          "Required roles To get the permissions that you need to create, list, and delete log entries and Cloud Storage buckets, ask your administrator to grant you the following IAM roles on your project: Create, list, and delete log entries: Logging Admin ( roles/logging.admin ) Create, list, and delete Cloud Storage buckets: Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Logging can route log entries to the following destinations: Cloud Storage buckets BigQuery datasets Pub/Sub Logging buckets Google Cloud projects Before you begin You must have a Google Cloud project with billing enabled to complete this quickstart."
+        ]
+      },
+      {
+        "title": "Route log entries \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "For best practices about using routing for data governance or for common use cases, see the following documents: Aggregate your organization's log into a central log bucket Regionalize your logs Set up multi-tenant logging for GKE Configure CMEK for logs routing Logs data: A step by step guide for overcoming common compliance challenges Data governance: Principles for securing and managing logs Examples: Centralize your log storage This section outlines how you might configure centralized storage .",
+          "Using a log sink, you can route log entries to various destinations, such as a log bucket for storage or Pub/Sub for export to third-party tools used for observability, notifications, and monitoring.",
+          "Sink destinations Note: To use the visualization and analysis tools of Cloud Logging or to use Error Reporting, you must store your log entries in log buckets."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get an exact count of the number of log entries received in a time interval, use Observability Analytics or copy logs to a Cloud Storage bucket.",
+          "To get an exact count of the number of log entries received in a time interval, use Observability Analytics or copy logs to a Cloud Storage bucket.",
+          "Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "export.py",
+      "logging.admin",
+      "logging.viewer",
+      "storage.admin",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.admin",
+      "roles/logging.viewer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    }
+  ]
+}

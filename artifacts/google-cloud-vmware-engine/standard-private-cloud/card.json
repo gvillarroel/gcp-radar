@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Standard private cloud",
+  "feature_slug": "standard-private-cloud",
+  "summary": "Standard private clouds can be managed with Terraform resources.",
+  "extended_definition": "Standard private clouds can be managed with Terraform resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: curl -L -X POST -H \"Authorization: Bearer TOKEN \" -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters?clusterId= CLUSTER ID \" \\ -d '{ \"nodeTypeConfigs\": { \"standard-72\": { \"nodeCount\": NODE COUNT } } }' Replace the following: CLUSTER ID : the cluster ID for the cluster that you are adding to the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud NODE COUNT : the number of nodes to add Python Add the new cluster and give it a name. from google.api core import operation from google.cloud import vmwareengine v1 def create cluster ( project id : str , zone : str , private cloud name : str , cluster name : str , node count : int = 4 , ) - > operation .",
+          "The following example creates a new cluster of standard-72 node type. curl -L -X POST -H \"Authorization: Bearer TOKEN \" -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters?clusterId= CLUSTER ID \" \\ -d '{ \"nodeTypeConfigs\": { \"standard-72\": { \"nodeCount\": NODE COUNT , \"customCoreCount\": CORE COUNT } } }' Replace the following: PROJECT ID : the project ID for the private cloud CLUSTER ID : the cluster ID for the cluster that you are adding to the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud NODE COUNT : the number of nodes to add CORES COUNT : the number of custom cores to add Python Add the new cluster and specify the core count configuration.",
+          "Click Create . gcloud Add the new cluster and specify the core count configuration by running the gcloud vmware private-clouds clusters create command : The following example creates a new cluster with a standard-72 node type. gcloud vmware private-clouds clusters create CLUSTER ID \\ --location= ZONE \\ --private-cloud= PRIVATE CLOUD ID \\ --node-type-config=type=standard-72,count= NODE COUNT ,custom-core-count= CORE COUNT Replace the following: CLUSTER ID : the cluster ID for the cluster that you are adding to the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud NODE COUNT : the number of nodes to add CORES COUNT : the number of custom cores to add API Add the new cluster and specify the core count configuration by making a POST request."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Single-node private clouds are not upgraded with new software like a standard private cloud.",
+          "The following table describes vSphere cluster limits in private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 32 Private cloud and cluster limitations The following limitations apply to private clouds and clusters: You can create private clouds with mixed node types, combining ve1 and ve2 nodes in a single private cloud.",
+          "The following are common use cases for a single-node private cloud: Proof of concept: evaluating VMware Engine and its capabilities Disaster recovery testing: deploying your application from recent backups to periodically validate disaster recovery preparedness Application upgrade testing: test and validate application component upgrades before upgrading your application in production VMware Engine permits single-node private clouds without a time limit."
+        ]
+      },
+      {
+        "title": "\"VMware Engine stretched private clouds \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A stretched private cloud can have multiple stretched clusters, but each must have exactly two Google Cloud zones for data nodes and one zone for the witness node. vSAN data encryption in stretched private clouds vSAN data encryption at rest is enabled by default in all stretched clusters of a stretched private cloud.",
+          "VMware Engine stretched private clouds A Google Cloud VMware Engine stretched private cloud is a private cloud that is stretched across two data zones and a witness zone, all within the same Google Cloud region.",
+          "Storage policies in stretched private clouds The management VMs of a stretched private cloud run on the first stretched cluster (for example, 'cluster 0')."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    }
+  ]
+}

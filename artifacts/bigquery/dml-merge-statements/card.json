@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "DML MERGE statements",
+  "feature_slug": "dml-merge-statements",
+  "summary": "BigQuery supports DML MERGE statements.",
+  "extended_definition": "BigQuery supports DML MERGE statements.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data manipulation language (DML) statements in GoogleSQL \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "On-demand query size calculation If you use on-demand billing, BigQuery charges for data manipulation language (DML) statements based on the number of bytes processed by the statement.",
+          "Data manipulation language (DML) statements in GoogleSQL The BigQuery data manipulation language (DML) enables you to update, insert, and delete data from your BigQuery tables.",
+          "Inventory S ON T . product = S . product WHEN NOT MATCHED AND quantity < 20 THEN INSERT ( product , quantity , supply constrained , comments ) VALUES ( product , quantity , true , ARRAY<STRUCT<created DATE , comment STRING >> [ ( DATE ( '2016-01-01' ), 'comment1' ) ] ) WHEN NOT MATCHED THEN INSERT ( product , quantity , supply constrained ) VALUES ( product , quantity , false ) These are the tables before you run the query: Inventory +-------------------+----------+ product quantity +-------------------+----------+ dishwasher 30 dryer 30 front load washer 20 microwave 20 oven 5 top load washer 10 +-------------------+----------+ DetailedInventory +----------------------+----------+--------------------+----------+----------------+ product quantity supply constrained comments specifications +----------------------+----------+--------------------+----------+----------------+ countertop microwave 20 NULL [] NULL front load washer 20 false [] NULL microwave 20 false [] NULL refrigerator 10 false [] NULL +----------------------+----------+--------------------+----------+----------------+ This is the DetailedInventory table after you run the query: DetailedInventory +----------------------+----------+--------------------+-------------------------------------------------+----------------+ product quantity supply constrained comments specifications +----------------------+----------+--------------------+-------------------------------------------------+----------------+ countertop microwave 20 NULL [] NULL dishwasher 30 false [] NULL dryer 30 false [] NULL front load washer 20 false [] NULL microwave 20 false [] NULL oven 5 true [{\"created\":\"2016-01-01\",\"comment\":\"comment1\"}] NULL refrigerator 10 false [] NULL top load washer 10 true [{\"created\":\"2016-01-01\",\"comment\":\"comment1\"}] NULL +----------------------+----------+--------------------+-------------------------------------------------+----------------+ Example 2 In the following example, the query merges items from the NewArrivals table into the Inventory table."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.",
+          "A column name: Must contain only letters (a-z, A-Z), numbers (0-9), or underscores ( ) Must start with a letter or underscore Can be up to 300 characters column schema : Similar to a data type , but supports an optional NOT NULL constraint for types other than ARRAY . column schema also supports options on top-level columns and STRUCT fields. column schema can be used only in the column definition list of CREATE TABLE statements.",
+          "BigQuery supports stored procedures for Apache Spark that are written in Python, Java, or Scala. pyspark code : The PySpark code for the stored procedure for Apache Spark if you want to pass the body of the procedure inline."
+        ]
+      },
+      {
+        "title": "\"Transform data with data manipulation language (DML) \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you submit one or more mutating DML statements on a table while other mutating DML jobs on it are still running (or pending), BigQuery runs up to 2 of them concurrently, after which up to 20 are queued as PENDING .",
+          "Rows that were recently written using the tabledata.insertall streaming method can't be modified with data manipulation language (DML), such as UPDATE , DELETE , MERGE , or TRUNCATE statements.",
+          "A MERGE DML statement does not conflict with other concurrently running DML statements as long as the statement only inserts rows and does not delete or update any existing rows."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.usa",
+      "jobs.query",
+      "names.usa",
+      "tabledata.insertall"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

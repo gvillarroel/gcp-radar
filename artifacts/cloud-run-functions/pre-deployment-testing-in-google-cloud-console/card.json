@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.636Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Pre-deployment testing in Google Cloud console",
+  "feature_slug": "pre-deployment-testing-in-google-cloud-console",
+  "summary": "Cloud Run functions supports pre-deployment testing in the Google Cloud console.",
+  "extended_definition": "Cloud Run functions supports pre-deployment testing in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/securing/cmek",
+      "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect your data with CMEK \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Granting service accounts access to the key For all functions, you must grant the following service accounts access to the key: Cloud Run functions service agent ( service- PROJECT NUMBER @gcf-admin-robot.iam.gserviceaccount.com ) Artifact Registry service agent ( service- PROJECT NUMBER @gcp-sa-artifactregistry.iam.gserviceaccount.com ) Cloud Storage service agent ( service- PROJECT NUMBER @gs-project-accounts.iam.gserviceaccount.com ) Cloud Run service agent ( service- PROJECT NUMBER @serverless-robot-prod.iam.gserviceaccount.com ) Eventarc service agent ( service- PROJECT NUMBER @gcp-sa-eventarc.iam.gserviceaccount.com ) To grant these service accounts access to the key, add each service account as a principal of the key and then grant the service account the Cloud KMS CryptoKey Encrypter/Decrypter role: Console Go to the Cloud Key Management Service page in the Google Cloud console: Go to the Cloud KMS page Click the name of the key ring that contains the chosen key.",
+          "The following types of Cloud Run functions data are encrypted when using a CMEK: Function source code uploaded for deployment and stored by Google in Cloud Storage, used in the build process.",
+          "Cloud Run functions CMEK protection only applies to Google-managed Cloud Run functions resources; you are responsible for protecting data and resources managed by you, such as your source code repositories, event channels that live in the customer project, or any services used by your functions."
+        ]
+      },
+      {
+        "title": "\"Execution environment security \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "source_id": "site-iam-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Replace: FUNCTION NAME with the name of your function POLICY with automatic or on-deploy Inspect your function's update policy You can inspect your function's update policy with the following command: gcloud functions describe FUNCTION NAME \\ Where FUNCTION NAME is the name of your function Functions with automatic security updates enabled will have the key automaticUpdatePolicy Functions that update on deployment will have the key onDeployUpdatePolicy Security scans on Cloud Run functions Cloud Run functions that have automatic updates enabled are built on top of a scratch image .",
+          "As a result, the container that represents your function in Artifact Registry won't have a base image and will be considerably smaller than functions using on-deployment updates.",
+          "On deployment updates : Updates and security patches are applied to runtimes only when functions are deployed or redeployed, unless otherwise noted."
+        ]
+      },
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "The error message Console ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/<project-id>/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution To resolve this issue, reset this service account to the default role.",
+          "The error message Console Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\" gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/test-project-356312/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution You can reset your service account to the default cloudfunctions.serviceAgent role.",
+          "The error message gcloud ResponseError: status=[400], code=[Ok], message=[\" LOCATION \" violates constraint \"constraints/gcp.resourceLocations\" on the resource \"projects/ PROJECT ID /locations/ LOCATION /functions/ FUNCTION NAME \".] The solution You can add or remove locations from the allowed values or denied values lists of a resource locations constraint to suit successful deployment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "artifactregistry.iam.gserviceaccount.com",
+      "cloudfunctions.functions.generateUploadUrl",
+      "cloudfunctions.serviceAgent",
+      "developer.gserviceaccount.com",
+      "eventarc.iam.gserviceaccount.com",
+      "gcloud.functions.deploy",
+      "gcp.resourceLocations",
+      "iam.serviceAccounts.ActAs",
+      "prod.iam.gserviceaccount.com",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/securing/execution-environment-security",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    }
+  ]
+}

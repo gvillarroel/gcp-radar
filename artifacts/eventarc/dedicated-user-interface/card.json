@@ -1,0 +1,211 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.056Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Dedicated user interface",
+  "feature_slug": "dedicated-user-interface",
+  "summary": "Eventarc provides a dedicated user interface.",
+  "extended_definition": "Eventarc provides a dedicated user interface.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/authentication",
+      "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class EventarcAsyncClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "ClientInfo ) Eventarc allows users to subscribe to various events that are provided by Google Cloud services and forward them to supported destinations.",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . test iam permissions test iam permissions ( request : typing .",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get location get location ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class EventarcClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "source_id": "site-python-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "ClientInfo ) Eventarc allows users to subscribe to various events that are provided by Google Cloud services and forward them to supported destinations.",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . test iam permissions test iam permissions ( request : typing .",
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get location get location ( request : typing ."
+        ]
+      },
+      {
+        "title": "Authenticate to Eventarc \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud CLI When you use the gcloud CLI to access Eventarc, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands.",
+          "How you authenticate to Eventarc depends on the interface you use to access the API and the environment where your code is running.",
+          "Grant the required role to the principal that will attach the service account to other resources. gcloud iam service-accounts add-iam-policy-binding SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com --member = \"user: USER EMAIL \" --role = roles/iam.serviceAccountUser Replace the following: SERVICE ACCOUNT NAME : the name of the service account PROJECT ID : the project ID where you created the service account USER EMAIL : the email address for a Google Account Create the resource that will run your code, and attach the service account to that resource."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.eventarc.publishing.v1 \\_|\\_ Eventarc \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1",
+        "source_id": "site-api-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index Publisher (interface) CloudEvent (message) CloudEvent.CloudEventAttributeValue (message) PublishChannelConnectionEventsRequest (message) PublishChannelConnectionEventsResponse (message) PublishEventsRequest (message) PublishEventsResponse (message) PublishRequest (message) PublishResponse (message) Publisher Eventarc processes events generated by an event provider and delivers them to a subscriber.",
+          "Home Documentation Application development Eventarc Reference Send feedback Package google.cloud.eventarc.publishing.v1 Stay organized with collections Save and categorize content based on your preferences.",
+          "A Bus provides a discoverable endpoint for events and is a router that receives all events published by event providers and delivers them to zero or more subscribers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "example.com",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountUser",
+      "request.time",
+      "resourcemanager.organizationadmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationviewer",
+      "resourcemanager.organizationViewer",
+      "v1.types.Trigger"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser",
+      "roles/resourcemanager.organizationadmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationviewer",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/eventarc/docs/authentication",
+        "https://docs.cloud.google.com/eventarc/docs/reference/publishing/rpc/google.cloud.eventarc.publishing.v1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.195Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub publish timestamp field",
+  "feature_slug": "pub-sub-publish-timestamp-field",
+  "summary": "Pulled messages include the original publish timestamp.",
+  "extended_definition": "Pulled messages include the original publish timestamp.",
+  "lifecycle": {
+    "latest_feature_date": "2015-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+      "https://docs.cloud.google.com/pubsub/docs/publisher"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+        "source_id": "site-docs-root",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Publish and receive messages in Pub/Sub using the Google Cloud console This page shows you how to perform basic tasks in Pub/Sub using the Google Cloud console.",
+          "Pull the messages from the subscription In the Google Cloud console, go to the Pub/Sub subscriptions page.",
+          "Publish a message to the topic In the Google Cloud console, go to the Pub/Sub topics page."
+        ]
+      },
+      {
+        "title": "Publish messages to topics \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "source_id": "site-docs-root",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Publish . gcloud To publish a message with an ordering key, use the gcloud pubsub topics publish command and the --ordering-key flag: gcloud pubsub topics publish TOPIC ID \\ --message= MESSAGE DATA \\ --ordering-key= ORDERING KEY Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data ORDERING KEY : a string with an ordering key REST To publish a message with an ordering key, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { \"messages\": [ { \"attributes\": { \" KEY \": \" VALUE \", ... }, \"data\": \" MESSAGE DATA \", \"ordering key\": \" ORDERING KEY \", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data ORDERING KEY : a string with an ordering key The message must contain either a non-empty data field or at least one attribute.",
+          "Click Publish . gcloud To publish a message, use the gcloud pubsub topics publish command: gcloud pubsub topics publish TOPIC ID \\ --message= MESSAGE DATA \\ [--attribute= KEY =\" VALUE \",...] Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data KEY : the key of a message attribute VALUE : the value for the key of the message attribute REST To publish a message, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { \"messages\": [ { \"attributes\": { \" KEY \": \" VALUE \", ... }, \"data\": \" MESSAGE DATA \", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data The message must contain either a non-empty data field or at least one attribute.",
+          "Specify at least one of the following in the message: The message data An ordering key Attributes with additional metadata The Pub/Sub service adds the following fields to the message: A message ID unique to the topic A timestamp for when the Pub/Sub service receives the message To learn more about messages, see Message format ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using a client library\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "source_id": "site-docs-root",
+        "final_score": 271,
+        "relevance": "",
+        "evidence_snippets": [
+          "PublisherClient () The topic path method creates a fully qualified identifier in the form projects/{project id}/topics/{topic id} topic path = publisher . topic path ( project id , topic id ) for n in range ( 1 , 10 ): data str = f \"Message number { n } \" Data must be a bytestring data = data str . encode ( \"utf-8\" ) When you publish a message, the client returns a future. future = publish er . publish ( topic path , data ) print ( future . result ()) print ( f \"Published messages to { topic path } .\" ) C++ #include \"google/cloud/pubsub/publisher.h\" #include <iostream> int main ( int argc , char argv []) try { if ( argc != 3 ) { std :: cerr << \"Usage: \" << argv [ 0 ] << \" <project-id> <topic-id> \\n \" ; return 1 ; } std :: string const project id = argv [ 1 ]; std :: string const topic id = argv [ 2 ]; // Create a namespace alias to make the code easier to read. namespace pubsub = :: google :: cloud :: pubsub ; auto publisher = pubsub :: Publisher ( pubsub :: MakePublisherConnection ( pubsub :: Topic ( project id , topic id ))); auto id = publisher .",
+          "Build ()) . get (); if ( ! id ) throw std :: move ( id ). status (); std :: cout << \"Hello World published with id=\" << id << \" \\n \" ; return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << \"google::cloud::Status thrown: \" << status << \" \\n \" ; return 1 ; } C# using Google.Cloud.PubSub.V1 ; using System ; using System.Collections.Generic ; using System.Linq ; using System.Threading ; using System.Threading.Tasks ; public class PublishMessagesAsyncSample { public async Task<int> PublishMessagesAsync ( string projectId , string topicId , IEnumerable<string> messageTexts ) { TopicName topicName = TopicName .",
+          "PHP EOL, $message->data()); // Acknowledge the Pub/Sub message has been received, so it will not be pulled multiple times. $subscription->acknowledge($message); } } Ruby subscription id = \"your-subscription-id\" pubsub = Google :: Cloud :: PubSub . new subscriber = pubsub . subscriber subscription id listener = subscriber . listen do received message puts \"Received message: #{ received message . data } \" received message . acknowledge! end listener . start Let the main thread sleep for 60 seconds so the thread for listening messages does not quit sleep 60 listener . stop . wait!"
+        ]
+      },
+      {
+        "title": "Create BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if the Drop unknown fields option is enabled and a field is present in the Pub/Sub schema, but not the BigQuery schema, messages written to the BigQuery table might still not contain the field after adding it to the BigQuery schema.",
+          "Parameters subscription name STRING Name of a subscription. message id STRING ID of a message publish time TIMESTAMP The time of publishing a message. data BYTES, STRING, or JSON The message body.",
+          "Any messages that validated against a deleted schema revision at the time of publish cannot be written to BigQuery using a BigQuery subscription with Use topic schema enabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "publisher.h",
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-console",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+      ]
+    }
+  ]
+}

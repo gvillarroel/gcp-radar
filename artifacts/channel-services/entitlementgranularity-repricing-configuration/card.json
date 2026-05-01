@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.210Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services",
+  "feature_name": "EntitlementGranularity Repricing Configuration",
+  "feature_slug": "entitlementgranularity-repricing-configuration",
+  "summary": "Adds support for creating Channel Services repricing configurations using EntitlementGranularity in the Channel Services API instead of ChannelPartnerGranularity.",
+  "extended_definition": "Adds support for creating Channel Services repricing configurations using EntitlementGranularity in the Channel Services API instead of ChannelPartnerGranularity.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/rebilling/create-customer-cost-dashboards",
+      "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+      "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage repricing configurations \\_|\\_ Channel Services \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The repricing management pane has a table with the following columns: Active on : The date an upcoming configuration becomes active, the date the current configuration became active, and the date when past configurations were active.",
+          "View repricing configurations To view more details about the current repricing configurations for a customer, navigate to the Customers page of the Partner Sales Console and select the customer's Name to view their details.",
+          "Creating too many mid-month updates might cause unpredictable billing results for the ongoing month for customers, so we recommend updating configurations mid-month only when absolutely necessary."
+        ]
+      },
+      {
+        "title": "Rebilling overview \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Since this report includes customer and channel partner costs, along with customer metadata and cost configured using Repricing configurations , you can use the exported data to improve your internal billing processes and financial analytics.",
+          "Rebilling consists of two main features: Repricing configurations BigQuery exports BigQuery exports You can export a comprehensive report of your customers' billing usage and cost data to a BigQuery dataset that you own.",
+          "While viewing the list of repricing configurations for a customer, you can click Manage repricing to view and modify the configurations for a specific entitlement."
+        ]
+      },
+      {
+        "title": "\"Create customer cost dashboards using Looker Studio \\_|\\_ Channel Services\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/create-customer-cost-dashboards",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can combine Channel Services data export with Looker Studio to create cost dashboards to share with your customer or channel partner (distributor-only), populated with costs configured using repricing configurations .",
+          "Create repricing configurations to configure cost for your customer .",
+          "VIEW NAME AS ( SELECT EXCEPT ( cost , credits , customer name , customer cost , customer repricing config name , channel partner name , channel partner cost , channel partner repricing config name , customer correlation id ), COALESCE (( SELECT SUM ( c . customer amount ) FROM UNNEST ( credits ) AS c ), 0 ) AS credits sum amount , COALESCE (( SELECT SUM ( c . customer amount ) FROM UNNEST ( credits ) AS c ), 0 ) + customer cost AS net cost , PARSE DATE ( \"%Y%m\" , invoice . month ) AS Invoice Month , DATE ( export time ) AS date , FROM PROJECT ID ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/rebilling/create-customer-cost-dashboards"
+      ]
+    }
+  ]
+}

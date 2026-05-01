@@ -1,0 +1,195 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.311Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "compute.managed.disableNestedVirtualization constraint",
+  "feature_slug": "compute-managed-disablenestedvirtualization-constraint",
+  "summary": "This managed organization policy constraint enforces a security control that disables nested virtualization for Compute Engine VMs.",
+  "extended_definition": "This managed organization policy constraint enforces a security control that disables nested virtualization for Compute Engine VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+      "https://docs.cloud.google.com/compute/docs/access/organization-policies",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managed constraints \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 343,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metadata-based constraints and levels Constraint Metadata key Metadata hierarchy levels compute.managed.disableSerialPortAccess serial-port-enable Project, Zonal, Instance compute.managed.requireOsLogin enable-oslogin Project, Zonal, Instance compute.managed.disableGuestAttributesAccess enable-guest-attributes Project, Zonal, Instance compute.managed.requireOsConfig enable-osconfig Project, Zonal, Instance compute.managed.disallowGlobalDns VmDnsSetting Project, Instance Safe rollout: The policy lifecycle To prevent service disruptions when you gradually implement new constraints, Google recommends that you implement managed constraints by following these steps: Analyze with Policy Simulator Before enforcing a policy, use Policy Simulator to see which existing resources violate the policy.",
+          "To exempt a project from the compute.managed.requireOsLogin constraint, bind the osLoginOptional=true tag to the project using the gcloud resource-manager tags bindings create command : gcloud resource-manager tags bindings create \\ --tag-value = ORGANIZATION ID /osLoginOptional/true \\ --parent = //cloudresourcemanager.googleapis.com/projects/ PROJECT ID \\ --location = global Replace ORGANIZATION ID with your organization ID, and PROJECT ID with the ID of the project that you want to exempt.",
+          "First apply tags to mark the instances, and then use conditional rules based on tag values to properly scope those instances out of enforcement. constraints/compute.managed.disableGuestAttributesAccess Disable VM Nested Virtualization This boolean constraint disables hardware-accelerated nestedvirtualization for all Compute Engine VMs belonging to the organization, project, or folder where this constraint is set to True ."
+        ]
+      },
+      {
+        "title": "Batasan kebijakan organisasi | Resource Manager | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "source_id": "feature-recovery-http",
+        "final_score": 341,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Secara default, virtualisasi bertingkat dengan akselerasi hardware diizinkan untuk semua VM Compute Engine yang berjalan di platform CPU Intel Haswell atau yang lebih baru. constraints/compute.managed.disableNestedVirtualization Compute Engine Membatasi pengaktifan metadata akses port serial VM Pratinjau: Batasan ini mencegah kunci metadata serial-port-enable disetel ke benar (true) untuk VM Compute Engine dalam organisasi, project, atau folder tempat batasan ini diberlakukan.",
+          "Batasan kebijakan organisasi berikut memiliki perilaku default yang dikelola Google yang membatasi operasi: Batasan kebijakan organisasi Jenis batasan constraints/appengine.runtimeDeploymentExemption Dikelola (lama) constraints/cloudbuild.disableCreateDefaultServiceAccount Dikelola (lama) constraints/cloudbuild.useBuildServiceAccount Dikelola (lama) constraints/cloudbuild.useComputeServiceAccount Dikelola (lama) constraints/commerceorggovernance.marketplaceServices Dikelola (lama) constraints/compute.managed.blockPreviewFeatures Dikelola constraints/compute.sharedReservationsOwnerProjects Dikelola (lama) constraints/iam.allowServiceAccountCredentialLifetimeExtension Dikelola (lama) constraints/iam.disableCrossProjectServiceAccountUsage Dikelola (lama) constraints/iam.managed.disableServiceAccountApiKeyCreation Dikelola constraints/iam.serviceAccountKeyExposureResponse Dikelola (lama) constraints/resourcemanager.allowedExportDestinations Dikelola (lama) constraints/resourcemanager.allowedImportSources Dikelola (lama) constraints/resourcemanager.allowEnabledServicesForExport Dikelola (lama) constraints/vertexai.allowedPartnerModelFeatures Dikelola (lama) Batasan yang tersedia Anda dapat membuat kebijakan organisasi menggunakan batasan berikut.",
+          "Penting: Menerapkan batasan ini tidak memengaruhi VM yang ada yang serial-port-enable-nya sudah disetel ke benar (true); VM tersebut akan mempertahankan akses kecuali jika metadatanya diperbarui. constraints/compute.managed.disableSerialPortAccess Compute Engine Nonaktifkan logging port serial VM ke Stackdriver [Pratinjau Publik] Jika diberlakukan, batasan ini akan menonaktifkan logging port serial ke Stackdriver dari VM Compute Engine."
+        ]
+      },
+      {
+        "title": "Organization policies for Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/organization-policies",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Constraint types When you use the Organization Policy, you can apply the following types of constraints: Managed constraints : Google-provided, predefined constraints that are built on a modern platform, identifiable by the compute.managed. prefix.",
+          "Managed constraints Managed constraints for Compute Engine simplify governance for common security scenarios and integrate with safe rollout tools, such as dry-run and Policy Simulator, which let you test their impact before enforcement.",
+          "Compute Engine constraints The following sections list the Compute Engine constraints that Organization Policy supports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.runtimeDeploymentExemption",
+      "cloudbuild.disableCreateDefaultServiceAccount",
+      "cloudbuild.useBuildServiceAccount",
+      "cloudbuild.useComputeServiceAccount",
+      "cloudresourcemanager.googleapis.com",
+      "commerceorggovernance.marketplaceServices",
+      "compute.disableGuestAttributes",
+      "compute.disableInstanceDataAccessApis",
+      "compute.disableInternetNetworkEndpointGroup",
+      "compute.disableNestedVirtualization",
+      "compute.disableSerialPortAccess",
+      "compute.disableSerialPortLogging",
+      "compute.disableVpcExternalIpv6",
+      "compute.managed",
+      "compute.managed.blockPreviewFeatures",
+      "compute.managed.disableGuestAttributesAccess",
+      "compute.managed.disableNestedVirtualization",
+      "compute.managed.disableSerialPortAccess",
+      "compute.managed.disableSerialPortLogging",
+      "compute.managed.disallowGlobalDns",
+      "compute.managed.requireOsConfig",
+      "compute.managed.requireOsLogin",
+      "compute.managed.restrictNonConfidentialComputing",
+      "compute.sharedReservationsOwnerProjects",
+      "iam.allowServiceAccountCredentialLifetimeExtension",
+      "iam.disableCrossProjectServiceAccountUsage",
+      "iam.managed.disableServiceAccountApiKeyCreation",
+      "iam.serviceAccountKeyExposureResponse",
+      "resourcemanager.allowedExportDestinations",
+      "resourcemanager.allowedImportSources",
+      "resourcemanager.allowEnabledServicesForExport",
+      "vertexai.allowedPartnerModelFeatures"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    }
+  ]
+}

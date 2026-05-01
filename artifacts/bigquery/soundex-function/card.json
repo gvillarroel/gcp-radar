@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "SOUNDEX function",
+  "feature_slug": "soundex-function",
+  "summary": "BigQuery Standard SQL supports the SOUNDEX phonetic matching function.",
+  "extended_definition": "BigQuery Standard SQL supports the SOUNDEX phonetic matching function.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how BigQuery Graph supports these standards.",
+          "Standard SQL/PGQ GQL BigQuery Graph Query Graph pattern matching capabilities Shares the core Graph Pattern Matching Language (GPML) functionalities with GQL.",
+          "BigQuery Graph and ISO standards The document describes how BigQuery Graph supports the ISO international standard query language for graph databases."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "SOUNDEX produces a phonetic representation of a string.",
+          "GoogleSQL for BigQuery supports string functions.",
+          "Return type STRING Examples SELECT 'Ashcraft' AS value , SOUNDEX ( 'Ashcraft' ) AS soundex / ----------------------+---------+ value soundex +----------------------+---------+ Ashcraft A261 +----------------------+--------- / SPLIT SPLIT ( value [ , delimiter ] ) Description Splits a STRING or BYTES value, using a delimiter."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: legacySQL SELECT cigarette use , / Finds average and standard deviation / AVG ( weight pounds ) baby weight , STDDEV ( weight pounds ) baby weight stdev , AVG ( mother age ) mother age FROM [ bigquery - public - data : samples . natality ] WHERE year = 2003 AND state = 'OH' / Group the result values by those / / who smoked and those who didn't. / GROUP BY cigarette use ; Filter query results using an aggregated value In order to filter query results using an aggregated value (for example, filtering by the value of a SUM ), use the HAVING function.",
+          "This method will only work if the dataset is in your current default project. legacySQL SELECT samples . shakespeare . word FROM samples . shakespeare ; This example prefixes the column name with a table alias. legacySQL SELECT t . word FROM [ bigquery - public - data : samples . shakespeare ] AS t ; Integer-range partitioned tables Legacy SQL supports using table decorators to address a specific partition in an integer-range partitioned table.",
+          "Semi-join and Anti-join In addition to supporting JOIN in the FROM clause, BigQuery also supports two types of joins in the WHERE clause: semi-join and anti-semi-join."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

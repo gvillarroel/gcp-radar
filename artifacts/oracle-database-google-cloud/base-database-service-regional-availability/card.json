@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.890Z",
+  "source_step08_card": "data/step-08/current/products/oracle-database-google-cloud/card.json",
+  "product_name": "Oracle Database@Google Cloud",
+  "product_slug": "oracle-database-google-cloud",
+  "feature_name": "Base Database Service regional availability",
+  "feature_slug": "base-database-service-regional-availability",
+  "summary": "Base Database Service is now available in asia-northeast1-a-r1 and europe-west3-b-r1.",
+  "extended_definition": "Base Database Service is now available in asia-northeast1-a-r1 and europe-west3-b-r1.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+      "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+      "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+      "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View backups for an Autonomous AI Database \\_|\\_ Oracle Database at Google\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "source_id": "site-docs-reference",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OracleDatabaseClient ; public class AsyncListAutonomousDatabaseBackups { public static void main ( String [] args ) throws Exception { asyncListAutonomousDatabaseBackups (); } public static void asyncListAutonomousDatabaseBackups () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { ListAutonomousDatabaseBackupsRequest request = ListAutonomousDatabaseBackupsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setFilter ( \"filter-1274492040\" ) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<AutonomousDatabaseBackup> future = oracleDatabaseClient . listAutonomousDatabaseBackupsPagedCallable (). futureCall ( request ); // Do something. for ( AutonomousDatabaseBackup element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.",
+          "C# using Google.Api.Gax ; using Google.Cloud.OracleDatabase.V1 ; using System ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for ListAutonomousDatabaseBackupsAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task ListAutonomousDatabaseBackupsAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client, please see the apiEndpoint client configuration option for more details. / function callSample(): void { $formattedParent = OracleDatabaseClient::locationName('[PROJECT]', '[LOCATION]'); list autonomous database backups sample($formattedParent); } Python This snippet has been automatically generated and should be regarded as a code template only."
+        ]
+      },
+      {
+        "title": "\"Create Exadata Infrastructure instances \\_|\\_ Oracle Database at Google\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "source_id": "site-docs-reference",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operation ; public class AsyncCreateCloudExadataInfrastructure { public static void main ( String [] args ) throws Exception { asyncCreateCloudExadataInfrastructure (); } public static void asyncCreateCloudExadataInfrastructure () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { CreateCloudExadataInfrastructureRequest request = CreateCloudExadataInfrastructureRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setCloudExadataInfrastructureId ( \"cloudExadataInfrastructureId975345409\" ) . setCloudExadataInfrastructure ( CloudExadataInfrastructure . newBuilder (). build ()) . setRequestId ( \"requestId693933066\" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . createCloudExadataInfrastructureCallable (). futureCall ( request ); // Do something.",
+          "C# using Google.Cloud.OracleDatabase.V1 ; using Google.LongRunning ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for CreateCloudExadataInfrastructureAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task CreateCloudExadataInfrastructureAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client, please see the apiEndpoint client configuration option for more details. / function callSample(): void { $formattedParent = OracleDatabaseClient::locationName('[PROJECT]', '[LOCATION]'); $cloudExadataInfrastructureId = '[CLOUD EXADATA INFRASTRUCTURE ID]'; create cloud exadata infrastructure sample($formattedParent, $cloudExadataInfrastructureId); } Python This snippet has been automatically generated and should be regarded as a code template only."
+        ]
+      },
+      {
+        "title": "\"Create databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operation ; public class AsyncCreateAutonomousDatabase { public static void main ( String [] args ) throws Exception { asyncCreateAutonomousDatabase (); } public static void asyncCreateAutonomousDatabase () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { CreateAutonomousDatabaseRequest request = CreateAutonomousDatabaseRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setAutonomousDatabaseId ( \"autonomousDatabaseId-1972693114\" ) . setAutonomousDatabase ( AutonomousDatabase . newBuilder (). build ()) . setRequestId ( \"requestId693933066\" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . createAutonomousDatabaseCallable (). futureCall ( request ); // Do something.",
+          "C# using Google.Cloud.OracleDatabase.V1 ; using Google.LongRunning ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for CreateAutonomousDatabaseAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task CreateAutonomousDatabaseAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client, please see the apiEndpoint client configuration option for more details. / function callSample(): void { $formattedParent = OracleDatabaseClient::locationName('[PROJECT]', '[LOCATION]'); $autonomousDatabaseId = '[AUTONOMOUS DATABASE ID]'; create autonomous database sample($formattedParent, $autonomousDatabaseId); } Python This snippet has been automatically generated and should be regarded as a code template only."
+        ]
+      },
+      {
+        "title": "\"Delete databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "C# using Google.Cloud.OracleDatabase.V1 ; using Google.LongRunning ; using Google.Protobuf.WellKnownTypes ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for DeleteAutonomousDatabaseAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task DeleteAutonomousDatabaseAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .",
+          "Operation ; public class AsyncDeleteAutonomousDatabase { public static void main ( String [] args ) throws Exception { asyncDeleteAutonomousDatabase (); } public static void asyncDeleteAutonomousDatabase () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { DeleteAutonomousDatabaseRequest request = DeleteAutonomousDatabaseRequest . newBuilder () . setName ( AutonomousDatabaseName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[AUTONOMOUS DATABASE]\" ) . toString ()) . setRequestId ( \"requestId693933066\" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . deleteAutonomousDatabaseCallable (). futureCall ( request ); // Do something. future . get (); } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client, please see the apiEndpoint client configuration option for more details. / function callSample(): void { $formattedName = OracleDatabaseClient::autonomousDatabaseName( '[PROJECT]', '[LOCATION]', '[AUTONOMOUS DATABASE]' ); delete autonomous database sample($formattedName); } Python This snippet has been automatically generated and should be regarded as a code template only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "pkg.go.dev",
+      "projects.locations.autonomousDatabaseBackups",
+      "projects.locations.autonomousDatabaseBackups.list",
+      "projects.locations.autonomousDatabases",
+      "projects.locations.autonomousDatabases.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "https://docs.cloud.google.com/oracle/database/docs/create-instances",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases"
+      ]
+    }
+  ]
+}

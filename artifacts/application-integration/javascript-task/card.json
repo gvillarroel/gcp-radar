@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.342Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "JavaScript task",
+  "feature_slug": "javascript-task",
+  "summary": "The JavaScript task lets users add custom JavaScript snippets for mapping logic, variable assignment, and integration variable manipulation.",
+  "extended_definition": "The JavaScript task lets users add custom JavaScript snippets for mapping logic, variable assignment, and integration variable manipulation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+      "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JavaScript task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 194,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The JavaScript task lets you write custom JavaScript code snippets for your integration.",
+          "In the parameters field, locate the parameter named script . \"taskConfigs\": [{ \"task\": \"JavaScriptTask\", \"taskId\": 1, \"parameters\": { \"script\": { \"key\": \"script\", \"value\": { \"stringValue\": \"function that is called during the JavaScriptTask execution\" } }\" }] In this parameters field, add parameters that are used in the JavaScriptTask field by using the following template: \"ParamName\": { \"key\": \"ParamName\", \"value\": { \"stringValue\": \"$ParamName$\" } } To upload the integration version, make a call to the projects.locations.integrations.versions.upload method with the updated integration version file.",
+          "In the parameters field, locate the parameter named script . \"taskConfigs\": [{ \"task\": \"JavaScriptTask\", \"taskId\": 1, \"parameters\": { \"script\": { \"key\": \"script\", \"value\": { \"stringValue\": \"function that is called during the JavaScriptTask execution\" } }\" }] In this parameters field, add parameters that are used in the JavaScriptTask field by using the following template: \"ParamName\": { \"key\": \"ParamName\", \"value\": { \"stringValue\": \"$ParamName$\" } } Save the changes that you made to the integration version file."
+        ]
+      },
+      {
+        "title": "\"Build integrations with Gemini Code Assist \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "source_id": "site-docs-reference-2",
+        "final_score": 176,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Edit a JavaScript task The JavaScript task lets you write custom JavaScript code snippets for your integration.",
+          "Add a JavaScript task The JavaScript task lets you write custom JavaScript code snippets for your integration.",
+          "When you confirm the prompt, the data mapping task is replaced by a JavaScript task ."
+        ]
+      },
+      {
+        "title": "Connectors task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your result set has a large number of pages, you can consider using the While Loop task to get the next page and using the Data Mapping task to automatically assign page token values to the listEntitiesPageToken input parameter after each run.",
+          "Connectors task The Connectors task lets you quickly and securely connect to the various Google Cloud services and other business applications from your integration using the out-of-the-box connectors available in Integration Connectors .",
+          "If you want to use an integration variable, you must first configure a Data Mapping task to create a mapping between the integration variable and the filter clause."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.integrations.versions.upload"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-javascript-task",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.285Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "CacheExpiryInSeconds support for token and API key verification",
+  "feature_slug": "cacheexpiryinseconds-support-for-token-and-api-key-verification",
+  "summary": "VerifyAPIKey and OAuth2 VerifyAccessToken support CacheExpiryInSeconds to enforce and customize cache TTL for cached tokens.",
+  "extended_definition": "VerifyAPIKey and OAuth2 VerifyAccessToken support CacheExpiryInSeconds to enforce and customize cache TTL for cached tokens.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to API products \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Whether using the consumer key or OAuth tokens as request credentials, the API proxy validates the request credentials in your API proxies by including a VerifyAPIKey policy or a VerifyAccessToken policy configuration (see OAuthv2 policy ) in the appropriate flow.",
+          "In the case of OAuth token verification, Apigee verifies that the token is not expired, and then looks up the consumer key that was used to generate the token.",
+          "When the API uses OAuth Token verification, the app must pass a token which has been derived from the consumer key."
+        ]
+      },
+      {
+        "title": "Get started with LLM token policies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following LLMTokenQuota policy example enforces a quota of 10,000 tokens per hour, with the settings dynamically sourced from an API product: < LLMTokenQuota name = \"Quota-Enforce-Only\" type = \"rollingwindow\" > < EnforceOnly>true < / EnforceOnly > < ! -- The interval and time unit for the quota -- > < Interval ref = \"verifyapikey.verify-api-key.apiproduct.developer.llmQuota.interval\" > 1 < / Interval > < TimeUnit ref = \"verifyapikey.verify-api-key.apiproduct.developer.llmQuota.timeunit\" > hour < / TimeUnit > < ! -- The number of tokens allowed in the interval -- > < Allow count = \"10000\" countRef = \"verifyapikey.verify-api-key.apiproduct.developer.llmQuota.limit\" / > < ! -- Specifies where to get the token usage from the LLM ' s response -- > < LLMTokenUsageSource > { jsonPath ( '$ . usageMetadata . candidatesTokenCount ' , response . content , true )} < / LLMTokenUsageSource > < ! -- Specifies where to get the model name from the LLM ' s response -- > < LLMModelSource > { jsonPath ( '$ . model ' , response . content , true )} < / LLMModelSource > < / LLMTokenQuota > Where: <EnforceOnly> : When set to true , this element is used to reject API calls once the token quota has been exceeded.",
+          "See the PromptTokenLimit policy reference page for: Examples Flow variables Error reference Configure the PromptTokenLimit policy in the Apigee UI when performing the following tasks: Create an API product Creating an API proxy using the UI Attaching and configuring policies in the UI LLMTokenQuota policy Use the LLMTokenQuota policy when you want to set and enforce token consumption quotas for different API products, developers, or apps.",
+          "Overview Apigee's LLM token policies are crucial for cost control, performance optimization, and platform stability, leveraging LLM token usage and user prompt token metrics to enforce limits and provide real-time monitoring."
+        ]
+      },
+      {
+        "title": "\"Enforce monetization limits in API proxies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 103,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add an authentication policy Apigee monetization uses the VerifyAPIKey policy or the VerifyAccessToken operation of the OAuth2 policy to determine if an incoming request is monetizable by checking for the active published rate plan.",
+          "See also: Attaching a policy to a flow Verifying access tokens Monitoring and debugging the authentication policy using Debug Enforce subscriptions on API products Attach the MonetizationLimitsCheck policy to API proxies to enforce subscriptions on the API product by developer or AppGroup: If no active rate plan exists for the API product fetched during the proxy call execution, the product is deemed non-monetized, the MonetizationLimitsCheck policy does not fetch any further data, and the policy has no effect.",
+          "For more information, see: Creating an API proxy Editing an API proxy Attaching a policy to a flow Debugging the MonetizationLimitsCheck policy using Debug MonetizationLimitsCheck policy Enforce monetization quotas in API proxies Note: If you add a quota after the API product has been in use, the quota calculation starts from the next monetized transaction."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "key.apiproduct.developer.llmQuota.interval",
+      "key.apiproduct.developer.llmQuota.limit",
+      "key.apiproduct.developer.llmQuota.timeunit",
+      "verifyapikey.verify"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/what-api-product",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/monetization/enforce-monetization-limits",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+      ]
+    }
+  ]
+}

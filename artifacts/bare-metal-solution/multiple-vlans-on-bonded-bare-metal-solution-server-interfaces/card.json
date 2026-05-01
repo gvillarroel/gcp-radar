@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.851Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Multiple VLANs on bonded Bare Metal Solution server interfaces",
+  "feature_slug": "multiple-vlans-on-bonded-bare-metal-solution-server-interfaces",
+  "summary": "Allows users to add multiple VLANs to the same bonded server interface.",
+  "extended_definition": "Allows users to add multiple VLANs to the same bonded server interface.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Plan for Bare Metal Solution \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When your order an advanced networking configuration, the following options become available for more complex network deployments: Multiple VLANs Multiple VLAN attachments Multiple VPC connections Maximum transmission unit Network templates Multiple VLANs Instead of a single client network and single private network for each bonded interface, you can add multiple client networks and private networks on server bond interfaces.",
+          "After you create and attach a network to a server through the Google Cloud console you have the following two options to apply a new network configuration on the server: Manual configuration This option lets you configure your server manually with new network interfaces, IP addressing and the IP routing.",
+          "For example, to configure MTU on a Linux server, issue the ip link set INTERFACE NAME mtu 1500 command on all server interfaces."
+        ]
+      },
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the networks section of the output, you can view the network template, logical interfaces, bonded interfaces, and network type assigned to each interface. curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME \" Implement IP Address Management in a Bare Metal Solution environment Being able to manage your network topology inside your Bare Metal Solution environment is important.",
+          "Note: You can also configure multiple networks on a server while provisioning through the Google Cloud console intake form.",
+          "Attach a storage volume to a server You can attach multiple storage volumes to a server at once."
+        ]
+      },
+      {
+        "title": "SAP HANA planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about multi-NIC compute instances, such as network and subnetwork requirements and the maximum number of network interfaces, see Multiple network interfaces .",
+          "Machine types that support memory-error recovery The following Compute Engine machine types support memory-error recovery: M4: m4-megamem-28 m4-megamem-56 m4-megamem-112 m4-megamem-224 m4-ultramem-56 m4-ultramem-112 m4-ultramem-224 M3: m3-ultramem-32 m3-ultramem-64 m3-ultramem-128 m3-megamem-64 m3-megamem-128 M2: m2-ultramem-208 m2-ultramem-416 m2-megamem-416 m2-hypermem-416 Required operating systems for memory-error recovery With the required kernel patches, the following operating systems support memory-error recovery with SAP HANA Fast Restart: SUSE Linux Enterprise Server (SLES) for SAP, 12 SP3 or later.",
+          "While using Hyperdisk with SAP HANA, to enable the best performance, we recommend that you update your SAP HANA system properties as follows: Update your global.ini file: In the fileio section, set num completion queues = 12 In the fileio section, set num submit queues = 12 Update your indexserver.ini file: In the parallel section, set tables preloaded in parallel = 32 In the global section, set load table numa aware = true When you create a Hyperdisk Extreme volume, the number of IOPS that you provision determines its maximum throughput."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com",
+      "global.ini",
+      "indexserver.ini",
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+      ]
+    }
+  ]
+}

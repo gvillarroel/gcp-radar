@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Search indexes",
+  "feature_slug": "search-indexes",
+  "summary": "Search indexes accelerate finding specific data elements in unstructured text and semi-structured data with GoogleSQL.",
+  "extended_definition": "Search indexes accelerate finding specific data elements in unstructured text and semi-structured data with GoogleSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SEARCH_INDEXES view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "source_id": "site-docs-reference-3",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SEARCH INDEXES WHERE index status = 'ACTIVE' ; The results should look like the following: +-------------+-------------+--------------------------------------------------------------------------------------+---------------------+----------------+ table name index name ddl coverage percentage analyzer +-------------+-------------+--------------------------------------------------------------------------------------+---------------------+----------------+ small table names index CREATE SEARCH INDEX names index ON my project.my dataset.small table(names) 0 NO OP ANALYZER large table logs index CREATE SEARCH INDEX logs index ON my project.my dataset.large table(ALL COLUMNS) 100 LOG ANALYZER +-------------+-------------+--------------------------------------------------------------------------------------+---------------------+----------------+ Troubleshooting To enable this view, you can set the value of enable info schema storage to TRUE on your project or organization.",
+          "The INFORMATION SCHEMA.SEARCH INDEXES view has the following schema: Column name Data type Value index catalog STRING The name of the project that contains the dataset. index schema STRING The name of the dataset that contains the index. table name STRING The name of the base table that the index is created on. index name STRING The name of the index. index status STRING The status of the index: ACTIVE , PENDING DISABLEMENT , TEMPORARILY DISABLED , or PERMANENTLY DISABLED .",
+          "0% means the index is not usable in a SEARCH query, even if some data has already been indexed. unindexed row count INTEGER The number of rows in the base table that have not been indexed. total logical bytes INTEGER The number of billable logical bytes for the index. total storage bytes INTEGER The number of billable storage bytes for the index. analyzer STRING The text analyzer to use to generate tokens for the search index."
+        ]
+      },
+      {
+        "title": "SEARCH_INDEXES_BY_ORGANIZATION view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "source_id": "site-docs-reference-3",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AND search index . index status details . throttle status != 'BASE TABLE TOO SMALL' GROUP BY search index . project id , search index . use background reservation The result is similar to the following: +---------------------+----------------------------+---------------------+ project id use background reservation total logical bytes +---------------------+----------------------------+---------------------+ projecta true 971329178274633 +---------------------+----------------------------+---------------------+ projectb false 834638211024843 +---------------------+----------------------------+---------------------+ projectc false 562910385625126 +---------------------+----------------------------+---------------------+ Find throttled search indexes This following example returns all search indexes that are throttled within the organization and region: SELECT project id , index schema , table name , index name FROM region - us .",
+          "SEARCH INDEXES BY ORGANIZATION WHERE -- Excludes search indexes that are permanently disabled. index status != 'PERMANENTLY DISABLED' AND index status details . throttle status IN ( 'ORGANIZATION LIMIT EXCEEDED' , 'BASE TABLE TOO LARGE' ) The result is similar to the following: +--------------------+--------------------+---------------+----------------+ project id index schema table name index name +--------------------+--------------------+---------------+----------------+ projecta dataset us table1 index1 projectb dataset us table1 index1 +--------------------+--------------------+---------------+----------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Schema The INFORMATION SCHEMA.SEARCH INDEXES BY ORGANIZATION view has the following schema: Column name Data type Value project id STRING The name of the project that contains the dataset. project number STRING The project number that contains the dataset. index catalog STRING The name of the project that contains the dataset. index schema STRING The name of the dataset that contains the index. table name STRING The name of the base table that the index is created on. index name STRING The name of the search index. index status STRING The status of the index can be one of the following: ACTIVE : the index is usable or being created."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Constraints cannot be specified on ARRAY or STRUCT elements. column := column name column schema column schema := { simple type STRUCT<field list> ARRAY<array element schema> } [ PRIMARY KEY NOT ENFORCED REFERENCES table name ( column name ) NOT ENFORCED ] [ DEFAULT default expression GENERATED ALWAYS AS ( generation expression ) STORED OPTIONS ( generation option list ) ] [ NOT NULL ] [ OPTIONS ( column option list ) ] simple type := { data type STRING COLLATE collate specification } field list := field name column schema [ , ... ] array element schema := { simple type STRUCT<field list> } [ NOT NULL ] column name is the name of the column.",
+          "CREATE TABLE dataset . my table ( a STRING , b INT64 ); CREATE SEARCH INDEX my index ON dataset . my table ( ALL COLUMNS ); The following example creates a search index on columns a , my struct.string field , and b that uses the NO OP ANALYZER text analyzer.",
+          "For examples of JSON-formatted strings with different text analyzers, see Work with text analyzers . data types ARRAY<STRING> Example: data types=['STRING', 'INT64', 'TIMESTAMP'] An array of data types to set when creating a search index."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataViewer",
+      "bigquery.metadataViewer",
+      "bigquery.tables.get",
+      "bigquery.tables.list",
+      "dataset.large",
+      "dataset.small",
+      "project.my",
+      "struct.string"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.metadataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

@@ -40,6 +40,11 @@ must preserve explicit roles, explicit permissions, derived roles, derived
 permissions, and any evidence mentions that were missing from the Step 05
 inventory.
 
+Product-level IAM summaries and service-card IAM status counts are derived
+from the constructed feature cards. Step 02 release-note inventory counts can
+remain visible under release-note provenance, but they must not be counted as
+unknown IAM feature cards when Step 06 did not produce feature-card input.
+
 The supported IAM mapping statuses are:
 
 - `explicit`: a role or permission is mentioned in Step 06 evidence and exists in Step 05

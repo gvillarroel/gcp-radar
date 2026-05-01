@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "TPU Trillium",
+  "feature_slug": "tpu-trillium",
+  "summary": "TPU Trillium is generally available for GKE Standard and Autopilot clusters in supported versions and zones.",
+  "extended_definition": "TPU Trillium is generally available for GKE Standard and Autopilot clusters in supported versions and zones.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/distributed-training-tpu",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kuberay-trillium",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-vllm-tpu"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure KubeRay with TPU Trillium \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kuberay-trillium",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot Standard This tutorial shows you how to configure KubeRay with TPU Trillium on Google Kubernetes Engine (GKE).",
+          "To communicate with your cluster, configure kubectl : gcloud container clusters get-credentials CLUSTER NAME --location = LOCATION You can create a single-host or a multi-host TPU slice node pool: Single-host In Cloud Shell, run the following command: gcloud container node-pools create v6e-4 \\ --location = us-central2-b \\ --cluster = CLUSTER NAME \\ --machine-type = ct6e-standard-4t \\ --num-nodes = 1 \\ --threads-per-core = 1 \\ --tpu-topology = 2x2 Multi-host In Cloud Shell, run the following command: gcloud container node-pools create v6e-16 \\ --location = us-central2-b \\ --cluster = CLUSTER NAME \\ --machine-type = ct6e-standard-4t \\ --num-nodes = 4 \\ --threads-per-core = 1 \\ --tpu-topology = 4x4 Run a RayJob custom resource By defining a RayJob manifest, you instruct KubeRay to do the following: Create a RayCluster: the RayJob spec includes a rayClusterSpec which defines the Ray cluster configuration (head and worker groups) that you want.",
+          "To communicate with your cluster, configure kubectl : gcloud container clusters get-credentials CLUSTER NAME --location = LOCATION Standard In Cloud Shell, create a Standard cluster that enables the Ray operator addon by running the following command to : gcloud container clusters create CLUSTER NAME \\ --location LOCATION \\ --addons = RayOperator \\ --cluster-version = 1 .33 \\ --machine-type = n1-standard-16 Replace the following: CLUSTER NAME : the name of the new cluster."
+        ]
+      },
+      {
+        "title": "\"Train an LLM using JAX, Ray Train, and TPU Trillium on GKE \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/distributed-training-tpu",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot In Cloud Shell, run the following command: gcloud container clusters create-auto $CLUSTER NAME \\ --enable-ray-operator \\ --machine-type = n1-standard-16 \\ --location = $REGION To communicate with your cluster, configure kubectl : gcloud container clusters get-credentials CLUSTER NAME \\ --location = $ZONE Standard In Cloud Shell, create a Standard cluster that enables the Ray operator add-on by running the following command: gcloud container clusters create $CLUSTER NAME \\ --addons = RayOperator \\ --addons GcsFuseCsiDriver \\ --machine-type = n1-standard-16 \\ --workload-pool = $PROJECT ID .svc.id.goog \\ --location = $ZONE This command also enables the GcsFuseCsiDriver , which allows Pods to mount Cloud Storage buckets as local file systems.",
+          "To communicate with your cluster, configure kubectl : gcloud container clusters get-credentials CLUSTER NAME \\ --location = LOCATION Create a multi-host TPU slice node pool: gcloud container node-pools create v6e-16 \\ --location = $ZONE \\ --cluster = $CLUSTER NAME \\ --machine-type = ct6e-standard-4t \\ --threads-per-core = 1 \\ --tpu-topology = 4x4 \\ --num-nodes = 4 GKE provisions a node pool consisting of four TPU Trillium (v6e) VMs, which are configured together as a multi-host TPU slice, with a 4x4 topology, that's ready for distributed training workloads.",
+          "To configure required values in the YAML file, create the RayCluster using envsubst : envsubst < maxtext-tpu-cluster.yaml kubectl apply -f - Verify the cluster is ready and running: kubectl get rayclusters maxtext-tpu-cluster The output should be similar to the following: NAME DESIRED WORKERS AVAILABLE WORKERS CPUS MEMORY GPUS STATUS AGE maxtext-tpu-cluster 4 4 40 798027216Ki 0 ready 11m To access the Ray Dashboard through the Ray head service, establish a port-forwarding session: kubectl port-forward svc/maxtext-tpu-cluster-head-svc 8265 :8265 2>&1 >/dev/null & Verify the RayCluster is reachable from your local environment: ray list nodes --address http://localhost:8265 The output should be similar to the following: ======== List: 2025-09-13 03:53:16.988269 ======== Stats: ------------------------------ Total: 5 Table: ------------------------------ NODE ID NODE IP IS HEAD NODE STATE STATE MESSAGE NODE NAME RESOURCES TOTAL LABELS 0 92c79d04c34b659c1e3044f7642ad3fd47eb16f290785237149fab56 10.84.0.9 (...) Submit the JaxTrainer script to the RayCluster and check that the RayJob completes successfully: ray job submit \\ --address http://localhost:8265 \\ -- python /app/maxtext ray trainer.py \\ /app/maxtext/src/MaxText/configs/base.yml \\ base output directory = /data/ \\ dataset type = synthetic \\ per device batch size = 1 \\ max target length = 4096 \\ model name = llama3-8b \\ steps = 100 \\ ici fsdp parallelism = 4 \\ ici tensor parallelism = 4 \\ run name = rayjob-8b-4096-tp4-4x4 The preceding command submits the Python script, which calls the JaxTrainer Ray code to the RayCluster."
+        ]
+      },
+      {
+        "title": "\"Serve an LLM using TPU Trillium on GKE with vLLM \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-vllm-tpu",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 180,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Standard Create a GKE Standard cluster: gcloud container clusters create ${ CLUSTER NAME } \\ --project = ${ PROJECT ID } \\ --location = ${ CONTROL PLANE LOCATION } \\ --node-locations = ${ ZONE } \\ --cluster-version = ${ CLUSTER VERSION } \\ --workload-pool = ${ PROJECT ID } .svc.id.goog \\ --addons GcsFuseCsiDriver This command creates a GKE Standard cluster, and enables Workload Identity Federation and the Cloud Storage FUSE CSI driver .",
+          "Autopilot Create a GKE Autopilot cluster: gcloud container clusters create-auto ${ CLUSTER NAME } \\ --cluster-version = ${ CLUSTER VERSION } \\ --location = ${ CONTROL PLANE LOCATION } Note: If your Cloud Shell instance disconnects throughout the tutorial execution, repeat the preceding step.",
+          "Standard Autopilot This tutorial shows you how to serve large language models (LLMs) using Tensor Processing Units (TPUs) on Google Kubernetes Engine (GKE) with the vLLM serving framework."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "base.yml",
+      "cluster.yaml",
+      "svc.id.goog",
+      "trainer.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kuberay-trillium",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/distributed-training-tpu",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-vllm-tpu"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kuberay-trillium",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/distributed-training-tpu",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-vllm-tpu"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kuberay-trillium",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/distributed-training-tpu",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-vllm-tpu"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kuberay-trillium",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/distributed-training-tpu",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-vllm-tpu"
+      ]
+    }
+  ]
+}

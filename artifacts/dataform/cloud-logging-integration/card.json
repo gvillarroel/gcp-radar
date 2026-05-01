@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.108Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Cloud Logging integration",
+  "feature_slug": "cloud-logging-integration",
+  "summary": "Cloud Logging integration makes Dataform logs available in Cloud Logging.",
+  "extended_definition": "Cloud Logging integration makes Dataform logs available in Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/cmek",
+      "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+      "https://docs.cloud.google.com/dataform/docs/monitor-runs",
+      "https://docs.cloud.google.com/dataform/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataform overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "To debug errors, you can monitor runs in the following ways: View detailed Dataform execution logs View audit logs for Dataform View Cloud Logging logs for Dataform Dataform core Dataform core is an open source meta-language to create SQL tables and workflows.",
+          "Dataform offers a web environment for the following activities: Workflow development Connection with GitHub, GitLab, Azure DevOps Services, and Bitbucket Continuous integration and continuous deployment Workflow execution The following sections describe the main features of Dataform.",
+          "Dataform lets you manage data transformation in the Extraction, Loading, and Transformation (ELT) process for data integration."
+        ]
+      },
+      {
+        "title": "Use customer-managed encryption keys \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "This integration lets you specify the following encryption compliance requirements for Dataform repositories in your organization: Require CMEKs for all new Dataform repositories Restrict Cloud KMS keys for a Dataform project Considerations when applying organization policies Before applying any CMEK organization policies, you should be aware of the following.",
+          "How an unavailable key status is handled In rare scenarios, such as during periods when Cloud KMS is unavailable, Dataform might be unable to retrieve the status of your key from Cloud KMS.",
+          "Logging You can audit the requests that Dataform sends to Cloud KMS on your behalf in Cloud Logging, if you have enabled audit logging for the Cloud KMS API in your project."
+        ]
+      },
+      {
+        "title": "Use JavaScript in Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "source_id": "site-docs-root-2",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create your own custom package in Dataform or use one of the open-source Dataform packages, available on the GitHub open-source Dataform page .",
+          "The following code sample shows the includes/script builder.js file with the renderScript JavaScript function that aggregates metrics by using SUM and groups them by dimension: function renderScript ( table , dimensions , metrics ) { return SELECT ${ dimensions . map (( field ) = > ${ field } AS ${ field } ). join ( \",\\\\n\" ) } , ${ metrics . map (( field ) = > SUM( ${ field } ) AS ${ field } ). join ( \",\\\\n\" ) } FROM ${ table } GROUP BY ${ dimensions . map (( field , i ) = > ${ i + 1 } ). join ( \", \" ) } ; } module . exports = { renderScript }; The following code sample shows the renderScript JavaScript function used in the definitions/stats per country and device.sqlx file with the Dataform core ref function passed as an argument: $ { script builder . renderScript ( ref ( \"source table\" ), [ \"country\" , \"device type\" ], [ \"revenue\" , \"pageviews\" , \"sessions\" ])} The following code sample shows the definitions/stats per country and device.sqlx query compiled to SQL: SELECT country AS country, device type AS device type, SUM(revenue) AS revenue, SUM(pageviews) AS pageviews, SUM(sessions) AS sessions FROM my schema.source table GROUP BY 1, 2 For more information about the Dataform core ref function, see Dataform core .",
+          "The function generates a SQL script: function renderScript ( table , dimensions , metrics ) { return select ${ dimensions . map ( field = > ${ field } as ${ field } ). join ( \",\" ) } , ${ metrics . map ( field = > sum( ${ field } ) as ${ field } ). join ( \",\\n\" ) } from ${ table } group by ${ dimensions . map (( field , i ) = > ${ i + 1 } ). join ( \", \" ) } ; } module . exports = { renderScript }; The following code sample shows the use of the custom renderScript JavaScript function in a Dataform core table definition query: config { type: \"table\", tags: [\"advanced\", \"hourly\"], disabled: true } ${functions.renderScript(ref(\"source table\"), [\"country\", \"device type\"], [\"revenue\", \"pageviews\", \"sessions\"] )} The following code sample shows the previous Dataform core table definition query compiled into SQL: select country as country, device type as device type, sum(revenue) as revenue, sum(pageviews) as pageviews, sum(sessions) as sessions from \"dataform\".\"source table\" group by 1, 2 Reference an include in a SQLX file You can reference any include function or constant inside a SQLX file."
+        ]
+      },
+      {
+        "title": "Monitor runs \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/monitor-runs",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Log format Dataform sends workflow invocation log messages in the following format: { \"insertId\" : \"14ip1tza5\" , \"jsonPayload\" : { \"terminalState\" : \"SUCCEEDED\" , \"workflowInvocationId\" : \"1678383230-ac4ed48c-eb70-4555-b2b0-cda54d13edfa\" , \"@type\" : \"type.googleapis.com/google.cloud.dataform.logging.v1.WorkflowInvocationCompletionLogEntry\" }, \"resource\" : { \"type\" : \"dataform.googleapis.com/Repository\" , \"labels\" : { \"repository id\" : \"repository-name-example\" , \"resource container\" : \" PROJECT ID \" , \"location\" : \"us-central1\" } }, \"timestamp\" : \"2023-03-09T17:34:06.965981805Z\" , \"severity\" : \"INFO\" , \"logName\" : \"projects/project-name-example/logs/dataform.googleapis.com%2Fworkflow invocation completion\" , \"receiveTimestamp\" : \"2023-03-09T17:34:07.362371980Z\" } What is logged Dataform log entries contain information that is useful for monitoring and debugging your workflow invocations.",
+          "Go to Logs Explorer In the Query pane, select Show query and enter the following query: resource.type=\"dataform.googleapis.com/Repository\" jsonPayload.@type=\"type.googleapis.com/google.cloud.dataform.logging.v1.WorkflowInvocationCompletionLogEntry\" jsonPayload.terminalState=\"FAILED\" This query alerts you of all failed Dataform workflow invocations.",
+          "To configure log-based alerts for failed Dataform workflow invocations, follow these steps: In the Google Cloud console, select Logging , and then select Logs Explorer ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "builder.js",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "dataform.googleapis.com",
+      "device.sqlx",
+      "functions.renderScript",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "resource.type",
+      "schema.source",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/monitor-runs"
+      ]
+    }
+  ]
+}

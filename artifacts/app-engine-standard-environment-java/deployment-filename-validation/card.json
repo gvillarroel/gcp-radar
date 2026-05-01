@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.770Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Deployment filename validation",
+  "feature_slug": "deployment-filename-validation",
+  "summary": "Deployments are now prevented when filenames contain carriage returns.",
+  "extended_definition": "Deployments are now prevented when filenames contain carriage returns.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example demonstrates how to designate all png files as static files (except those in the data/ directory and all of its subdirectories): < static - files > < include path = \"/ .png\" / > < exclude path = \"/data/ .png\" / > < / static - files > You can also set HTTP headers to use when responding to requests to these static resources. < static - files > < include path = \"/my static-files\" > < http - header name = \"Access-Control-Allow-Origin\" value = \"http://example.org\" / > < / include > < / static - files > Note: If the path string doesn't start with a slash, then the HTTP headers, if any, work on App Engine but do not work on the Development Server.",
+          "The appengine-web.xml file can define environment variables that are set when the application is running. <env-variables> <env-var name=\"DEFAULT ENCODING\" value=\"UTF-8\" /> </env-variables> To avoid conflicts with your local environment, the development server does not set environment variables based on this file, and requires that the local environment have these variables already set to matching values. export DEFAULT ENCODING = \"UTF-8\" dev appserver war When deployed to App Engine, the environment is created with these variables already set.",
+          "The appengine-web.xml file can define system properties and environment variables that are set when the application is running. <system-properties> <property name=\"myapp.maximum-message-length\" value=\"140\" /> <property name=\"myapp.notify-every-n-signups\" value=\"1000\" /> <property name=\"myapp.notify-url\" value=\"http://www.example.com/signupnotify\" /> </system-properties> <env-variables> <env-var name=\"DEFAULT ENCODING\" value=\"UTF-8\" /> </env-variables> Optional."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you have entered a value into each field, the equivalent YAML configuration for this custom constraint appears on the right. gcloud To create a custom constraint, create a YAML file using the following format: name : organizations/ ORGANIZATION ID /customConstraints/ CONSTRAINT NAME resourceTypes : RESOURCE NAME methodTypes : - CREATE condition : \" CONDITION \" actionType : ACTION displayName : DISPLAY NAME description : DESCRIPTION Replace the following: ORGANIZATION ID : your organization ID, such as 123456789 .",
+          "Find the current attribute values To find the current attribute values for your connector, run the following in your terminal: gcloud compute networks vpc-access connectors describe CONNECTOR NAME --region = REGION --project = PROJECT Replace the following: CONNECTOR NAME : the name of your connector REGION : the name of your connector's region PROJECT : the name of your Google Cloud project Monitor connector usage Monitoring usage over time can help you determine when to adjust a connector's settings.",
+          "Errors Service account needs Service Agent role error If you use the Restrict Resource Service Usage organization policy constraint to block Cloud Deployment Manager ( deploymentmanager.googleapis.com ), you might see the following error message: Serverless VPC Access service account (service-<PROJECT NUMBER>@gcp-sa-vpcaccess.iam.gserviceaccount.com) needs Serverless VPC Access Service Agent role in the project."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: For new projects you create after March 2025, App Engine sets the maximum instances default for standard environment deployments to 20.",
+          "For more information about the possible MIME media types, see the IANA MIME Media Types website . redirect http response code Optional. redirect http response code is used with the secure setting to set the HTTP response code returned when performing a redirect required by how the secure setting is configured. redirect http response code element has the following possible values: 301 Moved Permanently response code.",
+          "When the number of concurrent requests reaches a value equal to max concurrent requests times target throughput utilization , the scheduler tries to start a new instance. max concurrent requests Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.google.com",
+      "deploymentmanager.googleapis.com",
+      "example.org",
+      "myapp.maximum",
+      "myapp.notify",
+      "vpcaccess.iam.gserviceaccount.com",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX generative AI agents",
+  "feature_slug": "dialogflow-cx-generative-ai-agents",
+  "summary": "Dialogflow CX generative AI agents use generative AI to power conversational agents.",
+  "extended_definition": "Dialogflow CX generative AI agents use generative AI to power conversational agents.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/generative",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Conversational Agents console overview \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users of the Dialogflow CX console that want to incorporate generative features into agents should start using the Conversational Agents console.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Conversational Agents console overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Console compatibility Agents previously built with the Dialogflow CX console or the Vertex AI Agent Builder console can be seamlessly accessed by the Conversational Agents console."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "We use QuerySource to distinguish queries directly entered by agents and suggested queries from Participants.SuggestKnowledgeAssist . com. google. cloud. dialogflow. v2.",
+          "A conversation is an interaction between an agent, including live agents and Dialogflow agents, and a support customer.",
+          "A conversation is an interaction between an agent, including live agents and Dialogflow agents, and a support customer."
+        ]
+      },
+      {
+        "title": "Generative versus deterministic \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/generative",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "During a conversation, Dialogflow CX agents always use language models for understanding end-user intention, but you can choose whether and how language models are used for agent responses.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Generative versus deterministic Stay organized with collections Save and categorize content based on your preferences.",
+          "The following is an overview of the fully generative features: X Item Playbooks Playbooks provide a new way for creating virtual agents using LLMs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/generative"
+      ]
+    }
+  ]
+}

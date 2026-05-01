@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "2x node scaling for new Bigtable clusters",
+  "feature_slug": "2x-node-scaling-for-new-bigtable-clusters",
+  "summary": "Bigtable now supports 2x node scaling when creating a cluster, combining two standard nodes into one logical unit and scaling clusters only in two-node increments.",
+  "extended_definition": "Bigtable now supports 2x node scaling when creating a cluster, combining two standard nodes into one logical unit and scaling clusters only in two-node increments.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Autoscaling \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When you enable infrequent access as part of tiered storage, autoscaling additionally makes sure that the combined SSD and the infrequent access storage doesn't exceed the limit of 32 TB per node.",
+          "Autoscaling alone might not work well for the following workload types, because even though Bigtable quickly adds nodes when traffic increases, it can take time to balance the additional nodes.",
+          "The benefits of autoscaling include the following: Costs - Autoscaling can help you optimize costs because Bigtable reduces the number of nodes in your cluster whenever possible."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Nodes are given temporary responsibility for serving various ranges of data based on the operation load and the health of other nodes in the cluster. data center : similar to a Bigtable cluster, except some aspects of topology and replication strategy are configurable in Cassandra. rack : a grouping of nodes in a data center that influences replica placement. cluster : a group of nodes in the same geographic Google Cloud zone, colocated for latency and replication concerns. cluster : a Cassandra deployment consisting of a collection of data centers. instance : a group of Bigtable clusters in different Google Cloud zones or regions between which replication and connection routing occur. vnode : a fixed range of hash values assigned to a specific physical node.",
+          "When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes.",
+          "Cluster size considerations When you size a Bigtable instance to prepare for migrating a Cassandra workload, there are considerations when you compare single-data center Cassandra clusters to single-cluster Bigtable instances, and Cassandra multiple-data center clusters to multi-cluster Bigtable instances."
+        ]
+      },
+      {
+        "title": "Migrate from DynamoDB to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Tablets are not stored on nodes in Bigtable but rather on Google's distributed file system, which allows speedy redistribution of data when scaling, and which provides additional durability by maintaining multiple copies.",
+          "Bigtable is not a serverless product; you must create an instance with one or more clusters, whose capacity is determined by the number of nodes that they have.",
+          "Bigtable supports replicated clusters in as many zones that are available in up to 8 Google Cloud regions where Bigtable is available."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    }
+  ]
+}

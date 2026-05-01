@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.409Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Secret Manager Cloud Secrets Enumeration",
+  "feature_slug": "secret-manager-cloud-secrets-enumeration",
+  "summary": "This Cloud Hacktool rule detects enumeration of Secret Manager secrets.",
+  "extended_definition": "This Cloud Hacktool rule detects enumeration of Secret Manager secrets.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "AWS - Secrets : Detects AWS activity associated with secrets, tokens, and passwords, including deletion of KMS secrets or Secrets Manager secrets.",
+          "Azure - Secrets : Detects activity associated with secrets, tokens, and passwords (for example modifications to Azure Key Vault or storage account access keys).",
+          "The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id(\"run.googleapis.com/stdout\") OR log id(\"run.googleapis.com/stderr\") OR log id(\"run.googleapis.com/requests\") OR log id(\"run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda."
+        ]
+      },
+      {
+        "title": "\"Overview of composite rules category \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Broad: detects potentially malicious or anomalous behavior, but may produce more false positives due to the general nature of the rule.",
+          "The following categories outline the most important log sources required for the curated composite content to function effectively: Endpoint composite rule log sources Linux threats MacOS threats Windows threats Google Cloud composite rule log sources Google Cloud AWS Azure Office365 Okta Google Cloud and endpoint rule log sources Applied Threat Intelligence (ATI) Chrome Enterprise Threats Risk Analytics for UEBA For a complete list of the available curated detections, see Use curated detections .",
+          "Describe rule sets The Composite Rules category includes the following rule sets: Endpoint composite rules Cloud composite rules ATI composite rules Understand endpoint composite rules These rules correlate findings from multiple detection rules that relate to the same endpoint over a defined time period."
+        ]
+      },
+      {
+        "title": "\"Default detection rules \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "source_id": "site-docs-root",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = \"noone@google.com\" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = \"my-hostname\", 100, 50) + if($severity = \"HIGH\", 10) + if($severity = \"MEDIUM\", 5) + if($severity = \"LOW\", 1) ) $asset id list = array( if($u.principal.asset id = \"\", \"Empty asset id\", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, \"id 1234\") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.",
+          "The condition states the logical condition that triggers the detection. rule ExcludeZeroValues { meta: author = \"noone@google.com\" events: $e1.metadata.event type = \"NETWORK DNS\" $e1.principal.hostname = $hostname // $e1.principal.user.userid may be empty string. $e1.principal.user.userid != \"Guest\" $e2.metadata.event type = \"NETWORK HTTP\" $e2.principal.hostname = $hostname // $e2.target.asset id cannot be empty string as explicitly specified. $e2.target.asset id != \"\" match: // $hostname cannot be empty string. $hostname over 1h condition: $e1 and $e2 } Rules outcome section Use the outcome section to set holding variables within the rule detection to provide enrichment for downstream consumption.",
+          "Further not conditions could be added to this rule if you identify frequent false positives coming from other known file paths. rule suspicious unusual location svchost execution { meta: author = \"Google Cloud Security\" description = \"Windows 'svchost' executed from an unusual location\" yara version = \"YL2.0\" rule version = \"1.0\" events: $e1.metadata.event type = \"PROCESS LAUNCH\" re.regex($e1.principal.process.command line, \\bsvchost(\\.exe)?\\b) nocase not re.regex($e1.principal.process.command line, \\\\Windows\\\\System32\\\\) nocase condition: $e1 } Specify more than one event variable YARA-L enables you to have more than one event variable in a rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.contains",
+      "context.graph.entity.asset.vulnerabilities.severity",
+      "context.graph.entity.hostname",
+      "e1.metadata.event",
+      "e1.principal.hostname",
+      "e1.principal.process.command",
+      "e1.principal.user.userid",
+      "e2.metadata.event",
+      "e2.principal.hostname",
+      "e2.target.asset",
+      "re.regex",
+      "run.googleapis.com",
+      "u.principal.asset",
+      "u.udm.principal.hostname"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    }
+  ]
+}

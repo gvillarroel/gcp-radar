@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.431Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Terraform support for connection profile resources",
+  "feature_slug": "terraform-support-for-connection-profile-resources",
+  "summary": "Terraform supports Datastream connection profile resources.",
+  "extended_definition": "Terraform supports Datastream connection profile resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+      "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+      "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create connection profiles \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this section, you learn how to create the following connection profiles: A connection profile to an Oracle , a MySQL , SQL Server , PostgreSQL , MongoDB and a Salesforce source A connection profile to destination datasets in BigQuery A connection profile to a destination bucket in Cloud Storage By creating these connection profiles, Datastream can transfer data from the source database into the destination.",
+          "Although the region that you select for your connection profile is independent of the location type that you selected for your BigQuery destination dataset, we recommend keeping all resources for the stream in the same region as your source data for cost and performance optimization.",
+          "If you select this network connectivity method, then configure your source database to allow incoming connections from the Datastream public IP addresses for the region that you specified for the connection profile."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.connectionProfiles.create \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "source_id": "site-api-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IAM Permissions Requires the following IAM permission on the parent resource: datastream.connectionProfiles.create For more information, see the IAM documentation .",
+          "Home Documentation Data analytics Datastream Reference Send feedback Method: projects.locations.connectionProfiles.create Stay organized with collections Save and categorize content based on your preferences.",
+          "Authorization requires the following IAM permission on the specified resource parent : datastream.connectionProfiles.create Query parameters Parameters connectionProfileId string Required."
+        ]
+      },
+      {
+        "title": "Implement Datastream and Dataflow for analytics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, use the Google Cloud console to do the following: Delete your project, Datastream stream, and Datastream connection profiles.",
+          "Datastream uses the information defined in the connection profiles to connect to both the source and the destination so that it can stream data from the source database into your destination bucket in Cloud Storage.",
+          "You're also configuring the Pub/Sub notifications to only listen to the Datastream output path which you define in the Create a destination connection profile for Cloud Storage step."
+        ]
+      },
+      {
+        "title": "\"Class ListConnectionProfilesAsyncPager (1.18.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.datastream v1.types.ListConnectionProfilesRequest The initial request object. response google.cloud.datastream v1.types.ListConnectionProfilesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "ListConnectionProfilesResponse ], ], request : google . cloud . datastream v1 . types . datastream .",
+          "ListConnectionProfilesResponse ], ], request : google . cloud . datastream v1 . types . datastream ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "datastream.connectionProfiles.create",
+      "datastream.googleapis.com",
+      "projects.locations.connectionProfiles",
+      "projects.locations.connectionProfiles.create",
+      "projects.locations.connectionProfiles.delete",
+      "v1.types.ListConnectionProfilesRequest",
+      "v1.types.ListConnectionProfilesResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.pagers.ListConnectionProfilesAsyncPager"
+      ]
+    }
+  ]
+}

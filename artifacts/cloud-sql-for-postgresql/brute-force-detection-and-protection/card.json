@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Brute-force detection and protection",
+  "feature_slug": "brute-force-detection-and-protection",
+  "summary": "Brute-force detection and protection identifies brute-force access attempts against Cloud SQL instances and helps mitigate their risk.",
+  "extended_definition": "Brute-force detection and protection identifies brute-force access attempts against Cloud SQL instances and helps mitigate their risk.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "The range name should comply with RFC-1035 and be within 1-63 characters. ( gcloud alpha sql instances create ). --enable-google-private-path : If you use this parameter, then you allow other Google Cloud services, such as BigQuery, to access data in Cloud SQL and make queries against this data over a private connection.",
+          "If you set the enablePrivatePathForGoogleCloudServices parameter to true , then you allow other Google Cloud services, such as BigQuery, to access data in Cloud SQL and make queries against this data over a private connection.",
+          "If you set the enablePrivatePathForGoogleCloudServices parameter to true , then you allow other Google Cloud services, such as BigQuery, to access data in Cloud SQL and make queries against this data over a private connection."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.",
+          "If this field is not specified when patching or updating an existing instance, it is left unchanged in the instance. deletionProtectionEnabled boolean Configuration to protect against accidental instance deletion. timeZone string Server timezone, relevant only for Cloud SQL for SQL Server. advancedMachineFeatures object ( AdvancedMachineFeatures ) Specifies advanced machine configuration for the instances relevant only for SQL Server. dataCacheConfig object ( DataCacheConfig ) Configuration for data cache. replicationLagMaxSeconds integer Optional."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.",
+          "If this field is not specified when patching or updating an existing instance, it is left unchanged in the instance. deletionProtectionEnabled boolean Configuration to protect against accidental instance deletion. timeZone string Server timezone, relevant only for Cloud SQL for SQL Server. advancedMachineFeatures object ( AdvancedMachineFeatures ) Specifies advanced machine configuration for the instances relevant only for SQL Server. dataCacheConfig object ( DataCacheConfig ) Configuration for data cache. replicationLagMaxSeconds integer Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    }
+  ]
+}

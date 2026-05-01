@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.415Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Looker in Connected Sheets for Apps Script",
+  "feature_slug": "looker-in-connected-sheets-for-apps-script",
+  "summary": "Looker in Connected Sheets support lets Apps Script create and use Looker data source connections in spreadsheets.",
+  "extended_definition": "Looker in Connected Sheets support lets Apps Script create and use Looker data source connections in spreadsheets.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/sheets/connected-sheets",
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-source-spec",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Connected Sheets \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/sheets/connected-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SpreadsheetApp . enableBigQueryExecution (); var spreadsheet = SpreadsheetApp . create ( 'Test connected sheets' ); Logger . log ( 'New test spreadsheet: %s' , spreadsheet . getUrl ()); // Build data source spec by selecting a table. var dataSourceSpec = SpreadsheetApp . newDataSourceSpec () . asBigQuery () . setProjectId ( '<YOUR PROJECT ID>' ) . setTableProjectId ( 'bigquery-public-data' ) . setDatasetId ( 'ncaa basketball' ) . setTableId ( 'mbb historical tournament games' ) . build (); // Add data source and its associated data source sheet. var dataSourceSheet = spreadsheet . insertDataSourceSheet ( dataSourceSpec ); var dataSource = dataSourceSheet . getDataSource (); Looker To add a Looker data source to a spreadsheet, insert a data source sheet with a data source spec.",
+          "SpreadsheetApp . enableLookerExecution (); var spreadsheet = SpreadsheetApp . create ( 'Test connected sheets' ); Logger . log ( 'New test spreadsheet: %s' , spreadsheet . getUrl ()); // Build data source spec by selecting a table. var dataSourceSpec = SpreadsheetApp . newDataSourceSpec () . asLooker () . setInstanceUrl ( '<INSTANCE URL>' ) . setModelName ( '<MODEL NAME>' ) . setExploreName ( '<EXPLORE NAME>' ) . build (); // Add data source and its associated data source sheet. var dataSourceSheet = spreadsheet . insertDataSourceSheet ( dataSourceSpec ); var dataSource = dataSourceSheet . getDataSource (); Add a data source object Once the data source is added to the spreadsheet, data source objects can be created from the data source.",
+          "Common actions with Connected Sheets, such as connecting to a data source or adding charts, are performed using specific DataSource classes and methods in Apps Script."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following updates have been made to the Spreadsheet service to support Looker in Connected Sheets from Apps Script.",
+          "September 03, 2024 Feature Generally available : You can now use Looker in Connected Sheets from Apps Script.",
+          "This feature lets you record macros in the Google Sheets UI and use Apps Script to create or edit them."
+        ]
+      },
+      {
+        "title": "Class DataSourceSpec \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-source-spec",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Return BigQueryDataSourceSpec — The BigQuery data source spec. asLooker() Gets the spec for Looker data source. // TODO(developer): Replace the URL with your own. const ss = SpreadsheetApp . openByUrl ( 'https://docs.google.com/spreadsheets/d/abc123456/edit' , ); const spec = ss . getDataSources ()[ 0 ]. getSpec (). asLooker (); Return LookerDataSourceSpec — The Looker data source spec. copy() Creates a DataSourceSpecBuilder based on this data source's settings. // TODO(developer): Replace the URL with your own. const ss = SpreadsheetApp . openByUrl ( 'https://docs.google.com/spreadsheets/d/abc123456/edit' , ); const spec = ss . getDataSources ()[ 0 ]. getSpec (); const newSpec = spec . copy (); Return DataSourceSpecBuilder — The builder. getParameters() Gets the parameters of the data source. // TODO(developer): Replace the URL with your own. const ss = SpreadsheetApp . openByUrl ( 'https://docs.google.com/spreadsheets/d/abc123456/edit' , ); const spec = ss . getDataSources ()[ 0 ]. getSpec (); const parameters = spec . getParameters (); This method is only available for BigQuery data sources.",
+          "LOOKER ) { const lookerSpec = spec . asLooker (); Logger . log ( 'Looker instance URL: %s\\n' , lookerSpec . getInstanceUrl ()); } Methods Method Return type Brief description as Big Query() Big Query Data Source Spec Gets the spec for BigQuery data source. as Looker() Looker Data Source Spec Gets the spec for Looker data source. copy() Data Source Spec Builder Creates a Data Source Spec Builder based on this data source's settings. get Parameters() Data Source Parameter[] Gets the parameters of the data source. get Type() Data Source Type Gets the type of the data source.",
+          "Using asLooker() returns a LookerDataSourceSpec object. // TODO(developer): Replace the URL with your own. const ss = SpreadsheetApp . openByUrl ( 'https://docs.google.com/spreadsheets/d/abc123456/edit' , ); const spec = ss . getDataSources ()[ 0 ]. getSpec (). asLooker (); if ( spec . getType () === SpreadsheetApp ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

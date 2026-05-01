@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "rdkit.reaction_sss_fp_size flag",
+  "feature_slug": "rdkit-reaction-sss-fp-size-flag",
+  "summary": "The rdkit.reaction_sss_fp_size flag sets the size of structural chemical reaction fingerprints.",
+  "extended_definition": "The rdkit.reaction_sss_fp_size flag sets the size of structural chemical reaction fingerprints.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore",
+      "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/postgres/flags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure database flags | Cloud SQL for PostgreSQL | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 325,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "3 No rdkit.reaction_sss_fp_size integer 64 ...",
+          "9192 No rdkit.ignore_reaction_agents boolean on | off No rdkit.init_reaction boolean on | off No rdkit.layered_fp_size integer 64 ...",
+          "9192 No rdkit.reaction_difference_fp_size integer 64 ..."
+        ]
+      },
+      {
+        "title": "\"Restore an instance overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore",
+        "source_id": "site-iam-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud SQL always sets the storage capacity of the target instance to the maximum value of the size of both the configured disk and the backup disk.",
+          "Cloud SQL also sets the value of the expire logs days and binlog expire logs seconds flags to the equivalent of one day automatically.",
+          "For PITR write-ahead logs that are stored on disk , that are being switched to Cloud Storage, or that are already switched to Cloud Storage, Cloud SQL retains the logs for the minimum value set for one of the following configurations: The transactionLogRetentionDays backup configuration setting The expire logs days or the binlog expire logs seconds flag Cloud SQL doesn't set any values for these flags if the write-ahead logs are stored on disk, are being switched to Cloud Storage, or have already been switched to Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.",
+          "To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation.",
+          "Run the following commands in your terminal to authenticate: gcloud auth application-default login Configure the tools.yaml file The extension requires a database connection for context generation, which is supported by the MCP Toolbox and defined within the tools.yaml configuration file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "rdkit.ignore_reaction_agents",
+      "rdkit.init_reaction",
+      "rdkit.layered_fp_size",
+      "rdkit.reaction_difference_fp_size",
+      "rdkit.reaction_sss_fp_size",
+      "tools.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.544Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Ubuntu 24 LTS base images for source deployment",
+  "feature_slug": "ubuntu-24-lts-base-images-for-source-deployment",
+  "summary": "Cloud Run source deployments support Ubuntu 24 LTS base images; Cloud Run source deployments support Ubuntu 24 LTS base images.",
+  "extended_definition": "Cloud Run source deployments support Ubuntu 24 LTS base images; Cloud Run source deployments support Ubuntu 24 LTS base images.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/deploying",
+      "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+      "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploying container images to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploying",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "YAML To disable the deployment health check, add the run.googleapis.com/health-check-disabled annotation with value 'true' to spec.template.metadata.annotations . apiVersion : serving.knative.dev/v1 kind : Service metadata : name : SERVICE spec : template : metadata : annotations : run.googleapis.com/health-check-disabled : 'true' Terraform To disable the deployment health check, set the health check disabled argument to true in the template block. resource \"google cloud run v2 service\" \"default\" { name = \"SERVICE\" ... template { health check disabled = true ... } } What's next After you deploy a new service, you can do the following: Gradual rollouts, rollback revisions, traffic migration View service logs Monitor service performances Set memory limits Set environment variables Change service concurrency Manage the service Manage service revisions Cloud Run OpenTelemetry sidecar example Deploy only trusted images with Binary Authorization ( Preview ) You can automate the builds and deployments of your Cloud Run services using Cloud Build Triggers: Set up Continuous Deployment You can also use Cloud Deploy to set up a continuous-delivery pipeline to deploy Cloud Run services to multiple environments: Deploy an app to Cloud Run using Cloud Deploy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Application hosting Cloud Run Guides Send feedback Deploying container images to Cloud Run Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to automate for continuous deployment, select Continuously deploy new revisions from a source repository and follow the instructions for continuous deployments ."
+        ]
+      },
+      {
+        "title": "\"Process images from Cloud Storage tutorial \\_|\\_ Cloud Run \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make the following changes: Add code to import the new image.js file Remove the existing \"Hello World\" code from the route Add code to further validate the Pub/Sub message Add code to call the new image processing function When you are finished, the code will look like this: const express = require ( 'express' ); const app = express (); // This middleware is available in Express v4.16.0 onwards app . use ( express . json ()); const image = require ( './image' ); app . post ( '/' , async ( req , res ) = > { if ( ! req . body ) { const msg = 'no Pub/Sub message received' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } if ( ! req . body . message ! req . body . message . data ) { const msg = 'invalid Pub/Sub message format' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } // Decode the Pub/Sub message. const pubSubMessage = req . body . message ; let data ; try { data = Buffer . from ( pubSubMessage . data , 'base64' ). toString (). trim (); data = JSON . parse ( data ); } catch ( err ) { const msg = 'Invalid Pub/Sub message: data property is not valid base64 encoded JSON' ; console . error ( error: ${ msg } : ${ err } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } // Validate the message is a Cloud Storage event. if ( ! data . name ! data . bucket ) { const msg = 'invalid Cloud Storage notification: expected name and bucket properties' ; console . error ( error: ${ msg } ); res . status ( 400 ). send ( Bad Request: ${ msg } ); return ; } try { await image . blurOffensiveImages ( data ); res . status ( 204 ). send (); } catch ( err ) { console . error ( error: Blurring image: ${ err } ); res . status ( 500 ). send (); } }); Python The main.py file defines the Flask app and prepares received Pub/Sub messages for use.",
+          "Make the following changes: Add code to import the new image.py file Remove the existing \"Hello World\" code from the route Add code to further validate the Pub/Sub message Add code to call the new image processing function When you are finished, the code will look like this: import base64 import json import os from flask import Flask , request import image app = Flask ( name ) @app . route ( \"/\" , methods = [ \"POST\" ]) def index (): \"\"\"Receive and parse Pub/Sub messages containing Cloud Storage event data.\"\"\" envelope = request . get json () if not envelope : msg = \"no Pub/Sub message received\" print ( f \"error: { msg } \" ) return f \"Bad Request: { msg } \" , 400 if not isinstance ( envelope , dict ) or \"message\" not in envelope : msg = \"invalid Pub/Sub message format\" print ( f \"error: { msg } \" ) return f \"Bad Request: { msg } \" , 400 Decode the Pub/Sub message. pubsub message = envelope [ \"message\" ] if isinstance ( pubsub message , dict ) and \"data\" in pubsub message : try : data = json . loads ( base64 . b64decode ( pubsub message [ \"data\" ]) . decode ()) except Exception as e : msg = ( \"Invalid Pub/Sub message: \" \"data property is not valid base64 encoded JSON\" ) print ( f \"error: { e } \" ) return f \"Bad Request: { msg } \" , 400 Validate the message is a Cloud Storage event. if not data [ \"name\" ] or not data [ \"bucket\" ]: msg = ( \"Invalid Cloud Storage notification: \" \"expected name and bucket properties\" ) print ( f \"error: { msg } \" ) return f \"Bad Request: { msg } \" , 400 try : image . blur offensive images ( data ) return ( \"\" , 204 ) except Exception as e : print ( f \"error: { e } \" ) return ( \"\" , 500 ) return ( \"\" , 500 ) Go The main.go file defines the HTTP service and prepares received Pub/Sub messages for use.",
+          "To grant this permission and create a Cloud Storage notification, add the following to your existing main.tf file: data \"google storage project service account\" \"gcs account\" {} resource \"google pubsub topic iam binding\" \"binding\" { topic = google pubsub topic.default.name role = \"roles/pubsub.publisher\" members = [ \"serviceAccount:${data.google storage project service account.gcs account.email address}\" ] } resource \"google storage notification\" \"notification\" { bucket = google storage bucket.imageproc input.name payload format = \"JSON API V1\" topic = google pubsub topic.default.id depends on = [ google pubsub topic iam binding.binding ] } Try it out Upload an offensive image, such as this image of a flesh-eating zombie : curl -o zombie.jpg https://cdn.pixabay.com/photo/2015/09/21/14/24/zombie-949916 960 720.jpg gcloud storage cp zombie.jpg gs:// INPUT BUCKET NAME where INPUT BUCKET NAME is the Cloud Storage bucket you created earlier for uploading images."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Local troubleshooting of a Cloud Run service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Update components: gcloud components update Follow the instructions to install Docker locally Required roles To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Admin ( roles/run.admin ) Error Reporting Viewer ( roles/errorreporting.viewer ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Check whether the service works locally with the NAME environment available in place: Run the container locally with the environment variable added: PORT = 8080 && docker run --rm -e PORT = $PORT -p 9000 : $PORT \\ -e NAME = \"Local World!\" \\ gcr.io/ PROJECT ID /hello-service Navigate your browser to http://localhost:9000 See \"Hello Local World!\" appear on the page Modify the running Cloud Run service environment to include this variable: Run the services update command to add an environment variable: gcloud run services update hello - service \\ -- set - env - vars NAME = Override Wait a few seconds while Cloud Run creates a new revision based on the previous revision with the new environment variable added.",
+          "NAME ) { // Plain error logs do not appear in Stackdriver Error Reporting. console . error ( 'Environment validation failed.' ); console . error ( new Error ( 'Missing required server parameter' )); return res . status ( 500 ). send ( 'Internal Server Error' ); } Python Find the source of the error message in the file main.py around the line number called out in the stack trace shown in the logs: NAME = os . getenv ( \"NAME\" ) if not NAME : print ( \"Environment validation failed.\" ) raise Exception ( \"Missing required service parameter.\" ) Go Find the source of the error message in the file main.go around the line number called out in the stack trace shown in the logs: name := os ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.email",
+      "account.gcs",
+      "binding.binding",
+      "bucket.imageproc",
+      "cdn.pixabay.com",
+      "cloudbuild.builds.editor",
+      "data.google",
+      "errorreporting.viewer",
+      "gcr.io",
+      "iam.serviceAccountUser",
+      "image.js",
+      "image.py",
+      "input.name",
+      "logging.viewAccessor",
+      "main.go",
+      "main.py",
+      "main.tf",
+      "pubsub.publisher",
+      "resourcemanager.projectIamAdmin",
+      "run.admin",
+      "run.googleapis.com",
+      "run.invoker",
+      "service.default.location",
+      "service.default.name",
+      "serviceusage.serviceUsageConsumer",
+      "serving.knative.dev",
+      "spec.template.metadata.annotations",
+      "storage.admin",
+      "topic.default.id",
+      "topic.default.name",
+      "v4.16.0",
+      "zombie.jpg"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.editor",
+      "roles/errorreporting.viewer",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.viewAccessor",
+      "roles/pubsub.publisher",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/run.admin",
+      "roles/run.invoker",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+      ]
+    }
+  ]
+}

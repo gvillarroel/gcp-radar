@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:07.579Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner PostgreSQL interface",
+  "feature_slug": "spanner-postgresql-interface",
+  "summary": "The Spanner PostgreSQL interface adds PostgreSQL compatibility to Spanner with support for a core PostgreSQL SQL dialect, psql, native language clients, and Google tooling integration; Spanner adds a PostgreSQL-compatible interface in preview with support for a subset of PostgreSQL SQL features and connectivity through updated drivers and PGAdapter.",
+  "extended_definition": "The Spanner PostgreSQL interface adds PostgreSQL compatibility to Spanner with support for a core PostgreSQL SQL dialect, psql, native language clients, and Google tooling integration; Spanner adds a PostgreSQL-compatible interface in preview with support for a subset of PostgreSQL SQL features and connectivity through updated drivers and PGAdapter.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+      "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Commit timestamps in PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Spanner Guides Send feedback Commit timestamps in PostgreSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to write a commit timestamp for each insert and update operation that you perform with Spanner in PostgreSQL-dialect databases.",
+          "InsertOrUpdate ( \"Performances\" , performanceColumns , [] interface {}{ 1 , 19 , \"2017-11-02\" , 15000 , spanner ."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Return information about each table in the user's schema: SELECT t . table schema , t . table catalog , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table schema NOT IN ( 'pg catalog' , 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables and views in the information schema for PostgreSQL-dialect databases: SELECT table name FROM information schema . tables WHERE table schema = \"information schema\" Return information about columns in the user table my table in the default schema: SELECT t . ordinal position , t . column name , t . data type , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table schema = 'public' AND t . table name = 'my table' ORDER BY t . ordinal position Return information about each index in the default schema in the current database: ## What's next {: #whats-next} + Learn about available Introspection tools to help you investigate database issues.",
+          "For PostgreSQL-dialect databases, the default is public . change stream name character varying The name of the change stream. option name character varying The name of the change stream option. option type character varying The data type of the change stream option. option value character varying The value of the change stream option. change stream privileges This row-filtered view lists all fine-grained access control privileges granted on all change streams to any database role, including public .",
+          "The default is public for PostgreSQL-dialect databases. table name character varying The name of the table or view that contains the column. column name character varying The name of the column. privilege type character varying The type of the privilege ( SELECT , INSERT , or UPDATE ). is grantable character varying Not used."
+        ]
+      },
+      {
+        "title": "\"Choosing the Right Dialect for Your Spanner Database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner implementation of GoogleSQL and the PostgreSQL interface: Feature parity: Both GoogleSQL and PostgreSQL dialects provide equivalent support for Spanner's unique features, such as interleaved tables and query hints.",
+          "This page lists the deciding factors between using GoogleSQL and PostgreSQL interface dialect databases.",
+          "Familiarity: if your team is already familiar with either PostgreSQL or GoogleSQL syntax and tools, choosing that dialect can streamline development and reduce the learning curve."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+        "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+        "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    }
+  ]
+}

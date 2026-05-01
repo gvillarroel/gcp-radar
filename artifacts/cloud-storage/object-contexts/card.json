@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.721Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Object contexts",
+  "feature_slug": "object-contexts",
+  "summary": "Object contexts let you attach contextual information to Cloud Storage objects to improve data management and discovery.",
+  "extended_definition": "Object contexts let you attach contextual information to Cloud Storage objects to improve data management and discovery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+      "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAM permissions for Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "source_id": "site-docs-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This permission alone does not allow you to list IAM policies or IP filtering rules. storage.buckets.listEffectiveTags List all tags associated with a bucket, including tags inherited from higher in the resource hierarchy, such as from the bucket's project. storage.buckets.listTagBindings List tags directly attached to a bucket. storage.buckets.relocate Relocate buckets between geographic locations. storage.buckets.restore Bulk restore objects that have been soft-deleted . storage.buckets.setIamPolicy Update bucket IAM policies. storage.buckets.setIpFilter Set IP filtering rules on a bucket. storage.buckets.update Update bucket metadata including adding or removing a Pub/Sub notification configuration on a bucket and reading bucket metadata when updating.",
+          "This also returns any contexts attached to the objects. storage.objects.move Move an object within a bucket with hierarchical namespace enabled. storage.objects.overrideUnlockedRetention Use the x-goog-bypass-governance-retention header or the overrideUnlockedRetention query parameter when working with object retention configurations . storage.objects.restore Restore objects that have been soft-deleted . storage.objects.setIamPolicy Update object ACLs. storage.objects.setRetention Add or update retentions for objects. storage.objects.update Update object metadata, excluding ACLs.",
+          "Object permission name Description storage.objects.create Add new objects to a bucket. storage.objects.createContext Attach contexts to an object. storage.objects.delete Delete objects. storage.objects.deleteContext Delete object contexts. storage.objects.dropContexts Drop specified groups of object contexts from a source object during a rewrite , copy , or compose operation using the dropContextGroups parameter. storage.objects.get Read object data and metadata, excluding ACLs."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Solution : You are missing an IAM permission for the bucket or object that is required to complete the request.",
+          "For example, if you're granted the Storage Object Viewer role for a project and you're trying to download an object, make sure the object is in a bucket that's in the project; you might inadvertently have the Storage Object Viewer permission for a different project.",
+          "If you have the storage.buckets.setIamPolicy permission or the storage.objects.setIamPolicy permission and you still get an error, your bucket might be subject to public access prevention , which doesn't allow access to allUsers or allAuthenticatedUsers ."
+        ]
+      },
+      {
+        "title": "\"Class BlobInfo.ObjectContexts (2.64.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "source_id": "site-java-reference",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Java Client libraries Send feedback Class BlobInfo.ObjectContexts (2.64.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "ObjectContexts implements Serializable Inheritance Object > BlobInfo.ObjectContexts Implements Serializable Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods newBuilder() public static BlobInfo .",
+          "Builder toBuilder () Returns Type Description BlobInfo.ObjectContexts.Builder toString() public String toString () Returns Type Description String Overrides Object.toString() Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Discover object storage with the Google Cloud CLI \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download the object from your bucket Use the gcloud storage cp command to download the image that you stored in your bucket to somewhere on your computer, such as the desktop: gcloud storage cp gs:// BUCKET NAME /kitten.png Desktop/kitten2.png If successful, the command returns a response like the following: Copying gs://my-awesome-bucket/kitten.png to file://Desktop/kitten2.png Completed files 1/1 8.6kiB/8.6kiB You've just downloaded something from your bucket.",
+          "List details for an object Use the gcloud storage ls command with the --long flag to get some details about one of your images: gcloud storage ls gs:// BUCKET NAME /kitten.png --long If successful, the command returns a response like the following: 8775 2026-01-21T01:22:17Z gs://srs-bucketcli/kitten.png TOTAL: 1 objects, 8775 bytes (8.57kiB) You've just obtained information about the image's size and date of creation.",
+          "Delete an object Use the gcloud storage rm command to delete one of your images: gcloud storage rm gs:// BUCKET NAME /kitten.png If successful, the command returns a response like the following: Removing gs://my-awesome-bucket/kitten.png..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "com.google.cloud.storage.BlobInfo.ObjectContexts",
+      "com.google.cloud.storage.BlobInfo.ObjectContexts.Builder",
+      "kitten.png",
+      "kitten2.png",
+      "storage.buckets.listEffectiveTags",
+      "storage.buckets.listTagBindings",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.managedfolders.create",
+      "storage.objectAdmin",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.delete",
+      "storage.objects.deleteContext",
+      "storage.objects.dropContexts",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobInfo.ObjectContexts",
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-gcloud"
+      ]
+    }
+  ]
+}

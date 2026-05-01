@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.107Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "CMEK organization policy constraint: restrictNonCmekServices",
+  "feature_slug": "cmek-organization-policy-constraint-restrictnoncmekservices",
+  "summary": "Cloud SQL supports the constraints/gcp.restrictNonCmekServices organization policy constraint to require CMEK for resources in Preview.",
+  "extended_definition": "Cloud SQL supports the constraints/gcp.restrictNonCmekServices organization policy constraint to require CMEK for resources in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+      "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL organization policies \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-managed encryption keys (CMEK) organization policies Cloud SQL supports two organization policy constraints that help ensure CMEK protection across an organization: constraints/gcp.restrictNonCmekServices and constraints/gcp.restrictCmekCryptoKeyProjects .",
+          "For information about CMEK organization policy constraints, see Organization policy constraints .",
+          "By default, you can add Authorized Networks to Cloud SQL instances. constraints/sql.restrictAuthorizedNetworks Allowed Restrictions for connection organization policies When you set the organization policy for each project, you need to determine if any one of the following apply to your project: Read replicas public IP conflicts Incompatibility using gcloud CLI sql connect Google Cloud hosted services access MySQL failover replica public IP conflicts Non-RFC 1918 private IP addresses Read replicas public IP address conflicts Cloud SQL read replicas connect to the primary instance over the non-proxied database connection."
+        ]
+      },
+      {
+        "title": "Data residency overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use organizational policy constraints to enforce data residency requirements at the organization, project, or folder level.",
+          "CMEK are intended for organizations that have sensitive or regulated data that requires them to manage their own encryption keys.",
+          "These constraints let you define the Google Cloud locations where users can create resources for supported services."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If there is a resource location constraint on your organization policy, you must select one of the regions that the organization policy allows.",
+          "If this type of policy affects your project, you can only select regions the organization policy allows.",
+          "Note: Some organizations use an organization policy to restrict resource locations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "sql.iam.gserviceaccount.com",
+      "sql.restrictAuthorizedNetworks",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    }
+  ]
+}

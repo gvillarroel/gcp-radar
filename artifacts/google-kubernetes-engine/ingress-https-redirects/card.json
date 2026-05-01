@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.688Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Ingress HTTPS redirects",
+  "feature_slug": "ingress-https-redirects",
+  "summary": "Adds support for redirecting HTTP requests to HTTPS on the same external load balancer IP.",
+  "extended_definition": "Adds support for redirecting HTTP requests to HTTPS on the same external load balancer IP.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up an external Application Load Balancer with Ingress \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following manifest describes a Deployment with version 2.0 of the same web application: apiVersion : apps/v1 kind : Deployment metadata : name : web2 namespace : default spec : selector : matchLabels : run : web2 template : metadata : labels : run : web2 spec : containers : - image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:2.0 imagePullPolicy : IfNotPresent name : web2 ports : - containerPort : 8080 protocol : TCP Apply the resource to the cluster: kubectl apply -f web-deployment-v2.yaml The following manifest describes a Service that exposes web2 internally to the cluster on a NodePort Service called web2 : apiVersion : v1 kind : Service metadata : name : web2 namespace : default spec : ports : - port : 8080 protocol : TCP targetPort : 8080 selector : run : web2 type : NodePort Apply the resource to the cluster: kubectl apply -f web-service-v2.yaml The following manifest describes an Ingress resource that: routes the requests with path starting with /v2/ to the web2 Service routes all other requests to the web Service apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : fanout-ingress spec : rules : - http : paths : - path : / pathType : ImplementationSpecific backend : service : name : web port : number : 8080 - path : /v2/ pathType : ImplementationSpecific backend : service : name : web2 port : number : 8080 Apply the resource to the cluster: kubectl create -f fanout-ingress.yaml After the Ingress is deployed, run kubectl get ingress fanout-ingress to find out the public IP address of the cluster.",
+          "Inspect the Ingress resource to find an event with an error message similar to the following: Error during GC: error running load balancer garbage collection routine: googleapi: Error 400: The url map resource 'projects/ project-id /global/urlMaps/k8s2-um-tlw9rhgp-default-my-ingress-9ifnni82' is already being used by 'projects/ project-id /global/targetHttpsProxies/k8s2-um-tlw9rhgp-default-my82-target-proxy', resourceInUseByAnotherResource In the preceding error message, k8s2-um-tlw9rhgp-default-my82-target-proxy is a manually created target https proxy that is still referencing the URL map k8s2-um-tlw9rhgp-default-my-ingress-9ifnni82 which was created and managed by an Ingress controller.",
+          "Then visit the IP address to see that both applications are reachable on the same load balancer: Visit http://<IP ADDRESS>/ and note that the response contains Version: 1.0.0 (as the request is routed to the web Service) Visit http://<IP ADDRESS>/v2/ and note that the response contains Version: 2.0.0 (as the request is routed to the web2 Service) The only supported wildcard character for the path field of an Ingress is the character."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "CVE-2023-27491: Attackers can send specifically crafted HTTP/2 or HTTP/3 requests to trigger parsing errors on HTTP/1 upstream service.",
+          "CVE-2023-27491: Attackers can send specifically crafted HTTP/2 or HTTP/3 requests to trigger parsing errors on HTTP/1 upstream service.",
+          "Check if your GKE clusters are using ingress-nginx by using one of the following commands: Check an individual cluster: kubectl get pods --all-namespaces --selector app.kubernetes.io/name = ingress-nginx Check multiple clusters at once using a Cloud Asset Inventory resource search query : gcloud asset search-all-resources \\ --scope = 'organizations/ ORGANIZATION ID ' \\ --asset-types = 'k8s.io/Pod' \\ --query = 'labels.\"app.kubernetes.io/name\"=\"ingress-nginx\"' Replace ORGANIZATION ID with your organization resource ID."
+        ]
+      },
+      {
+        "title": "\"Run full-stack workloads at scale on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deploy the adapter: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-stackdriver/master/custom-metrics-stackdriver-adapter/deploy/production/adapter.yaml Configure the adapter to use Workload Identity Federation for GKE to get metrics: Configure the IAM service account: gcloud projects add-iam-policy-binding PROJECT ID \\ --member \"serviceAccount:bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/monitoring.viewer gcloud iam service-accounts add-iam-policy-binding bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com \\ --role roles/iam.workloadIdentityUser \\ --member \"serviceAccount: PROJECT ID .svc.id.goog[custom-metrics/custom-metrics-stackdriver-adapter]\" Annotate the Kubernetes service account that the adapter uses: kubectl annotate serviceaccount custom-metrics-stackdriver-adapter \\ --namespace = custom-metrics \\ iam.gke.io/gcp-service-account = bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com Restart the adapter Deployment to propagate the changes: kubectl rollout restart deployment custom-metrics-stackdriver-adapter \\ --namespace = custom-metrics Configure autoscaling for the database When you deployed Bank of Anthos and PostgreSQL earlier in this tutorial,, you deployed the database as a StatefulSet with one primary read/write replica to handle all incoming SQL statements.",
+          "See the License for the specific language governing permissions and limitations under the License. --- apiVersion : autoscaling/v2 kind : HorizontalPodAutoscaler metadata : name : frontend spec : behavior : scaleUp : stabilizationWindowSeconds : 0 policies : - type : Percent value : 100 periodSeconds : 5 selectPolicy : Max scaleTargetRef : apiVersion : apps/v1 kind : Deployment name : frontend minReplicas : 5 maxReplicas : 25 metrics : - type : External external : metric : name : loadbalancing.googleapis.com https request count selector : matchLabels : resource.labels.forwarding rule name : FORWARDING RULE NAME target : type : AverageValue averageValue : \"5\" This manifest uses the following fields: spec.scaleTargetRef : The Kubernetes resource to scale. spec.minReplicas : The minimum number of replicas, which is 5 in this sample. spec.maxReplicas : The maximum number of replicas, which is 25 in this sample. spec.metrics. : The metric to use.",
+          "To delete all the resources in this tutorial, do the following: Delete the sample Kubernetes resources: kubectl delete \\ -f extras/postgres-hpa/loadgenerator.yaml \\ -f extras/postgres-hpa/hpa \\ -f extras/postgres-hpa/kubernetes-manifests \\ -f extras/jwt/jwt-secret.yaml \\ -f https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-stackdriver/master/custom-metrics-stackdriver-adapter/deploy/production/adapter.yaml Delete the PostgreSQL database: helm uninstall accounts-db kubectl delete pvc -l \"app.kubernetes.io/instance=accounts-db\" kubectl delete configmaps initdb Delete the GKE cluster and the IAM service account: gcloud iam service-accounts delete \"bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com\" --quiet gcloud container clusters delete \"bank-of-anthos\" --location = \"us-central1\" --quiet Delete the project Caution : Deleting a project has the following effects: Everything in the project is deleted."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "adapter.yaml",
+      "app.kubernetes.io",
+      "charts.bitnami.com",
+      "container.googleapis.com",
+      "docker.pkg.dev",
+      "gke.1157000",
+      "gke.1248000",
+      "gke.1421000",
+      "gke.1437000",
+      "gke.200",
+      "iam.gke.io",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "ingress.yaml",
+      "k8s.io",
+      "loadbalancing.googleapis.com",
+      "loadgenerator.yaml",
+      "monitoring.viewer",
+      "networking.k8s.io",
+      "postgresql.initdbScriptsCM",
+      "postgresql.replicaCount",
+      "raw.githubusercontent.com",
+      "resource.labels.forwarding",
+      "schema.sql",
+      "secret.yaml",
+      "spec.maxReplicas",
+      "spec.metrics",
+      "spec.minReplicas",
+      "spec.scaleTargetRef",
+      "svc.id.goog",
+      "tables.sql",
+      "testdata.sql",
+      "transactions.sh",
+      "v2.yaml",
+      "values.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.workloadIdentityUser",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    }
+  ]
+}

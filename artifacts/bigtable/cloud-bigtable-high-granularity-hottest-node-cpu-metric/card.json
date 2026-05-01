@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable high-granularity hottest node CPU metric",
+  "feature_slug": "cloud-bigtable-high-granularity-hottest-node-cpu-metric",
+  "summary": "Introduces a higher-frequency, high-granularity hottest-node CPU utilization metric for Cloud Bigtable monitoring.",
+  "extended_definition": "Introduces a higher-frequency, high-granularity hottest-node CPU utilization metric for Cloud Bigtable monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+      "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+      "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up client-side metrics \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "source_id": "site-docs-reference-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Your package.json file should look similar to the following: { \"dependencies\" : { \"@google-cloud/bigtable\" : \"^6.2.0\" } } In your project, reinstall Node.js modules: rm -rf node modules rm package-lock.json npm i Enable client-side metrics in your application Client-side metrics are enabled by default in the Bigtable client library for Node.js as of version 6.4.0.",
+          "Client-side metrics are available for users of the following client libraries: Bigtable client library for C++ Bigtable client library for Java Bigtable HBase client for Java Bigtable client library for Go Bigtable client library for Node.js For an overview, see the Client-side metrics overview .",
+          "You must have version 2.16.0 or higher to use client-side metrics."
+        ]
+      },
+      {
+        "title": "Autoscaling \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using the same formula, the following examples show the number of nodes you might need for some sample storage amounts: SSD storage per cluster Smallest maximum number of nodes 25 TB 10 35 TB 14 50 TB 20 After your cluster is up and running with autoscaling enabled, monitor the cluster and make sure that the value you choose for maximum number of nodes is at least as high as the recommended number of nodes for CPU target and the recommended number of nodes for storage target .",
+          "You can also view these metrics using Cloud Monitoring . bigtable.googleapis.com/cluster/autoscaling/min node count bigtable.googleapis.com/cluster/autoscaling/max node count bigtable.googleapis.com/cluster/autoscaling/recommended node count for cpu bigtable.googleapis.com/cluster/autoscaling/recommended node count for storage Logging Bigtable emits a system event audit log each time it scales a cluster.",
+          "Bigtable autoscaling determines the number of nodes required, based on the following dimensions: CPU utilization target Storage utilization target Minimum number of nodes Maximum number of nodes Each scaling dimension generates a recommended node count, and Bigtable automatically uses the highest one."
+        ]
+      },
+      {
+        "title": "Client-side metrics descriptions \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+        "source_id": "site-docs-root-2",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Language Client Version (Opt-in) Version (Enabled by default) Java java-bigtable 2.16.0 2.38.0 java-bigtable-hbase 2.6.4 2.14.1 Go 1.27.0 Node.js 6.2.0 ( ReadRows and ReadRow operations), 6.3.0 (other operations) C++ 2.40.0 Application blocking latencies The following table shows the attributes and details of the application blocking latencies metric.",
+          "Language Client Version (Opt-in) Version (Enabled by default) Java java-bigtable 2.16.0 2.38.0 java-bigtable-hbase 2.6.4 2.14.1 Go 1.38.0 Node.js 6.2.0 ( ReadRows and ReadRow operations), 6.3.0 (other operations) C++ 2.41.0 Client blocking latencies The following table shows the attributes and details of the client blocking latencies metric.",
+          "Language Client Version (Opt-in) Version (Enabled by default) Java java-bigtable 2.16.0 2.38.0 java-bigtable-hbase 2.6.4 2.14.1 Go 1.27.0 Node.js 6.2.0 ( ReadRows and ReadRow operations), 6.3.0 (other operations) C++ 2.41.0 Connectivity error count The following table shows the attributes and details of the connectivity error count metric."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.googleapis.com",
+      "lock.json",
+      "package.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/autoscaling",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions"
+      ]
+    }
+  ]
+}

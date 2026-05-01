@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "textembedding-gecko@003",
+  "feature_slug": "textembedding-gecko-003",
+  "summary": "Adds availability of the updated stable Vertex AI text embedding foundation model textembedding-gecko@003, with quality improvements over earlier stable versions.",
+  "extended_definition": "Adds availability of the updated stable Vertex AI text embedding foundation model textembedding-gecko@003, with quality improvements over earlier stable versions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.studies.trials Methods addTrialMeasurement POST /v1beta1/{trialName}:addTrialMeasurement Adds a measurement of the objective metrics to a Trial. checkTrialEarlyStoppingState POST /v1beta1/{trialName}:checkTrialEarlyStoppingState Checks whether a Trial should stop or not. complete POST /v1beta1/{name}:complete Marks a Trial as complete. create POST /v1beta1/{parent}/trials Adds a user provided Trial to a Study. delete DELETE /v1beta1/{name} Deletes a Trial. get GET /v1beta1/{name} Gets a Trial. list GET /v1beta1/{parent}/trials Lists the Trials associated with a Study. listOptimalTrials POST /v1beta1/{parent}/trials:listOptimalTrials Lists the pareto-optimal Trials for multi-objective Study or the optimal Trials for single-objective Study. stop POST /v1beta1/{name}:stop Stops a Trial. suggest POST /v1beta1/{parent}/trials:suggest Adds one or more Trials to a Study, with parameter values suggested by Vertex AI Vizier.",
+          "REST Resource: v1.projects.locations.studies.trials Methods addTrialMeasurement POST /v1/{trialName}:addTrialMeasurement Adds a measurement of the objective metrics to a Trial. checkTrialEarlyStoppingState POST /v1/{trialName}:checkTrialEarlyStoppingState Checks whether a Trial should stop or not. complete POST /v1/{name}:complete Marks a Trial as complete. create POST /v1/{parent}/trials Adds a user provided Trial to a Study. delete DELETE /v1/{name} Deletes a Trial. get GET /v1/{name} Gets a Trial. list GET /v1/{parent}/trials Lists the Trials associated with a Study. listOptimalTrials POST /v1/{parent}/trials:listOptimalTrials Lists the pareto-optimal Trials for multi-objective Study or the optimal Trials for single-objective Study. stop POST /v1/{name}:stop Stops a Trial. suggest POST /v1/{parent}/trials:suggest Adds one or more Trials to a Study, with parameter values suggested by Vertex AI Vizier.",
+          "REST Resource: v1beta1.projects.locations.endpoints Methods countTokens POST /v1beta1/{endpoint}:countTokens Perform a token counting. create POST /v1beta1/{parent}/endpoints Creates an Endpoint. delete DELETE /v1beta1/{name} Deletes an Endpoint. deployModel POST /v1beta1/{endpoint}:deployModel Deploys a Model into this Endpoint, creating a DeployedModel within it. directPredict POST /v1beta1/{endpoint}:directPredict Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks. directRawPredict POST /v1beta1/{endpoint}:directRawPredict Perform an unary online prediction request to a gRPC model server for custom containers. explain POST /v1beta1/{endpoint}:explain Perform an online explanation. get GET /v1beta1/{name} Gets an Endpoint. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent}/endpoints Lists Endpoints in a Location. mutateDeployedModel POST /v1beta1/{endpoint}:mutateDeployedModel Updates an existing deployed model. patch PATCH /v1beta1/{endpoint.name} Updates an Endpoint. predict POST /v1beta1/{endpoint}:predict Perform an online prediction. predictLongRunning POST /v1beta1/{endpoint}:predictLongRunning rawPredict POST /v1beta1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1beta1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamRawPredict POST /v1beta1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. undeployModel POST /v1beta1/{endpoint}:undeployModel Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using. update POST /v1beta1/{endpoint.name}:update Updates an Endpoint with a long running operation."
+        ]
+      },
+      {
+        "title": "Manage featurestores \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "source_id": "site-docs-reference-3",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"featurestores\": [ { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featurestores/test\", \"createTime\": \"2021-02-26T00:44:44.216805Z\", \"updateTime\": \"2021-02-26T00:44:44.364916Z\", \"etag\": \"AMEw9yNL0s7qZh8lZVZ5T3BEuhoEgFR7JmjbbCSAkRZjeKDXkkIYnxxA4POe5BWT8cCn\", \"labels\": { \"environment\": \"testing\" }, \"onlineServingConfig\": { \"fixedNodeCount\": 2 }, \"state\": \"STABLE\" }, { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featurestores/featurestore demo\", \"createTime\": \"2021-02-25T00:39:40.598781Z\", \"updateTime\": \"2021-02-25T00:39:40.744038Z\", \"etag\": \"AMEw9yO e0vm-9W yeCz4rJm-XnnEMYQ-vQesevxya sz-FckuysnDwo3cEXHdWWSeda\", \"labels\": { \"environment\": \"testing\" }, \"onlineServingConfig\": { \"fixedNodeCount\": 3 }, \"state\": \"STABLE\" } ] } Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featurestores/ FEATURESTORE ID \", \"createTime\": \"2021-02-25T00:39:40.598781Z\", \"updateTime\": \"2021-02-25T00:39:40.744038Z\", \"etag\": \"AMEw9yNy b4IaMIvw1803ZT38cpUtjfwlyLkR709oBCY6pQrm6dHophLcqhrvsNqkQQZ\", \"onlineServingConfig\": { \"fixedNodeCount\": 3 }, \"state\": \"STABLE\" } Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Vertex AI Feature Store (Legacy) availability can vary by location."
+        ]
+      },
+      {
+        "title": "Create a Vertex AI Workbench instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When the instance is ready to use, Vertex AI Workbench activates an Open JupyterLab link. gcloud Before using any of the command data below, make the following replacements: INSTANCE NAME : the name of your Vertex AI Workbench instance; must start with a letter followed by up to 62 lowercase letters, numbers, or hyphens (-), and cannot end with a hyphen PROJECT ID : your project ID LOCATION : the zone where you want your instance to be located VM IMAGE PROJECT : the ID of the Google Cloud project that VM image belongs to; the default Google Cloud project ID for supported images is cloud-notebooks-managed VM IMAGE NAME : the image name; to find the image name of a specific version, see Find the specific version MACHINE TYPE : the machine type of your instance's VM METADATA : custom metadata to apply to this instance; for example, to specify a post-startup-script, you can use the post-startup-script metadata tag, in the format: --metadata=post-startup-script=gs:// BUCKET NAME /hello.sh To enable the JupyterLab 4 preview, use --metadata=enable-jupyterlab4-preview=true .",
+          "If you use the private.googleapis.com or restricted.googleapis.com VIP to provide access to the service endpoints, add DNS entries for each of the required service endpoints : notebooks.cloud.google.com notebooks.googleapis.com .notebooks.byoid.googleusercontent.com .notebooks.cloud.google.com .notebooks.googleusercontent.com .kernels.googleusercontent.com If you use third party credentials , you must use restricted.googleapis.com and add the following DNS entry: .byoid.googleusercontent.com Note: When using Vertex AI with Private Google Access to access Google Cloud APIs, the instances must be configured to bypass any web proxies or other network traffic inspection or filtering devices (for example next generation firewalls) for any hostnames in the domains listed in the Private Google Access documentation.",
+          "To restart your instance, select the instance and click arrow right Start . gcloud You can change the JupyterLab version on an existing instance by using the following command: gcloud workbench instances update INSTANCE NAME \\ --project = \" PROJECT ID \" \\ --location = \" LOCATION \" \\ --metadata = enable-jupyterlab4 = ENABLEMENT BOOLEAN Replace the following: PROJECT ID : your project ID LOCATION : the zone where you want your instance to be located INSTANCE NAME : the name of your Vertex AI Workbench instance ENABLEMENT BOOLEAN : use one of the following: false : changes to JupyterLab 3. true : changes to JupyterLab 4."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "byoid.googleusercontent.com",
+      "endpoint.name",
+      "hello.sh",
+      "kernels.googleusercontent.com",
+      "notebooks.byoid.googleusercontent.com",
+      "notebooks.cloud.google.com",
+      "notebooks.googleapis.com",
+      "notebooks.googleusercontent.com",
+      "private.googleapis.com",
+      "restricted.googleapis.com",
+      "v1.projects.locations.studies.trials",
+      "v1beta1.projects.locations.endpoints",
+      "v1beta1.projects.locations.studies.trials"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+      ]
+    }
+  ]
+}

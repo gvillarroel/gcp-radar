@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.092Z",
+  "source_step08_card": "data/step-08/current/products/cloud-source-repositories/card.json",
+  "product_name": "Cloud Source Repositories",
+  "product_slug": "cloud-source-repositories",
+  "feature_name": "Security key detection on code push",
+  "feature_slug": "security-key-detection-on-code-push",
+  "summary": "Cloud Source Repositories can detect security keys when code changes are pushed.",
+  "extended_definition": "Cloud Source Repositories can detect security keys when code changes are pushed.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/source-repositories/docs/authentication",
+      "https://docs.cloud.google.com/source-repositories/docs/features",
+      "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+      "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Features \\_|\\_ Cloud Source Repositories \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/features",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Security key detection Cloud Source Repositories offer security key detection to block git push transactions that contain sensitive information.",
+          "For a more integrated experience, see Cloud Code for IntelliJ Source browser Cloud Source Repositories also provide a source browser that you can use to view repository files from within the Google Cloud console.",
+          "Editor support Because repositories in Cloud Source Repositories are Git repositories, you can continue to use the editor of your choice to work on your code."
+        ]
+      },
+      {
+        "title": "\"Pushing code from an existing repository \\_|\\_ Cloud Source Repositories\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: git remote add google ssh : // user @gmail . com @source . developers . google . com : 2022 / p / example - project / r / test - repo Push your code to Cloud Source Repositories: git push --all google gcloud CLI Ensure that the gcloud CLI is installed on your machine.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Pushing code from an existing repository Stay organized with collections Save and categorize content based on your preferences.",
+          "This topic describes how to push code from an existing repository on your local machine to Cloud Source Repositories."
+        ]
+      },
+      {
+        "title": "ProjectConfig \\_|\\_ Cloud Source Repositories \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "source_id": "site-api-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application development Cloud Source Repositories Reference Send feedback ProjectConfig Stay organized with collections Save and categorize content based on your preferences.",
+          "Values are of the form projects/<project> . pubsubConfigs map (key: string, value: object ( PubsubConfig )) How this project publishes a change in the repositories through Cloud Pub/Sub.",
+          "For alternative source hosting options, Secure Source Manager is a regionally deployed, single tenant, managed source code repository hosted on Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Setting up local authentication \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Source Repositories supports three SSH key types: RSA (only for keys with more than 2048 bits) ECDSA ED25519 Generate a key pair The SSH key pair consists of a private key that resides on your local system and a public key that you register with Google Cloud.",
+          "Cloud Source Repositories supports the following types of authentication: SSH Google Cloud CLI Manually generated credentials Authenticate by using SSH Cloud Source Repositories lets you use SSH public key authentication to access hosted repositories.",
+          "Type the following command: git clone https://source.developers.google.com/p/ PROJECT ID /r/ REPOSITORY NAME Where: PROJECT ID is the name of your project REPOSITORY NAME is the name of your repository After you set up authentication with manually generated credentials, you can interact with the hosted repository on Cloud Source Repositories by using the standard Git commands."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "source.developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/features",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/ProjectConfig",
+        "https://docs.cloud.google.com/source-repositories/docs/authentication"
+      ]
+    }
+  ]
+}

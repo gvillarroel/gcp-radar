@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.228Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "Bulk delete",
+  "feature_slug": "bulk-delete",
+  "summary": "Firestore with MongoDB compatibility supports bulk delete operations in Preview.",
+  "extended_definition": "Firestore with MongoDB compatibility supports bulk delete operations in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bulk delete data \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "source_id": "site-iam-reference",
+        "final_score": 388,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To bulk delete the restaurants and reviews collections, your command looks as follows: gcloud firestore bulk-delete \\ --collection-ids=restaurants,reviews \\ --database='cymbal' Manage bulk delete operations After you start a bulk delete operation, Firestore with MongoDB compatibility assigns the operation a unique name.",
+          "Otherwise, the following roles grant the necessary permissions for bulk delete operations: Firestore with MongoDB compatibility roles: Owner , Cloud Datastore Owner , or Cloud Datastore Bulk Admin Note: These Datastore roles also grant permissions in Firestore.",
+          "Caution: Bulk deleting data from Firestore with MongoDB compatibility incurs one delete operation per document deleted and some read operations based on a fraction of total documents read."
+        ]
+      },
+      {
+        "title": "\"Import and export data \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "source_id": "site-iam-reference",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Otherwise, the following roles grant the necessary permissions for export and import operations and for access to Cloud Storage: Firestore with MongoDB compatibility roles: Owner , Cloud Datastore Owner , or Cloud Datastore Import Export Admin Note: These Datastore roles also grant permissions in Firestore with MongoDB compatibility.",
+          "Manage export and import operations After you start an export or import operation, Firestore with MongoDB compatibility assigns the operation a unique name.",
+          "Export and import operations are charged for read units and write units at the rates listed in Firestore with MongoDB compatibility pricing ."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instead, the Firestore with MongoDB compatibility system polls Cloud KMS every 5 minutes to check if the key is still available and then performs encrypt and decrypt operations if the key is available.",
+          "If an externally-managed key is unavailable, Firestore with MongoDB compatibility continues to support full database operations using a cached version of the key, for up to one hour.",
+          "Warning: If an external key is deleted and cannot be recovered, any Firestore with MongoDB compatibility database encrypted with that key becomes permanently inaccessible."
+        ]
+      },
+      {
+        "title": "\"Manage indexes \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key Term: Firestore with MongoDB compatibility supports several administrative operations that can take a long time to complete.",
+          "To delete the index, use the gcloud firestore indexes composite delete command. gcloud firestore indexes composite delete INDEX NAME \\ --database=' DATABASE ID ' Replace the following: INDEX NAME : the name of an index DATABASE ID : a database ID Index build time To build an index, Firestore with MongoDB compatibility must create the index and then backfill the index entries with existing data.",
+          "Firestore with MongoDB compatibility includes features to execute and manage long- running operations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.indexAdmin",
+      "datastore.owner"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.indexAdmin",
+      "roles/datastore.owner",
+      "roles/editor",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+      ]
+    }
+  ]
+}

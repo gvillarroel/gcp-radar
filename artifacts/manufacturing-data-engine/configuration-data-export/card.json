@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.637Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine",
+  "feature_name": "Configuration data export",
+  "feature_slug": "configuration-data-export",
+  "summary": "Exports configuration data to dedicated tables in the mde_system dataset.",
+  "extended_definition": "Exports configuration data to dedicated tables in the mde_system dataset.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Ingest data in batch \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ingest CSV files providing column names and adding ingestion metadata REST POST configuration/v1/ingestions { \"name\" : \"csv-headers-metadata\" , \"source\" : \"CSV\" , \"folderName\" : \"csv-headers\" , \"separator\" : \",\" , \"insertMetadata\" : true , \"headers\" : { \"headerNames\" : { \"names\" : [ \"one\" , \"two\" , \"three\" ] } } } Console Access the configuration of File Ingestion Specification .",
+          "Ingest CSV files inferring header names and skipping 5 rows before starting reading the file REST POST configuration/v1/ingestions { \"name\" : \"csv-skip-rows\" , \"source\" : \"CSV\" , \"folderName\" : \"csv-skip\" , \"skipRows\" : 5 , \"separator\" : \",\" , \"headers\" : { \"inferHeaders\" : true } } Console Access the configuration of File Ingestion Specification .",
+          "Ingest CSV files inferring column names from headers REST POST configuration/v1/ingestions { \"name\" : \"csv-simple\" , \"source\" : \"CSV\" , \"folderName\" : \"csv-simple\" , \"separator\" : \",\" , \"headers\" : { \"inferHeaders\" : true } } Console Navigate to the Manufacturing Connect web interface ."
+        ]
+      },
+      {
+        "title": "\"Use the LookML Library \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "source_id": "site-docs-reference",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how you can extend the base view to define a dimension called device : include : \"//mde lookml lib/mde abstract core/views/dimension/ .view\" view : dim source { derived table : { sql : SELECT FROM mde dimension.metadata-store where bucket number = BUCKET NUMBER ;; } view label : \"DIM - Device\" extends : [ dim base ] dimension : device name { type : string sql : JSON VALUE(${TABLE}.instance,\"$.device name\") ;; } } And, similarly, the library provides base views per MDE archetype for modeling record tables in BigQuery as fact tables.",
+          "The library provides content in two directories: mde abstract core mde packages Abstract core directory The mde abstract core directory provides base views that you can use to model MDE metadata buckets as dimensions and MDE record tables as fact tables in Looker.",
+          "The default Looker configuration package provides a fact table per record table linked to an MDE type, as well tag and source dimensions, which correspond to the tag and source metadata buckets in MDE, respectively."
+        ]
+      },
+      {
+        "title": "\"Query in Cloud Storage \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following examples: NumericDataSeries archetype schema: { \"type\" : \"record\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs\" , \"name\" : \"NumericDataSeriesGCSObject\" , \"fields\" : [ { \"name\" : \"id\" , \"type\" : \"string\" , \"doc\" : \"Unique record id\" }, { \"name\" : \"tag name\" , \"type\" : \"string\" , \"doc\" : \"Name of the tag\" }, { \"name\" : \"type name\" , \"type\" : \"string\" }, { \"name\" : \"type version\" , \"type\" : \"int\" }, { \"name\" : \"embedded metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"materialized cloud metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"cloud metadata ref\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"source message id\" , \"type\" : \"string\" }, { \"name\" : \"event timestamp\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"value\" , \"type\" : \"double\" } ] } DiscreteDataSeries archetype schema: { \"type\" : \"record\" , \"name\" : \"DiscreteDataSeriesGCSObject\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs\" , \"fields\" : [ { \"name\" : \"id\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" }, \"doc\" : \"Unique record id\" }, { \"name\" : \"tag name\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" }, \"doc\" : \"Name of the tag\" }, { \"name\" : \"type name\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } }, { \"name\" : \"type version\" , \"type\" : \"int\" }, { \"name\" : \"embedded metadata\" , \"type\" : [ \"null\" , { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } ], \"default\" : null }, { \"name\" : \"materialized cloud metadata\" , \"type\" : [ \"null\" , { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } ], \"default\" : null }, { \"name\" : \"cloud metadata ref\" , \"type\" : [ \"null\" , { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } ], \"default\" : null }, { \"name\" : \"source message id\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } }, { \"name\" : \"event timestamp\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"data\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } } ] } ContinuousDataSeries archetype schema: { \"type\" : \"record\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs\" , \"name\" : \"ContinuousDataSeriesGCSObject\" , \"fields\" : [ { \"name\" : \"id\" , \"type\" : \"string\" , \"doc\" : \"Unique record id\" }, { \"name\" : \"tag name\" , \"type\" : \"string\" , \"doc\" : \"Name of the tag\" }, { \"name\" : \"type name\" , \"type\" : \"string\" }, { \"name\" : \"type version\" , \"type\" : \"int\" }, { \"name\" : \"embedded metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"materialized cloud metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"cloud metadata ref\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"source message id\" , \"type\" : \"string\" }, { \"name\" : \"event timestamp start\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"event timestamp end\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"data\" , \"type\" : \"string\" }, { \"name\" : \"duration\" , \"type\" : \"long\" } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "As with Raw data, messages are grouped in 10 minute windows and 10 files are written in each of the windows, this data is used to produce the filenames, ie: gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00000-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00001-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00002-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00003-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00004-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00005-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00006-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00007-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00008-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00009-of-00010.avro There's a different schema which only vary slightly for each Archetype, and so each type uses that corresponding schema.",
+          "Raw data is stored in AVRO format using the following schema: { \"type\" : \"record\" , \"name\" : \"AvroPubsubMessageRecord\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.core\" , \"fields\" : [ { \"name\" : \"attributes\" , \"type\" : { \"type\" : \"map\" , \"values\" : \"string\" } }, { \"name\" : \"message\" , \"type\" : { \"type\" : \"bytes\" , \"java-class\" : \"[B\" } }, { \"name\" : \"messageId\" , \"type\" : \"string\" }, { \"name\" : \"timestamp\" , \"type\" : \"long\" } ] The schema is composed by the following values: attributes : Stores the Pub/Sub message attribute map. message : Stores the raw message as received in the Pub/Sub topic input-messages . messageId : ID set by Pub/Sub when receiving the message, it's written into all the sinks in order to have lineage of where the data came from. timestamp : When the message was received by Pub/Sub."
+        ]
+      },
+      {
+        "title": "\"Set up a Looker project \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project",
+        "source_id": "site-docs-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a service account that Looker uses to read data from BigQuery, and generate a JSON key for the created service account using the following commands: export SA LOOKER = \"mde-looker\" export PROJECT ID = $( gcloud config get-value project ) gcloud iam service-accounts create $SA LOOKER --display-name \"MDE Looker account\" gcloud projects add-iam-policy-binding ${ PROJECT ID } --member serviceAccount: ${ SA LOOKER } @ ${ PROJECT ID } .iam.gserviceaccount.com --role \"roles/bigquery.dataEditor\" gcloud projects add-iam-policy-binding ${ PROJECT ID } --member serviceAccount: ${ SA LOOKER } @ ${ PROJECT ID } .iam.gserviceaccount.com --role \"roles/bigquery.jobUser\" export SA LOOKER KEY = //mde-projects/ $PROJECT ID / ${ SA LOOKER } key.json gcloud iam service-accounts keys create $SA LOOKER KEY --iam-account ${ SA LOOKER } @ ${ PROJECT ID } .iam.gserviceaccount.com cat << EOF =========================================== Connection credentials to be used in Looker =========================================== ConnectionName: mde-bigquery-connection ProjectName: ${ PROJECT ID } Dataset: mde data ServiceAccount Email: ${ SA LOOKER } @ ${ PROJECT ID } .iam.gserviceaccount.com ServiceAccount JSON key location: ${ SA LOOKER KEY } EOF Create a new BigQuery connection in Looker with the following specifications: Name the connection as specified in the output of Step 2.",
+          "We also provide a library that includes MDE-specific LookML base components and starter configuration packages to reduce the time it takes to model your MDE data in LookML.",
+          "However, you can create a repository with any supported git service. gh repo create mde-looker --private --clone Navigate to the newly created repository it using the following command: cd mde-looker Pull the MDE Looker Project Template files, and push them into your new Looker repository with the following commands: git checkout -b master git remote add project https://github.com/GoogleCloudPlatform/mde-looker-project-template.git git pull project master git push -u origin master Create a blank Looker project ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avro.java.string",
+      "bigquery.dataEditor",
+      "bigquery.jobUser",
+      "com.google.cloud.industry.manufacturing.sfp.datalake.core",
+      "com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs",
+      "dimension.metadata",
+      "github.com",
+      "iam.gserviceaccount.com",
+      "key.json",
+      "template.git",
+      "v1.3"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.jobUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/ingest/how-to-ingest-batch-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-set-up-a-new-mde-looker-project"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.213Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Network dependency visualization",
+  "feature_slug": "network-dependency-visualization",
+  "summary": "Migration Center can visualize network dependencies and filter the graph by tags, groups, network, and asset details; Migration Center can visualize network dependencies between discovered server assets.",
+  "extended_definition": "Migration Center can visualize network dependencies and filter the graph by tags, groups, network, and asset details; Migration Center can visualize network dependencies between discovered server assets.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+      "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.BatchUpdateAssetsResponse Response for updating a list of assets. cancel operation cancel operation ( request : typing .",
+          "CreateImportDataFileRequest ( parent=\"parent value\", import data file id=\"import data file id value\", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.BatchUpdateAssetsResponse Response for updating a list of assets. cancel operation cancel operation ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.Source Source represents an object from which asset information is streamed to Migration Center. group path group path ( project : str , location : str , group : str ) - > str Returns a fully-qualified group string. import data file path import data file path ( project : str , location : str , import job : str , import data file : str ) - > str Returns a fully-qualified import data file string. import job path import job path ( project : str , location : str , import job : str ) - > str Returns a fully-qualified import job string. list assets list assets ( request : typing ."
+        ]
+      },
+      {
+        "title": "About migration planning \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Standalone applications and databases are typically good candidates for a first migration wave, given their low external dependencies.",
+          "The Cloud Foundation Toolkit includes resources to help you get started with the following aspects of your new cloud infrastructure: Identity and Access Management Resource management Networking Data management Infrastructure as code Logging, monitoring, and billing Security foundations GKE foundations Note: Foundations design and set up is a preliminary step to migration planning and landing zone creation.",
+          "After you complete the discovery and assessment phase, and set up your foundation design, you can start planning your migration by categorizing your workloads into migration waves ."
+        ]
+      },
+      {
+        "title": "Execute your migration \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "On the other hand, workloads with significant interdependencies would constitute a complex migration wave that requires additional planning.",
+          "Standalone applications and databases are typically good candidates for a first migration wave given their low external dependencies.",
+          "Item Description 0 Migration tools architecture Architecture of tools constituting a migration factory (tools for ongoing assessment, wave plan refinement, workload-specific migration, build, testing, deployment, and monitoring) 1 Migration checklist Checklist for use before and during the migration sprint 2 Inventory List of workloads that will be migrated to Google Cloud 3 Sprint runbook Execution guidelines for migrating each workload 4 Migration plan Step-by-step migration plan (process) to be followed during the migration sprint 5 Network and security rules List of all of the firewall rules for ingress and egress on Google Cloud DNS changes during migration to Google Cloud 6 Risks and mitigation Possible risks during the migration sprint and mitigation steps 7 Testing and validation Test plan to validate functional and non-functional requirements 8 Rollback plan Rollback steps by workload 9 Team composition Team composition and roster with contact details 10 Governance RACI matrix of migration execution team, cadence and reporting, escalation resolution mechanisms Migration execution After you have completed the migration planning and preparation phase, this section describes how to perform repeatable migrations and validations to Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.types.BatchUpdateAssetsResponse",
+      "v1.types.CreateImportDataFileRequest",
+      "v1.types.ReportAssetFramesResponse",
+      "v1.types.ReportConfig",
+      "v1.types.Source"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-planning-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    }
+  ]
+}

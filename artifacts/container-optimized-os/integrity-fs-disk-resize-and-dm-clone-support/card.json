@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.606Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "integrity-fs disk resize and dm-clone support",
+  "feature_slug": "integrity-fs-disk-resize-and-dm-clone-support",
+  "summary": "Extends integrity-fs with disk resize and dm-clone support; integrity-fs supports disk resizing and dm-clone operations.",
+  "extended_definition": "Extends integrity-fs with disk resize and dm-clone support; integrity-fs supports disk resizing and dm-clone operations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Disks and file system overview \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The kernel verifies integrity root filesystem during boot up, and refuses to boot in case of errors. /home /var writable non-executable stateful These paths are meant for storing data that persists for the lifetime of the boot disk.",
+          "It's a good idea to capture the desired state of your instances in cloud-init , as cloud-init is applied when an instance is newly created as well as when an instance is restarted. /tmp writable non-executable stateless tmpfs Typically used as a scratch space and should not be used to store persistent data. /mnt/disks writable executable stateless tmpfs You can mount persistent disks at directories under /mnt/disks .",
+          "Working with the Container-Optimized OS file system The following is a list of paths in the Container-Optimized OS node image file system, along with their properties and recommended usage: Path Properties Purpose / read-only executable The root filesystem is mounted as read-only to maintain integrity."
+        ]
+      },
+      {
+        "title": "Security Overview \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "The kernel verifies integrity root filesystem during boot up, and refuses to boot in case of errors. /home /var writable non-executable stateful These paths are meant for storing data that persists for the lifetime of the boot disk.",
+          "It's a good idea to capture the desired state of your instances in cloud-init , as cloud-init is applied when an instance is newly created as well as when an instance is restarted. /tmp writable non-executable stateless tmpfs Typically used as a scratch space and should not be used to store persistent data. /mnt/disks writable executable stateless tmpfs You can mount persistent disks at directories under /mnt/disks .",
+          "Filesystem The following is a list of paths in the Container-Optimized OS node image file system, along with their properties and recommended usage: Path Properties Purpose / read-only executable The root filesystem is mounted as read-only to maintain integrity."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: POST https://compute.googleapis.com/compute/v1/projects/ project-id /zones/ compute-zone /instances { 'machineType': 'zones/ compute-zone /machineTypes/ machine-type-name ', 'name': ' instance-name ', 'networkInterfaces': [ { 'accessConfigs': [ { 'type': 'ONE TO ONE NAT', 'name': 'External NAT' } ], 'network': 'global/networks/default' } ], 'disks': [ { 'type': 'PERSISTENT', 'boot': true, 'autoDelete': true, 'initializeParams': { 'sourceImage': 'projects/cos-cloud/global/images/ image-name ' } } ] } Configuring an instance In some cases, you might want to do additional configuration when the instance boots.",
+          "For example: mounting a PD. bootcmd : - fsck.ext4 -tvy /dev/[DEVICE ID] - mkdir -p /mnt/disks/[MNT DIR] - mount -t ext4 -O ... /dev/[DEVICE ID] /mnt/disks/[MNT DIR] Note: Using systemctl enable in the runcmd section of cloud-init will not work as intended.",
+          "See Disks and Filesystem for more information on Container-Optimized OS's filesystem."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "fsck.ext4"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    }
+  ]
+}

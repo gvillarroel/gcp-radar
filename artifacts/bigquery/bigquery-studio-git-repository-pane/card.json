@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Studio Git repository pane",
+  "feature_slug": "bigquery-studio-git-repository-pane",
+  "summary": "Opening a workspace in a repository now opens it in the Git repository pane in the left pane of BigQuery Studio.",
+  "extended_definition": "Opening a workspace in a repository now opens it in the Git repository pane in the left pane of BigQuery Studio.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+      "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Studio page has the following components: Explorer tab of the left pane : use the Explorer tab to work with tables, views, routines, and other BigQuery resources, and view your job history .",
+          "When you click a workspace in the Git repository pane, it opens in a tab in the details pane.",
+          "Note: To see how to use keyboard shortcuts in Studio, click keyboard BigQuery Studio shortcuts in the BigQuery Studio toolbar: To explore the Studio page, follow these steps: In the Google Cloud console, go to the BigQuery Studio page."
+        ]
+      },
+      {
+        "title": "\"Build ELT pipeline for marketing analytics data \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select daily performance.sqlx , then enter the following query: config { type : \"table\" , schema : \"reporting\" , tags : [ \"daily\" , \"google ads\" ] } SELECT date , campaign id , campaign name , SUM ( clicks ) AS total clicks FROM ads Campaign CUSTOMER ID GROUP BY date , campaign id , campaign name ORDER BY date DESC Commit and push your changes After you have made your changes in your development workspace, you can commit and push these changes to your repository by following these steps: In the marketing-tutorial-workspace workspace, click Commit 1 change .",
+          "The marketing-tutorial-workspace development workspace now appears in your marketing-tutorial-repository repository under the Development Workspaces tab, along with two example files in the definitions directory called first view.sqlx and second view.sqlx .",
+          "Create and initialize a Dataform development workspace Create a Dataform development workspace so that you can work on the transformation code within your repository before you commit and push your changes to your repository."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references MicroStrategy with Google BigQuery Connecting to Google BigQuery Partner Advantage page Direct link Mixpanel Solution Mixpanel Category BI, ML, & Advanced Analytics Description Mixpanel is an event analytics service company that tracks user interactions with web and mobile applications.",
+          "Partner references Customer Segments on BigQuery How GrowthLoop & BigQuery Works Sync Audiences to BigQuery Partner Advantage page Direct link Hex Solution Hex Data Workspace Category BI, ML, & Advanced Analytics Description Hex is a platform for collaborative analytics and data science.",
+          "Partner references Configure BigQuery as a Destination How Lytics is built on BigQuery Partner Advantage page Direct link Lyzr.ai Solution Lyzr Agent Studio Category BI, ML, & Advanced Analytics Description Lyzr is a full-stack framework for building autonomous AI agents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "performance.sqlx",
+      "view.sqlx"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ]
+}

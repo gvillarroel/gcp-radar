@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dynamic work rebalancing",
+  "feature_slug": "dynamic-work-rebalancing",
+  "summary": "Dataflow supports dynamic work rebalancing during pipeline execution.",
+  "extended_definition": "Dataflow supports dynamic work rebalancing during pipeline execution.",
+  "lifecycle": {
+    "latest_feature_date": "2015-03-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitoring pipeline performance using Cloud Profiler \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud Profiler agent is installed during Dataflow worker startup.",
+          "Heap profiling requires Java 11 or higher. --dataflowServiceOptions=enable google cloud profiler --dataflowServiceOptions=enable google cloud heap sampling Note: The pipeline option --dataflowServiceOptions is the Dataflow preferred way to enable Dataflow features.",
+          "Go To enable CPU and heap profiling, start the pipeline with the following option. --dataflow service options=enable google cloud profiler Note: The pipeline option --dataflow service options is the Dataflow preferred way to enable Dataflow features."
+        ]
+      },
+      {
+        "title": "Dataflow overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow supports several different ways to create and execute pipelines, depending on your needs: Write code using the Apache Beam SDKs.",
+          "How data pipelines work for stream and batch processing Dataflow uses a data pipeline model, where data moves through a series of stages.",
+          "For example, Dataflow can dynamically rebalance work among the VMs, so that parallel work completes more efficiently."
+        ]
+      },
+      {
+        "title": "Deploy Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dataflow's Streaming Engine moves pipeline execution out of the worker VMs and into the Dataflow service backend.",
+          "Dataflow jobs use Cloud Storage to store temporary files during pipeline execution.",
+          "These features include the following: Horizontal Autoscaling Vertical Autoscaling Dynamic work rebalancing Note: With the introduction of Vertical Autoscaling, the feature that was previously called Autoscaling has been renamed to Horizontal Autoscaling."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/profiling-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/overview"
+      ]
+    }
+  ]
+}

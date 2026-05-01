@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.810Z",
+  "source_step08_card": "data/step-08/current/products/secure-web-proxy/card.json",
+  "product_name": "Secure Web Proxy",
+  "product_slug": "secure-web-proxy",
+  "feature_name": "Private Service Connect service attachment for Secure Web Proxy",
+  "feature_slug": "private-service-connect-service-attachment-for-secure-web-proxy",
+  "summary": "Secure Web Proxy can be published as a Private Service Connect service attachment to centralize egress security policy.",
+  "extended_definition": "Secure Web Proxy can be published as a Private Service Connect service attachment to centralize egress security policy.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Publish Secure Web Proxy as a Private Service Connect service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "source_id": "site-iam-reference",
+        "final_score": 342,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Shell Use the gcloud compute service-attachments create command . gcloud compute service-attachments create SERVICE ATTACHMENT NAME \\ --target-service= SWP INSTANCE URI \\ --connection-preference=ACCEPT AUTOMATIC \\ --nat-subnets= NAT SUBNET NAME \\ --region= REGION \\ --project= PROJECT \\ Replace the following: SERVICE ATTACHMENT NAME : the name of the service attachment SWP INSTANCE URI : the URI of the Secure Web Proxy instance, in the following form: //networkservices.googleapis.com/projects/ PROJECT ID /locations/ REGION /gateways/ INSTANCE NAME NAT SUBNET NAME : the name of the Private Service Connect subnet REGION : the region of the Secure Web Proxy deployment PROJECT : the project of the Secure Web Proxy deployment Create endpoints Create an endpoint in each VPC network and region that needs to send egress traffic through the centralized Secure Web Proxy instance.",
+          "To centralize your Secure Web Proxy deployment across multiple VPC networks, you can make Secure Web Proxy available through a Private Service Connect service attachment.",
+          "Publishing Secure Web Proxy as a Private Service Connect service lets you centralize egress traffic management for workloads across multiple VPC networks. (click to enlarge)."
+        ]
+      },
+      {
+        "title": "Secure Web Proxy overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 300,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By deploying Secure Web Proxy as a Private Service Connect service attachment, you can resolve those scaling-related limitations.",
+          "Private Service Connect service attachment mode With this mode, you can centralize your web proxy deployments across a complex, multi-Virtual Private Cloud (VPC) architecture.",
+          "Deploy Secure Web Proxy as a Private Service Connect service attachment (click to enlarge)."
+        ]
+      },
+      {
+        "title": "TLS inspection overview \\_|\\_ Secure Web Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key features The Secure Web Proxy TLS inspection service offers a flexible, scalable framework for managing encrypted traffic through the following capabilities: Integrated private trust : built-in integration with CA Service provides a highly available, Google-managed repository for your private CAs.",
+          "Private trust anchor : Because Secure Web Proxy presents certificates that are signed by your internal CA rather than a public CA, clients trust the connection only if your private root CA is pre-installed.",
+          "By gaining visibility into the encrypted request, Secure Web Proxy can apply advanced security policies—such as URL filtering on the full request path and HTTP header inspection—to protect your environment from threats hidden within encrypted tunnels."
+        ]
+      },
+      {
+        "title": "Policies and rules \\_|\\_ Secure Web Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table shows whether various Virtual Private Cloud (VPC) architectures are supported when using source identity-based security policies: VPC VPC architecture Support Within VPC Cross project (Shared VPC) Cross VPC Cross peering link (peer VPC) Cross VPC Cross Private Service Connect Cross VPC Cross Network Connectivity Center spokes Destination attributes Secure Web Proxy policies determine whether a destination is approved by analyzing the following attributes of the target website or service: Destination domain : the website's address, such as example.com .",
+          "You can assign your enterprise IP addresses (or static Google Cloud IP addresses) that Secure Web Proxy uses for outbound traffic.",
+          "Application Matcher includes the following items: Full URL path Request method—for example, block all DELETE actions Specific HTTP headers Host matching rules Secure Web Proxy uses hostname matching to verify the destination domain, which varies slightly depending on how your proxy is deployed as shown in the following table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "networkservices.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/tls-inspection-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview"
+      ]
+    }
+  ]
+}

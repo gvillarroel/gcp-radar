@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.675Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go",
+  "feature_name": "Local development server process ID output",
+  "feature_slug": "local-development-server-process-id-output",
+  "summary": "The local development server prints the process ID of the running process on startup to aid debugging.",
+  "extended_definition": "The local development server prints the process ID of the running process on startup to aid debugging.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using the local development server \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server",
+        "source_id": "site-docs-reference-4",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Detect application runtime environment To determine whether your code is running in production or in the local development server, you can check the value of the GAE ENV environment variable: if os.getenv('GAE ENV', '').startswith('standard'): Production in the standard environment else: Local development server Use the Mail service The local development server can send email for calls to the App Engine mail service using either an SMTP server or a local installation of Sendmail .",
+          "Specify the directory path to your app, for example: python3 CLOUD SDK ROOT / bin / dev appserver . py [ PATH TO YOUR APP ] Alternatively, you can specify the configuration file of a specific service, for example: python3 CLOUD SDK ROOT /bin/dev appserver.py app.yaml To change the port, you include the --port option: python3 CLOUD SDK ROOT / bin / dev appserver . py --port=9999 [PATH TO YOUR APP] The local development server is now running and listening for requests.",
+          "You can use the local development server to simulate running your App Engine application in production as well as use it to access App Engine legacy bundled services."
+        ]
+      },
+      {
+        "title": "\"Using the local development server \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app",
+        "source_id": "site-docs-reference-4",
+        "final_score": 159,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Detect application runtime environment To determine whether your code is running in production or in the local development server, you can check the value of the GAE ENV environment variable: if os.getenv('GAE ENV', '').startswith('standard'): Production in the standard environment else: Local development server Use the Mail service The local development server can send email for calls to the App Engine mail service using either an SMTP server or a local installation of Sendmail .",
+          "Specify the directory path to your app, for example: python3 CLOUD SDK ROOT / bin / dev appserver . py [ PATH TO YOUR APP ] Alternatively, you can specify the configuration file of a specific service, for example: python3 CLOUD SDK ROOT /bin/dev appserver.py app.yaml To change the port, you include the --port option: python3 CLOUD SDK ROOT / bin / dev appserver . py --port=9999 [PATH TO YOUR APP] The local development server is now running and listening for requests.",
+          "You can use the local development server to simulate running your App Engine application in production as well as use it to access App Engine legacy bundled services."
+        ]
+      },
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note that if you use the legacy bundled services to test your app using the local development server , the available routing and dispatch features are slightly different.",
+          "When you are testing locally, the routing behavior depends on the particular runtime and development environment that you're using.",
+          "To programmatically create URLs that work with both production and development servers, use the get hostname method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appserver.py",
+      "dispatch.yaml",
+      "os.getenv",
+      "sample.uc.r.appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/tools/using-local-server",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed"
+      ]
+    }
+  ]
+}

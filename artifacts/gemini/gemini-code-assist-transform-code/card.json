@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.307Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Gemini Code Assist transform code",
+  "feature_slug": "gemini-code-assist-transform-code",
+  "summary": "Gemini Code Assist transform code features are available in preview for Workstations and Cloud Shell.",
+  "extended_definition": "Gemini Code Assist transform code features are available in preview for Workstations and Cloud Shell.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use pre-release features in Gemini Code Assist for VS Code \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist",
+        "source_id": "site-docs-root-2",
+        "final_score": 384,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Use pre-release features in Gemini Code Assist for VS Code Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to use pre-release features of Gemini Code Assist for VS Code on the insiders release channel.",
+          "Comment out or remove the following line of your user settings JSON: \"geminicodeassist.updateChannel\": \"Insiders\", Save your user settings."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 377,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs.",
+          "Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code."
+        ]
+      },
+      {
+        "title": "\"Gemini 3 in Gemini Code Assist \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "source_id": "site-docs-root",
+        "final_score": 370,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Gemini 3.1 Pro and Gemini 3.0 Flash are available to Gemini Code Assist users in VS Code and IntelliJ.",
+          "Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Gemini 3 in Gemini Code Assist Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use Gemini Code Assist code customization \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "source_id": "site-docs-root-2",
+        "final_score": 353,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Include health checks.\" \"Write a FUNCTION OR CLASS in the following structure: EXPLAIN STRUCTURE .\" After you generate some code, try using a follow-up prompt to improve it: \"Try the /fix command to adjust the generated code—for example, syntax errors.\" \"Add missing imports.\" \"Try /fix on chat-generated code.\" Cleaning, simplifying, and refactoring code Try the following prompts in Gemini Code Assist chat: \"Can you merge IMPORTS VARIABLES OR NOTE EXPORTED FUNCTIONS in this file?\" \"How would you simplify the FUNCTION NAME function?\" \"Can you merge FUNCTION NAME 1 and FUNCTION NAME 2 into one function?\" \"Could you inline some variables in FUNCTION NAME ?\" \"Could you simplify variable naming in the function FUNCTION NAME ?\" Readability Try the following prompts in Gemini Code Assist chat: \"Write the function FUNCTION NAME in fewer lines of code, if possible.\" \"Add comments to the function FUNCTION NAME .\" \"Remove unnecessary whitespaces in the function FUNCTION NAME .\" \"Format the function FUNCTION NAME in a similar way as the rest of the code.\" Code review Try the following prompts in Gemini Code Assist chat: \"Split the code in parts and explain each part using our codebase.\" \"Are there variables or keywords that could be shorter and more self-explanatory?\" \"Can you give me useful code from the REPOSITORY NAME PACKAGE MODULE context for this code?\" \"What do you think about the function FUNCTION NAME ?\" Debugging Try the following prompts in Gemini Code Assist chat: \"I am getting an error when I try to do X/add Y.",
+          "Why?\" \"Can you spot an error in the function FUNCTION NAME ?\" \"How would you fix the function FUNCTION NAME given this error message?\" Learning and onboarding Try the following prompts in Gemini Code Assist chat: \"Split this code in parts and explain each of them using our codebase.\" \"Show how to call function FUNCTION NAME ?\" \"Show how to run the main function in the ENVIRONMENT NAME environment?\" \"What is the key technical improvement we can do to make this code more performant?\" \"Show me the implementation of FUNCTION OR CLASS NAME to achieve better results and add what that specific element is\"—for example, \"Show me the implementation of function foo where foo is the name of the function.\" Migration Try the following prompts in Gemini Code Assist chat: \"Give me a strategy for how I can migrate FILE NAME from LANGUAGE 1 to LANGUAGE 2 \"—for example, from Go to Python. \"Given the function FUNCTION NAME in repository REPOSITORY NAME , find me an equivalent function in language LANGUAGE NAME that I can use.\" Try the following chat-based or code generation transformation workflow using prompts: \"Take FILENAME COMPONENT code already written in LANGUAGE 1 and refactor and migrate it to LANGUAGE 2 \"—for example, from Go to Python.",
+          "Use cases and prompt examples The following table provides guidance and examples about using code customization in specific use cases: Use case Things worth trying Writing new code Try the following to generate code in your IDE or Gemini Code Assist chat: Generate code that would use terms which are already mentioned in your codebase."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "geminicodeassist.updateChannel",
+      "grpc.health.v1.Health"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization"
+      ]
+    }
+  ]
+}

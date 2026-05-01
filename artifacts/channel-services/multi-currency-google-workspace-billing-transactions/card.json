@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.210Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services",
+  "feature_name": "Multi-currency Google Workspace Billing Transactions",
+  "feature_slug": "multi-currency-google-workspace-billing-transactions",
+  "summary": "Adds support for transacting with Google Workspace billing accounts in different currencies within a single Cloud Channel account.",
+  "extended_definition": "Adds support for transacting with Google Workspace billing accounts in different currencies within a single Cloud Channel account.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+      "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter",
+      "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reseller account with multiple Google Workspace billing account Account\\",
+        "url": "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter",
+        "source_id": "site-docs-reference",
+        "final_score": 216,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Caution: When working with a reseller account with multiple Google Workspace billing accounts, since there are two or more Google Workspace billing account choices when purchasing a Google Workspace subscription, API users must add a step in their transaction flow to select the desired Google Workspace billing account, otherwise the transaction will fail.",
+          "A reseller account with a single vs multiple Google Workspace billing accounts A reseller account with a single Google Workspace billing account is defined as an account that only has a single Google Workspace billing account option for each Google Workspace SKU type.",
+          "Convert your reseller account from a single Google Workspace billing account to a reseller account with multiple Google Workspace billing accounts by adding a new Google Workspace billing account to your reseller console."
+        ]
+      },
+      {
+        "title": "\"Manage Google Workspace and Google Chrome entitlements \\_|\\_ Channel Services\\",
+        "url": "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/sku id1\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } With the selected PurchasableSku and BillingAccount, use the listPurchasableOffers method to find the available PurchasableOffer ListPurchasableOffersRequest { \"customer\": \"accounts/123/customers/abc\", \"createEntitlementPurchase\": { \"sku\": \"products/product id/skus/sku id1\", \"billingAccount\": \"accounts/123/billingAccounts/billing account id2\" } } ListPurchasableOffersResponse { \"purchasableOffers\": [ { \"offer\": { \"name\": \"accounts/123/offers/offer id1\", }, \"sku\": { \"name\": \"products/product id/skus/sku id1\", }, \"plan\": { \"paymentPlan\": \"FLEXIBLE\", \"paymentCycle\": { \"duration\": 1, \"periodType\": \"MONTH\" } }, \"priceReferenceId\": \"price reference id 123\" } ], } At this point you should have the BillingAccount that will pay for the Entitlement and the PurchasableOffer.",
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/voice sku id1\" , \"products/product id/skus/google workspace sku id2\" , \"google workspace chrome sku id3\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/voice sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/voice billing account id1\" , \"displayName\" : \"Google Workspace Voice USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } } ] }, { \"skus\" : [ \"products/product id/skus/google workspace sku id2\" , \"google workspace chrome sku id3\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/gw billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/gw billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } ``` For each TransferableSku and BillingAccount pairs, use the listTransferableOffers method to find available TransferableOffers .",
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/sku id1\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } With the Entitlement and BillingAccount, use the listPurchasableOffers method to find any PurchasableOffer."
+        ]
+      },
+      {
+        "title": "Export Channel Services data to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id IN ( PAYER BILLING ACCOUNT IDS ) GROUP BY billing account id , currency , invoice . month ORDER BY billing account id , currency , invoice . month ; For more information on partitioning, clustering, and best practices, see the following links: Query Partitioned tables Query Clustered tables Optimize query computation Best Practices to control costs in BigQuery Finding payer's billing account ID To find the payer's billing account ID, open the billing accounts page of the Partner Sales Console and click the Partner billing tab.",
+          "To export billing data for multiple Partner Sales Console accounts, follow these steps: On the BigQuery dataset that you want to export your data to, make sure the Billing Administrators for each Partner Sales Console account have permissions to view the dataset.",
+          "The following columns or fields don't apply to offline order billing exports: project labels system labels location resource credits entitlement name channel partner name channel partner cost customer name customer cost cost at list customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Other notes about Google Workspace export There are several special behaviors with Google Workspace exports: Google Workspace data doesn't contain the reseller's own usage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credits.id",
+      "price.effective",
+      "price.list",
+      "price.tier",
+      "usage.pricing"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter",
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
+      ]
+    }
+  ]
+}

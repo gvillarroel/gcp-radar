@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Workforce identity federation for BigQuery",
+  "feature_slug": "workforce-identity-federation-for-bigquery",
+  "summary": "Workforce identity federation lets users from external identity providers authenticate and access BigQuery resources.",
+  "extended_definition": "Workforce identity federation lets users from external identity providers authenticate and access BigQuery resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure BigQuery sharing roles \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: When managing access for users in external identity providers , replace instances of Google Account principal identifiers—like user:kiran@example.com , group:support@example.com , and domain:example.com —with appropriate Workforce Identity Federation principal identifiers .",
+          "Analytics Hub Subscriber and Viewer roles To view and subscribe to listings and data exchanges , Sharing provides the following predefined roles that you can grant for a project, a data exchange, or a listing: Analytics Hub Subscriber role ( roles/analyticshub.subscriber ), which lets users view and subscribe to listings.",
+          "Analytics Hub Publisher and Listing Admin roles To manage listings , Sharing provides the following predefined roles that you can grant for a project, a data exchange, or a listing: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets users do the following: Create, update, and delete listings."
+        ]
+      },
+      {
+        "title": "Manage data exchanges \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "source_id": "site-docs-reference-5",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: When managing access for users in external identity providers , replace instances of Google Account principal identifiers—like user:kiran@example.com , group:support@example.com , and domain:example.com —with appropriate Workforce Identity Federation principal identifiers .",
+          "Optional: In the Exchange Permissions section, complete the following steps: Enter email addresses in the following fields to grant the Identity and Access Management (IAM) roles: Administrators : assign the Analytics Hub Admin role ( roles/analyticshub.admin ) to these users.",
+          "Create BigQuery sharing administrators To manage data exchanges, create data exchange administrators by granting users the Analytics Hub Admin role ( roles/analyticshub.admin ) at the project or data exchange level."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery data source for Grafana Community Spotlight: BigQuery Plugin Connect Grafana to BigQuery using Workload Identity Federation Partner Advantage page Direct link LogicLoop Solution LogicLoop Category Data Quality, Observability, & FinOps Description LogicLoop empowers operations teams to set up alerts and automations on top of company data without needing engineers.",
+          "Partner references Import BigQuery Data into Amplitude Export data to BigQuery AskYourDatabase Solution AskYourDatabase Category BI, ML, & Advanced Analytics Description AskYourDatabase is an AI-powered tool that lets users ask questions in plain English and get instant answers from their database.",
+          "It lets users create, explore, and share interactive dashboards directly from cloud data warehouses like Google BigQuery, leveraging live data without extracts and offering embedded analytics capabilities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.admin",
+      "analyticshub.publisher",
+      "analyticshub.subscriber",
+      "analyticshub.subscriptionOwner",
+      "example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.admin",
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.subscriptionOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ]
+}

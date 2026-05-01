@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.057Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Cutover",
+  "feature_slug": "cutover",
+  "summary": "Supports cutting over a migrating VM to Google Cloud with minimized downtime.",
+  "extended_definition": "Supports cutting over a migrating VM to Google Cloud with minimized downtime.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate to Virtual Machines best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, after analyzing the migration plan, you might determine values for the following: The expected migration duration The expected number of VMs to migrate for each time unit The total migration cost The migration cost per VM The available network throughput The compatibility of the tools you're using for backup and disaster recovery with the target environment Consider all deployment environments for your applications when you analyze the migration plan.",
+          "The best practices described in this document cover the following areas: Assessing your source environment Building your foundation Migrating your VMs Troubleshooting migration issues Assessment best practices This section describes best practices to address common issues that might arise during the migration assessment phase .",
+          "If there's no VMware host in the network, we recommend one of the following options to migrate your VMs to a source environment that Migrate to Virtual Machines supports: Migrate VMware VMs with VMware HCX to Google Cloud VMware Engine ."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes: The replication data for the VM stored on Google Cloud The Compute Engine configuration information The monitoring history All other data associated with migrating a VM The VM from the list of onboarded VMs on the Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab.",
+          "When instantiating a Compute Engine instance for either the test-clone or cut-over phase, Migrate to Virtual Machines uses the target details settings at the time of the operation. (Optional) Step 4: Test a clone of a migrating VM In the test-clone phase, Migrate to Virtual Machines deploys a clone of your migrated VM to a Compute Engine instance in your testing environment.",
+          "Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes: The replication data for the VM stored on Google Cloud The Compute Engine configuration information The monitoring history All other data associated with migrating a VM The VM from the list of onboarded VMs on the Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab.",
+          "When instantiating a Compute Engine instance for either the test-clone or cut-over phase, Migrate to Virtual Machines uses the target details settings at the time of the operation. (Optional) Step 4: Test a clone of a migrating VM In the test-clone phase, Migrate to Virtual Machines deploys a clone of your migrated VM to a Compute Engine instance in your testing environment.",
+          "Note: When migrating VM instances with 16 or more disks to regions that don't support N2 machines, we recommend that you migrate fewer than 200 VMs concurrently to avoid any issues."
+        ]
+      },
+      {
+        "title": "\"VM migration process \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The cut-over results determine your next actions: Cut-over failed : For some reason, cutover to the new VM instance on Compute Engine failed, possibly due to a network issue or other issue.",
+          "Initiating a cut-over on a migrating VM starts the following sequence of actions performed by Migrate to Virtual Machines: Shutdown the source VM.",
+          "Cut-over phase In the cut-over phase, the source VM is stopped by Migrate to Virtual Machines, replication is finalized, and a new VM instance is created on Compute Engine on Google Cloud: You should only perform the cut-over after you have performed all validations during the recommended testing phase."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    }
+  ]
+}

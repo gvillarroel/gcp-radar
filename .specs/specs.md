@@ -455,6 +455,11 @@ feature requirements. `derived_from_permission_prefix` mappings are related IAM
 signals, not confirmed feature requirements. `unknown` means the final output
 must state that no defensible IAM mapping was found.
 
+Step 08 product-level IAM summary counts and service-card IAM status counts
+must be computed only from constructed feature cards. A product with release-note
+feature candidates but no Step 06 feature cards must not inflate `unknown` IAM
+counts from Step 02 inventory alone.
+
 ### Step 9: Source-Of-Truth Artifact Organization
 
 Organize validated documentation under `artifacts/` by product and then by feature.
@@ -566,6 +571,9 @@ Promoted evidence source links must also use the `http` or `https` scheme;
 host-only matches using other URL schemes are not authoritative evidence.
 Security capability evidence links embedded in promoted service and feature
 artifact cards must also use `http` or `https` official Google URLs.
+Final-output validation must also confirm that Step 08 product cards, Step 08
+service cards, and the Step 08 index keep feature and IAM status counts aligned
+with the actual constructed feature cards.
 Promoted feature cards must still satisfy the Step 09 promotion eligibility
 contract during final-output validation: Step 07 must have passed, failure
 count must be zero, a technical summary must be present, source links must be

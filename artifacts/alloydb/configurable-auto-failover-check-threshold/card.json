@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Configurable auto-failover check threshold",
+  "feature_slug": "configurable-auto-failover-check-threshold",
+  "summary": "High availability configurations can customize how many failed checks occur before auto-failover starts.",
+  "extended_definition": "High availability configurations can customize how many failed checks occur before auto-failover starts.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/high-availability",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"AlloyDB high availability overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "source_id": "site-docs-reference-2",
+        "final_score": 159,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback AlloyDB high availability overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Primary and secondary instances An AlloyDB primary instance configured with high availability includes an active node and a standby node, which are located in different zones.",
+          "Failover If the active node becomes unavailable, AlloyDB automatically fails over the primary instance to its standby node, which becomes the new active node."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specified at creation time. machineConfig object ( MachineConfig ) Configurations for the machines that host the underlying database engine. availabilityType enum ( AvailabilityType ) Availability type of an Instance.",
+          "Configurations for setting up PSC service automation.",
+          "Instance JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"instanceType\" : enum ( InstanceType ) , \"machineConfig\" : { object ( MachineConfig ) } , \"availabilityType\" : enum ( AvailabilityType ) , \"gceZone\" : string , \"databaseFlags\" : { string : string , ... } , \"writableNode\" : { object ( Node ) } , \"nodes\" : [ { object ( Node ) } ] , \"queryInsightsConfig\" : { object ( QueryInsightsInstanceConfig ) } , \"observabilityConfig\" : { object ( ObservabilityInstanceConfig ) } , \"readPoolConfig\" : { object ( ReadPoolConfig ) } , \"ipAddress\" : string , \"publicIpAddress\" : string , \"reconciling\" : boolean , \"etag\" : string , \"annotations\" : { string : string , ... } , \"clientConnectionConfig\" : { object ( ClientConnectionConfig ) } , \"satisfiesPzs\" : boolean , \"pscInstanceConfig\" : { object ( PscInstanceConfig ) } , \"networkConfig\" : { object ( InstanceNetworkConfig ) } , \"outboundPublicIpAddresses\" : [ string ] , \"activationPolicy\" : enum ( ActivationPolicy ) , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"maintenanceVersionName\" : string , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specified at creation time. machineConfig object ( MachineConfig ) Configurations for the machines that host the underlying database engine. availabilityType enum ( AvailabilityType ) Availability type of an Instance.",
+          "Configurations for setting up PSC service automation.",
+          "Instance JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"instanceType\" : enum ( InstanceType ) , \"machineConfig\" : { object ( MachineConfig ) } , \"availabilityType\" : enum ( AvailabilityType ) , \"gceZone\" : string , \"databaseFlags\" : { string : string , ... } , \"writableNode\" : { object ( Node ) } , \"nodes\" : [ { object ( Node ) } ] , \"queryInsightsConfig\" : { object ( QueryInsightsInstanceConfig ) } , \"observabilityConfig\" : { object ( ObservabilityInstanceConfig ) } , \"readPoolConfig\" : { object ( ReadPoolConfig ) } , \"ipAddress\" : string , \"publicIpAddress\" : string , \"reconciling\" : boolean , \"etag\" : string , \"annotations\" : { string : string , ... } , \"clientConnectionConfig\" : { object ( ClientConnectionConfig ) } , \"satisfiesPzs\" : boolean , \"pscInstanceConfig\" : { object ( PscInstanceConfig ) } , \"networkConfig\" : { object ( InstanceNetworkConfig ) } , \"outboundPublicIpAddresses\" : [ string ] , \"activationPolicy\" : enum ( ActivationPolicy ) , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"maintenanceVersionName\" : string , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields name string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+      ]
+    }
+  ]
+}

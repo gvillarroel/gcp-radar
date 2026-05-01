@@ -1,0 +1,38 @@
+# Quota adjuster Terraform support
+
+Product: Cloud Quotas
+Feature slug: `quota-adjuster-terraform-support`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Quota adjuster can be managed with Terraform.
+
+## Lifecycle
+
+- Latest feature date: 2025-02-03
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- certificate
+- firewall
+- key
+- logging
+- policy
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples](https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples)
+- [https://docs.cloud.google.com/docs/quotas/quota-adjuster](https://docs.cloud.google.com/docs/quotas/quota-adjuster)
+- [https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas](https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas)
+- [https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient](https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient)

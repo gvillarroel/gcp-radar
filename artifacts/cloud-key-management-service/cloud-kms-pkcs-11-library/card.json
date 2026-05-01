@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.779Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud KMS PKCS #11 library",
+  "feature_slug": "cloud-kms-pkcs-11-library",
+  "summary": "Cloud KMS provides a library conforming to the PKCS #11 standard for use with existing PKCS #11 applications.",
+  "extended_definition": "Cloud KMS provides a library conforming to the PKCS #11 standard for use with existing PKCS #11 applications.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/reference/cng-signtool",
+      "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+      "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+      "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Jsign and PKCS#11 to sign Windows artifacts \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "source_id": "site-api-reference",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Cloud KMS PKCS #11 library, the key label is equivalent to the CryptoKey name. openssl req -new -x509 -days 3650 -subj '/CN=test/' -sha256 -engine pkcs11 \\ -keyform engine -key pkcs11:object= KEY NAME > ca.cert If this command fails, PKCS11 MODULE PATH may have been set incorrectly, or you might not have the right permissions to use the Cloud KMS signing key.",
+          "Using Cloud Shell or your own machine, run the following command: openssl req -new -subj '/CN= CERTIFICATE NAME /' DIGEST FLAG \\ -engine pkcs11 -keyform engine \\ -key pkcs11:id= KEY ID > REQUEST NAME .csr Replace the following: CERTIFICATE NAME : a name for the certificate that you want to generate.",
+          "Home Documentation Security Cloud KMS Reference Send feedback Use Jsign and PKCS#11 to sign Windows artifacts Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use a Cloud HSM key with pkcs11-tool \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "source_id": "site-api-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This guide provides sample pkcs11-tool commands to use a Cloud HSM key on Debian 11 (Bullseye) using the PKCS #11 library.",
+          "Decrypt To decrypt a text file, run the following command: pkcs11 - tool -- module PATH TO LIBKMSP11 SO \\ -- decrypt -- mechanism RSA - PKCS - OAEP -- slot 0 -- hash - algorithm = sha256 \\ -- mgf MGF1 - SHA256 -- label HSM KEY NAME -- type privkey \\ - i ENCRYPTED TEXT FILE PATH \\ - o OUTPUT TEXT FILE PATH Replace the following: PATH TO LIBKMSP11 SO : the path to the PKCS#11 module (path/to/libkmsp11.so).",
+          "Decrypt To decrypt a text file, run the following command: pkcs11-tool --module PATH TO LIBKMSP11 SO --decrypt \\ --mechanism MECHANISM \\ --slot 0 \\ --label HSM KEY NAME \\ --iv INITIALIZATION VECTOR \\ --input-file ENCRYPTED TEXT FILE PATH \\ --output-file DECRYPTED TEXT FILE PATH Replace the following: PATH TO LIBKMSP11 SO : the path to the PKCS#11 module—for example, /usr/local/lib/libkmsp11.so ."
+        ]
+      },
+      {
+        "title": "\"Use a Cloud HSM key to serve Apache traffic \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Cloud KMS PKCS #11 library, the key label is the CryptoKey name. openssl req -new -x509 -days 3650 -subj '/CN= CERTIFICATE NAME /' \\ DIGEST FLAG -engine pkcs11 -keyform engine \\ -key PKCS KEY TYPE = KEY IDENTIFIER > PATH TO CERTIFICATE Replace the following: CERTIFICATE NAME : a name for the certificate.",
+          "GRPC ENABLE FORK SUPPORT is needed for gRPC to include fork support and correctly run the Cloud KMS PKCS #11 library as part of the Apache server.",
+          "Add the following lines to the end of the file: export PKCS11 MODULE PATH = \"<var>PATH TO LIBKMSP11</var>\" export KMS PKCS11 CONFIG = \"<var>PATH TO PKCS11 CONFIG</var>\" export GRPC ENABLE FORK SUPPORT = 1 Replace the following: PATH TO LIBKMSP11 : the path to libkmsp11.so ."
+        ]
+      },
+      {
+        "title": "\"Use CNG Provider and SignTool to sign Windows artifacts \\_|\\_ Cloud Key\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/cng-signtool",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Cloud KMS PKCS #11 library, the key label is equivalent to the CryptoKey name. openssl req -new -x509 -days 3650 -subj '/CN=test/' -sha256 -engine pkcs11 \\ -keyform engine -key pkcs11:object= KEY NAME > ca.cert If this command fails, PKCS11 MODULE PATH may have been set incorrectly, or you might not have the right permissions to use the Cloud KMS signing key.",
+          "On this machine, complete the configuration documented in OpenSSL Setup , to download and configure our PKCS#11 library.",
+          "Using Cloud Shell or your own machine, run the following command: openssl req -new -subj '/CN= CERTIFICATE NAME /' DIGEST FLAG \\ -engine pkcs11 -keyform engine \\ -key pkcs11:id= KEY ID > REQUEST NAME .csr Replace the following: CERTIFICATE NAME : a name for the certificate that you want to generate."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ca.cert",
+      "libkmsp11.so",
+      "projects.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-jsign",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-tool",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-apache",
+        "https://docs.cloud.google.com/kms/docs/reference/cng-signtool"
+      ]
+    }
+  ]
+}

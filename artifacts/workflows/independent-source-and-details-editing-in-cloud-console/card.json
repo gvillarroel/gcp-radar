@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:10.422Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Independent source and details editing in Cloud Console",
+  "feature_slug": "independent-source-and-details-editing-in-cloud-console",
+  "summary": "The Cloud Console lets users update a workflow's source and details independently using separate Source and Details tabs.",
+  "extended_definition": "The Cloud Console lets users update a workflow's source and details independently using separate Source and Details tabs.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/overview",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Pause and resume a workflow using callbacks and Google Sheets \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Deploy . gcloud Create a source code file for your workflow: touch workflows-awaits-callback-sheets.yaml In a text editor, copy the following workflow to your source code file: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : \"10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g\" - before sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here before waiting for callback from sheets\"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here after receiving callback from sheets\"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : ${sys.get env(\"GOOGLE CLOUD LOCATION\")} - workflow id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW ID\")} - execution id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW EXECUTION ID\")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${\"Sheet1!A1:G1\"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : \"ROWS\" values : - [ \"${project id}\" , \"${location}\" , \"${workflow id}\" , \"${execution id}\" , \"${callback details.url}\" , \"\" , \"FALSE\" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${\"Started waiting for callback from sheet \" + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${\"Stopped waiting for callback from sheet \" + sheetId} except : as : e steps : - log error : call : sys.log args : severity : \"ERROR\" text : ${\"Received error \" + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${\"Approved by \" + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .",
+          "Use Google Apps Script , a cloud-based JavaScript platform that lets you programmatically create, read, and edit Google Workspace products, to trigger the resumption of a paused workflow whenever a request is approved through an update to the spreadsheet.",
+          "Console In the Google Cloud console, go to the Workflows page: Go to Workflows On the Workflows page, select the workflows-awaits-callback-sheets workflow to go to its details page."
+        ]
+      },
+      {
+        "title": "Workflows overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Visualization support while editing the Workflows syntax is also available through the Google Cloud console.",
+          "Learn how to create and update a workflow in the Google Cloud console or by using the Google Cloud CLI.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Trigger a workflow from Google Sheets \\_|\\_ Workflows \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use Google Apps Script , a cloud-based JavaScript platform that lets you programmatically create, read, and edit Google Workspace products, to trigger a workflow whenever a request is approved through an update to the spreadsheet.",
+          "In the Google Cloud console, go to the Manage resources page.",
+          "In the workflow editor, enter the following definition for your workflow: main : params : [ input ] steps : - init : assign : - projectId : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - zone : ${input.zone} - machineType : ${input.machineType} - diskSize : ${input.diskSize} - imageProject : ${input.imageProject} - imageFamily : ${input.imageFamily} - vmName : ${input.vmName} - email : ${input.email} - createResource : call : googleapis.compute.v1.instances.insert args : project : ${projectId} zone : ${zone} body : name : ${vmName} machineType : ${\"projects/\" + projectId + \"/zones/\" + zone + \"/machineTypes/\" + machineType} disks : - initializeParams : diskSizeGb : ${diskSize} sourceImage : ${\"projects/\" + imageProject + \"/global/images/family/\" + imageFamily} type : PERSISTENT boot : true autoDelete : true networkInterfaces : - network : \"global/networks/default\" result : insertResult - retStep : return : ${insertResult} Click Deploy . gcloud Create a source code file for your workflow: touch create-vm-from-form.yaml In a text editor, copy the following workflow to your source code file: main : params : [ input ] steps : - init : assign : - projectId : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - zone : ${input.zone} - machineType : ${input.machineType} - diskSize : ${input.diskSize} - imageProject : ${input.imageProject} - imageFamily : ${input.imageFamily} - vmName : ${input.vmName} - email : ${input.email} - createResource : call : googleapis.compute.v1.instances.insert args : project : ${projectId} zone : ${zone} body : name : ${vmName} machineType : ${\"projects/\" + projectId + \"/zones/\" + zone + \"/machineTypes/\" + machineType} disks : - initializeParams : diskSizeGb : ${diskSize} sourceImage : ${\"projects/\" + imageProject + \"/global/images/family/\" + imageFamily} type : PERSISTENT boot : true autoDelete : true networkInterfaces : - network : \"global/networks/default\" result : insertResult - retStep : return : ${insertResult} Deploy the workflow by entering the following command: gcloud workflows deploy create-vm-from-form \\ --source = create-vm-from-form.yaml \\ --location = us-central1 \\ --service-account = PROJECT NUMBER -compute@developer.gserviceaccount.com Replace PROJECT NUMBER with your Google Cloud project number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "details.url",
+      "developer.gserviceaccount.com",
+      "e.message",
+      "events.await",
+      "events.create",
+      "form.yaml",
+      "googleapis.compute.v1.instances.insert",
+      "googleapis.sheets.v4.spreadsheets.values.append",
+      "input.diskSize",
+      "input.email",
+      "input.imageFamily",
+      "input.imageProject",
+      "input.machineType",
+      "input.vmName",
+      "input.zone",
+      "request.body",
+      "request.body.approver",
+      "request.http",
+      "sheets.yaml",
+      "sys.get",
+      "sys.log",
+      "workflowexecutions.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets"
+      ]
+    }
+  ]
+}

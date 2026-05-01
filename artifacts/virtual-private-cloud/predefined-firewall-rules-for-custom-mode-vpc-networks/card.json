@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Predefined firewall rules for custom mode VPC networks",
+  "feature_slug": "predefined-firewall-rules-for-custom-mode-vpc-networks",
+  "summary": "When creating a custom mode VPC network, users can now select predefined firewall rules to quickly apply common instance connectivity patterns.",
+  "extended_definition": "When creating a custom mode VPC network, users can now select predefined firewall rules to quickly apply common instance connectivity patterns.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-custom-mode-network\" mtu = 1460 subnets = [ { subnet name = \"subnet-01\" subnet ip = \"10.10.10.0/24\" subnet region = \"us-west1\" }, { subnet name = \"subnet-02\" subnet ip = \"10.10.20.0/24\" subnet region = \"us-west1\" subnet private access = \"true\" subnet flow logs = \"true\" }, { subnet name = \"subnet-03\" subnet ip = \"10.10.30.0/24\" subnet region = \"us-west1\" subnet flow logs = \"true\" subnet flow logs interval = \"INTERVAL 10 MIN\" subnet flow logs sampling = 0.7 subnet flow logs metadata = \"INCLUDE ALL METADATA\" subnet flow logs filter = \"false\" } ] } Next, create firewall rules .",
+          "You can omit both flags if you want to configure only external IPv6 on subnets in this VPC network. gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ [ --enable-ula-internal-ipv6 [ --internal-ipv6-range= ULA IPV6 RANGE ]] \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network.",
+          "You can omit both flags if you want to configure only external IPv6 on subnets in this VPC network. gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ [ --enable-ula-internal-ipv6 [ --internal-ipv6-range= ULA IPV6 RANGE ]] \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rules that come with the default network are also presented as options for you to apply to new auto mode VPC networks that you create by using the Google Cloud console.",
+          "For example, auto mode VPC networks do create subnets that fit within a predefined auto mode IP range.",
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode ."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "",
+        "evidence_snippets": [
+          "The dynamic routing mode of the exporting VPC network—the network that contains the Cloud Routers that learned the prefixes for those dynamic routes— determines the regions in which the peering dynamic routes can be programmed in peer networks: If the dynamic routing mode of the exporting VPC network is regional, then that network exports dynamic routes only in the same region as its Cloud Routers that learned the prefixes.",
+          "To provide a path from the on-premises network to the peered VPC network, a network administrator for the local VPC network must configure Cloud Router custom advertisement mode on the Cloud Router that manages the BGP session for the Cloud VPN tunnel, Cloud Interconnect attachment (VLAN), or Router appliance that connects to the on-premises network.",
+          "Rules in network firewall policies can use secure Tags , which are different from network tags, to identify targets and sources: When used to specify a target for an ingress or egress rule in a network firewall policy, a Tag can only identify targets in the VPC network to which the Tag is scoped."
+        ]
+      },
+      {
+        "title": "\"Access the service from another VPC network \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud Create a custom mode VPC network: gcloud compute networks create consumer-network --subnet-mode=custom In the consumer-network network, create a subnet. gcloud compute networks subnets create consumer-subnet \\ --network=consumer-network \\ --range=192.168.10.0/24 \\ --region= REGION Replace REGION with the same region as the published service that you created.",
+          "For Subnet creation mode , select Custom .",
+          "Create a forwarding rule to connect the endpoint to the service producer's service attachment. gcloud compute forwarding-rules create ep-1 \\ --region= REGION \\ --network=consumer-network \\ --address=ep-ip-1 \\ --target-service-attachment=projects/ PRODUCER PROJECT /regions/ REGION /serviceAttachments/published-service Replace the following: PRODUCER PROJECT : the project ID of the service producer project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network"
+      ]
+    }
+  ]
+}

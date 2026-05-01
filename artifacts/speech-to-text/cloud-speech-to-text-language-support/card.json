@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.152Z",
+  "source_step08_card": "data/step-08/current/products/speech-to-text/card.json",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text",
+  "feature_name": "Cloud Speech-to-Text language support",
+  "feature_slug": "cloud-speech-to-text-language-support",
+  "summary": "Cloud Speech-to-Text added support for seven new languages: Burmese, Estonian, Uzbek, Punjabi, Albanian, Macedonian, and Mongolian.",
+  "extended_definition": "Cloud Speech-to-Text added support for seven new languages: Burmese, Estonian, Uzbek, Punjabi, Albanian, Macedonian, and Mongolian.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+      "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages",
+      "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+      "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Speech-to-Text V2 supported languages \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "source_id": "site-docs-reference",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Cloud Speech-to-Text V2 supported languages Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information about sending a recognition request and specifying the language of the transcription, see the how-to guides about performing speech recognition.",
+          "This page lists all languages supported by Cloud Speech-to-Text."
+        ]
+      },
+      {
+        "title": "\"Automatically detect language \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages",
+        "source_id": "site-docs-root",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multiple language recognition Cloud Speech-to-Text offers a way for you to specify a set of languages that your audio data might contain.",
+          "RecognizeResponse : \"\"\"Transcribe an audio file using Google Cloud Speech-to-Text API with support for multiple languages.",
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Automatically detect language Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Transcribe speech to text by using client libraries \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 291,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( SpeechClient speechClient = SpeechClient . create ()) { Path path = Paths . get ( filePath ); byte [] data = Files . readAllBytes ( path ); ByteString audioBytes = ByteString . copyFrom ( data ); String parent = String . format ( \"projects/%s/locations/global\" , projectId ); // First, create a recognizer Recognizer recognizer = Recognizer . newBuilder () . setModel ( \"latest long\" ) . addLanguageCodes ( \"en-US\" ) . build (); CreateRecognizerRequest createRecognizerRequest = CreateRecognizerRequest . newBuilder () . setParent ( parent ) . setRecognizerId ( recognizerId ) . setRecognizer ( recognizer ) . build (); OperationFuture<Recognizer , OperationMetadata > operationFuture = speechClient . createRecognizerAsync ( createRecognizerRequest ); recognizer = operationFuture . get (); // Next, create the transcription request RecognitionConfig recognitionConfig = RecognitionConfig . newBuilder () . setAutoDecodingConfig ( AutoDetectDecodingConfig . newBuilder (). build ()) . build (); RecognizeRequest request = RecognizeRequest . newBuilder () . setConfig ( recognitionConfig ) . setRecognizer ( recognizer . getName ()) . setContent ( audioBytes ) . build (); RecognizeResponse response = speechClient . recognize ( request ); List<SpeechRecognitionResult> results = response . getResultsList (); for ( SpeechRecognitionResult result : results ) { // There can be several alternative transcripts for a given chunk of speech.",
+          "RecognizeRequest ( recognizer = f \"projects/ { PROJECT ID } /locations/global/recognizers/ \" , config = config , content = audio content , ) Transcribes the audio into text response = client . recognize ( request = request ) for result in response . results : print ( f \"Transcript: { result . alternatives [ 0 ] . transcript } \" ) return response You sent your first request to Speech-to-Text.",
+          "This page shows you how to send a speech recognition request to Speech-to-Text in your favorite programming language using the Google Cloud Client Libraries."
+        ]
+      },
+      {
+        "title": "Supported class tokens \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "source_id": "site-api-reference",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Contextual phrases like \"2 months from now\" are not supported. \"february\" February \"april\" April English (New Zealand) en-NZ $OPERAND A numerical value including whole numbers, fractions, and decimals. \"four\" 4 \"twenty two\" 22 \"two\" 2 English (New Zealand) en-NZ $PERCENT A percentage value, including any corresponding percent sign. \"a hundred percent\" 100% \"ten point five percent\" 10.5% \"a hundred ten point five percent\" 110.5% English (New Zealand) en-NZ $TIME A specific time of day. \"a quarter to nine\" 8:45 \"fifteen minutes to nine\" 8:45 \"eight forty five\" 8:45 English (New Zealand) en-NZ $YEAR A year. \"two thousand ten\" 2010 \"twenty ten\" 2010 English (United Kingdom) en-GB $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a b c\" abc \"one two three\" 123 \"a b c one two three\" abc123 English (United Kingdom) en-GB $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"a b c\" abc \"c q b c f\" cqbcf \"h q q g w r m y o\" hqqgwrmyo English (United Kingdom) en-GB $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"twelve twenty\" 1220 \"twelve hundred and twenty\" 1220 \"seven thirty\" 730 English (United Kingdom) en-GB $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"one two three four\" 1234 \"one double oh two three\" 10023 \"five three nine four nine five\" 539495 English (United Kingdom) en-GB $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"one oh four point three\" 104.3 \"one nought four point three\" 104.3 \"one oh four three\" 104.3 English (United Kingdom) en-GB $OOV CLASS POSTALCODE A postal code, as used in the target locale. \"n one c four a g\" n1c 4ag \"w one a nought a x\" w1a 0ax \"e c one a one b b\" ec1a 1bb English (United Kingdom) en-GB $OOV CLASS TEMPERATURE A temperature, in degrees. \"one\" 1 \"minus one\" -1 English (United Kingdom) en-GB $OOV CLASS TV CHANNEL A television channel number. \"fifty five\" 55 \"two oh two\" 202 \"nine point four\" 9.4 English (United Kingdom) en-GB $ADDRESSNUM A street number for an address, as used in the target locale. \"three hundred twenty five\" 325 \"three hundred and twenty five\" 325 \"two five\" 25 English (United Kingdom) en-GB $DAY A numbered day within a month. \"the twenty third\" 23rd \"twenty third\" 23rd \"twelfth\" 12th English (United Kingdom) en-GB $FULLPHONENUM A phone number, as used in the target locale. \"oh one six three two one two three four five\" 01632 12345 \"oh one two one four six nine double five double five\" 0121 469 5555 \"plus forty four nine eight seven six five four three two one oh\" +44 987 654 3210 English (United Kingdom) en-GB $MONEY An amount of money with a currency unit name. \"a dollar\" $1 \"three dollar and fifty cents\" $3.50 \"three thousand five hundred dollars\" $3,500 English (United Kingdom) en-GB $MONTH A named month in a year.",
+          "Contextual phrases like \"2 months from now\" are not supported. \"february\" February \"april\" April English (Australia) en-AU $OPERAND A numerical value including whole numbers, fractions, and decimals. \"four\" 4 \"twenty two\" 22 \"two\" 2 English (Australia) en-AU $PERCENT A percentage value, including any corresponding percent sign. \"a hundred percent\" 100% \"ten point five percent\" 10.5% \"a hundred ten point five percent\" 110.5% English (Australia) en-AU $TIME A specific time of day. \"a quarter to nine\" 8:45 \"fifteen minutes to nine\" 8:45 \"eight forty five\" 8:45 English (Australia) en-AU $YEAR A year. \"two thousand ten\" 2010 \"twenty ten\" 2010 English (New Zealand) en-NZ $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a one b two c three o\" a1b2c3o \"c q b c f\" cqbcf \"nine four one two\" 9412 English (New Zealand) en-NZ $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc English (New Zealand) en-NZ $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"twelve twenty\" 1220 \"seven hundred and thirty\" 730 \"one five six six\" 1566 English (New Zealand) en-NZ $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"nine four one two\" 9412 \"seven\" 7 \"double two four oh five\" 22405 English (New Zealand) en-NZ $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"one oh four point three\" 104.3 \"a hundred and four point three\" 104.3 \"eighty nine point seven\" 89.7 English (New Zealand) en-NZ $OOV CLASS FULLPHONENUM A phone number, as used in the target locale. \"oh nine one two three four five six seven eight\" 09 1234 5678 \"oh double four oh one two three four five six\" 0440 123 456 \"nought three one two three four five six seven eight\" 03 1234 5678 English (New Zealand) en-NZ $OOV CLASS TEMPERATURE A temperature, in degrees. \"one\" 1 \"minus one\" -1 \"minus one\" -1 English (New Zealand) en-NZ $ADDRESSNUM A street number for an address, as used in the target locale. \"one hundred ninety one\" 191 \"a hundred ninety one\" 191 \"ten and a half\" 10 1/2 English (New Zealand) en-NZ $DAY A numbered day within a month. \"twenty third\" 23rd \"the twenty third\" 23rd \"twelfth\" 12th English (New Zealand) en-NZ $FULLPHONENUM A phone number, as used in the target locale. \"zero nine eight seven six five four three two one\" 09 8765 4321 \"one triple two double three double four\" 1222 3344 \"oh four four oh one two three four five six\" 0440 123 456 English (New Zealand) en-NZ $MONEY An amount of money with a currency unit name. \"one dollar\" $1 \"zero dollars\" $0 \"two dollars\" $2 English (New Zealand) en-NZ $MONTH A named month in a year.",
+          "This page shows the supported class tokens for speech adaptation with Cloud Speech-to-Text by language and locale."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/multiple-languages",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens"
+      ]
+    }
+  ]
+}

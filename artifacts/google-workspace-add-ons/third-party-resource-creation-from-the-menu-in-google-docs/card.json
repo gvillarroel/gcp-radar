@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.658Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-add-ons/card.json",
+  "product_name": "Google Workspace add-ons",
+  "product_slug": "google-workspace-add-ons",
+  "feature_name": "Third-party resource creation from the @ menu in Google Docs",
+  "feature_slug": "third-party-resource-creation-from-the-menu-in-google-docs",
+  "summary": "Lets Google Workspace Add-ons create third-party resources from the @ menu in Google Docs; Lets Google Workspace Add-ons create third-party resources from the @ menu in Google Docs.",
+  "extended_definition": "Lets Google Workspace Add-ons create third-party resources from the @ menu in Google Docs; Lets Google Workspace Add-ons create third-party resources from the @ menu in Google Docs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes",
+      "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+      "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+      "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create third-party resources from the @ menu \\_|\\_ Google Workspace add-ons\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "source_id": "site-docs-root",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example of card with form inputs The following example shows an Apps Script callback function that displays a card when a user selects Create support case from the @ menu: Apps Script apps-script/3p-resources/3p-resources.gs View on GitHub / Produces a support case creation form card. @param {!Object} event The event object. @param {!Object=} errors An optional map of per-field error messages. @param {boolean} isUpdate Whether to return the form as an update card navigation. @return {!Card !ActionResponse} The resulting card or action response. / function createCaseInputCard ( event , errors , isUpdate ) { const cardHeader = CardService . newCardHeader () . setTitle ( 'Create a support case' ) const cardSectionTextInput1 = CardService . newTextInput () . setFieldName ( 'name' ) . setTitle ( 'Name' ) . setMultiline ( false ); const cardSectionTextInput2 = CardService . newTextInput () . setFieldName ( 'description' ) . setTitle ( 'Description' ) . setMultiline ( true ); const cardSectionSelectionInput1 = CardService . newSelectionInput () . setFieldName ( 'priority' ) . setTitle ( 'Priority' ) . setType ( CardService .",
+          "After the user fills out the form and clicks Create , the add-on sends the form inputs to the onClick action function–called submitCaseCreationForm in our example–at which point the add-on can validate the inputs and use them to create the resource in the third-party service.",
+          "Home Google Workspace Add-ons Send feedback Create third-party resources from the @ menu Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.deployments \\_|\\_ Google Workspace add-ons \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "source_id": "site-api-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Create third-party resources from the @ menu .",
+          "For more information, see Create third-party resources from the @ menu .",
+          "For details, see Preview links with smart chips . createActionTriggers[] object ( CreateActionExtensionPoint ) A list of extension points for creating third-party resources from within Google Workspace applications."
+        ]
+      },
+      {
+        "title": "\"Connect your Google Workspace add-on to a third-party service \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Detect that authorization is required When using your add-on, users might not be authorized to access a protected resource for a variety of reasons, such as the following: An access token to connect to the third-party service hasn't been generated yet or is expired.",
+          "Secure connection and interaction with third-party services on behalf of the user are achieved through functions like accessProtectedResource , getOAuthService , and authCallback .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-03 UTC.\"],[],[\"Google Workspace add-ons use OAuth or direct user ID for third-party service authorization."
+        ]
+      },
+      {
+        "title": "\"Build a Google Workspace add-on using HTTP endpoints \\_|\\_ Google Workspace\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Common entry points for Gmail, Google Calendar, Google Drive, Editors, and Google Meet Entry point Description JSON response homepageTrigger.runFunction The user opens the add-on's homepage . renderActions OnClick.action.function The user clicks on actions within the add-on. onClick TextInput.autoCompleteAction.function The user enters text and the add-on provides automatic suggestions. getAutocompletionResponse Entry points for Gmail Entry point Description JSON response contextualTrigger.onTriggerFunction The user opens an email . renderActions composeTrigger The user opens the compose view. renderActions Entry points for Calendar Entry point Description JSON response eventOpenTrigger The user opens an event . renderActions eventUpdateTrigger The user updates an event. calendarClientActionMarkup eventAttachmentTrigger The user clicks on the add-on attachment provider in the Calendar attachment drop-down menu. calendarClientActionMarkup Entry points for Drive Entry point Description JSON response onItemsSelectedTrigger The user selects a file . renderActions Entry points for Editors Entry point Description JSON response createActionTriggers The user has chosen to create a third-party resource from the @ Menu in a Google Workspace application. link linkPreviewTriggers The user has interacted with a URL that matches a pattern specified in LinkPreviewTriggers . linkPreview onFileScopeGrantedTrigger The user has completed granting file access in response to a requestFileScopeForActiveDocument action. renderActions Validate JSON requests A request sent to your endpoint is a POST request with a JSON event object in the request body.",
+          "Clicking on a contact will navigate ( client side ) to a full contact card . / exports . homepage = ( req , res ) => { res . status ( 200 ) . send ( createListCard ()); }; function createContactCard ( name , title , email , phone , location ) { return { \"header\" : { \"imageType\" : \"CIRCLE\" , \"imageUrl\" : \"https://ssl.gstatic.com/images/branding/product/1x/avatar square blue 512dp.png\" , \"title\" : name , \"subtitle\" : title }, \"sections\" : [ { \"widgets\" : [ { \"decoratedText\" : { \"topLabel\" : \"Email:\" , \"text\" : email } }, { \"decoratedText\" : { \"topLabel\" : \"Phone Number:\" , \"text\" : phone } }, { \"decoratedText\" : { \"topLabel\" : \"Location:\" , \"text\" : location } } ] } ] }; } function createContactListEntry ( name , title , email , phone , location ) { return { \"decoratedText\" : { \"topLabel\" : title , \"text\" : name , \"onClick\" : { \"card\" : createContactCard ( name , title , email , phone , location ) }, \"icon\" : { \"iconUrl\" : \"https://ssl.gstatic.com/images/branding/product/1x/avatar square blue 512dp.png\" } } }; } function createListCard () { var LIST1 = createContactListEntry ( \"John Dolittle\" , \"President\" , \"john@gmail.com\" , \"800-555-0100\" , \"Markham, ON\" ); var LIST2 = createContactListEntry ( \"Huckleberry Finn\" , \"CFO\" , \"huck@gmail.com\" , \"800-555-0111\" , \"Kingston, ON\" ); var LIST3 = createContactListEntry ( \"Grace Harlowe\" , \"Senior Director\" , \"grace@gmail.com\" , \"800-555-0122\" , \"Toronto, ON\" ); return { \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"sections\" : [ { \"widgets\" : [ LIST1 , LIST2 , LIST3 ] } ] } } ] } }; } Third-party authorization To learn about third-party authorization, see Connect your Google Workspace add-on to a third-party service . { \"custom authorization prompt\": { \"action\": { \"navigations\": [ { \"pushCard\": { \"sections\": [ { \"widgets\": [ { \"image\": { \"imageUrl\": \"https://www.example.com/images/logo\", \"altText\": \"Example organization logo\" } }, { \"divider\": {} }, { \"textParagraph\": { \"text\": \"Sign in to get started.\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Sign in\", \"onClick\": { \"openLink\": { \"url\": \"https://www.example.com/auth\", \"onClose\": \"RELOAD\", \"openAs\": \"OVERLAY\" } }, \"color\": { \"red\": 0, \"green\": 0, \"blue\": 1, \"alpha\": 1, } } ] } }, { \"textParagraph\": { \"text\": \"If you don't have an account, <a href=\\\"https://www.example.com/signup\\\">sign up</a> here.\" } } ] } ] } } ] } } } JSON Widgets Generic widgets { \"$schema\" : \"/Users/dummy user/Documents/JSON schema/renderActionSchema.json\" , \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"header\" : { \"title\" : \"Main Card\" }, \"name\" : \"Main Card\" , \"peekCardHeader\" : { \"title\" : \"This is a peek card\" , \"imageType\" : \"SQUARE\" , \"imageUrl\" : \"http://ssl.gstatic.com/travel-trips-fe/icon hotel grey 64.png\" , \"imageAltText\" : \"Image of Cards\" , \"subtitle\" : \"No Subtitle\" }, \"cardActions\" : [ { \"actionLabel\" : \"This is Card action - 1\" , \"onClick\" : { \"openDynamicLinkAction\" : { \"function\" : \"https://dummy-function-from-resources.net/openLinkCallback\" } } }, { \"actionLabel\" : \"This is Card action - 2\" , \"onClick\" : { \"action\" : { \"function\" : \"https://dummy-function-from-resources.net/generic submit form response\" } } }, { \"actionLabel\" : \"This is Card action - 3\" , \"onClick\" : { \"openLink\" : { \"onClose\" : \"RELOAD\" , \"openAs\" : \"OVERLAY\" , \"url\" : \"https://dummy-function-from-resources.net/open link sample\" } } }, { \"actionLabel\" : \"This is Card action - 4\" , \"onClick\" : { \"card\" : { \"header\" : { \"title\" : \"This card is shown after card action 4 is clicked\" }, \"sections\" : [ { \"widgets\" : [ { \"textParagraph\" : { \"text\" : \"This is a sample text for the card that's shown after action 4 of the card is clicked\" } } ] } ] } } } ], \"fixedFooter\" : { \"primaryButton\" : { \"text\" : \"Primary Button\" , \"color\" : { \"red\" : 0 , \"blue\" : 0 , \"green\" : 0 }, \"onClick\" : { \"openLink\" : { \"url\" : \"www.google.ca\" , \"onClose\" : \"NOTHING\" , \"openAs\" : \"FULL SIZE\" } } }, \"secondaryButton\" : { \"text\" : \"Secondary Button - Disabled\" , \"disabled\" : true , \"color\" : { \"red\" : 0.32421 , \"blue\" : 0.23421 , \"green\" : 0.2353614 }, \"onClick\" : { \"openLink\" : { \"url\" : \"www.google.com\" , \"onClose\" : \"NOTHING\" , \"openAs\" : \"FULL SIZE\" } } } }, \"sections\" : [ { \"header\" : \"Section 1 - Date Time\" , \"collapsible\" : true , \"widgets\" : [ { \"dateTimePicker\" : { \"name\" : \"Date Time Picker - EST\" , \"label\" : \"Date Time Picker - EST\" , \"valueMsEpoch\" : 1585166673000 , \"onChangeAction\" : { \"function\" : \"https://dummy-function-from-resources.net/sample notification\" }, \"timezoneOffsetDate\" : - 240 , \"type\" : \"DATE AND TIME\" } }, { \"dateTimePicker\" : { \"name\" : \"Date Picker - CST\" , \"label\" : \"Date Time Picker - CST\" , \"valueMsEpoch\" : 1585166673000 , \"onChangeAction\" : { \"function\" : \"https://dummy-function-from-resources.net/sample notification\" }, \"timezoneOffsetDate\" : - 300 , \"type\" : \"DATE AND TIME\" } }, { \"dateTimePicker\" : { \"name\" : \"Date Time Picker - PST\" , \"label\" : \"Date Time Picker - PST\" , \"valueMsEpoch\" : 1585166673000 , \"onChangeAction\" : { \"function\" : \"https://dummy-function-from-resources.net/sample notification\" }, \"timezoneOffsetDate\" : - 420 , \"type\" : \"DATE AND TIME\" } } ] }, { \"header\" : \"Section 2 - Decorated Text\" , \"collapsible\" : true , \"uncollapsibleWidgetsCount\" : 2 , \"widgets\" : [ { \"decoratedText\" : { \"topLabel\" : \"Top Label - Decorated Text CHECKBOX\" , \"switchControl\" : { \"controlType\" : \"CHECKBOX\" , \"name\" : \"Name - Check Box Sample\" , \"value\" : \"Value - Check Box Sample\" }, \"text\" : \"Text - Decorated Text\" , \"bottomLabel\" : \"Bottom Label - Decorated Text CHECKBOX\" , \"wrapText\" : false , \"onClick\" : { \"card\" : { \"header\" : { \"title\" : \"Decorated Text - On Click Action Card\" }, \"sections\" : [ { \"widgets\" : [ { \"image\" : { \"imageUrl\" : \"https://cataas.com/cat/says/hello%20world!\" , \"altText\" : \"Hello World - Cat Image\" } } ] } ] } } } }, { \"decoratedText\" : { \"topLabel\" : \"Top Label - Decorated Text SWITCH\" , \"switchControl\" : { \"controlType\" : \"SWITCH\" , \"name\" : \"Name - SWITCH Sample\" , \"value\" : \"Value - SWITCH Sample\" }, \"text\" : \"Text - Decorated Text\" , \"bottomLabel\" : \"Bottom Label - Decorated Text SWITCH\" , \"wrapText\" : false , \"onClick\" : { \"card\" : { \"header\" : { \"title\" : \"Decorated Text - On Click Action Card\" }, \"sections\" : [ { \"widgets\" : [ { \"image\" : { \"imageUrl\" : \"https://cataas.com/cat/says/hello%20world!\" , \"altText\" : \"Hello World - Cat Image\" , \"onClick\" : { \"action\" : { \"function\" : \"https://dummy-function-from-resources.net/pop to root\" } } } } ] } ] } } } }, { \"decoratedText\" : { \"topLabel\" : \"Top Label - Decorated Text Button\" , \"bottomLabel\" : \"Bottom Label - Decorated Text Button\" , \"text\" : \"Text - Decorated Text Button\" , \"button\" : { \"icon\" : { \"altText\" : \"Assessment Blue\" , \"icon url\" : \"http://ssl.gstatic.com/travel-trips-fe/icon hotel grey 64.png\" }, \"text\" : \"Assessment Blue\" , \"onClick\" : { \"openLink\" : { \"url\" : \"http://ssl.gstatic.com/travel-trips-fe/icon hotel grey 64.png\" , \"openAs\" : \"OVERLAY\" , \"onClose\" : \"RELOAD\" } } } } }, { \"decoratedText\" : { \"topLabel\" : \"Top Label - Decorated Text CHECKBOX\" , \"switchControl\" : { \"controlType\" : \"CHECKBOX\" , \"name\" : \"Name - Check Box Sample\" , \"value\" : \"Value - Check Box Sample\" }, \"text\" : \"Text - Decorated Text\" , \"bottomLabel\" : \"Bottom Label - Decorated Text CHECKBOX\" , \"wrapText\" : false , \"onClick\" : { \"card\" : { \"header\" : { \"title\" : \"Decorated Text - On Click Action Card\" }, \"sections\" : [ { \"widgets\" : [ { \"image\" : { \"imageUrl\" : \"https://cataas.com/cat/says/hello%20world!\" , \"altText\" : \"Hello World - Cat Image\" } } ] } ] } } } }, { \"decoratedText\" : { \"topLabel\" : \"Top Label - Decorated Text Icon\" , \"bottomLabel\" : \"Bottom Label - Decorated Text Icon\" , \"text\" : \"Text - Decorated Text Icon\" , \"icon\" : { \"iconUrl\" : \"http://ssl.gstatic.com/travel-trips-fe/icon hotel grey 64.png\" , \"altText\" : \"Arrow Right Blue\" } } }, { \"decoratedText\" : { \"topLabel\" : \"Top Label - Decorated Text Wrap\" , \"bottomLabel\" : \"Bottom Label - Decorated Text Wrap\" , \"text\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "When returned to Gmail, the bolded text should say AFTER. \\nText BEFORE opening the link.\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Open tab, close, refresh\", \"onClick\": { \"openLink\": { \"url\": \"https://www.google.ca/\", \"onClose\": \"RELOAD\", \"openAs\": \"OVERLAY\" } } } ] } } ] } ] } } ] } } Response to form submit { \"$schema\": \"/Users/dummy user/Documents/JSON schema/submit form response schema.json\", \"stateChanged\": true, \"renderActions\": { \"action\": { \"navigations\": [ { \"pushCard\": { \"peekCardHeader\": { \"title\": \"Peek Card\" }, \"header\": { \"title\": \"Generic Submit Form Response Card\" }, \"sections\": [ { \"widgets\": [ { \"image\": { \"imageUrl\": \"https://cataas.com/cat\" } } ] } ] } } ] } } } Grid { \"$schema\" : \"/Users/dummy user/Documents/JSON schema/render action schema.json\" , \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"header\" : { \"title\" : \"Main Card\" }, \"sections\" : [ { \"header\" : \"Grid Widget\" , \"widgets\" : [ { \"grid\" : { \"title\" : \"A fine collection of cats\" , \"borderStyle\" : { \"type\" : \"STROKE\" , \"cornerRadius\" : 5.0 }, \"columnCount\" : 2 , \"items\" : [ { \"id\" : \"itemA\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.001\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"First cat\" }, { \"id\" : \"itemB\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.002\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Second cat\" , \"subtitle\" : \"Top rated\" }, { \"id\" : \"itemC\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.003\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Third cat\" }, { \"id\" : \"itemD\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.004\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Fourth cat\" , }, { \"id\" : \"itemE\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.005\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Fifth cat\" , \"subtitle\" : \"Top rated\" }, { \"id\" : \"itemF\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.006\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Sixth cat\" } ], \"onClick\" : { \"action\" : { \"function\" : \"https://dummy-function-from-resources.net/grid item clicked\" , \"parameters\" : [ { \"key\" : \"datasource\" , \"value\" : \"Favorite cat pics\" } ] } } } } ] } ] } } ] } } JSON Event Objects Common (Gmail, Calendar, Drive, and Editors) { \"$schema\" : \"http://json-schema.org/draft-07/schema#\" , \"type\" : \"object\" , \"definitions\" : { \"eventObject\" : { \"$id\" : \"/properties/eventObject\" , \"type\" : \"object\" , \"description\" : \"Event objects are JSON structures that are automatically constructed and passed as parameters to trigger or callback functions when a user interacts with an add-on (https://developers.google.com/workspace/add-ons/concepts/event-objects)\" , \"properties\" : { \"commonEventObject\" : { \"$ref\" : \"#/definitions/commonEventObject\" } , \"authorizationEventObject\" : { \"$ref\" : \"#/definitions/authorizationEventObject\" , \"description\" : \"Set for requests to HTTP endpoints\" } , \"gmail\" : { \"$ref\" : \"./gmail event object schema.json#/definitions/gmailEventObject\" , \"description\" : \"An object containing Gmail information.\" } , \"drive\" : { \"$ref\" : \"./drive event object schema.json#/definitions/driveEventObject\" , \"description\" : \"An object containing Drive information.\" } , \"docs\" : { \"$ref\" : \"./docs event object schema.json#/definitions/docsEventObject\" , \"description\" : \"An object containing Docs information.\" } , \"sheets\" : { \"$ref\" : \"./sheets event object schema.json#/definitions/sheetsEventObject\" , \"description\" : \"An object containing Sheets information.\" } , \"slides\" : { \"$ref\" : \"./slides event object schema.json#/definitions/slidesEventObject\" , \"description\" : \"An object containing Slides information.\" } , \"calendar\" : { \"$ref\" : \"./calendar event object schema.json#/definitions/calendarEventObject\" , \"description\" : \"An object containing calendar and event information.\" } } } , \"commonEventObject\" : { \"$id\" : \"/properties/commonEventObject\" , \"type\" : \"object\" , \"description\" : \"An object containing information common to all event objects, regardless of the host application.\" , \"properties\" : { \"userLocale\" : { \"type\" : \"string\" , \"description\" : \"The user's language and country/region identifier in the format of ISO 639 language code-ISO 3166 country/region code."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "action.function",
+      "apps.extensions.markup",
+      "cataas.com",
+      "developers.google.com",
+      "gmail.com",
+      "projects.deployments",
+      "resources.gs",
+      "resources.net",
+      "schema.json",
+      "schema.org",
+      "ssl.gstatic.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/workspace/add-ons/guides/connect-third-party-service",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    }
+  ]
+}

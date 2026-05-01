@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.152Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "feature_name": "Upload and download integrations",
+  "feature_slug": "upload-and-download-integrations",
+  "summary": "Adds integration designer support for uploading and downloading integration definitions in JSON format.",
+  "extended_definition": "Adds integration designer support for uploading and downloading integration definitions in JSON format.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+      "https://docs.cloud.google.com/application-integration/docs/build-cicd"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.products.integrations.versions.download \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.integrations.versions.download Stay organized with collections Save and categorize content based on your preferences.",
+          "Format: projects/{project}/locations/{location}/integrations/{integration}/versions/{version} Query parameters Parameters fileFormat enum ( FileFormat ) File format for download request.",
+          "HTTP request GET https://integrations.googleapis.com/v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:download The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"Build CICD for your integration \\_|\\_ Application Integration \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 116,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For information about how to download and upload integrations, see Upload and download integrations .",
+          "If you don't want to use integrationcli , you can manually download and upload the integration to a new project.",
+          "Go to Application Integration In the navigation menu, click Integrations The Integrations List page appears listing all the integrations available in the Google Cloud project."
+        ]
+      },
+      {
+        "title": "Apigee Integrations API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.products.integrations.versions Methods create POST /v1/{parent=projects/ /locations/ /products/ /integrations/ }/versions Create a integration with a draft version in the specified project. delete DELETE /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ } Soft-deletes the integration. download GET /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:download Downloads an integration. get GET /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ } Get a integration in the specified project. list GET /v1/{parent=projects/ /locations/ /products/ /integrations/ }/versions Returns the list of all integration versions in the specified project. patch PATCH /v1/{integrationVersion.name=projects/ /locations/ /products/ /integrations/ /versions/ } Update a integration with a draft version in the specified project. publish POST /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:publish This RPC throws an exception if the integration is in ARCHIVED or ACTIVE state. takeoverEditLock POST /v1/{integrationVersion=projects/ /locations/ /products/ /integrations/ /versions/ }:takeoverEditLock Clears the locked by and locked at timestamp in the DRAFT version of this integration. unpublish POST /v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ }:unpublish Sets the status of the ACTIVE integration to SNAPSHOT with a new tag \"PREVIOUSLY PUBLISHED\" after validating it. upload POST /v1/{parent=projects/ /locations/ /products/ /integrations/ }/versions:upload Uploads an integration.",
+          "Apigee Integration provides the following regional service endpoints: Region REST/HTTP endpoint asia-east1 asia-east1-integrations.googleapis.com asia-northeast1 asia-northeast1-integrations.googleapis.com asia-south1 asia-south1-integrations.googleapis.com asia-southeast1 asia-southeast1-integrations.googleapis.com australia-southeast1 australia-southeast1-integrations.googleapis.com australia-southeast2 australia-southeast2-integrations.googleapis.com europe-north1 europe-north1-integrations.googleapis.com europe-west1 europe-west1-integrations.googleapis.com europe-west2 europe-west2-integrations.googleapis.com europe-west3 europe-west3-integrations.googleapis.com europe-west4 europe-west4-integrations.googleapis.com europe-west6 europe-west6-integrations.googleapis.com europe-west9 europe-west9-integrations.googleapis.com europe-southwest1 europe-southwest1-integrations.googleapis.com northamerica-northeast1 northamerica-northeast1-integrations.googleapis.com southamerica-east1 southamerica-east1-integrations.googleapis.com us-central1 us-central1-integrations.googleapis.com us-east1 us-east1-integrations.googleapis.com us-east4 us-east4-integrations.googleapis.com us-west1 us-west1-integrations.googleapis.com us-west2 us-west2-integrations.googleapis.com me-central1 me-central1-integrations.googleapis.com me-west1 me-west1-integrations.googleapis.com REST Resource: v1.projects.locations.products.authConfigs Methods create POST /v1/{parent=projects/ /locations/ /products/ }/authConfigs Creates an auth config record. delete DELETE /v1/{name=projects/ /locations/ /products/ /authConfigs/ } Deletes an auth config. get GET /v1/{name=projects/ /locations/ /products/ /authConfigs/ } Gets a complete auth config. list GET /v1/{parent=projects/ /locations/ /products/ }/authConfigs Lists all auth configs that match the filter. patch PATCH /v1/{authConfig.name=projects/ /locations/ /products/ /authConfigs/ } Updates an auth config.",
+          "REST Resource: v1.projects.locations.products.integrations Methods delete DELETE /v1/{name=projects/ /locations/ /products/ /integrations/ } Deletes the selected integration, including all the versions of that integration. execute POST /v1/{name=projects/ /locations/ /products/ /integrations/ }:execute Executes integrations synchronously by passing the trigger id in the request body. list GET /v1/{parent=projects/ /locations/ /products/ }/integrations Returns the list of all integrations in the specified project. schedule POST /v1/{name=projects/ /locations/ /products/ /integrations/ }:schedule Schedules an integration for execution by passing the trigger id and the scheduled time in the request body."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.apigeeIntegrationVers.get",
+      "integrations.googleapis.com",
+      "integrations.integrationVersions.get",
+      "projects.locations.products.integrations.versions",
+      "projects.locations.products.integrations.versions.download",
+      "v1.projects.locations.products.authConfigs",
+      "v1.projects.locations.products.certificates",
+      "v1.projects.locations.products.integrations",
+      "v1.projects.locations.products.integrations.executions",
+      "v1.projects.locations.products.integrations.executions.suspensions",
+      "v1.projects.locations.products.integrations.versions",
+      "v1.projects.locations.products.sfdcInstances",
+      "v1.projects.locations.products.sfdcInstances.sfdcChannels"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-cicd",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/download",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest"
+      ]
+    }
+  ]
+}

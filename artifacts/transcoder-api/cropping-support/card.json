@@ -1,0 +1,209 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.491Z",
+  "source_step08_card": "data/step-08/current/products/transcoder-api/card.json",
+  "product_name": "Transcoder API",
+  "product_slug": "transcoder-api",
+  "feature_name": "Cropping support",
+  "feature_slug": "cropping-support",
+  "summary": "Transcoder API now supports cropping in media transcoding workflows.",
+  "extended_definition": "Transcoder API now supports cropping in media transcoding workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+      "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+      "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+      "https://docs.cloud.google.com/transcoder/docs/transcode-video"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of the Transcoder API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Features The Transcoder API includes support for the following features: Output in different container formats , including MPEG-4 (MP4), Dynamic Adaptive Streaming over HTTP (DASH, also known as MPEG-DASH), and HTTP Live Streaming (HLS) Output at different bitrates and resolutions, including audio-only output Conversion to a high dynamic range (HDR) format Enhance the video output programmatically, including: Crop video dimensions Insert overlay images or animations Configure low-level encoding parameters, such as the bitrate Remix existing media content using comprehensive edit lists Set the job mode to low-latency interactive mode or batch mode Specify audio loudness normalization Configure encryption of your output video to support digital rights management and content protection Insert ad keyframes to allow video player clients to insert ads Create thumbnails from a generated spritesheet of video frames Create job templates to save and reuse custom or complex configurations for transcoding jobs For more information about the MP4 and MPEG-DASH standards, see The Moving Picture Experts Group website .",
+          "The Transcoder API does not insert or play ads, or stop media playback; video player clients are responsible for handling the keyframe.",
+          "The Transcoder API implements a REST and RPC API that lets you submit, monitor, and manage transcoding jobs in Google Cloud."
+        ]
+      },
+      {
+        "title": "Creating and managing jobs \\_|\\_ Transcoder API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud transcoder jobs create \\ --input-uri = \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" \\ --location = LOCATION \\ --output-uri = \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" \\ --template-id = \"preset/web-hd\" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud transcoder jobs create --input-uri = \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" --location = LOCATION --output-uri = \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" --template-id = \"preset/web-hd\" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud transcoder jobs create ^ --input-uri = \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" ^ --location = LOCATION ^ --output-uri = \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" ^ --template-id = \"preset/web-hd\" You should receive a response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /jobs/ JOB ID \", \"config\": { \"inputs\": [ { \"key\": \"input0\", \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" } ], \"editList\": [ { \"key\": \"atom0\", \"inputs\": [ \"input0\" ], \"startTimeOffset\": \"0s\" } ], \"elementaryStreams\": [ { \"videoStream\": { \"h264\": { \"widthPixels\": 640, \"heightPixels\": 360, \"frameRate\": 30, \"bitrateBps\": 550000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 550000, \"vbvFullnessBits\": 495000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream0\" }, { \"videoStream\": { \"h264\": { \"widthPixels\": 1280, \"heightPixels\": 720, \"frameRate\": 30, \"bitrateBps\": 2500000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 2500000, \"vbvFullnessBits\": 2250000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream1\" }, { \"audioStream\": { \"codec\": \"aac\", \"bitrateBps\": 64000, \"channelCount\": 2, \"channelLayout\": [ \"fl\", \"fr\" ], \"sampleRateHertz\": 48000 }, \"key\": \"audio-stream0\" } ], \"muxStreams\": [ { \"key\": \"sd\", \"fileName\": \"sd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"hd\", \"fileName\": \"hd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"media-sd\", \"fileName\": \"media-sd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"media-hd\", \"fileName\": \"media-hd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"video-only-sd\", \"fileName\": \"video-only-sd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream0\" ] }, { \"key\": \"video-only-hd\", \"fileName\": \"video-only-hd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream1\" ] }, { \"key\": \"audio-only\", \"fileName\": \"audio-only.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"audio-stream0\" ] } ], \"manifests\": [ { \"fileName\": \"manifest.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"media-sd\", \"media-hd\" ] }, { \"fileName\": \"manifest.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"video-only-sd\", \"video-only-hd\", \"audio-only\" ] } ], \"output\": { \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" } }, \"state\": \"PENDING\", \"createTime\": CREATE TIME , \"ttlAfterCompletionDays\": 30 } C# Before trying this sample, follow the C# setup instructions in the Transcoder API quickstart using client libraries .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"inputUri\": \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \", \"outputUri\": \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\", \"templateId\": \"preset/web-hd\" } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://transcoder.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /jobs\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /jobs/ JOB ID \", \"config\": { \"inputs\": [ { \"key\": \"input0\", \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" } ], \"editList\": [ { \"key\": \"atom0\", \"inputs\": [ \"input0\" ], \"startTimeOffset\": \"0s\" } ], \"elementaryStreams\": [ { \"videoStream\": { \"h264\": { \"widthPixels\": 640, \"heightPixels\": 360, \"frameRate\": 30, \"bitrateBps\": 550000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 550000, \"vbvFullnessBits\": 495000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream0\" }, { \"videoStream\": { \"h264\": { \"widthPixels\": 1280, \"heightPixels\": 720, \"frameRate\": 30, \"bitrateBps\": 2500000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 2500000, \"vbvFullnessBits\": 2250000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream1\" }, { \"audioStream\": { \"codec\": \"aac\", \"bitrateBps\": 64000, \"channelCount\": 2, \"channelLayout\": [ \"fl\", \"fr\" ], \"sampleRateHertz\": 48000 }, \"key\": \"audio-stream0\" } ], \"muxStreams\": [ { \"key\": \"sd\", \"fileName\": \"sd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"hd\", \"fileName\": \"hd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"media-sd\", \"fileName\": \"media-sd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"media-hd\", \"fileName\": \"media-hd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"video-only-sd\", \"fileName\": \"video-only-sd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream0\" ] }, { \"key\": \"video-only-hd\", \"fileName\": \"video-only-hd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream1\" ] }, { \"key\": \"audio-only\", \"fileName\": \"audio-only.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"audio-stream0\" ] } ], \"manifests\": [ { \"fileName\": \"manifest.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"media-sd\", \"media-hd\" ] }, { \"fileName\": \"manifest.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"video-only-sd\", \"video-only-hd\", \"audio-only\" ] } ], \"output\": { \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" } }, \"state\": \"PENDING\", \"createTime\": CREATE TIME , \"ttlAfterCompletionDays\": 30 } gcloud Before using any of the command data below, make the following replacements: LOCATION : The location where your job will run.",
+          "The Transcoder API supports two job modes : interactive and batch."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Transcode a video with the Transcoder API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "source_id": "site-api-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Show locations us-central1 us-west1 us-west2 us-east1 us-east4 southamerica-east1 northamerica-northeast1 asia-east1 asia-northeast1 asia-northeast3 asia-south1 asia-southeast1 australia-southeast1 europe-west1 europe-west2 europe-west4 me-west1 me-central1 me-central2 Run the following command: gcloud transcoder jobs describe JOB ID --location = LOCATION You should see a response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /jobs/ JOB ID \", \"config\": { \"inputs\": [ { \"key\": \"input0\", \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" } ], \"editList\": [ { \"key\": \"atom0\", \"inputs\": [ \"input0\" ], \"startTimeOffset\": \"0s\" } ], \"elementaryStreams\": [ { \"videoStream\": { \"h264\": { \"widthPixels\": 640, \"heightPixels\": 360, \"frameRate\": 30, \"bitrateBps\": 550000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 550000, \"vbvFullnessBits\": 495000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream0\" }, { \"videoStream\": { \"h264\": { \"widthPixels\": 1280, \"heightPixels\": 720, \"frameRate\": 30, \"bitrateBps\": 2500000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 2500000, \"vbvFullnessBits\": 2250000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream1\" }, { \"audioStream\": { \"codec\": \"aac\", \"bitrateBps\": 64000, \"channelCount\": 2, \"channelLayout\": [ \"fl\", \"fr\" ], \"sampleRateHertz\": 48000 }, \"key\": \"audio-stream0\" } ], \"muxStreams\": [ { \"key\": \"sd\", \"fileName\": \"sd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"hd\", \"fileName\": \"hd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"media-sd\", \"fileName\": \"media-sd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"media-hd\", \"fileName\": \"media-hd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"video-only-sd\", \"fileName\": \"video-only-sd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream0\" ] }, { \"key\": \"video-only-hd\", \"fileName\": \"video-only-hd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream1\" ] }, { \"key\": \"audio-only\", \"fileName\": \"audio-only.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"audio-stream0\" ] } ], \"manifests\": [ { \"fileName\": \"manifest.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"media-sd\", \"media-hd\" ] }, { \"fileName\": \"manifest.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"video-only-sd\", \"video-only-hd\", \"audio-only\" ] } ], \"output\": { \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" } }, \"state\": \"PENDING\", \"createTime\": CREATE TIME , \"ttlAfterCompletionDays\": 30 } C# Before trying this sample, follow the C# setup instructions in the Transcoder API quickstart using client libraries .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://transcoder.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /jobs/ JOB ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /jobs/ JOB ID \", \"config\": { \"inputs\": [ { \"key\": \"input0\", \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE INPUT VIDEO \" } ], \"editList\": [ { \"key\": \"atom0\", \"inputs\": [ \"input0\" ], \"startTimeOffset\": \"0s\" } ], \"elementaryStreams\": [ { \"videoStream\": { \"h264\": { \"widthPixels\": 640, \"heightPixels\": 360, \"frameRate\": 30, \"bitrateBps\": 550000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 550000, \"vbvFullnessBits\": 495000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream0\" }, { \"videoStream\": { \"h264\": { \"widthPixels\": 1280, \"heightPixels\": 720, \"frameRate\": 30, \"bitrateBps\": 2500000, \"pixelFormat\": \"yuv420p\", \"rateControlMode\": \"vbr\", \"crfLevel\": 21, \"gopDuration\": \"3s\", \"vbvSizeBits\": 2500000, \"vbvFullnessBits\": 2250000, \"entropyCoder\": \"cabac\", \"bFrameCount\": 3, \"aqStrength\": 1, \"profile\": \"high\", \"preset\": \"veryfast\" } }, \"key\": \"video-stream1\" }, { \"audioStream\": { \"codec\": \"aac\", \"bitrateBps\": 64000, \"channelCount\": 2, \"channelLayout\": [ \"fl\", \"fr\" ], \"sampleRateHertz\": 48000 }, \"key\": \"audio-stream0\" } ], \"muxStreams\": [ { \"key\": \"sd\", \"fileName\": \"sd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"hd\", \"fileName\": \"hd.mp4\", \"container\": \"mp4\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"media-sd\", \"fileName\": \"media-sd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream0\", \"audio-stream0\" ] }, { \"key\": \"media-hd\", \"fileName\": \"media-hd.ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"video-stream1\", \"audio-stream0\" ] }, { \"key\": \"video-only-sd\", \"fileName\": \"video-only-sd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream0\" ] }, { \"key\": \"video-only-hd\", \"fileName\": \"video-only-hd.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"video-stream1\" ] }, { \"key\": \"audio-only\", \"fileName\": \"audio-only.m4s\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"audio-stream0\" ] } ], \"manifests\": [ { \"fileName\": \"manifest.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"media-sd\", \"media-hd\" ] }, { \"fileName\": \"manifest.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"video-only-sd\", \"video-only-hd\", \"audio-only\" ] } ], \"output\": { \"uri\": \"gs:// STORAGE BUCKET NAME / STORAGE OUTPUT FOLDER /\" } }, \"state\": \"PENDING\", \"createTime\": CREATE TIME , \"ttlAfterCompletionDays\": 30 } gcloud Make the following replacements for the gcloud command: JOB ID : The ID of the job you created.",
+          "Transcode a video with the Transcoder API This page shows you how to create a basic video transcoding job using the default settings of the Transcoder API and curl , Windows PowerShell, or the client libraries."
+        ]
+      },
+      {
+        "title": "\"Class TranscoderServiceAsyncClient (1.20.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClientInfo ) Using the Transcoder API, you can queue asynchronous jobs for transcoding media into various output formats.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 async def sample create job template(): Create a client client = transcoder v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import transcoder v1 async def sample delete job template(): Create a client client = transcoder v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "googleapis.dev",
+      "hd.m4s",
+      "hd.mp4",
+      "hd.ts",
+      "manifest.m3u8",
+      "manifest.mpd",
+      "only.m4s",
+      "options.html",
+      "request.json",
+      "sd.m4s",
+      "sd.mp4",
+      "sd.ts",
+      "transcoder.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transcoder/docs/concepts/overview",
+        "https://docs.cloud.google.com/transcoder/docs/how-to/jobs",
+        "https://docs.cloud.google.com/transcoder/docs/transcode-video",
+        "https://docs.cloud.google.com/python/docs/reference/transcoder/latest/google.cloud.video.transcoder_v1.services.transcoder_service.TranscoderServiceAsyncClient"
+      ]
+    }
+  ]
+}

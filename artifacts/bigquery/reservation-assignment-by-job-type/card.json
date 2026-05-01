@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Reservation assignment by job type",
+  "feature_slug": "reservation-assignment-by-job-type",
+  "summary": "Reservations can assign folders, organizations, or projects by specific job type in the Cloud console.",
+  "extended_definition": "Reservations can assign folders, organizations, or projects by specific job type in the Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+      "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ASSIGNMENTS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "source_id": "site-api-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RESERVATIONS BY PROJECT AS reservation ON ( assignment . reservation name = reservation . reservation name ) WHERE assignment . assignee id = \" PROJECT ID \" AND job type = \"QUERY\" ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Schema The INFORMATION SCHEMA.ASSIGNMENTS view has the following schema: Column name Data type Value ddl STRING The DDL statement used to create this assignment. project id STRING ID of the administration project. project number INTEGER Number of the administration project. assignment id STRING ID that uniquely identifies the assignment. reservation name STRING Name of the reservation that the assignment uses. job type STRING The type of job that can use the reservation.",
+          "Required permission To query the INFORMATION SCHEMA.ASSIGNMENTS view, you need the bigquery.reservationAssignments.list Identity and Access Management (IAM) permission for the project."
+        ]
+      },
+      {
+        "title": "ASSIGNMENT_CHANGES view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "source_id": "site-api-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ASSIGNMENT CHANGES WHERE reservation name = RESERVATION NAME AND change timestamp TIMESTAMP QUALIFY ROW NUMBER () OVER ( PARTITION BY assignee id , job type ORDER BY change timestamp DESC ) = 1 AND action != 'DELETE' ; Replace the following: REGION : the region where your reservation is located RESERVATION NAME : the name of the reservation that the assignment uses TIMESTAMP : the timestamp representing the specific point in time at which the list of assignments is checked The result is similar to the following: +-------------------------+---------------------------+---------------+----------+ reservation name assignee id assignee type job type +-------------------------+---------------------------+---------------+----------+ test-reservation project 1 PROJECT QUERY test-reservation project 2 PROJECT QUERY +-------------------------+---------------------------+---------------+----------+ Identify the assignment status of a reservation when a particular job was executed To display the assignments that were active when a certain job was executed, use the following example.",
+          "JOBS WHERE job id = JOB ID ) QUALIFY ROW NUMBER () OVER ( PARTITION BY assignee id , job type ORDER BY change timestamp DESC ) = 1 AND action != 'DELETE' ; Replace the following: REGION : the region where your reservation is located RESERVATION NAME : the name of the reservation that the assignment uses PROJECT ID : the ID of your Google Cloud project where the job was executed JOB ID : the job ID against which the assignment status was checked Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Schema The INFORMATION SCHEMA.ASSIGNMENT CHANGES view has the following schema: Column name Data type Value change timestamp TIMESTAMP Time when the change occurred. project id STRING ID of the administration project. project number INTEGER Number of the administration project. assignment id STRING ID that uniquely identifies the assignment. reservation name STRING Name of the reservation that the assignment uses. job type STRING The type of job that can use the reservation."
+        ]
+      },
+      {
+        "title": "BigQuery Reservation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "source_id": "site-api-reference-required-3",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.reservations.assignments Methods create POST /v1/{parent=projects/ /locations/ /reservations/ }/assignments Creates an assignment object which allows the given project to submit jobs of a certain type using slots from the specified reservation. delete DELETE /v1/{name=projects/ /locations/ /reservations/ /assignments/ } Deletes a assignment. getIamPolicy GET /v1/{resource=projects/ /locations/ /reservations/ /assignments/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ /reservations/ }/assignments Lists assignments. move POST /v1/{name=projects/ /locations/ /reservations/ /assignments/ }:move Moves an assignment under a new reservation. patch PATCH /v1/{assignment.name=projects/ /locations/ /reservations/ /assignments/ } Updates an existing assignment. setIamPolicy POST /v1/{resource=projects/ /locations/ /reservations/ /assignments/ }:setIamPolicy Sets an access control policy for a resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /reservations/ /assignments/ }:testIamPermissions Gets your permissions on a resource.",
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.capacityCommitments REST Resource: v1.projects.locations.reservationGroups REST Resource: v1.projects.locations.reservations REST Resource: v1.projects.locations.reservations.assignments Service: bigqueryreservation.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://bigqueryreservation.googleapis.com REST Resource: v1.projects.locations Methods getBiReservation GET /v1/{name=projects/ /locations/ /biReservation} Retrieves a BI reservation. searchAllAssignments GET /v1/{parent=projects/ /locations/ }:searchAllAssignments Looks up assignments for a specified resource for a particular region. searchAssignments (deprecated) GET /v1/{parent=projects/ /locations/ }:searchAssignments Deprecated: Looks up assignments for a specified resource for a particular region. updateBiReservation PATCH /v1/{biReservation.name=projects/ /locations/ /biReservation} Updates a BI reservation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assignment.name",
+      "bigquery.reservationAssignments.list",
+      "bigqueryreservation.googleapis.com",
+      "gmail.com",
+      "reservation.name",
+      "v1.projects.locations",
+      "v1.projects.locations.capacityCommitments",
+      "v1.projects.locations.reservationGroups",
+      "v1.projects.locations.reservations",
+      "v1.projects.locations.reservations.assignments"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest"
+      ]
+    }
+  ]
+}

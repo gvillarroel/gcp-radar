@@ -1,0 +1,212 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.394Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build API",
+  "feature_slug": "cloud-build-api",
+  "summary": "The Cloud Build API reached general availability.",
+  "extended_definition": "The Cloud Build API reached general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2016-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/api/reference/rest",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+      "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Build API | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Build API | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Cloud Build Start free Overview Guides Reference Samples Support Resources Technology areas More Overview Guides Reference Samples Support Resources Cross-product tools More Console Cloud Build All APIs gcloud Command Reference REST API Overview v1 TopLevel webhook REST Resources githubDotComWebhook Overview receive locations Overview regionalWebhook operations Overview cancel get projects.builds Overview approve cancel create get list retry projects.githubEnterpriseConfigs Overview create delete get list patch projects.locations Overview getDefaultServiceAccount projects.locations.bitbucketServerConfigs Overview create delete get list patch removeBitbucketServerConnectedRepository projects.locations.bitbucketServerConfigs.connectedRepositories Overview batchCreate projects.locations.bitbucketServerConfigs.repos Overview list projects.locations.builds Overview approve cancel create get list retry projects.locations.gitLabConfigs Overview create delete get list patch removeGitLabConnectedRepository projects.locations.gitLabConfigs.connectedRepositories Overview batchCreate projects.locations.gitLabConfigs.repos Overview list projects.locations.githubEnterpriseConfigs Overview create delete get list patch projects.locations.operations Overview cancel get projects.locations.triggers Overview create delete get list patch run webhook projects.locations.workerPools Overview create delete get list patch projects.triggers Overview create delete get list patch run webhook Types ApprovalConfig ListBuildTriggersResponse ListBuildsResponse ListGithubEnterpriseConfigsResponse ReceiveTriggerWebhookResponse RepoSource v2 REST Resources projects.locations Overview get list projects.locations.connections Overview create delete fetchLinkableRepositories get getIamPolicy list patch processWebhook setIamPolicy testIamPermissions projects.locations.connections.repositories Overview accessReadToken accessReadWriteToken batchCreate create delete fetchGitRefs get list projects.locations.operations Overview cancel get Types Policy Shared types Types CancelOperationRequest GetOperationRequest HttpBody Operation Client Libraries Overview Go reference Java reference Node.js reference Python reference AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Cloud Build Reference Send feedback Cloud Build API Stay organized with collections Save and categorize content based on your preferences.",
+          "REST Resource: v2.projects.locations REST Resource: v2.projects.locations.connections REST Resource: v2.projects.locations.connections.repositories REST Resource: v2.projects.locations.operations REST Resource: v1 REST Resource: v1.githubDotComWebhook REST Resource: v1.locations REST Resource: v1.operations REST Resource: v1.projects.builds REST Resource: v1.projects.githubEnterpriseConfigs REST Resource: v1.projects.locations REST Resource: v1.projects.locations.bitbucketServerConfigs REST Resource: v1.projects.locations.bitbucketServerConfigs.connectedRepositories REST Resource: v1.projects.locations.bitbucketServerConfigs.repos REST Resource: v1.projects.locations.builds REST Resource: v1.projects.locations.gitLabConfigs REST Resource: v1.projects.locations.gitLabConfigs.connectedRepositories REST Resource: v1.projects.locations.gitLabConfigs.repos REST Resource: v1.projects.locations.githubEnterpriseConfigs REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.triggers REST Resource: v1.projects.locations.workerPools REST Resource: v1.projects.triggers Service: cloudbuild.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1.projects.locations.builds Methods approve POST /v1/{name=projects/*/locations/*/builds/*}:approve Approves or rejects a pending build. cancel POST /v1/{name=projects/*/locations/*/builds/*}:cancel Cancels a build in progress. create POST /v1/{parent=projects/*/locations/*}/builds Starts a build with the specified configuration. get GET /v1/{name=projects/*/locations/*/builds/*} Returns information about a previously requested build. list GET /v1/{parent=projects/*/locations/*}/builds Lists previously requested builds. retry POST /v1/{name=projects/*/locations/*/builds/*}:retry Creates a new build based on the specified build."
+        ]
+      },
+      {
+        "title": "Client Libraries - Cloud Build Quickstart | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "source_id": "feature-recovery-http",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . async function quickstart ( projectId = 'YOUR_PROJECT_ID' , // Your Google Cloud Platform project ID triggerId = 'YOUR_TRIGGER_ID' , // UUID for build trigger. branchName = 'BRANCH_TO_BUILD' // Branch to run build against. ) { // Imports the Google Cloud client library const { CloudBuildClient } = require ( ' @google-cloud/cloudbuild ' ); // Creates a client const cb = new CloudBuildClient (); // Note: for Private Pools, you'll have to specify an API endpoint value // For example: // const cb = new CloudBuildClient({ apiEndpoint: '<YOUR_POOL_REGION>-cloudbuild.googleapis.com' }); // Starts a build against the branch provided. const [ resp ] = await cb . runBuildTrigger ({ projectId , triggerId , source : { projectId , dir : './' , branchName , }, }); console . info ( `triggered build for ${ triggerId } ` ); const [ build ] = await resp . promise (); const STATUS_LOOKUP = [ ' UNKNOWN ' , 'Queued' , 'Working' , 'Success' , 'Failure' , 'Error' , 'Timeout' , 'Cancelled' , ]; for ( const step of build . steps ) { console . info ( `step:\\n\\tname: ${ step . name } \\n\\tstatus: ${ STATUS_LOOKUP [ build . status ] } ` ); } } Python To authenticate to Cloud Build, set up Application Default Credentials.",
+          "CloudBuildClient () # If you're using Private Pools or a non-global default pool, add a regional # `api_endpoint` to `CloudBuildClient()` # For example, '<YOUR_POOL_REGION>-cloudbuild.googleapis.com' # # from google.api_core import client_options # client_options = client_options.ClientOptions( # api_endpoint=\"us-central1-cloudbuild.googleapis.com\" # ) # client = cloudbuild_v1.services.cloud_build.CloudBuildClient(client_options=client_options) build = cloudbuild_v1 .",
+          "Quickstart for using the Cloud Build API Explore further For detailed documentation that includes this code sample, see the following: Cloud Build client libraries Code sample Node.js To authenticate to Cloud Build, set up Application Default Credentials."
+        ]
+      },
+      {
+        "title": "\"Connect to a Bitbucket Data Center repository \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "source_id": "site-docs-root-2",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following curl command in your terminal from the same directory as the JSON file: curl -X POST -H \"Authorization: Bearer \" $( gcloud auth print-access-token ) -H \"Content-Type: application/json; charset=utf-8\" -H \"x-goog-user-project: PROJECT NUMBER \" https://cloudbuild.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /bitbucketServerConfigs/ BITBUCKET DATA CENTER CONFIG NAME /connectedRepositories:batchCreate -d @requests.json Where: PROJECT NUMBER is your Google Cloud project number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.googleapis.com",
+      "projects.builds",
+      "projects.githubEnterpriseConfigs",
+      "projects.locations",
+      "projects.locations.bitbucketServerConfigs",
+      "projects.locations.bitbucketServerConfigs.connectedRepositories",
+      "projects.locations.bitbucketServerConfigs.repos",
+      "projects.locations.builds",
+      "projects.locations.connections",
+      "projects.locations.connections.repositories",
+      "projects.locations.githubEnterpriseConfigs",
+      "projects.locations.gitLabConfigs",
+      "projects.locations.gitLabConfigs.connectedRepositories",
+      "projects.locations.gitLabConfigs.repos",
+      "projects.locations.operations",
+      "projects.locations.triggers",
+      "projects.locations.workerPools",
+      "projects.triggers",
+      "requests.json",
+      "services.cloud_build.CloudBuildClient",
+      "v1.githubDotComWebhook",
+      "v1.locations",
+      "v1.operations",
+      "v1.projects.builds",
+      "v1.projects.githubEnterpriseConfigs",
+      "v1.projects.locations",
+      "v1.projects.locations.bitbucketServerConfigs",
+      "v1.projects.locations.bitbucketServerConfigs.connectedRepositories",
+      "v1.projects.locations.bitbucketServerConfigs.repos",
+      "v1.projects.locations.builds",
+      "v1.projects.locations.githubEnterpriseConfigs",
+      "v1.projects.locations.gitLabConfigs",
+      "v1.projects.locations.gitLabConfigs.connectedRepositories",
+      "v1.projects.locations.gitLabConfigs.repos",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.triggers",
+      "v1.projects.locations.workerPools",
+      "v1.projects.triggers",
+      "v2.projects.locations",
+      "v2.projects.locations.connections",
+      "v2.projects.locations.connections.repositories",
+      "v2.projects.locations.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/samples/cloudbuild-quickstart",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+      ]
+    }
+  ]
+}

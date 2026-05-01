@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.338Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Private Service Connect outbound connectivity",
+  "feature_slug": "private-service-connect-outbound-connectivity",
+  "summary": "Private Service Connect outbound connectivity lets PSC-enabled Cloud SQL instances make outbound connections to a user's network.",
+  "extended_definition": "Private Service Connect outbound connectivity lets PSC-enabled Cloud SQL instances make outbound connections to a user's network.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 287,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can expect this operation to take about 8 minutes to complete with an approximate downtime of 3 minutes. gcloud To enable outbound connectivity, run the following command: gcloud beta sql instances patch INSTANCE NAME \\ --psc-network-attachment-uri= NETWORK ATTACHMENT URI \\ --project= PROJECT ID Replace the following: INSTANCE NAME : the name of the Private Service Connect-enabled Cloud SQL instance that you want to set up for outbound connectivity.",
+          "You can expect this operation to take about 8 minutes to complete with an approximate downtime of 3 minutes. gcloud To disable outbound connectivity, run the following command: gcloud beta sql instances patch INSTANCE NAME \\ --clear-psc-network-attachment-uri \\ --project= PROJECT ID Replace the following: INSTANCE NAME : the name of the Private Service Connect-enabled Cloud SQL instance that you want to set up for outbound connectivity.",
+          "Configure outbound connectivity for your Cloud SQL instance You can configure your Private Service Connect-enabled Cloud SQL instance to have outbound connectivity with your network using a Private Service Connect interface and a network attachment ."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "source_id": "site-docs-root",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can't convert the replica of an instance that has Private Service Connect outbound connectivity-enabled to a DR replica .",
+          "Switchover isn't supported for instances with Private Service Connect outbound connectivity enabled.",
+          "Private Service Connect outbound connectivity can't be enabled on a read replica instance."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can't convert the replica of an instance that has Private Service Connect outbound connectivity-enabled to a DR replica .",
+          "Switchover isn't supported for instances with Private Service Connect outbound connectivity enabled.",
+          "Private Service Connect outbound connectivity can't be enabled on a read replica instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    }
+  ]
+}

@@ -316,6 +316,12 @@ any role or permission mentions that were not found in the Step 05 inventory.
 Only explicit mappings may be treated as evidence-backed required IAM for the
 feature. Derived mappings are related IAM signals and must be labeled as such.
 
+Product IAM summaries and service-card IAM status counts are counts of
+constructed feature cards only. If a product has Step 02 release-note
+candidates but no Step 06 feature-card input, Step 08 keeps the service feature
+count and IAM status counts at zero while retaining the Step 02 inventory under
+`release_notes`.
+
 ## Step 09
 
 ### Goal
@@ -408,6 +414,10 @@ passed, failure count must be zero, a technical summary must be present, source
 links must remain official Google URLs, and any warning rule on the feature
 must be accepted by the promotion manifest. Every feature listed in a promotion
 manifest must have both its promoted `card.json` and `README.md`.
+Final validation also checks Step 08 product-card consistency before artifact
+comparison: product feature counts, service-card feature counts, IAM summary
+counts, service-card IAM status counts, and Step 08 index totals must all match
+the actual constructed feature cards.
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact review remains possible from
 the human-readable artifact itself.

@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:00.714Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "maxVertices parameter for table exports",
+  "feature_slug": "maxvertices-parameter-for-table-exports",
+  "summary": "Table exports support a maxVertices parameter.",
+  "extended_definition": "Table exports support a maxVertices parameter.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table",
+      "https://developers.google.com/earth-engine/guides/command_line",
+      "https://developers.google.com/earth-engine/guides/landsat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can see a complete list of table upload options by visiting the Table Manifest guide or with: earthengine upload table -h external image To create an asset backed by an external image, run the upload image command with a manifest: earthengine upload external image --manifest /tmp/foo.json An example manifest is: { \"name\" : \"projects/{project}/assets/cogdemo1\" , \"tilesets\" : [ { \"id\" : \"0\" , \"sources\" : [{ \"uris\" : [ \"gs://ee-docs-demos/COG demo.tif\" ] }] } ], \"properties\" : { \"source\" : \"https://code.earthengine.google.com/d541cf8b268b2f9d8f834c255698201d\" }, \"startTime\" : \"2016-01-01T00:00:00.000000000Z\" , \"endTime\" : \"2016-12-31T15:01:23.000000000Z\" } See the Cloud GeoTIFF guide and the Image Manifest guide for more details on constructing the manifest.",
+          "The options are also described in the Image Manifest guide. table To upload a Shapefile, CSV, or TFRecord from Google Cloud Storage to an Earth Engine table asset, you can use any of: earthengine upload table --asset id=projects/my-project/assets/myUploadedShapefile gs://bucket/foo.shp earthengine upload table --asset id=projects/my-project/assets/myUploadedCSV gs://bucket/foo.csv earthengine upload table --asset id=projects/my-project/assets/myUploadedTFRecord gs://bucket/foo.tfrecord Note: when uploading Shapefiles, you only need to specify the path to the .shp file.",
+          "Key actions include: authenticate to sign in; acl to manage asset access; asset to view/edit asset metadata; cp/mv to copy/move assets; create to make folders/collections; ls to list contents; model prepare for TensorFlow model transformation; project config to configure project settings; rm to delete assets; set project to set the default cloud project; task to manage long running tasks; and upload to add images or tables from Google Cloud Storage.\\n\"]]"
+        ]
+      },
+      {
+        "title": "\"Table computations with the Earth Engine REST API \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that the request contains the Expression , which is the serialized computation. import json url = 'https://earthengine.googleapis.com/v1beta/projects/ {} /table:computeFeatures' response = session . post ( url = url . format ( PROJECT ), data = json . dumps ({ 'expression' : serialized }) ) import json pprint ( json . loads ( response . content )) The response contains the resultant FeatureCollection as GeoJSON, which can be consumed by other apps or processes.",
+          "Home Products Google Earth Engine Reference Send feedback Table computations with the Earth Engine REST API Stay organized with collections Save and categorize content based on your preferences.",
+          "Run in Google Colab View source on GitHub Note: The REST API contains new and advanced features that may not be suitable for all users."
+        ]
+      },
+      {
+        "title": "Landsat Algorithms \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/landsat",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "This example creates a simple composite using default parameters and compares it to a composite using custom parameters for the cloud score threshold and the percentile: Code Editor (JavaScript) // Load a raw Landsat 5 ImageCollection for a single year. var collection = ee .",
+          "Landsat . simpleComposite ( collection ); // Create a cloud-free composite with custom parameters for // cloud score threshold and percentile. var customComposite = ee .",
+          "ImageCollection ( 'LANDSAT/LT05/C02/T1' ) . filterDate ( '2010-01-01' , '2010-12-31' ); // Create a cloud-free composite with default parameters. var composite = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "code.earthengine.google.com",
+      "demo.tif",
+      "developers.google.com",
+      "earthengine.googleapis.com",
+      "foo.csv",
+      "foo.json",
+      "foo.shp",
+      "foo.tfrecord",
+      "image.tif"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/landsat",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/landsat",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/landsat",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    }
+  ]
+}

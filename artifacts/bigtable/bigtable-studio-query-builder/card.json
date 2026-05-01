@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:53.917Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable Studio query builder",
+  "feature_slug": "bigtable-studio-query-builder",
+  "summary": "The Bigtable Studio query builder is generally available for creating and running queries in the Google Cloud console.",
+  "extended_definition": "The Bigtable Studio query builder is generally available for creating and running queries in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+      "https://docs.cloud.google.com/bigtable/docs/data-boost-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable Data Boost overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Writes and deletes Traffic that is mostly point reads (single-row reads) More than 1,000 reads per second per cluster Reverse scans Change streams Request priorities Multi-cluster routing Single-row transactions Regional endpoints HDD instances GoogleSQL for Bigtable queries Bigtable Studio query builder queries Instances that use CMEK encryption Incompatible client libraries.",
+          "The following are ideal use cases for Data Boost: Scheduled or triggered export or ETL pipeline jobs from Bigtable to Cloud Storage for data enrichment, analysis, archiving, offline ML model training, or ingestion by your customers' third-party partners ETL using a tool such as Dataflow for short scan or batch read processes that support in-place aggregations, rule-based transformations for MDM, or ML jobs Spark applications that use the Bigtable Spark connector to read Bigtable data Ad hoc queries and scheduled analytics jobs that use BigQuery external tables to read Bigtable data.",
+          "You can make sure that the data from a specific write job or time period is readable by Data Boost, before you initiate a Data Boost workload, by creating and using a consistency token ."
+        ]
+      },
+      {
+        "title": "Create and manage authorized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
+        "source_id": "site-docs-reference-2",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information on using the query builder, see Build queries in the console .",
+          "For more information on using the query builder, see Build queries in the console .",
+          "Click Builder to open the query builder."
+        ]
+      },
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "This helps to ensure that enough compute capacity is available during the execution of the continuously running SQL query.",
+          "You can read from a continuous materialized view by using the following: Bigtable Studio query editor The Bigtable client libraries that support SQL queries ReadRows API call using the Bigtable client libraries for Java and Go For more information, see Reading from a continuous materialized view .",
+          "You can create a continuous materialized view using the Google Cloud CLI, the Bigtable Studio query editor in the Google Cloud console, or the Bigtable client libraries for Java and Go."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/data-boost-overview",
+        "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    }
+  ]
+}

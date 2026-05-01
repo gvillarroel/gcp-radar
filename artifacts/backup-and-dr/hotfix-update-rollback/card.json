@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.762Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Hotfix update rollback",
+  "feature_slug": "hotfix-update-rollback",
+  "summary": "Backup and DR Service added the ability to roll back hotfix updates.",
+  "extended_definition": "Backup and DR Service added the ability to roll back hotfix updates.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Update backup/recovery appliances \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Rollback available : If the Backup and DR Service releases a rollback for the applied hotfix update, it displays the status as Rollback available .",
+          "Rollback a hotfix update If the Backup and DR Service detects an issue with an applied hotfix update, it may rollback the update automatically.",
+          "Right-click a hotfix update name—for example, HF NUMBER —and select Rollback ."
+        ]
+      },
+      {
+        "title": "Backup and DR Service for Microsoft SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "source_id": "site-api-reference",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can find additional information at: Backup and DR for Microsoft SQL Server Databases Prepare SQL Server databases for Backup and DR Service Add a SQL Server database host and discover databases Configure backup plans for Microsoft SQL Server instances and databases Application details and settings for Microsoft SQL Server instances and databases Mount a SQL Server database Mount databases into SQL Always On Availability Groups Manage an active mount Migrate a SQL Server database Clone SQL Server databases Recover SQL Server backups What's Next Prepare SQL server databases for Backup and DR Service .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Capture SQL Server data Backup and DR Service lets you capture the following types of Microsoft SQL Server applications: Instances Databases in Always On Availability Groups Consistency groups of databases Individual databases System databases User databases Databases in VMs Backup and DR moves and manages the Microsoft SQL Server data separately from where Microsoft SQL Server writes its primary storage."
+        ]
+      },
+      {
+        "title": "Audit logs \\_|\\_ Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ countApplianceUpdates countApplianceUpdatesInstallationJobs countApplications countBackups countCloudCredentials countClusters countCombinedJob countCombinedMatrix countConsistencyGroups countDiskPools countDynamicProtections countEvents countHosts countLogicalGroups countMatrix countSlps countSlts countWorkflows createSlaPreflight delegateGetCallDownloadLog discoverVolumes downloadLogStatus downloadOssNotice getAppClass getAppClassByAppclassName getAppliance getApplianceBandwidthStat getApplianceHotfixes getAppliancePolicyManager getApplianceResourceLimit getApplianceResourceWarning getApplianceSsdStatus getApplianceSystemStat getApplianceVersion getApplication getBVInfo getBackup getBackupPreservedStatus getCertificate getCloudCredentialMetaInfo getCloudTypes getCloudVmMetaInfo getCluster getClusterCalloutTest getClustersDetails getConfigParameter getConsistencyGroup getConsistencyGroupMember getCredential getDevice getDiscardedBackup getDiskPool getDiskPoolFromAppliance getDynamicProtection getEvent getExportStatusDetails getGCERegions getGCPProjects getGCPProjectsByProfile getHost getHostAvailableConnector getHostConnector getHostDatastores getHostDetails getInstanceInclusionRule getInstanceMemberRuleMembers getIscsiTestResults getJob getLocalAppliance getLogicalGroup getMSParameter getNfsOptions getNotifications getNotificationsV2 getParameter getPolicy getPreservedBackup getPreservedBackupHistory getProtectedESXINodeCount getReadMeForApplianceUpdate getReadMeForApplianceUpdateInstallationJob getRecoveryPools getRegions getReportExportPrereq getSLAComplianceCompatibility getSessionInfo getSla getSlp getSlt getThirdPartyCertAll getUpdateLogs getVaultPoolClusterApplicationsPerApplication getVaultPoolClusterApplicationsPerCluster getVaultPoolClusters getVaultTaskStatus getVmMetadataDetails getVsphereHost getWarning google.cloud.backupdr.v1.BackupDR.FetchBackupPlanAssociationsForResourceType google.cloud.backupdr.v1.BackupDR.FetchDataSourceReferencesForResourceType google.cloud.backupdr.v1.BackupDR.GetBackup google.cloud.backupdr.v1.BackupDR.GetBackupPlan google.cloud.backupdr.v1.BackupDR.GetBackupPlanAssociation google.cloud.backupdr.v1.BackupDR.GetBackupPlanRevision google.cloud.backupdr.v1.BackupDR.GetBackupVault google.cloud.backupdr.v1.BackupDR.GetDataSource google.cloud.backupdr.v1.BackupDR.GetDataSourceReference google.cloud.backupdr.v1.BackupDR.GetManagementServer google.cloud.backupdr.v1.BackupDR.ListBackupPlanAssociations google.cloud.backupdr.v1.BackupDR.ListBackupPlanRevisions google.cloud.backupdr.v1.BackupDR.ListBackupPlans google.cloud.backupdr.v1.BackupDR.ListBackupVaults google.cloud.backupdr.v1.BackupDR.ListBackups google.cloud.backupdr.v1.BackupDR.ListDataSources google.cloud.backupdr.v1.BackupDR.ListManagementServers google.cloud.backupdr.v1.BackupDrProtectionSummary.ListResourceBackupConfigs GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations isApplianceUpgradeInProgress isInMigrationMode listApplianceUpdates listApplianceUpdatesInstallationjobs listAppliances listApplications listApplicationsFlatView listArchives listBackups listBwSchedule listCloudSupportedProfiles listCloudSupportedTemplates listClusters listCombinedJobs listConsistencyGroups listCredentials listDiskPools listDiskPoolsFromAppliance listDiskTypes listDynamicProtections listEffectiveMembers listEffectiveOptionsForApp listEffectiveOptionsForSla listEvents listGcpVaultPool listHosts listLogicalGroup listLogicalGroupMembers listOptionForApp listOptionForPolicy listOptionForSla listOptionsForAppType listOptionsForPolicyType listPolicies listProtectedDataAGM listProtectedDataAGMByAppliance listSlas listSlps listSlts listVMVolumes listWorkFlows listWorkflowsPerApp lsConfiguredInterface lsDns lsEtcHosts lsInterface lsNetworkCapability lsNtp lsOutboundPolicy settableOptionMetadataForApp settableOptionMetadataForPolicy settableOptionMetadataForSla showCustomSetting showRoute showTracePath triggerExport validateHypervisorCredential ADMIN WRITE addApplication addPort addVm appDiscovery appDiscoveryOnAppliance appliancePolicyManager backupNow callbackTestAppliance cloneBackup cloneTemplates clusterDiscovery configDns configNtp configureMountMigrate createApplication createConnection createConsistencyGroup createCredential createDiskPool createDiskPoolFromAppliance createDynamicProtection createHost createLogicalGroup createLogicalGroupSla createOptionForApp createOptionForPolicy createOptionForSla createPolicy createSla createSlp createSlt createWorkflow deleteApplication deleteBackup deleteCluster deleteConsistencyGroup deleteCredential deleteDiskPool deleteDiskPoolFromAppliance deleteDynamicProtection deleteHost deleteLogicalGroup deleteLogicalGroupSla deleteMembershipRule deleteOptionForApp deleteOptionForPolicy deletePolicy deletePorts deleteSla deleteSlp deleteSlt deleteWorkflow discover discoverCloudVm discoverUpdates dissolveAppliance downloadConnector enableConnectorUpgrade expireBackup fetchApplicationOptions generateOTP getCloudVmMountOptionMetaData getCloudVmRestoreOptionMetaData getDataRetentionDetails getDiskMapping getDynamicJsonForPoolManage getNfsTestTaskStatus getRecommendedComplianceSettingsForOnTheFlyPolicy getRecommendedComplianceSettingsForPolicy getVaultList google.cloud.backupdr.v1.BackupDR.AbandonBackup (LRO) google.cloud.backupdr.v1.BackupDR.CreateBackupPlan (LRO) google.cloud.backupdr.v1.BackupDR.CreateBackupPlanAssociation (LRO) google.cloud.backupdr.v1.BackupDR.CreateBackupVault (LRO) google.cloud.backupdr.v1.BackupDR.CreateManagementServer (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackup (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackupPlan (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackupPlanAssociation (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackupVault (LRO) google.cloud.backupdr.v1.BackupDR.DeleteManagementServer (LRO) google.cloud.backupdr.v1.BackupDR.FetchAccessToken google.cloud.backupdr.v1.BackupDR.FinalizeBackup (LRO) google.cloud.backupdr.v1.BackupDR.InitializeService (LRO) google.cloud.backupdr.v1.BackupDR.InitiateBackup google.cloud.backupdr.v1.BackupDR.RemoveDataSource (LRO) google.cloud.backupdr.v1.BackupDR.RestoreBackup (LRO) google.cloud.backupdr.v1.BackupDR.SetInternalStatus (LRO) google.cloud.backupdr.v1.BackupDR.TriggerBackup (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackup (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackupPlan (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackupPlanAssociation (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackupVault (LRO) google.cloud.backupdr.v1.BackupDR.UpdateDataSource (LRO) SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation importOrForgetVaultPoolBackupsPerApplication importOrForgetVaultPoolBackupsPerCluster importTemplates installApplianceUpdateNow iscsiTestA jobHistoryArchive joinAppliance liveCloneBackup migrate migrateBackup migrateRestoreMountBackup mkEtcHosts modifyConsistencyGroupMember modifyLogicalGroupMembers mountBackup mountMigratePreflight operateWorkflow recalcConsumedSize registerCluster replicateImage replicateLog restoreBackup restorePreflight revokeCertificate rmEtcHosts runDynamicProtectionJob setConfigParaMeter setDynamicProtectionJobConfig setSchedule stopAppliance testConnection testDns testNfsAsync uninstallHostConnector unmountBackup updateApplianceResourceWarning updateApplication updateBackup updateCloudVmMountOptionMetaData updateCloudVmRestoreOptionMetaData updateConsistencyGroup updateCredential updateDiskPool updateDiskPoolFromAppliance updateHost updateJob updateLogicalGroup updateLogicalGroupSla updateMembershipRule updateOptionForApp updateOptionForPolicy updateOptionForSla updatePolicy updateSchedule updateSla updateSlp updateSlt updateWorkflow upgradeHostConnector uploadThirdPartyCert validateCredential vmAddNew vmDiscoveryWithoutCluster API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Backup and DR Service. google.cloud.backupdr.v1.BackupDR The following audit logs are associated with methods belonging to google.cloud.backupdr.v1.BackupDR .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.ListManagementServers\" RemoveDataSource Method : google.cloud.backupdr.v1.BackupDR.RemoveDataSource Audit log type : Admin activity Permissions : backupdr.bvdataSources.remove - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.RemoveDataSource\" RestoreBackup Method : google.cloud.backupdr.v1.BackupDR.RestoreBackup Audit log type : Admin activity Permissions : backupdr.bvbackups.restore - ADMIN WRITE backupdr.compute.restoreFromBackupVault - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.RestoreBackup\" SetInternalStatus Method : google.cloud.backupdr.v1.BackupDR.SetInternalStatus Audit log type : Admin activity Permissions : backupdr.bvdataSources.setInternalStatus - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.SetInternalStatus\" TriggerBackup Method : google.cloud.backupdr.v1.BackupDR.TriggerBackup Audit log type : Admin activity Permissions : backupdr.backupPlanAssociations.triggerBackupForComputeDisk - ADMIN WRITE backupdr.backupPlanAssociations.triggerBackupForComputeInstance - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.TriggerBackup\" UpdateBackup Method : google.cloud.backupdr.v1.BackupDR.UpdateBackup Audit log type : Admin activity Permissions : backupdr.bvbackups.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.UpdateBackup\" UpdateBackupPlan Method : google.cloud.backupdr.v1.BackupDR.UpdateBackupPlan Audit log type : Admin activity Permissions : backupdr.backupPlans.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.UpdateBackupPlan\" UpdateBackupPlanAssociation Method : google.cloud.backupdr.v1.BackupDR.UpdateBackupPlanAssociation Audit log type : Admin activity Permissions : backupdr.backupPlanAssociations.updateForComputeDisk - ADMIN WRITE backupdr.backupPlanAssociations.updateForComputeInstance - ADMIN WRITE backupdr.backupPlans.useForComputeDisk - ADMIN WRITE backupdr.backupPlans.useForComputeInstance - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.UpdateBackupPlanAssociation\" UpdateBackupVault Method : google.cloud.backupdr.v1.BackupDR.UpdateBackupVault Audit log type : Admin activity Permissions : backupdr.backupVaults.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.UpdateBackupVault\" UpdateDataSource Method : google.cloud.backupdr.v1.BackupDR.UpdateDataSource Audit log type : Admin activity Permissions : backupdr.bvdataSources.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.backupdr.v1.BackupDR.UpdateDataSource\" google.cloud.backupdr.v1.BackupDrProtectionSummary The following audit logs are associated with methods belonging to google.cloud.backupdr.v1.BackupDrProtectionSummary .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.backupPlanAssociations.triggerBackupForComputeDisk",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+      "backupdr.backupPlanAssociations.updateForComputeDisk",
+      "backupdr.backupPlanAssociations.updateForComputeInstance",
+      "backupdr.backupPlans.update",
+      "backupdr.backupPlans.useForComputeDisk",
+      "backupdr.backupPlans.useForComputeInstance",
+      "backupdr.backupVaults.update",
+      "backupdr.bvbackups.restore",
+      "backupdr.bvbackups.update",
+      "backupdr.bvdataSources.remove",
+      "backupdr.bvdataSources.setInternalStatus",
+      "backupdr.bvdataSources.update",
+      "backupdr.compute.restoreFromBackupVault",
+      "backupdr.managementServers.manageBackupPlans"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging"
+      ]
+    }
+  ]
+}

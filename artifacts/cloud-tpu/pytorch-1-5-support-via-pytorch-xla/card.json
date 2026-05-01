@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:56.970Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "PyTorch 1.5 support via PyTorch/XLA",
+  "feature_slug": "pytorch-1-5-support-via-pytorch-xla",
+  "summary": "Cloud TPU and Cloud TPU Pods support PyTorch 1.5 through PyTorch/XLA integration.",
+  "extended_definition": "Cloud TPU and Cloud TPU Pods support PyTorch 1.5 through PyTorch/XLA integration.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions",
+      "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+      "https://docs.cloud.google.com/tpu/docs/tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Training Resnet50 on Cloud TPU with PyTorch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/tutorials",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connect to your TPU VM using SSH: gcloud compute tpus tpu-vm ssh your-tpu-name --zone = us-central1-a Install PyTorch/XLA on your TPU VM: ( vm ) $ pip install torch torch xla [ tpu ] torchvision -f https://storage.googleapis.com/libtpu-releases/index.html -f https://storage.googleapis.com/libtpu-wheels/index.html Clone the PyTorch/XLA GitHub repo ( vm ) $ git clone --depth = 1 https://github.com/pytorch/xla.git Run the training script with fake data ( vm ) $ PJRT DEVICE = TPU python3 xla/test/test train mp imagenet.py --fake data --batch size = 256 --num epochs = 1 Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "Delete your TPU VM. $ gcloud compute tpus tpu-vm delete your-tpu-name \\ --zone = us-central1-a What's next Training diffusion models with Pytorch Troubleshooting Pytorch on TPUs Pytorch/XLA documentation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Cloud TPU Guides Send feedback Training Resnet50 on Cloud TPU with PyTorch Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "TPU architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "In fact, on a typical training workload for deep learning, a GPU can provide an order of magnitude higher throughput than a CPU.",
+          "How a GPU works To gain higher throughput, GPUs contain thousands of Arithmetic Logic Units (ALUs) in a single processor.",
+          "You can directly use TPU VMs for your workloads or use them through Google Kubernetes Engine or Vertex AI."
+        ]
+      },
+      {
+        "title": "TPU software versions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TPU version TPU software version Trillium (v6e) v2-alpha-tpuv6e v5p v2-alpha-tpuv5 v5e v2-alpha-tpuv5-lite v4 and older tpu-ubuntu2204-base For more information about installation and getting started with PyTorch or JAX, see Run a calculation on a Cloud TPU VM using PyTorch and Run a calculation on a Cloud TPU VM using JAX .",
+          "PyTorch and JAX Use the following common TPU software versions for PyTorch and JAX, then install the framework you want to use.",
+          "PJRT features automatic device memory defragmentation and simplifies the integration of hardware with frameworks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "imagenet.py",
+      "index.html",
+      "storage.googleapis.com",
+      "xla.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tutorials",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tutorials",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tutorials",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tutorials",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/tutorials",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/tpu/docs/supported-tpu-versions"
+      ]
+    }
+  ]
+}

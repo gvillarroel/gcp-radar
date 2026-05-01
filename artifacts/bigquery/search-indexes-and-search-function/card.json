@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Search indexes and SEARCH function",
+  "feature_slug": "search-indexes-and-search-function",
+  "summary": "Search indexes and the SEARCH function let GoogleSQL efficiently find data in unstructured text and semi-structured data.",
+  "extended_definition": "Search indexes and the SEARCH function let GoogleSQL efficiently find data in unstructured text and semi-structured data.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE TABLE dataset . my table ( a STRING , b INT64 ); CREATE SEARCH INDEX my index ON dataset . my table ( ALL COLUMNS ); The following example creates a search index on columns a , my struct.string field , and b that uses the NO OP ANALYZER text analyzer.",
+          "For examples of JSON-formatted strings with different text analyzers, see Work with text analyzers . data types ARRAY<STRING> Example: data types=['STRING', 'INT64', 'TIMESTAMP'] An array of data types to set when creating a search index.",
+          "The supported values are 'LOG ANALYZER' , 'NO OP ANALYZER' , and 'PATTERN ANALYZER' . analyzer options JSON-formatted STRING The text analyzer configurations to set when creating a search index."
+        ]
+      },
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you use vector indexes with vector search, you can take advantage of foundational technologies like inverted file indexing (IVF) and the ScaNN algorithm .",
+          "Try the Perform semantic search and retrieval-augmented generation tutorial to learn how to do the following tasks: Generate text embeddings.",
+          "For a notebook that illustrates this scenario, see Log Anomaly Detection & Investigation with Text Embeddings + BigQuery Vector Search ."
+        ]
+      },
+      {
+        "title": "SEARCH_INDEXES_BY_ORGANIZATION view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization",
+        "source_id": "site-docs-reference-3",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AND search index . index status details . throttle status != 'BASE TABLE TOO SMALL' GROUP BY search index . project id , search index . use background reservation The result is similar to the following: +---------------------+----------------------------+---------------------+ project id use background reservation total logical bytes +---------------------+----------------------------+---------------------+ projecta true 971329178274633 +---------------------+----------------------------+---------------------+ projectb false 834638211024843 +---------------------+----------------------------+---------------------+ projectc false 562910385625126 +---------------------+----------------------------+---------------------+ Find throttled search indexes This following example returns all search indexes that are throttled within the organization and region: SELECT project id , index schema , table name , index name FROM region - us .",
+          "SEARCH INDEXES BY ORGANIZATION WHERE -- Excludes search indexes that are permanently disabled. index status != 'PERMANENTLY DISABLED' AND index status details . throttle status IN ( 'ORGANIZATION LIMIT EXCEEDED' , 'BASE TABLE TOO LARGE' ) The result is similar to the following: +--------------------+--------------------+---------------+----------------+ project id index schema table name index name +--------------------+--------------------+---------------+----------------+ projecta dataset us table1 index1 projectb dataset us table1 index1 +--------------------+--------------------+---------------+----------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "AND search index . use background reservation = false -- Outputs the total indexed base table size if it exceeds 100 TB, -- otherwise, doesn't return any output. ) SELECT FROM indexed base table size WHERE total logical bytes >= 109951162777600 -- 100 TB The result is similar to the following: +---------------------+ total logical bytes +---------------------+ 109951162777601 +---------------------+ Find total indexed base table size by projects in a region The following example gives the breakdown on each project in a US multi-region with the total size of indexed base tables: SELECT search index . project id , search index . use background reservation , SUM ( base table . total logical bytes ) AS total logical bytes FROM region - us ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "struct.string"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes-by-organization"
+      ]
+    }
+  ]
+}

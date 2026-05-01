@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Custom POST events",
+  "feature_slug": "custom-post-events",
+  "summary": "Custom JavaScript can listen for CCAIP events and react to them with extended payload data for consumer interactions.",
+  "extended_definition": "Custom JavaScript can listen for CCAIP events and react to them with extended payload data for consumer interactions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call endpoints \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"call type\" : \"Voice Outbound (API)\" , \"agent email\" : \"admin@somedomain.com\" , \"ticket id\" : \"71450\" , \"outbound number\" : \"+1 339-219-5276\" , \"lang\" : \"en\" } Response: Create an outbound call with ticket id { \"id\" : 398 , \"lang\" : \"en\" , \"call type\" : \"Voice Outbound (API)\" , \"status\" : \"assigned\" , \"created at\" : \"2019-06-07T01:28:47.955Z\" , \"queued at\" : null , \"assigned at\" : \"2019-06-07T01:28:47.971Z\" , \"connected at\" : null , \"ends at\" : null , \"scheduled at\" : null , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : null , \"has feedback\" : false , \"voip provider\" : \"voip provider twilio\" , \"out ticket id\" : \"71450\" , \"out ticket url\" : null , \"verified\" : false , \"recording url\" : null , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail reason\" : \"nothing\" , \"fail details\" : null , \"support number\" : null , \"selected menu\" : null , \"menu path\" : null , \"agent info\" : { \"id\" : 1 , \"agent number\" : null , \"name\" : \"Admin UJET\" , \"last name\" : \"UJET\" , \"first name\" : \"Admin\" , \"avatar url\" : \"https://somedomain.com/default-profile.png\" }, \"end user\" : { \"id\" : 67 , \"identifier\" : null , \"out contact id\" : \"381630957514\" }, \"photos\" : [], \"videos\" : [], \"transfers\" : [], \"deflection details\" : [], \"participants\" : [ { \"id\" : 612 , \"type\" : \"agent\" , \"status\" : \"waiting\" , \"call id\" : 398 , \"user id\" : 1 , \"end user id\" : null , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" }, { \"id\" : 613 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 398 , \"user id\" : null , \"end user id\" : 67 , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" } ], \"offer type\" : null , \"offer events\" : [], \"answer type\" : \"manual\" , \"outbound number\" : \"+1 339-219-5276\" } Status Code: 201 Accepted : Need to choose an outbound number In this example we show the scenario where an outbound call request is created with the need to choose an outbound number and then is accepted.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"call type\" : \"Voice Scheduled (API)\" , \"lang\" : \"en\" , \"call id\" : 514 , \"end user number\" : \"+82-10-6861-2345\" , \"scheduled at\" : \"2019-09-15T00:19:14.421Z\" , \"recording permission\" : \"recording permission granted\" } Response: Create an scheduled call with call ID { \"id\" : 515 , \"lang\" : \"en\" , \"call type\" : \"Voice Inbound (API)\" , \"status\" : \"queued\" , \"created at\" : \"2019-09-10T00:19:14.000Z\" , \"queued at\" : null , \"assigned at\" : null , \"connected at\" : null , \"ends at\" : null , \"scheduled at\" : \"2019-09-15T00:19:14.421Z\" , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : null , \"has feedback\" : false , \"out ticket id\" : null , \"out ticket url\" : null , \"verified\" : false , \"recording url\" : null , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail reason\" : \"nothing\" , \"fail details\" : null , \"support number\" : null , \"selected menu\" : { \"id\" : 9 , \"name\" : \"Lock Star\" , \"parent id\" : null , \"position\" : 0 , \"deleted\" : false , \"menu type\" : \"ivr menu\" , \"output msg\" : \"You selected Lock Star.\" , \"hidden\" : false }, \"menu path\" : { \"items count\" : 1 , \"name\" : \"Lock Star\" , \"materialized path\" : \"9\" }, \"agent info\" : null , \"end user\" : { \"id\" : 75 , \"identifier\" : null , \"out contact id\" : \"389391400633\" }, \"photos\" : [], \"videos\" : [], \"transfers\" : [], \"deflection details\" : [], \"participants\" : [ { \"id\" : 820 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 515 , \"user id\" : null , \"end user id\" : 75 , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" } ], \"offer type\" : \"cascade\" , \"offer events\" : [ { \"casting time\" : \"2019-09-10T00:19:14.000Z\" , \"group\" : \"Group 1\" } ], \"answer type\" : \"manual\" , \"outbound number\" : \"+1 339-219-5276\" } Status Code: 201 Error : Menu is in 'after hours' state, can't accept incoming calls In this example we show the failure scenario where a scheduled call is created but that the provided menu is out of hours and as such cannot receive incoming calls.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"call type\" : \"Voice Outbound (API)\" , \"agent email\" : \"agent@somedomain.com\" , \"ticket id\" : \"71450\" , \"outbound number\" : \"+1 339-219-5276\" , \"lang\" : \"en\" } Response: Create an outbound call with ticket id { \"id\" : 398 , \"lang\" : \"en\" , \"call type\" : \"Voice Outbound (API)\" , \"status\" : \"assigned\" , \"created at\" : \"2019-06-07T01:28:47.955Z\" , \"queued at\" : null , \"assigned at\" : \"2019-06-07T01:28:47.971Z\" , \"connected at\" : null , \"ends at\" : null , \"scheduled at\" : null , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : null , \"has feedback\" : false , \"voip provider\" : \"voip provider twilio\" , \"out ticket id\" : \"71450\" , \"out ticket url\" : null , \"verified\" : false , \"recording url\" : null , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail reason\" : \"nothing\" , \"fail details\" : null , \"support number\" : null , \"selected menu\" : null , \"menu path\" : null , \"agent info\" : { \"id\" : 1 , \"agent number\" : null , \"name\" : \"Admin UJET\" , \"last name\" : \"UJET\" , \"first name\" : \"Admin\" , \"avatar url\" : \"https://somedomain.com/avatar.png\" }, \"end user\" : { \"id\" : 67 , \"identifier\" : null , \"out contact id\" : \"381630957514\" }, \"photos\" : [], \"videos\" : [], \"transfers\" : [], \"deflection details\" : [], \"participants\" : [ { \"id\" : 612 , \"type\" : \"agent\" , \"status\" : \"waiting\" , \"call id\" : 398 , \"user id\" : 1 , \"end user id\" : null , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" }, { \"id\" : 613 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 398 , \"user id\" : null , \"end user id\" : 67 , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" } ], \"offer type\" : null , \"offer events\" : [], \"answer type\" : \"manual\" , \"outbound number\" : \"+1 339-219-5276\" } Status Code: 201 Error : ticket ID or end-user number required This example demonstrates the failure case where the ticket ID or end-user number are required but not provided."
+        ]
+      },
+      {
+        "title": "\"iOS SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Customize Flow Disconnect CCAI Platform for handling Host app events // CCAI Platform is connected ... // An event has come [ UJET disconnect : ^ { // Handle an event } ] ; Postpone CCAI Platform incoming call or chat Implement a delegate method for handling incoming events - ( BOOL ) shouldConnectUjetIncoming :( NSString ) identifier forType :( UjetIncomingType ) type { if ( weDoingSomething ) { // save identifier and type return NO ; // postpone } else { return YES ; } } Connect postponed event [ UJET connect : identifier forType : UjetIncomingTypeCall ] ; Setup Deep link This enables agents on PSTN calls to use smart actions by SMS for both when an end user has or does not have the app.",
+          "UJETEventEmailDidClick Queue Menu Data UJETEventEmailDidSubmit Queue Menu Data has attachment: (NSNumber) @YES, @NO UJETEventSessionViewDidAppear type: @\"call\", @\"chat\" timestamp: (NSString) ISO 8601 UJETEventSessionViewDidDisappear type: @\"call\", @\"chat\" timestamp: (NSString) ISO 8601 UJETEventSessionDidCreate Session Data UJETEventSessionDidEnd Session Data agent name: (NSString) null if agent didn't join duration: (NSNumber) only for call ended by: (NSString) type=call: @\"agent\", @\"end user\" type=chat: @\"agent\", @\"end user\", @\"timeout\", @\"dismissed\" UJETEventSdkDidTerminate UJETEventPostSessionOptInDidSelected opt in selected: (NSString) @\"Yes\", @\"No\" Event Data Metadata application: @\"iOS\" app id: (NSString) bundle identifier app version: (NSString) company: (NSString) subdomain device model: (NSString) device version: (NSString) sdk version: (NSString) timestamp: (NSString) ISO 8601 Queue Menu Data Metadata menu id: NSString menu key: NSString, nullable menu name: NSString menu path : NSString Session Data Queue Menu Data session id: NSString type: @\"call\", @\"chat\" end user identifier: NSString Setup Screen Share If you want to use Screen Share feature, then integrate UJETCobrowseKit.xcframework .",
+          "Border width can be only 0 or 1 and if you don't want to differentiate the post session VA experience then you could set containerColor white and border to 0. func customizeChatTheme () throws { guard let file = Bundle.main.path ( forResource: \"chat-theme-custom\" , ofType: \"json\" ) else { return } let json = try String.init ( contentsOfFile: file, encoding: .utf8 ) let chatTheme = UJETChatTheme.init ( jsonString: json ) let postSessionVaTheme = UJETChatPostSessionVaTheme () postSessionVaTheme.containerColor = UJETColorRef ( assetName: \"white color\" ) let postSessionVaBorder = UJETBorderTheme () postSessionVaBorder.width = 0 postSessionVaBorder.color = UJETColorRef ( assetName: \"white color\" ) containerColor.border = postSessionVaBorder chatTheme?.postSessionVaTheme = postSessionVaTheme let globalTheme = UJETGlobalTheme () globalTheme.chatTheme = chatTheme UJET.setGlobalTheme ( globalTheme ) } Chat actions menu You can add customization for chat actions menu together with chat customization."
+        ]
+      },
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "0 = Show everywhere, 1 = Hide from the options menu, 2 = Hide from the post chat screen, 3 = Hide from both the options menu and the post chat screen. .setPushNotificationsAllowed ( true ) .build () ; //The following customizes various attributes in chat UI ChatStyles chatStyles = new ChatStyles () ; chatStyles.setBackButton ( new BackButtonStyle ( false, \"ujet agent sample\" )) ; //customizes back button styles chatStyles.setHeader ( ... ) ; //customizes chat header styles chatStyles.setAgentMessageBubbles ( ... ) ; //customizes agent messages styles chatStyles.setConsumerMessageBubbles ( ... ) ; //customizes consumer messages styles chatStyles.setSystemMessages ( ... ) ; //customizes system messages styles chatStyles.setEndChatButton ( ... ) ; //customizes end chat button styles chatStyles.setTimeStamps ( ... ) ; //customizes timestamp styles chatStyles.setUserInputBar ( ... ) ; //customizes user input bar styles UjetOption ujetOption = new UjetOption.Builder () .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatStyles ( chatStyles ) .build () ) //The following customizes various attributes in chat UI using json file.",
+          "Sign them with your company secret, and then return them by JWT. public class ExampleApplication extends Application implements UjetRequestListener { @Override public void onCreate () { super.onCreate () ; Ujet.init ( this ) ; } @Override public void onSignPayloadRequest ( Map<String, Object> payload, UjetPayloadType ujetPayloadType, UjetTokenCallback tokenCallback ) { // ... if ( ujetPayloadType == UjetPayloadType.CustomData ) { / These codes are for providing signed custom data.",
+          "In ExampleApplication you should implement the UjetRequestListener interface for signing the auth token and for custom data. public class ExampleApplication extends Application implements UjetRequestListener { @Override public void onCreate () { super . onCreate (); Ujet . init ( this ); } @Override public void onSignPayloadRequest ( Map<String , Object > payload , UjetPayloadType ujetPayloadType , UjetTokenCallback tokenCallback ) { if ( ujetPayloadType == UjetPayloadType ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.jpg",
+      "avatar.png",
+      "internal.dashboard.com",
+      "main.path",
+      "profile.png",
+      "somedomain.com",
+      "super.onCreate"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call"
+      ]
+    }
+  ]
+}

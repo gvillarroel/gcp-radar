@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ERROR function",
+  "feature_slug": "error-function",
+  "summary": "BigQuery standard SQL includes the ERROR function for returning errors.",
+  "extended_definition": "BigQuery standard SQL includes the ERROR function for returning errors.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maximum rate of table metadata update operations limit errors BigQuery returns this error when your table reaches the limit for maximum rate of table metadata update operations per table for standard tables.",
+          "Table imports or query appends quota errors BigQuery returns this error message when your table reaches the limit for table operations per day for standard tables.",
+          "For example, using Logs Explorer , the following query returns errors with either Quota exceeded or limit in the message string: resource.type = (\"bigquery project\" OR \"bigquery dataset\") protoPayload.status.code =\"7\" protoPayload.status.message: (\"Quota exceeded\" OR \"limit\") In this example, the status code 7 indicates PERMISSION DENIED , which corresponds to the HTTP 403 status code."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Setting the expiration timestamp and description on a table The following example sets the expiration timestamp on a table to seven days from the execution time of the ALTER TABLE statement, and sets the description as well: ALTER TABLE mydataset . mytable SET OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 7 DAY ), description = \"Table that expires seven days from now\" ) Setting the require partition filter attribute on a partitioned table The following example sets the timePartitioning.requirePartitionFilter attribute on a partitioned table : ALTER TABLE mydataset . mypartitionedtable SET OPTIONS ( require partition filter = true ) Queries that reference this table must use a filter on the partitioning column, or else BigQuery returns an error.",
+          "You can add Spark properties using the following format: [(\"key1\",\"value1\"),(\"key2\", \"value2\")] For example: bq query --nouse legacy sql --dry run 'CREATE PROCEDURE my bq project.my dataset.spark proc() WITH CONNECTION my-project-id.us.my-connection OPTIONS( engine=\"SPARK\", main file uri=\"gs://my-bucket/my-pyspark-main.py\", properties=[ (\"spark.executor.instances\", \"3\"), (\"spark.yarn.am.memory\", \"3g\") ]) LANGUAGE PYTHON' Error in query string: Invalid value: \\ Invalid properties: \\ Attempted to set unsupported properties: \\ [ spark:spark.yarn.am.memory ] at [ 1 :1 ] Note: You can use the BigQuery dry run feature to validate your stored procedure without creating it. main file uri STRING The Cloud Storage URI of the main Python, Scala, or Java JAR file of the Spark application.",
+          "If the file set spec type is NEW LINE DELIMITED MANIFEST , then each line in the file is interpreted as a URI that points to a data file. ignore unknown values BOOL If true , ignore extra values that are not represented in the table schema, without returning an error."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "For full list of options, see: // https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad const metadata = { sourceFormat : 'CSV' , skipLeadingRows : 1 , schema : { fields : [ { name : 'name' , type : 'STRING' }, { name : 'post abbr' , type : 'STRING' }, ], }, // Set the write disposition to overwrite existing table data. writeDisposition : 'WRITE TRUNCATE' , location : 'US' , }; // Load data from a Google Cloud Storage file into the table const [ job ] = await bigquery . dataset ( datasetId ) . table ( tableId ) . load ( storage . bucket ( bucketName ). file ( filename ), metadata ); // load() waits for the job to finish console . log ( Job ${ job . id } completed. ); // Check the job's status for errors const errors = job . status . errors ; if ( errors && errors . length > 0 ) { throw errors ; } } Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries .",
+          "Job completedJob = loadJob . waitFor (); // Check for errors if ( completedJob == null ) { throw new Exception ( \"Job not executed since it no longer exists.\" ); } else if ( completedJob . getStatus (). getError () != null ) { // You can also look at queryJob.getStatus().getExecutionErrors() for all // errors, not just the latest one. throw new Exception ( \"BigQuery was unable to load into the table due to an error: \\n\" + loadJob . getStatus (). getError ()); } System . out . println ( \"Data successfully loaded into time partitioned table during load job\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Data not loaded into time partitioned table during load job \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "For full list of options, see: // https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad const metadata = { sourceFormat : 'CSV' , skipLeadingRows : 1 , schema : { fields : [ { name : 'name' , type : 'STRING' }, { name : 'post abbr' , type : 'STRING' }, ], }, location : 'US' , }; // Load data from a Google Cloud Storage file into the table const [ job ] = await bigquery . dataset ( datasetId ) . table ( tableId ) . load ( storage . bucket ( bucketName ). file ( filename ), metadata ); // load() waits for the job to finish console . log ( Job ${ job . id } completed. ); // Check the job's status for errors const errors = job . status . errors ; if ( errors && errors . length > 0 ) { throw errors ; } } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.spark",
+      "id.us.my",
+      "jobs.insert",
+      "main.py",
+      "project.my",
+      "resource.type",
+      "spark.executor.instances",
+      "spark.yarn.am.memory",
+      "status.code",
+      "status.message",
+      "tables.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    }
+  ]
+}

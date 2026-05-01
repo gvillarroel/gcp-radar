@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.057Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "VPC Service Controls perimeter support",
+  "feature_slug": "vpc-service-controls-perimeter-support",
+  "summary": "Lets Migrate to Virtual Machines communicate with select services inside a VPC Service Controls perimeter.",
+  "extended_definition": "Lets Migrate to Virtual Machines communicate with select services inside a VPC Service Controls perimeter.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate to Virtual Machines supports importing OVA machine image files in the following disk file formats: Virtual machine disk (VMDK) QEMU copy-on-write (QCOW) QEMU copy-on-write 2 (QCOW2) QEMU enhanced disk format (QED) VPC Virtual disk image (VDI) Virtual hard disk v2 (VHDX) Limitations When you import machine images, the following limitations apply: You can only import machine images to regions that support N2 instance families .",
+          "Attempting to set an unsupported license type causes an error when you attempt to import the machine image. machineImageTargetDefaults.osAdaptationParameters.network interfaces Migrate to Virtual Machines lets you optionally create a machine images with multiple network interfaces (NICs).",
+          "This permission lets Migrate to Virtual Machines access the source image."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate to Virtual Machines supports importing OVA machine image files in the following disk file formats: Virtual machine disk (VMDK) QEMU copy-on-write (QCOW) QEMU copy-on-write 2 (QCOW2) QEMU enhanced disk format (QED) VPC Virtual disk image (VDI) Virtual hard disk v2 (VHDX) Limitations When you import machine images, the following limitations apply: You can only import machine images to regions that support N2 instance families .",
+          "Attempting to set an unsupported license type causes an error when you attempt to import the machine image. machineImageTargetDefaults.osAdaptationParameters.network interfaces Migrate to Virtual Machines lets you optionally create a machine images with multiple network interfaces (NICs).",
+          "This permission lets Migrate to Virtual Machines access the source image."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add Network Interface Migrate to Virtual Machines lets you optionally create a Compute Engine instance with multiple network interfaces (NICs).",
+          "When instantiating a Compute Engine instance for either the test-clone or cut-over phase, Migrate to Virtual Machines uses the target details settings at the time of the operation. (Optional) Step 4: Test a clone of a migrating VM In the test-clone phase, Migrate to Virtual Machines deploys a clone of your migrated VM to a Compute Engine instance in your testing environment.",
+          "Initiate replication of a source VM To initiate replication of a source VM, follow these steps: Open the Migrate to Virtual Machines page in the Google Cloud console: Go to the Migrate to Virtual Machines page Select the Migrations tab."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 257,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add Network Interface Migrate to Virtual Machines lets you optionally create a Compute Engine instance with multiple network interfaces (NICs).",
+          "When instantiating a Compute Engine instance for either the test-clone or cut-over phase, Migrate to Virtual Machines uses the target details settings at the time of the operation. (Optional) Step 4: Test a clone of a migrating VM In the test-clone phase, Migrate to Virtual Machines deploys a clone of your migrated VM to a Compute Engine instance in your testing environment.",
+          "Initiate replication of a source VM To initiate replication of a source VM, follow these steps: Open the Migrate to Virtual Machines page in the Google Cloud console: Go to the Migrate to Virtual Machines page Select the Migrations tab."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+      ]
+    }
+  ]
+}

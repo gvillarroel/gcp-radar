@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Stretched private clouds",
+  "feature_slug": "stretched-private-clouds",
+  "summary": "Stretched private clouds let vSphere and vSAN clusters span zones to improve availability and protect against zone-level failures.",
+  "extended_definition": "Stretched private clouds let vSphere and vSAN clusters span zones to improve availability and protect against zone-level failures.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"VMware Engine stretched private clouds \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Stretched private clouds use vSphere and vSAN stretched clusters to provide compute and storage high availability against zone-level failures.",
+          "A stretched private cloud can have multiple stretched clusters, but each must have exactly two Google Cloud zones for data nodes and one zone for the witness node. vSAN data encryption in stretched private clouds vSAN data encryption at rest is enabled by default in all stretched clusters of a stretched private cloud.",
+          "VMware Engine stretched private clouds A Google Cloud VMware Engine stretched private cloud is a private cloud that is stretched across two data zones and a witness zone, all within the same Google Cloud region."
+        ]
+      },
+      {
+        "title": "\"Private cloud VMware components \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, you won't be able to use vSphere Distributed Resource Scheduler (DRS) or High Availability (HA). vSphere cluster limits The following table describes vSphere cluster limits in standard private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 21 The following table describes vSphere cluster limits in stretched private clouds: Resource Limit Minimum number of nodes to create a stretched private cloud (first cluster) 6 Minimum number of nodes to create a stretched cluster 6 Maximum number of nodes per stretched cluster 30 Maximum number of nodes per stretched private cloud 96 Maximum number of clusters per stretched private cloud 16 Guest operating system support You can install a VM with any guest operating system supported by VMware for the ESXi version in your private cloud.",
+          "Google Cloud VMware Engine deploys private clouds with the following VMware stack components: VMware ESXi: hypervisor on dedicated nodes VMware vCenter: centralized management of private cloud vSphere environment VMware vSAN: hyper-converged, software-defined storage platform VMware NSX Data Center: network virtualization and security software VMware HCX: application migration and workload rebalancing across data centers and clouds You can retrieve generated sign-in credentials for VMware stack components from the private cloud details page.",
+          "Clusters in private clouds have fully configured all-flash vSAN storage."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private clouds are also designed to eliminate single points of failure: Clusters of ESXi hosts are configured with vSphere High Availability (HA) and sized to have at least one spare node for resilience. vSphere HA protects against node and network failures. vSAN provides redundant primary storage. vSAN requires at least three nodes in a private cloud to provide protection against a single failure.",
+          "The following table describes vSphere cluster limits in private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 32 Private cloud and cluster limitations The following limitations apply to private clouds and clusters: You can create private clouds with mixed node types, combining ve1 and ve2 nodes in a single private cloud.",
+          "About VMware Engine private clouds A Google Cloud VMware Engine private cloud is an isolated VMware stack that consists of the following VMware components: ESXi hosts vCenter Server vSAN NSX HCX Private clouds help you address a variety of common needs for network infrastructure: Growth."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    }
+  ]
+}

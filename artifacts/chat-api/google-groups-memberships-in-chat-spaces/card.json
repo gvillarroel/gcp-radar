@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.226Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Google Groups memberships in Chat spaces",
+  "feature_slug": "google-groups-memberships-in-chat-spaces",
+  "summary": "The Chat API can retrieve Google Groups that are members of a Chat space through membership APIs.",
+  "extended_definition": "The Chat API can retrieve Google Groups that are members of a Chat space through membership APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/get",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces.members \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "source_id": "site-api-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: groups/{group} Methods create Creates a membership for the calling Chat app, a user, or a Google Group. delete Deletes a membership. get Returns details about a membership. list Lists memberships in a space. patch Updates a membership.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-24 UTC.\"],[],[\"Membership resource defines relationships within Google Chat spaces, indicating if a user or app is invited, present, or absent.",
+          "Resource: Membership JSON representation MembershipState MembershipRole Group JSON representation Methods Resource: Membership Represents a membership relation in Google Chat, such as whether a user or Chat app is invited to, part of, or absent from a space."
+        ]
+      },
+      {
+        "title": "Method: spaces.members.list \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list",
+        "source_id": "site-docs-root-2",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supports the following types of authentication : App authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.bot https://www.googleapis.com/auth/chat.app.memberships (requires administrator approval ) User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.memberships.readonly https://www.googleapis.com/auth/chat.memberships https://www.googleapis.com/auth/chat.import (import mode spaces only) User authentication grants administrator privileges when an administrator account authenticates, useAdminAccess is true , and one of the following authorization scopes is used: https://www.googleapis.com/auth/chat.admin.memberships.readonly https://www.googleapis.com/auth/chat.admin.memberships HTTP request GET https://chat.googleapis.com/v1/{parent=spaces/ }/members The URL uses gRPC Transcoding syntax.",
+          "Listing memberships with app authentication lists memberships in spaces that the Chat app has access to, but excludes Chat app memberships, including its own.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-07-16 UTC.\"],[],[\"This document outlines how to list memberships within a Google Chat space using the API."
+        ]
+      },
+      {
+        "title": "Method: spaces.members.get \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/get",
+        "source_id": "site-docs-root-2",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supports the following types of authentication : App authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.bot https://www.googleapis.com/auth/chat.app.memberships (requires administrator approval ) User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.memberships.readonly https://www.googleapis.com/auth/chat.memberships User authentication grants administrator privileges when an administrator account authenticates, useAdminAccess is true , and one of the following authorization scopes is used: https://www.googleapis.com/auth/chat.admin.memberships.readonly https://www.googleapis.com/auth/chat.admin.memberships HTTP request GET https://chat.googleapis.com/v1/{name=spaces/ /members/ } The URL uses gRPC Transcoding syntax.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-07-16 UTC.\"],[],[\"This document outlines how to retrieve membership details using a GET request to https://chat.googleapis.com/v1/{name=spaces/ /members/ }.",
+          "Home Google Workspace Google Chat Reference Send feedback Method: spaces.members.get Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chat.admin.memberships",
+      "chat.admin.memberships.readonly",
+      "chat.app.memberships",
+      "chat.bot",
+      "chat.googleapis.com",
+      "chat.import",
+      "chat.memberships",
+      "chat.memberships.readonly",
+      "developers.google.com",
+      "gmail.com",
+      "spaces.members",
+      "spaces.members.create",
+      "spaces.members.delete",
+      "spaces.members.get",
+      "spaces.members.list",
+      "spaces.members.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/get"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/get"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/get"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/list",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members/get"
+      ]
+    }
+  ]
+}

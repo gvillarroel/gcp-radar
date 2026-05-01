@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.226Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "User read states",
+  "feature_slug": "user-read-states",
+  "summary": "The Chat API can get and update a user's read state in a space and get a user's read state in a message thread.",
+  "extended_definition": "The Chat API can get and update a user's read state in a space and get a user's read state in a message thread.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api-overview",
+      "https://developers.google.com/workspace/chat/api/reference/rest",
+      "https://developers.google.com/workspace/chat/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Develop with Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/overview",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource reference: RPC reference REST reference For example usage, see: Get space read state Update space read state Get thread read state User read states User read states are singleton resources that represent details about a specified user's last read message in a Google Chat space or a message thread.",
+          "Space read state resource reference: RPC reference REST reference Thread read state resource reference: RPC reference REST reference For example usage, see: Get space read state Update space read state Get thread read state User space notification settings User space notification settings are singleton resources that represent a specified user notification settings in a Google Chat space.",
+          "Google Chat API overview The Chat API consists of gRPC services or REST resources and methods that grant access to Chat, including spaces, space members, messages, message reactions, message attachments, space events, and user read states."
+        ]
+      },
+      {
+        "title": "Develop with Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource reference: RPC reference REST reference For example usage, see: Get space read state Update space read state Get thread read state User read states User read states are singleton resources that represent details about a specified user's last read message in a Google Chat space or a message thread.",
+          "Space read state resource reference: RPC reference REST reference Thread read state resource reference: RPC reference REST reference For example usage, see: Get space read state Update space read state Get thread read state User space notification settings User space notification settings are singleton resources that represent a specified user notification settings in a Google Chat space.",
+          "Google Chat API overview The Chat API consists of gRPC services or REST resources and methods that grant access to Chat, including spaces, space members, messages, message reactions, message attachments, space events, and user read states."
+        ]
+      },
+      {
+        "title": "Google Chat API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The API facilitates actions like creating, reading, updating, and deleting Chat entities and provides access to user read states and space events.",
+          "REST Resource: v1.users.spaces Methods getSpaceReadState GET /v1/{name=users/ /spaces/ /spaceReadState} Returns details about a user's read state within a space, used to identify read and unread messages. updateSpaceReadState PATCH /v1/{spaceReadState.name=users/ /spaces/ /spaceReadState} Updates a user's read state within a space, used to identify read and unread messages.",
+          "Additionally, it provides methods to handle user read states within spaces and threads and list events of the spaces.\\n\"]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chat.googleapis.com",
+      "developers.google.com",
+      "v1.customEmojis",
+      "v1.media",
+      "v1.spaces",
+      "v1.spaces.members",
+      "v1.spaces.messages",
+      "v1.spaces.messages.attachments",
+      "v1.spaces.messages.reactions",
+      "v1.spaces.spaceEvents",
+      "v1.users.sections",
+      "v1.users.sections.items",
+      "v1.users.spaces",
+      "v1.users.spaces.spaceNotificationSetting",
+      "v1.users.spaces.threads"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api-overview",
+        "https://developers.google.com/workspace/chat/overview",
+        "https://developers.google.com/workspace/chat/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api-overview",
+        "https://developers.google.com/workspace/chat/overview",
+        "https://developers.google.com/workspace/chat/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api-overview",
+        "https://developers.google.com/workspace/chat/overview",
+        "https://developers.google.com/workspace/chat/api/reference/rest"
+      ]
+    }
+  ]
+}

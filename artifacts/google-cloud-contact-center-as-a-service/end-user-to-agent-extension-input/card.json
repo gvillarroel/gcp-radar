@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.133Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "End-user-to-agent extension input",
+  "feature_slug": "end-user-to-agent-extension-input",
+  "summary": "Administrators can configure end users to enter an agent extension number during a call and provide supporting prompt and directory messages.",
+  "extended_definition": "Administrators can configure end users to enter an agent extension number during a call and provide supporting prompt and directory messages.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent desktop \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want a custom role that lets a user configure the agent desktop, configure announcements, or use the agent desktop, you need to select the correct permission settings for that custom role.",
+          "Permissions Users with the Admin role can configure agent desktop settings and announcements but can't use the agent desktop.",
+          "Conversely, users with the Agent role can use the agent desktop but can't configure agent desktop settings and announcements."
+        ]
+      },
+      {
+        "title": "\"Agent extensions guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent extensions guide Stay organized with collections Save and categorize content based on your preferences.",
+          "Set deflections for extension calls If your administrator gives you permissions, you can set deflections for agent to agent calls or end-user to agent calls.",
+          "Agent extensions allow agents to be assigned a phone number extension for agent to agent and end-user to agent calling."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Do this by configuring the Enable extension input at the beginning of a call checkbox when you turn on and configure end-user to agent calling .",
+          "The end-user does one of the following: The end-user enters an agent extension number before the specified number of seconds of wait time elapses (wait time is specified in Turn on and configure end-user to agent calling ).",
+          "To configure a prompt for the end-user, do the following: Select the Extension input announcement message checkbox. (Optional): Edit the text-to-speech message or upload an audio recording that contains your prompt."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+      ]
+    }
+  ]
+}

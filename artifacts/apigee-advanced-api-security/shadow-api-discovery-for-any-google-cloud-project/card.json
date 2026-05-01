@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.907Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Shadow API Discovery for any Google Cloud project",
+  "feature_slug": "shadow-api-discovery-for-any-google-cloud-project",
+  "summary": "Shadow API Discovery can now be configured and run in any Google Cloud project, with centralized viewing and comparison of discovered APIs against API Hub catalogs.",
+  "extended_definition": "Shadow API Discovery can now be configured and run in any Google Cloud project, with centralized viewing and comparison of discovered APIs against API Hub catalogs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+      "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+      "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shadow API Discovery overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable Shadow API Discovery Shadow API Discovery is part of the Advanced API Security add-on and is available for Google Cloud projects with or without Apigee provisioning.",
+          "If your Google Cloud project is not provisioned for Apigee, you can add Shadow API Discovery to your project by contacting Apigee Sales .",
+          "If you enable Shadow API Discovery on a project with multiple networks, you might see unexpected behavior."
+        ]
+      },
+      {
+        "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Evolving from the Shadow API Discovery feature in Apigee, API observations in API hub uses automated discovery processes to find and catalog all your APIs—both known and unknown—into a single, unified, and managed view.",
+          "While the feature itself doesn't have direct costs, the discovery and observation process can involve data processing from your existing Apigee runtime projects, which can incur charges or hit quota limits.",
+          "However, since API observations in API hub leverages Shadow API discovery, which is part of the Apigee Advanced API Security add-on, you can incur charges related to your Apigee usage."
+        ]
+      },
+      {
+        "title": "\"Auto-register APIs from Google Cloud projects \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Auto-discovery of OAS happens irrespective of whether you attach an Apigee runtime project to API hub or if your Apigee runtime project is automatically attached to API hub as part of Apigee provisioning.",
+          "For existing projects that have pull-based Apigee and hybrid plugins configured, these plugins will continue to function and will be automatically migrated to the push-based type starting August, 2025 .",
+          "For existing projects that have Apigee instance type attributes configured, we recommend that you remove these attributes from any filtered search queries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Single-node private cloud retention policy",
+  "feature_slug": "single-node-private-cloud-retention-policy",
+  "summary": "Prevents single-node private clouds created after June 4, 2025 from automatically deleting after 60 days.",
+  "extended_definition": "Prevents single-node private clouds created after June 4, 2025 from automatically deleting after 60 days.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For single-node private clouds, the default vSAN storage policy uses a Failures to Tolerate (FTT) value of FTT=0.",
+          "The following table describes vSphere cluster limits in private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 32 Private cloud and cluster limitations The following limitations apply to private clouds and clusters: You can create private clouds with mixed node types, combining ve1 and ve2 nodes in a single private cloud.",
+          "The following are common use cases for a single-node private cloud: Proof of concept: evaluating VMware Engine and its capabilities Disaster recovery testing: deploying your application from recent backups to periodically validate disaster recovery preparedness Application upgrade testing: test and validate application component upgrades before upgrading your application in production VMware Engine permits single-node private clouds without a time limit."
+        ]
+      },
+      {
+        "title": "\"Private cloud VMware components \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Single node private clouds For testing and proofs of concept with VMware Engine, you can create a private cloud that contains only a single node and cluster.",
+          "For example, you won't be able to use vSphere Distributed Resource Scheduler (DRS) or High Availability (HA). vSphere cluster limits The following table describes vSphere cluster limits in standard private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 21 The following table describes vSphere cluster limits in stretched private clouds: Resource Limit Minimum number of nodes to create a stretched private cloud (first cluster) 6 Minimum number of nodes to create a stretched cluster 6 Maximum number of nodes per stretched cluster 30 Maximum number of nodes per stretched private cloud 96 Maximum number of clusters per stretched private cloud 16 Guest operating system support You can install a VM with any guest operating system supported by VMware for the ESXi version in your private cloud.",
+          "The following table shows the default vSAN storage policy parameters: FTT Failure tolerance method Number of nodes in vSphere cluster 1 RAID 1 (mirroring) Creates 2 copies 3 and 4 nodes 2 RAID 1 (mirroring) Creates 3 copies 5 to 32 nodes Supported vSAN storage policies The following table shows the supported vSAN storage policies and the minimum number of nodes required to enable the policy: FTT Failure tolerance method Minimum number of nodes required in vSphere cluster 1 RAID 1 (mirroring) 3 1 RAID 5 (erasure coding) 4 2 RAID 1 (mirroring) 5 2 RAID 6 (erasure coding) 6 3 RAID 1 (mirroring) 7 NSX Data Center NSX Data Center provides network virtualization, micro segmentation, and network security capabilities on your private cloud."
+        ]
+      },
+      {
+        "title": "\"VMware Engine stretched private clouds \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A stretched private cloud can have multiple stretched clusters, but each must have exactly two Google Cloud zones for data nodes and one zone for the witness node. vSAN data encryption in stretched private clouds vSAN data encryption at rest is enabled by default in all stretched clusters of a stretched private cloud.",
+          "The management VMs are affixed to the primary site of the stretched cluster using affinity rules and are configured with the following storage policy: Site Disaster tolerance=1 (protect against one site failure) FTT=1 (for a six-node stretched ('cluster 0')) FTT=2 (for a node stretched greater than or equal to 10 ('cluster 0')) The default storage policy in a stretched cluster for workload VMs also follows the previous policy.",
+          "VMware Engine stretched private clouds A Google Cloud VMware Engine stretched private cloud is a private cloud that is stretched across two data zones and a witness zone, all within the same Google Cloud region."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vmware-components",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-stretched-private-cloud"
+      ]
+    }
+  ]
+}

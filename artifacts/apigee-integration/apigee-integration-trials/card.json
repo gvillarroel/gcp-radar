@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.152Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "feature_name": "Apigee Integration trials",
+  "feature_slug": "apigee-integration-trials",
+  "summary": "Makes Apigee Integrations available in Apigee Evaluation orgs so users can try the feature without billing charges.",
+  "extended_definition": "Makes Apigee Integrations available in Apigee Evaluation orgs so users can try the feature without billing charges.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/resolve",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions/list",
+      "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build integrations with Gemini Code Assist \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Integrations page appears listing all the integrations available in the Google Cloud project.",
+          "The Integrations page appears listing all the integrations available in the Google Cloud project.",
+          "The Integrations page appears listing all the integrations available in the Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.products.integrations.executions.list \\_|\\_ Apigee\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions/list",
+        "source_id": "site-api-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "IAM Permissions Requires the following IAM permissions on the parent resource: integrations.apigeeExecutions.list integrations.executions.list integrations.securityExecutions.list For more information, see the IAM documentation .",
+          "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.integrations.executions.list Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://integrations.googleapis.com/v1/{parent=projects/ /locations/ /products/ /integrations/ }/executions The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.products.integrations.executions.suspensions.resolve\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/resolve",
+        "source_id": "site-api-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Path parameters Parameters name string Required. projects/{gcpProjectId}/locations/{location}/products/{product}/integrations/{integration name}/executions/{execution name}/suspensions/{suspensionId} Request body The request body contains data with the following structure: JSON representation { \"suspension\" : { object ( Suspension ) } } Fields suspension object ( Suspension ) Suspension, containing the eventExecutionInfoId, taskId, and state to set on the corresponding suspension record.",
+          "IAM Permissions Requires one of the following IAM permissions on the name resource, depending on the resource type: integrations.apigeeSuspensions.resolve integrations.suspensions.resolve For more information, see the IAM documentation .",
+          "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.integrations.executions.suspensions.resolve Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.apigeeExecutions.list",
+      "integrations.apigeeSuspensions.resolve",
+      "integrations.executions.list",
+      "integrations.googleapis.com",
+      "integrations.securityExecutions.list",
+      "integrations.suspensions.resolve",
+      "projects.locations.products.integrations.executions",
+      "projects.locations.products.integrations.executions.list",
+      "projects.locations.products.integrations.executions.suspensions",
+      "projects.locations.products.integrations.executions.suspensions.lift",
+      "projects.locations.products.integrations.executions.suspensions.resolve",
+      "projects.locations.products.integrations.versions",
+      "projects.locations.products.integrations.versions.create",
+      "projects.locations.products.integrations.versions.delete"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/resolve",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/resolve",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions/list"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/resolve",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions/list"
+      ]
+    }
+  ]
+}

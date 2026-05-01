@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.112Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Instance replication",
+  "feature_slug": "instance-replication",
+  "summary": "Instance replication enables Filestore instances to replicate data to replicas.",
+  "extended_definition": "Instance replication enables Filestore instances to replicate data to replicas.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+      "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+      "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage instance replication \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "source_id": "site-docs-root-2",
+        "final_score": 338,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use cURL to call the Filestore API : curl -s \\ --header \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ --header \"Content-Type: application/json\" \\ -d '{\"tier\": \" TIER \", \"networks\": { \"network\": \" NETWORK \" }, \"file shares\": {\"name\": \" SHARE NAME \",\"capacity gb\": \" CAPACITY \"}, \"replication\": {\"replicas\":[{\"peer instance\": \"projects/ PROJECT /locations/ ACTIVE LOCATION /instances/ ACTIVE NAME \"}], \"role\":\"standby\"}, \"description\": \" DESCRIPTION \" }' \\ \"https://file.googleapis.com/v1beta1/projects/ PROJECT /locations/ REPLICA LOCATION /instances?instanceId= REPLICA INSTANCE NAME \" Where: TIER is the name of the service tier you want to use for the replica.",
+          "When successfully completed, the following response or similar is returned: createTime: '2025-12-22T14:03:33.727531128Z' customPerformanceSupported: true description: Replica of active, us-central1 fileShares: - capacityGb: '1024' name: share name: projects/genomics-project/locations/us-central1/instances/my-replica networks: - connectMode: DIRECT PEERING ipAddresses: - 10.229.150.130 modes: - MODE IPV4 network: default reservedIpRange: 10.229.150.128/26 performanceLimits: maxIops: '12000' maxReadIops: '12000' maxReadThroughputBps: '125829120' maxWriteIops: '4000' maxWriteThroughputBps: '104857600' protocol: NFS V3 replication: replicas: - peerInstance: projects/genomics-project/locations/us-central1/instances/my-source state: READY stateUpdateTime: '2025-12-22T14:24:27.558413891Z' role: STANDBY state: READY tier: REGIONAL REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "When successfully completed, the following response or similar is returned: createTime: '2025-12-22T14:03:33.727531128Z' customPerformanceSupported: true description: Replica of active, us-east1-b fileShares: - capacityGb: '1024' name: share name: projects/genomics-project/locations/us-west2-a/instances/my-replica networks: - connectMode: DIRECT PEERING ipAddresses: - 10.229.150.130 modes: - MODE IPV4 network: default reservedIpRange: 10.229.150.128/26 performanceLimits: maxIops: '12000' maxReadIops: '12000' maxReadThroughputBps: '125829120' maxWriteIops: '4000' maxWriteThroughputBps: '104857600' protocol: NFS V3 replication: replicas: - peerInstance: projects/genomics-project/locations/us-east1-b/instances/my-source state: PAUSED stateUpdateTime: '2025-12-22T14:24:27.558413891Z' role: STANDBY state: READY tier: REGIONAL REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.instances \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "source_id": "site-api-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: Instance JSON representation State FileShareConfig JSON representation NfsExportOptions JSON representation AccessMode SquashMode NetworkConfig JSON representation AddressMode ConnectMode PscConfig JSON representation SuspensionReason Replication JSON representation Role ReplicaConfig JSON representation State StateReason PerformanceConfig JSON representation IOPSPerTB JSON representation FixedIOPS JSON representation PerformanceLimits JSON representation Methods Resource: Instance A Filestore instance.",
+          "Home Documentation Storage Filestore Reference Send feedback REST Resource: projects.locations.instances Stay organized with collections Save and categorize content based on your preferences.",
+          "The range you specify can't overlap with either existing subnets or assigned IP address ranges for other Filestore instances in the selected VPC network. ipAddresses[] string Output only."
+        ]
+      },
+      {
+        "title": "Monitoring instances and quota \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the Filestore instance caches the data, some write operations are not reflected as disk writes. ✓ ✓ Metadata operations count Number of disk metadata operations. ✓ Free bytes Number of free disk bytes. ✓ ✓ Free disk space percent Percentage of free disk bytes. ✓ ✓ Free raw capacity percent Free raw capacity as a percentage of total space. ✓ Procedure call count Returns the same information as the nfsstat -s command. ✓ Snapshots used bytes The amount of space used for storing snapshots, measured in bytes. ✓ Time (in milliseconds) spent on read operations Time spent on disk reads. ✓ Time (in milliseconds) spent on write operations Time spent on disk writes. ✓ Used bytes Number of used disk bytes. ✓ ✓ Used space percent Percentage of used disk bytes. ✓ ✓ Memory-cached operations only occur in basic tier instances.",
+          "Set the following specifications: Field Configuration Alert trigger Any time series violates Threshold position Below threshold Threshold value Enter the lowest acceptable free disk space percentage for each of your Filestore instances.",
+          "Home Documentation Storage Filestore Guides Send feedback Monitoring instances and quota Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerClient.ListInstancesFixedSizeCollection (1.89.0)\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 253,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListInstancesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > CloudFilestoreManagerClient.ListInstancesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<CloudFilestoreManagerClient.ListInstancesPage> pages, int collectionSize) protected CloudFilestoreManagerClient .",
+          "ListInstancesPage > pages , int collectionSize ) Parameters Name Description pages List < ListInstancesPage > collectionSize int Returns Type Description CloudFilestoreManagerClient.ListInstancesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class CloudFilestoreManagerClient.ListInstancesFixedSizeCollection (1.89.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPage",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPagedResponse",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "file.googleapis.com",
+      "java.lang.Object",
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection"
+      ]
+    }
+  ]
+}

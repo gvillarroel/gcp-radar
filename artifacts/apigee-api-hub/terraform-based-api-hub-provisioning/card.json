@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.962Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "Terraform-based API hub provisioning",
+  "feature_slug": "terraform-based-api-hub-provisioning",
+  "summary": "API hub instances can now be provisioned programmatically with Terraform in Google Cloud, including support in Cloud Shell.",
+  "extended_definition": "API hub instances can now be provisioned programmatically with Terraform in Google Cloud, including support in Cloud Shell.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/deprovision",
+      "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+      "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Provision API hub using Terraform \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform",
+        "source_id": "site-iam-reference",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Provision API hub using Terraform To provision API hub using Terraform, complete the following steps: Caution: If you have recently deprovisioned API hub, you must wait 7 days before provisioning a new instance in the same Google Cloud project.",
+          "Initialize Terraform in the directory: terraform init Generate the Terraform execution plan based on the current state of your project and the configuration file: terraform plan Apply the plan to provision API hub: terraform apply If prompted, enter yes to confirm the deployment.",
+          "This is because deprovisioning moves the associated Apigee organization (if any) to a soft-delete state for 7 days , and API hub can only be reprovisioned after the Apigee org is permanently deleted."
+        ]
+      },
+      {
+        "title": "Provision API hub in the Cloud console \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "source_id": "site-docs-root-required-3",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is because deprovisioning moves the associated Apigee organization (if any) to a soft-delete state for 7 days , and API hub can only be reprovisioned after the Apigee org is permanently deleted.",
+          "This is because deprovisioning moves the associated Apigee organization (if any) to a soft-delete state for 7 days , API hub can only be reprovisioned after the Apigee org is permanently deleted.",
+          "Considerations If you have recently deprovisioned API hub, you must wait 7 days before provisioning a new instance in the same Google Cloud project."
+        ]
+      },
+      {
+        "title": "Deprovision Apigee API hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/deprovision",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REST API Look up the project ID of the project where the API hub instance is located: curl --location 'https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /apiHubInstances:lookup' \\ --header 'Authorization: Bearer $(gcloud auth print-access-token)' Replace the following: PROJECT ID : the project ID of the Google Cloudproject where the API hub instance is provisioned.",
+          "Delete the API hub instance: curl --location --request DELETE 'https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /apiHubInstances/ INSTANCE ID ' \\ --header 'Authorization: Bearer $(gcloud auth print-access-token)' Replace the following: PROJECT ID : the project ID of the Google Cloud project where the API hub instance is provisioned.",
+          "Deprovisioning an API hub instance removes all associated resources, including APIs, versions, deployments, and any Apigee organizations (with no Apigee instances ) from your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apihub.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform",
+        "https://docs.cloud.google.com/apigee/docs/apihub/deprovision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform",
+        "https://docs.cloud.google.com/apigee/docs/apihub/deprovision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform",
+        "https://docs.cloud.google.com/apigee/docs/apihub/deprovision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform",
+        "https://docs.cloud.google.com/apigee/docs/apihub/deprovision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision"
+      ]
+    }
+  ]
+}

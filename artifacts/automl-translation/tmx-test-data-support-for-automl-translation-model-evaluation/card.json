@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.747Z",
+  "source_step08_card": "data/step-08/current/products/automl-translation/card.json",
+  "product_name": "AutoML Translation",
+  "product_slug": "automl-translation",
+  "feature_name": "TMX test-data support for AutoML Translation model evaluation",
+  "feature_slug": "tmx-test-data-support-for-automl-translation-model-evaluation",
+  "summary": "AutoML Translation added support for .tmx files as test data when evaluating existing translation models.",
+  "extended_definition": "AutoML Translation added support for .tmx files as test data when evaluating existing translation models.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/automl-beginner",
+      "https://docs.cloud.google.com/translate/docs/advanced/nmt-customization",
+      "https://docs.cloud.google.com/translate/docs/advanced/translation-model-evaluation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Evaluate translation models \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translation-model-evaluation",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "These files will be named with the associated model ID with the test set name appended.",
+          "Your model is evaluated against the test set and an evaluation score is produced.",
+          "Use Gen AI evaluation service The Gen AI evaluation service offers the following translation task evaluation metrics: MetricX COMET BLEU MetricX and COMET are pointwise model-based metrics that have been trained for translation tasks."
+        ]
+      },
+      {
+        "title": "Customizing the NMT model \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/automl-beginner",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If there's a mistake that you're particularly worried about your model making (like a translation mistake that might be costly in money or reputation) make sure your test set or procedure covers that case adequately for you to feel safe using your model in everyday tasks.",
+          "Testing Even if your BLEU score looks okay, it's a good practice to check the model yourself to make sure its performance matches your expectations.",
+          "The performance of your model on the test set is intended to give you a pretty good idea of how your model will perform on real-world data."
+        ]
+      },
+      {
+        "title": "Customizing the NMT model \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/nmt-customization",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If there's a mistake that you're particularly worried about your model making (like a translation mistake that might be costly in money or reputation) make sure your test set or procedure covers that case adequately for you to feel safe using your model in everyday tasks.",
+          "Testing Even if your BLEU score looks okay, it's a good practice to check the model yourself to make sure its performance matches your expectations.",
+          "The performance of your model on the test set is intended to give you a pretty good idea of how your model will perform on real-world data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.762Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Cloud SQL enhanced backups",
+  "feature_slug": "cloud-sql-enhanced-backups",
+  "summary": "Cloud SQL enhanced backups are generally available, with centralized backup management, enforced retention, granular scheduling, longer retention, and PITR after instance deletion.",
+  "extended_definition": "Cloud SQL enhanced backups are generally available, with centralized backup management, enforced retention, granular scheduling, longer retention, and PITR after instance deletion.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backup vault for immutable and indelible backups \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Centralized model : In the centralized model, organizations streamline backup management by creating backup vaults and deploying the appliance management console within a designated central administrator project.",
+          "Decentralized model : In the decentralized model, appliance management consoles and backup vaults are created in various projects based on the organization's specific needs and required isolation levels.",
+          "Centralized model : In the centralized model, organizations streamline backup management by creating backup vaults and plans within a designated central administrator project."
+        ]
+      },
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.",
+          "The appliance management console is deployed in the backup administration project and is highly available within the deployed region, providing resilience against zonal outages.",
+          "These backups require a Backup and DR management console and one or more backup/recovery appliances."
+        ]
+      },
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.",
+          "The appliance management console is deployed in the backup administration project and is highly available within the deployed region, providing resilience against zonal outages.",
+          "These backups require a Backup and DR management console and one or more backup/recovery appliances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+      ]
+    }
+  ]
+}

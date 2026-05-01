@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "GROUP BY ARRAY",
+  "feature_slug": "group-by-array",
+  "summary": "BigQuery SQL now generally supports grouping by ARRAY values, including use with SELECT DISTINCT.",
+  "extended_definition": "BigQuery SQL now generally supports grouping by ARRAY values, including use with SELECT DISTINCT.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: SELECT ARRAY ( SELECT AS STRUCT 1 a , 2 b ) SELECT AS STRUCT can be used in a scalar or array subquery to produce a single STRUCT type grouping multiple values together.",
+          "For example: -- GROUP BY with GROUPING SETS and CUBE WITH Products AS ( SELECT 'shirt' AS product type , 't-shirt' AS product name , 3 AS product count UNION ALL SELECT 'shirt' , 't-shirt' , 8 UNION ALL SELECT 'shirt' , 'polo' , 25 UNION ALL SELECT 'pants' , 'jeans' , 6 ) SELECT product type , product name , SUM ( product count ) AS product sum FROM Products GROUP BY GROUPING SET S ( product type , CUBE ( product type , product name )) ORDER BY product type , product name ; / --------------+--------------+-------------+ product type product name product sum +--------------+--------------+-------------+ NULL NULL 42 NULL jeans 6 NULL polo 25 NULL t-shirt 11 pants NULL 6 pants NULL 6 pants jeans 6 shirt NULL 36 shirt NULL 36 shirt polo 25 shirt t-shirt 11 +--------------+--------------+------------- / -- GROUP BY with GROUPING SETS, but without CUBE -- (produces the same results as GROUPING SETS with CUBE) WITH Products AS ( SELECT 'shirt' AS product type , 't-shirt' AS product name , 3 AS product count UNION ALL SELECT 'shirt' , 't-shirt' , 8 UNION ALL SELECT 'shirt' , 'polo' , 25 UNION ALL SELECT 'pants' , 'jeans' , 6 ) SELECT product type , product name , SUM ( product count ) AS product sum FROM Products GROUP BY GROUPING SET S ( product type , ( product type , product name ), product type , product name , ()) ORDER BY product type , product name ; Group rows by ROLLUP GROUP BY ROLLUP ( grouping list ) grouping list : { groupable item groupable item set }[, ...] groupable item set : ( groupable item [, ...] ) Description The GROUP BY ROLLUP clause produces aggregated data for rolled up grouping sets .",
+          "In the example below, (product type, product name) is a groupable item set. -- GROUP BY with GROUPING SETS and a groupable item set WITH Products AS ( SELECT 'shirt' AS product type , 't-shirt' AS product name , 3 AS product count UNION ALL SELECT 'shirt' , 't-shirt' , 8 UNION ALL SELECT 'shirt' , 'polo' , 25 UNION ALL SELECT 'pants' , 'jeans' , 6 ) SELECT product type , product name , SUM ( product count ) AS product sum FROM Products GROUP BY GROUPING SET S ( product type , ( product type , product name )) ORDER BY product type , product name ; / --------------+--------------+-------------+ product type product name product sum +--------------+--------------+-------------+ pants NULL 6 pants jeans 6 shirt NULL 36 shirt polo 25 shirt t-shirt 11 +--------------+--------------+------------- / -- GROUP BY with GROUPING SETS but without a groupable item set -- (produces the same results as GROUPING SETS with a groupable item set) WITH Products AS ( SELECT 'shirt' AS product type , 't-shirt' AS product name , 3 AS product count UNION ALL SELECT 'shirt' , 't-shirt' , 8 UNION ALL SELECT 'shirt' , 'polo' , 25 UNION ALL SELECT 'pants' , 'jeans' , 6 ) SELECT product type , NULL , SUM ( product count ) AS product sum FROM Products GROUP BY product type UNION ALL SELECT product type , product name , SUM ( product count ) AS product sum FROM Products GROUP BY product type , product name ORDER BY product type , product name ; You can include ROLLUP in a GROUP BY GROUPING SETS clause."
+        ]
+      },
+      {
+        "title": "Data types \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Special floating point values are grouped in the following way, including both grouping done by a GROUP BY clause and grouping done by the DISTINCT keyword: NULL NaN — All NaN values are considered equal when grouping. -inf 0 or -0 — All zero values are considered equal when grouping. +inf Grouping with arrays An ARRAY type is groupable if its element type is groupable.",
+          "If you write Items to a table from the previous query, then each array is written as an empty array: SELECT numbers , description , numbers IS NULL AS numbers null FROM Items ; / ---------+----------------------+--------------+ numbers description numbers null +---------+----------------------+--------------+ [] Empty array in query false [] NULL array in query false +---------+----------------------+-------------- / GoogleSQL for BigQuery raises an error if the query result has an array which contains NULL elements, although such an array can be used inside the query.",
+          "For example: SELECT CAST ( NULL AS ARRAY<INT64> ) IS NULL AS array is null ; / ---------------+ array is null +---------------+ TRUE +--------------- / GoogleSQL for BigQuery translates a NULL array into an empty array in the query result, although inside the query, NULL and empty arrays are two distinct values."
+        ]
+      },
+      {
+        "title": "Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Even though the number of code points is different, the two strings are considered equal when the collation units are considered the same. '\\u0041\\u030A' is 'Å' (two code points) '\\u0061\\u030A' is 'å' (two code points) '\\u00C5' is 'Å' (one code point) In the following examples, the difference between '\\u0061\\u030A' and '\\u00C5' is tertiary. -- Returns FALSE ' \\ u0061 \\ u030A' LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) LIKE '% \\ u00C5%' ; -- Returns TRUE COLLATE ( ' \\ u0061 \\ u030A' , 'und:ci' ) = COLLATE ( ' \\ u00C5' , 'und:ci' ); In the following example, '\\u0083' is a NO BREAK HERE character and is ignored. -- Returns FALSE ' \\ u0083' LIKE '' ; -- Returns TRUE COLLATE ( ' \\ u0083' , 'und:ci' ) LIKE '' ; Quantified LIKE operator The quantified LIKE operator supports the following syntax: search value [ NOT ] LIKE quantifier patterns quantifier : { ANY SOME ALL } patterns : { ( expression [ , ... ] ) UNNEST ( array expression ) } Description Checks search value for matches against several patterns.",
+          "Examples In this example, the EXISTS operator returns FALSE because there are no rows in Words where the direction is south : WITH Words AS ( SELECT 'Intend' as value , 'east' as direction UNION ALL SELECT 'Secure' , 'north' UNION ALL SELECT 'Clarity' , 'west' ) SELECT EXISTS ( SELECT value FROM Words WHERE direction = 'south' ) as result ; / --------+ result +--------+ FALSE +-------- / IN operator The IN operator supports the following syntax: search value [ NOT ] IN value set value set : { ( expression [ , ... ] ) ( subquery ) UNNEST ( array expression ) } Description Checks for an equal value in a set of values.",
+          "This is equivalent to: IN ( SELECT element FROM UNNEST ( array expression ) AS element ) This operator supports collation , but these limitations apply: [NOT] IN UNNEST doesn't support collation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators"
+      ]
+    }
+  ]
+}

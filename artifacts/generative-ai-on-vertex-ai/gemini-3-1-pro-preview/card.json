@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Gemini 3.1 Pro Preview",
+  "feature_slug": "gemini-3-1-pro-preview",
+  "summary": "A reasoning Gemini model in preview with a 1M-token context window for complex multimodal problems.",
+  "extended_definition": "A reasoning Gemini model in preview with a 1M-token context window for complex multimodal problems.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Gemini 3 prompting guide \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "source_id": "site-docs-root",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see an example of Gemini 3.1 Pro, run the \"Intro to Gemini 3.1 Pro\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Prompting is a key part of working with any Gemini model and the new features of Gemini 3 models can be prompted to help solve complex problems and achieve other tasks, such as interpreting large amounts of text, solving complex mathematical problems, or even creating images and videos.",
+          "You can also anchor the model's reasoning to the provided data by starting your question with a phrase like Based on the entire document above... .",
+          "Prompting strategies The following sections describe a variety of prompting strategies that you can use with Gemini 3 models."
+        ]
+      },
+      {
+        "title": "\"Context Caching for Fine-tuned Gemini Models \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure that you have the following information: The ID and the version of the tuned Gemini model The endpoint resource name for the deployed fine-tuned model Supported versions Fine-tuned Gemini models support implicit caching for the following versions: Gemini 3.1 Pro Gemini 3.1 Flash-Lite Gemini 3 Pro Gemini 3 Flash Gemini 2.5 Pro Gemini 2.5 Flash Gemini 2.5 Flash-Lite Explicit caching is supported for the following versions: Gemini 3.1 Pro Gemini 3.1 Flash-Lite Gemini 3 Pro Gemini 3 Flash Gemini 2.5 Pro Gemini 2.5 Flash Gemini 2.5 Flash-Lite Gemini 2.0 Flash (note: not supported in gemini-2.0-flash-live-preview-04-09 ) Gemini 2.0 Flash-Lite Create a context cache for a fine-tuned model The procedure for creating a context cache for a fine-tuned model largely follows the steps outlined in Create a context cache .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents Request JSON body: { \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID @ MODEL VERSION \", \"displayName\": \" CACHE DISPLAY NAME \", \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"fileData\": { \"mimeType\": \" MIME TYPE \", \"fileUri\": \" CONTENT TO CACHE URI \" } }] }] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "When you use a context cache, you can't specify the following properties: GenerativeModel.system instructions GenerativeModel.tool config GenerativeModel.tools REST You can use REST to specify a context cache with a prompt by using the Vertex AI API to send a POST request to the publisher model endpoint."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Maps in Vertex AI \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Routing tool supports the following: Modes of transportation : Routing for driving, walking, bicycling, transit, and two-wheeled motorized vehicles (not all travel modes are available in all countries) Multiple waypoints : Up to 13 intermediate stops between origin and destination Real-time traffic : Accounting for current traffic conditions to provide accurate \"live\" travel times rather than static averages The following are examples of the types of questions that the Routing tool supports: Proximity based on travel time : \"What are some American restaurants within a 10-minute walk from the Hilton Hotel on 1335 6th Ave in NYC?\" Commute estimation : \"How long does it take to take public transit from Pike Place Market to Capitol Hill in Seattle?\" Understand the response When a prompt triggers the Routing tool, the model generates a natural language answer backed by structured metadata.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent Request JSON body: { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": \" PROMPT \" }] }], \"tools\": [{ \"googleMaps\": { \"enableWidget\": \" ENABLE WIDGET \" } }], \"toolConfig\": { \"retrievalConfig\": { \"latLng\": { \"latitude\": LATITUDE , \"longitude\": LONGITUDE }, \"languageCode\": \"en US\" } }, \"model\": \"projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent\" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "",
+        "evidence_snippets": [
+          "There is a slight chance of rain on both days.\\n\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"webSearchQueries\": [ \"weather in Chicago this weekend\" ], \"searchEntryPoint\": { \"renderedContent\": \"...\" }, \"groundingChunks\": [ { \"web\": { \"uri\": \"https://www.google.com/search?q=weather+in+Chicago,+IL\", \"title\": \"Weather information for locality: Chicago, administrative area: IL\", \"domain\": \"google.com\" } }, { \"web\": { \"uri\": \"...\", \"title\": \"weatherbug.com\", \"domain\": \"weatherbug.com\" } } ], \"groundingSupports\": [ { \"segment\": { \"startIndex\": 85, \"endIndex\": 214, \"text\": \"The temperature will be between 49°F (9°C) and 55°F (13°C) on Saturday and between 51°F (11°C) and 56°F (13°C) on Sunday.\" }, \"groundingChunkIndices\": [ 0 ], \"confidenceScores\": [ 0.8662828 ] }, { \"segment\": { \"startIndex\": 215, \"endIndex\": 261, \"text\": \"There is a slight chance of rain on both days.\" }, \"groundingChunkIndices\": [ 1, 0 ], \"confidenceScores\": [ 0.62836814, 0.6488607 ] } ], \"retrievalMetadata\": {} } } ], \"usageMetadata\": { \"promptTokenCount\": 10, \"candidatesTokenCount\": 98, \"totalTokenCount\": 108, \"trafficType\": \"ON DEMAND\", \"promptTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 10 } ], \"candidatesTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 98 } ] }, \"modelVersion\": \"gemini-2.0-flash\", \"createTime\": \"2025-05-19T14:42:55.000643Z\", \"responseId\": \"b0MraIMFoqnf-Q-D66G4BQ\" } Grounding with Google Image Search Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "This capability supports all grounding methods including Search, Google Maps, and Vertex AI Search, providing the precise source details required to display accurate, interactive citations within your application. response = client . models . generate content ( model = \"gemini-3.1-pro-preview\" , contents = \"Where will the next FIFA World Cup be held?\" , config = types .",
+          "Grounding with Google Image Search is available in Preview only for the Gemini 3.1 Flash Image model ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "domain.com",
+      "domain2.com",
+      "request.json",
+      "weatherbug.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    }
+  ]
+}

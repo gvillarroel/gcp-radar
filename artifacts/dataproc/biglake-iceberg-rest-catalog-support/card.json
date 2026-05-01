@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "BigLake Iceberg REST catalog support",
+  "feature_slug": "biglake-iceberg-rest-catalog-support",
+  "summary": "The Dataproc Iceberg optional component supports the BigLake Iceberg REST catalog in Compute Engine image versions 2.2 and 2.3.",
+  "extended_definition": "The Dataproc Iceberg optional component supports the BigLake Iceberg REST catalog in Compute Engine image versions 2.2 and 2.3.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+      "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+      "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an Apache Iceberg table with metadata in BigLake metastore \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "source_id": "site-iam-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In a local terminal window or in Cloud Shell , run the following curl command to download the iceberg-spark-runtime-3.5 2.12-1.6.1 JAR file to the current directory. curl -o iceberg-spark-runtime-3.5 2.12-1.6.1.jar https://storage-download.googleapis.com/maven-central/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5 2.12/1.6.1/iceberg-spark-runtime-3.5 2.12-1.6.1.jar Uses the gcloud CLI to copy the local iceberg-spark-runtime-3.5 2.12-1.6.1 JAR file from the current directory to your bucket in Cloud Storage. gcloud storage cp iceberg-spark-runtime-3.5 2.12-1.6.1.jar gs:// BUCKET / Submit the Spark SQL job Select a tab to follow the instructions to submit the Spark SQL job to the Managed Service for Apache Spark service using the gcloud CLI, Google Cloud console, or Managed Service for Apache Spark REST API. gcloud Run the following gcloud dataproc jobs submit spark-sql command locally in a local terminal window or in Cloud Shell to submit the Spark SQL job to create the Iceberg table. gcloud dataproc jobs submit spark-sql \\ --project= PROJECT ID \\ --cluster= CLUSTER NAME \\ --region= REGION \\ --jars=\"gs:// BUCKET /1.6.1/iceberg-spark-runtime-3.5 2.12-1.6.1.jar, BIGLAKE ICEBERG CATALOG JAR \" \\ --properties=\"spark.sql.catalog.",
+          "HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /jobs:submit Request JSON body: { \"projectId\": \" PROJECT ID \", \"job\": { \"placement\": { \"clusterName\": \" CLUSTER NAME \" }, \"statusHistory\": [], \"reference\": { \"jobId\": \"\", \"projectId\": \" PROJECT ID \" }, \"sparkSqlJob\": { \"properties\": { \"spark.sql.catalog.\" CATALOG NAME \": \"org.apache.iceberg.spark.SparkCatalog\", \"spark.sql.catalog.\" CATALOG NAME \".catalog-impl\": \"org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog\", \"spark.sql.catalog.\" CATALOG NAME \".gcp project\": \" PROJECT ID \", \"spark.sql.catalog.\" CATALOG NAME \".gcp location\": \" LOCATION \", \"spark.sql.catalog.\" CATALOG NAME \".warehouse\": \"gs:// BUCKET / WAREHOUSE FOLDER \" }, \"jarFileUris\": [ \"gs:// BUCKET /iceberg-spark-runtime-3.5 2.12-1.6.1.jar, BIGLAKE ICEBERG CATALOG JAR \" ], \"scriptVariables\": {}, \"queryFileUri\": \"gs:// BUCKET /iceberg-table.sql\" } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "USER catalog.warehouse\": \"gs:// BUCKET / WAREHOUSE FOLDER \" }, \"jarFileUris\": [ \"gs:// BUCKET /iceberg-spark-runtime-3.5 2.12-1.6.1.jar\", \" BIGLAKE ICEBERG CATALOG JAR \" ] }, \"driverControlFilesUri\": \"gs://dataproc-...\", \"driverOutputResourceUri\": \"gs://dataproc-.../driveroutput\", \"jobUuid\": \"...\", \"region\": \" REGION \" } To monitor job progress and view job output, go to the Managed Service for Apache Spark Jobs page in the Google Cloud console, then click the Job ID to open the Job details page."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure a Spark session In your Jupyter Notebook, create a Spark session configured to use the BigQuery Iceberg REST Catalog. import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1beta/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , 'gs:// GCS BUCKET ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.hadoop.HadoopFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () Replace the following: CATALOG NAME : a name for your Iceberg catalog, for example, bq iceberg catalog .",
+          "To create the cluster, run the following gcloud command: gcloud beta dataproc clusters create CLUSTER NAME \\ --project = PROJECT ID \\ --region = REGION \\ --image-version = 2 .3-debian12 \\ --optional-components = ICEBERG,JUPYTER \\ --enable-component-gateway Replace the following: CLUSTER NAME : the name for your Managed Service for Apache Spark cluster.",
+          "Query the table using the retrieved snapshot ID. df = ( spark . read . format ( \"iceberg\" ) . option ( \"versionAsOf\" , oldest snapshot id ) . load ( \"base table\" ) ) df . show () The output shows the state of the table after the MERGE operation but before any UPDATE or DELETE operations. +---+ id +---+ 0 1 2 3 4 5 6 +---+ What's next Learn more about the BigQuery Iceberg REST Catalog ."
+        ]
+      },
+      {
+        "title": "Use Apache Iceberg tables with Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "source_id": "site-docs-root-2",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create an external table (overlay a Hive table on top of the Iceberg table): CREATE EXTERNAL TABLE hadoop table STORED BY 'org.apache.iceberg.mr.hive.HiveIcebergStorageHandler' LOCATION 'gs://<gcs-bucket-name>/hive-warehouse/<database-name>' TBLPROPERTIES ( 'iceberg.catalog' = 'gs://<gcs-bucket-name>/hive-warehouse/<database-name>' ); Check the table schema and whether the table format is Iceberg: describe formatted hadoop table; Read the data from the table: select from hadoop table; Use Iceberg table on Presto Presto queries use the Hive connector to get partition locations, so you must configure Presto accordingly to read and write data on the Iceberg table.",
+          "Presto Configurations Under each Managed Service for Apache Spark cluster node, create a file named iceberg.properties /etc/presto/conf/catalog/iceberg.properties and configure the hive.metastore.uri as follows: connector.name=iceberg hive.metastore.uri=thrift://<example.net:9083> Replace example.net:9083 with the correct host and port for your Hive metastore Thrift service.",
+          "Create Iceberg table on Presto Open the Presto client and use the \"Iceberg\" connector to get the metastore: --catalog iceberg --schema default Create a table to insert and update data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.googleapis.com",
+      "catalog.createTable",
+      "catalog.initialize",
+      "catalog.setConf",
+      "catalog.warehouse",
+      "connector.name",
+      "dataproc.googleapis.com",
+      "default.example",
+      "df1.schema",
+      "df1.write.format",
+      "download.googleapis.com",
+      "engine.hive.enabled",
+      "example.net",
+      "header.x",
+      "hive.metastore.uri",
+      "iceberg.catalog",
+      "iceberg.properties",
+      "org.apache.iceberg.gcp.auth.GoogleAuthManager",
+      "org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog",
+      "org.apache.iceberg.hadoop.HadoopFileIO",
+      "org.apache.iceberg.mr.hive.HiveIcebergStorageHandler",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "pyspark.context",
+      "pyspark.sql",
+      "request.json",
+      "rest.auth.type",
+      "spark.sparkContext.hadoopConfiguration",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions",
+      "table.sql",
+      "table.updateProperties"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-lakehouse",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg"
+      ]
+    }
+  ]
+}

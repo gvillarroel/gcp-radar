@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "BigQuery materialized views display in Vertex AI Workbench",
+  "feature_slug": "bigquery-materialized-views-display-in-vertex-ai-workbench",
+  "summary": "Displaying BigQuery materialized views in Vertex AI Workbench is corrected for proper rendering.",
+  "extended_definition": "Displaying BigQuery materialized views in Vertex AI Workbench is corrected for proper rendering.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Train and deploy your model \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CustomTrainingJob ( display name = JOB NAME , script path = \"task.py\" , container uri = \"us-docker.pkg.dev/vertex-ai/training/tf-cpu.2-8:latest\" , requirements =[ \"google-cloud-bigquery>=2.20.0\" , \"db-dtypes\" , \"protobuf<3.20.0\" ], model serving container image uri = \"us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-8:latest\" , ) Create and train your model In the previous step you created a CustomTrainingJob named job .",
+          "To start training your data and create your model, run the following code in your notebook: MODEL DISPLAY NAME = \"penguins model unique\" Start the training and create your model model = job.run( dataset=dataset, model display name=MODEL DISPLAY NAME, bigquery destination=f\"bq://{project id}\", args=CMDARGS, ) Before continuing with the next step, make sure the following appears in the job.run command's output to verify it's done: CustomTrainingJob run completed .",
+          "This parameter can be a tabular, image, video, or text dataset. model display name - A name for your model. bigquery destination - A string that specifies the location of your BigQuery dataset. args - The command-line arguments that are passed to the Python training script."
+        ]
+      },
+      {
+        "title": "Forecasting components \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component",
+        "source_id": "site-api-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VertexNotificationEmailOp Version history and release notes To learn more about the version history and changes to the Google Cloud Pipeline Components SDK, see the Google Cloud Pipeline Components SDK Release Notes .",
+          "Home Documentation AI and ML Vertex AI Reference Send feedback Forecasting components Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Build a pipeline for continuous model training \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the in operator to verify subject is present. print ( f \"Subject: { cloudevent [ 'subject' ] } \" ) Print out details from the protoPayload This field encapsulates a Cloud Audit Logging entry See https://cloud.google.com/logging/docs/audit#audit log entry structure payload = cloudevent . data . get ( \"protoPayload\" ) if payload : print ( f \"API method: { payload . get ( 'methodName' ) } \" ) print ( f \"Resource name: { payload . get ( 'resourceName' ) } \" ) print ( f \"Principal: { payload . get ( 'authenticationInfo' , dict ()) . get ( 'principalEmail' ) } \" ) row count = payload . get ( 'metadata' , dict ()) . get ( 'tableDataChange' , dict ()) . get ( 'insertedRowsCount' ) print ( f \"No. of rows: { row count } !!\" ) if row count : if int ( row count ) > 0 : print ( \"Pipeline trigger Condition met !!\" ) submit pipeline job () else : print ( \"No pipeline triggered !!!\" ) def submit pipeline job (): PROJECT ID = ' PROJECT ID ' REGION = ' REGION ' BUCKET NAME = \" BUCKET NAME \" DATASET NAME = \"mlops\" TABLE NAME = \"chicago\" base output dir = BUCKET NAME BUCKET URI = \"gs:// {} \" . format ( BUCKET NAME ) PIPELINE ROOT = \" {} /pipeline root/chicago-taxi-pipe\" . format ( BUCKET URI ) PIPELINE NAME = \"vertex-mlops-pipeline-tutorial\" EXPERIMENT NAME = PIPELINE NAME + \"-experiment\" REPO NAME = \"mlops\" TEMPLATE NAME = \"custom-model-training-evaluation-pipeline\" TRAINING JOB DISPLAY NAME = \"taxifare-prediction-training-job\" worker pool specs = [{ \"machine spec\" : { \"machine type\" : \"e2-highmem-2\" }, \"replica count\" : 1 , \"python package spec\" :{ \"executor image uri\" : \"us-docker.pkg.dev/vertex-ai/training/sklearn-cpu.1-0:latest\" , \"package uris\" : [ f \" { BUCKET URI } /trainer-0.1.tar.gz\" ], \"python module\" : \"trainer.task\" , \"args\" :[ \"--project-id\" , PROJECT ID , \"--training-dir\" , f \"/gcs/ { BUCKET NAME } \" , \"--bq-source\" , f \" { PROJECT ID } . { DATASET NAME } . { TABLE NAME } \" ] }, }] parameters = { \"project\" : PROJECT ID , \"location\" : REGION , \"training job display name\" : \"taxifare-prediction-training-job\" , \"worker pool specs\" : worker pool specs , \"base output dir\" : BUCKET URI , \"prediction container uri\" : \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest\" , \"model display name\" : \"taxifare-prediction-model\" , \"batch prediction job display name\" : \"taxifare-prediction-batch-job\" , \"target field name\" : \"fare\" , \"test data gcs uri\" : [ f \" { BUCKET URI } /test no target.csv\" ], \"ground truth gcs source\" : [ f \" { BUCKET URI } /test.csv\" ], \"batch predictions gcs prefix\" : f \" { BUCKET URI } /batch predict output\" , \"existing model\" : False } TEMPLATE URI = f \"https:// { REGION } -kfp.pkg.dev/ { PROJECT ID } / { REPO NAME } / { TEMPLATE NAME } /latest\" print ( \"TEMPLATE URI: \" , TEMPLATE URI ) request body = { \"name\" : PIPELINE NAME , \"displayName\" : PIPELINE NAME , \"runtimeConfig\" :{ \"gcsOutputDirectory\" : PIPELINE ROOT , \"parameterValues\" : parameters , }, \"templateUri\" : TEMPLATE URI } pipeline url = \"https://us-central1-aiplatform.googleapis.com/v1/projects/ {} /locations/ {} /pipelineJobs\" . format ( PROJECT ID , REGION ) creds , project = google . auth . default () auth req = google . auth . transport . requests .",
+          "Grant roles to your Google Account: ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/bigquery.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/aiplatform.user ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/storage.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/pubsub.editor ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/cloudfunctions.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/logging.viewer ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/logging.configWriter ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/iam.serviceAccountUser ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/eventarc.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/aiplatform.colabEnterpriseUser ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/artifactregistry.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/serviceusage.serviceUsageAdmin Enable the following APIs Artifact Registry API BigQuery API Cloud Build API Cloud Functions API Cloud Logging API Pub/Sub API Cloud Run Admin API Cloud Storage API Eventarc API Service Usage API Vertex AI API ! gcloud services enable artifactregistry.googleapis.com bigquery.googleapis.com cloudbuild.googleapis.com cloudfunctions.googleapis.com logging.googleapis.com pubsub.googleapis.com run.googleapis.com storage-component.googleapis.com eventarc.googleapis.com serviceusage.googleapis.com aiplatform.googleapis.com Grant roles to your project's service accounts: See the names of your service accounts ! gcloud iam service-accounts list Note the name of your Compute service agent.",
+          "Initialize the Vertex AI SDK with the project, staging bucket, location and experiment. from google.cloud import aiplatform aiplatform . init ( project = PROJECT ID , staging bucket = BUCKET URI , location = REGION , experiment = EXPERIMENT NAME ) aiplatform . autolog () Define the pipeline tasks In your notebook, define your pipeline custom model training evaluation pipeline : from kfp import dsl from kfp.dsl import importer from kfp.dsl import OneOf from google cloud pipeline components.v1.custom job import CustomTrainingJobOp from google cloud pipeline components.types import artifact types from google cloud pipeline components.v1.model import ModelUploadOp from google cloud pipeline components.v1.batch predict job import ModelBatchPredictOp from google cloud pipeline components.v1.model evaluation import ModelEvaluationRegressionOp from google cloud pipeline components.v1.vertex notification email import VertexNotificationEmailOp from google cloud pipeline components.v1.endpoint import ModelDeployOp from google cloud pipeline components.v1.endpoint import EndpointCreateOp from google.cloud import aiplatform define the train-deploy pipeline @dsl . pipeline ( name = \"custom-model-training-evaluation-pipeline\" ) def custom model training evaluation pipeline ( project : str , location : str , training job display name : str , worker pool specs : list , base output dir : str , prediction container uri : str , model display name : str , batch prediction job display name : str , target field name : str , test data gcs uri : list , ground truth gcs source : list , batch predictions gcs prefix : str , batch predictions input format : str = \"csv\" , batch predictions output format : str = \"jsonl\" , ground truth format : str = \"csv\" , parent model resource name : str = None , parent model artifact uri : str = None , existing model : bool = False ): Notification task notify task = VertexNotificationEmailOp ( recipients = EMAIL RECIPIENTS ) with dsl ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseUser",
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "artifactregistry.admin",
+      "artifactregistry.googleapis.com",
+      "bigquery.admin",
+      "bigquery.googleapis.com",
+      "cloudbuild.googleapis.com",
+      "cloudfunctions.admin",
+      "cloudfunctions.googleapis.com",
+      "component.googleapis.com",
+      "components.types",
+      "components.v1.batch",
+      "components.v1.custom",
+      "components.v1.endpoint",
+      "components.v1.model",
+      "components.v1.vertex",
+      "cpu.1",
+      "cpu.2",
+      "docker.pkg.dev",
+      "eventarc.admin",
+      "eventarc.googleapis.com",
+      "iam.serviceAccountUser",
+      "job.run",
+      "kfp.dsl",
+      "kfp.pkg.dev",
+      "logging.configWriter",
+      "logging.googleapis.com",
+      "logging.viewer",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "run.googleapis.com",
+      "serviceusage.googleapis.com",
+      "serviceusage.serviceUsageAdmin",
+      "storage.admin",
+      "tar.gz",
+      "target.csv",
+      "task.py",
+      "test.csv",
+      "trainer.task"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/aiplatform.user",
+      "roles/artifactregistry.admin",
+      "roles/bigquery.admin",
+      "roles/cloudfunctions.admin",
+      "roles/eventarc.admin",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.configWriter",
+      "roles/logging.viewer",
+      "roles/pubsub.editor",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/train-and-deploy-model",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/forecasting-component"
+      ]
+    }
+  ]
+}

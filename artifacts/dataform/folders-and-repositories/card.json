@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.108Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Folders and repositories",
+  "feature_slug": "folders-and-repositories",
+  "summary": "Folders and repositories let you organize Dataform code assets into a hierarchical structure with IAM policy inheritance; Folders and repositories let you organize Dataform code assets into a hierarchical structure using the Dataform API.",
+  "extended_definition": "Folders and repositories let you organize Dataform code assets into a hierarchical structure with IAM policy inheritance; Folders and repositories let you organize Dataform code assets into a hierarchical structure using the Dataform API.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/manage-repository",
+      "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DataformAsyncClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class DataformAsyncClient (0.10.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "This is a resource that sits at the project level and is used to organize Repositories and Folders with hierarchical access controls.",
+          "This is a resource that sits at the project level and is used to organize Repositories and Folders with hierarchical access controls."
+        ]
+      },
+      {
+        "title": "\"Class DataformClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "source_id": "site-python-reference",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class DataformClient (0.10.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "This is a resource that sits at the project level and is used to organize Repositories and Folders with hierarchical access controls.",
+          "This is a resource that sits at the project level and is used to organize Repositories and Folders with hierarchical access controls."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and run a workflow \\_|\\_ Dataform \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the API request with the following information: Endpoint : POST https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workspaces Query parameter : workspaceId= WORKSPACE ID curl command: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d \"{}\" \\ \"https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workspaces?workspaceId= WORKSPACE ID \" To initialize your workspace with the necessary configuration, create a local file named workflow settings.yaml and paste the following configuration: defaultProject : PROJECT ID defaultDataset : dataform dataformCoreVersion : CORE VERSION In your terminal, run the following command to encode the file content into a single continuous string: base64 -w 0 workflow settings.yaml Copy the resulting output string to use in the SETTINGS DEFINITION field in your JSON request body.",
+          "Run the API request with the following information: Endpoint : POST https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workspaces/ WORKSPACE ID :writeFile JSON payload ( write table.json ): { \"path\" : \"definitions/quickstart-table.sqlx\" , \"contents\" : \" TABLE DEFINITION \" } curl command: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @write table.json \\ \"https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workspaces/ WORKSPACE ID :writeFile\" Replace the following: LOCATION : the Google Cloud region for your repository, for example, europe-west4 .",
+          "Run the API request with the following information: Endpoint : POST https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workspaces/ WORKSPACE ID :writeFile JSON payload ( write view.json ): { \"path\" : \"definitions/quickstart-source.sqlx\" , \"contents\" : \" VIEW DEFINITION \" } curl command: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @write view.json \\ \"https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workspaces/ WORKSPACE ID :writeFile\" Replace the following: LOCATION : the Google Cloud region for your repository, for example, europe-west4 ."
+        ]
+      },
+      {
+        "title": "Manage a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/manage-repository",
+        "source_id": "site-docs-root-2",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows a workflow settings.yaml file with workflow-level defaults for BigLake Iceberg tables in BigQuery: defaultProject : \"defaultProject\" defaultDataset : \"defaultDataset\" defaultLocation : \"us-central1\" defaultIcebergConfig : bucketName : \"wsDefaultBucketName\" tableFolderRoot : \"wsDefaultTableFolderRoot\" tableFolderSubpath : \"wsDefaultTableFolderSubpath\" You can access these fields in your Dataform code as properties of the ProjectConfig object: dataform.ProjectConfig.defaultIcebergConfig.bucketName dataform.ProjectConfig.defaultIcebergConfig.tableFolderRoot dataform.ProjectConfig.defaultIcebergConfig.tableFolderSubpath For more information, see Create BigLake tables for Apache Iceberg in BigQuery and the iceberg block properties .",
+          "Move Dataform core to workflow settings.yaml For repositories created with versions of Dataform core earlier than 3.0.0 , if you don't have dependency packages other than Dataform core, then you should move the Dataform core package from the package.json file to the workflow settings.yaml file, and delete the redundant package.json file.",
+          "Required roles To get the permissions that you need to complete the tasks in this document, ask your administrator to grant you the following IAM roles: Configure Dataform settings and manage the location of the Dataform core package: Dataform Admin ( roles/dataform.admin ) on repositories."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataform.admin",
+      "dataform.googleapis.com",
+      "dataform.ProjectConfig.defaultIcebergConfig.bucketName",
+      "dataform.ProjectConfig.defaultIcebergConfig.tableFolderRoot",
+      "dataform.ProjectConfig.defaultIcebergConfig.tableFolderSubpath",
+      "dataform.projectConfig.vars.executionSetting",
+      "dataform.projectConfig.vars.myVariableName",
+      "package.json",
+      "settings.yaml",
+      "source.sqlx",
+      "table.json",
+      "table.sqlx",
+      "view.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataform.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "https://docs.cloud.google.com/dataform/docs/manage-repository"
+      ]
+    }
+  ]
+}

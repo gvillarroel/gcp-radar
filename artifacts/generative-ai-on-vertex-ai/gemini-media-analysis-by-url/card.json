@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.631Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Gemini media analysis by URL",
+  "feature_slug": "gemini-media-analysis-by-url",
+  "summary": "Gemini can directly analyze YouTube videos and publicly available media by using a link.",
+  "extended_definition": "Gemini can directly analyze YouTube videos and publicly available media by using a link.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Grounding with Google Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, in the following code snippet, Gemini responds to a Search grounded prompt, which is asking about a type of tropical plant. \"predictions\" : [ { \"content\" : \"Monstera is a type of vine that thrives in bright indirect light…\" , \"groundingMetadata\" : { \"webSearchQueries\" : [ \"What's a monstera?\" ], } } ] You can take this output, and display it by using Search Suggestions.",
+          "There is a slight chance of rain on both days.\\n\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"webSearchQueries\": [ \"weather in Chicago this weekend\" ], \"searchEntryPoint\": { \"renderedContent\": \"...\" }, \"groundingChunks\": [ { \"web\": { \"uri\": \"https://www.google.com/search?q=weather+in+Chicago,+IL\", \"title\": \"Weather information for locality: Chicago, administrative area: IL\", \"domain\": \"google.com\" } }, { \"web\": { \"uri\": \"...\", \"title\": \"weatherbug.com\", \"domain\": \"weatherbug.com\" } } ], \"groundingSupports\": [ { \"segment\": { \"startIndex\": 85, \"endIndex\": 214, \"text\": \"The temperature will be between 49°F (9°C) and 55°F (13°C) on Saturday and between 51°F (11°C) and 56°F (13°C) on Sunday.\" }, \"groundingChunkIndices\": [ 0 ], \"confidenceScores\": [ 0.8662828 ] }, { \"segment\": { \"startIndex\": 215, \"endIndex\": 261, \"text\": \"There is a slight chance of rain on both days.\" }, \"groundingChunkIndices\": [ 1, 0 ], \"confidenceScores\": [ 0.62836814, 0.6488607 ] } ], \"retrievalMetadata\": {} } } ], \"usageMetadata\": { \"promptTokenCount\": 10, \"candidatesTokenCount\": 98, \"totalTokenCount\": 108, \"trafficType\": \"ON DEMAND\", \"promptTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 10 } ], \"candidatesTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 98 } ] }, \"modelVersion\": \"gemini-2.0-flash\", \"createTime\": \"2025-05-19T14:42:55.000643Z\", \"responseId\": \"b0MraIMFoqnf-Q-D66G4BQ\" } Grounding with Google Image Search Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent Request JSON body: { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": \" TEXT \" }] }], \"tools\": [{ \"googleSearch\": { \"exclude domains\": [ \"domain.com\", \"domain2.com\" ] } }], \"toolConfig\": { \"retrievalConfig\": { \"latLng\": { \"latitude\": LATITUDE , \"longitude\": LONGITUDE } } }, \"model\": \"projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Flex PayGo \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are example use cases: Offline analysis of text, documents, image, audio and video files Evaluation of model qualities Data annotation and labeling Document translation Building a product catalog Note: For large workloads that can tolerate 24-hour turnaround times and process hundreds of billions of tokens daily, we recommend Batch inference with Gemini for improved throughput and success rate.",
+          "STOP : 'STOP' > )] create time = datetime . datetime ( 2025 , 12 , 3 , 20 , 32 , 55 , 916498 , tzinfo = TzInfo ( 0 )) model version = 'gemini-2.5-flash' prompt feedback = None response id = 'response id' usage metadata = GenerateContentResponseUsageMetadata ( candidates token count = 1408 , candidates tokens details = [ ModalityTokenCount ( modality = MediaModality .",
+          "The timeout is specified in seconds. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Server-Timeout: 600\" \\ -H \"X-Vertex-AI-LLM-Request-Type: shared\" \\ -H \"X-Vertex-AI-LLM-Shared-Request-Type: flex\" \\ \"https://aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/global/publishers/google/models/ MODEL ID :generateContent\" -d \\ $'{ \"contents\": { \"role\": \"model\", \"parts\": { \"text\": \" PROMPT TEXT \" } } }' You should receive a JSON response similar to the following. { \"candidates\" : [ { \"content\" : { \"role\" : \"model\" , \"parts\" : [ { \"text\" : \"Response to sample request.\" } ] } , \"finishReason\" : \"STOP\" } ] , \"usageMetadata\" : { \"promptTokenCount\" : 3 , \"candidatesTokenCount\" : 900 , \"totalTokenCount\" : 1957 , \"trafficType\" : \"ON DEMAND FLEX\" , \"thoughtsTokenCount\" : 1054 } } Note the following in the URL for this sample: Use the generateContent method to request that the response is returned after it's fully generated."
+        ]
+      },
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "It can be any MIME type supported by Gemini multimodal models, such as text, audio, or video.",
+          "This is done by transforming existing examples to create additional, varied examples, which can improve model performance, especially when the original dataset is limited. bounding box A bounding box for an object in the video frame can be specified in either of two ways (i) Using 2 vertices consisting of a set of x,y coordinates if they are diagonally opposite points of the rectangle.",
+          "Bilingual Evaluation Understudy (BLEU) A popular measure for evaluating the quality of a machine-translation algorithm by comparing its output to that of one or more human translations. boosting In model training: Boosting can refer to data augmentation techniques used to increase the size and diversity of training datasets."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table illustrates the default and available lower dimensions available for each model: Model Default dimensions (highest) Supported dimensions (range) Recommended lower dimensions gemini-embedding-2-preview 3072 128 to 3072 128, 768 or 1536 multimodalembedding@001 1408 128 to 1408 128, 256, or 512 Use the following samples to generate embeddings with lower dimensions: REST Lower dimensions can be accessed by adding the parameters.dimension field.",
+          "Supported models You can get multimodal embeddings by using the following models: gemini-embedding-2-preview multimodalembedding@001 Best practices Consider the following input aspects when using the multimodal embeddings model: Text in images - The model can distinguish text in images, similar to optical character recognition (OCR).",
+          "EmbedContentConfig ( output dimensionality = 128 ), ) Normalize the output embedding. embedding values np = np . array ( response . embeddings [ 0 ] . values ) normed embedding = embedding values np / np . linalg . norm ( embedding values np ) print ( f \"Normed embedding length: { len ( normed embedding ) } \" ) print ( f \"Norm of normed embedding: { np . linalg . norm ( normed embedding ) : .6f } \" ) # Should be very close to 1 Get multimodal embeddings REST PROJECT ID = \"YOUR PROJECT ID\" LOCATION = \"us-central1\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /publishers/google/models/gemini-embedding-2-preview:embedContent\" \\ -d '{ \"content\": { \"parts\": [ { \"text\": \"Whats this\" }, { \"file data\": { \"mime type\": \"video/mp4\", \"file uri\": \"gs://cloud-samples-data/generative-ai/video/pixel8.mp4\" } } ] } }' Python from google import genai from google.genai import types Initialize the client. client = genai ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "domain.com",
+      "domain2.com",
+      "parameters.dimension",
+      "pixel8.mp4",
+      "weatherbug.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    }
+  ]
+}

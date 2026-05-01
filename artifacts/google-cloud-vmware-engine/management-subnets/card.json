@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:02.525Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Management subnets",
+  "feature_slug": "management-subnets",
+  "summary": "Management subnets let you configure HCX and service subnets for VMware Engine environments.",
+  "extended_definition": "Management subnets let you configure HCX and service subnets for VMware Engine environments.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure and manage subnets \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ZONE : the zone for the private cloud PRIVATE CLOUD ID : the name for the private cloud SUBNET NAME : the name of the subnet to update in this private cloud IP ADDRESS : the IP address and range, for the example 10.0.0.0/24 Management subnets Management subnets are read-only subnets that you can view using the Google Cloud CLI or VMware Engine API.",
+          "Configure and manage subnets This document describes how to create and manage different subnets in VMware Engine.",
+          "Look for the userDefined subnet you want to edit and click the pencil icon to edit the subnet. gcloud Edit a subnet using the Google Cloud CLI using the gcloud vmware private-clouds subnets update command : gcloud vmware private-clouds subnets update SUBNET NAME \\ --private-cloud= PRIVATE CLOUD ID \\ --location= ZONE \\ --ip-cidr-range= IP ADDRESS Replace the following: SUBNET NAME : the name of the subnet to update in this private cloud PRIVATE CLOUD ID : the name for the private cloud ZONE : the zone for the private cloud IP ADDRESS : the IP address and range, for the example 10.0.0.0/24 API To edit a subnet using the VMware Engine API, make a PATCH request: curl -sSL -XPATCH -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json; charset=utf-8\" \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /subnets/ SUBNET NAME ?update mask=ip cidr range\" -d '{ \"ip cidr range\": \" IP ADDRESS \" }' Replace the following: PROJECT ID : the project ID for this request."
+        ]
+      },
+      {
+        "title": "\"VLANs and subnets on VMware Engine \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Management subnets created on a private cloud When you create a private cloud, VMware Engine creates the following management subnets: System management: VLAN and subnet for ESXi hosts' management network, DNS server, vCenter Server VMotion: VLAN and subnet for ESXi hosts' vMotion network VSAN: VLAN and subnet for ESXi hosts' vSAN network NsxtEdgeUplink1: VLAN and subnet for VLAN uplinks to an external network NsxtEdgeUplink2: VLAN and subnet for VLAN uplinks to an external network HCXUplink: Used by HCX IX (mobility) and NE (extension) appliances to reach their peers and enable the creation of the HCX Cloud Service Mesh.",
+          "The following are Distributed Port Group critical configuration values: Port binding : static binding Port allocation : elastic Number of ports : 120 VLAN type : VLAN VLAN ID : the corresponding subnet ID within the subnets section of the Google Cloud VMware Engine interface Recommended MTU settings The maximum transmission unit (MTU) is the size, in bytes, of the largest packet supported by a network layer protocol, including both headers and data.",
+          "VLANs and subnets on VMware Engine Google Cloud VMware Engine uses a VMware Engine network to provide network connectivity between one or more private clouds, Google Cloud Virtual Private Cloud networks, and on-premises networks."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineAsyncClient (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Either management subnets (such as vMotion) that are read-only, or userDefined, which can also be updated. update vmware engine network update vmware engine network ( request : typing .",
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListVmwareEngineNetworksAsyncPager Response message for VmwareEngine.ListVmwareEngineNetworks Iterating over this object will yield results and resolve additional pages automatically. logging server path logging server path ( project : str , location : str , private cloud : str , logging server : str ) - > str Returns a fully-qualified logging server string. management dns zone binding path management dns zone binding path ( project : str , location : str , private cloud : str , management dns zone binding : str ) - > str Returns a fully-qualified management dns zone binding string. network path network path ( project : str , network : str ) - > str Returns a fully-qualified network string. network peering path network peering path ( project : str , location : str , network peering : str ) - > str Returns a fully-qualified network peering string. network policy path network policy path ( project : str , location : str , network policy : str ) - > str Returns a fully-qualified network policy string. node path node path ( project : str , location : str , private cloud : str , cluster : str , node : str ) - > str Returns a fully-qualified node string. node type path node type path ( project : str , location : str , node type : str ) - > str Returns a fully-qualified node type string. parse cluster path parse cluster path ( path : str ) - > typing .",
+          "CreateManagementDnsZoneBindingRequest ( parent=\"parent value\", management dns zone binding=management dns zone binding, management dns zone binding id=\"management dns zone binding id value\", ) Make the request operation = client. create management dns zone binding (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.vmwareengine v1.types.CreateManagementDnsZoneBindingRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "engine.pagers.ListVmwareEngineNetworksAsyncPager",
+      "v1.services.vmware",
+      "v1.types.CreateManagementDnsZoneBindingRequest",
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-manage-subnets",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vlans-subnets",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:54.394Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build approvals",
+  "feature_slug": "cloud-build-approvals",
+  "summary": "Cloud Build approvals allow trigger executions to require explicit user approval before a build runs.",
+  "extended_definition": "Cloud Build approvals allow trigger executions to require explicit user approval before a build runs.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+      "https://docs.cloud.google.com/build/docs/build-config",
+      "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a trigger if your source code is in GitHub : gcloud builds triggers create github \\ -- name = TRIGGER NAME \\ -- region = REGION \\ -- repo - name = REPO NAME \\ -- repo - owner = REPO OWNER \\ -- branch - pattern = BRANCH PATTERN \\ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \\ -- service - account = SERVICE ACCOUNT \\ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.",
+          "Click Create to save your build trigger. gcloud To create a trigger if your source code is in Cloud Source Repositories : gcloud builds triggers create cloud-source-repositories \\ --repo= REPO NAME \\ --branch-pattern= BRANCH PATTERN \\ # or --tag-pattern= TAG PATTERN --build-config= BUILD CONFIG FILE \\ --service-account= SERVICE ACCOUNT \\ --require-approval Where: REPO NAME is the name of your repository.",
+          "Keep in mind the following security implications when using build triggers: A user with no access to your Cloud project, but with write access to the repository associated with build triggers in the project will have permissions to change the code being built."
+        ]
+      },
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following build config sets the defaultLogsBucketBehavior field to the value REGIONAL USER OWNED BUCKET : YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/myproject/myrepo/myimage' , '.' ] options : defaultLogsBucketBehavior : REGIONAL USER OWNED BUCKET JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"us-central1-docker.pkg.dev/myproject/myrepo/myimage\" , \".\" ] } ], \"options\" : { \"defaultLogsBucketBehavior\" : \"REGIONAL USER OWNED BUCKET\" } } dynamicSubstitutions : Use this option to explicitly enable or disable bash parameter expansion in substitutions.",
+          "YAML steps : - name : 'ubuntu' args : [ 'echo' , 'hello ${ SUB VALUE}' ] substitutions : SUB VALUE : world options : substitution option : 'ALLOW LOOSE' JSON { \"steps\" : [ { \"name\" : \"ubuntu\" , \"args\" : [ \"echo\" , \"hello ${ SUB VALUE}\" ] } ], \"substitutions\" : { \" SUB VALUE\" : \"world\" }, \"options\" : { \"substitution option\" : \"ALLOW LOOSE\" } } Note: If your build is invoked by a trigger, the ALLOW LOOSE option is set by default.",
+          "You cannot override the ALLOW LOOSE option for builds invoked by triggers."
+        ]
+      },
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following build config sets the defaultLogsBucketBehavior field to the value REGIONAL USER OWNED BUCKET : YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/myproject/myrepo/myimage' , '.' ] options : defaultLogsBucketBehavior : REGIONAL USER OWNED BUCKET JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"us-central1-docker.pkg.dev/myproject/myrepo/myimage\" , \".\" ] } ], \"options\" : { \"defaultLogsBucketBehavior\" : \"REGIONAL USER OWNED BUCKET\" } } dynamicSubstitutions : Use this option to explicitly enable or disable bash parameter expansion in substitutions.",
+          "YAML steps : - name : 'ubuntu' args : [ 'echo' , 'hello ${ SUB VALUE}' ] substitutions : SUB VALUE : world options : substitution option : 'ALLOW LOOSE' JSON { \"steps\" : [ { \"name\" : \"ubuntu\" , \"args\" : [ \"echo\" , \"hello ${ SUB VALUE}\" ] } ], \"substitutions\" : { \" SUB VALUE\" : \"world\" }, \"options\" : { \"substitution option\" : \"ALLOW LOOSE\" } } Note: If your build is invoked by a trigger, the ALLOW LOOSE option is set by default.",
+          "You cannot override the ALLOW LOOSE option for builds invoked by triggers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.allowedIntegrations",
+      "docker.pkg.dev",
+      "gcr.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    }
+  ]
+}

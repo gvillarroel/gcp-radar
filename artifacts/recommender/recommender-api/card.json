@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:06.358Z",
+  "source_step08_card": "data/step-08/current/products/recommender/card.json",
+  "product_name": "Recommender",
+  "product_slug": "recommender",
+  "feature_name": "Recommender API",
+  "feature_slug": "recommender-api",
+  "summary": "The Recommender API provides programmatic access to recommendations; The Recommender API provides programmatic access to recommendations.",
+  "extended_definition": "The Recommender API provides programmatic access to recommendations; The Recommender API provides programmatic access to recommendations.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+      "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+      "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender",
+      "https://docs.cloud.google.com/recommender/docs/using-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the API - Recommendations \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/using-api",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: gcloud recommender recommendations list \\ --project=example-project \\ --location=us-central1-a \\ --recommender=google.compute.instance.MachineTypeRecommender \\ --format=json REST Enter the following: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: ${PROJECT}\" \\ \"https://recommender.googleapis.com/v1/projects/${PROJECT}/locations/${LOCATION}/recommenders/${RECOMMENDER}/recommendations\" For example: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: example-project\" \\ \"https://recommender.googleapis.com/v1/projects/example-project/locations/us-central1-a/recommenders/google.compute.instance.MachineTypeRecommender/recommendations\" This operation outputs the current VM instance sizing recommendations in the target project as a list of Recommendation entities in the specified format.",
+          "For example: gcloud recommender recommendations mark-succeeded \\ a523ff7e-ed03-4143-a3a5-5b396b99cba9 \\ --project=example-project \\ --location=us-central1-a \\ --recommender=google.compute.instance.MachineTypeRecommender \\ --etag='\"5e3a63cccf1e0964\"' \\ --state-metadata=priority=high,tracking number=12345 \\ --format=json REST Enter the following curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: ${PROJECT}\" \\ --data-binary @- \\ https://recommender.googleapis.com/v1/projects/${PROJECT}/locations/${LOCATION}/recommenders/${RECOMMENDER}/recommendations/ RECOMMENDATION ID : STATE CHANGE \\ << EOM { \"etag\": \" ETAG \" \"stateMetadata\": STATE METADATA } EOM where: RECOMMENDATION ID is the ID of a recommendation that you retrieved from a previous call to list recommendations.",
+          "For example: curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: example-project\" \\ --data-binary @- \\ https://recommender.googleapis.com/v1/projects/example-project/locations/us-central1-a/recommenders/google.compute.instance.MachineTypeRecommender/recommendations/8f20d509-83d2-45d2-8152-1b8d5d7d5831:markSucceeded \\ << EOM { \"etag\": \"\\\"280b34810bba8a1a\\\"\" \"stateMetadata\": { \"priority\" : \"high\", \"tracking number\": \"12345\" } } EOM This operation returns the Recommendation entity in the specified format after the operation has taken place."
+        ]
+      },
+      {
+        "title": "Change risk recommendations \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "source_id": "site-api-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Recommendations To list recommendations for the project where you've enabled the Recommender API, run the following command: curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"x-goog-user-project: BILLING PROJECT ID \" \"https://recommender.googleapis.com/v1/projects/ PROJECT ID /locations/global/ recommenders/google.resourcemanager.project.ChangeRiskRecommender/recommendations\" Replace the following: BILLING PROJECT ID : The billing project ID.",
+          "Recommendations: To list recommendations for a Service Account where you've enabled the Recommender API, run the following command: curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"x-goog-user-project: BILLING PROJECT ID \" \"https://recommender.googleapis.com/v1/projects/ PROJECT ID /locations/global/ recommenders/google.iam.serviceAccount.ChangeRiskRecommender/recommendations\" Replace the following: PROJECT ID : The project ID.",
+          "Recommendations: To list recommendations for an IAM Policy where you've enabled the Recommender API, run the following command: curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \"https://recommender.googleapis.com/v1/projects/ PROJECT ID /locations/global/\\recommenders/google.iam.policy.ChangeRiskRecommender/recommendations\" Replace the following: PROJECT ID : The project ID."
+        ]
+      },
+      {
+        "title": "Service limit (quota) recommender \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "source_id": "site-api-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Recommender ID Here are the service limit (quota) recommender ID and insight type: google.resourcemanager.serviceLimit.Recommender google.resourcemanager.serviceLimit.Insight Required IAM permissions To access the list of service limit recommendations and insights, the following permissions are required: recommender.resourcemanagerServiceLimitRecommendations.get recommender.resourcemanagerServiceLimitRecommendations.list recommender.resourcemanagerServiceLimitInsights.get recommender.resourcemanagerServiceLimitInsights.list To update recommendations and insights (for example, to dismiss a recommendation), the following permissions are required: recommender.resourcemanagerServiceLimitRecommendations.update recommender.resourcemanagerServiceLimitInsights.update Viewing service limit (quota) recommendations Insights and recommendations can be accessed through the Cloud Console, gcloud , or the Recommender API for all customers.",
+          "To list recommendations in a different project while using a project where you've enabled the Recommender API (as in the previous step), run the following command: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: BILLING PROJECT ID \" \\ \"https://recommender.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /\\ recommenders/google.resourcemanager.serviceLimit.Recommender/recommendations\" Replace the following: BILLING PROJECT ID : The ID of the project that you've enabled with the Recommender API (this would be the same PROJECT ID as given in the previous step).",
+          "Recommendations To list recommendations for the project where you've enabled the Recommender API, run the following command: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://recommender.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /\\ recommenders/google.resourcemanager.serviceLimit.Recommender/recommendations\" Replace the following: PROJECT ID : The project ID."
+        ]
+      },
+      {
+        "title": "Unattended project recommender \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender",
+        "source_id": "site-api-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Recommender ID Here are the unattended project recommender ID and insight type: google.resourcemanager.projectUtilization.Recommender google.resourcemanager.projectUtilization.Insight Required IAM permissions To access the list of recommendations and insights, the following permissions are required: recommender.resourcemanagerProjectUtilizationRecommendations.get recommender.resourcemanagerProjectUtilizationRecommendations.list recommender.resourcemanagerProjectUtilizationInsights.get recommender.resourcemanagerProjectUtilizationInsights.list To update recommendations and insights (for example, to dismiss a recommendation), the following permissions are required: recommender.resourcemanagerProjectUtilizationRecommendations.update recommender.resourcemanagerProjectUtilizationInsights.update Viewing unattended project recommendations This section describes how to check for unattended insights and recommendations using gcloud , and using curl to send requests to the recommender API. gcloud To view recommendations and insights using gcloud , follow the steps below.",
+          "To list unattended project recommendations that are using a specific Billing Account, while using a project where you've enabled the Recommender API (as in the previous step), run the following command: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: BILLING PROJECT ID \" \\ \"https://recommender.googleapis.com/v1/billingAccounts/ BILLING ACCOUNT ID /locations/global/\\ recommenders/google.resourcemanager.projectUtilization.Recommender/recommendations\" Replace the following: BILLING PROJECT ID : The ID of the project that you've enabled with the Recommender API (this would be the same PROJECT ID as given in the previous step).",
+          "To list unattended project recommendations for the entire organization, while using a project where you've enabled the Recommender API (as in the previous step), run the following command: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: BILLING PROJECT ID \" \\ \"https://recommender.googleapis.com/v1/organizations/ ORGANIZATION ID /locations/global/\\ recommenders/google.resourcemanager.projectUtilization.Recommender/recommendations\" Replace the following: BILLING PROJECT ID : The ID of the project that you've enabled with the Recommender API (this would be the same PROJECT ID as given in the previous step)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "recommender.googleapis.com",
+      "recommender.resourcemanagerProjectUtilizationInsights.get",
+      "recommender.resourcemanagerProjectUtilizationInsights.list",
+      "recommender.resourcemanagerProjectUtilizationInsights.update",
+      "recommender.resourcemanagerProjectUtilizationRecommendations.get",
+      "recommender.resourcemanagerProjectUtilizationRecommendations.list",
+      "recommender.resourcemanagerProjectUtilizationRecommendations.update",
+      "recommender.resourcemanagerServiceLimitInsights.get",
+      "recommender.resourcemanagerServiceLimitInsights.list",
+      "recommender.resourcemanagerServiceLimitInsights.update",
+      "recommender.resourcemanagerServiceLimitRecommendations.get",
+      "recommender.resourcemanagerServiceLimitRecommendations.list",
+      "recommender.resourcemanagerServiceLimitRecommendations.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/service-limit-quota-recommender",
+        "https://docs.cloud.google.com/recommender/docs/unattended-project-recommender"
+      ]
+    }
+  ]
+}

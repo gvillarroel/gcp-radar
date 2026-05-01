@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.277Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Google Threat Intelligence integration",
+  "feature_slug": "google-threat-intelligence-integration",
+  "summary": "Adds the Google Threat Intelligence integration.",
+  "extended_definition": "Adds the Google Threat Intelligence integration.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection",
+      "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+      "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Threat Intelligence overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection",
+        "source_id": "site-docs-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can integrate and use Google Threat Intelligence within Google SecOps using the following integration methods: Applied Threat Intelligence (ATI) This fully managed, native pipeline automatically curates and applies Google's threat intelligence.",
+          "An active Google Threat Intelligence license to use the Bring Your Own License (BYOL) integration.",
+          "Includes a fully built-in and managed integration that automatically uses the complete spectrum of Google, Mandiant, and VirusTotal intelligence to provide automated context, enrichment, and alerting without manual pipeline configuration."
+        ]
+      },
+      {
+        "title": "\"Answer Threat Intelligence questions with Gemini \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Answer Threat Intelligence questions with Gemini Supported in: Google secops SIEM Gemini can answer questions related to threat intelligence about topics such as threat actors, their associations, and their behavior patterns, including questions about MITRE TTPs .",
+          "Specifically, threat intelligence data is more limited in product editions other than Enterprise Plus because they don't include full access to Mandiant and VirusTotal.",
+          "Investigate further by asking Gemini to create queries to look for specific indicators of compromise (IOCs) referenced in the threat intelligence reports."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence overview \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Information about the IoC is displayed, including the following: GCTI priority GTI verdict Associations Campaigns You can also view detailed information about the events that triggered the IoC match, information from the threat intelligence source, and the rationale for the GTI score.",
+          "When ATI is enabled, Google SecOps ingests IoCs curated by Mandiant threat intelligence that are classified as malicious by the Google Threat Indicator (GTI) verdict.",
+          "To use Applied Threat Intelligence, do the following: Enable the Applied Threat Intelligence curated detections ."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Integration parameters Use the following parameters to configure the integration: Parameter name Type Default value Is mandatory Description Web Root String https://siemplify.threatstream.com Yes Web Root of the Anomali ThreatStream instance.",
+          "Verify SSL Checkbox Unchecked Yes If selected, the integration validates the SSL certificate when connecting to the Anomali ThreatStream server.",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"campaign\" : [ { \"name\" : \"Example 1\" , \"id\" : 1 }, { \"name\" : \"Example 2\" , \"id\" : 2 } ], \"actor\" : [ { \"name\" : \"Actor 1\" , \"id\" : 1 }, { \"name\" : \"Actor 2\" , \"id\" : 2 } ], \"attackpattern\" : [ { \"name\" : \"Pattern 1\" , \"id\" : 1 }, { \"name\" : \"Pattern 2\" , \"id\" : 2 } ], \"courseofaction\" : [ { \"name\" : \"Course of Action 1\" , \"id\" : 1 }, { \"name\" : \"Course Of Action 2\" , \"id\" : 2 } ], \"identity\" : [ { \"name\" : \"Identity 1\" , \"id\" : 1 }, { \"name\" : \"Identity 2\" , \"id\" : 2 } ], \"incident\" : [ { \"name\" : \"Incident 1\" , \"id\" : 1 }, { \"name\" : \"Incident 2\" , \"id\" : 2 } ], \"infrastructure\" : [ { \"name\" : \"Infrustructure 1\" , \"id\" : 1 }, { \"name\" : \"Infrustructure 2\" , \"id\" : 2 } ], \"intrusionset\" : [ { \"name\" : \"Intrusion set 1\" , \"id\" : 1 }, { \"name\" : \"Intrusion set 2\" , \"id\" : 2 } ], \"malware\" : [ { \"name\" : \"Malware 1\" , \"id\" : 1 }, { \"name\" : \"Malware 2\" , \"id\" : 2 } ], \"signature\" : [ { \"name\" : \"Signature 1\" , \"id\" : 1 }, { \"name\" : \"Signature 2\" , \"id\" : 2 } ], \"tool\" : [ { \"name\" : \"Tool 1\" , \"id\" : 1 }, { \"name\" : \"Tool 2\" , \"id\" : 2 } ], \"ttp\" : [ { \"name\" : \"TTP 1\" , \"id\" : 1 }, { \"name\" : \"TTP 2\" , \"id\" : 2 } ], \"vulnerability\" : [ { \"name\" : \"Vulnerability 1\" , \"id\" : 1 }, { \"name\" : \"Vulnerability 2\" , \"id\" : 2 } ], } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one association across entities is found (is success=true): \"Successfully retrieved related associations from Anomali ThreatStream\" If no associations are found (is success=false) : \"No related associations were found.\" Async Message: \"Waiting for all of the association details to be retrieved\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Get Related Association\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "entity.identifier",
+      "siemplify.threatstream.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection",
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/detection/applied-threat-intel-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+      ]
+    }
+  ]
+}

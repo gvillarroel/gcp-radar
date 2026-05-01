@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "32 Gbps VM egress network throughput",
+  "feature_slug": "32-gbps-vm-egress-network-throughput",
+  "summary": "Increased virtual machine egress network I/O is now available at 32 Gbps for VMs using the Skylake CPU platform or ultramem machine types.",
+  "extended_definition": "Increased virtual machine egress network I/O is now available at 32 Gbps for VMs using the Skylake CPU platform or ultramem machine types.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+      "https://docs.cloud.google.com/vpc/docs/quota",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "This view makes it easier to understand networking relationships between various workloads on Google Cloud and their current state, such as the traffic paths and throughput between virtual machine (VM) instances.",
+          "Metrics for the selected hour on the timeline include the following: Average hourly throughput available for most entities Average hourly packet loss available for traffic within Google Cloud regions and zones Hourly median latency (RTT) available for many entity types In the GKE Enterprise view available for GKE Enterprise projects, the metrics for the selected hour on the timeline also include the following: Average hourly throughput available for most entities Median latency available for traffic within Google Cloud regions and zones with GKE clusters Network verdict metrics displaying the GKE workloads with the most dropped and most forwarded traffic flows for the selected cluster You can also download the table of outliers in a CSV format for the High egress and Network verdict traffic insights.",
+          "Insights for entities with high metric values In addition to the average hourly metrics, Network Topology also shows the ranking of VMs or instance groups that generate the highest egress."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maximum egress data rate to an external IP address destination all flows: about 7 Gbps (gigabits per second) sustained or 25 Gbps with per VM Tier 1 networking performance single flow: 3 Gbps sustained See Egress to external IP address destinations in the Compute Engine documentation.",
+          "Inter-region network egress bandwidth (Mbps) from Compute instances Total egress bandwidth from Google Cloud VMs in one region to destinations that are routable within a VPC network (using next hops that are not the default internet gateway).",
+          "Quota Description Network bandwidth GCE VM to internet egress bandwidth Mbps Total egress bandwidth from Google Cloud VMs in one region to destinations outside of a VPC network (using the default internet gateway)."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Egress throughput limits Network throughput information is available on the Network bandwidth page in the Compute Engine documentation.",
+          "A VPC network does the following: Provides connectivity for your Compute Engine virtual machine (VM) instances .",
+          "Google Cloud typically measures round-trip latencies less than 45μs at the 50th percentile and tail latencies less than 60μs at the 99th percentile between c2-standard-4 VM instances in the same low-latency network (\"compact\" placement policy)."
+        ]
+      },
+      {
+        "title": "Add network tags \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "source_id": "site-docs-root-2",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add network tags A tag is simply a character string added to a tags field in a resource, such as Compute Engine virtual machine (VM) instances or instance templates .",
+          "Terraform You can use the Terraform resource to create a VM instance that has network tags. resource \"google compute instance\" \"default\" { project = var.project id # Replace this with your project ID in quotes zone = \"southamerica-east1-b\" name = \"backend-instance\" machine type = \"e2-medium\" boot disk { initialize params { image = \"debian-cloud/debian-9\" } } network interface { network = \"default\" } tags = [\"health-check\", \"ssh\"] } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "Task Required Role Assign a network tag to a new instance when it is created Project owner or editor or Instance Admin Add or remove network tags for existing instances Add, remove, or edit firewall rules Project owner or editor or Security Admin Limits The following limits apply to network tags: Limit Value Description Maximum number of tags per VM 64 All tags for a VM must be unique."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags"
+      ]
+    }
+  ]
+}

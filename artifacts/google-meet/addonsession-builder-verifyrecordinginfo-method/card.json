@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.117Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet",
+  "feature_name": "AddonSession.Builder.verifyRecordingInfo() method",
+  "feature_slug": "addonsession-builder-verifyrecordinginfo-method",
+  "summary": "The verifyRecordingInfo() method checks that the add-on's recording status matches Meet's recording status and terminates the session if they differ.",
+  "extended_definition": "The verifyRecordingInfo() method checks that the add-on's recording status matches Meet's recording status and terminates the session if they differ.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/artifacts",
+      "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+      "https://developers.google.com/workspace/meet/api/guides/participants",
+      "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Observe meeting events with Python and the Google Meet REST API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "AuthorizedSession ( USER CREDENTIALS ) body = { \"targetResource\" : f \"//cloudidentity.googleapis.com/users/ { user name } \" , \"eventTypes\" : [ \"google.workspace.meet.conference.v2.started\" , \"google.workspace.meet.conference.v2.ended\" , \"google.workspace.meet.participant.v2.joined\" , \"google.workspace.meet.participant.v2.left\" , \"google.workspace.meet.recording.v2.fileGenerated\" , \"google.workspace.meet.transcript.v2.fileGenerated\" , ], \"payloadOptions\" : { \"includeResource\" : False , }, \"notificationEndpoint\" : { \"pubsubTopic\" : topic name }, \"ttl\" : \"86400s\" , } response = session . post ( \"https://workspaceevents.googleapis.com/v1/subscriptions\" , json = body ) return response service = build ( \"people\" , \"v1\" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = \"people/me\" , personFields = \"names,emailAddresses\" ) . execute () ) resource name = response . get ( \"resourceName\" ) if resource name . startswith ( \"people/\" ): resource name = resource name [ len ( \"people/\" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add \"https://www.googleapis.com/auth/userinfo.profile\" in the authorize method in the credential samples above.",
+          "When prompted for authorization, sign in using the same account used in the previous steps. gcloud auth application-default login --impersonate-service-account= SERVICE ACCOUNT EMAIL Install the Pub/Sub client library Use pip to install the client library for Pub/Sub: pip install google-cloud-pubsub Then edit main.py to import the client: from google.cloud import pubsub v1 Create the Google Workspace subscription Add the following code to main.py to define a method for subscribing to Meet events.",
+          "SubscriberClient () with subscriber : future = subscriber . subscribe ( subscription name , callback = on message ) print ( \"Listening for events\" ) try : future . result () except KeyboardInterrupt : future . cancel () print ( \"Done\" ) Finalize the code Add the following code to main.py to call the methods to create the space, subscribe to events, and listen."
+        ]
+      },
+      {
+        "title": "Work with artifacts \\_|\\_ Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows how to list all transcript entries in a transcript: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listtranscriptentries/AsyncListTranscriptEntries.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListTranscriptEntriesRequest ; import com.google.apps.meet.v2.TranscriptEntry ; import com.google.apps.meet.v2.TranscriptName ; public class AsyncListTranscriptEntries { public static void main ( String [] args ) throws Exception { asyncListTranscriptEntries (); } public static void asyncListTranscriptEntries () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListTranscriptEntriesRequest request = ListTranscriptEntriesRequest . newBuilder () . setParent ( TranscriptName . of ( \"[CONFERENCE RECORD]\" , \"[TRANSCRIPT]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<TranscriptEntry> future = conferenceRecordsServiceClient . listTranscriptEntriesPagedCallable (). futureCall ( request ); // Do something. for ( TranscriptEntry element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list transcript entries.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The following code sample shows how to list all transcripts in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listtranscripts/AsyncListTranscripts.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListTranscriptsRequest ; import com.google.apps.meet.v2.Transcript ; public class AsyncListTranscripts { public static void main ( String [] args ) throws Exception { asyncListTranscripts (); } public static void asyncListTranscripts () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListTranscriptsRequest request = ListTranscriptsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( \"[CONFERENCE RECORD]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<Transcript> future = conferenceRecordsServiceClient . listTranscriptsPagedCallable (). futureCall ( request ); // Do something. for ( Transcript element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list transcripts.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The following code sample shows how to list all recordings in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listrecordings/AsyncListRecordings.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListRecordingsRequest ; import com.google.apps.meet.v2.Recording ; public class AsyncListRecordings { public static void main ( String [] args ) throws Exception { asyncListRecordings (); } public static void asyncListRecordings () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListRecordingsRequest request = ListRecordingsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( \"[CONFERENCE RECORD]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<Recording> future = conferenceRecordsServiceClient . listRecordingsPagedCallable (). futureCall ( request ); // Do something. for ( Recording element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list recordings.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only."
+        ]
+      },
+      {
+        "title": "Work with participants \\_|\\_ Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/participants",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows how to list all participant sessions in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listparticipantsessions/AsyncListParticipantSessions.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListParticipantSessionsRequest ; import com.google.apps.meet.v2.ParticipantName ; import com.google.apps.meet.v2.ParticipantSession ; public class AsyncListParticipantSessions { public static void main ( String [] args ) throws Exception { asyncListParticipantSessions (); } public static void asyncListParticipantSessions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListParticipantSessionsRequest request = ListParticipantSessionsRequest . newBuilder () . setParent ( ParticipantName . of ( \"[CONFERENCE RECORD]\" , \"[PARTICIPANT]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<ParticipantSession> future = conferenceRecordsServiceClient . listParticipantSessionsPagedCallable (). futureCall ( request ); // Do something. for ( ParticipantSession element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list participant sessions.js View on GitHub // Copyright 2026 Google LLC // // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // https://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // This file is automatically generated by gapic-generator-typescript. // https://github.com/googleapis/gapic-generator-typescript // All changes to this file may be overwritten. 'use strict' ; function main ( parent ) { / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The following code sample shows how to list all participants in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listparticipants/AsyncListParticipants.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListParticipantsRequest ; import com.google.apps.meet.v2.Participant ; public class AsyncListParticipants { public static void main ( String [] args ) throws Exception { asyncListParticipants (); } public static void asyncListParticipants () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListParticipantsRequest request = ListParticipantsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( \"[CONFERENCE RECORD]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<Participant> future = conferenceRecordsServiceClient . listParticipantsPagedCallable (). futureCall ( request ); // Do something. for ( Participant element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list participants.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The following code sample shows how to retrieve a specific participant session: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/getparticipantsession/AsyncGetParticipantSession.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.GetParticipantSessionRequest ; import com.google.apps.meet.v2.ParticipantSession ; import com.google.apps.meet.v2.ParticipantSessionName ; public class AsyncGetParticipantSession { public static void main ( String [] args ) throws Exception { asyncGetParticipantSession (); } public static void asyncGetParticipantSession () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { GetParticipantSessionRequest request = GetParticipantSessionRequest . newBuilder () . setName ( ParticipantSessionName . of ( \"[CONFERENCE RECORD]\" , \"[PARTICIPANT]\" , \"[PARTICIPANT SESSION]\" ) . toString ()) . build (); ApiFuture<ParticipantSession> future = conferenceRecordsServiceClient . getParticipantSessionCallable (). futureCall ( request ); // Do something."
+        ]
+      },
+      {
+        "title": "\"Authenticate and authorize Meet REST API requests \\_|\\_ Google Meet \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Important terminology The following is a list of terms related to authentication and authorization: Authentication The act of ensuring that a principal , which can be a user or an app acting on behalf of a user, is who they say they are.",
+          "This code informs the user that the app wishes to act on their behalf and, if allowed, uses your app's unique credentials to obtain an access token from Google to access data or perform operations.",
+          "By authenticating on a user's behalf, the app has the same permissions as that user and can perform actions as if they were performed by that user."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudidentity.googleapis.com",
+      "com.google.api.core.ApiFuture",
+      "com.google.apps.meet.v2.ConferenceRecordName",
+      "com.google.apps.meet.v2.ConferenceRecordsServiceClient",
+      "com.google.apps.meet.v2.GetParticipantRequest",
+      "com.google.apps.meet.v2.GetParticipantSessionRequest",
+      "com.google.apps.meet.v2.GetTranscriptEntryRequest",
+      "com.google.apps.meet.v2.ListParticipantSessionsRequest",
+      "com.google.apps.meet.v2.ListParticipantsRequest",
+      "com.google.apps.meet.v2.ListRecordingsRequest",
+      "com.google.apps.meet.v2.ListTranscriptEntriesRequest",
+      "com.google.apps.meet.v2.ListTranscriptsRequest",
+      "com.google.apps.meet.v2.Participant",
+      "com.google.apps.meet.v2.ParticipantName",
+      "com.google.apps.meet.v2.ParticipantSession",
+      "com.google.apps.meet.v2.ParticipantSessionName",
+      "com.google.apps.meet.v2.Recording",
+      "com.google.apps.meet.v2.Transcript",
+      "com.google.apps.meet.v2.TranscriptEntry",
+      "com.google.apps.meet.v2.TranscriptEntryName",
+      "com.google.apps.meet.v2.TranscriptName",
+      "developers.google.com",
+      "entries.js",
+      "github.com",
+      "main.py",
+      "participants.js",
+      "recordings.js",
+      "service.list",
+      "sessions.js",
+      "token.json",
+      "transcripts.js",
+      "userinfo.profile",
+      "workspaceevents.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/artifacts",
+        "https://developers.google.com/workspace/meet/api/guides/participants",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize"
+      ]
+    }
+  ]
+}

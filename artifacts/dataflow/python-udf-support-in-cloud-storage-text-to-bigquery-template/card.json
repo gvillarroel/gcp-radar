@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Python UDF support in Cloud Storage Text to BigQuery template",
+  "feature_slug": "python-udf-support-in-cloud-storage-text-to-bigquery-template",
+  "summary": "The Cloud Storage Text to BigQuery (Stream) Dataflow template supports user-defined functions written in Python; The Cloud Storage Text to BigQuery Dataflow template supports user-defined functions written in Python.",
+  "extended_definition": "The Cloud Storage Text to BigQuery (Stream) Dataflow template supports user-defined functions written in Python; The Cloud Storage Text to BigQuery Dataflow template supports user-defined functions written in Python.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Storage Text to BigQuery template with Python UDF \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "source_id": "site-api-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.v2.templates ; import com.google.api.services.bigquery.model.TableFieldSchema ; import com.google.api.services.bigquery.model.TableRow ; import com.google.api.services.bigquery.model.TableSchema ; import com.google.cloud.teleport.metadata.MultiTemplate ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.options.BigQueryStorageApiBatchOptions ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters ; import com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer.PythonExternalTextTransformerOptions ; import com.google.cloud.teleport.v2.utils.BigQueryIOUtils ; import com.google.common.annotations.VisibleForTesting ; import com.google.common.base.Strings ; import java.nio.channels.Channels ; import java.nio.channels.ReadableByteChannel ; import java.nio.charset.StandardCharsets ; import java.util.ArrayList ; import java.util.List ; import java.util.function.Supplier ; import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.io.FileSystems ; import org.apache.beam.sdk.io.TextIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation ; import org.apache.beam.sdk.options.ValueProvider.StaticValueProvider ; import org.apache.beam.sdk.transforms.MapElements ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.transforms.SimpleFunction ; import org.apache.beam.sdk.util.StreamUtils ; import org.apache.beam.sdk.values.PCollection ; import org.json.JSONArray ; import org.json.JSONObject ; / Templated pipeline to read text from TextIO, apply a javascript UDF to it, and write it to GCS. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/googlecloud-to-googlecloud/README GCS Text to BigQuery Flex.md\">README</a> for instructions on how to use or modify this template. / @MultiTemplate ({ @Template ( name = \"GCS Text to BigQuery Flex\" , category = TemplateCategory .",
+          "Your function must return a JSON string.\\n\" + \" <p>For example, this function splits each line of a CSV file and returns a JSON string after\\n\" + \" transforming the values.</p>\\n\" + \"<pre class=\\\"prettyprint\\\" suppresswarning>\\n\" + \"function transform(line) {\\n\" + \"var values = line.split(',');\\n\" + \"\\n\" + \"var obj = new Object();\\n\" + \"obj.location = values[0];\\n\" + \"obj.name = values[1];\\n\" + \"obj.age = values[2];\\n\" + \"obj.color = values[3];\\n\" + \"obj.coffee = values[4];\\n\" + \"var jsonString = JSON.stringify(obj);\\n\" + \"\\n\" + \"return jsonString;\\n\" + \"}</pre>\" }) }) public class TextIOToBigQuery { / Options supported by {@link TextIOToBigQuery}. / public interface Options extends DataflowPipelineOptions , PythonExternalTextTransformerOptions , BigQueryStorageApiBatchOptions { @TemplateParameter.GcsReadFile ( order = 1 , groupName = \"Source\" , optional = false , description = \"The GCS location of the text you'd like to process\" , helpText = \"The gs:// path to the text in Cloud Storage you'd like to process.\" , example = \"gs://your-bucket/your-file.txt\" ) String getInputFilePattern (); void setInputFilePattern ( String value ); @TemplateParameter.GcsReadFile ( order = 2 , optional = false , description = \"JSON file with BigQuery Schema description\" , helpText = \"The gs:// path to the JSON file that defines your BigQuery schema, stored in Cloud Storage.\" , example = \"gs://your-bucket/your-schema.json\" ) String getJSONPath (); void setJSONPath ( String value ); @TemplateParameter.BigQueryTable ( order = 3 , optional = false , groupName = \"Target\" , description = \"Output table to write to\" , helpText = \"The location of the BigQuery table to use to store the processed data.",
+          "Options . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"pythonExternalTextTransformGcsPath\" , \"pythonExternalTextTransformFunctionName\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" + \"</pre>\" , \"Create a JavaScript (<code>.js</code>) file with your UDF function that supplies the logic\\n\" + \" to transform the lines of text."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Text to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.v2.templates ; import com.google.api.services.bigquery.model.TableFieldSchema ; import com.google.api.services.bigquery.model.TableRow ; import com.google.api.services.bigquery.model.TableSchema ; import com.google.cloud.teleport.metadata.MultiTemplate ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.options.BigQueryStorageApiBatchOptions ; import com.google.cloud.teleport.v2.transforms.BigQueryConverters ; import com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer ; import com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer.PythonExternalTextTransformerOptions ; import com.google.cloud.teleport.v2.utils.BigQueryIOUtils ; import com.google.common.annotations.VisibleForTesting ; import com.google.common.base.Strings ; import java.nio.channels.Channels ; import java.nio.channels.ReadableByteChannel ; import java.nio.charset.StandardCharsets ; import java.util.ArrayList ; import java.util.List ; import java.util.function.Supplier ; import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.io.FileSystems ; import org.apache.beam.sdk.io.TextIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation ; import org.apache.beam.sdk.options.ValueProvider.StaticValueProvider ; import org.apache.beam.sdk.transforms.MapElements ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.transforms.SimpleFunction ; import org.apache.beam.sdk.util.StreamUtils ; import org.apache.beam.sdk.values.PCollection ; import org.json.JSONArray ; import org.json.JSONObject ; / Templated pipeline to read text from TextIO, apply a javascript UDF to it, and write it to GCS. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/googlecloud-to-googlecloud/README GCS Text to BigQuery Flex.md\">README</a> for instructions on how to use or modify this template. / @MultiTemplate ({ @Template ( name = \"GCS Text to BigQuery Flex\" , category = TemplateCategory .",
+          "Your function must return a JSON string.\\n\" + \" <p>For example, this function splits each line of a CSV file and returns a JSON string after\\n\" + \" transforming the values.</p>\\n\" + \"<pre class=\\\"prettyprint\\\" suppresswarning>\\n\" + \"function transform(line) {\\n\" + \"var values = line.split(',');\\n\" + \"\\n\" + \"var obj = new Object();\\n\" + \"obj.location = values[0];\\n\" + \"obj.name = values[1];\\n\" + \"obj.age = values[2];\\n\" + \"obj.color = values[3];\\n\" + \"obj.coffee = values[4];\\n\" + \"var jsonString = JSON.stringify(obj);\\n\" + \"\\n\" + \"return jsonString;\\n\" + \"}</pre>\" }) }) public class TextIOToBigQuery { / Options supported by {@link TextIOToBigQuery}. / public interface Options extends DataflowPipelineOptions , PythonExternalTextTransformerOptions , BigQueryStorageApiBatchOptions { @TemplateParameter.GcsReadFile ( order = 1 , groupName = \"Source\" , optional = false , description = \"The GCS location of the text you'd like to process\" , helpText = \"The gs:// path to the text in Cloud Storage you'd like to process.\" , example = \"gs://your-bucket/your-file.txt\" ) String getInputFilePattern (); void setInputFilePattern ( String value ); @TemplateParameter.GcsReadFile ( order = 2 , optional = false , description = \"JSON file with BigQuery Schema description\" , helpText = \"The gs:// path to the JSON file that defines your BigQuery schema, stored in Cloud Storage.\" , example = \"gs://your-bucket/your-schema.json\" ) String getJSONPath (); void setJSONPath ( String value ); @TemplateParameter.BigQueryTable ( order = 3 , optional = false , groupName = \"Target\" , description = \"Output table to write to\" , helpText = \"The location of the BigQuery table to use to store the processed data.",
+          "Options . class , skipOptions = { \"javascriptTextTransformReloadIntervalMinutes\" , \"pythonExternalTextTransformGcsPath\" , \"pythonExternalTextTransformFunctionName\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" + \"</pre>\" , \"Create a JavaScript (<code>.js</code>) file with your UDF function that supplies the logic\\n\" + \" to transform the lines of text."
+        ]
+      },
+      {
+        "title": "Google-provided templates \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streaming templates Templates for processing data continuously: Apache Kafka to Apache Kafka Apache Kafka to BigQuery Apache Kafka to Cloud Storage Change Data Capture from MySQL to BigQuery (Stream) Bigtable change streams to BigQuery Bigtable change streams to Pub/Sub Spanner change streams to BigQuery Spanner change streams to Cloud Storage Spanner change streams to any source database Spanner change streams to Pub/Sub Datastream to BigQuery (Stream) Datastream to Spanner Datastream to MySQL or PostgreSQL (Stream) Data Masking/Tokenization from Cloud Storage to BigQuery (using Cloud DLP) JMS to Pub/Sub MongoDB to BigQuery (Stream) MQTT to Pub/Sub Pub/Sub to BigQuery Pub/Sub to BigQuery with Python UDF Pub/Sub Avro to BigQuery Pub/Sub Proto to BigQuery Pub/Sub Proto to BigQuery with Python UDF Pub/Sub Subscription to BigQuery Pub/Sub to Avro Files on Cloud Storage Pub/Sub to Datadog Pub/Sub to Elasticsearch Pub/Sub to Java Database Connectivity (JDBC) Pub/Sub to MongoDB Pub/Sub to MongoDB with Python UDF Pub/Sub to Pub/Sub Pub/Sub to Redis Pub/Sub to Splunk Pub/Sub Topic or Subscription to Text Files on Cloud Storage Pub/Sub Topic to Text Files on Cloud Storage Text Files on Cloud Storage to BigQuery (Stream) Cloud Storage text files to BigQuery with Python UDF Text files on Cloud Storage to Pub/Sub (Stream) Batch templates Templates for processing data in bulk: Any Source DB to Spanner Apache Cassandra to Bigtable AstraDB to BigQuery BigQuery to Bigtable BigQuery to Clickhouse BigQuery export to Parquet (via Storage API) BigQuery to Cloud Storage TFRecords BigQuery to Elasticsearch BigQuery to MongoDB Bigtable to Cloud Storage Avro Bigtable to Cloud Storage JSON Bigtable to Cloud Storage Parquet Bigtable to Cloud Storage SequenceFile Bigtable change streams to Vertex AI Vector Search Bigtable to Vertex AI Vector Search files on Cloud Storage Spanner to BigQuery Spanner to Cloud Storage Avro Spanner to Cloud Storage Text Spanner to Vertex AI Vector Search files on Cloud Storage Cloud Storage Avro to Bigtable Cloud Storage Parquet to Bigtable Cloud Storage SequenceFile to Bigtable Cloud Storage Avro to Spanner Cloud Storage CSV files to BigQuery Cloud Storage Text to BigQuery Cloud Storage text files to BigQuery with Python UDF Cloud Storage Text to Spanner Cloud Storage Text to Datastore [Deprecated] Cloud Storage Text to Firestore (Datastore mode) Cloud Storage Text to Pub/Sub (Batch) Cloud Storage to Elasticsearch Datastore to Cloud Storage Text [Deprecated] Firestore (Datastore mode) to Cloud Storage Text Google Ads to BigQuery Google Cloud to Neo4j JDBC to BigQuery JDBC to Pub/Sub MongoDB to BigQuery MySQL to BigQuery Oracle to BigQuery PostgreSQL to BigQuery SQL Server to BigQuery Utility templates Bulk Compress Cloud Storage Files Bulk Decompress Cloud Storage Files Datastore Bulk Delete [Deprecated] File Format Conversion Firestore (Datastore mode) Bulk Delete Streaming Data Generator to Pub/Sub, BigQuery, and Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Google-provided templates Stay organized with collections Save and categorize content based on your preferences.",
+          "To disable Dataflow Prime for Google-managed template jobs, set the enable prime Dataflow service option to false ( enable prime=false ) when you run the template."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.services.bigquery.model.TableFieldSchema",
+      "com.google.api.services.bigquery.model.TableRow",
+      "com.google.api.services.bigquery.model.TableSchema",
+      "com.google.cloud.teleport.metadata.MultiTemplate",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.options.BigQueryStorageApiBatchOptions",
+      "com.google.cloud.teleport.v2.templates",
+      "com.google.cloud.teleport.v2.transforms.BigQueryConverters",
+      "com.google.cloud.teleport.v2.transforms.JavascriptTextTransformer.TransformTextViaJavascript",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer",
+      "com.google.cloud.teleport.v2.transforms.PythonExternalTextTransformer.PythonExternalTextTransformerOptions",
+      "com.google.cloud.teleport.v2.utils.BigQueryIOUtils",
+      "com.google.common.annotations.VisibleForTesting",
+      "com.google.common.base.Strings",
+      "file.txt",
+      "github.com",
+      "java.nio.channels.Channels",
+      "java.nio.channels.ReadableByteChannel",
+      "java.nio.charset.StandardCharsets",
+      "java.util.ArrayList",
+      "java.util.function.Supplier",
+      "java.util.List",
+      "line.split",
+      "obj.age",
+      "obj.coffee",
+      "obj.color",
+      "obj.location",
+      "obj.name",
+      "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+      "org.apache.beam.sdk.io.FileSystems",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition",
+      "org.apache.beam.sdk.io.TextIO",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation",
+      "org.apache.beam.sdk.options.ValueProvider.StaticValueProvider",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.MapElements",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.beam.sdk.transforms.SimpleFunction",
+      "org.apache.beam.sdk.util.StreamUtils",
+      "org.apache.beam.sdk.values.PCollection",
+      "org.json.JSONArray",
+      "org.json.JSONObject",
+      "schema.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-templates"
+      ]
+    }
+  ]
+}

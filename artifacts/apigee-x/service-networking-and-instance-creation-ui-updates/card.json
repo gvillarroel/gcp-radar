@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:51.285Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Service networking and instance creation UI updates",
+  "feature_slug": "service-networking-and-instance-creation-ui-updates",
+  "summary": "The Apigee UI includes updates for service networking and instance creation to support revised network IP CIDR requirements.",
+  "extended_definition": "The Apigee UI includes updates for service networking and instance creation to support revised network IP CIDR requirements.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To confirm that the environment variables are set correctly, run the following command and review the output: echo $PROJECT ID $ORG NAME $REGION $INSTANCE $VPC NETWORK NAME $SUBNET Configure an authentication token To configure an authentication token, run the following command: export TOKEN = $( gcloud auth print-access-token ) echo $TOKEN Configure a load balancer for a backend service The following sections describe the steps to set up a global external Application Load Balancer for a backend service, using httpbin.org as an example: Create a global external Application Load Balancer .",
+          "Set environment variables In the Google Cloud project that contains your Apigee instance, use the following command to set environment variables: export PROJECT ID = PROJECT ID export ORG NAME = $PROJECT ID export REGION = REGION export INSTANCE = INSTANCE export VPC NETWORK NAME = VPC NETWORK NAME export SUBNET = SUBNET Where: PROJECT ID is the ID of the project with your Apigee instance."
+        ]
+      },
+      {
+        "title": "ExtractVariables policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "source_id": "site-api-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "This includes: PreFlow: ProxyEndpoint and TargetEndpoint (Request and Response) PostFlow: ProxyEndpoint and TargetEndpoint (Request and Response) PostClientFlow: ProxyEndpoint (Response only, using the MessageLogging policy >) Error Flows Tip: If you do not see the newly extracted variable show up in the Debug tool , try removing the <VariablePrefix> element if you added it.",
+          "The following request contains two query parameters named \"w\": http://myCo.com/basepath/v1/a/b/c/d?w=1&w=2 To reference these query parameters in the ExtractVariables policy, you use indexes, where the first instance of the query parameter has no index, the second is at index 2, the third at index 3, etc.",
+          "To reference query parameters with the same name in the policy, use indexes where the first instance of the query parameter has no index, the second is at index 2, the third at index 3, and so on."
+        ]
+      },
+      {
+        "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create and deploy a Vector Search index To create and deploy a Vector Search index: Create a Vector Search index that allows streaming updates: ACCESS TOKEN = $( gcloud auth print-access-token ) && curl --location --request POST \\ \"https:// $REGION -aiplatform.googleapis.com/v1/projects/ $PROJECT ID /locations/ $REGION /indexes\" \\ --header \"Authorization: Bearer $ACCESS TOKEN \" \\ --header 'Content-Type: application/json' \\ --data-raw \\ '{ \"displayName\": \"semantic-cache-index\", \"description\": \"semantic-cache-index\", \"metadata\": { \"config\": { \"dimensions\": \"768\", \"approximateNeighborsCount\": 150, \"distanceMeasureType\": \"DOT PRODUCT DISTANCE\", \"featureNormType\": \"NONE\", \"algorithmConfig\": { \"treeAhConfig\": { \"leafNodeEmbeddingCount\": \"10000\", \"fractionLeafNodesToSearch\": 0.05 } }, \"shardSize\": \"SHARD SIZE MEDIUM\" }, }, \"indexUpdateMethod\": \"STREAM UPDATE\" }' The $REGION defines the region where the Vector Search index deploys.",
+          "Set environment variables In the Google Cloud project that contains your Apigee instance, use the following command to set environment variables: export PROJECT ID = PROJECT ID export REGION = REGION export RUNTIME HOSTNAME = RUNTIME HOSTNAME Where: PROJECT ID is the ID of the project with your Apigee instance.",
+          "To obtain these values, use the following commands: echo $PUBLIC DOMAIN NAME echo $INDEX ENDPOINT ID Upsert index URL : This Vertex AI service updates the index with new or modified entries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apigee.googleapis.com",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "httpbin.org",
+      "iam.serviceAccountAdmin",
+      "networkservices.serviceExtensionsAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    }
+  ]
+}

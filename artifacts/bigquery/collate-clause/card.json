@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.994Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "COLLATE clause",
+  "feature_slug": "collate-clause",
+  "summary": "The COLLATE clause applies a collation specification to a specific table column in supported DDL statements.",
+  "extended_definition": "The COLLATE clause applies a collation specification to a specific table column in supported DDL statements.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "ALTER TABLE mydataset . mytable SET DEFAULT COLLATE '' Although you have updated the collation specification, your existing column, word , continues to use the previous collation specification. +--------------------------------+ mydataset.mytable number INT64 word STRING COLLATE 'und:ci' +--------------------------------+ However, if you create a new column for your table, the new column includes the new collation specification.",
+          "The syntax looks like this: STRING COLLATE collate specification If you have DEFAULT COLLATE collate specification assigned to the table, the collation specification for a column overrides the specification for the table. default expression : The default value assigned to the column.",
+          "DEFAULT COLLATE collate specification : When a new table is created in the dataset, the table inherits a default collation specification unless a collation specification is explicitly specified for a table or a column ."
+        ]
+      },
+      {
+        "title": "Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: -- Returns FALSE 'MASSE' LIKE 'Maße' ; -- Returns FALSE COLLATE ( 'MASSE' , 'und:ci' ) LIKE '%Maße%' ; -- Returns FALSE COLLATE ( 'MASSE' , 'und:ci' ) = COLLATE ( 'Maße' , 'und:ci' ); The kana differences in Japanese are considered as tertiary or quaternary differences, and should be considered as equal in the und:ci collator with secondary strength. '\\u3042' is 'あ' (hiragana) '\\u30A2' is 'ア' (katakana) For example: -- Returns FALSE ' \\ u3042' LIKE '% \\ u30A2%' ; -- Returns TRUE COLLATE ( ' \\ u3042' , 'und:ci' ) LIKE COLLATE ( '% \\ u30A2%' , 'und:ci' ); -- Returns TRUE COLLATE ( ' \\ u3042' , 'und:ci' ) = COLLATE ( ' \\ u30A2' , 'und:ci' ); When comparing two strings, the und:ci collator compares the collation units based on the specification of the collation.",
+          "If a collation-supported input contains no collation specification or an empty collation specification and another input contains an explicitly defined collation, the explicitly defined collation is used for all of the inputs.",
+          "All inputs with a non-empty, explicitly defined collation specification must have the same type of collation specification, otherwise an error is thrown."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "WITH Words AS ( SELECT word FROM UNNEST ( [ 'foo' , 'bar' , 'baz' , 'giraffe' , 'llama' ] ) AS word ) SELECT CODE POINTS TO STRING ( [ code point ] ) AS letter , COUNT ( ) AS letter count FROM Words , UNNEST ( TO CODE POINTS ( word )) AS code point GROUP BY 1 ORDER BY 2 DESC ; / --------+--------------+ letter letter count +--------+--------------+ a 5 f 3 r 2 b 2 l 2 o 2 g 1 z 1 e 1 m 1 i 1 +--------+-------------- / COLLATE COLLATE ( value , collate specification ) Takes a STRING and a collation specification .",
+          "COLLATE Combines a STRING value and a collation specification into a collation specification-supported STRING value.",
+          "If collate specification is empty, returns a value with collation removed from the STRING ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mydataset.mytable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "C4A machine series support",
+  "feature_slug": "c4a-machine-series-support",
+  "summary": "C4A machine series support adds AlloyDB support for Arm-based Axion processors in predefined configurations across limited regions.",
+  "extended_definition": "C4A machine series support adds AlloyDB support for Arm-based Axion processors in predefined configurations across limited regions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+      "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Choose an AlloyDB machine type \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+        "source_id": "site-docs-reference-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "C4A Axion-based : this machine series provides optimized price-performance and delivers predictable high performance for high demand AlloyDB workloads.",
+          "Machine type vCPUs Memory (GB) n2-highmem-2 2 16 GB RAM n2-highmem-4 4 32 GB RAM n2-highmem-8 8 64 GB RAM n2-highmem-16 16 128 GB RAM n2-highmem-32 32 256 GB RAM n2-highmem-64 64 512 GB RAM n2-highmem-96 96 768 GB RAM n2-highmem-128 128 864 GB RAM C4A Axion-based The following machine types are available for instances for the C4A Axion-based machine series.",
+          "Z3 4th generation Intel x86 processors (Sapphire Rapids) with Titanium SSD Large working dataset, storage intensive Allows caching of more data per vCPU; optimized for storage-dense, I/O-intensive workloads Machine series availability for AlloyDB clusters You can choose one of the following machine series: N2 : this machine series provides a balanced price-to-performance ratio for a variety of AlloyDB workloads."
+        ]
+      },
+      {
+        "title": "Scale an instance \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about using the C4A Axion-based machine series, including the 1 vCPU machine type, see Considerations when using the C4A Axion-based machine series .",
+          "Select one of the following machine series: C4A (Google Axion-based machine series) N2 (x86-based machine series).",
+          "Create a read pool instance with a schedule-based policy To create a read pool instance with a schedule-based automatic scaling policy that defines a minimum number of nodes for a specific time window, run the following command: Note: If you have an existing autoscaling policy that has --autoscaler-max-node-count set , then this becomes an optional field. gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: MAX NODE COUNT : the maximum number of nodes that the autoscaler can create in the read pool instance."
+        ]
+      },
+      {
+        "title": "\"Create a cluster and its primary instance \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "source_id": "site-docs-reference-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your VPC network contains more than one IP address range that has Considerations when using the C4A Axion-based machine series AlloyDB offers a C4A machine series based on Google Axion, Google's custom Arm-based processor.",
+          "For more information about using C4A Axion-based machine series, including the 1 vCPU machine type see Considerations when using the C4A Axion-based machine series .",
+          "Select one of the following machine series: C4A (Google Axion-based machine series)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.private",
+      "alloc.name",
+      "cluster.default.name",
+      "connection.vpc",
+      "network.default.id",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/choose-machine-type",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create"
+      ]
+    }
+  ]
+}

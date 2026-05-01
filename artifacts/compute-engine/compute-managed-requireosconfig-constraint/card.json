@@ -1,0 +1,241 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.311Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "compute.managed.requireOsConfig constraint",
+  "feature_slug": "compute-managed-requireosconfig-constraint",
+  "summary": "This managed organization policy constraint enforces a security control that requires OS Config on Compute Engine VMs.",
+  "extended_definition": "This managed organization policy constraint enforces a security control that requires OS Config on Compute Engine VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+      "https://docs.cloud.google.com/compute/docs/access/organization-policies",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "マネージド制約 | Compute Engine | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "source_id": "feature-recovery-http",
+        "final_score": 363,
+        "relevance": "",
+        "evidence_snippets": [
+          "マネージド制約 | Compute Engine | Google Cloud Documentation メイン コンテンツにスキップ テクノロジー分野 close AI と ML アプリケーション開発 アプリケーションのホスティング コンピューティング データ分析とパイプライン データベース 分散型クラウド、ハイブリッド クラウド、マルチクラウド 生成 AI 業種別ソリューション ネットワーキング オブザーバビリティとモニタリング セキュリティ Storage プロダクト横断型のツール close アクセスとリソースの管理 費用と使用量の管理 Infrastructure as code 移行 SDK、言語、フレームワーク、ツール / コンソール English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 ログイン Compute Engine 無料で利用開始 テクノロジー分野 その他 プロダクト横断型のツール その他 コンソール AI と ML アプリケーション開発 アプリケーションのホスティング コンピューティング データ分析とパイプライン データベース 分散型クラウド、ハイブリッド クラウド、マルチクラウド 生成 AI 業種別ソリューション ネットワーキング オブザーバビリティとモニタリング セキュリティ Storage アクセスとリソースの管理 費用と使用量の管理 Infrastructure as code 移行 SDK、言語、フレームワーク、ツール Home Documentation Compute Compute Engine フィードバックを送信 マネージド制約 コレクションでコンテンツを整理 必要に応じて、コンテンツの保存と分類を行います。 マネージド制約は、最新のプラットフォーム上に構築された事前定義の組織のポリシーであり、Compute Engine リソースをプログラムによって一元管理できます。これには、Policy Simulator やドライランなどの安全なロールアウト ツールに対する組み込みサポートが含まれます。 マネージド制約は compute.managed.* 接頭辞で識別でき、以前の compute.* 制約の直接的な代替として機能します。 利点 安全なロールアウトとモニタリング : ツールをフル活用してポリシーを実装し、変更管理を迅速化します。シミュレーションとドライラン機能を使用して、段階的にデプロイします。 一貫性のあるロギング : ロギングとエラー メッセージの統一性を強化し、一元化されたモニタリングを簡素化して監査を効率化します。 ポリシーの継承 リソースに設定した組織のポリシーは、リソース階層内のそのリソースの子孫に継承されます。たとえば、フォルダにポリシーを適用した場合、 Google Cloud はそのフォルダ内のすべてのプロジェクトにそのポリシーを適用します。 料金 事前定義（以前の）、マネージド、カスタムの組織のポリシーを含め、組織のポリシー サービスは無料です。 始める前に まだ設定していない場合は、 認証 を設定します。認証では、 Google Cloud サービスと API にアクセスするための ID が確認されます。ローカル開発環境からコードまたはサンプルを実行するには、次のいずれかのオプションを選択して Compute Engine に対する認証を行います。 このページのサンプルをどのように使うかに応じて、タブを選択してください。 コンソール Google Cloud コンソールを使用して Google Cloud サービスと API にアクセスする場合、認証を設定する必要はありません。 gcloud Google Cloud CLI を インストール します。インストール後、次のコマンドを実行して Google Cloud CLI を 初期化 します。 gcloud init 外部 ID プロバイダ（IdP）を使用している場合は、まず 連携 ID を使用して gcloud CLI にログインする 必要があります。 注: すでに gcloud CLI をインストールしている場合は、 gcloud components update を実行して、最新バージョンがインストールされていることを確認してください。 デフォルトのリージョンとゾーンを設定 します。 REST このページの REST API サンプルをローカル開発環境で使用するには、gcloud CLI に指定した認証情報を使用します。 Google Cloud CLI を インストール します。 外部 ID プロバイダ（IdP）を使用している場合は、まず 連携 ID を使用して gcloud CLI にログインする 必要があります。 詳細については、 Google Cloud 認証ドキュメントの REST を使用して認証する をご覧ください。 組織 ID を確認します。 まだ行っていない場合は、gcloud CLI を インストール し、 gcloud init を実行して初期化します。 テスト用のデフォルト プロジェクトを設定します。 必要なロール マネージド制約を使用して組織のポリシーを管理するために必要な権限を取得するには、次の IAM ロールを付与するように管理者に依頼してください。 組織リソースに対する 組織のポリシー管理者 （ roles/orgpolicy.policyAdmin ） 制約をテストする場合: プロジェクトに対する Compute インスタンス管理者（v1） （ roles/compute.instanceAdmin.v1 ） ロールの付与については、 プロジェクト、フォルダ、組織へのアクセス権の管理 をご覧ください。 これらの事前定義ロールには、マネージド制約を使用して組織のポリシーを管理するために必要な権限が含まれています。必要とされる正確な権限については、「 必要な権限 」セクションを開いてご確認ください。 必要な権限 マネージド制約を使用して組織のポリシーを管理するには、次の権限が必要です。 orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set 制約をテストするには: プロジェクトに対する compute.instances.create カスタム イメージを使用して VM を作成する: イメージに対する compute.images.useReadOnly スナップショットを使用して VM を作成する: スナップショットに対する compute.snapshots.useReadOnly インスタンス テンプレートを使用して VM を作成する: インスタンス テンプレートに対する compute.instanceTemplates.useReadOnly 以前のネットワーク を VM に割り当てる: プロジェクトに対する compute.networks.use VM の静的 IP アドレスを指定する: プロジェクトに対する compute.addresses.use 以前のネットワークの使用時に VM に外部 IP アドレスを割り当てる: プロジェクトに対する compute.networks.useExternalIp VM のサブネットを指定する: プロジェクトまたは選択したサブネットに対する compute.subnetworks.use VPC ネットワークの使用時に VM に外部 IP アドレスを割り当てる: プロジェクトまたは選択したサブネットに対する compute.subnetworks.useExternalIp VM の VM インスタンス メタデータを設定する: プロジェクトに対する compute.instances.setMetadata VM にタグを設定する: VM に対する compute.instances.setTags VM にラベルを設定する: VM に対する compute.instances.setLabels VM が使用するサービス アカウントを設定する: VM に対する compute.instances.setServiceAccount VM に新しいディスクを作成する: プロジェクトに対する compute.disks.create 既存のディスクを読み取り専用モードまたは読み取り / 書き込みモードでアタッチする: ディスクに対する compute.disks.use 既存のディスクを読み取り専用モードでアタッチする: ディスクに対する compute.disks.useReadOnly カスタムロール や他の 事前定義ロール を使用して、これらの権限を取得することもできます。 使用可能なマネージド制約 Compute Engine では、次のマネージド組織のポリシーの制約を使用できます。 制約 説明 許可された VLAN アタッチメント暗号化設定 このリスト型制約は、新しい VLAN アタッチメントで許可される暗号化設定を定義します。 デフォルトでは、VLAN アタッチメントで任意の暗号化設定を使用できます。 暗号化された VLAN アタッチメントのみが作成されるようにするには、許可される値として IPSEC を設定します。 constraints/compute.managed.allowedVlanAttachmentEncryption Compute Engine のプレビュー機能をブロックする この制約により、この制約が明示的に許可されない限り、プレビュー機能はブロックされます。許可に設定すると、プロジェクトで個別に有効または無効にできるプレビュー機能を制御できます。プロジェクトでアクセスできるのは、有効になっているプレビュー機能のみです。ポリシーを無効にしても、すでに設定されている個々のプレビュー機能のステータスは変更されません。個々のプレビュー機能は個別に無効にできます。この制約は、Compute Alpha API の機能にのみ適用されます。 constraints/compute.managed.blockPreviewFeatures プロジェクト全体の SSH 認証鍵をブロックする プレビュー: この制約により、この制約が適用されている組織、プロジェクト、フォルダ内の Compute Engine VM のプロジェクト、プロジェクト ゾーン、インスタンス レベルで block-project-ssh-keys メタデータキーを false に設定できなくなります。デフォルトでは、 プロジェクト全体の SSH 認証鍵 が許可されています。このメタデータキーを使用して、プロジェクト、プロジェクト ゾーン、インスタンス レベルで無効にできます。特定の VM でプロジェクト全体の SSH 認証鍵を許可するには、タグと条件付きルールを使用して、このポリシーから除外します。 重要: この制約を適用しても、block-project-ssh-keys がすでに false に設定されている既存の VM には影響しません。メタデータが更新されない限り、アクセス権は保持されます。 constraints/compute.managed.blockProjectSshKeys Compute Engine メタデータのゲスト属性の無効化 プレビュー: この制約を適用すると、Compute Engine VM の ゲスト属性 への Compute Engine API アクセスが無効になります。 デフォルトでは、Compute Engine API を使用して Compute Engine VM のゲスト属性にアクセスできます。 特定の VM インスタンスでゲスト属性の使用を許可できます。まず、タグを適用してインスタンスをマークし、タグ値に基づいて条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.disableGuestAttributesAccess VM のネストされた仮想化を無効化 このブール型制約により、制約が True に設定されている組織、プロジェクト、フォルダに属するすべての Compute Engine VM に対するハードウェア アクセラレーションによりネストされた仮想化は無効になります。 デフォルトでは、Intel Haswell 以降の CPU プラットフォームで実行されているすべての Compute Engine VM に対して、ハードウェア アクセラレーションによりネストされた仮想化は許可されています。 constraints/compute.managed.disableNestedVirtualization FIPS 準拠でないマシンタイプを無効にする プレビュー: この制約を適用すると、FIPS に準拠していないマシンタイプを使用する VM インスタンスの作成または更新が禁止されます。デフォルトでは、すべてのマシンタイプが許可されます。タグと条件付きルールを使用して、特定の VM を除外できます。 constraints/compute.managed.disableNonFIPSMachineTypes VM シリアルポート アクセス メタデータの有効化を制限する この制約により、この制約が適用されている組織、プロジェクト、フォルダ内の Compute Engine VM で serial-port-enable メタデータキーが true に設定されるのを防ぎます。デフォルトでは、このメタデータキーを使用して、VM 単位、ゾーン単位、プロジェクト単位でシリアルポート アクセスを有効にできます。特定の VM のシリアルポート アクセスを許可するには、タグと条件付きルールを使用して、このポリシーから除外します。 重要: この制約を適用しても、serial-port-enable がすでに true に設定されている既存の VM には影響しません。メタデータが更新されない限り、アクセスは保持されます。 constraints/compute.managed.disableSerialPortAccess Stackdriver への VM シリアルポート ロギングを無効化 この制約が適用されると、Compute Engine VM から Stackdriver へのシリアルポート ロギングが無効になります。 デフォルトでは、Compute Engine VM のシリアルポート ロギングは無効になっており、 メタデータ属性 を使用して VM 単位またはプロジェクト単位で選択して有効にできます。シリアルポート ロギングを無効にすると、この機能に依存する特定のサービス（Google Kubernetes Engine クラスタなど）が正しく機能しなくなるおそれがあります。この制約を適用する前に、プロジェクト内のプロダクトがシリアル ポート ロギングに依存していないことを確認してください。特定の VM インスタンスでシリアルポート ロギングを使用できます。まず、タグを適用してインスタンスをマークし、タグ値に基づいて条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.disableSerialPortLogging 非推奨のコンテナ起動エージェント（konlet）を使用する Compute Engine インスタンスの作成を無効にします。 プレビュー: このブール型制約により、非推奨のコンテナ起動エージェントである konlet を使用する Compute Engine インスタンスの作成を防ぎます。有効にすると、`gce-container-declaration` メタデータキーを持つコンピューティング インスタンスを作成できなくなります。この制約により、`gce-container-declaration` メタデータキーを含むインスタンス テンプレートからコンピューティング インスタンスを作成することもできなくなります。これは、このようなインスタンス テンプレートを使用するマネージド インスタンス グループ（MIG）に影響します。 constraints/compute.managed.disableVmsWithContainerStartupAgent ZonalOnly DNS 設定を持つプロジェクトのグローバル内部 DNS（gDNS）の使用を制限します。 この制約を適用すると、gDNS の使用が制限されます。この制限により、gDNS VM の作成と、gDNS を使用するように VM を更新することが無効になります。zDNS プロジェクトを gDNS に戻すことはブロックされませんが、後続の Instance API 呼び出しでポリシー違反が適用されます。 constraints/compute.managed.disallowGlobalDns OS Config が必要 この制約を適用すると、すべての新しいプロジェクトで VM Manager（OS Config）を有効にする必要があります。この制約を適用すると、新規および既存のプロジェクトにおいて、プロジェクト、プロジェクト ゾーン、インスタンス レベルで VM Manager を無効にするようなメタデータの更新を行うことができなくなります。特定の VM インスタンスで VM Manager を無効にすることを許可できます。まず、タグを適用してインスタンスをマークし、タグ値に基づいて条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.requireOsConfig OS ログインが必須 この制約を適用すると、新しく作成するすべてのプロジェクトで OS Login を有効にする必要があります。この制約は、新規および既存のプロジェクトについて、プロジェクト、プロジェクト ゾーン、インスタンス レベルで OS Login が無効なメタデータが更新されるのを防ぎます。特定の VM インスタンスで OS Login を無効にすることができます。まず、タグを適用してインスタンスをマークし、タグ値に基づいて条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.requireOsLogin Confidential Computing 以外を制限する プレビュー版: すべての新しい VM を Confidential Computing を有効にして作成する必要があります。デフォルトでは、新しい VM は Confidential Computing を使用する必要はありません。この制約を適用または除外するには、タグを使用して VM インスタンスをマークし、適用されたタグに基づいて条件付きルールで制約を適用します。 constraints/compute.managed.restrictNonConfidentialComputing プロトコル転送の使用を制限する この制約を使用すると、組織で作成できるプロトコル転送デプロイのタイプ（内部または外部）を制限できます。制約を構成するには、許可するプロトコル転送デプロイメントのタイプの許可リストを指定します。許可リストには、次の値のみを含めることができます。 INTERNAL EXTERNAL 。たとえば、許可リストが INTERNAL に設定されている場合、ユーザーは内部プロトコル転送のみを設定できます。つまり、ターゲット インスタンスに関連付けられた転送ルールは、内部ロード バランシング スキームに制限され、内部 IP アドレスのみを使用する必要があります。 constraints/compute.managed.restrictProtocolForwardingCreationForTypes VM IP 転送を制限する この制約は、Compute Engine VM インスタンスで IP 転送を有効にできるかどうかを定義します。デフォルトでは、ポリシーが指定されていない場合、すべての VM がすべての仮想ネットワークで IP 転送を有効にできます。この制約が適用されると、IP 転送が有効になっている VM インスタンスの作成または更新が拒否されます。特定の VM インスタンスで IP 転送を有効にできます。まず、タグを適用してインスタンスをマークし、タグ値に基づいて条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.vmCanIpForward VM インスタンスの外部 IP を制限する この制約は、Compute Engine VM インスタンスで IPv4 外部 IP アドレスの使用が許可されているかどうかを定義します。デフォルトでは、すべての VM インスタンスで外部 IP アドレスの使用が許可されます。この制約が適用されると、IPv4 外部 IP アドレスを持つ VM インスタンスの作成または更新が拒否されます。この制約は、IPv6 外部 IP アドレスの使用を制限しません。特定の VM インスタンスで外部 IPv4 IP アドレスを使用できるようにすることができます。まず、タグを適用してインスタンスをマークし、タグ値に基づいて条件付きルールを使用して、これらのインスタンスを適用範囲から適切に除外します。 constraints/compute.managed.vmExternalIpAccess 階層型メタデータの評価 OS Login やシリアルポート アクセスなどの事前定義されたメタデータキーに依存するマネージド制約は、階層評価をサポートしています。Compute Engine がこれらの制約を評価するときに、VM インスタンス、プロジェクト、ゾーンレベルで設定されたメタデータ値がチェックされます。 プロジェクト レベルまたはゾーンレベルでメタデータ値を設定すると、VM インスタンスを大規模に管理できます。ただし、制約の適用は、VM インスタンスの作成または更新の API 呼び出しでのみ行われます。したがって、プロジェクトまたはゾーン メタデータの変更は、インスタンスの作成または更新時にのみ VM インスタンスの制約コンプライアンスに影響します。 メタデータ ベースの制約とレベル 制約 メタデータキー メタデータ階層レベル compute.managed.disableSerialPortAccess serial-port-enable プロジェクト、ゾーン、インスタンス compute.managed.requireOsLogin enable-oslogin プロジェクト、ゾーン、インスタンス compute.managed.disableGuestAttributesAccess enable-guest-attributes プロジェクト、ゾーン、インスタンス compute.managed.requireOsConfig enable-osconfig プロジェクト、ゾーン、インスタンス compute.managed.disallowGlobalDns VmDnsSetting プロジェクト、インスタンス 安全なロールアウト: ポリシーのライフサイクル 新しい制約を段階的に実装する際にサービスが中断しないようにするには、次の手順に沿ってマネージド制約を実装することをおすすめします。 Policy Simulator で分析する ポリシーを適用する前に、Policy Simulator を使用して、既存のリソースのうちポリシーに違反しているリソースを確認します。手順は次のとおりです。 Google Cloud コンソールで、[ 組織のポリシー ] ページに移動します。 [組織のポリシー] に移動 フィルタバーで制約を検索し、制約名をクリックして [ ポリシーの詳細 ] ページに移動します。 [ 変更をテスト ] をクリックして、シミュレーション レポートを生成します。 階層メタデータの変更が、VM メタデータ設定の制約のシミュレーション レポートに反映されるまでに数時間かかることがあります。 レポートを確認して、準拠していないリソースを再構成するか、例外をリクエストします。 ドライランで検証する ドライラン モードでは、違反は Cloud Logging に記録されますが、制限は適用されません。 制約をテストするには、次のように gcloud org-policies set-policy コマンド を使用します。 dryRunSpec を含むポリシー YAML ファイル（ dry-run-policy.yaml など）を作成します。 name : projects/ PROJECT_ID /policies/compute.managed.requireOsLogin dryRunSpec : rules : - enforce : true PROJECT_ID は、実際のプロジェクト ID に置き換えます。 ポリシーを適用します。 gcloud org-policies set-policy dry-run-policy.yaml 完全な違反措置 ポリシーをシミュレートしてテストしたら、リソースに適用できます。ポリシーの変更がすべてのGoogle Cloud システムに反映されるまでに、最大 15 分ほどかかることがあります。 制約の適用をテストする ポリシーを設定したら、gcloud CLI を使用して適用を確認できます。たとえば、 compute.managed.requireOsLogin 制約をテストする手順は次のとおりです。 既存のポリシーを一覧表示して、構成を確認します。 gcloud org-policies list --project = PROJECT_ID YAML ファイルを使用して適用ポリシーを適用します。 gcloud org-policies set-policy enforce_managed_constraint.yaml ミューテーション API を呼び出して、適用を確認します。準拠していないメタデータを使用して VM インスタンスを作成しようとすると、失敗するはずです。 gcloud compute instances create VM_NAME \\ --machine-type = MACHINE_TYPE \\ --image-family = IMAGE_FAMILY \\ --image-project = IMAGE_PROJECT \\ --metadata = enable-oslogin = false 次のように置き換えます。 VM_NAME : 新しい VM インスタンスの名前。 MACHINE_TYPE : 有効なマシンタイプ（例: e2-micro ）。 IMAGE_FAMILY : 有効なイメージ ファミリー（例: debian-11 ）。 IMAGE_PROJECT : イメージ ファミリーのプロジェクト（例: debian-cloud ）。 エラー メッセージを確認します。違反した特定の制約を示す拒否が表示されます。 ERROR: (gcloud.compute.instances.create) Could not fetch resource: - Operation denied by org policy: [constraints/compute.managed.requireOsLogin] タグを使用した条件付き除外 タグを使用すると、ビジネスニーズに基づいて特定のリソースに例外を付与できます。この例では、 osLoginOptional という名前のタグを使用して、OS Login の要件から除外されるリソースを識別します。このタグを値 true でリソースにバインドすると、ポリシーが環境の残りの部分に厳密に適用されたままでも、組織のポリシーで OS Login が有効になっていない特定のリソースの存在が許可されます。 タグを使用して例外を付与する手順は次のとおりです。 タグを作成する: gcloud CLI を使用して、タグキーとタグ値を作成します。 タグキーを作成します。 gcloud resource-manager tags keys create osLoginOptional \\ --parent = organizations/ ORGANIZATION_ID タグ値を作成します。 gcloud resource-manager tags values create true \\ --parent = organizations/ ORGANIZATION_ID /tagKeys/osLoginOptional ORGANIZATION_ID は、実際の組織 ID に置き換えます。 タグをリソースにバインドします。 compute.managed.requireOsLogin 制約からプロジェクトを除外するには、 gcloud resource-manager tags bindings create コマンド を使用して osLoginOptional=true タグをプロジェクトにバインドします。 gcloud resource-manager tags bindings create \\ --tag-value = ORGANIZATION_ID /osLoginOptional/true \\ --parent = //cloudresourcemanager.googleapis.com/projects/ PROJECT_ID \\ --location = global ORGANIZATION_ID は組織 ID に、 PROJECT_ID は除外するプロジェクトの ID に置き換えます。 タグを他のリソースにバインドする方法については、 タグをリソースにバインドする をご覧ください。 ポリシーを更新する: 条件付きルールを含めるように、ポリシー YAML ファイル（ policy.yaml など）を作成または更新します。 name : projects/ PROJECT_ID /policies/compute.managed.requireOsLogin spec : rules : - condition : expression : \"resource.matchTag(' ORGANIZATION_ID /osLoginOptional', 'true')\" enforce : false - enforce : true 次のように置き換えます。 PROJECT_ID : プロジェクト ID。 ORGANIZATION_ID : 組織 ID。 ポリシーを適用する: 次の gcloud CLI コマンドを使用して、構成を有効にします。 gcloud org-policies set-policy policy.yaml 以前の制約からの移行 移行の際は、マネージド制約は以前のポリシーの動作を改善するものであり、完全に複製するものではないことに注意してください。マネージド制約は、リソースの作成または変更を行う API リクエスト中にのみ違反をチェックするため、予測可能性が高くなります。リクエストが制約に違反している場合、API 呼び出しは明確なエラーで失敗します。これは、オペレーションのさまざまな段階で適用されたり、リソース属性として使用されたりして、適用動作の予測が難しくなる従来のポリシーとは異なります。 以前の compute.* 制約から最新の compute.managed.* 相当に移行する場合は、次の手順に沿って、意図しない制限の強化を防ぎます。 検出: 新しいマネージド制約の代替案を特定します。 分析と検証: 前述のように、Policy Simulator とドライランを使用します。 マネージド制約を適用する: 新しいマネージド制約を以前の制約とともに適用します。 以前のポリシーを削除します。 Google Cloud コンソールでアセット インベントリに移動し、 orgpolicy.Policy と以前の制約名でフィルタして、以前の制約を使用するすべてのポリシーを特定します。 以前の制約を使用するポリシーをすべて削除します。ポリシーを削除すると、そのポリシーは、その制約の Google 管理のデフォルトの動作にリセットされます。 次のステップ サービスの基本的なコンセプトとメリットについては、 組織のポリシー サービスの概要 をご覧ください。 ポリシーの作成と管理の詳細な手順については、 Resource Manager のドキュメント をご覧ください。 すべての Google Cloud サービスで使用可能な 制約の全リスト をご覧ください。 組織のポリシーの詳細な影響分析に Policy Simulator を使用する方法について学習します。 フィードバックを送信 特に記載のない限り、このページのコンテンツは クリエイティブ・コモンズの表示 4.0 ライセンス により使用許諾されます。コードサンプルは Apache 2.0 ライセンス により使用許諾されます。詳しくは、 Google Developers サイトのポリシー をご覧ください。Java は Oracle および関連会社の登録商標です。 最終更新日 2026-04-14 UTC。 ご意見をお聞かせください [[[\"わかりやすい\",\"easyToUnderstand\",\"thumb-up\"],[\"問題の解決に役立った\",\"solvedMyProblem\",\"thumb-up\"],[\"その他\",\"otherUp\",\"thumb-up\"]],[[\"わかりにくい\",\"hardToUnderstand\",\"thumb-down\"],[\"情報またはサンプルコードが不正確\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"必要な情報 / サンプルがない\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"翻訳に関する問題\",\"translationIssue\",\"thumb-down\"],[\"その他\",\"otherDown\",\"thumb-down\"]],[\"最終更新日 2026-04-14 UTC。\"],[],[]] プロダクトと料金 すべてのプロダクトを見る Google Cloud の料金 Google Cloud Marketplace お問い合わせ サポート コミュニティ フォーラム サポート リリースノート システム ステータス リソース GitHub Google Cloud の概要 コードサンプル Cloud アーキテクチャ センター トレーニングと認定資格 つながる ブログ イベント X（Twitter） YouTube の Google Cloud チャンネル YouTube の Google Cloud Tech チャンネル Google について プライバシー サイトの利用規約 Google Cloud 利用規約 Manage cookies Google の 30 年の気候変動対策: ご参加ください Google Cloud ニュースレターに登録 購読 English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어"
+        ]
+      },
+      {
+        "title": "Batasan kebijakan organisasi | Resource Manager | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "source_id": "feature-recovery-http",
+        "final_score": 343,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pertama, terapkan tag untuk menandai instance, lalu gunakan aturan bersyarat berdasarkan nilai tag untuk mengecualikan instance tersebut dari penegakan. constraints/compute.managed.requireOsConfig Compute Engine Perlu Login OS [Pratinjau Publik] Jika diterapkan, batasan ini akan mewajibkan pengaktifan Login OS di semua Project yang baru dibuat.",
+          "Batasan kebijakan organisasi berikut memiliki perilaku default yang dikelola Google yang membatasi operasi: Batasan kebijakan organisasi Jenis batasan constraints/appengine.runtimeDeploymentExemption Dikelola (lama) constraints/cloudbuild.disableCreateDefaultServiceAccount Dikelola (lama) constraints/cloudbuild.useBuildServiceAccount Dikelola (lama) constraints/cloudbuild.useComputeServiceAccount Dikelola (lama) constraints/commerceorggovernance.marketplaceServices Dikelola (lama) constraints/compute.managed.blockPreviewFeatures Dikelola constraints/compute.sharedReservationsOwnerProjects Dikelola (lama) constraints/iam.allowServiceAccountCredentialLifetimeExtension Dikelola (lama) constraints/iam.disableCrossProjectServiceAccountUsage Dikelola (lama) constraints/iam.managed.disableServiceAccountApiKeyCreation Dikelola constraints/iam.serviceAccountKeyExposureResponse Dikelola (lama) constraints/resourcemanager.allowedExportDestinations Dikelola (lama) constraints/resourcemanager.allowedImportSources Dikelola (lama) constraints/resourcemanager.allowEnabledServicesForExport Dikelola (lama) constraints/vertexai.allowedPartnerModelFeatures Dikelola (lama) Batasan yang tersedia Anda dapat membuat kebijakan organisasi menggunakan batasan berikut.",
+          "Secara default, virtualisasi bertingkat dengan akselerasi hardware diizinkan untuk semua VM Compute Engine yang berjalan di platform CPU Intel Haswell atau yang lebih baru. constraints/compute.managed.disableNestedVirtualization Compute Engine Membatasi pengaktifan metadata akses port serial VM Pratinjau: Batasan ini mencegah kunci metadata serial-port-enable disetel ke benar (true) untuk VM Compute Engine dalam organisasi, project, atau folder tempat batasan ini diberlakukan."
+        ]
+      },
+      {
+        "title": "Organization policies for Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/organization-policies",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Constraint types When you use the Organization Policy, you can apply the following types of constraints: Managed constraints : Google-provided, predefined constraints that are built on a modern platform, identifiable by the compute.managed. prefix.",
+          "Managed constraints Managed constraints for Compute Engine simplify governance for common security scenarios and integrate with safe rollout tools, such as dry-run and Policy Simulator, which let you test their impact before enforcement.",
+          "Compute Engine constraints The following sections list the Compute Engine constraints that Organization Policy supports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.runtimeDeploymentExemption",
+      "cloudbuild.disableCreateDefaultServiceAccount",
+      "cloudbuild.useBuildServiceAccount",
+      "cloudbuild.useComputeServiceAccount",
+      "cloudresourcemanager.googleapis.com",
+      "commerceorggovernance.marketplaceServices",
+      "compute.addresses.use",
+      "compute.disks.create",
+      "compute.disks.use",
+      "compute.disks.useReadOnly",
+      "compute.images.useReadOnly",
+      "compute.instanceAdmin.v1",
+      "compute.instances.create",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setServiceAccount",
+      "compute.instances.setTags",
+      "compute.instanceTemplates.useReadOnly",
+      "compute.managed",
+      "compute.managed.allowedVlanAttachmentEncryption",
+      "compute.managed.blockPreviewFeatures",
+      "compute.managed.blockProjectSshKeys",
+      "compute.managed.disableGuestAttributesAccess",
+      "compute.managed.disableNestedVirtualization",
+      "compute.managed.disableNonFIPSMachineTypes",
+      "compute.managed.disableSerialPortAccess",
+      "compute.managed.disableSerialPortLogging",
+      "compute.managed.disableVmsWithContainerStartupAgent",
+      "compute.managed.disallowGlobalDns",
+      "compute.managed.requireOsConfig",
+      "compute.managed.requireOsLogin",
+      "compute.managed.restrictNonConfidentialComputing",
+      "compute.managed.restrictProtocolForwardingCreationForTypes",
+      "compute.managed.vmCanIpForward",
+      "compute.managed.vmExternalIpAccess",
+      "compute.networks.use",
+      "compute.networks.useExternalIp",
+      "compute.sharedReservationsOwnerProjects",
+      "compute.snapshots.useReadOnly",
+      "compute.subnetworks.use",
+      "compute.subnetworks.useExternalIp",
+      "gcloud.compute.instances.create",
+      "iam.allowServiceAccountCredentialLifetimeExtension",
+      "iam.disableCrossProjectServiceAccountUsage",
+      "iam.managed.disableServiceAccountApiKeyCreation",
+      "iam.serviceAccountKeyExposureResponse",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.Policy",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "orgpolicy.policyAdmin",
+      "policy.yaml",
+      "resource.matchTag",
+      "resourcemanager.allowedExportDestinations",
+      "resourcemanager.allowedImportSources",
+      "resourcemanager.allowEnabledServicesForExport",
+      "vertexai.allowedPartnerModelFeatures"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/organization-policies"
+      ]
+    }
+  ]
+}

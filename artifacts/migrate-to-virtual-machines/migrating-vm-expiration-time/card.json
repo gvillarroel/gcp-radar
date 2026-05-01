@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.057Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Migrating VM expiration time",
+  "feature_slug": "migrating-vm-expiration-time",
+  "summary": "Migrating VMs expire after 100 days and can be extended by an additional 100 days within the allowed window.",
+  "extended_definition": "Migrating VMs expire after 100 days and can be extended by an additional 100 days within the allowed window.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "The VMs that you create during the migration process are called migrating VMs, and they exist in various states during and after a migration.",
+          "For example, you can migrate 100 VMs from a VMware source and 100 additional VMs from AWS at the same time.",
+          "The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes: The replication data for the VM stored on Google Cloud The Compute Engine configuration information The monitoring history All other data associated with migrating a VM The VM from the list of onboarded VMs on the Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "The VMs that you create during the migration process are called migrating VMs, and they exist in various states during and after a migration.",
+          "For example, you can migrate 100 VMs from a VMware source and 100 additional VMs from AWS at the same time.",
+          "The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes: The replication data for the VM stored on Google Cloud The Compute Engine configuration information The monitoring history All other data associated with migrating a VM The VM from the list of onboarded VMs on the Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can migrate disks attached to 100 VMs from a VMware source and 100 additional VMs from AWS at the same time.",
+          "The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes the following: The replication data for the VM stored on Google Cloud The Persistent Disk configuration information The monitoring history All other data associated with migrating a disk The VM from the list of onboarded VMs on the VM Disk Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab.",
+          "The Estimated cut-over time column shows an estimate of the time it takes to complete a cut-over job for a VM after you initiate a cut-over."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root-2",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can migrate disks attached to 100 VMs from a VMware source and 100 additional VMs from AWS at the same time.",
+          "The only allowed operations on a migration in the Finalized state are: Delete the migration Add to or remove from a group Delete a migration Deleting a migration removes the following: The replication data for the VM stored on Google Cloud The Persistent Disk configuration information The monitoring history All other data associated with migrating a disk The VM from the list of onboarded VMs on the VM Disk Migrations tab The VM from its group, if the VM is a member of a group However, deleting a migration does not remove the source VM from the list of available VMs for the migration source displayed on the Sources tab.",
+          "The Estimated cut-over time column shows an estimate of the time it takes to complete a cut-over job for a VM after you initiate a cut-over."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks"
+      ]
+    }
+  ]
+}

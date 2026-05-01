@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.003Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Ops Agent Oracle Database integration",
+  "feature_slug": "ops-agent-oracle-database-integration",
+  "summary": "Ops Agent can collect Oracle Database logs and metrics.",
+  "extended_definition": "Ops Agent can collect Oracle Database logs and metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/couchdb",
+      "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+      "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apache CouchDB \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/couchdb",
+        "source_id": "site-docs-root-2",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from CouchDB, you must create a receiver for the logs that CouchDB produces and then create a pipeline for the new receiver.",
+          "Any dashboards are automatically installed after you configure the integration and the Ops Agent has begun collecting metric data.",
+          "The integration collects general CouchDB and access logs and parses them into a JSON payload."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Collect logs from Apache with the Ops Agent \\_|\\_ Cloud Logging\\",
+        "url": "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : apache : type : apache service : pipelines : apache : receivers : - apache logging : receivers : apache access : type : apache access apache error : type : apache error service : pipelines : apache : receivers : - apache access - apache error EOF The previous command creates the configuration to collect and ingest logs and metrics from the Apache web server.",
+          "Collect logs from Apache with the Ops Agent Learn how to collect and view syslog logs collected from an Apache web server installed on a Compute Engine virtual machine (VM) instance by using the Ops Agent.",
+          "Collect Apache web server logs and metrics In these steps, you configure the Ops Agent to collect logs and metrics from your Apache web server: Go to the SSH terminal for your VM instance."
+        ]
+      },
+      {
+        "title": "Google Cloud platform logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CONTAINER ID CONTAINER ID FULL CONTAINER NAME CONTAINER TAG CONTAINER PARTIAL ID CONTAINER PARTIAL LAST CONTAINER PARTIAL MESSAGE CONTAINER PARTIAL ORDINAL IMAGE NAME INSTANCE ID INSTANCE UID LOG BUCKET NUM SYSLOG IDENTIFIER BOOT ID CAP EFFECTIVE CMDLINE COMM EXE GID HOSTNAME MACHINE ID PID PROJECT NUMBER SOURCE REALTIME TIMESTAMP SYSTEMD CGROUP SYSTEMD INVOCATION ID SYSTEMD SLICE SYSTEMD UNIT TRANSPORT UID MONOTONIC TIMESTAMP REALTIME TIMESTAMP SYSLOG TIMESTAMP SOURCE ID RUNTIME SCOPE CONTAINER LOG ORDINAL CONTAINER LOG EPOCH SEQNUM ID SEQNUM DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY cloudsql.googleapis.com%2Fsqlagent.out cloudsql database These logs are from sqlagent.out on the Cloud SQL instance.",
+          "CONSUMER PROJECT CONSUMER PROJECT NUMBER NODE ID SOURCE DATABASE VERSION INFO WARNING ERROR ALERT NOTICE alloydb.googleapis.com%2Fjournald alloydb.googleapis.com/Instance Container logs for dataplane agents.",
+          "CONSUMER PROJECT CONSUMER PROJECT NUMBER LOG TYPE NODE ID DATABASE VERSION DEFAULT INFO WARNING ERROR alloydb.googleapis.com%2Finstance agent saas instance Logs for instance agent running on AlloyDB VM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "cloudsetup.googleapis.com",
+      "cloudsql.googleapis.com",
+      "compute.googleapis.com",
+      "containersecurity.googleapis.com",
+      "couchdb.log",
+      "dataform.googleapis.com",
+      "datapipelines.googleapis.com",
+      "dataproc.googleapis.com",
+      "developerconnect.googleapis.com",
+      "logging.Finding",
+      "metastore.googleapis.com",
+      "sqlagent.out",
+      "storage.googleapis.com",
+      "threatdetection.googleapis.com",
+      "type.googleapis.com",
+      "vpn.googleapis.com",
+      "workstations.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/couchdb",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/couchdb",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/couchdb",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/couchdb",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs"
+      ]
+    }
+  ]
+}

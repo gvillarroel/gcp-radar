@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Dataproc Serverless autoscaling V2",
+  "feature_slug": "dataproc-serverless-autoscaling-v2",
+  "summary": "Dataproc Serverless supports autoscaling V2 to help manage workloads, performance, and costs.",
+  "extended_definition": "Dataproc Serverless supports autoscaling V2 to help manage workloads, performance, and costs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.autoscalingPolicies \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Resource: AutoscalingPolicy JSON representation BasicAutoscalingAlgorithm JSON representation BasicYarnAutoscalingConfig JSON representation InstanceGroupAutoscalingPolicyConfig JSON representation ClusterType Methods Resource: AutoscalingPolicy Describes an autoscaling policy for Dataproc cluster autoscaler.",
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback REST Resource: projects.locations.autoscalingPolicies Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"ListAutoscalingPoliciesResponse \\_|\\_ Managed Service for Apache Spark \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback ListAutoscalingPoliciesResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"policies\" : [ { object ( AutoscalingPolicy ) } ] , \"nextPageToken\" : string } Fields policies[] object ( AutoscalingPolicy ) Output only."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.autoscalingPolicies.create \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "For projects.regions.autoscalingPolicies.create , the resource name of the region has the following format: projects/{projectId}/regions/{region} For projects.locations.autoscalingPolicies.create , the resource name of the location has the following format: projects/{projectId}/locations/{location} Authorization requires the following IAM permission on the specified resource parent : dataproc.autoscalingPolicies.create Request body The request body contains an instance of AutoscalingPolicy .",
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback Method: projects.locations.autoscalingPolicies.create Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.autoscalingPolicies.create",
+      "dataproc.googleapis.com",
+      "projects.locations.autoscalingPolicies",
+      "projects.locations.autoscalingPolicies.create",
+      "projects.locations.autoscalingPolicies.delete",
+      "projects.locations.autoscalingPolicies.get",
+      "projects.locations.autoscalingPolicies.list",
+      "projects.regions.autoscalingPolicies.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListAutoscalingPoliciesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/projects.locations.autoscalingPolicies/create"
+      ]
+    }
+  ]
+}

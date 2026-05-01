@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.507Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios",
+  "feature_name": "Skip Terms of Service Options API",
+  "feature_slug": "skip-terms-of-service-options-api",
+  "summary": "A new options API lets developers present the terms and conditions dialog.",
+  "extended_definition": "A new options API lets developers present the terms and conditions dialog.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/support",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/xcode-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Support Options for Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/support",
+        "source_id": "site-docs-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Since you are the Project Owner for this new project, you have access to Google Maps Platform API support case creation from that new project and can make inquiries about the billing account attached to it.",
+          "Escalation managers can provide additional expertise or better prioritize a case based on business requirements, but they cannot grant exceptions to policies or terms of service.",
+          "Go to the Billing page of the Cloud console to ensure you have a valid billing account and visit the Marketplace to enable an API on your project."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to enable Metal at https://developers.google.com/maps/documentation/ios-sdk/config#use-metal Declaration Swift func featureLayer ( of featureType : FeatureType ) -> FeatureLayer < PlaceFeature > Objective-C - ( nonnull GMSFeatureLayer < GMSPlaceFeature > ) featureLayerOfFeatureType : ( nonnull GMSFeatureType ) featureType ; -datasetFeatureLayerOfDatasetID: Returns a dataset feature layer of the specified dataset.",
+          "Declaration Swift class func map ( withFrame frame : CGRect , camera : GMSCameraPosition ) -> Self Objective-C + ( nonnull instancetype ) mapWithFrame :( CGRect ) frame camera :( nonnull GMSCameraPosition ) camera ; +mapWithFrame:mapID:camera: Deprecated Use -init or -initWithOptions: instead.",
+          "Declaration Swift convenience init ( frame : CGRect , camera : GMSCameraPosition ) Objective-C - ( nonnull instancetype ) initWithFrame :( CGRect ) frame camera :( nonnull GMSCameraPosition ) camera ; -initWithFrame:mapID:camera: Deprecated Use -init or -initWithOptions: instead."
+        ]
+      },
+      {
+        "title": "Set up an Xcode project \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/xcode-setup",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Step 3: Add your API key to the project The following examples show how to add the API key to your project in Xcode: Swift Add your API key to your AppDelegate.swift as follows: Add the following import statements: import GoogleMaps import GoogleNavigation Add the following to your application( :didFinishLaunchingWithOptions:) method: GMSServices . provideAPIKey ( \" YOUR API KEY \" ) Objective-C Add your API key to your AppDelegate.m as follows: Add the following import statements: @import GoogleMaps ; @import GoogleNavigation ; Add the following to your application:didFinishLaunchingWithOptions: method: [ GMSServices provideAPIKey : @\" YOUR API KEY \" ]; Step 4 (optional): Inspect Apple Privacy Manifest file Note: The following is relevant when you deploy your app to the web store.",
+          "If you are creating a purely Objective-C project, you must also create an empty .swift file in your project, or add the following into the Other Linker Flags section of the Xcode project. - L $ ( DEVELOPER DIR ) / Toolchains / XcodeDefault . xctoolchain / usr / lib / swift /$ ( PLATFORM NAME ) To update the API for an existing project, follow these steps: Open a terminal and go to the project directory containing the Podfile .",
+          "Step 1: Install the required software To build a project using the Navigation SDK for iOS, you must download and install: Xcode version 26.0 or later Step 2: Create the Xcode project and install the Navigation SDK Warning: Apple introduced a new linker in Xcode 15 which is not compatible with Navigation SDK when the app's deployment target is iOS 18.0 or later."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Declaration Swift class GMSNavigationTermsAndConditionsOptions : NSObject , NSCopying Objective-C @interface GMSNavigationTermsAndConditionsOptions : NSObject < NSCopying > GMSNavigationTermsDialogUIParams Parameters that describe the look and feel of the dialog.",
+          "Declaration Swift class GMSNavigationSpeedometerUIOptions : NSObject , NSCopying , NSMutableCopying Objective-C @interface GMSNavigationSpeedometerUIOptions : NSObject < NSCopying , NSMutableCopying > GMSNavigationMutableSpeedometerUIOptions The mutable class that encapsulates UI configuration for different severities of speed alerts, represented by GMSNavigationSpeedAlertSeverity .",
+          "Declaration Swift class GMSNavigationSpeedAlertOptions : NSObject , NSCopying , NSMutableCopying Objective-C @interface GMSNavigationSpeedAlertOptions : NSObject < NSCopying , NSMutableCopying > GMSNavigationMutableSpeedAlertOptions A mutable class that defines triggering thresholds for different severities of speed alerts, represented by GMSNavigationSpeedAlertSeverity ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/xcode-setup",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/xcode-setup",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference"
+      ]
+    }
+  ]
+}

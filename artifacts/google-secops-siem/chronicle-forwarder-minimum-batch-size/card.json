@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.409Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Chronicle forwarder minimum batch size",
+  "feature_slug": "chronicle-forwarder-minimum-batch-size",
+  "summary": "The Chronicle forwarder minimum batch size is increased to 200 KB.",
+  "extended_definition": "The Chronicle forwarder minimum batch size is increased to 200 KB.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "For pagination, use the legacy query parameters pageStartTime and detectionBatchSize in the Backstory API (v2).",
+          "Note: The StreamDetectionAlerts method doesn't support pagination to fetch detections in custom batch sizes.",
+          "Sample Response { \"curatedRuleDetections\": [ { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de 227a290c-17e9-6314-7f16-35f7923b554f&selectedTimestamp=2022-12-05T11:07:12.585Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T12:13:23.154544Z\", \"lastUpdatedTime\": \"2022-12-05T12:13:23.154544Z\", \"id\": \"de 227a290c-17e9-6314-7f16-35f7923b554f\", \"timeWindow\": { \"startTime\": \"2022-12-05T11:07:12.585Z\", \"endTime\": \"2022-12-05T11:07:12.585Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T11:07:12.585Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T11:06:27.737408Z\", \"id\": \"AAAAA\" }, \"principal\": { \"hostname\": \"admin-1\", \"process\": { \"pid\": \"12345\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"12345\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-1\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T11:07:12.585Z\", \"tags\": [ \"TA0004\", \"T1548\" ] }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de c34ee707-ad5e-4e5e-4955-a3a8e13053ae&selectedTimestamp=2022-12-05T10:04:28.097Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T11:12:24.406199Z\", \"lastUpdatedTime\": \"2022-12-05T11:12:24.406199Z\", \"id\": \"de c34ee707-ad5e-4e5e-4955-a3a8e13053ae\", \"timeWindow\": { \"startTime\": \"2022-12-05T10:04:28.097Z\", \"endTime\": \"2022-12-05T10:04:28.097Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T10:04:28.097Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T10:04:01Z\", \"id\": \"BBBBB\" }, \"principal\": { \"hostname\": \"admin-2\", \"process\": { \"pid\": \"67890\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"67890\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-2\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T10:04:28.097Z\", \"tags\": [ \"TA0004\", \"T1548\" ] } ], \"nextPageToken\": \"CgwIrdncnQYQ6OqRkwISCwiosvKXBhDQ-74JGidkZV8wNDZjZmY0YS1jM2ZkLTM5YWEtYmUyYS0wZTU2Zjk4OWE1YTE=\" } ListDetections Return the detections for the specified version of a rule, the latest version of a rule, all versions of a rule, or all versions of all rules."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Batches of data sent through Webhook feeds may experience ingestion delays if the request size or QPS limits are set too low.",
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB .",
+          "Set up an HTTPS webhook feed Before you begin: Ensure that a Google Cloud project for Google SecOps is configured and the Chronicle API is enabled for the project."
+        ]
+      },
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-api-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Chronicle BigQuery udm events table July 01, 2023 August 01, 2023 On or after July 1, 2023, the existing udm events table in Chronicle-managed BigQuery projects will be fully replaced with a new table named events .",
+          "Google Security Operations forwarder executable for Windows April 04, 2023 March 31, 2024 On or after March 31, 2024, existing Google Security Operations forwarder executable for Windows will be removed.",
+          "BigQuery data lake December 31, 2024 April 30, 2025 The shutdown of managed BigQuery resources and API keys associated with the chronicle-tla Google Cloud project has been extended to April 30, 2025."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "calc.dll",
+      "chronicle.soarAnalyst",
+      "chronicle.soarEngineer",
+      "chronicle.soarViewer",
+      "customername.backstory.chronicle.security",
+      "powershell.exe",
+      "rundll32.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    }
+  ]
+}

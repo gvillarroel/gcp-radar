@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.653Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "IPv6 static routes with next-hop gateway and next-hop instance",
+  "feature_slug": "ipv6-static-routes-with-next-hop-gateway-and-next-hop-instance",
+  "summary": "IPv6 static routes now support specific next-hop types, including next-hop-gateway and next-hop-instance, and this capability was introduced in Preview.",
+  "extended_definition": "IPv6 static routes now support specific next-hop types, including next-hop-gateway and next-hop-instance, and this capability was introduced in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+      "https://docs.cloud.google.com/vpc/docs/routes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Routes \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/routes",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you access global Google APIs and services by sending packets to IPv4 or IPv6 addresses for the default domains, the IPv4 or IPv6 addresses for private.googleapis.com , or the IPv4 or IPv6 addresses for restricted.googleapis.com , you can either use default IPv4 and IPv6 routes that have default internet gateway next hops, or you can create and use IPv4 and IPv6 static routes that have more specific destinations and default internet gateway next hops: If your VMs have only internal IP addresses, see Routing options for Private Google Access.",
+          "A local static route with the ::/0 destination and default internet gateway next hop provides a path to external IPv6 addresses , including IPv6 addresses on the internet.",
+          "Local static route Supports various destinations Forwards packets to a static route next hop For details about each static route next hop , see considerations for: Instances and internal passthrough Network Load Balancers Next hop instances Internal passthrough Network Load Balancer next hops Classic VPN tunnel next hops Local dynamic route Destinations that don't conflict with subnet routes or static routes Peer of a BGP session on a Cloud Router Routes are added and removed automatically based on learned routes from Cloud Routers in your VPC network."
+        ]
+      },
+      {
+        "title": "\"Access APIs from VMs with external IP addresses \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "Look for a route whose destination is 0.0.0.0/0 for IPv4 traffic or ::/0 for IPv6 traffic and whose next hop is default internet gateway . gcloud Use the following gcloud command, replacing NETWORK NAME with the name of the network to inspect: gcloud compute routes list \\ --filter=\"default-internet-gateway NETWORK NAME \" If you need to create a replacement default IPv4 route, see Adding a static route .",
+          "Basic configuration : Confirm that you have default routes with next hop default-internet-gateway and a destination range of 0.0.0.0/0 (for IPv4 traffic) and ::/0 (for IPv6 traffic, if needed).",
+          "If your VPC network contains a default route whose next hop is the default internet gateway, you can use that route to access Google APIs and services, without needing to create custom routes."
+        ]
+      },
+      {
+        "title": "\"Configure Private Google Access \\_|\\_ Virtual Private Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "Look for a route whose destination is 0.0.0.0/0 for IPv4 traffic or ::/0 for IPv6 traffic and whose next hop is default internet gateway . gcloud Use the following gcloud command, replacing NETWORK NAME with the name of the network to inspect: gcloud compute routes list \\ --filter=\"default-internet-gateway NETWORK NAME \" If you need to create a replacement default IPv4 route, see Adding a static route .",
+          "Basic configuration : Confirm that you have default routes with next hop default-internet-gateway and a destination range of 0.0.0.0/0 (for IPv4 traffic) and ::/0 (for IPv6 traffic, if needed).",
+          "If your VPC network contains a default route whose next hop is the default internet gateway, you can use that route to access Google APIs and services, without needing to create custom routes."
+        ]
+      },
+      {
+        "title": "\"Configure Private Google Access for on-premises hosts \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid",
+        "source_id": "site-docs-root-2",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to Routes Use the Filter table text field to filter the list of routes using the following criteria, replacing NETWORK NAME with the name of the VPC network to which your on-premises network connects: Network: NETWORK NAME Next hop type: default internet gateway Look at the Destination IP range column for each route.",
+          "Consequently, even though the routes in the VPC network send traffic to the default internet gateway next hop, packets sent to those IP address ranges remain within Google's network.",
+          "This updates the route advertisement mode on all the Cloud Router's BGP sessions, except for those BGP sessions that use custom BGP advertisements themselves: gcloud compute routers update ROUTER NAME \\ --region= REGION \\ --add-advertisement-ranges= CUSTOM RANGES Alternatively, use compute routers update-bgp-peer to configure a specific BGP peer on the Cloud Router: If you are adding IPv6 custom ranges, and if IPv6 traffic is disabled for the BGP session, you can enable it with the --enable-ipv6 flag. gcloud compute routers update-bgp-peer ROUTER NAME \\ --region= REGION \\ --peer-name= PEER NAME \\ --advertisement-mode=CUSTOM \\ --set-advertisement-groups=ALL SUBNETS \\ --set-advertisement-ranges= CUSTOM RANGES You can append new advertisement ranges if you're already using the CUSTOM advertisement mode for a BGP session on a Cloud Router If you are adding IPv6 custom ranges, and if IPv6 traffic is disabled for the BGP session, you can enable it with the --enable-ipv6 flag. gcloud compute routers update-bgp-peer ROUTER NAME \\ --region= REGION \\ --peer-name= PEER NAME \\ --add-advertisement-ranges= CUSTOM RANGES In the commands above, replace the following with valid values: ROUTER NAME : The name of the Cloud Router REGION : The region of the Cloud Router PEER NAME : The name of the BGP peer configured when you create a VLAN attachment for Dedicated Interconnect , when you create a VLAN attachment for Partner Interconnect , or when you create an HA VPN tunnel Leave --set-advertisement-groups=ALL SUBNETS in order to advertise all subnet routes available to the Cloud Router."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "private.googleapis.com",
+      "restricted.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/routes",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-google-access-hybrid"
+      ]
+    }
+  ]
+}

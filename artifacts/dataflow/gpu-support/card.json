@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "GPU support",
+  "feature_slug": "gpu-support",
+  "summary": "GPU support lets Dataflow use GPU accelerators for pipeline workloads; GPU support lets Dataflow use GPU accelerators for pipeline workloads.",
+  "extended_definition": "GPU support lets Dataflow use GPU accelerators for pipeline workloads; GPU support lets Dataflow use GPU accelerators for pipeline workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+      "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+      "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a Dataflow pipeline using Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the modified pipeline on the Dataflow service: python wordcount.py \\ --region DATAFLOW REGION \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// BUCKET NAME /results/outputs \\ --runner DataflowRunner \\ --project PROJECT ID \\ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job BUCKET NAME : your Cloud Storage bucket name PROJECT ID : you Google Cloud project ID Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the Google Cloud project with the resources.",
+          "Run the pipeline: python -m apache beam.examples.wordcount \\ --region DATAFLOW REGION \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// BUCKET NAME /results/outputs \\ --runner DataflowRunner \\ --project PROJECT ID \\ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job—for example, europe-west1 The --region flag overrides the default region that is set in the metadata server, your local client, or environment variables.",
+          "Create a Dataflow pipeline using Python This document shows you how to use the Apache Beam SDK for Python to build a program that defines a pipeline."
+        ]
+      },
+      {
+        "title": "Create a Dataflow pipeline using Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the modified pipeline on the Dataflow service: python wordcount.py \\ --region DATAFLOW REGION \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// BUCKET NAME /results/outputs \\ --runner DataflowRunner \\ --project PROJECT ID \\ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job BUCKET NAME : your Cloud Storage bucket name PROJECT ID : you Google Cloud project ID Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the Google Cloud project with the resources.",
+          "Run the pipeline: python -m apache beam.examples.wordcount \\ --region DATAFLOW REGION \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// BUCKET NAME /results/outputs \\ --runner DataflowRunner \\ --project PROJECT ID \\ --temp location gs:// BUCKET NAME /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job—for example, europe-west1 The --region flag overrides the default region that is set in the metadata server, your local client, or environment variables.",
+          "Create a Dataflow pipeline using Python This document shows you how to use the Apache Beam SDK for Python to build a program that defines a pipeline."
+        ]
+      },
+      {
+        "title": "\"Create an ecommerce streaming pipeline \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the git clone command to clone the GitHub repository: git clone https://github.com/GoogleCloudPlatform/dataflow-sample-applications.git Switch to the application directory: cd dataflow-sample-applications/retail/retail-java-applications To test the pipeline, in your shell or terminal, run the following command using Gradle: ./gradlew :data-engineering-dept:pipelines:test --tests RetailDataProcessingPipelineSimpleSmokeTest --info --rerun-tasks To run the pipeline, run the following command using Gradle: ./gradlew tasks executeOnDataflow -Dexec.args = \" \\ --pro ject=PROJE CT ID \\ --tempLocation= gs://BUCKET NAME/temp/ \\ --runner=DataflowRunner \\ --re gion=R EGION \\ --clickStreamPubSubSubscription=proj ects/PROJE CT ID/subscriptions/Clickstream-inbound-sub \\ --transactionsPubSubSubscription=proj ects/PROJE CT ID/subscriptions/Transactions-inbound-sub \\ --inventoryPubSubSubscriptions=proj ects/PROJE CT ID/subscriptions/Inventory-inbound-sub \\ --aggregateStockPubSubOutputTopic=proj ects/PROJE CT ID/topics/Inventory-outbound \\ --dataWarehouseOutputPro ject=PROJE CT ID \\ --serviceAccount=retailpipe line.PROJE Ciam.gserviceaccount.comT ID.\" See the pipeline source code on GitHub.",
+          "Task patterns The application contains the following task patterns common to pipelines built with the Apache Beam SDK for Java: Apache Beam schemas to work with structured data JsonToRow to convert JSON data The AutoValue code generator to generate plain old Java objects (POJOs) Queuing unprocessable data for further analysis Serial data validation transforms DoFn.StartBundle to micro-batch calls to external services Side-input patterns Costs In this document, you use the following billable components of Google Cloud: BigQuery Bigtable Cloud Scheduler Compute Engine Dataflow Pub/Sub To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/pubsub.editor roles/bigquery.dataEditor roles/bigtable.admin roles/bigquery.jobUser gcloud projects remove-iam-policy-binding PROJECT ID \\ --member = serviceAccount:retailpipeline@ PROJECT ID .iam.gserviceaccount.com \\ --role = ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next View the sample application on GitHub ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "applications.git",
+      "beam.examples.wordcount",
+      "bigquery.dataEditor",
+      "bigquery.jobUser",
+      "bigtable.admin",
+      "dataflow.admin",
+      "dataflow.worker",
+      "github.com",
+      "gserviceaccount.comT",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountTokenCreator",
+      "kinglear.txt",
+      "line.PROJE",
+      "pubsub.editor",
+      "wordcount.py"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.jobUser",
+      "roles/bigtable.admin",
+      "roles/dataflow.admin",
+      "roles/dataflow.worker",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/pubsub.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-pipeline-python",
+        "https://docs.cloud.google.com/dataflow/docs/tutorials/ecommerce-retail-pipeline"
+      ]
+    }
+  ]
+}

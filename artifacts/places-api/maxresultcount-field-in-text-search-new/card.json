@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:05.970Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api",
+  "feature_name": "maxResultCount field in Text Search (New)",
+  "feature_slug": "maxresultcount-field-in-text-search-new",
+  "summary": "The maxResultCount field in Text Search (New) is deprecated and pageSize should be used instead; deprecated on 2024-05-13.",
+  "extended_definition": "The maxResultCount field in Text Search (New) is deprecated and pageSize should be used instead; deprecated on 2024-05-13.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-13",
+    "deprecation_date": "2024-05-13",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text",
+      "https://developers.google.com/maps/documentation/places/web-service/migrate-text",
+      "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+      "https://developers.google.com/maps/documentation/places/web-service/text-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Text Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this example, you include addressDescriptors in the field mask: curl -X POST -d '{ \"textQuery\": \"clothes\", \"maxResultCount\": 5, \"locationBias\": { \"circle\": { \"center\": { \"latitude\": 37.321328, \"longitude\": -121.946275 } } }, \"rankPreference\":\"RANK PREFERENCE UNSPECIFIED\" }' \\ -H 'Content-Type: application/json' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName, places.addressDescriptor \" \\ https://places.googleapis.com/v1/places:searchText The response includes the place specified in the request, a list of nearby landmarks and their distance from the place, and a list of areas and their containment relationship to the place: { \"places\" : [ { \"displayName\" : { \"text\" : \"Urban Outfitters\" , \"languageCode\" : \"en\" }, \"addressDescriptor\" : { \"landmarks\" : [ { \"name\" : \"places/ChIJVVVVUB7Lj4ARXyb4HFVDV8s\" , \"placeId\" : \"ChIJVVVVUB7Lj4ARXyb4HFVDV8s\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"food\" , \"movie theater\" , \"point of interest\" , \"restaurant\" , \"shoe store\" , \"shopping mall\" , \"store\" ], \"spatialRelationship\" : \"WITHIN\" , \"straightLineDistanceMeters\" : 133.72855 }, { \"name\" : \"places/ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"placeId\" : \"ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"displayName\" : { \"text\" : \"Nordstrom\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 250.99161 }, { \"name\" : \"places/ChIJ8WvuSB7Lj4ARFyHppkxDRQ4\" , \"placeId\" : \"ChIJ8WvuSB7Lj4ARFyHppkxDRQ4\" , \"displayName\" : { \"text\" : \"Macy's\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"store\" ], \"straightLineDistanceMeters\" : 116.24196 }, { \"name\" : \"places/ChIJ9d3plB Lj4ARzyaU5bn80WY\" , \"placeId\" : \"ChIJ9d3plB Lj4ARzyaU5bn80WY\" , \"displayName\" : { \"text\" : \"Bank of America Financial Center\" , \"languageCode\" : \"en\" }, \"types\" : [ \"bank\" , \"establishment\" , \"finance\" , \"point of interest\" ], \"straightLineDistanceMeters\" : 121.61515 }, { \"name\" : \"places/ChIJaXCjxvXLj4ARCPmQpvJ52Lw\" , \"placeId\" : \"ChIJaXCjxvXLj4ARCPmQpvJ52Lw\" , \"displayName\" : { \"text\" : \"Bloomingdale's\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"furniture store\" , \"home goods store\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 81.32396 } ], \"areas\" : [ { \"name\" : \"places/ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"placeId\" : \"ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"placeId\" : \"ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"displayName\" : { \"text\" : \"Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"placeId\" : \"ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"displayName\" : { \"text\" : \"Central San Jose\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" } ] } }, /.../ ] } Find businesses opening in the future The following example shows a Text Search (New) request for businesses opening in the future in New Meadows, Idaho: curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.id,places.displayName, places.businessStatus,places.openingDate \" \\ -d '{ \"textQuery\": \"Roberts Greenhouse and Tree Farm\", \"includeFutureOpeningBusinesses\": true , \"maxResultCount\": 20, \"locationBias\": { \"circle\": { \"center\": {\"latitude\": 44.9755100, \"longitude\": -116.2842180}, \"radius\": 20 } } }' \\ \"https://places.googleapis.com/v1/places:searchText\" The response includes businesses that will open in the future, along with their business status and anticipated opening date: { \"places\" : [ { \"id\" : \"ChIJp1-VoKWJplQRMz8g-7Wa3Do\" , \"businessStatus\" : \"FUTURE OPENING\" , \"displayName\" : { \"text\" : \"Roberts Greenhouse and Tree Farm\" , \"languageCode\" : \"en\" }, \"openingDate\" : { \"year\" : 2026 , \"month\" : 4 , \"day\" : 15 } } ] } Try it!",
+          "The following example shows a request for \"pizza in New York\" limited to 5 results per page: curl -X POST -d '{ \"textQuery\": \"pizza in New York\", \"pageSize\": 5 }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H \"X-Goog-FieldMask: places.id, nextPageToken \" \\ 'https://places.googleapis.com/v1/places:searchText' { \"places\" : [ { \"id\" : \"ChIJifIePKtZwokRVZ-UdRGkZzs\" }, { \"id\" : \"ChIJPxPd P1YwokRfzLhSiACEoU\" }, { \"id\" : \"ChIJrXXKn5NZwokR78g0ipCnY60\" }, { \"id\" : \"ChIJ6ySICVZYwokR9rIK8HjXhzE\" }, { \"id\" : \"ChIJ6xvs94VZwokRnT1D2lX2OTw\" } ], \"nextPageToken\" : \"AeCrKXsZWzNVbPzO-MRWPu52jWO Xx8aKwOQ69 Je3DxRpfdjClq8Ekwh3UcF2h2Jn75kL6PtWLGV4ecQri-GEUKN OFpJkdVc-JL4Q\" } To access the next page of results, use pageToken to pass in the nextPageToken in the request body: curl -X POST -d '{ \"textQuery\": \"pizza in New York\", \"pageSize\": 5, \"pageToken\": \"AeCrKXsZWzNVbPzO-MRWPu52jWO Xx8aKwOQ69 Je3DxRpfdjClq8Ekwh3UcF2h2Jn75kL6PtWLGV4ecQri-GEUKN OFpJkdVc-JL4Q\" }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H \"X-Goog-FieldMask: places.id,nextPageToken\" \\ 'https://places.googleapis.com/v1/places:searchText' { \"places\" : [ { \"id\" : \"ChIJL-LN1N1ZwokR8K2jACu6Ydw\" }, { \"id\" : \"ChIJjaD94kFZwokR-20CXqlpy 4\" }, { \"id\" : \"ChIJ6ffdpJNZwokRmcafdROM5q0\" }, { \"id\" : \"ChIJ8Q2WSpJZwokRQz-bYYgEskM\" }, { \"id\" : \"ChIJ8164qwFZwokRhplkmhvq1uE\" } ], \"nextPageToken\" : \"AeCrKXvPd6uUy-oj96W2OaqEe2pUD8QTxOM8-sKfUcFsC9t2Wey5qivrKGoGSxcZnyc7RPmaFfAktslrKbUh31ZDTkL0upRmaxA7c c\" } Note: All parameters other than maxResultCount , pageSize , and pageToken must be the same as the previous request.",
+          "For example, add places.types,places.websiteUri to include the restaurant type and Web address in the response : curl -X POST -d '{ \"textQuery\" : \"Spicy Vegetarian Food in Sydney, Australia\" }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress, places.types,places.websiteUri ' \\ 'https://places.googleapis.com/v1/places:searchText' The response is now in the form: { \"places\" : [ { \"types\" : [ \"vegetarian restaurant\" , \"vegan restaurant\" , \"chinese restaurant\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"367 Pitt St, Sydney NSW 2000, Australia\" , \"websiteUri\" : \"http://www.motherchusvegetarian.com.au/\" , \"displayName\" : { \"text\" : \"Mother Chu's Vegetarian Kitchen\" , \"languageCode\" : \"en\" } }, { \"types\" : [ \"vegan restaurant\" , \"thai restaurant\" , \"vegetarian restaurant\" , \"indian restaurant\" , \"italian restaurant\" , \"american restaurant\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"175 First Ave, Five Dock NSW 2046, Australia\" , \"websiteUri\" : \"http://www.veggosizzle.com.au/\" , \"displayName\" : { \"text\" : \"Veggo Sizzle - Vegan & Vegetarian Restaurant, Five Dock, Sydney\" , \"languageCode\" : \"en\" } }, ... ] } Filter places by price level Use the priceLevel option to filter the results to restaurants defined as inexpensive or moderately expensive: curl -X POST -d '{ \"textQuery\" : \"Spicy Vegetarian Food in Sydney, Australia\", \"priceLevels\":[\"PRICE LEVEL INEXPENSIVE\", \"PRICE LEVEL MODERATE\"] }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress, places.priceLevel ' \\ 'https://places.googleapis.com/v1/places:searchText' This example also uses the X-Goog-FieldMask header to add the places.priceLevel data field to the response so it is in the form: { \"places\" : [ { \"formattedAddress\" : \"367 Pitt St, Sydney NSW 2000, Australia\" , \"priceLevel\" : \"PRICE LEVEL MODERATE\" , \"displayName\" : { \"text\" : \"Mother Chu's Vegetarian Kitchen\" , \"languageCode\" : \"en\" } }, { \"formattedAddress\" : \"115 King St, Newtown NSW 2042, Australia\" , \"priceLevel\" : \"PRICE LEVEL MODERATE\" , \"displayName\" : { \"text\" : \"Green Mushroom\" , \"languageCode\" : \"en\" } }, ... ] } Add additional options to refine your search, such as includedType , minRating , rankPreference , openNow , and other parameters described in Optional parameters ."
+        ]
+      },
+      {
+        "title": "Nearby Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this example, you include addressDescriptors in the field mask: curl -X POST -d '{ \"maxResultCount\": 5, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.321328, \"longitude\": -121.946275 },\"radius\": 1000 } }, \"includedTypes\": [\"restaurant\", \"cafe\"], \"excludedTypes\": [], \"rankPreference\":\"POPULARITY\" }' \\ -H 'Content-Type: application/json' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName, places.addressDescriptor \" \\ https://places.googleapis.com/v1/places:searchNearby The response includes the place specified in the request, a list of nearby landmarks and their distance from the place, and a list of areas and their containment relationship to the place: { \"places\" : [ { \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"addressDescriptor\" : { \"landmarks\" : [ { \"name\" : \"places/ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"placeId\" : \"ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"displayName\" : { \"text\" : \"Nordstrom\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 114.76984 , \"travelDistanceMeters\" : 114.261856 }, { \"name\" : \"places/ChIJgexMlR Lj4ARiKCKuhNnjn0\" , \"placeId\" : \"ChIJgexMlR Lj4ARiKCKuhNnjn0\" , \"displayName\" : { \"text\" : \"Valley Fair Mall Eyexam of CA\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"health\" , \"point of interest\" ], \"straightLineDistanceMeters\" : 131.62566 , \"travelDistanceMeters\" : 237.33253 }, { \"name\" : \"places/ChIJWWIlNx7Lj4ARpe1E0ob- GI\" , \"placeId\" : \"ChIJWWIlNx7Lj4ARpe1E0ob- GI\" , \"displayName\" : { \"text\" : \"Din Tai Fung\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"food\" , \"point of interest\" , \"restaurant\" ], \"straightLineDistanceMeters\" : 110.0775 , \"travelDistanceMeters\" : 171.41951 }, { \"name\" : \"places/ChIJwyfPQx7Lj4AR7bYI2A2Yc54\" , \"placeId\" : \"ChIJwyfPQx7Lj4AR7bYI2A2Yc54\" , \"displayName\" : { \"text\" : \"Abercrombie & Fitch\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"spatialRelationship\" : \"DOWN THE ROAD\" , \"straightLineDistanceMeters\" : 53.620117 , \"travelDistanceMeters\" : 2.4578214 }, { \"name\" : \"places/ChIJpycNQx7Lj4ARjhXw3PrM kU\" , \"placeId\" : \"ChIJpycNQx7Lj4ARjhXw3PrM kU\" , \"displayName\" : { \"text\" : \"Hollister Co.\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"spatialRelationship\" : \"DOWN THE ROAD\" , \"straightLineDistanceMeters\" : 56.53726 , \"travelDistanceMeters\" : 15.418246 } ], \"areas\" : [ { \"name\" : \"places/ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"placeId\" : \"ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"placeId\" : \"ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"displayName\" : { \"text\" : \"Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"placeId\" : \"ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"displayName\" : { \"text\" : \"Central San Jose\" , \"languageCode\" : \"en\" }, \"containment\" : \"OUTSKIRTS\" } ] } }, /.../ } Find businesses opening in the future The following example shows a Nearby Search (New) request for businesses opening in the future in New Meadows, Idaho: curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.id,places.displayName, places.businessStatus,places.openingDate \" \\ -d '{ \"includeFutureOpeningBusinesses\": true , \"maxResultCount\": 20, \"locationRestriction\": { \"circle\": { \"center\": {\"latitude\": 44.9755100, \"longitude\": -116.2842180}, \"radius\": 20 } }, \"rankPreference\": \"DISTANCE\" }' \\ \"https://places.googleapis.com/v1/places:searchNearby\" The response includes businesses that will open in the future, along with their business status and anticipated opening date: { \"places\" : [ { \"id\" : \"ChIJp1-VoKWJplQRMz8g-7Wa3Do\" , \"businessStatus\" : \"FUTURE OPENING\" , \"displayName\" : { \"text\" : \"Roberts Greenhouse and Tree Farm\" , \"languageCode\" : \"en\" }, \"openingDate\" : { \"year\" : 2026 , \"month\" : 4 , \"day\" : 15 } } ] } Try it!",
+          "For example, add places.formattedAddress,places.types,places.websiteUri to include the restaurant address, type, and Web address in the response: curl -X POST -d '{ \"includedTypes\": [\"restaurant\"], \"maxResultCount\": 10, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.7937, \"longitude\": -122.3965}, \"radius\": 500.0 } } }' \\ -H 'Content-Type: application/json' -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName,places.formattedAddress,places.types,places.websiteUri\" \\ https://places.googleapis.com/v1/places:searchNearby The response is now in the form: { \"places\" : [ { \"types\" : [ \"seafood restaurant\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"PIER 1 1/2 The Embarcadero N, San Francisco, CA 94105, USA\" , \"websiteUri\" : \"http://lamarsf.com/\" , \"displayName\" : { \"text\" : \"La Mar Cocina Peruana\" , \"languageCode\" : \"en\" } }, { \"types\" : [ \"greek restaurant\" , \"meal takeaway\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"200 Jackson St, San Francisco, CA 94111, USA\" , \"websiteUri\" : \"https://kokkari.com/\" , \"displayName\" : { \"text\" : \"Kokkari Estiatorio\" , \"languageCode\" : \"en\" } }, ... } Find places of multiple types The following example shows a Nearby Search (New) request for the display names of all convenience stores and liquor stores within a 1000-meter radius of the specified circle : curl -X POST -d '{ \"includedTypes\": [\"liquor store\", \"convenience store\"], \"maxResultCount\": 10, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.7937, \"longitude\": -122.3965 }, \"radius\": 1000.0 } } }' \\ -H 'Content-Type: application/json' -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName,places.primaryType,places.types\" \\ https://places.googleapis.com/v1/places:searchNearby This example adds places.primaryType and places.types to the field mask so that the response includes type information about each place, making it easier to select the appropriate place from the results.",
+          "Exclude a place type from a search The following example shows a Nearby Search (New) request for all places of type \"school\" , excluding all places of type \"primary school\" , ranking the results by distance: curl -X POST -d '{ \"includedTypes\": [\"school\"], \"excludedTypes\": [\"primary school\"], \"maxResultCount\": 10, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.7937, \"longitude\": -122.3965 }, \"radius\": 1000.0 } }, \"rankPreference\": \"DISTANCE\" }' \\ -H 'Content-Type: application/json' -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName\" \\ https://places.googleapis.com/v1/places:searchNearby Search for all places near an area, ranking by distance The following example shows a Nearby Search (New) request for places near a point in downtown San Francisco."
+        ]
+      },
+      {
+        "title": "Migrate to Text Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/migrate-text",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This example also uses a field mask so the response only includes the display name and formatted address of the place: curl -X POST -d '{ \"textQuery\" : \"Spicy Vegetarian Food in Sydney, Australia\" }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress' \\ 'https://places.googleapis.com/v1/places:searchText' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In this example, you request a JSON response containing information about \"Spicy Vegetarian Food in Sydney, Australia\" and pass all parameters as URL parameters: curl -L -X GET \\ 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=Spicy%20Vegetarian%20Food%20in%20Sydney%20Australia&key= API KEY With Text Search (New), you make a POST request and pass all parameters in the JSON request body or in headers as part of the POST request.",
+          "The following table lists parameters in Text Search (Legacy) that have been renamed or modified for Text Search (New), or parameters that are no longer supported."
+        ]
+      },
+      {
+        "title": "Migrate to Text Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text",
+        "source_id": "site-docs-root-2",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This example also uses a field mask so the response only includes the display name and formatted address of the place: curl -X POST -d '{ \"textQuery\" : \"Spicy Vegetarian Food in Sydney, Australia\" }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H 'X-Goog-FieldMask: places.displayName,places.formattedAddress' \\ 'https://places.googleapis.com/v1/places:searchText' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In this example, you request a JSON response containing information about \"Spicy Vegetarian Food in Sydney, Australia\" and pass all parameters as URL parameters: curl -L -X GET \\ 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=Spicy%20Vegetarian%20Food%20in%20Sydney%20Australia&key= API KEY With Text Search (New), you make a POST request and pass all parameters in the JSON request body or in headers as part of the POST request.",
+          "The following table lists parameters in Text Search (Legacy) that have been renamed or modified for Text Search (New), or parameters that are no longer supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "kokkari.com",
+      "lamarsf.com",
+      "maps.googleapis.com",
+      "places.addressDescriptor",
+      "places.businessStatus",
+      "places.displayName",
+      "places.formattedAddress",
+      "places.googleapis.com",
+      "places.id",
+      "places.openingDate",
+      "places.priceLevel",
+      "places.primaryType",
+      "places.searchText",
+      "places.types",
+      "places.websiteUri"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "https://developers.google.com/maps/documentation/places/web-service/migrate-text",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "https://developers.google.com/maps/documentation/places/web-service/migrate-text",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "https://developers.google.com/maps/documentation/places/web-service/migrate-text",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/migrate-text"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.734Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "FirebaseWebApp API key ID",
+  "feature_slug": "firebasewebapp-api-key-id",
+  "summary": "Config Connector added the apiKeyId field to FirebaseWebApp.",
+  "extended_definition": "Config Connector added the apiKeyId field to FirebaseWebApp.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally",
+      "https://docs.cloud.google.com/config-connector/docs/reference/annotations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that the only populating behavior CRDs added in version 1.114.0 and later follow is Absent regardless of the cnrm.cloud.google.com/state-into-spec annotation or the stateIntoSpec fields in the ConfigConnector CR or ConfigConnectorContext CR.",
+          "Both config management tools and Config Connector treat list fields as atomic, thus the added spec.bars[0].br2 is treated as a drift by config management tools and will be removed to correct the drift .",
+          "To further explain the difference introduced by this annotation, assume there is a spec with the following schema: foo1 : string foo2 : string bars : - bar : br1 : string br2 : string barz : bz1 : string bz2 : string Also assume you have specified the spec in your YAML as: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" Then by default, the populated spec in the created Kubernetes resource might be: spec : foo1 : \"foo1\" foo2 : \"foo2\" bars : - br1 : \"1 br1\" br2 : \"1 br2\" - br1 : \"2 br1\" br2 : \"2 br2\" barz : bz1 : \"bz1\" bz2 : \"bz2\" While if you set cnrm.cloud.google.com/state-into-spec: absent , the final spec in the created Kubernetes resource will be: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" When to use cnrm.cloud.google.com/state-into-spec: absent In most cases, you'll want to set cnrm.cloud.google.com/state-into-spec: absent to get the Absent populating behavior for spec fields."
+        ]
+      },
+      {
+        "title": "Manage fields externally \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage fields externally Caution: For CRDs added in version 1.114.0 and later , externally managed fields are not populated by default.",
+          "As an example: if the user applies a resource configuration without setting a value for bar in the spec: spec : foo : \"foo\" If the value of the bar field is baz in the Google Cloud API, the resource in the api-server is populated to that value: object in the api-server spec : foo : \"foo\" bar : \"baz\" # populated by first reconciliation If the Google Cloud resource is modified directly such that bar is now baz-2 , the Google Cloud API is corrected to the value that was initially populated in the resource spec: baz : object in the api-server spec : foo : \"foo\" bar : \"baz\" # still the originally populated value, and overrides the Google Cloud value Behavior for list fields in resource spec Due to technical limitation in Config Connector, list fields in your resource configuration cannot be managed externally by default.",
+          "To see if your resource supports the annotation, check the corresponding resource reference page . metadata : annotations : cnrm.cloud.google.com/state-into-spec : absent By setting value of state-into-spec as absent , Config Connector ignores list fields if they are not specified in your resource configuration."
+        ]
+      },
+      {
+        "title": "Annotations \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/annotations",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Annotation Description cnrm.cloud.google.com/mutable-but-unreadable-fields This annotation is added and managed by Config Connector for resources with mutable but unreadable fields (for example, \"password\" field in some resource spec). cnrm.cloud.google.com/observed-secret-versions This annotation is added and managed by Config Connector for resources with sensitive fields. cnrm.cloud.google.com/supports-ssa This annotation is added and managed by Config Connector for resources with server-side apply enabled . cnrm.cloud.google.com/blueprint This annotation is added for resources used in KRM blueprints ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "spec.bars"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally",
+        "https://docs.cloud.google.com/config-connector/docs/reference/annotations"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally",
+        "https://docs.cloud.google.com/config-connector/docs/reference/annotations"
+      ]
+    }
+  ]
+}

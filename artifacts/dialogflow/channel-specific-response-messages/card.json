@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.724Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Channel-specific response messages",
+  "feature_slug": "channel-specific-response-messages",
+  "summary": "Dialogflow CX supports channel-specific response messages for Google Chat, LINE, Messenger from Meta, Workplace from Meta, and Slack.",
+  "extended_definition": "Dialogflow CX supports channel-specific response messages for Google Chat, LINE, Messenger from Meta, Workplace from Meta, and Slack.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment",
+      "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversations.ConversationsAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Fulfillments \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Channel-specific response messages When defining fulfillment, you can create channel-specific response messages , so you can create targeted responses for text chat, voice, SMS, specific integrations that support channels, and so on.",
+          "Utilizing channel-specific response messages at runtime Note: If you are using an existing integration that supports channels, the integration implementation performs the steps below.",
+          "Setting channel-specific response messages at design-time To provide channel-specific response messages for fulfillment when using the console: Click Add channel after adding default response messages."
+        ]
+      },
+      {
+        "title": "Fulfillment \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/webhooks/<WebhookID> . returnPartialResponses boolean Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs.",
+          "JSON representation { \"responseType\" : enum ( ResponseType ) , \"channel\" : string , // Union field message can be only one of the following: \"text\" : { object ( Text ) } , \"payload\" : { object } , \"conversationSuccess\" : { object ( ConversationSuccess ) } , \"outputAudioText\" : { object ( OutputAudioText ) } , \"liveAgentHandoff\" : { object ( LiveAgentHandoff ) } , \"endInteraction\" : { object ( EndInteraction ) } , \"playAudio\" : { object ( PlayAudio ) } , \"mixedAudio\" : { object ( MixedAudio ) } , \"telephonyTransferCall\" : { object ( TelephonyTransferCall ) } , \"knowledgeInfoCard\" : { object ( KnowledgeInfoCard ) } , \"toolCall\" : { object ( ToolCall ) } // End of list of possible types for union field message . } Fields responseType enum ( ResponseType ) Response type. channel string The channel which the response is associated with.",
+          "The rich response message. message can be only one of the following: text object ( Text ) Returns a text response. payload object ( Struct format) Returns a response containing a custom, platform-specific payload. conversationSuccess object ( ConversationSuccess ) Indicates that the conversation succeeded. outputAudioText object ( OutputAudioText ) A text or ssml response that is preferentially used for TTS output audio synthesis, as described in the comment on the ResponseMessage message. liveAgentHandoff object ( LiveAgentHandoff ) Hands off conversation to a human agent. endInteraction object ( EndInteraction ) Output only."
+        ]
+      },
+      {
+        "title": "\"Class ConversationsAsyncClient (2.47.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.conversations.ConversationsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListMessagesRequest ( parent=\"parent value\", ) Make the request page result = client. list messages (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.dialogflow v2.types.ListMessagesRequest , dict]] The request object.",
+          "Returns Type Description google.cloud.dialogflow v2.services.conversations.pagers.ListMessagesAsyncPager The response message for Conversations.ListMessages .",
+          "SuggestConversationSummaryResponse Suggests summary for a conversation based on specific historical messages."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "v2.services.conversations.pagers.ListMessagesAsyncPager",
+      "v2.types.GenerateStatelessSummaryRequest",
+      "v2.types.ListMessagesRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:52.851Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Bare Metal Solution server activity status monitoring",
+  "feature_slug": "bare-metal-solution-server-activity-status-monitoring",
+  "summary": "Bare Metal Solution now provides a Google Cloud console view of server activity status and infrastructure issues.",
+  "extended_definition": "Bare Metal Solution now provides a Google Cloud console view of server activity status and infrastructure issues.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring in a Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "We do not monitor operating systems, application-level activity and workloads, and network traffic traveling to and from the Bare Metal Solution servers.",
+          "Monitoring data At a high level, our monitoring data comes from the following sources: SNMP traps Syslog messages Messages from dedicated management software Intelligent Platform Management Interface (IPMI) Common metrics of the monitored devices: CPU utilization Network Interface: Bandwidth utilization Packet discards Errors Alerting Google Cloud conducted extensive normalization and validation activities for the specific requirements of the Bare Metal Solution environment.",
+          "The following is a list of infrastructure devices in a Bare Metal Solution environment that we monitor: Compute infrastructure Server hardware Storage infrastructure Storage devices SAN switches Network infrastructure Routers Switches Interconnect infrastructure Google Cloud also keeps track of the data center environment, including server room temperature and humidity."
+        ]
+      },
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you don't want to enable the Pod column, you can view the pod of a server by clicking the server name. asia-southeast1-pod1 Server Type Server specifications o2-standard-32-metal Client IP Server IP address that connects to your Google Virtual Private Cloud 10.200.0.5 Private IP Server IP address that connects to other Bare Metal Solution environment resources 192.168.2.5 Labels Displays any labels that you added to this server You can use labels to filter the console output by copying the text of a label and pasting it in the Filter box just above the Status field. environment:test Server activity Informs about any Bare Metal Solution infrastructure issue that might impact your workload.",
+          "You can use either the NFS share name or ID as the NFS SHARE variable: gcloud bms nfs-shares describe NFS SHARE --project= PROJECT ID --region= REGION The output provides details about the allowed clients, NFS settings, the NFS server and its state, and the storage volume. allowedClients: – allowDev: true allowedClientsCidr: 192.168.1.1/32 mountPermissions: READ WRITE network: projects/ PROJECT ID /locations/ REGION /networks/at-1111111-vlan001 noRootSquash: true shareIp: 192.168.1.240 name: projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS SHARE nfsShareId: at-2222222-nfs001 state: PROVISIONED volume: projects/ PROJECT ID /locations/ REGION /volumes/at-2222222-nfs001-vol000 API To view the status of your NFS file storage within theBare Metal Solution environment, including allowed clients and NFS properties, enter your project ID and region into the following curl command.",
+          "To list the servers in your Bare Metal Solution environment and see their status, enter your project ID and region into the following curl command, copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances\" To get network and storage information for a server in your Bare Metal Solution environment, issue the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME \" Organize servers by using labels To help organize your servers, you can use labels."
+        ]
+      },
+      {
+        "title": "\"Deployment Manager: SAP HANA scale-up high-availability cluster configuration\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "RHEL [root@example-ha-vm1 ]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 0 126G 0% /dev tmpfs 126G 54M 126G 1% /dev/shm tmpfs 126G 25M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda2 30G 5.4G 25G 18% / /dev/sda1 200M 6.9M 193M 4% /boot/efi /dev/mapper/vg hana-shared 251G 52G 200G 21% /hana/shared /dev/mapper/vg hana-sap 32G 477M 32G 2% /usr/sap /dev/mapper/vg hana-data 426G 9.8G 417G 3% /hana/data /dev/mapper/vg hana-log 125G 7.0G 118G 6% /hana/log /dev/mapper/vg hanabackup-backup 512G 9.3G 503G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/899 tmpfs 26G 0 26G 0% /run/user/1003 SLES example-ha-vm1: # df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 8.0K 126G 1% /dev tmpfs 189G 54M 189G 1% /dev/shm tmpfs 126G 34M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda3 30G 5.4G 25G 18% / /dev/sda2 20M 2.9M 18M 15% /boot/efi /dev/mapper/vg hana-shared 251G 50G 202G 20% /hana/shared /dev/mapper/vg hana-sap 32G 281M 32G 1% /usr/sap /dev/mapper/vg hana-data 426G 8.0G 418G 2% /hana/data /dev/mapper/vg hana-log 125G 4.3G 121G 4% /hana/log /dev/mapper/vg hanabackup-backup 512G 6.4G 506G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/473 tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/0 tmpfs 26G 0 26G 0% /run/user/1003 Check the status of the new cluster by entering the status command that is specific to your operating system: RHEL pcs status SLES crm status You should see results similar to the following the example, in which both VM instances are started and example-ha-vm1 is the active primary instance: RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.4-4b1f869f0f) - partition with quorum Last updated: Wed Jul 7 23:05:11 2021 Last change: Wed Jul 7 23:04:43 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] Failed Resource Actions: rsc healthcheck HA1 start 0 on example-ha-vm1 'error' (1): call=29, status='complete', exitreason='', last-rc-change='2021-07-07 21:07:35Z', queued=0ms, exec=2097ms SAPHana HA1 00 monitor 61000 on example-ha-vm1 'not running' (7): call=44, status='complete', exitreason='', last-rc-change='2021-07-07 21:09:49Z', queued=0ms, exec=0ms Daemon Status: corosync: active/enabled pacemaker: active/enabled pcsd: active/enabled SLES example-ha-vm1: # crm status Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Wed Jul 7 22:57:59 2021 Last change: Wed Jul 7 22:57:03 2021 by root via crm attribute on example-ha-vm1 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm1 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm1 ] Slaves: [ example-ha-vm2 ] Change to the SAP admin user by replacing SID LC in the following command with the SID value that you specified in the configuration file template.",
+          "RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.3-4b1f869f0f) - partition with quorum Last updated: Fri Mar 19 21:22:07 2021 Last change: Fri Mar 19 21:21:28 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] SLES example-ha-vm2: # Cluster Summary: Stack: corosync Current DC: example-ha-vm2 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Thu Jul 8 17:33:44 2021 Last change: Thu Jul 8 17:33:07 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm2 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm2 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] On the Load balancer details page in the console, confirm that the new active primary instance shows \"1/1\" in the Healthy column.",
+          "INFO - Running command: select from dummy DUMMY \"X\" 1 row selected (overall time 4124 usec; server time 130 usec) INFO - Running command: ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'SYSTEM') SET ('persistence', 'basepath persistent memory volumes') = '/hana/tmpfs0/TST;/hana/tmpfs1/TST;' 0 rows affected (overall time 3570 usec; server time 2239 usec) INFO - Running command: ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'SYSTEM') SET ('persistent memory', 'table unload action') = 'retain'; 0 rows affected (overall time 4308 usec; server time 2441 usec) INFO - Running command: ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('persistent memory', 'table default') = 'ON'; 0 rows affected (overall time 3422 usec; server time 2152 usec) Connect to SAP HANA Note that because these instructions don't use an external IP address for SAP HANA, you can only connect to the SAP HANA instances through the bastion instance using SSH or through the Windows server through SAP HANA Studio."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com",
+      "global.ini",
+      "indexserver.ini"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-monitoring",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+      ]
+    }
+  ]
+}

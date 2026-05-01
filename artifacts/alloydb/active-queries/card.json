@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Active queries",
+  "feature_slug": "active-queries",
+  "summary": "Active queries provides visibility into currently running queries in AlloyDB.",
+  "extended_definition": "Active queries provides visibility into currently running queries in AlloyDB.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Union field track active queries . track active queries can be only one of the following: trackActiveQueries boolean Track actively running queries on the instance.",
+          "ObservabilityInstanceConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field preserve comments can be only one of the following: \"preserveComments\" : boolean // End of list of possible types for union field preserve comments . // Union field track wait events can be only one of the following: \"trackWaitEvents\" : boolean // End of list of possible types for union field track wait events . // Union field track wait event types can be only one of the following: \"trackWaitEventTypes\" : boolean // End of list of possible types for union field track wait event types . // Union field max query string length can be only one of the following: \"maxQueryStringLength\" : integer // End of list of possible types for union field max query string length . // Union field record application tags can be only one of the following: \"recordApplicationTags\" : boolean // End of list of possible types for union field record application tags . // Union field query plans per minute can be only one of the following: \"queryPlansPerMinute\" : integer // End of list of possible types for union field query plans per minute . // Union field track active queries can be only one of the following: \"trackActiveQueries\" : boolean // End of list of possible types for union field track active queries . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Observability feature status for an instance.",
+          "Curl Request curl --location 'https://alloydb.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list instances\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Message for requesting list of Instances ListInstancesRequest JSON representation { \"parent\" : string , \"pageSize\" : integer , \"pageToken\" : string , \"filter\" : string , \"orderBy\" : string } Fields parent string Required."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following tools to connect to and manage your databases: AlloyDB Studio: a web-based tool built directly into the Google Google Cloud console that lets you explore and manage your data using an interactive SQL interface.",
+          "Automatic and adaptive database features The fully PostgreSQL-compatible database engine that powers every AlloyDB node has several features that continuously analyze the structure and frequency of the queries that your instances handle, using this information to suggest schema improvements or automatically apply optimizations: An index advisor helps you find opportunities to optimize your database schema using new indexes based on your usage patterns.",
+          "For more information, see Create a ScaNN index . google ml integration : provides access to the AI functions, which enables ML model invocation from AlloyDB for tasks such as generating embeddings, semantic ranking, AI-based filters and joins, and text generation and summarization."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Union field track active queries . track active queries can be only one of the following: trackActiveQueries boolean Track actively running queries on the instance.",
+          "ObservabilityInstanceConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field preserve comments can be only one of the following: \"preserveComments\" : boolean // End of list of possible types for union field preserve comments . // Union field track wait events can be only one of the following: \"trackWaitEvents\" : boolean // End of list of possible types for union field track wait events . // Union field track wait event types can be only one of the following: \"trackWaitEventTypes\" : boolean // End of list of possible types for union field track wait event types . // Union field max query string length can be only one of the following: \"maxQueryStringLength\" : integer // End of list of possible types for union field max query string length . // Union field record application tags can be only one of the following: \"recordApplicationTags\" : boolean // End of list of possible types for union field record application tags . // Union field query plans per minute can be only one of the following: \"queryPlansPerMinute\" : integer // End of list of possible types for union field query plans per minute . // Union field track active queries can be only one of the following: \"trackActiveQueries\" : boolean // End of list of possible types for union field track active queries . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Observability feature status for an instance.",
+          "Curl Request curl --location 'https://alloydb.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get instance\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Message for getting a Instance GetInstanceRequest JSON representation { \"name\" : string , \"view\" : enum ( InstanceView ) } Fields name string Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    }
+  ]
+}

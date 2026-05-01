@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:09.273Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "BigQuery JupyterLab plugin",
+  "feature_slug": "bigquery-jupyterlab-plugin",
+  "summary": "The BigQuery JupyterLab plugin was added to Vertex AI Workbench instances.",
+  "extended_definition": "The BigQuery JupyterLab plugin was added to Vertex AI Workbench instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage access to a Vertex AI Workbench instance's JupyterLab interface \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "JupyterLab access modes Vertex AI Workbench instances support the following access modes: Single user only : The Single user only access mode grants access only to the user that you specify.",
+          "Manage access to an instance's JupyterLab interface This page describes how to grant access to the JupyterLab interface of a Vertex AI Workbench instance.",
+          "Access limitations Granting a principal access to a Vertex AI Workbench instance's JupyterLab interface doesn't grant access to the instance itself."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance's JupyterLab\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage access to a managed notebooks instance's JupyterLab interface Vertex AI Workbench managed notebooks is deprecated .",
+          "This page describes how to grant access to the JupyterLab interface of a Vertex AI Workbench managed notebooks instance.",
+          "The following are examples of single user access metadata entries: proxy-mode=mail proxy-user-mail=user@example.com When you select the Service account access mode, Vertex AI Workbench stores a proxy-mode=service account metadata entry."
+        ]
+      },
+      {
+        "title": "Introduction to Vertex AI Workbench \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Workbench instances are prepackaged with JupyterLab and have a preinstalled suite of deep learning packages, including support for the TensorFlow and PyTorch frameworks.",
+          "In JupyterLab's navigation menu on a Vertex AI Workbench instance, you can use the Cloud Storage integration to browse data and other files that you have access to.",
+          "Limitations Consider the following limitations of Vertex AI Workbench instances when planning your project: Third party JupyterLab extensions aren't supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction"
+      ]
+    }
+  ]
+}

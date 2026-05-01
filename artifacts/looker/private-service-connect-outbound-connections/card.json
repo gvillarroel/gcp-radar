@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.212Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Private Service Connect outbound connections",
+  "feature_slug": "private-service-connect-outbound-connections",
+  "summary": "Looker (Google Cloud core) instances using Private Service Connect can configure outbound connections to external domains or the Looker Marketplace more simply.",
+  "extended_definition": "Looker (Google Cloud core) instances using Private Service Connect can configure outbound connections to external domains or the Looker Marketplace more simply.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+      "https://docs.cloud.google.com/looker/docs/bi-connectors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - BI Connectors \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .",
+          "The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .",
+          "For customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections, your network administrator must configure your network so that traffic from Microsoft Excel can reach your Looker instance."
+        ]
+      },
+      {
+        "title": "Admin settings - Connections \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are using a Looker (Google Cloud core) instance that is set up for public secure connections or for hybrid connections, use the IP address listed in the Egress Public IP field on the Details tab of the Instances page in the Google Cloud console.",
+          "Actions available for some connections Depending on the connection dialect, the gear drop-down menu to the right of the connection may offer the following additional options: Option Description Show Tables This option brings you to a Looker Explore page that lets you create Looker Explore queries based on the metadata of your connection.",
+          "You can check the status of: A single connection by clicking Test to the far right of that connection All connections by clicking the Test All Connections button at the top of the page Two checks are common cause for confusion: Can find temp schema Can use persistent derived tables These checks don't need to pass for Looker to function."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additionally, Looker (Google Cloud core) customers who are using OIDC with a private connections instance, must ensure that their networks are set up to allow access to the OIDC provider.",
+          "Enabling mirror OpenID Connect groups If you are using a Looker (Google Cloud core) instance, we recommend that you enable group mirroring for only the primary authentication method and don't enable group mirroring for the backup OAuth authentication .",
+          "For example, if you have configured OpenID Connect to make user-specific connections to your database, you could pair your OpenID Connect claims with Looker user attributes to make your database connections user-specific in Looker."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    }
+  ]
+}

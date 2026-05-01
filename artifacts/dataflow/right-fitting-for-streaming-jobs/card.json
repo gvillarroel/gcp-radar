@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:58.959Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Right fitting for streaming jobs",
+  "feature_slug": "right-fitting-for-streaming-jobs",
+  "summary": "Dataflow right fitting lets you specify resource requirements for streaming pipelines or individual pipeline steps.",
+  "extended_definition": "Dataflow right fitting lets you specify resource requirements for streaming pipelines or individual pipeline steps.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/right-fitting",
+      "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+      "https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Right fitting \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/right-fitting",
+        "source_id": "site-docs-reference-2",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streaming right fitting For streaming jobs, you can enable right fitting by setting the --experiments=enable streaming rightfitting pipeline option .",
+          "Verify right fitting You can verify that right fitting is enabled by viewing the autoscaling metrics and verifying that the Worker pool column is visible and lists different pools: Streaming right fitting performance Streaming pipelines with right fitting enabled might not always perform better than pipelines without right fitting enabled.",
+          "For example: The pipeline is using more workers The system latency is higher, or the throughput is lower The worker pool sizes are changing more frequently, or are not stabilizing If you observe this for your pipeline, you can disable right fitting by removing the --experiments=enable streaming rightfitting pipeline option ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a streaming pipeline using a Dataflow template \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete the individual resources If you want to keep the Google Cloud project that you used in this quickstart, then delete the individual resources: Go to the Dataflow Jobs page.",
+          "Create a streaming pipeline using a Dataflow template This quickstart shows you how to create a streaming pipeline using a Google-provided Dataflow template.",
+          "Note: Unless specified through the network option, the Dataflow runner runs jobs in the default Virtual Private Cloud network."
+        ]
+      },
+      {
+        "title": "\"Class JobsV1Beta3AsyncClient (0.13.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample aggregated list jobs(): Create a client client = dataflow v1beta3 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample check active jobs(): Create a client client = dataflow v1beta3 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample list jobs(): Create a client client = dataflow v1beta3 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "v1beta3.types.CheckActiveJobsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/right-fitting",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.JobsV1Beta3AsyncClient"
+      ]
+    }
+  ]
+}

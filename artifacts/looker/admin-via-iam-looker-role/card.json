@@ -1,0 +1,196 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:04.212Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Admin via IAM Looker role",
+  "feature_slug": "admin-via-iam-looker-role",
+  "summary": "Looker (Google Cloud core) instances support an admin role that is managed exclusively through IAM and grants full administrative privileges.",
+  "extended_definition": "Looker (Google Cloud core) instances support an admin role that is managed exclusively through IAM and grants full administrative privileges.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+      "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Looker (Google Cloud core) instances don't contain the sudo permission. manage groups see users Instance Wide CM Users can create, edit, and delete groups on the Groups page in the Users section of the Admin menu, with the exception of any groups that are associated with the Admin role. manage roles manage groups Instance Wide CM Users can create, edit, and delete roles, except for the Admin role, on the Roles page in the Users section of the Admin menu.",
+          "Admin via IAM The Admin via IAM role is available only in Looker (Google Cloud core) , and it can be managed only through the Google Cloud console.",
+          "Default roles For new instances, Looker creates the following default roles, each of which includes a default permission set of the same name: Admin Admin via IAM Developer Gemini Looker CI Users Conversational Analytics Agent Manager Conversational Analytics User Support Advanced Editor Support Basic Editor Customer Engineer Advanced Editor User Viewer The default roles in the following sections have conditions for use."
+        ]
+      },
+      {
+        "title": "Looker (Google Cloud core) access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Name Permissions Looker Viewer (roles/looker.viewer) Read-only access to all Looker (Google Cloud core) resources in the Google Cloud console. looker.backups.get looker.backups.list looker.instances.get looker.instances.list looker.instances.login looker.locations.get looker.locations.list looker.operations.get looker.operations.list resourcemanager.projects.get resourcemanager.projects.list Looker Instance User roles/looker.instanceUser Access to sign in to a Looker (Google Cloud core) instance. looker.instances.get looker.instances.login resourcemanager.projects.get resourcemanager.projects.list Looker Schema Viewer roles/looker.schemaViewer Access to Looker (Google Cloud core) schema data in Knowledge Catalog. looker.schemas.view Looker Admin roles/looker.admin Full access to all Looker (Google Cloud core) resources. looker.backups.create looker.backups.delete looker.backups.get looker.backups.list looker.instances.create looker.instances.delete looker.instances.export looker.instances.get looker.instances.import looker.instances.list looker.instances.login looker.instances.update looker.locations.get looker.locations.list looker.operations.cancel looker.operations.delete looker.operations.get looker.operations.list looker.schemas.view resourcemanager.projects.get resourcemanager.projects.list At least one principal must have the Looker Admin ( roles/looker.admin ) IAM role.",
+          "Looker IAM roles: These kinds of roles govern the following abilities: Users' capabilities within the Google Cloud console with regard to Looker (Google Cloud core) When used together with OAuth , they also govern the following abilities: Users' abilities to sign in to a Looker (Google Cloud core) instance Whether or not users are automatically assigned the Admin via IAM Looker role once they sign in to a Looker (Google Cloud core) instance.",
+          "Required role To get the permissions that you need to assign Looker (Google Cloud core) IAM roles, ask your administrator to grant you the Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) IAM role on the project in which the instance was created."
+        ]
+      },
+      {
+        "title": "Admin settings - Looker Studio Pro \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permission that you need to set up a self-service subscription to Looker Studio Pro , ask your IAM administrator to grant you a role containing the lookerstudio.pro.manage permission for the Google Cloud project that hosts your Looker Studio Pro content.",
+          "Required roles To get the permission that you need to accept complimentary Looker Studio Pro licenses , ask your Looker admin to grant you the Admin Looker role.",
+          "Note: Complimentary Looker Studio Pro licenses are also available for Looker (Google Cloud core) instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "looker.admin",
+      "looker.backups.create",
+      "looker.backups.delete",
+      "looker.backups.get",
+      "looker.backups.list",
+      "looker.instances.create",
+      "looker.instances.delete",
+      "looker.instances.export",
+      "looker.instances.get",
+      "looker.instances.import",
+      "looker.instances.list",
+      "looker.instances.login",
+      "looker.instances.update",
+      "looker.instanceUser",
+      "looker.locations.get",
+      "looker.locations.list",
+      "looker.operations.cancel",
+      "looker.operations.delete",
+      "looker.operations.get",
+      "looker.operations.list",
+      "looker.schemas.view",
+      "looker.schemaViewer",
+      "looker.viewer",
+      "lookerstudio.pro.manage",
+      "lookerstudio.proManager",
+      "resourcemanager.projectIamAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/looker.admin",
+      "roles/looker.instanceUser",
+      "roles/looker.schemaViewer",
+      "roles/looker.viewer",
+      "roles/lookerstudio.proManager",
+      "roles/owner",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-lsp"
+      ]
+    }
+  ]
+}

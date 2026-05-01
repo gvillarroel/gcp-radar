@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.046Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation",
+  "feature_name": "Document Translation",
+  "feature_slug": "document-translation",
+  "summary": "Document Translation translates documents with layout-aware output in Cloud Translation - Advanced (v3); Document Translation translates DOCX, PPTX, XLSX, and PDF files in Cloud Translation - Advanced (v3).",
+  "extended_definition": "Document Translation translates documents with layout-aware output in Cloud Translation - Advanced (v3); Document Translation translates DOCX, PPTX, XLSX, and PDF files in Cloud Translation - Advanced (v3).",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+      "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+      "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+      "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of the Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "source_id": "site-iam-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Basic Advanced Translate with the NMT model Translate with the Translation LLM Translate with Adaptive Translation models Translate with custom models Translate multiple strings in a single request Batch translations with Cloud Storage Translate documents Glossary support (control terminology) Train custom models Language Detection Integrated REST API Integrated gRPC API Service Account API Key Audit logging Supports HTML Supports 100+ Languages Romanization support Transliteration support Adaptive Translation Multi-regional endpoint support VPC Service Controls support Refer to Cloud Translation - Advanced API features for more details on Cloud Translation - Advanced API.",
+          "Document Translation preserves the original format so that translated documents have the same layout and format as the original documents.",
+          "Document Translation : This feature lets you translate documents such as PDF files while preserving their original format and layout."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Translation - Advanced also provides advanced text translation capabilities like translating documents and creating glossaries to ensure that your domain-specific terminology is translated correctly.",
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'us-central1'; // const modelId = 'YOUR MODEL ID'; // const text = 'text to translate'; // Imports the Google Cloud Translation library const { TranslationServiceClient } = require ( ' @google-cloud/translate ' ); // Instantiates a client const translationClient = new TranslationServiceClient (); async function translateTextWithModel () { // Construct request const request = { parent : projects/ ${ projectId } /locations/ ${ location } , contents : [ text ], mimeType : 'text/plain' , // mime types: text/plain, text/html sourceLanguageCode : 'en' , targetLanguageCode : 'ja' , model : projects/ ${ projectId } /locations/ ${ location } /models/ ${ modelId } , }; // Run request const [ response ] = await translationClient . translateText ( request ); for ( const translation of response . translations ) { console . log ( Translated Content: ${ translation . translatedText } ); } } translateTextWithModel (); Python Before trying this sample, follow the Python setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Translation - Advanced also provides advanced text translation capabilities like translating documents and creating glossaries to ensure that your domain-specific terminology is translated correctly.",
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'us-central1'; // const modelId = 'YOUR MODEL ID'; // const text = 'text to translate'; // Imports the Google Cloud Translation library const { TranslationServiceClient } = require ( ' @google-cloud/translate ' ); // Instantiates a client const translationClient = new TranslationServiceClient (); async function translateTextWithModel () { // Construct request const request = { parent : projects/ ${ projectId } /locations/ ${ location } , contents : [ text ], mimeType : 'text/plain' , // mime types: text/plain, text/html sourceLanguageCode : 'en' , targetLanguageCode : 'ja' , model : projects/ ${ projectId } /locations/ ${ location } /models/ ${ modelId } , }; // Run request const [ response ] = await translationClient . translateText ( request ); for ( const translation of response . translations ) { console . log ( Translated Content: ${ translation . translatedText } ); } } translateTextWithModel (); Python Before trying this sample, follow the Python setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Translation - Advanced also provides advanced text translation capabilities like translating documents and creating glossaries to ensure that your domain-specific terminology is translated correctly.",
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'us-central1'; // const modelId = 'YOUR MODEL ID'; // const text = 'text to translate'; // Imports the Google Cloud Translation library const { TranslationServiceClient } = require ( ' @google-cloud/translate ' ); // Instantiates a client const translationClient = new TranslationServiceClient (); async function translateTextWithModel () { // Construct request const request = { parent : projects/ ${ projectId } /locations/ ${ location } , contents : [ text ], mimeType : 'text/plain' , // mime types: text/plain, text/html sourceLanguageCode : 'en' , targetLanguageCode : 'ja' , model : projects/ ${ projectId } /locations/ ${ location } /models/ ${ modelId } , }; // Run request const [ response ] = await translationClient . translateText ( request ); for ( const translation of response . translations ) { console . log ( Translated Content: ${ translation . translatedText } ); } } translateTextWithModel (); Python Before trying this sample, follow the Python setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic"
+      ]
+    }
+  ]
+}

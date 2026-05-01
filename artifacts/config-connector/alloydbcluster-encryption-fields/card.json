@@ -1,0 +1,239 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:57.734Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "AlloyDBCluster encryption fields",
+  "feature_slug": "alloydbcluster-encryption-fields",
+  "summary": "Config Connector now supports encryption configuration and encryption status fields for the AlloyDBCluster resource and its automated backup policy.",
+  "extended_definition": "Config Connector now supports encryption configuration and encryption status fields for the AlloyDBCluster resource and its automated backup policy.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDBCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AlloyDBCluster Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpalloydbcluster gcpalloydbclusters alloydbcluster Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbclusters.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema automatedBackupPolicy : backupWindow : string enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string labels : string : string location : string quantityBasedRetention : count : integer timeBasedRetention : retentionPeriod : string weeklySchedule : daysOfWeek : - string startTimes : - hours : integer minutes : integer nanos : integer seconds : integer clusterType : string continuousBackupConfig : enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string recoveryWindowDays : integer databaseVersion : string deletionPolicy : string displayName : string encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string initialUser : password : value : string valueFrom : secretKeyRef : key : string name : string user : string location : string maintenanceUpdatePolicy : maintenanceWindows : - day : string startTime : hours : integer minutes : integer nanos : integer seconds : integer networkConfig : allocatedIpRange : string networkRef : external : string name : string namespace : string networkRef : external : string name : string namespace : string projectRef : external : string kind : string name : string namespace : string resourceID : string restoreBackupSource : backupNameRef : external : string name : string namespace : string restoreContinuousBackupSource : clusterRef : external : string name : string namespace : string pointInTime : string secondaryConfig : primaryClusterNameRef : external : string name : string namespace : string Fields automatedBackupPolicy Optional object The automated backup policy for this cluster.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-dep-secondary spec : location : australia-southeast1 networkConfig : networkRef : name : alloydbcluster-dep-secondary projectRef : external : ${PROJECT ID?} encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep1-secondary initialUser : user : \"postgres\" password : value : \"postgres\" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-secondary spec : location : australia-southeast2 networkConfig : networkRef : name : alloydbcluster-dep-secondary projectRef : external : ${PROJECT ID?} encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep2-secondary clusterType : \"SECONDARY\" secondaryConfig : primaryClusterNameRef : name : alloydbcluster-dep-secondary deletionPolicy : \"FORCE\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-secondary prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-secondary --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep1-secondary spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep1-secondary bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep1-secondary --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep2-secondary spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep2-secondary bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep2-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : alloydbcluster-dep1-secondary spec : keyRingRef : name : alloydbcluster-dep1-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : alloydbcluster-dep2-secondary spec : keyRingRef : name : alloydbcluster-dep2-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep1-secondary spec : location : australia-southeast1 --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep2-secondary spec : location : australia-southeast2 --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-secondary spec : networkRef : name : alloydbcluster-dep-secondary reservedPeeringRanges : - external : alloydbcluster-dep-secondary service : servicenetworking.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep1-secondary spec : projectRef : external : ${PROJECT ID?} resourceID : alloydb.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep2-secondary spec : projectRef : external : ${PROJECT ID?} resourceID : alloydb.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-regular spec : location : asia-south2 networkConfig : networkRef : name : alloydbcluster-dep-regular projectRef : external : ${PROJECT ID?} automatedBackupPolicy : backupWindow : 3600s encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep-regular enabled : true labels : source : kcc location : asia-south2 timeBasedRetention : retentionPeriod : 43200s weeklySchedule : daysOfWeek : [ MONDAY ] startTimes : - hours : 4 minutes : 0 seconds : 0 nanos : 0 encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep-regular maintenanceUpdatePolicy : maintenanceWindows : - day : WEDNESDAY startTime : hours : 12 minutes : 0 seconds : 0 nanos : 0 initialUser : user : \"postgres\" password : value : \"Postgres123\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-regular spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-regular prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-regular --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep-regular spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep-regular bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep-regular --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : labels : source : kcc-alloydbcluster-sample name : alloydbcluster-dep-regular spec : keyRingRef : name : alloydbcluster-dep-regular --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep-regular spec : location : asia-south2 --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-regular spec : networkRef : name : alloydbcluster-dep-regular reservedPeeringRanges : - external : alloydbcluster-dep-regular service : servicenetworking.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep-regular spec : projectRef : external : ${PROJECT ID?} resourceID : alloydb.googleapis.com Restored From Backup Cluster Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "AlloyDBCluster | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "source_id": "feature-recovery-http",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AlloyDBCluster Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpalloydbcluster gcpalloydbclusters alloydbcluster Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbclusters.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema automatedBackupPolicy : backupWindow : string enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string labels : string : string location : string quantityBasedRetention : count : integer timeBasedRetention : retentionPeriod : string weeklySchedule : daysOfWeek : - string startTimes : - hours : integer minutes : integer nanos : integer seconds : integer clusterType : string continuousBackupConfig : enabled : boolean encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string recoveryWindowDays : integer databaseVersion : string deletionPolicy : string displayName : string encryptionConfig : kmsKeyNameRef : external : string name : string namespace : string initialUser : password : value : string valueFrom : secretKeyRef : key : string name : string user : string location : string maintenanceUpdatePolicy : maintenanceWindows : - day : string startTime : hours : integer minutes : integer nanos : integer seconds : integer networkConfig : allocatedIpRange : string networkRef : external : string name : string namespace : string networkRef : external : string name : string namespace : string projectRef : external : string kind : string name : string namespace : string resourceID : string restoreBackupSource : backupNameRef : external : string name : string namespace : string restoreContinuousBackupSource : clusterRef : external : string name : string namespace : string pointInTime : string secondaryConfig : primaryClusterNameRef : external : string name : string namespace : string Fields automatedBackupPolicy Optional object The automated backup policy for this cluster.",
+          "Should be in the format \"projects/{{projectID}}/locations/{{location}}/clusters/{{clusterID}}\". secondaryConfig.primaryClusterNameRef.name Optional string The name of a AlloyDBCluster resource. secondaryConfig.primaryClusterNameRef.namespace Optional string The namespace of a AlloyDBCluster resource. * Field is required when parent field is specified Status Schema backupSource : - backupName : string conditions : - lastTransitionTime : string message : string reason : string status : string type : string continuousBackupInfo : - earliestRestorableTime : string enabledTime : string encryptionInfo : - encryptionType : string kmsKeyVersions : - string schedule : - string databaseVersion : string encryptionInfo : - encryptionType : string kmsKeyVersions : - string externalRef : string migrationSource : - hostPort : string referenceId : string sourceType : string name : string observedGeneration : integer observedState : clusterType : string databaseVersion : string uid : string Fields backupSource list (object) Output only.",
+          "Sample YAML(s) Regular Cluster # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-regular spec : location : asia-south2 networkConfig : networkRef : name : alloydbcluster-dep-regular projectRef : external : ${PROJECT_ID?} automatedBackupPolicy : backupWindow : 3600s encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep-regular enabled : true labels : source : kcc location : asia-south2 timeBasedRetention : retentionPeriod : 43200s weeklySchedule : daysOfWeek : [ MONDAY ] startTimes : - hours : 4 minutes : 0 seconds : 0 nanos : 0 encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep-regular maintenanceUpdatePolicy : maintenanceWindows : - day : WEDNESDAY startTime : hours : 12 minutes : 0 seconds : 0 nanos : 0 initialUser : user : \"postgres\" password : value : \"Postgres123\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-regular spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-regular prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-regular --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep-regular spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep-regular bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep-regular --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : labels : source : kcc-alloydbcluster-sample name : alloydbcluster-dep-regular spec : keyRingRef : name : alloydbcluster-dep-regular --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep-regular spec : location : asia-south2 --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-regular spec : networkRef : name : alloydbcluster-dep-regular reservedPeeringRanges : - external : alloydbcluster-dep-regular service : servicenetworking.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep-regular spec : projectRef : external : ${PROJECT_ID?} resourceID : alloydb.googleapis.com Restored From Backup Cluster # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-dep-restoredfrombackup spec : location : asia-south1 networkConfig : networkRef : name : alloydbcluster-dep-restoredfrombackup projectRef : external : ${PROJECT_ID?} --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-restoredfrombackup spec : location : asia-south1 networkConfig : networkRef : name : alloydbcluster-dep-restoredfrombackup projectRef : external : ${PROJECT_ID?} restoreBackupSource : backupNameRef : name : alloydbcluster-dep-restoredfrombackup --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBBackup metadata : name : alloydbcluster-dep-restoredfrombackup spec : clusterNameRef : name : alloydbcluster-dep-restoredfrombackup location : asia-south1 projectRef : external : ${PROJECT_ID?} --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbcluster-dep-restoredfrombackup spec : clusterRef : name : alloydbcluster-dep-restoredfrombackup instanceTypeRef : name : alloydbbackup-dep-restoredfrombackup --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-restoredfrombackup spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-restoredfrombackup prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-restoredfrombackup --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-restoredfrombackup spec : networkRef : name : alloydbcluster-dep-restoredfrombackup reservedPeeringRanges : - external : alloydbcluster-dep-restoredfrombackup service : servicenetworking.googleapis.com Secondary Cluster # Copyright 2024 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-dep-secondary spec : location : australia-southeast1 networkConfig : networkRef : name : alloydbcluster-dep-secondary projectRef : external : ${PROJECT_ID?} encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep1-secondary initialUser : user : \"postgres\" password : value : \"postgres\" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbcluster-sample-secondary spec : location : australia-southeast2 networkConfig : networkRef : name : alloydbcluster-dep-secondary projectRef : external : ${PROJECT_ID?} encryptionConfig : kmsKeyNameRef : name : alloydbcluster-dep2-secondary clusterType : \"SECONDARY\" secondaryConfig : primaryClusterNameRef : name : alloydbcluster-dep-secondary deletionPolicy : \"FORCE\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbcluster-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbcluster-dep-secondary prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbcluster-dep-secondary --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep1-secondary spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep1-secondary bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep1-secondary --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : alloydbcluster-dep2-secondary spec : resourceRef : apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey name : alloydbcluster-dep2-secondary bindings : - role : roles/cloudkms.cryptoKeyEncrypterDecrypter members : - memberFrom : serviceIdentityRef : name : alloydbcluster-dep2-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : alloydbcluster-dep1-secondary spec : keyRingRef : name : alloydbcluster-dep1-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : alloydbcluster-dep2-secondary spec : keyRingRef : name : alloydbcluster-dep2-secondary --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep1-secondary spec : location : australia-southeast1 --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : alloydbcluster-dep2-secondary spec : location : australia-southeast2 --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbcluster-dep-secondary spec : networkRef : name : alloydbcluster-dep-secondary reservedPeeringRanges : - external : alloydbcluster-dep-secondary service : servicenetworking.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep1-secondary spec : projectRef : external : ${PROJECT_ID?} resourceID : alloydb.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : ServiceIdentity metadata : name : alloydbcluster-dep2-secondary spec : projectRef : external : ${PROJECT_ID?} resourceID : alloydb.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.",
+          "When false, configuration of masterAuthorizedNetworksConfig, privateClusterConfig.enablePrivateEndpoint, privateClusterConfig.privateEndpointSubnetwork and privateClusterConfig.masterGlobalAccessConfig fields won't be used, and privateClusterConfig.privateEndpoint and privateClusterConfig.publicEndpoint fields won't be populated. costManagementConfig Optional object Cost management configuration for the cluster. costManagementConfig.enabled Required boolean Whether to enable GKE cost allocation.",
+          "Currently supports only DNS endpoint configuration and disable IP endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.cnrm.cloud.google.com",
+      "alloydb.googleapis.com",
+      "alloydbclusters.alloydb.cnrm.cloud.google.com",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "containerclusters.container.cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "kms.cnrm.cloud.google.com",
+      "projects.locations.clusters",
+      "servicenetworking.cnrm.cloud.google.com",
+      "servicenetworking.googleapis.com",
+      "serviceusage.cnrm.cloud.google.com",
+      "v1.projects.locations.clusters"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+      ]
+    }
+  ]
+}

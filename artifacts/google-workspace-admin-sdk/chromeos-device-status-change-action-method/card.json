@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:03.706Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-admin-sdk/card.json",
+  "product_name": "Google Workspace Admin SDK",
+  "product_slug": "google-workspace-admin-sdk",
+  "feature_name": "ChromeOS device status change action method",
+  "feature_slug": "chromeos-device-status-change-action-method",
+  "summary": "The Directory API chromeosdevices action method changes ChromeOS device status; deprecated on 2023-12-27.",
+  "extended_definition": "The Directory API chromeosdevices action method changes ChromeOS device status; deprecated on 2023-12-27.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-27",
+    "deprecation_date": "2023-12-27",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: chromeosdevices.action \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+        "source_id": "site-api-reference",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Admin console Reference Send feedback Method: chromeosdevices.action Stay organized with collections Save and categorize content based on your preferences.",
+          "Use BatchChangeChromeOsDeviceStatus instead.",
+          "HTTP request POST https://admin.googleapis.com/admin/directory/v1/customer/{customerId}/devices/chromeos/{resourceId}/action The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "REST Resource: chromeosdevices \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "source_id": "site-api-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods action (deprecated) Use BatchChangeChromeOsDeviceStatus instead. get Retrieves a Chrome OS device's properties. list Retrieves a paginated list of Chrome OS devices within an account. moveDevicesToOu Moves or inserts multiple Chrome OS devices to an organizational unit. patch Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId . update Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId .",
+          "For the Chromeosdevices resource, the value is admin#directory#chromeosdevice . recentUsers[] object A list of recent device users, in descending order, by last login time. recentUsers[].type string The type of the user.",
+          "JSON representation { \"deviceId\" : string , \"serialNumber\" : string , \"status\" : string , \"lastSync\" : string , \"supportEndDate\" : string , \"annotatedUser\" : string , \"annotatedLocation\" : string , \"notes\" : string , \"model\" : string , \"meid\" : string , \"orderNumber\" : string , \"willAutoRenew\" : boolean , \"osVersion\" : string , \"platformVersion\" : string , \"firmwareVersion\" : string , \"macAddress\" : string , \"bootMode\" : string , \"lastEnrollmentTime\" : string , \"kind\" : string , \"recentUsers\" : [ { \"type\" : string , \"email\" : string } ] , \"activeTimeRanges\" : [ { \"activeTime\" : integer , \"date\" : string } ] , \"ethernetMacAddress\" : string , \"annotatedAssetId\" : string , \"etag\" : string , \"diskVolumeReports\" : [ { \"volumeInfo\" : [ { \"volumeId\" : string , \"storageTotal\" : string , \"storageFree\" : string } ] } ] , \"systemRamTotal\" : string , \"cpuStatusReports\" : [ { \"reportTime\" : string , \"cpuUtilizationPercentageInfo\" : [ integer ] , \"cpuTemperatureInfo\" : [ { \"temperature\" : integer , \"label\" : string } ] } ] , \"cpuInfo\" : [ { \"model\" : string , \"architecture\" : string , \"maxClockSpeedKhz\" : integer , \"logicalCpus\" : [ { \"maxScalingFrequencyKhz\" : integer , \"currentScalingFrequencyKhz\" : integer , \"idleDuration\" : string , \"cStates\" : [ { \"displayName\" : string , \"sessionDuration\" : string } ] } ] } ] , \"deviceFiles\" : [ { \"name\" : string , \"type\" : string , \"downloadUrl\" : string , \"createTime\" : string } ] , \"systemRamFreeReports\" : [ { \"reportTime\" : string , \"systemRamFreeInfo\" : [ string ] } ] , \"lastKnownNetwork\" : [ { \"ipAddress\" : string , \"wanIpAddress\" : string } ] , \"autoUpdateExpiration\" : string , \"ethernetMacAddress0\" : string , \"dockMacAddress\" : string , \"manufactureDate\" : string , \"orgUnitPath\" : string , \"tpmVersionInfo\" : { \"family\" : string , \"specLevel\" : string , \"manufacturer\" : string , \"tpmModel\" : string , \"firmwareVersion\" : string , \"vendorSpecific\" : string } , \"screenshotFiles\" : [ { \"name\" : string , \"type\" : string , \"downloadUrl\" : string , \"createTime\" : string } ] , \"orgUnitId\" : string , \"osUpdateStatus\" : { object ( OsUpdateStatus ) } , \"firstEnrollmentTime\" : string , \"lastDeprovisionTimestamp\" : string , \"deprovisionReason\" : enum ( DeprovisionReason ) , \"deviceLicenseType\" : enum ( DeviceLicenseType ) , \"backlightInfo\" : [ { object ( BacklightInfo ) } ] , \"autoUpdateThrough\" : string , \"extendedSupportEligible\" : boolean , \"extendedSupportStart\" : string , \"extendedSupportEnabled\" : boolean , \"fanInfo\" : [ { object ( FanInfo ) } ] , \"chromeOsType\" : enum ( ChromeOsType ) , \"diskSpaceUsage\" : { object ( ByteUsage ) } , \"osVersionCompliance\" : enum ( Compliance ) , \"bluetoothAdapterInfo\" : [ { object ( BluetoothAdapterInfo ) } ] } Fields deviceId string The unique ID of the Chrome device. serialNumber string The Chrome device serial number entered when the device was enabled."
+        ]
+      },
+      {
+        "title": "Method: chromeosdevices.list \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list",
+        "source_id": "site-api-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Admin console Reference Send feedback Method: chromeosdevices.list Stay organized with collections Save and categorize content based on your preferences.",
+          "Response body If successful, the response body contains data with the following structure: JSON representation { \"kind\" : string , \"etag\" : string , \"chromeosdevices\" : [ { object ( ChromeOsDevice ) } ] , \"nextPageToken\" : string } Fields kind string Kind of resource this is. etag string ETag of the resource. chromeosdevices[] object ( ChromeOsDevice ) A list of Chrome OS Device objects. nextPageToken string Token used to access the next page of this result.",
+          "The follow-on request's pageToken query parameter is the nextPageToken from your previous response. projection enum ( Projection ) Determines whether the response contains the full list of properties or only a subset. query string Search string in the format given at chromeosdevices.list query operators . sortOrder enum ( SortOrder ) Whether to return results in ascending or descending order."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.directory.device.chromeos",
+      "admin.directory.device.chromeos.readonly",
+      "admin.googleapis.com",
+      "chromeosdevices.action",
+      "chromeosdevices.get",
+      "chromeosdevices.list",
+      "chromeosdevices.moveDevicesToOu",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/action",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/chromeosdevices/list"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:01.158Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore Key Visualizer heatmaps",
+  "feature_slug": "firestore-key-visualizer-heatmaps",
+  "summary": "You can visualize heatmap patterns for index keys to help predict workload patterns, and the feature is in Preview.",
+  "extended_definition": "You can visualize heatmap patterns for index keys to help predict workload patterns, and the feature is in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+      "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+      "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Key Visualizer \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Heatmaps The core of a Key Visualizer scan is the heatmap, which shows the value of a metric over time, broken down into up to 1000 contiguous key buckets .",
+          "Understand the document key patterns or index key patterns you might see in Key Visualizer heatmaps.",
+          "See Getting started with Key Visualizer and Exploring heatmaps ."
+        ]
+      },
+      {
+        "title": "\"Heatmap patterns for index keys \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Understand the index key structure Before you understand the structure of index keys that you see in Key Visualizer tool, learn about indexes in Firestore.",
+          "Heatmap patterns for index keys This page shows examples of patterns that you might see in a Key Visualizer heatmap.",
+          "COLLECTION: projects/ PROJECT ID /databases/(default)/documents/Users PROPERTIES: (Timestamp: ASC, name DESC) VALUES: (16500000000000001) DOCUMENT: projects/ PROJECT ID /databases/(default)/documents/Users/5000000000000001 What's next Learn how to get started with Key Visualizer ."
+        ]
+      },
+      {
+        "title": "\"Manage Standard edition indexes \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, consider this google datastore index resource: datastore.tf resource \"google datastore index\" \"legacy\" { kind = \"foo\" properties { name = \"property a\" direction = \"ASCENDING\" } properties { name = \"property b\" direction = \"ASCENDING\" } } The equivalent google firestore index resource would be: resource \"google firestore index\" \"new\" { // note: defaults to the provider project project = project // note: defaults to the (default) database database = \"(default)\" collection = \"foo\" api scope = \"DATASTORE MODE API\" // since there was no \"ancestor\" property set above, use COLLECTION GROUP here query scope = \"COLLECTION GROUP\" fields { field path = \"property a\" order = \"ASCENDING\" } fields { field path = \"property b\" order = \"ASCENDING\" } } Index build time To build an index, Firestore Standard edition must set up the index and then backfill the index with existing data.",
+          "Datastore mode indexes You can also create Datastore Mode indexes using Terraform. datastore.tf resource \"google firestore index\" \"datastore-mode-index\" { project = \" project-id \" database = \" database-id \" collection = \"chatrooms\" fields { field path = \"name\" order = \"ASCENDING\" } fields { field path = \"description\" order = \"DESCENDING\" } query scope = \"COLLECTION GROUP\" api scope = \"DATASTORE MODE API\" } Migrate from google datastore index The google datastore index resource is deprecated and will be unavailable in terraform-provider-google version 6.0.0 and later.",
+          "Single-field (automatic) index The following example Terraform configuration file creates a single-field index on the name field in the chatrooms collection: firestore.tf resource \"random id\" \"variable\"{ byte length = 8 } resource \"google firestore field\" \"single-index\" { project = \" project-id \" database = \" database-id \" collection = \"chatrooms ${random id.variable.hex}\" field = \"name\" index config { indexes { order = \"ASCENDING\" query scope = \"COLLECTION GROUP\" } indexes { array config = \"CONTAINS\" } } ttl config {} } Replace project-id with your project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.tf",
+      "firestore.tf",
+      "id.variable.hex",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing"
+      ]
+    }
+  ]
+}

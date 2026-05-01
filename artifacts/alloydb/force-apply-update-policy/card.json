@@ -1,0 +1,258 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:50.392Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "FORCE_APPLY update policy",
+  "feature_slug": "force-apply-update-policy",
+  "summary": "The FORCE_APPLY update policy lets AlloyDB apply database flag changes and updates faster to an instance.",
+  "extended_definition": "The FORCE_APPLY update policy lets AlloyDB apply database flag changes and updates faster to an instance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+      "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Password policy flags \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "source_id": "site-api-reference",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This page describes the database flags that AlloyDB for PostgreSQL uses to enforce a set of restrictions specific to their password policy .",
+          "For a list of all database flags that AlloyDB supports, see Supported database flags . password.enforce password does not contain username Type Boolean Default OFF Instance restarts No If on , prohibits using a username as part of a password.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Password policy flags Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Supported database flags \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "source_id": "site-api-reference",
+        "final_score": 147,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A C D E F G H I J L M N O P R S T V W AlloyDB flag Default value Instance restarts Read pool restrictions alloydb.ai nl enabled off No No alloydb.enable auto explain off Yes No alloydb.enable pg bigm off Yes No alloydb.enable pg cron off Yes No alloydb.enable pg hint plan off Yes No alloydb.enable pg wait sampling off Yes No alloydb.enable pgaudit off Yes No alloydb.enable pglogical off Yes No alloydb.enable named hints off No No alloydb.iam authentication off Yes No alloydb.logical decoding off Yes No alloydb.log throttling window No No alloydb.promote cancel to terminate on No No alloydb.pg shadow select role An empty string No No alloydb.enable pg squeeze off No No allow alter system (PostgreSQL 17) on No No auto explain.log analyze Standard default No No auto explain.log buffers Standard default No No auto explain.log format Standard default No No auto explain.log level Standard default No No auto explain.log min duration Standard default No No auto explain.log nested statements Standard default No No auto explain.log settings Standard default No No auto explain.log timing Standard default No No auto explain.log triggers Standard default No No auto explain.log verbose Standard default No No auto explain.log wal Standard default No No auto explain.sample rate Standard default No No autovacuum Standard default No No autovacuum analyze scale factor Standard default No No autovacuum analyze threshold Standard default No No autovacuum freeze max age Standard default Yes No autovacuum max workers Standard default Yes No autovacuum multixact freeze max age Standard default Yes No autovacuum naptime Standard default No No autovacuum vacuum cost delay Standard default No No autovacuum vacuum cost limit Standard default No No autovacuum vacuum max threshold (PostgreSQL 18) Standard default No No autovacuum vacuum scale factor Standard default No No autovacuum vacuum threshold Standard default No No autovacuum work mem Standard default No No autovacuum worker slots (PostgreSQL 18) Standard default Yes No checkpoint completion target Standard default No No checkpoint timeout Standard default No No checkpoint warning Standard default No No commit delay Standard default No No commit siblings Standard default No No commit timestamp buffers (PostgreSQL 17) 0 Yes No constraint exclusion Standard default No No cpu index tuple cost Standard default No No cpu operator cost Standard default No No cpu tuple cost Standard default No No createrole self grant (PostgreSQL 16) - No No cron.database name Standard default Yes No cron.log min messages Standard default No No cron.log run Standard default Yes No cron.log statement Standard default Yes No cron.max running jobs Standard default Yes No cursor tuple fraction Standard default No No deadlock timeout Standard default No No debug io direct (PostgreSQL 16) - No No debug logical replication streaming (PostgreSQL 16) buffered No No default statistics target Standard default No No default tablespace Standard default No No default toast compression pglz No No default transaction deferrable Standard default No No default transaction isolation Standard default No No effective cache size 80% of instance RAM No No enable bitmapscan Standard default No No enable distinct reordering (PostgreSQL 18) on No No enable google adaptive autovacuum on No No enable group by reordering (PostgreSQL 17) on No No enable hashagg Standard default No No enable hashjoin Standard default No No enable indexonlyscan Standard default No No enable indexscan Standard default No No enable material Standard default No No enable mergejoin Standard default No No enable nestloop Standard default No No enable partitionwise aggregate off No No enable partitionwise join off No No enable presorted aggregate (PostgreSQL 16) on No No enable self join elimination (PostgreSQL 18) Standard default No No enable seqscan Standard default No No enable sort Standard default No No enable tidscan Standard default No No event triggers (PostgreSQL 17) true No Yes file copy method (PostgreSQL 18) Standard default No No from collapse limit Standard default No No geqo Standard default No No geqo effort Standard default No No geqo generations Standard default No No geqo pool size Standard default No No geqo seed Standard default No No geqo selection bias Standard default No No geqo threshold Standard default No No gin fuzzy search limit Standard default No No gin pending list limit Standard default No No google columnar engine.auto columnarization schedule 'EVERY 1 HOUR' No No google columnar engine.enable auto columnarization on No No google columnar engine.enable columnar scan on No No google columnar engine.enable virtual columns scan off No No google columnar engine.enable vectorized join No No google columnar engine.enabled off Yes No google columnar engine.memory size in mb 30% of instance RAM Yes No google columnar engine.refresh threshold percentage 50 No No google columnar engine.refresh threshold scan count 5 No No google columnar engine.relations An empty string No No google columnar engine.vectorized join threads No No google db advisor.auto advisor max time in seconds 1800 No No google db advisor.auto advisor schedule 'EVERY 24 HOURS' No No google db advisor.enable auto advisor on No No google db advisor.enabled on Yes No google db advisor.max index width 2 No No google db advisor.max num indexable columns 1000 No No google db advisor.max statement length 102400 No No google db advisor.max storage size in mb 0 No No google db advisor.recommendation max time in seconds 600 No No google db advisor.recommend indexes on partitions off No No google db advisor.top k slowest statements 100 No No google job scheduler.maintenance cpu percentage 20 No No google job scheduler.max parallel workers per job 2 No No google ml integration.enable faster embedding generation off No No google ml integration.enable model support on No No google ml integration.enable forecasting off No No google plan management.enabled off Yes No google plan management.enable track plans on No No google plan management.enable steer plans on No No google storage.log replay throttle read transactions on No No gss accept delegation (PostgreSQL 16) off No No hot standby feedback on No No icu validation level (PostgreSQL 16) warning No No idle in transaction session timeout Standard default No No idle replication slot timeout Standard default No No idle in transaction session timeout (PostgreSQL 16) 86,400,000 No No io max combine limit (PostgreSQL 18) Standard default Yes No io max concurrency (PostgreSQL 18) Standard default Yes No io method (PostgreSQL 18) Sync is the only valid value for Preview Yes No join collapse limit Standard default No No lock timeout Standard default No No log autovacuum min duration 0 No No log checkpoints Standard default No No log connections Standard default No No log disconnections Standard default No No log duration Standard default The log duration=on setting might increase log volume under a heavy workload and cause higher query latencies.",
+          "No No log statement stats Standard default No No log temp files 0 No No log timezone Standard default No No maintenance work mem Standard default No No max active replication origins (PostgreSQL 18) Standard default Yes No max connections 1000 Yes Yes max locks per transaction Standard default Yes Yes max logical replication workers Standard default Yes No max notify queue pages (PostgreSQL 17) 1048576 Yes Yes max parallel apply workers per subscription (PostgreSQL 16) 2 No No max parallel maintenance workers Standard default No No max parallel workers The instance CPU count or 8 , whichever is greater No No max parallel workers per gather Half of the instance CPU count or 2 , whichever is greater No No max pred locks per page Standard default Yes No max pred locks per relation Standard default Yes No max pred locks per transaction Standard default Yes No max prepared transactions Standard default Yes Yes max replication slots 50 Yes No max standby archive delay Standard default No No max standby streaming delay Standard default No No max sync workers per subscription Standard default No No max wal senders 50 Yes Yes max wal size 1504 No No max worker processes 64 Yes Yes md5 password warnings (PostgreSQL 18) Standard default No No min wal size Standard default No No multixact member buffers (PostgreSQL 17) 32 Yes No multixact offset buffers (PostgreSQL 17) 32 Yes No notify buffers (PostgreSQL 17) 16 Yes No parameterized views.enabled off Yes No parameterized views.json results max rows 1,000,000 No No parameterized views.json results max size 1,048,576 No No parameterized views.max parallel workers per gather -1 No No parameterized views.statement timeout 0 No No parameterized views.temp file limit -1 No No parameterized views.work mem 0 No No password encryption Standard default No No password.enforce password does not contain username OFF No No password.enforce expiration OFF No No password.enforce complexity OFF No No password.expiration in days 90 No No password.min uppercase letters 0 No No password.max uppercase letters 1000 No No password.min lowercase letters 0 No No password.max lowercase letters 1000 No No password.min numerical chars 0 No No password.max numerical chars 1000 No No password.min special chars 0 No No password.max special chars 1000 No No password.min pass length 0 No No password.max pass length 1000 No No password.notify expiration in days 30 No No perfsnap.interval 86400 No No perfsnap.retention 7 days No No pg bigm.enable recheck Standard default No No pg bigm.gin key limit Standard default No No pg bigm.similarity limit Standard default No No pg hint plan.debug print Standard default No No pg hint plan.enable hint Standard default No No pg hint plan.enable hint table Standard default No No pg hint plan.message level Standard default No No pg hint plan.parse messages Standard default No No pg stat statements.max Standard default Yes No pg stat statements.save Standard default No No pg stat statements.track Standard default No No pg stat statements.track utility Standard default No No pgaudit.log Standard default No No pgaudit.log catalog Standard default No No pgaudit.log client Standard default No No pgaudit.log level Standard default No No pgaudit.log parameter Standard default No No pgaudit.log relation Standard default No No pgaudit.log statement once Standard default No No pgaudit.role Standard default No No pglogical.batch inserts Standard default Yes No pglogical.conflict log level Standard default No No pglogical.conflict resolution Standard default No No pglogical.extra connection options Standard default No No pglogical.synchronous commit Standard default Yes No pglogical.use spi Standard default Yes No random page cost Standard default No No replacement sort tuples Standard default No No reserved connections (PostgreSQL 16) 0 Yes No scram iterations (PostgreSQL 16) 4096 No No send abort for crash (PostgreSQL 16) off No No send abort for kill (PostgreSQL 16) off No No serializable buffers (PostgreSQL 17) 32 Yes No shared buffers 80% of instance memory Yes No scann.enable preview features off Yes No scann.maintenance background naptime s 1 minute Yes No ssl groups (PostgreSQL 18) Standard default No No ssl max protocol version Standard default No No ssl min protocol version Standard default No No ssl tls13 ciphers (PostgreSQL 18) Standard default No No squeeze.worker autostart Standard default No No squeeze.worker role Standard default No No squeeze.workers per database Default value is 1 No No squeeze.max xlock time Default value is 1 .",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Supported database flags Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the editor of your choice, for example, nano, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" This project uses environment variables to determine how you would like to run your application To use the Go connector (recommended) - use INSTANCE NAME To use TCP - Setting INSTANCE HOST will use TCP (e.g., 127.0.0.1) - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" To use Automatic IAM Authentication (recommended) use DB IAM USER instead of DB USER you may also remove the DB PASS environment variable - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database If you are using the Go connector (recommended), you can remove alloydb-proxy (everything below this line) - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy It is recommended to use a specific version for production environments.",
+          "In your open Cloud Shell, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 command : - \"/alloydb-auth-proxy\" #AlloyDB instance name as parameter for the AlloyDB proxy - \" INSTANCE URI \" securityContext : runAsNonRoot : true resources : requests : memory : \"2Gi\" cpu : \"1\" Replace INSTANCE URI with the path you copied in step 1.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : apps/v1 kind : Deployment metadata : name : < YOUR-DEPLOYMENT-NAME > spec : selector : matchLabels : app : < YOUR-APPLICATION-NAME > template : metadata : labels : app : < YOUR-APPLICATION-NAME > spec : serviceAccountName : < YOUR-KSA-NAME > containers : Your application container goes here. - name : < YOUR-APPLICATION-NAME > image : < YOUR-APPLICATION-IMAGE-URL > env : - name : DB HOST The port value here (5432) should match the --port flag below. value : \"localhost:5342\" - name : DB USER valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : username - name : DB PASS valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : password - name : DB NAME valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : database The Auth Proxy sidecar goes here. - name : alloydb-auth-proxy Make sure you have automation that upgrades this version regularly."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "advisor.auto",
+      "advisor.enable",
+      "advisor.enabled",
+      "advisor.max",
+      "advisor.recommend",
+      "advisor.recommendation",
+      "advisor.top",
+      "alloydb.ai",
+      "alloydb.enable",
+      "alloydb.iam",
+      "alloydb.log",
+      "alloydb.logical",
+      "alloydb.pg",
+      "alloydb.promote",
+      "bigm.enable",
+      "bigm.gin",
+      "bigm.similarity",
+      "cron.database",
+      "cron.log",
+      "cron.max",
+      "deployment.yaml",
+      "docker.pkg.dev",
+      "e.g",
+      "engine.auto",
+      "engine.enable",
+      "engine.enabled",
+      "engine.memory",
+      "engine.refresh",
+      "engine.relations",
+      "engine.vectorized",
+      "explain.log",
+      "explain.sample",
+      "gcr.io",
+      "integration.enable",
+      "management.enable",
+      "management.enabled",
+      "password.enforce",
+      "password.expiration",
+      "password.max",
+      "password.min",
+      "password.notify",
+      "perfsnap.interval",
+      "perfsnap.retention",
+      "pgaudit.log",
+      "pgaudit.role",
+      "pglogical.batch",
+      "pglogical.conflict",
+      "pglogical.extra",
+      "pglogical.synchronous",
+      "pglogical.use",
+      "plan.debug",
+      "plan.enable",
+      "plan.message",
+      "plan.parse",
+      "scann.enable",
+      "scann.maintenance",
+      "scheduler.maintenance",
+      "scheduler.max",
+      "squeeze.max",
+      "squeeze.worker",
+      "squeeze.workers",
+      "statements.max",
+      "statements.save",
+      "statements.track",
+      "storage.log",
+      "views.enabled",
+      "views.json",
+      "views.max",
+      "views.statement",
+      "views.temp",
+      "views.work"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/password-policy-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-flags",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:09:08.631Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI training support for NVIDIA A100 GPUs and A2 machine types",
+  "feature_slug": "vertex-ai-training-support-for-nvidia-a100-gpus-and-a2-machine-types",
+  "summary": "Vertex AI training now supports NVIDIA A100 GPUs and accelerator-optimized A2 machine types for training, and these must be used together.",
+  "extended_definition": "Vertex AI training now supports NVIDIA A100 GPUs and accelerator-optimized A2 machine types for training, and these must be used together.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_update_notebook_runtime_template",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if the request is for 8 units of NVIDIA A100 GPUs, and gpu partition size=\"1g.10gb\", the service will create 8 7 = 56 partitioned MIG instances.",
+          "For example, if the request is for 8 units of NVIDIA A100 GPUs, and gpu partition size=\"1g.10gb\", the service will create 8 7 = 56 partitioned MIG instances.",
+          "For accelerator optimized machine types ( https://cloud.google.com/compute/docs/accelerator-optimized-machines) , One may set the accelerator count from 1 to N for machine with N GPUs."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_update_notebook_runtime_template",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if the request is for 8 units of NVIDIA A100 GPUs, and gpu partition size=\"1g.10gb\", the service will create 8 7 = 56 partitioned MIG instances.",
+          "For example, if the request is for 8 units of NVIDIA A100 GPUs, and gpu partition size=\"1g.10gb\", the service will create 8 7 = 56 partitioned MIG instances.",
+          "For accelerator optimized machine types ( https://cloud.google.com/compute/docs/accelerator-optimized-machines) , One may set the accelerator count from 1 to N for machine with N GPUs."
+        ]
+      },
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Create a shell script to start an ETCD cluster on the master node Create a training script using code from PyTorch Elastic's GitHub repository Create containers that download the data, and start an ETCD cluster on the host Train the model using multiple nodes with GPUs Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Distributed XGBoost training with Dask .",
+          "Execute pipeline using componentlevel settings for machine resources Convert the selfcontained training component into a Vertex AI CustomJob .",
+          "In this tutorial, you train a machine learning model custom container image approach for custom training in Vertex AI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

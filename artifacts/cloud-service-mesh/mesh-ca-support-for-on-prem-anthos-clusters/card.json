@@ -1,0 +1,188 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:55.897Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Mesh CA support for on-prem Anthos clusters",
+  "feature_slug": "mesh-ca-support-for-on-prem-anthos-clusters",
+  "summary": "Mesh CA support for on-prem Anthos clusters enables new Anthos Service Mesh installations on VMware and bare metal to use Mesh CA; Mesh CA support for on-prem Anthos clusters enables new Anthos Service Mesh installations on VMware and bare metal to use Mesh CA.",
+  "extended_definition": "Mesh CA support for on-prem Anthos clusters enables new Anthos Service Mesh installations on VMware and bare metal to use Mesh CA; Mesh CA support for on-prem Anthos clusters enables new Anthos Service Mesh installations on VMware and bare metal to use Mesh CA.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+      "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices",
+      "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant service accounts in the fleet project permission to access the cluster project: gcloud projects add-iam-policy-binding \" CLUSTER PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent Enable the Mesh API on the cluster's project: gcloud services enable mesh.googleapis.com \\ --project = CLUSTER PROJECT ID Configure Certificate Authority Service (Optional) If your service mesh deployment requires Certificate Authority Service (CA Service), then follow Configure Certificate Authority Service for managed Cloud Service Mesh to enable it for your fleet.",
+          "The following example shows a typical managed data plane maintenance notification: Subject Line: Upcoming upgrade for your Cloud Service Mesh cluster \" <location/cluster-name> \" Dear Cloud Service Mesh user, The Cloud Service Mesh components in your cluster ${instance id} (https://console.cloud.google.com/kubernetes/clusters/details/${instance id}/details?project=${project id}) are scheduled to upgrade on ${scheduled date human readable} at ${scheduled time human readable}.",
+          "Enabling managed Cloud Service Mesh as a default configuration for your fleet and registering clusters to the fleet during cluster creation only supports Mesh CA ."
+        ]
+      },
+      {
+        "title": "Canonical Service \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "source_id": "site-docs-reference",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Service Mesh 1.6.8 introduces support for Canonical Services, a conceptual and architectural model for representing your production workloads as a singular service that is easier to observe and manage.",
+          "These workloads can span multiple clusters, disparate backend platforms, and different schemas and configurations.",
+          "Therefore, the unique identity of a Canonical Service is determined by: mesh id + namespace + canonical name."
+        ]
+      },
+      {
+        "title": "\"Migrating from In-cluster to Managed Canonical Service Controller \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "source_id": "site-docs-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Revert back to the In-Cluster Canonical Service Controller If you encounter issues with the Managed Canonical Service Controller, you can reinstall the in-cluster controller with the following command: kubectl apply -f \\ https://raw.githubusercontent.com/GoogleCloudPlatform/anthos-service-mesh-packages/release-1.28/asm/canonical-service/controller.yaml What's next Learn about: Canonical Services Best practices in Canonical Services Define a Canonical Service Resolving Canonical Service issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Grant service accounts in the fleet project permission to access the cluster project: gcloud projects add-iam-policy-binding \" CLUSTER PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent Replace CLUSTER PROJECT ID with the project ID for your cluster and the FLEET PROJECT NUMBER with the project number for your fleet.",
+          "Verify that the Canonical Service my-app is created. kubectl get canonicalservices -n NAMESPACE NAME Example output: NAME AGE my-app 3s Cleanup: Delete the pod, canonical service and the namespace: kubectl delete -f simple pod.yaml -n NAMESPACE NAME kubectl delete canonicalservices my-app -n NAMESPACE NAME kubectl delete namespace NAMESPACE NAME Troubleshooting: If the required canonical service is not created, refer to Resolving Canonical Service issues in Cloud Service Mesh ."
+        ]
+      },
+      {
+        "title": "\"Canonical Service Best Practices \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Your ability to see the historical performance of your service, plan, and project capacity all depend on maintaining a single notion of that service in Cloud Service Mesh for the duration of its life.",
+          "While you could define a Canonical Service to group several conceptually different microservices together, the Service Dashboards wouldn't provide their full value.The Service Dashboards would display an aggregation of dissimilar components which may individually be performing and configured very differently.",
+          "Reserve a unique service [namespace, name] across the whole mesh If a Canonical Service deployed in one cluster or region has the same Kubernetes namespace and Canonical Service name as one deployed in another cluster or region, Cloud Service Mesh assumes that it is the same logical service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "console.cloud.google.com",
+      "controller.yaml",
+      "mesh.googleapis.com",
+      "pod.yaml",
+      "raw.githubusercontent.com",
+      "servicemesh.iam.gserviceaccount.com",
+      "state.code",
+      "value.The"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-migrate-from-in-cluster-controller",
+        "https://docs.cloud.google.com/service-mesh/docs/canonical-service-best-practices"
+      ]
+    }
+  ]
+}

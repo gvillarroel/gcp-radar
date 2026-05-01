@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T09:08:59.187Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "MapReduce job history always-scan-user-dir",
+  "feature_slug": "mapreduce-job-history-always-scan-user-dir",
+  "summary": "Dataproc supports a cluster property that makes the MapReduce job history server always scan the user directory for history files.",
+  "extended_definition": "Dataproc supports a cluster property that makes the MapReduce job history server always scan the user directory for history files.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SparkSqlJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkSqlJob",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Properties that conflict with values set by the Dataproc API might be overwritten.",
+          "JSON representation A Dataproc job for running Apache Spark SQL queries."
+        ]
+      },
+      {
+        "title": "PrestoJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PrestoJob",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "IMPORTANT : The Dataproc Presto Optional Component must be enabled when the cluster is created to submit a Presto job to the cluster.",
+          "JSON representation A Dataproc job for running Presto queries."
+        ]
+      },
+      {
+        "title": "\"Diagnose GKE clusters \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-diagnose-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Managed Service for Apache Spark provides a gcloud CLI dataproc clusters diagnose command to help you troubleshoot Managed Service for Apache Spark on GKE cluster and job issues.",
+          "Diagnose archive file The following tables list metrics and other information included in the dataproc clusters diagnose command archive file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}
