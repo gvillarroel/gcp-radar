@@ -528,6 +528,10 @@ manifest references an incomplete promoted artifact inventory. Every promoted
 product must have a service `card.json`, and every promoted feature listed in
 the product promotion manifest must have its feature `card.json` and
 `README.md`.
+Step 10 must also fail before rewriting reports when promotion manifests or
+promoted cards disagree with their artifact paths, including product slugs,
+service-card paths, promoted feature counts, duplicate promoted feature slugs,
+feature artifact paths, and embedded feature-card slugs.
 
 Step 10 owns the generated Markdown files directly under `radar/products/`.
 During report generation, stale product reports that do not match the current

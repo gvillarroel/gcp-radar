@@ -106,16 +106,46 @@ async function loadArtifacts() {
     if (!promotion) {
       continue;
     }
+    if (promotion.product_slug && promotion.product_slug !== productSlug) {
+      errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug}`);
+    }
+    const expectedServiceCard = `artifacts/${productSlug}/card.json`;
+    if (promotion.service_card && String(promotion.service_card).replace(/\\/g, "/") !== expectedServiceCard) {
+      errors.push(`Promotion manifest service_card mismatch for ${productSlug}: expected ${expectedServiceCard}, got ${promotion.service_card}`);
+    }
     const serviceCardPath = path.join(productDir, "card.json");
     const serviceCard = await readJson(serviceCardPath, null);
     if (!serviceCard) {
       errors.push(`Missing promoted service card for ${productSlug}: ${relativeToCwd(serviceCardPath)}`);
+    } else {
+      if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
+        errors.push(`Promoted service card product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.product_slug}`);
+      }
+      if (serviceCard.service_slug && serviceCard.service_slug !== productSlug) {
+        errors.push(`Promoted service card service_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.service_slug}`);
+      }
     }
     const features = [];
     const promotedFeatures = [...(promotion.promoted_features || [])]
       .filter((feature) => feature?.feature_slug)
       .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
+    if (Number(promotion.promoted_feature_count || 0) !== promotedFeatures.length) {
+      errors.push(`Promotion manifest promoted_feature_count mismatch for ${productSlug}: expected ${promotedFeatures.length}, got ${promotion.promoted_feature_count}`);
+    }
+    const seenFeatureSlugs = new Set();
     for (const feature of promotedFeatures) {
+      if (seenFeatureSlugs.has(feature.feature_slug)) {
+        errors.push(`Duplicate promoted feature slug for ${productSlug}: ${feature.feature_slug}`);
+      }
+      seenFeatureSlugs.add(feature.feature_slug);
+      const expectedFeatureReadme = `artifacts/${productSlug}/${feature.feature_slug}/README.md`;
+      if (feature.artifact_readme && String(feature.artifact_readme).replace(/\\/g, "/") !== expectedFeatureReadme) {
+        errors.push(`Promotion manifest artifact_readme mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedFeatureReadme}, got ${feature.artifact_readme}`);
+      }
+      const expectedFeatureCard = `artifacts/${productSlug}/${feature.feature_slug}/card.json`;
+      if (feature.artifact_card && String(feature.artifact_card).replace(/\\/g, "/") !== expectedFeatureCard) {
+        errors.push(`Promotion manifest artifact_card mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedFeatureCard}, got ${feature.artifact_card}`);
+      }
       const featureReadmePath = path.join(productDir, feature.feature_slug, "README.md");
       if (!(await exists(featureReadmePath))) {
         errors.push(`Missing promoted feature README for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureReadmePath)}`);
@@ -123,6 +153,12 @@ async function loadArtifacts() {
       const featureCardPath = path.join(productDir, feature.feature_slug, "card.json");
       const card = await readJson(featureCardPath, null);
       if (card) {
+        if (card.product_slug !== productSlug) {
+          errors.push(`Promoted feature card product_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${productSlug}, got ${card.product_slug}`);
+        }
+        if (card.feature_slug !== feature.feature_slug) {
+          errors.push(`Promoted feature card feature_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${feature.feature_slug}, got ${card.feature_slug}`);
+        }
         features.push(card);
       } else {
         errors.push(`Missing promoted feature card for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureCardPath)}`);

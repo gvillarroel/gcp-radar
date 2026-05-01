@@ -387,6 +387,10 @@ incomplete promoted artifact inventory. A promoted product must have
 `artifacts/<product-slug>/card.json`, and every promoted feature listed in the
 manifest must have both `artifacts/<product-slug>/<feature-slug>/card.json`
 and `artifacts/<product-slug>/<feature-slug>/README.md`.
+The same preflight rejects promotion manifests or promoted cards whose
+product slug, service-card path, promoted feature count, feature artifact
+paths, duplicate feature slugs, or embedded feature-card slug do not match the
+artifact path being rendered.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact

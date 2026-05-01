@@ -19,7 +19,7 @@ source-of-truth artifact inventory.
 ## Decision
 
 Step 10 must fail before writing final reports when a promoted artifact
-inventory is incomplete.
+inventory is incomplete or internally inconsistent.
 
 The canonical Step 10 script now checks, while loading artifacts, that every
 product with a `promotion.json` also has:
@@ -30,14 +30,21 @@ product with a `promotion.json` also has:
 - `artifacts/<product-slug>/<feature-slug>/README.md` for every feature listed
   in the promotion manifest
 
-If any required card is missing, Step 10 exits with an error that lists the
-missing paths and does not rewrite `radar/` or `data/step-10/current/index.json`.
+It also checks that manifest paths, product slugs, promoted feature counts,
+duplicate promoted feature slugs, and embedded service or feature card slugs
+match the artifact path being rendered.
+
+If any required card is missing or any artifact identity check fails, Step 10
+exits with an error that lists the problem paths or values and does not rewrite
+`radar/` or `data/step-10/current/index.json`.
 
 ## Consequences
 
 Benefits:
 
 - final reports cannot be silently regenerated from partial promoted artifacts
+- final reports cannot be regenerated from artifact cards attached to the
+  wrong product or feature identity
 - missing card or README artifact problems are reported at the stage that would
   consume them
 - final-output validation remains the full contract, but Step 10 now catches a
