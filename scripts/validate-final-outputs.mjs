@@ -116,6 +116,16 @@ async function validateArtifacts() {
       findings.push({ severity: "error", rule: "missing_promotion_manifest", path: promotionPath });
     } else {
       const skippedFeatures = Array.isArray(promotion.skipped_features) ? promotion.skipped_features : [];
+      const acceptedWarningRules = new Set(Array.isArray(promotion.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
+      if (!Array.isArray(promotion.accepted_warning_rules)) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_accepted_warning_rules_not_array",
+          path: promotionPath,
+          product_slug: productSlug,
+          actual_type: promotion.accepted_warning_rules === null ? "null" : typeof promotion.accepted_warning_rules,
+        });
+      }
       if (promotion.product_slug !== productSlug) {
         findings.push({
           severity: "error",
@@ -383,6 +393,51 @@ async function validateArtifacts() {
             });
           }
         }
+      }
+      const validation = card.validation || {};
+      if (!validation.step07_pass) {
+        findings.push({
+          severity: "error",
+          rule: "promoted_feature_step07_not_passed",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          actual: validation.step07_pass ?? null,
+        });
+      }
+      if (Number(validation.fail_count || 0) > 0) {
+        findings.push({
+          severity: "error",
+          rule: "promoted_feature_has_failures",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          actual: validation.fail_count,
+        });
+      }
+      if (!String(card.extended_definition || card.summary || "").trim()) {
+        findings.push({
+          severity: "error",
+          rule: "promoted_feature_missing_summary",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+        });
+      }
+      const acceptedWarningRules = new Set(Array.isArray(promotion?.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
+      const unacceptedWarnings = (validation.findings || [])
+        .filter((finding) => finding?.severity === "warn")
+        .map((finding) => finding.rule)
+        .filter((rule) => rule && !acceptedWarningRules.has(rule));
+      if (unacceptedWarnings.length > 0) {
+        findings.push({
+          severity: "error",
+          rule: "promoted_feature_has_unaccepted_warnings",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          unaccepted_warning_rules: [...new Set(unacceptedWarnings)].sort(),
+        });
       }
       const officialSourceLinks = links.filter(isOfficialGoogleUrl);
       const featureReadmePath = path.join(artifactsRoot, productSlug, featureSlug, "README.md");

@@ -566,6 +566,11 @@ Promoted evidence source links must also use the `http` or `https` scheme;
 host-only matches using other URL schemes are not authoritative evidence.
 Security capability evidence links embedded in promoted service and feature
 artifact cards must also use `http` or `https` official Google URLs.
+Promoted feature cards must still satisfy the Step 09 promotion eligibility
+contract during final-output validation: Step 07 must have passed, failure
+count must be zero, a technical summary must be present, source links must be
+official Google URLs, and any warning rules on the promoted feature must be
+listed in the product promotion manifest's accepted warning rules.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
 Each promoted feature README must include at least one official Google evidence

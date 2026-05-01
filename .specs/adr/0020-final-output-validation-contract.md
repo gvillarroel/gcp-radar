@@ -31,6 +31,10 @@ The validator must check:
   official Google host
 - security capability evidence links embedded in promoted service and feature
   artifact cards use the `http` or `https` scheme on an official Google host
+- promoted feature cards still satisfy Step 09 promotion eligibility: Step 07
+  pass status is true, failure count is zero, a technical summary is present,
+  source links are official Google URLs, and feature warning rules are listed
+  in the product promotion manifest's accepted warning rules
 - artifact IAM roles and permissions still exist in the Step 08 inventory
 - radar Markdown and JSON files do not reference intermediate `data/step-*`
   paths
