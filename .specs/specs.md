@@ -574,6 +574,9 @@ feature without opening JSON.
 Each promoted feature README must also keep its IAM mapping status and rendered
 IAM detail aligned with its promoted feature card, including explicit roles and
 permissions, derived IAM qualifiers, and unknown-IAM qualifiers.
+Each promoted feature README must also keep its rendered product name, feature
+slug, coverage status, and lifecycle lines aligned with its promoted feature
+card so human-readable artifacts cannot drift from their canonical JSON cards.
 Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity. Their

@@ -411,6 +411,9 @@ Each promoted feature README must also keep its IAM mapping status and rendered
 IAM detail aligned with its promoted feature card. Explicit role and permission
 values must appear in the README when the card classifies the mapping as
 explicit, and derived or unknown mappings must retain their qualifier text.
+Each promoted feature README must also keep its product name, feature slug,
+coverage status, and rendered lifecycle lines aligned with its promoted feature
+card.
 Promoted service and feature artifact cards must use embedded slugs that match
 their artifact path and promotion manifest. Their `source_step08_card`
 provenance must match the canonical Step 08 product card path being validated

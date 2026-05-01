@@ -561,6 +561,43 @@ async function validateFeatureReadmesMatchCards() {
 
       const readme = await readFile(readmePath, "utf8");
       const card = await readJson(cardPath, null);
+      const expectedIdentityLines = [
+        `Product: ${card?.product_name || ""}`,
+        `Feature slug: \`${card?.feature_slug || ""}\``,
+        `Coverage: \`${card?.coverage_status || "unknown"}\``,
+      ];
+      for (const expectedLine of expectedIdentityLines) {
+        if (!readme.includes(expectedLine)) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_identity_mismatch",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedLine,
+          });
+        }
+      }
+
+      const lifecycle = card?.lifecycle || {};
+      const expectedLifecycleLines = [
+        `- Latest feature date: ${lifecycle.latest_feature_date || "unknown"}`,
+        `- Deprecation date: ${lifecycle.deprecation_date || "none recorded"}`,
+        `- Status: ${lifecycle.status}`,
+      ];
+      for (const expectedLine of expectedLifecycleLines) {
+        if (!readme.includes(expectedLine)) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_lifecycle_mismatch",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedLine,
+          });
+        }
+      }
+
       const iam = card?.iam || {};
       const status = iam.iam_mapping_status || "unknown";
       const expectedStatusLine = `IAM mapping: \`${status}\``;
