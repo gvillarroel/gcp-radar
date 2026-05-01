@@ -1,7 +1,25 @@
 #!/usr/bin/env zx
 
 import { access, readFile, readdir, writeFile, mkdir } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
 import path from "node:path";
+
+if (process.env.GCP_RADAR_VALIDATE_HEAP_REEXEC !== "1") {
+  const hasExplicitHeapLimit = process.execArgv.some((arg) => arg.startsWith("--max-old-space-size"));
+  if (!hasExplicitHeapLimit) {
+    const result = spawnSync(process.execPath, [
+      "--max-old-space-size=8192",
+      ...process.argv.slice(1),
+    ], {
+      stdio: "inherit",
+      env: {
+        ...process.env,
+        GCP_RADAR_VALIDATE_HEAP_REEXEC: "1",
+      },
+    });
+    process.exit(result.status ?? 1);
+  }
+}
 
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_RADAR_ROOT || "radar");
@@ -20,47 +38,89 @@ const officialGoogleHosts = [
   "workspace.google.com",
   "googleapis.dev",
 ];
+const existsCache = new Map();
+const jsonCache = new Map();
+const directoryCache = new Map();
+const recursiveFilesCache = new Map();
 
 async function exists(target) {
+  const resolved = path.resolve(target);
+  if (existsCache.has(resolved)) {
+    return existsCache.get(resolved);
+  }
   try {
-    await access(target);
+    await access(resolved);
+    existsCache.set(resolved, true);
     return true;
   } catch {
+    existsCache.set(resolved, false);
     return false;
   }
 }
 
-async function readJson(filePath, fallback = null) {
-  if (!(await exists(filePath))) {
+async function readText(filePath, fallback = null) {
+  const resolved = path.resolve(filePath);
+  if (!(await exists(resolved))) {
     return fallback;
   }
-  return JSON.parse(await readFile(filePath, "utf8"));
+  return readFile(resolved, "utf8");
+}
+
+async function readJson(filePath, fallback = null) {
+  const resolved = path.resolve(filePath);
+  if (jsonCache.has(resolved)) {
+    return jsonCache.get(resolved);
+  }
+  if (!(await exists(resolved))) {
+    return fallback;
+  }
+  const parsed = JSON.parse(await readFile(resolved, "utf8"));
+  jsonCache.set(resolved, parsed);
+  return parsed;
 }
 
 async function listDirs(directory) {
-  if (!(await exists(directory))) {
+  const resolved = path.resolve(directory);
+  if (directoryCache.has(resolved)) {
+    return directoryCache.get(resolved).dirs;
+  }
+  if (!(await exists(resolved))) {
     return [];
   }
-  return (await readdir(directory, { withFileTypes: true }))
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-    .sort((left, right) => left.localeCompare(right));
+  const entries = await readdir(resolved, { withFileTypes: true });
+  const cached = {
+    dirs: entries
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name)
+      .sort((left, right) => left.localeCompare(right)),
+    files: entries
+      .filter((entry) => entry.isFile())
+      .map((entry) => entry.name)
+      .sort((left, right) => left.localeCompare(right)),
+  };
+  directoryCache.set(resolved, cached);
+  return cached.dirs;
 }
 
 async function listFilesRecursive(directory) {
-  if (!(await exists(directory))) {
+  const resolved = path.resolve(directory);
+  if (recursiveFilesCache.has(resolved)) {
+    return recursiveFilesCache.get(resolved);
+  }
+  if (!(await exists(resolved))) {
     return [];
   }
-  const entries = await readdir(directory, { withFileTypes: true });
+  const entries = await readdir(resolved, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
-    const target = path.join(directory, entry.name);
+    const target = path.join(resolved, entry.name);
     if (entry.isDirectory()) {
       files.push(...await listFilesRecursive(target));
     } else {
       files.push(target);
     }
   }
+  recursiveFilesCache.set(resolved, files);
   return files;
 }
 
@@ -506,7 +566,7 @@ async function validateArtifacts() {
       const officialSourceLinks = links.filter(isOfficialGoogleUrl);
       const featureReadmePath = path.join(artifactsRoot, productSlug, featureSlug, "README.md");
       if (officialSourceLinks.length > 0 && await exists(featureReadmePath)) {
-        const featureReadme = await readFile(featureReadmePath, "utf8");
+        const featureReadme = await readText(featureReadmePath, "");
         if (!officialSourceLinks.some((link) => featureReadme.includes(link))) {
           findings.push({
             severity: "error",
@@ -548,7 +608,7 @@ async function validateArtifactProductIndexes() {
       continue;
     }
 
-    const indexMarkdown = await readFile(productIndexPath, "utf8");
+    const indexMarkdown = await readText(productIndexPath, "");
     const promotedFeatures = (promotion.promoted_features || [])
       .map((feature) => feature?.feature_slug)
       .filter(Boolean)
@@ -673,7 +733,7 @@ async function validateArtifactMarkdownExternalLinksAreOfficial() {
     if (!file.endsWith(".md")) {
       continue;
     }
-    const content = await readFile(file, "utf8");
+    const content = await readText(file, "");
     const links = new Set();
 
     for (const match of content.matchAll(linkPattern)) {
@@ -721,7 +781,7 @@ async function validateFeatureReadmesMatchCards() {
         continue;
       }
 
-      const readme = await readFile(readmePath, "utf8");
+      const readme = await readText(readmePath, "");
       const card = await readJson(cardPath, null);
       const expectedIdentityLines = [
         `Product: ${card?.product_name || ""}`,
@@ -948,7 +1008,7 @@ async function validateRadarDoesNotReferenceDataSteps() {
     if (!file.endsWith(".md") && !file.endsWith(".json")) {
       continue;
     }
-    const content = await readFile(file, "utf8");
+    const content = await readText(file, "");
     if (/data\/step-\d\d|data\\step-\d\d/i.test(content)) {
       findings.push({ severity: "error", rule: "radar_references_intermediate_data", path: file });
     }
@@ -962,7 +1022,7 @@ async function validateRadarArtifactLinks() {
     if (!file.endsWith(".md")) {
       continue;
     }
-    const content = await readFile(file, "utf8");
+    const content = await readText(file, "");
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
     for (const match of content.matchAll(linkPattern)) {
       const rawLink = String(match[1] || "").trim();
@@ -997,7 +1057,7 @@ async function validateRadarExternalLinksAreOfficial() {
     if (!file.endsWith(".md")) {
       continue;
     }
-    const content = await readFile(file, "utf8");
+    const content = await readText(file, "");
     const links = new Set();
 
     for (const match of content.matchAll(linkPattern)) {
@@ -1039,7 +1099,7 @@ async function validateRadarIamTablesSeparateExplicitAndDerived() {
     if (!(await exists(file))) {
       continue;
     }
-    const content = await readFile(file, "utf8");
+    const content = await readText(file, "");
     for (const header of requiredHeaders) {
       if (!content.includes(header)) {
         findings.push({
@@ -1094,7 +1154,7 @@ async function validateRadarIamReportMatchesArtifacts() {
     }
   }
 
-  const report = await readFile(iamReportPath, "utf8");
+  const report = await readText(iamReportPath, "");
   const actualFeatureLinks = new Set();
   const staleFeatureLinks = new Set();
   const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
@@ -1241,7 +1301,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
     });
   }
 
-  const report = await readFile(servicesReportPath, "utf8");
+  const report = await readText(servicesReportPath, "");
   const expectedServiceLinks = new Set([...expectedRows.keys()].sort());
   const actualServiceLinks = new Set();
   const staleServiceLinks = new Set();
@@ -1435,7 +1495,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
     }
   }
 
-  const report = await readFile(securityReportPath, "utf8");
+  const report = await readText(securityReportPath, "");
   const actualFeatureLinks = new Set();
   const staleFeatureLinks = new Set();
   const reportLinks = new Set();
@@ -1605,7 +1665,7 @@ async function validateRadarRootIndexMatchesArtifacts() {
     }
   }
 
-  const report = await readFile(rootIndexPath, "utf8");
+  const report = await readText(rootIndexPath, "");
   const expectedFeatureCount = [...artifactProductSlugs].reduce((sum, productSlug) => {
     return sum + expectedPromotedFeatureCountByProduct.get(productSlug);
   }, 0);
@@ -1899,7 +1959,7 @@ async function validateRadarCoverageReportMatchesArtifacts() {
     });
   }
 
-  const coverageMarkdown = await readFile(coverageReportPath, "utf8");
+  const coverageMarkdown = await readText(coverageReportPath, "");
   const rows = coverageMarkdown
     .split(/\r?\n/)
     .filter((line) => line.trim().startsWith("|"))
@@ -2438,7 +2498,7 @@ async function validateRadarMatchesArtifacts() {
     if (!(await exists(reportPath))) {
       continue;
     }
-    const report = await readFile(reportPath, "utf8");
+    const report = await readText(reportPath, "");
     const expectedTitle = `# ${product.product_name}`;
     if (!report.includes(expectedTitle)) {
       findings.push({
