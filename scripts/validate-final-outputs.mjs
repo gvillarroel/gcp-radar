@@ -2185,9 +2185,13 @@ async function validateRadarMatchesArtifacts() {
     if (!promotion) {
       continue;
     }
+    const serviceCard = await readJson(path.join(artifactsRoot, productSlug, "card.json"), null);
     products.push({
       product_slug: productSlug,
+      product_name: promotion.product_name || productSlug,
       skipped_feature_count: Number(promotion.skipped_feature_count || 0),
+      latest_feature_date: serviceCard?.lifecycle?.latest_feature_date || "unknown",
+      service_iam_status: JSON.stringify(serviceCard?.iam_status_counts || {}),
       feature_slugs: (promotion.promoted_features || [])
         .map((feature) => feature?.feature_slug)
         .filter(Boolean)
@@ -2232,6 +2236,16 @@ async function validateRadarMatchesArtifacts() {
       continue;
     }
     const report = await readFile(reportPath, "utf8");
+    const expectedTitle = `# ${product.product_name}`;
+    if (!report.includes(expectedTitle)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_product_title_mismatch",
+        path: reportPath,
+        product_slug: product.product_slug,
+        expected: expectedTitle,
+      });
+    }
     const expectedFeatureLinks = new Set(product.feature_slugs.map((featureSlug) => `../../artifacts/${product.product_slug}/${featureSlug}/README.md`));
     const expectedServiceCardLink = `../../artifacts/${product.product_slug}/card.json`;
     const expectedArtifactIndexLink = `../../artifacts/${product.product_slug}/index.md`;
@@ -2272,9 +2286,11 @@ async function validateRadarMatchesArtifacts() {
     const summaryExpectations = [
       ["Promoted features", product.feature_slugs.length],
       ["Skipped features during promotion", product.skipped_feature_count],
+      ["Latest feature date", product.latest_feature_date],
+      ["Service IAM status", product.service_iam_status],
     ];
     for (const [label, expected] of summaryExpectations) {
-      const match = report.match(new RegExp(`^- ${label}:\\s*(\\d+)\\s*$`, "m"));
+      const match = report.match(new RegExp(`^- ${label}:\\s*(.+?)\\s*$`, "m"));
       if (!match) {
         findings.push({
           severity: "error",
@@ -2286,7 +2302,7 @@ async function validateRadarMatchesArtifacts() {
         });
         continue;
       }
-      const actual = Number(match[1]);
+      const actual = typeof expected === "number" ? Number(match[1]) : match[1];
       if (actual !== expected) {
         findings.push({
           severity: "error",

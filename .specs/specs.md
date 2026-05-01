@@ -625,7 +625,9 @@ derived permissions aligned with the promoted feature card values rendered by
 Step 10. Each product report's feature rows must also keep each promoted
 feature's IAM mapping status, explicit roles, explicit permissions, derived
 roles, derived permissions, coverage status, and rendered source links aligned
-with the promoted feature card values. The services report must link every
+with the promoted feature card values. Each product report must also keep its
+rendered title, latest feature date, and service IAM status summary aligned
+with the promoted artifact manifest and service card. The services report must link every
 promoted product service card and must not keep stale service-card links
 outside the promoted artifact inventory.
 When a promoted service card has official Google source links, the services

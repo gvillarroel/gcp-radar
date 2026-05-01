@@ -121,6 +121,9 @@ The validator must check:
 - Step 10 product report feature rows match promoted feature cards for IAM
   mapping status, explicit roles, explicit permissions, derived roles, derived
   permissions, coverage status, and rendered source links
+- Step 10 product reports keep their title, latest feature date, and service
+  IAM status summary aligned with the promoted artifact manifest and service
+  card
 - the Step 10 services report links every promoted product service card and
   does not retain service-card links outside the promoted artifact inventory
 - the Step 10 services report includes at least one official Google evidence

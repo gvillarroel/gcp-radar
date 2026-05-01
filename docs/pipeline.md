@@ -455,6 +455,8 @@ mapping status, explicit roles, explicit permissions, derived roles, and
 derived permissions. Product report feature rows must also match promoted
 feature cards for IAM mapping status, explicit roles, explicit permissions,
 derived roles, derived permissions, coverage status, and rendered source links.
+Product report title, latest feature date, and service IAM status summary must
+also match the promoted artifact manifest and service card.
 The services report must link every promoted product service card and must not
 retain service-card links outside the promoted artifact inventory. When a
 promoted service card has official
