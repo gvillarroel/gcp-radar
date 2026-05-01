@@ -526,7 +526,8 @@ Step 10 reports must read from promoted `artifacts/` content only.
 Step 10 must fail before rewriting final reports when a product promotion
 manifest references an incomplete promoted artifact inventory. Every promoted
 product must have a service `card.json`, and every promoted feature listed in
-the product promotion manifest must have its feature `card.json`.
+the product promotion manifest must have its feature `card.json` and
+`README.md`.
 
 Step 10 owns the generated Markdown files directly under `radar/products/`.
 During report generation, stale product reports that do not match the current

@@ -7,10 +7,10 @@ Accepted
 ## Context
 
 Step 10 generates final radar reports from promoted artifacts only. If a
-promotion manifest lists a feature whose promoted `card.json` is missing, or a
-product is missing its promoted service card, report generation can otherwise
-produce incomplete Markdown and leave final-output validation to catch the
-problem afterward.
+promotion manifest lists a feature whose promoted `card.json` or `README.md`
+is missing, or a product is missing its promoted service card, report
+generation can otherwise produce incomplete Markdown and leave final-output
+validation to catch the problem afterward.
 
 That delayed failure is less useful than stopping before report files are
 rewritten, because `radar/` should only be regenerated from a complete
@@ -27,6 +27,8 @@ product with a `promotion.json` also has:
 - `artifacts/<product-slug>/card.json`
 - `artifacts/<product-slug>/<feature-slug>/card.json` for every feature listed
   in the promotion manifest
+- `artifacts/<product-slug>/<feature-slug>/README.md` for every feature listed
+  in the promotion manifest
 
 If any required card is missing, Step 10 exits with an error that lists the
 missing paths and does not rewrite `radar/` or `data/step-10/current/index.json`.
@@ -36,8 +38,8 @@ missing paths and does not rewrite `radar/` or `data/step-10/current/index.json`
 Benefits:
 
 - final reports cannot be silently regenerated from partial promoted artifacts
-- missing artifact-card problems are reported at the stage that would consume
-  them
+- missing card or README artifact problems are reported at the stage that would
+  consume them
 - final-output validation remains the full contract, but Step 10 now catches a
   high-impact artifact integrity issue earlier
 

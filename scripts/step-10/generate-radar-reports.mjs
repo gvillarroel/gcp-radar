@@ -116,6 +116,10 @@ async function loadArtifacts() {
       .filter((feature) => feature?.feature_slug)
       .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
     for (const feature of promotedFeatures) {
+      const featureReadmePath = path.join(productDir, feature.feature_slug, "README.md");
+      if (!(await exists(featureReadmePath))) {
+        errors.push(`Missing promoted feature README for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureReadmePath)}`);
+      }
       const featureCardPath = path.join(productDir, feature.feature_slug, "card.json");
       const card = await readJson(featureCardPath, null);
       if (card) {
